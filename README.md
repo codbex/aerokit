@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://codbex.com/aerokit/" rel="noopener" target="_blank"><img width="256" height="256" src="docs/public/logo/aerokit.svg" alt="Aerokit logo"></a>
+  <a href="https://codbex.com/aerokit/" rel="noopener" target="_blank"><img width="256" height="256" src="docs/public/logo/aerokit-circle.png" alt="Aerokit logo"></a>
 </p>
 
 <h1 align="center">Aerokit</h1>
 
-Aerokit is a TypeScript SDK for the codbex platform.
+Aerokit is a TypeScript SDK for the codbex Platform
 
 ## Build steps
 
