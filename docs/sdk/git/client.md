@@ -1,0 +1,26 @@
+# API: client
+
+> Source: `git/client.ts`
+
+Describes a file within the workspace, potentially with Git status information.
+
+## Usage
+```javascript
+import { client } from "@aerokit/sdk/git"
+
+const user = "dirigible";
+const email = "dirigible@eclipse.org";
+const workspaceName = "workspace";
+const projectName = "project";
+const repositoryName = projectName;
+const initialCommitMessage = "Initial commit";
+const commitMessage = "Second commit";
+const add = true;
+
+client.initRepository(user, email, workspaceName, projectName, repositoryName, initialCommitMessage);
+
+client.commit(user, email, workspaceName, repositoryName, commitMessage, add);
+
+```
+
+
