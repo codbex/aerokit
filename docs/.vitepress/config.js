@@ -170,16 +170,16 @@ export default defineConfig({
       },
       {
         "text": "ERRORS",
-        "link": "/sdk/errors/",
+        "link": "/sdk/http/errors/",
         "collapsed": true,
         "items": [
           {
             "text": "ForbiddenError",
-            "link": "/sdk/errors/ForbiddenError"
+            "link": "/sdk/http/errors/ForbiddenError"
           },
           {
             "text": "ValidationError",
-            "link": "/sdk/errors/ValidationError"
+            "link": "/sdk/http/errors/ValidationError"
           }
         ]
       },
@@ -525,28 +525,28 @@ export default defineConfig({
       },
       {
         "text": "RS",
-        "link": "/sdk/rs/",
+        "link": "/sdk/http/rs/",
         "collapsed": true,
         "items": [
           {
             "text": "Resource-common",
-            "link": "/sdk/rs/resource-common"
+            "link": "/sdk/http/rs/resource-common"
           },
           {
             "text": "Resource-http-controller",
-            "link": "/sdk/rs/resource-http-controller"
+            "link": "/sdk/http/rs/resource-http-controller"
           },
           {
             "text": "Resource-mappings",
-            "link": "/sdk/rs/resource-mappings"
+            "link": "/sdk/http/rs/resource-mappings"
           },
           {
             "text": "Resource-method",
-            "link": "/sdk/rs/resource-method"
+            "link": "/sdk/http/rs/resource-method"
           },
           {
             "text": "Resource",
-            "link": "/sdk/rs/resource"
+            "link": "/sdk/http/rs/resource"
           }
         ]
       },
@@ -637,24 +637,24 @@ export default defineConfig({
       },
       {
         "text": "WRAPPERS",
-        "link": "/sdk/wrappers/",
+        "link": "/sdk/net/wrappers/",
         "collapsed": true,
         "items": [
           {
             "text": "OnClose",
-            "link": "/sdk/wrappers/onClose"
+            "link": "/sdk/net/wrappers/onClose"
           },
           {
             "text": "OnError",
-            "link": "/sdk/wrappers/onError"
+            "link": "/sdk/net/wrappers/onError"
           },
           {
             "text": "OnMessage",
-            "link": "/sdk/wrappers/onMessage"
+            "link": "/sdk/net/wrappers/onMessage"
           },
           {
             "text": "OnOpen",
-            "link": "/sdk/wrappers/onOpen"
+            "link": "/sdk/net/wrappers/onOpen"
           }
         ]
       }

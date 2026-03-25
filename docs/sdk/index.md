@@ -46,8 +46,8 @@
 
 ## ERRORS
 
-- [ForbiddenError](./errors/ForbiddenError.md)
-- [ValidationError](./errors/ValidationError.md)
+- [ForbiddenError](./http/errors/ForbiddenError.md)
+- [ValidationError](./http/errors/ValidationError.md)
 
 ## ETCD
 
@@ -161,11 +161,11 @@
 
 ## RS
 
-- [resource-common](./rs/resource-common.md)
-- [resource-http-controller](./rs/resource-http-controller.md)
-- [resource-mappings](./rs/resource-mappings.md)
-- [resource-method](./rs/resource-method.md)
-- [resource](./rs/resource.md)
+- [resource-common](./http/rs/resource-common.md)
+- [resource-http-controller](./http/rs/resource-http-controller.md)
+- [resource-mappings](./http/rs/resource-mappings.md)
+- [resource-method](./http/rs/resource-method.md)
+- [resource](./http/rs/resource.md)
 
 ## SECURITY
 
@@ -194,8 +194,8 @@
 
 ## WRAPPERS
 
-- [onClose](./wrappers/onClose.md)
-- [onError](./wrappers/onError.md)
-- [onMessage](./wrappers/onMessage.md)
-- [onOpen](./wrappers/onOpen.md)
+- [onClose](./net/wrappers/onClose.md)
+- [onError](./net/wrappers/onError.md)
+- [onMessage](./net/wrappers/onMessage.md)
+- [onOpen](./net/wrappers/onOpen.md)
 
