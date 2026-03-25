@@ -5,7 +5,7 @@ const basePath = '/aerokit/';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Aerokit',
-  description: 'TypeScript SDK for the codbex Platform',
+  description: 'TypeScript SDK for the Low-Code Platform',
   base: basePath,
   themeConfig: {
     outline: {

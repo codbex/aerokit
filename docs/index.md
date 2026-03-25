@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: 'Aerokit'
-  text: 'TypeScript SDK for the codbex Platform'
+  text: 'TypeScript SDK for the Low-Code Platform'
   image:
     src: '/logo/aerokit.png'
     alt: 'Aerokit Logo'

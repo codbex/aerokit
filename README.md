@@ -4,7 +4,7 @@
 
 <h1 align="center">Aerokit</h1>
 
-Aerokit is a TypeScript SDK for the codbex Platform
+Aerokit is a TypeScript SDK for the Low-Code Platform
 
 ## Build steps
 
