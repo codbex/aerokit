@@ -3,13 +3,22 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "typedoc": "^0.28.18",
+    "typedoc-plugin-markdown": "^4.11.0",
     "vitepress": "^1.5.0",
     "vue": "^3.5.13"
   },
   "scripts": {
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs --port 8080",
-    "docs:preview": "vitepress preview docs --port 8080"
+    "docs:preview": "vitepress preview docs --port 8080",
+    "docs:api": "typedoc",
+    "docs:api:watch": "typedoc --watch",
+    "docs:api:clean": "rm -rf docs/sdk && typedoc",
+    "docs:enhance": "node scripts/enhance-docs.js",
+    "docs:generate": "npm run docs:api && npm run docs:enhance",
+    "docs:full": "npm run docs:api:clean && npm run docs:enhance && npm run docs:build",
+    "docs:serve": "npm run docs:dev"
   },
   "dependencies": {
     "swiper": "^11.2.8"

@@ -1,3 +1,0 @@
-# etcd
-
-- [client](client.md)

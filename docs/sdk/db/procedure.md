@@ -1,72 +1,94 @@
-# API: procedure
+# db/procedure
 
-> Source: `db/procedure.ts`
-
-API Procedure
-
-## Usage
-```javascript
-// Create Procedure
-
-import { procedure } from "@aerokit/sdk/db";
-import { response } from "@aerokit/sdk/http";
-
-const sql = " \
-CREATE PROCEDURE CUSTOMERS_BY_COUNTRY_AND_ALL_CUSTOMERS(c_id integer, c_name text, c_country text) \
-LANGUAGE SQL \
-AS $$ \
-  INSERT INTO CUSTOMERS(id, name, country) values (c_id, c_name, c_country); \
-$$; \
-"
-
-procedure.create(sql, "psql");
-
-response.println("Procedure created");
-response.flush();
-response.close();
+> [!tip]
+> Auto-generated from
+> - source: [db/procedure.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/procedure.ts)
+> - version: 1.0.0
 
 
-// Call Procedure
+## Overview
 
-import { query, procedure } from "@aerokit/sdk/db";
-import { response } from "@aerokit/sdk/http";
+The Procedure API provides...
 
-const sql = "CALL CUSTOMERS_BY_COUNTRY_AND_ALL_CUSTOMERS(c_id => ?, c_name => ?, c_country => ?)";
+## Table of Contents
 
-try {
-    procedure.execute(sql, [6, "IBM", "USA"], "psql");
-} finally {
-    let result = query.execute("SELECT * FROM CUSTOMERS", [], "psql");
-
-    response.println(JSON.stringify(result));
-    response.flush();
-    response.close();
-}
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Procedure](#procedure)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [ProcedureParameter](#procedureparameter)
 
 ## Classes
 
 ### Procedure
 
-@interface ProcedureParameter<br/>@description Defines a structured parameter for procedure calls, allowing the type<br/>to be explicitly defined when the natural JavaScript type mapping is insufficient.
+
+## Returns
+
+[`Procedure`](#procedure)
 
 #### Methods
 
-<hr/>
+##### create()
 
-#### create
+> ```ts
+> static create(sql, datasourceName?): void;
+> ```
 
-- `create (sql:string, datasourceName?:string):void`
 
-  Executes a DDL/DML statement to create or modify a stored procedure without results.<br/>* @param \{string\} sql The SQL statement (e.g., CREATE PROCEDURE).<br/>@param \{string\} [datasourceName] Optional name of the data source to use.
+> Executes a DDL/DML statement to create or modify a stored procedure without results.
+> *
 
-<hr/>
+> **Parameters**
 
-#### execute
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL statement (e.g., CREATE PROCEDURE). |
+> | `datasourceName?` | `string` | Optional name of the data source to use. |
 
-- `execute (sql:string, parameters:(string|number|ProcedureParameter):any[]`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Executes a stored procedure call and returns the result set(s).<br/>* @param \{string\} sql The callable statement (e.g., \{CALL my_procedure(?, ?)\}).<br/>@param \{(string | number | ProcedureParameter)[]\} [parameters=[]] An array of parameters. Primitives (string/number) are automatically typed. Use ProcedureParameter for explicit types.<br/>@param \{string\} [datasourceName] Optional name of the data source to use.<br/>@returns \{any[]\} An array of JSON objects representing the result set(s).
+##### execute()
 
+> ```ts
+> static execute( sql, parameters?, datasourceName?): any[];
+> ```
+
+
+> Executes a stored procedure call and returns the result set(s).
+> *
+
+> **Parameters**
+
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `sql` | `string` | `undefined` | The callable statement (e.g., {CALL my_procedure(?, ?)}). |
+> | `parameters?` | (`string` \| `number` \| [`ProcedureParameter`](#procedureparameter))[] | `[]` | An array of parameters. Primitives (string/number) are automatically typed. Use ProcedureParameter for explicit types. |
+> | `datasourceName?` | `string` | `undefined` | Optional name of the data source to use. |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of JSON objects representing the result set(s).
+> :::
+
+## Interfaces
+
+### ProcedureParameter
+
+
+ProcedureParameter
+
+#### Description
+
+Defines a structured parameter for procedure calls, allowing the type 
+to be explicitly defined when the natural JavaScript type mapping is insufficient.
+
+#### Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `type` | `string` | src/db/procedure.ts:14 |
+|  `value` | `any` | src/db/procedure.ts:15 |

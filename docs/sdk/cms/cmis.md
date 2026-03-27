@@ -1,470 +1,511 @@
-# API: cmis
+# cms/cmis
 
-> Source: `cms/cmis.ts`
+> [!tip]
+> Auto-generated from
+> - source: [cms/cmis.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cms/cmis.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 API CMIS
 * Note: This module is supported only with the Mozilla Rhino engine
 * Provides static access to the CMIS (Content Management Interoperability Services) repository session and utility constants.
+/
 
-## Usage
-```javascript
-import { cmis } from "@aerokit/sdk/cms";
-import { response } from "@aerokit/sdk/http";
-import { streams } from "@aerokit/sdk/io";
+## Table of Contents
 
-
-let cmisSession = cmis.getSession();
-
-let rootFolder = cmisSession.getRootFolder();
-
-let children = rootFolder.getChildren();
-response.println("Listing the children of the root folder:");
-for (let i in children) {
-    response.println("Object ID: " + children[i].getId());
-    response.println("Object Name: " + children[i].getName());
-}
-
-const textFileName = "test.txt";
-response.println("Creating a simple text file, " + textFileName);
-
-const mimetype = "text/plain; charset=UTF-8";
-let content = "This is some test content.";
-let filename = textFileName;
-
-let outputStream = streams.createByteArrayOutputStream();
-outputStream.writeText(content);
-let bytes = outputStream.getBytes();
-let inputStream = streams.createByteArrayInputStream(bytes);
-
-let contentStream = cmisSession.getObjectFactory().createContentStream(filename, bytes.length, mimetype, inputStream);
-
-let properties = { "cmis:name": "", "cmis:objectTypeId": "" };
-properties[cmis.OBJECT_TYPE_ID] = cmis.OBJECT_TYPE_DOCUMENT;
-properties[cmis.NAME] = filename;
-let newDocument;
-try {
-    newDocument = rootFolder.createDocument(properties, contentStream, cmis.VERSIONING_STATE_MAJOR);
-} catch (e) {
-    response.println("Error: " + e);
-}
-let documentId = newDocument?.getId();
-
-response.println("Document ID: " + documentId);
-
-children = rootFolder.getChildren();
-response.println("Listing the children of the root folder again:");
-for (let i in children) {
-    response.println("Object ID: " + children[i].getId());
-    response.println("Object Name: " + children[i].getName());
-    response.println("Object Type: " + JSON.stringify(children[i].getType().getId().toString()));
-}
-
-// Get the contents of the file
-let doc;
-if (documentId !== undefined) {
-    doc = cmisSession.getObject(documentId);
-} else {
-    response.println("No content");
-}
-
-contentStream = doc?.getContentStream(); // returns null if the document has no content
-if (contentStream !== null) {
-    content = contentStream.getStream().readText();
-    response.println("Contents of " + filename + " are: " + content);
-} else {
-    response.println("No content.");
-}
-
-response.println("Deleting the newly created document");
-if (newDocument) {
-    newDocument.delete();
-}
-
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Cmis](#cmis)
+- [Returns](#returns)
+  - [Folder](#folder)
+- [Parameters](#parameters)
+  - [Document](#document)
+- [Parameters](#parameters)
 
 ## Classes
 
 ### Cmis
 
-#### Methods
 
-<hr/>
+## Returns
 
-#### getSession
+[`Cmis`](#cmis)
 
-- `getSession ():Session`
+#### Properties
 
-  Gets a new CMIS session instance to interact with the repository.<br/>@returns A new \{@link Session\} instance.
-
-<hr/>
-
-#### getAccessDefinitions
-
-- `getAccessDefinitions (path:string, method:string):AccessDefinition[]`
-
-  Retrieves access control definitions for a specific path and method.<br/>@param path The path of the CMIS object.<br/>@param method The operation method (e.g., \{@link Cmis.METHOD_READ\}, \{@link Cmis.METHOD_WRITE\}).<br/>@returns A list of access definitions.
-
-### Session
-
-Session object<br/>* Represents an active connection to a CMIS repository, used as the main entry point for CMIS operations.
-
-#### Methods
-
-<hr/>
-
-#### getRepositoryInfo
-
-- `getRepositoryInfo ():RepositoryInfo`
-
-  Gets information about the repository this session is connected to.<br/>@returns Repository metadata.
-
-<hr/>
-
-#### getRootFolder
-
-- `getRootFolder ():Folder`
-
-  Gets the root folder of the repository.<br/>@returns The root \{@link Folder\} object.
-
-<hr/>
-
-#### getObjectFactory
-
-- `getObjectFactory ():ObjectFactory`
-
-  Gets the object factory for creating new CMIS objects like ContentStream.<br/>@returns An \{@link ObjectFactory\} instance.
-
-<hr/>
-
-#### getObject
-
-- `getObject (objectId:string):Folder|Document`
-
-  Retrieves a CMIS object (Document or Folder) by its unique ID.<br/>@param objectId The unique ID of the object.<br/>@returns A \{@link Document\} or \{@link Folder\} instance.<br/>@throws Error if the object type is unsupported.
-
-<hr/>
-
-#### getObjectByPath
-
-- `getObjectByPath (path:string):Folder|Document`
-
-  Retrieves a CMIS object (Document or Folder) by its path.<br/>@param path The path of the object in the repository (e.g., "/path/to/object").<br/>@returns A \{@link Document\} or \{@link Folder\} instance.<br/>@throws Error if read access is not allowed or the object type is unsupported.
-
-<hr/>
-
-#### createFolder
-
-- `createFolder (location:string):Folder`
-
-  Creates a folder structure recursively based on a path. This is a convenience method that<br/>creates all non-existent parent folders.<br/>Example: `createFolder("/new/path/structure")`<br/>@param location The path of the folder to create.<br/>@returns The newly created (or existing) innermost \{@link Folder\} object.
-
-<hr/>
-
-#### createDocument
-
-- `createDocument (location:string, properties:{[key:string]:any}, contentStream:ContentStream, versioningState:string):Document`
-
-  Creates a new document at the specified location. This method ensures the parent folder structure exists.<br/>@param location The path of the parent folder (e.g., "/path/to/folder").<br/>@param properties A map of CMIS properties for the new document (must include \{@link Cmis.NAME\}).<br/>@param contentStream The content stream containing the document's binary data.<br/>@param versioningState The versioning state (e.g., \{@link Cmis.VERSIONING_STATE_MAJOR\}).<br/>@returns The newly created \{@link Document\} object.
-
-### RepositoryInfo
-
-RepositoryInfo object<br/>* Provides basic information about the connected CMIS repository.
+| Property | Modifier | Type | Default value | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+|  `METHOD_READ` | `readonly` | `"READ"` | `"READ"` | CMIS method constant for read operations. | src/cms/cmis.ts:18 |
+|  `METHOD_WRITE` | `readonly` | `"WRITE"` | `"WRITE"` | CMIS method constant for write operations. | src/cms/cmis.ts:22 |
+|  `NAME` | `readonly` | `"cmis:name"` | `"cmis:name"` | CMIS property: Object name. | src/cms/cmis.ts:26 |
+|  `OBJECT_ID` | `readonly` | `"cmis:objectId"` | `"cmis:objectId"` | CMIS property: Unique object identifier. | src/cms/cmis.ts:28 |
+|  `OBJECT_TYPE_ID` | `readonly` | `"cmis:objectTypeId"` | `"cmis:objectTypeId"` | CMIS property: Object type identifier. | src/cms/cmis.ts:30 |
+|  `BASE_TYPE_ID` | `readonly` | `"cmis:baseTypeId"` | `"cmis:baseTypeId"` | CMIS property: Base object type identifier. | src/cms/cmis.ts:32 |
+|  `CREATED_BY` | `readonly` | `"cmis:createdBy"` | `"cmis:createdBy"` | CMIS property: User who created the object. | src/cms/cmis.ts:34 |
+|  `CREATION_DATE` | `readonly` | `"cmis:creationDate"` | `"cmis:creationDate"` | CMIS property: Timestamp of object creation. | src/cms/cmis.ts:36 |
+|  `LAST_MODIFIED_BY` | `readonly` | `"cmis:lastModifiedBy"` | `"cmis:lastModifiedBy"` | CMIS property: User who last modified the object. | src/cms/cmis.ts:38 |
+|  `LAST_MODIFICATION_DATE` | `readonly` | `"cmis:lastModificationDate"` | `"cmis:lastModificationDate"` | CMIS property: Timestamp of last modification. | src/cms/cmis.ts:40 |
+|  `CHANGE_TOKEN` | `readonly` | `"cmis:changeToken"` | `"cmis:changeToken"` | CMIS property: Change token for object change tracking. | src/cms/cmis.ts:42 |
+|  `IS_IMMUTABLE` | `readonly` | `"cmis:isImmutable"` | `"cmis:isImmutable"` | CMIS property: Indicates if the document is immutable. | src/cms/cmis.ts:46 |
+|  `IS_LATEST_VERSION` | `readonly` | `"cmis:isLatestVersion"` | `"cmis:isLatestVersion"` | CMIS property: Indicates if the document is the latest version in the version series. | src/cms/cmis.ts:48 |
+|  `IS_MAJOR_VERSION` | `readonly` | `"cmis:isMajorVersion"` | `"cmis:isMajorVersion"` | CMIS property: Indicates if the document is a major version. | src/cms/cmis.ts:50 |
+|  `IS_LATEST_MAJOR_VERSION` | `readonly` | `"cmis:isLatestMajorVersion"` | `"cmis:isLatestMajorVersion"` | CMIS property: Indicates if the document is the latest major version. | src/cms/cmis.ts:52 |
+|  `VERSION_LABEL` | `readonly` | `"cmis:versionLabel"` | `"cmis:versionLabel"` | CMIS property: Label of the document version. | src/cms/cmis.ts:54 |
+|  `VERSION_SERIES_ID` | `readonly` | `"cmis:versionSeriesId"` | `"cmis:versionSeriesId"` | CMIS property: ID of the version series. | src/cms/cmis.ts:56 |
+|  `IS_VERSION_SERIES_CHECKED_OUT` | `readonly` | `"cmis:isVersionSeriesCheckedOut"` | `"cmis:isVersionSeriesCheckedOut"` | CMIS property: Indicates if the version series is checked out. | src/cms/cmis.ts:58 |
+|  `VERSION_SERIES_CHECKED_OUT_BY` | `readonly` | `"cmis:versionSeriesCheckedOutBy"` | `"cmis:versionSeriesCheckedOutBy"` | CMIS property: User who checked out the version series. | src/cms/cmis.ts:60 |
+|  `VERSION_SERIES_CHECKED_OUT_ID` | `readonly` | `"cmis:versionSeriesCheckedOutId"` | `"cmis:versionSeriesCheckedOutId"` | CMIS property: ID of the checked-out document object. | src/cms/cmis.ts:62 |
+|  `CHECKIN_COMMENT` | `readonly` | `"cmis:checkinComment"` | `"cmis:checkinComment"` | CMIS property: Comment associated with the check-in operation. | src/cms/cmis.ts:64 |
+|  `CONTENT_STREAM_LENGTH` | `readonly` | `"cmis:contentStreamLength"` | `"cmis:contentStreamLength"` | CMIS property: Length of the content stream in bytes. | src/cms/cmis.ts:66 |
+|  `CONTENT_STREAM_MIME_TYPE` | `readonly` | `"cmis:contentStreamMimeType"` | `"cmis:contentStreamMimeType"` | CMIS property: MIME type of the content stream. | src/cms/cmis.ts:68 |
+|  `CONTENT_STREAM_FILE_NAME` | `readonly` | `"cmis:contentStreamFileName"` | `"cmis:contentStreamFileName"` | CMIS property: Original file name of the content stream. | src/cms/cmis.ts:70 |
+|  `CONTENT_STREAM_ID` | `readonly` | `"cmis:contentStreamId"` | `"cmis:contentStreamId"` | CMIS property: ID of the content stream. | src/cms/cmis.ts:72 |
+|  `PARENT_ID` | `readonly` | `"cmis:parentId"` | `"cmis:parentId"` | CMIS property: Object ID of the parent folder. | src/cms/cmis.ts:76 |
+|  `ALLOWED_CHILD_OBJECT_TYPE_IDS` | `readonly` | `"cmis:allowedChildObjectTypeIds"` | `"cmis:allowedChildObjectTypeIds"` | CMIS property: List of allowed object type IDs for children. | src/cms/cmis.ts:78 |
+|  `PATH` | `readonly` | `"cmis:path"` | `"cmis:path"` | CMIS property: Path of the folder in the repository. | src/cms/cmis.ts:80 |
+|  `SOURCE_ID` | `readonly` | `"cmis:sourceId"` | `"cmis:sourceId"` | CMIS property: Object ID of the relationship source. | src/cms/cmis.ts:84 |
+|  `TARGET_ID` | `readonly` | `"cmis:targetId"` | `"cmis:targetId"` | CMIS property: Object ID of the relationship target. | src/cms/cmis.ts:86 |
+|  `POLICY_TEXT` | `readonly` | `"cmis:policyText"` | `"cmis:policyText"` | CMIS property: Text content of the policy. | src/cms/cmis.ts:90 |
+|  `VERSIONING_STATE_NONE` | `readonly` | `"none"` | `"none"` | CMIS Versioning State: No versioning. | src/cms/cmis.ts:94 |
+|  `VERSIONING_STATE_MAJOR` | `readonly` | `"major"` | `"major"` | CMIS Versioning State: Create a new major version. | src/cms/cmis.ts:96 |
+|  `VERSIONING_STATE_MINOR` | `readonly` | `"minor"` | `"minor"` | CMIS Versioning State: Create a new minor version. | src/cms/cmis.ts:98 |
+|  `VERSIONING_STATE_CHECKEDOUT` | `readonly` | `"checkedout"` | `"checkedout"` | CMIS Versioning State: Document is checked out. | src/cms/cmis.ts:100 |
+|  `OBJECT_TYPE_DOCUMENT` | `readonly` | `"cmis:document"` | `"cmis:document"` | CMIS Object Type ID: Document. | src/cms/cmis.ts:104 |
+|  `OBJECT_TYPE_FOLDER` | `readonly` | `"cmis:folder"` | `"cmis:folder"` | CMIS Object Type ID: Folder. | src/cms/cmis.ts:106 |
+|  `OBJECT_TYPE_RELATIONSHIP` | `readonly` | `"cmis:relationship"` | `"cmis:relationship"` | CMIS Object Type ID: Relationship. | src/cms/cmis.ts:108 |
+|  `OBJECT_TYPE_POLICY` | `readonly` | `"cmis:policy"` | `"cmis:policy"` | CMIS Object Type ID: Policy. | src/cms/cmis.ts:110 |
+|  `OBJECT_TYPE_ITEM` | `readonly` | `"cmis:item"` | `"cmis:item"` | CMIS Object Type ID: Item. | src/cms/cmis.ts:112 |
+|  `OBJECT_TYPE_SECONDARY` | `readonly` | `"cmis:secondary"` | `"cmis:secondary"` | CMIS Object Type ID: Secondary. | src/cms/cmis.ts:114 |
 
 #### Methods
 
-<hr/>
+##### getSession()
 
-#### getId
+> ```ts
+> static getSession(): Session;
+> ```
 
-- `getId ():string`
 
-  Gets the unique identifier of the repository.<br/>@returns The repository ID.
+> Gets a new CMIS session instance to interact with the repository.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `Session`
+> > - **Description**: A new Session instance.
+> > :::
 
-#### getName
+> ##### getAccessDefinitions()
 
-- `getName ():string`
+> > ```ts
+> > static getAccessDefinitions(path, method): AccessDefinition[];
+> > ```
 
-  Gets the name of the repository.<br/>@returns The repository name.
+
+> Retrieves access control definitions for a specific path and method.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the CMIS object. |
+> | `method` | `string` | The operation method (e.g., [Cmis.METHOD\_READ](#method_read), [Cmis.METHOD\_WRITE](#method_write)). |
+
+> ::: info Returns
+> - **Type**: `AccessDefinition`
+> - **Description**: [] A list of access definitions. ***
+> :::
 
 ### Folder
 
-Folder object<br/>* Represents a CMIS folder object, allowing operations like creating children, deleting, and renaming.
+Gets the unique identifier of the repository.
+@returns The repository ID.
+/
+	public getId(): string {
+		return this.native.getId();
+	}
+
+
+
+Folder object
+* Represents a CMIS folder object, allowing operations like creating children, deleting, and renaming.
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `native` | `any` |
+| `path` | `any` |
+
+###### Returns
+
+[`Folder`](#folder)
 
 #### Methods
 
-<hr/>
+##### getId()
+
+> ```ts
+> getId(): string;
+> ```
+
+
+> Gets the unique identifier of the folder.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The folder ID.
+> > :::
+
+> ##### getName()
+
+> > ```ts
+> > getName(): string;
+> > ```
+
+
+> Gets the name of the folder.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The folder name.
+> > :::
+
+> ##### createFolder()
+
+> > ```ts
+> > createFolder(properties): Folder;
+> > ```
+
+
+> Creates a new folder within this folder.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `properties` | \{ \[`key`: `string`\]: `any`; \} | A map of CMIS properties for the new folder (must include [Cmis.NAME](#name)). |
+> 
+> ###### Returns
+> 
+> [`Folder`](#folder)
+> 
+> The newly created [Folder](#folder) object.
+> 
+> ###### Throws
+> 
+> Error if write access is not allowed.
+> 
+> ##### createDocument()
+> 
+> > ```ts
+> > createDocument(
+> >    properties, 
+> >    contentStream, 
+> >    versioningState): Document;
+> > ```
+> 
+> 
+> > Creates a new document within this folder.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `properties` | \{ \[`key`: `string`\]: `any`; \} | A map of CMIS properties for the new document (must include [Cmis.NAME](#name)). |
+> | `contentStream` | `ContentStream` | The content stream containing the document's binary data. |
+> | `versioningState` | `string` | The versioning state (e.g., [Cmis.VERSIONING\_STATE\_MAJOR](#versioning_state_major)). |
+> 
+> ###### Returns
+> 
+> [`Document`](#document)
+> 
+> The newly created [Document](#document) object.
+> 
+> ###### Throws
+> 
+> Error if write access is not allowed.
+> 
+> ##### getChildren()
+> 
+> > ```ts
+> > getChildren(): CmisObject[];
+> > ```
+> 
+> 
+> > Retrieves the children of this folder.
+> 
+> > > ::: info Returns
+> > > - **Type**: `CmisObject`
+> > > - **Description**: [] A list of generic CmisObject wrappers for the children.
+> > > :::
+> 
+> > ###### Throws
+> 
+> > Error if read access is not allowed.
+> 
+> > ##### getPath()
+> 
+> > > ```ts
+> > > getPath(): string;
+> > > ```
+> 
+> 
+> > Gets the path of the folder.
+> 
+> > > ::: info Returns
+> > > - **Type**: `string`
+> > > - **Description**: The folder path.
+> > > :::
+> 
+> > ##### isRootFolder()
+> 
+> > > ```ts
+> > > isRootFolder(): boolean;
+> > > ```
+> 
+> 
+> > Checks if this folder is the root folder of the repository.
+> 
+> > > ::: info Returns
+> > > - **Type**: `boolean`
+> > > - **Description**: True if it is the root folder, false otherwise.
+> > > :::
+> 
+> > ##### getFolderParent()
+> 
+> > > ```ts
+> > > getFolderParent(): Folder;
+> > > ```
+> 
+> 
+> > Gets the parent folder of this folder.
+> 
+> > ###### Returns
+> 
+> > [`Folder`](#folder)
+> 
+> > The parent [Folder](#folder) object.
+> 
+> > ##### delete()
+> 
+> > > ```ts
+> > > delete(): void;
+> > > ```
+> 
+> 
+> > Deletes this folder (must be empty to succeed).
+> 
+> > > ::: info Returns
+> > > - **Type**: `void`
+> > > :::
+> 
+> > ###### Throws
+> 
+> > Error if write access is not allowed.
+> 
+> > ##### rename()
+> 
+> > > ```ts
+> > > rename(newName): void;
+> > > ```
+> 
+> 
+> > Renames this folder.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `newName` | `string` | The new name for the folder. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+###### Throws
+
+Error if write access is not allowed.
+
+##### deleteTree()
+
+> ```ts
+> deleteTree(): void;
+> ```
+
+
+> Deletes this folder and all its contents recursively.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ###### Throws
+
+> Error if write access is not allowed.
+
+> ##### getType()
+
+> > ```ts
+> > getType(): TypeDefinition;
+> > ```
+
+
+> Gets the type definition of the folder.
+
+> > ::: info Returns
+> > - **Type**: `TypeDefinition`
+> > - **Description**: The folder's TypeDefinition. ***
+> > :::
+
+> ### Document
+
+Gets the Java-backed input stream for reading the content.
+@returns An {@link streams.InputStream} wrapper.
+/
+	public getStream(): streams.InputStream {
+		const native = this.native.getStream();
+		return new streams.InputStream(native);
+	}
 
-#### getId
 
-- `getId ():string`
 
-  Gets the unique identifier of the folder.<br/>@returns The folder ID.
+> Document object
+> * Represents a CMIS document object, allowing operations like reading content, deleting, and renaming.
+
+> ## Parameters
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `native` | `any` |
+> | `path` | `string` |
 
-#### getName
+> ###### Returns
 
-- `getName ():string`
+> [`Document`](#document)
 
-  Gets the name of the folder.<br/>@returns The folder name.
+> #### Methods
 
-<hr/>
+> ##### getId()
 
-#### createFolder
+> > ```ts
+> > getId(): string;
+> > ```
 
-- `createFolder (properties:{[key:string]:any}):Folder`
 
-  Creates a new folder within this folder.<br/>@param properties A map of CMIS properties for the new folder (must include \{@link Cmis.NAME\}).<br/>@returns The newly created \{@link Folder\} object.<br/>@throws Error if write access is not allowed.
+> Gets the unique identifier of the document.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The document ID.
+> > :::
 
-#### createDocument
+> ##### getName()
 
-- `createDocument (properties:{[key:string]:any}, contentStream:ContentStream, versioningState:string):Document`
+> > ```ts
+> > getName(): string;
+> > ```
 
-  Creates a new document within this folder.<br/>@param properties A map of CMIS properties for the new document (must include \{@link Cmis.NAME\}).<br/>@param contentStream The content stream containing the document's binary data.<br/>@param versioningState The versioning state (e.g., \{@link Cmis.VERSIONING_STATE_MAJOR\}).<br/>@returns The newly created \{@link Document\} object.<br/>@throws Error if write access is not allowed.
 
-<hr/>
+> Gets the name of the document.
 
-#### getChildren
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The document name.
+> > :::
 
-- `getChildren ():CmisObject[]`
+> ##### getType()
 
-  Retrieves the children of this folder.<br/>@returns A list of generic \{@link CmisObject\} wrappers for the children.<br/>@throws Error if read access is not allowed.
+> > ```ts
+> > getType(): TypeDefinition;
+> > ```
 
-<hr/>
 
-#### getPath
+> Gets the type definition of the document.
 
-- `getPath ():string`
+> > ::: info Returns
+> > - **Type**: `TypeDefinition`
+> > - **Description**: The document's TypeDefinition.
+> > :::
 
-  Gets the path of the folder.<br/>@returns The folder path.
+> ##### getPath()
 
-<hr/>
+> > ```ts
+> > getPath(): string;
+> > ```
 
-#### isRootFolder
 
-- `isRootFolder ():boolean`
+> Gets the path of the document.
 
-  Checks if this folder is the root folder of the repository.<br/>@returns True if it is the root folder, false otherwise.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The document path.
+> > :::
 
-<hr/>
+> ##### delete()
 
-#### getFolderParent
+> > ```ts
+> > delete(): void;
+> > ```
 
-- `getFolderParent ():Folder`
 
-  Gets the parent folder of this folder.<br/>@returns The parent \{@link Folder\} object.
+> Deletes this document.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-#### delete
+> ###### Throws
 
-- `delete ():void`
+> Error if write access is not allowed.
 
-  Deletes this folder (must be empty to succeed).<br/>@throws Error if write access is not allowed.
+> ##### getContentStream()
 
-<hr/>
+> > ```ts
+> > getContentStream(): ContentStream;
+> > ```
 
-#### rename
 
-- `rename (newName:string):void`
+> Gets the binary content stream of the document.
 
-  Renames this folder.<br/>@param newName The new name for the folder.<br/>@throws Error if write access is not allowed.
+> > ::: info Returns
+> > - **Type**: `ContentStream`
+> > - **Description**: The ContentStream object, or `null` if the document has no content.
+> > :::
 
-<hr/>
+> ##### getSize()
 
-#### deleteTree
+> > ```ts
+> > getSize(): number;
+> > ```
 
-- `deleteTree ():void`
 
-  Deletes this folder and all its contents recursively.<br/>@throws Error if write access is not allowed.
+> Gets the size of the document's content stream in bytes.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The size in bytes.
+> > :::
 
-#### getType
+> ##### rename()
 
-- `getType ():TypeDefinition`
+> > ```ts
+> > rename(newName): void;
+> > ```
 
-  Gets the type definition of the folder.<br/>@returns The folder's \{@link TypeDefinition\}.
 
-### CmisObject
+> Renames this document.
 
-CmisObject object<br/>* A generic wrapper for CMIS objects, used primarily for children lists.
+> **Parameters**
 
-#### Methods
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `newName` | `string` | The new name for the document. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### getId
+###### Throws
 
-- `getId ():string`
-
-  Gets the unique identifier of the object.<br/>@returns The object ID.
-
-<hr/>
-
-#### getName
-
-- `getName ():string`
-
-  Gets the name of the object.<br/>@returns The object name.
-
-<hr/>
-
-#### getPath
-
-- `getPath ():string`
-
-  Gets the path of the CMIS object. Handles differences in native CMIS implementations.<br/>@returns The object path.<br/>@throws Error if the path cannot be determined.
-
-<hr/>
-
-#### getType
-
-- `getType ():TypeDefinition`
-
-  Gets the type definition of the object.<br/>@returns The object's \{@link TypeDefinition\}.
-
-<hr/>
-
-#### delete
-
-- `delete ():void`
-
-  Deletes the CMIS object.
-
-<hr/>
-
-#### rename
-
-- `rename (newName:string):void`
-
-  Renames the CMIS object.<br/>@param newName The new name for the object.
-
-### ObjectFactory
-
-ObjectFactory object<br/>* Provides methods to create content streams.
-
-#### Methods
-
-<hr/>
-
-#### createContentStream
-
-- `createContentStream (filename:string, length:number, mimetype:string, inputStream:streams.InputStream):ContentStream`
-
-  Creates a new content stream instance that can be used to create or update document content.<br/>@param filename The name of the file.<br/>@param length The size of the content stream in bytes.<br/>@param mimetype The MIME type of the content.<br/>@param inputStream The input stream containing the data.<br/>@returns A new \{@link ContentStream\} object.
-
-### ContentStream
-
-ContentStream object<br/>* Represents the binary content stream of a CMIS Document.
-
-#### Methods
-
-<hr/>
-
-#### getStream
-
-- `getStream ():streams.InputStream`
-
-  Gets the Java-backed input stream for reading the content.<br/>@returns An \{@link streams.InputStream\} wrapper.
-
-<hr/>
-
-#### getMimeType
-
-- `getMimeType ():string`
-
-  Gets the MIME type of the content stream.<br/>@returns The MIME type string.
-
-### Document
-
-Document object<br/>* Represents a CMIS document object, allowing operations like reading content, deleting, and renaming.
-
-#### Methods
-
-<hr/>
-
-#### getId
-
-- `getId ():string`
-
-  Gets the unique identifier of the document.<br/>@returns The document ID.
-
-<hr/>
-
-#### getName
-
-- `getName ():string`
-
-  Gets the name of the document.<br/>@returns The document name.
-
-<hr/>
-
-#### getType
-
-- `getType ():TypeDefinition`
-
-  Gets the type definition of the document.<br/>@returns The document's \{@link TypeDefinition\}.
-
-<hr/>
-
-#### getPath
-
-- `getPath ():string`
-
-  Gets the path of the document.<br/>@returns The document path.
-
-<hr/>
-
-#### delete
-
-- `delete ():void`
-
-  Deletes this document.<br/>@throws Error if write access is not allowed.
-
-<hr/>
-
-#### getContentStream
-
-- `getContentStream ():ContentStream|null`
-
-  Gets the binary content stream of the document.<br/>@returns The \{@link ContentStream\} object, or `null` if the document has no content.
-
-<hr/>
-
-#### getSize
-
-- `getSize ():number`
-
-  Gets the size of the document's content stream in bytes.<br/>@returns The size in bytes.
-
-<hr/>
-
-#### rename
-
-- `rename (newName:string):void`
-
-  Renames this document.<br/>@param newName The new name for the document.<br/>@throws Error if write access is not allowed.
-
-### TypeDefinition
-
-Represents the definition of a CMIS object type (e.g., cmis:document, cmis:folder).
-
-#### Methods
-
-<hr/>
-
-#### getId
-
-- `getId ():string`
-
-  Gets the unique ID of the object type (e.g., 'cmis:document').<br/>@returns The type ID.
-
+Error if write access is not allowed.

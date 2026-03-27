@@ -1,3 +1,0 @@
-# redis
-
-- [client](client.md)

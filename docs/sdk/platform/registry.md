@@ -1,319 +1,656 @@
-# API: registry
+# platform/registry
 
-> Source: `platform/registry.ts`
+> [!tip]
+> Auto-generated from
+> - source: [platform/registry.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/registry.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides a set of utilities and data structures for interacting with the platform's
 Registry/Repository, which manages files and directories (Artefacts and Collections).
+/
+import { Bytes } from "@aerokit/sdk/io/bytes";
+import { Repository } from "@aerokit/sdk/platform/repository";
+const RegistryFacade = Java.type("org.eclipse.dirigible.components.api.platform.RegistryFacade");
 
-## Usage
-```javascript
-import { registry } from "@aerokit/sdk/platform";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let text = registry.getText("modules/src/platform/registry.ts");
-
-response.println(text);
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Registry](#registry)
+- [Returns](#returns)
+  - [Artefact](#artefact)
+- [Parameters](#parameters)
+  - [Directory](#directory)
+- [Parameters](#parameters)
+  - [ArtefactInformation](#artefactinformation)
+- [Parameters](#parameters)
 
 ## Classes
 
 ### Registry
 
-@class Registry<br/>@description Static utility class providing high-level access to the RegistryFacade for<br/>retrieving content and metadata by path.
+
+Registry
+
+#### Description
+
+Static utility class providing high-level access to the RegistryFacade for
+retrieving content and metadata by path.
+
+## Returns
+
+[`Registry`](#registry)
 
 #### Methods
 
-<hr/>
+##### getContent()
 
-#### getContent
+> ```ts
+> static getContent(path): any[];
+> ```
 
-- `getContent (path:string):any[]`
 
-  Retrieves the content of a registry resource at the given path, converting it into a<br/>JavaScript-friendly byte array format.<br/><br/>@param \{string\} path The absolute path to the resource (e.g., "/registry/public/myFile.txt").<br/>@returns \{any[]\} The resource content as a JavaScript byte array.
+> Retrieves the content of a registry resource at the given path, converting it into a
+> JavaScript-friendly byte array format.
 
-<hr/>
+> **Parameters**
 
-#### getContentNative
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the resource (e.g., "/registry/public/myFile.txt"). |
 
-- `getContentNative (path:string):any[]`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The resource content as a JavaScript byte array.
+> :::
 
-  Retrieves the content of a registry resource at the given path in its native Java byte array format.<br/><br/>@param \{string\} path The absolute path to the resource.<br/>@returns \{any[]\} The resource content as a native Java byte array.
+##### getContentNative()
 
-<hr/>
+> ```ts
+> static getContentNative(path): any[];
+> ```
 
-#### getText
 
-- `getText (path:string):string`
+> Retrieves the content of a registry resource at the given path in its native Java byte array format.
 
-  Retrieves the content of a registry resource at the given path as a string.<br/><br/>@param \{string\} path The absolute path to the resource.<br/>@returns \{string\} The resource content as plain text.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the resource. |
 
-#### find
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The resource content as a native Java byte array.
+> :::
 
-- `find (path:string, pattern:string):string[]`
+##### getText()
 
-  Searches the registry starting from a given path for resources matching a glob pattern.<br/><br/>@param \{string\} path The starting path for the search.<br/>@param \{string\} pattern The glob pattern to match resource names against (e.g., "*.js").<br/>@returns \{string[]\} An array of registry paths (strings) that match the search criteria.
+> ```ts
+> static getText(path): string;
+> ```
 
-<hr/>
 
-#### getRoot
+> Retrieves the content of a registry resource at the given path as a string.
 
-- `getRoot ():Directory`
+> **Parameters**
 
-  Gets the root directory object for the public registry space.<br/><br/>@returns \{Directory\} A Directory instance representing the root public collection.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the resource. |
 
-### Artefact
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The resource content as plain text.
+> :::
 
-@class Artefact<br/>@description Represents a file or resource (non-collection) within the Registry.
+##### find()
 
-#### Methods
+> ```ts
+> static find(path, pattern): string[];
+> ```
 
-<hr/>
 
-#### getName
+> Searches the registry starting from a given path for resources matching a glob pattern.
 
-- `getName ():string`
+> **Parameters**
 
-  Gets the name of the artefact (file name).<br/>@returns \{string\} The name.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The starting path for the search. |
+> | `pattern` | `string` | The glob pattern to match resource names against (e.g., "*.js"). |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of registry paths (strings) that match the search criteria.
+> :::
 
-#### getPath
+##### getRoot()
 
-- `getPath ():string`
+> ```ts
+> static getRoot(): Directory;
+> ```
 
-  Gets the full registry path of the artefact.<br/>@returns \{string\} The registry path.
 
-<hr/>
+> Gets the root directory object for the public registry space.
 
-#### getParent
+> ###### Returns
 
-- `getParent ():Directory`
+> [`Directory`](#directory)
 
-  Gets the parent directory of this artefact.<br/>@returns \{Directory\} The parent Directory instance.
+> A Directory instance representing the root public collection.
 
-<hr/>
+> ***
 
-#### getInformation
+> ### Artefact
 
-- `getInformation ():ArtefactInformation`
+Retrieves the content of a registry resource at the given path, converting it into a
+JavaScript-friendly byte array format.
 
-  Gets detailed metadata about the artefact.<br/>@returns \{ArtefactInformation\} The metadata object.
 
-<hr/>
 
-#### exists
+> Artefact
 
-- `exists ():boolean`
+> #### Description
 
-  Checks if the artefact currently exists in the registry.<br/>@returns \{boolean\} True if the artefact exists, false otherwise.
+> Represents a file or resource (non-collection) within the Registry.
 
-<hr/>
+> ## Parameters
 
-#### isEmpty
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native Java object instance representing the repository resource. |
 
-- `isEmpty ():boolean`
+> ###### Returns
 
-  Checks if the artefact (file) is empty (has zero size).<br/>@returns \{boolean\} True if the content is empty, false otherwise.
+> [`Artefact`](#artefact)
 
-<hr/>
+> #### Methods
 
-#### getText
+> ##### getName()
 
-- `getText ():string`
+> > ```ts
+> > getName(): string;
+> > ```
 
-  Gets the content of the artefact as a text string.<br/>@returns \{string\} The text content.
 
-<hr/>
+> Gets the name of the artefact (file name).
 
-#### getContent
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The name.
+> > :::
 
-- `getContent ():any[]`
+> ##### getPath()
 
-  Gets the content of the artefact as a JavaScript-friendly byte array.<br/>@returns \{any[]\} The content bytes.
+> > ```ts
+> > getPath(): string;
+> > ```
 
-<hr/>
 
-#### getContentNative
+> Gets the full registry path of the artefact.
 
-- `getContentNative ():any[]`
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The registry path.
+> > :::
 
-  Gets the content of the artefact as its native Java byte array representation.<br/>@returns \{any[]\} The content bytes.
+> ##### getParent()
 
-<hr/>
+> > ```ts
+> > getParent(): Directory;
+> > ```
 
-#### isBinary
 
-- `isBinary ():boolean`
+> Gets the parent directory of this artefact.
 
-  Checks if the artefact content is determined to be binary.<br/>@returns \{boolean\} True if binary, false if text.
+> ###### Returns
 
-<hr/>
+> [`Directory`](#directory)
 
-#### getContentType
+> The parent Directory instance.
 
-- `getContentType ():string`
+> ##### getInformation()
 
-  Gets the content type (MIME type) of the artefact.<br/>@returns \{string\} The content type string.
+> > ```ts
+> > getInformation(): ArtefactInformation;
+> > ```
 
-### Directory
 
-@class Directory<br/>@description Represents a collection or folder within the Registry.
+> Gets detailed metadata about the artefact.
 
-#### Methods
+> ###### Returns
 
-<hr/>
+> [`ArtefactInformation`](#artefactinformation)
 
-#### getName
+> The metadata object.
 
-- `getName ():string`
+> ##### exists()
 
-  Gets the name of the directory (folder name).<br/>@returns \{string\} The name.
+> > ```ts
+> > exists(): boolean;
+> > ```
 
-<hr/>
 
-#### getPath
+> Checks if the artefact currently exists in the registry.
 
-- `getPath ():string`
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the artefact exists, false otherwise.
+> > :::
 
-  Gets the full registry path of the directory.<br/>@returns \{string\} The registry path.
+> ##### isEmpty()
 
-<hr/>
+> > ```ts
+> > isEmpty(): boolean;
+> > ```
 
-#### getParent
 
-- `getParent ():Directory`
+> Checks if the artefact (file) is empty (has zero size).
 
-  Gets the parent directory.<br/>@returns \{Directory\} The parent Directory instance.
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the content is empty, false otherwise.
+> > :::
 
-<hr/>
+> ##### getText()
 
-#### getInformation
+> > ```ts
+> > getText(): string;
+> > ```
 
-- `getInformation ():ArtefactInformation`
 
-  Gets detailed metadata about the directory.<br/>@returns \{ArtefactInformation\} The metadata object.
+> Gets the content of the artefact as a text string.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The text content.
+> > :::
 
-#### exists
+> ##### getContent()
 
-- `exists ():boolean`
+> > ```ts
+> > getContent(): any[];
+> > ```
 
-  Checks if the directory currently exists in the registry.<br/>@returns \{boolean\} True if the directory exists, false otherwise.
 
-<hr/>
+> Gets the content of the artefact as a JavaScript-friendly byte array.
 
-#### isEmpty
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
-- `isEmpty ():boolean`
+> ##### getContentNative()
 
-  Checks if the directory is empty (contains no files or sub-directories).<br/>@returns \{boolean\} True if empty, false otherwise.
+> > ```ts
+> > getContentNative(): any[];
+> > ```
 
-<hr/>
 
-#### getDirectoriesNames
+> Gets the content of the artefact as its native Java byte array representation.
 
-- `getDirectoriesNames ():string[]`
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
-  Gets the names of all sub-directories within this directory.<br/>@returns \{string[]\} An array of sub-directory names.
+> ##### isBinary()
 
-<hr/>
+> > ```ts
+> > isBinary(): boolean;
+> > ```
 
-#### getDirectory
 
-- `getDirectory (name:string):Directory`
+> Checks if the artefact content is determined to be binary.
 
-  Gets a specific sub-directory by name.<br/>@param \{string\} name The name of the sub-directory.<br/>@returns \{Directory\} The child Directory instance.
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if binary, false if text.
+> > :::
 
-<hr/>
+> ##### getContentType()
 
-#### getArtefactsNames
+> > ```ts
+> > getContentType(): string;
+> > ```
 
-- `getArtefactsNames ():string[]`
 
-  Gets the names of all files (artefacts) within this directory.<br/>@returns \{string[]\} An array of artefact names.
+> Gets the content type (MIME type) of the artefact.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The content type string. ***
+> > :::
 
-#### getArtefact
+> ### Directory
 
-- `getArtefact (name:string):Artefact`
+@constructor
+@param {any} native The native Java object instance representing the repository resource.
+/
+	constructor(native: any) {
+		this.native = native;
+	}
 
-  Gets a specific file (artefact) by name.<br/>@param \{string\} name The name of the artefact.<br/>@returns \{Artefact\} The child Artefact instance.
 
-### ArtefactInformation
 
-@class ArtefactInformation<br/>@description Represents detailed metadata (creation date, size, permissions, etc.) for a<br/>Directory or Artefact.
+> Directory
 
-#### Methods
+> #### Description
 
-<hr/>
+> Represents a collection or folder within the Registry.
 
-#### getName
+> ## Parameters
 
-- `getName ():string`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native Java object instance representing the repository collection. |
 
-  Gets the name of the resource.<br/>@returns \{string\} The name.
+> ###### Returns
 
-<hr/>
+> [`Directory`](#directory)
 
-#### getPath
+> #### Methods
 
-- `getPath ():string`
+> ##### getName()
 
-  Gets the full registry path of the resource.<br/>@returns \{string\} The registry path.
+> > ```ts
+> > getName(): string;
+> > ```
 
-<hr/>
 
-#### getPermissions
+> Gets the name of the directory (folder name).
 
-- `getPermissions ():number`
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The name.
+> > :::
 
-  Gets the access permissions for the resource (typically an integer bitmask).<br/>@returns \{number\} The permissions value.
+> ##### getPath()
 
-<hr/>
+> > ```ts
+> > getPath(): string;
+> > ```
 
-#### getSize
 
-- `getSize ():number`
+> Gets the full registry path of the directory.
 
-  Gets the size of the resource content in bytes.<br/>@returns \{number\} The size in bytes.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The registry path.
+> > :::
 
-<hr/>
+> ##### getParent()
 
-#### getCreatedBy
+> > ```ts
+> > getParent(): Directory;
+> > ```
 
-- `getCreatedBy ():string`
 
-  Gets the user who created the resource.<br/>@returns \{string\} The creator's name.
+> Gets the parent directory.
 
-<hr/>
+> ###### Returns
 
-#### getCreatedAt
+> [`Directory`](#directory)
 
-- `getCreatedAt ():Date`
+> The parent Directory instance.
 
-  Gets the creation timestamp.<br/>@returns \{Date\} The creation date and time.
+> ##### getInformation()
 
-<hr/>
+> > ```ts
+> > getInformation(): ArtefactInformation;
+> > ```
 
-#### getModifiedBy
 
-- `getModifiedBy ():string`
+> Gets detailed metadata about the directory.
 
-  Gets the user who last modified the resource.<br/>@returns \{string\} The modifier's name.
+> ###### Returns
 
-<hr/>
+> [`ArtefactInformation`](#artefactinformation)
 
-#### getModifiedAt
+> The metadata object.
 
-- `getModifiedAt ():Date`
+> ##### exists()
 
-  Gets the last modification timestamp.<br/>@returns \{Date\} The modification date and time.
+> > ```ts
+> > exists(): boolean;
+> > ```
 
+
+> Checks if the directory currently exists in the registry.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the directory exists, false otherwise.
+> > :::
+
+> ##### isEmpty()
+
+> > ```ts
+> > isEmpty(): boolean;
+> > ```
+
+
+> Checks if the directory is empty (contains no files or sub-directories).
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if empty, false otherwise.
+> > :::
+
+> ##### getDirectoriesNames()
+
+> > ```ts
+> > getDirectoriesNames(): string[];
+> > ```
+
+
+> Gets the names of all sub-directories within this directory.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of sub-directory names.
+> > :::
+
+> ##### getDirectory()
+
+> > ```ts
+> > getDirectory(name): Directory;
+> > ```
+
+
+> Gets a specific sub-directory by name.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the sub-directory. |
+> 
+> ###### Returns
+> 
+> [`Directory`](#directory)
+> 
+> The child Directory instance.
+> 
+> ##### getArtefactsNames()
+> 
+> > ```ts
+> > getArtefactsNames(): string[];
+> > ```
+> 
+> 
+> > Gets the names of all files (artefacts) within this directory.
+> 
+> > > ::: info Returns
+> > > - **Type**: `string`
+> > > - **Description**: [] An array of artefact names.
+> > > :::
+> 
+> > ##### getArtefact()
+> 
+> > > ```ts
+> > > getArtefact(name): Artefact;
+> > > ```
+> 
+> 
+> > Gets a specific file (artefact) by name.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the artefact. |
+> 
+> ###### Returns
+> 
+> [`Artefact`](#artefact)
+> 
+> The child Artefact instance.
+> 
+> ***
+> 
+> ### ArtefactInformation
+
+@constructor
+@param {any} native The native Java object instance representing the repository collection.
+/
+	constructor(native: any) {
+		this.native = native;
+	}
+
+> 
+> 
+> ArtefactInformation
+> 
+> #### Description
+> 
+> Represents detailed metadata (creation date, size, permissions, etc.) for a
+> Directory or Artefact.
+> 
+> ## Parameters
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native Java object instance holding the artefact information. |
+> 
+> ###### Returns
+> 
+> [`ArtefactInformation`](#artefactinformation)
+> 
+> #### Methods
+> 
+> ##### getName()
+> 
+> > ```ts
+> > getName(): string;
+> > ```
+> 
+> 
+> Gets the name of the resource.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The name.
+> :::
+
+##### getPath()
+
+> ```ts
+> getPath(): string;
+> ```
+
+
+Gets the full registry path of the resource.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The registry path.
+> :::
+
+##### getPermissions()
+
+> ```ts
+> getPermissions(): number;
+> ```
+
+
+Gets the access permissions for the resource (typically an integer bitmask).
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The permissions value.
+> :::
+
+##### getSize()
+
+> ```ts
+> getSize(): number;
+> ```
+
+
+Gets the size of the resource content in bytes.
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The size in bytes.
+> :::
+
+##### getCreatedBy()
+
+> ```ts
+> getCreatedBy(): string;
+> ```
+
+
+Gets the user who created the resource.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The creator's name.
+> :::
+
+##### getCreatedAt()
+
+> ```ts
+> getCreatedAt(): Date;
+> ```
+
+
+Gets the creation timestamp.
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: The creation date and time.
+> :::
+
+##### getModifiedBy()
+
+> ```ts
+> getModifiedBy(): string;
+> ```
+
+
+Gets the user who last modified the resource.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The modifier's name.
+> :::
+
+##### getModifiedAt()
+
+> ```ts
+> getModifiedAt(): Date;
+> ```
+
+
+Gets the last modification timestamp.
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: The modification date and time.
+> :::

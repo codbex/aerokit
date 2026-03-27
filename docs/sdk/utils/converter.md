@@ -1,39 +1,122 @@
-# API: converter
+# utils/converter
 
-> Source: `utils/converter.ts`
+> [!tip]
+> Auto-generated from
+> - source: [utils/converter.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/converter.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Utility class for converting and normalizing common data types (Date, Boolean)
 within an object structure, typically for persistence or API consumption.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Converter](#converter)
+- [Returns](#returns)
 
 ## Classes
 
 ### Converter
 
-Utility class for converting and normalizing common data types (Date, Boolean)<br/>within an object structure, typically for persistence or API consumption.
+
+Utility class for converting and normalizing common data types (Date, Boolean)
+within an object structure, typically for persistence or API consumption.
+
+## Returns
+
+[`Converter`](#converter)
 
 #### Methods
 
-<hr/>
+##### setDate()
 
-#### setDate
+> ```ts
+> static setDate(obj, property): void;
+> ```
 
-- `setDate (obj:any, property:string):void`
 
-  Converts a date property value within an object into a Unix timestamp (milliseconds since epoch).<br/><br/>@param obj The object containing the property to be converted.<br/>@param property The string name of the date property (e.g., 'dateCreated').<br/>@example<br/>// Before: \{ date: "2024-01-01T10:00:00Z" \}<br/>Converter.setDate(obj, 'date');<br/>// After: \{ date: 1704096000000 \}
+> Converts a date property value within an object into a Unix timestamp (milliseconds since epoch).
 
-<hr/>
+> **Parameters**
 
-#### setLocalDate
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `obj` | `any` | The object containing the property to be converted. |
+> | `property` | `string` | The string name of the date property (e.g., 'dateCreated'). |
 
-- `setLocalDate (obj:any, property:string):void`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Converts a date property value into an ISO 8601 string, adjusted to represent<br/>the start of that day (local midnight) to handle timezone offsets consistently.<br/>This is typically used for fields that should represent a date *only*, without time of day ambiguity.<br/><br/>@param obj The object containing the property to be converted.<br/>@param property The string name of the date property (e.g., 'birthday').<br/>@example<br/>// If local timezone is EST (UTC-5):<br/>// Before: \{ date: "2024-01-01" \}<br/>Converter.setLocalDate(obj, 'date');<br/>// After: \{ date: "2024-01-01T05:00:00.000Z" \} (start of day UTC)
+###### Example
 
-<hr/>
+> ```ts
+> // Before: { date: "2024-01-01T10:00:00Z" }
+> Converter.setDate(obj, 'date');
+> // After: { date: 1704096000000 }
+> ```
 
-#### setBoolean
+> ##### setLocalDate()
 
-- `setBoolean (obj:any, property:string):void`
+> > ```ts
+> > static setLocalDate(obj, property): void;
+> > ```
 
-  Explicitly coerces a property value to a strict boolean type (`true` or `false`).<br/>This handles truthy/falsy values like `1`, `0`, `null`, and empty strings.<br/><br/>@param obj The object containing the property to be converted.<br/>@param property The string name of the boolean property (e.g., 'isActive').<br/>@example<br/>// Before: \{ flag: 1, other: null \}<br/>Converter.setBoolean(obj, 'flag');<br/>Converter.setBoolean(obj, 'other');<br/>// After: \{ flag: true, other: false \}
 
+> Converts a date property value into an ISO 8601 string, adjusted to represent
+> the start of that day (local midnight) to handle timezone offsets consistently.
+> This is typically used for fields that should represent a date *only*, without time of day ambiguity.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `obj` | `any` | The object containing the property to be converted. |
+> | `property` | `string` | The string name of the date property (e.g., 'birthday'). |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+###### Example
+
+> ```ts
+> // If local timezone is EST (UTC-5):
+> // Before: { date: "2024-01-01" }
+> Converter.setLocalDate(obj, 'date');
+> // After: { date: "2024-01-01T05:00:00.000Z" } (start of day UTC)
+> ```
+
+> ##### setBoolean()
+
+> > ```ts
+> > static setBoolean(obj, property): void;
+> > ```
+
+
+> Explicitly coerces a property value to a strict boolean type (`true` or `false`).
+> This handles truthy/falsy values like `1`, `0`, `null`, and empty strings.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `obj` | `any` | The object containing the property to be converted. |
+> | `property` | `string` | The string name of the boolean property (e.g., 'isActive'). |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+###### Example
+
+> ```ts
+> // Before: { flag: 1, other: null }
+> Converter.setBoolean(obj, 'flag');
+> Converter.setBoolean(obj, 'other');
+> // After: { flag: true, other: false }
+> ```

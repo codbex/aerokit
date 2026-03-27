@@ -1,62 +1,122 @@
-# API: cache
+# cache/cache
 
-> Source: `cache/cache.ts`
+> [!tip]
+> Auto-generated from
+> - source: [cache/cache.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cache/cache.ts)
+> - version: 1.0.0
 
-Cache
-* Provides a static utility for interacting with a server-side cache facade, enabling
-simple key-value storage, retrieval, and invalidation operations.
 
-## Usage
-```javascript
+## Overview
 
-```
+The Cache API provides...
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Cache](#cache)
+- [Returns](#returns)
 
 ## Classes
 
 ### Cache
 
-Cache<br/>* Provides a static utility for interacting with a server-side cache facade, enabling<br/>simple key-value storage, retrieval, and invalidation operations.
+
+## Returns
+
+[`Cache`](#cache)
 
 #### Methods
 
-<hr/>
+##### contains()
 
-#### contains
+> ```ts
+> static contains(key): boolean;
+> ```
 
-- `contains (key:string):boolean`
 
-  Checks if the cache contains a value for the specified key.<br/>@param key The key to check.<br/>@returns True if the key exists in the cache, false otherwise.
+> Checks if the cache contains a value for the specified key.
 
-<hr/>
+> **Parameters**
 
-#### get
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to check. |
 
-- `get (key:any):any|undefined`
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the key exists in the cache, false otherwise.
+> :::
 
-  Retrieves the value associated with the specified key from the cache.<br/>@param key The key to retrieve.<br/>@returns The cached value, or `undefined` if the key is not found.
+##### get()
 
-<hr/>
+> ```ts
+> static get(key): any;
+> ```
 
-#### set
 
-- `set (key:string, data:any):void`
+> Retrieves the value associated with the specified key from the cache.
 
-  Stores a value in the cache under the specified key.<br/>Note: The duration/time-to-live (TTL) is typically configured server-side.<br/>@param key The key to store the data under.<br/>@param data The data to store.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `any` | The key to retrieve. |
 
-#### delete
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The cached value, or `undefined` if the key is not found.
+> :::
 
-- `delete (key:string):void`
+##### set()
 
-  Removes the key and its associated value from the cache.<br/>@param key The key to delete.
+> ```ts
+> static set(key, data): void;
+> ```
 
-<hr/>
 
-#### clear
+> Stores a value in the cache under the specified key.
+> Note: The duration/time-to-live (TTL) is typically configured server-side.
 
-- `clear ():void`
+> **Parameters**
 
-  Clears all entries from the cache.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to store the data under. |
+> | `data` | `any` | The data to store. |
 
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### delete()
+
+> ```ts
+> static delete(key): void;
+> ```
+
+
+> Removes the key and its associated value from the cache.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to delete. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### clear()
+
+> ```ts
+> static clear(): void;
+> ```
+
+
+Clears all entries from the cache.
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

@@ -1,161 +1,360 @@
-# API: client
+# redis/client
 
-> Source: `redis/client.ts`
+> [!tip]
+> Auto-generated from
+> - source: [redis/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/redis/client.ts)
+> - version: 1.0.0
 
-Redis Client
 
-This class serves as a facade for common Redis operations, providing a convenient
-JavaScript interface that wraps the underlying Java Redis client implementation.
+## Overview
 
-## Usage
-```javascript
-import { client } from "@aerokit/sdk/redis";
-import { response } from "@aerokit/sdk/http";
+The Client API provides...
 
-const redisClient = client.getClient();
+## Table of Contents
 
-redisClient.set("foo", "bar");
-
-const data = redisClient.get("foo");
-
-response.println(data);
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Client](#client)
+- [Returns](#returns)
 
 ## Classes
 
 ### Client
 
-Redis Client<br/><br/>This class serves as a facade for common Redis operations, providing a convenient<br/>JavaScript interface that wraps the underlying Java Redis client implementation.
+
+## Returns
+
+[`Client`](#client)
 
 #### Methods
 
-<hr/>
+##### append()
 
-#### append
+> ```ts
+> append(key, value): number;
+> ```
 
-- `append (key:string, value:string):number`
 
-  Appends a value to the value of a key. If the key does not exist,<br/>it is created and set to the initial value.<br/><br/>@param key The key to append to.<br/>@param value The value string to append.<br/>@returns The length of the string after the append operation.
+> Appends a value to the value of a key. If the key does not exist,
+> it is created and set to the initial value.
 
-<hr/>
+> **Parameters**
 
-#### bitcount
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to append to. |
+> | `value` | `string` | The value string to append. |
 
-- `bitcount (key:string):number`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The length of the string after the append operation.
+> :::
 
-  Counts the number of set bits (1s) in the string value of a key.<br/><br/>@param key The key to perform the bitcount on.<br/>@returns The number of set bits.
+##### bitcount()
 
-<hr/>
+> ```ts
+> bitcount(key): number;
+> ```
 
-#### decr
 
-- `decr (key:string):number`
+> Counts the number of set bits (1s) in the string value of a key.
 
-  Decrements the number stored at key by one.<br/><br/>@param key The key holding the numeric value.<br/>@returns The value of key after the decrement.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to perform the bitcount on. |
 
-#### del
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The number of set bits.
+> :::
 
-- `del (key:string):number`
+##### decr()
 
-  Deletes the specified key.<br/><br/>@param key The key to delete.<br/>@returns The number of keys that were removed (1 if successful, 0 otherwise).
+> ```ts
+> decr(key): number;
+> ```
 
-<hr/>
 
-#### exists
+> Decrements the number stored at key by one.
 
-- `exists (key:string):boolean`
+> **Parameters**
 
-  Checks if the specified key exists.<br/><br/>@param key The key to check.<br/>@returns True if the key exists, false otherwise.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key holding the numeric value. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The value of key after the decrement.
+> :::
 
-#### get
+##### del()
 
-- `get (key:string):string`
+> ```ts
+> del(key): number;
+> ```
 
-  Gets the value of the specified key.<br/><br/>@param key The key to retrieve the value for.<br/>@returns The value of the key, or null if the key does not exist.
 
-<hr/>
+> Deletes the specified key.
 
-#### incr
+> **Parameters**
 
-- `incr (key:string):number`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to delete. |
 
-  Increments the number stored at key by one.<br/><br/>@param key The key holding the numeric value.<br/>@returns The value of key after the increment.
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The number of keys that were removed (1 if successful, 0 otherwise).
+> :::
 
-<hr/>
+##### exists()
 
-#### keys
+> ```ts
+> exists(key): boolean;
+> ```
 
-- `keys (pattern:string):string[]`
 
-  Finds all keys matching the given pattern.<br/><br/>@param pattern The pattern to match keys against (e.g., "user:*").<br/>@returns An array of matching keys.
+> Checks if the specified key exists.
 
-<hr/>
+> **Parameters**
 
-#### set
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to check. |
 
-- `set (key:string, value:string):string`
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the key exists, false otherwise.
+> :::
 
-  Sets the string value of a key.<br/><br/>@param key The key to set.<br/>@param value The string value to assign to the key.<br/>@returns 'OK' on success.
+##### get()
 
-<hr/>
+> ```ts
+> get(key): string;
+> ```
 
-#### lindex
 
-- `lindex (key:string, index:number):string`
+> Gets the value of the specified key.
 
-  Gets an element from a list by its zero-based index.<br/><br/>@param key The key of the list.<br/>@param index The zero-based index (0 is the first element, -1 is the last).<br/>@returns The element at the specified index, or null if the index is out of range.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to retrieve the value for. |
 
-#### llen
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The value of the key, or null if the key does not exist.
+> :::
 
-- `llen (key:string):number`
+##### incr()
 
-  Gets the length of the list stored at the key.<br/><br/>@param key The key of the list.<br/>@returns The length of the list.
+> ```ts
+> incr(key): number;
+> ```
 
-<hr/>
 
-#### lpop
+> Increments the number stored at key by one.
 
-- `lpop (key:string):string`
+> **Parameters**
 
-  Removes and returns the first element of the list stored at the key (Left POP).<br/><br/>@param key The key of the list.<br/>@returns The first element of the list, or null when the list is empty.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key holding the numeric value. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The value of key after the increment.
+> :::
 
-#### lpush
+##### keys()
 
-- `lpush (key:string, ...value:string[]):string[])`
+> ```ts
+> keys(pattern): string[];
+> ```
 
-  Inserts all specified values at the head of the list stored at the key (Left PUSH).<br/><br/>@param key The key of the list.<br/>@param value One or more values to prepend to the list.<br/>@returns The new length of the list.
 
-<hr/>
+> Finds all keys matching the given pattern.
 
-#### lrange
+> **Parameters**
 
-- `lrange (key:string, start:number, stop:number):string[]`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `pattern` | `string` | The pattern to match keys against (e.g., "user:*"). |
 
-  Returns the specified elements of the list stored at the key.<br/><br/>@param key The key of the list.<br/>@param start The starting zero-based offset.<br/>@param stop The stopping zero-based offset.<br/>@returns An array of elements in the specified range.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of matching keys.
+> :::
 
-<hr/>
+##### set()
 
-#### rpop
+> ```ts
+> set(key, value): string;
+> ```
 
-- `rpop (key:string):string`
 
-  Removes and returns the last element of the list stored at the key (Right POP).<br/><br/>@param key The key of the list.<br/>@returns The last element of the list, or null when the list is empty.
+> Sets the string value of a key.
 
-<hr/>
+> **Parameters**
 
-#### rpush
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to set. |
+> | `value` | `string` | The string value to assign to the key. |
 
-- `rpush (key:string, ...value:string[]):number`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: 'OK' on success.
+> :::
 
-  Inserts all specified values at the tail of the list stored at the key (Right PUSH).<br/><br/>@param key The key of the list.<br/>@param value One or more values to append to the list.<br/>@returns The new length of the list.
+##### lindex()
 
+> ```ts
+> lindex(key, index): string;
+> ```
+
+
+> Gets an element from a list by its zero-based index.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+> | `index` | `number` | The zero-based index (0 is the first element, -1 is the last). |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The element at the specified index, or null if the index is out of range.
+> :::
+
+##### llen()
+
+> ```ts
+> llen(key): number;
+> ```
+
+
+> Gets the length of the list stored at the key.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The length of the list.
+> :::
+
+##### lpop()
+
+> ```ts
+> lpop(key): string;
+> ```
+
+
+> Removes and returns the first element of the list stored at the key (Left POP).
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The first element of the list, or null when the list is empty.
+> :::
+
+##### lpush()
+
+> ```ts
+> lpush(key, ...value): any;
+> ```
+
+
+> Inserts all specified values at the head of the list stored at the key (Left PUSH).
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+> | ...`value` | `string`[] | One or more values to prepend to the list. |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The new length of the list.
+> :::
+
+##### lrange()
+
+> ```ts
+> lrange(
+>    key, 
+>    start, 
+>    stop): string[];
+> ```
+
+
+> Returns the specified elements of the list stored at the key.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+> | `start` | `number` | The starting zero-based offset. |
+> | `stop` | `number` | The stopping zero-based offset. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of elements in the specified range.
+> :::
+
+##### rpop()
+
+> ```ts
+> rpop(key): string;
+> ```
+
+
+> Removes and returns the last element of the list stored at the key (Right POP).
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The last element of the list, or null when the list is empty.
+> :::
+
+##### rpush()
+
+> ```ts
+> rpush(key, ...value): number;
+> ```
+
+
+> Inserts all specified values at the tail of the list stored at the key (Right PUSH).
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key of the list. |
+> | ...`value` | `string`[] | One or more values to append to the list. |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The new length of the list.
+> :::

@@ -1,54 +1,183 @@
-# API: resource-http-controller
+# http/rs/resource-http-controller
 
-> Source: `http/rs/resource-http-controller.ts`
+> [!tip]
+> Auto-generated from
+> - source: [http/rs/resource-http-controller.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-http-controller.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Interface for the context object passed to handler functions (before, serve, catch).
+/
+interface RequestContext {
+    pathParameters: { [key: string]: any };
+    queryParameters: { [key: string]: any };
+    response: any;
+    res: any;
+    request: any;
+    req: any;
+    // Context properties for error handling might also be attached here
+    suppressStack?: boolean;
+    httpErrorCode?: number;
+    errorMessage?: string;
+    errorName?: string;
+    errorCode?: any;
+}
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [HttpController](#httpcontroller)
+- [Parameters](#parameters)
+- [Functions](#functions)
+  - [service()](#service())
 
 ## Classes
 
 ### HttpController
 
+
 The main class for handling HTTP requests and routing them to the correct resource handlers.
 
-#### Methods
+#### Indexable
 
-<hr/>
+> ```ts
+> [key: string]: any
+> ```
 
-#### listen
+> ## Parameters
 
-- `listen (request:any, response:any):void`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `oMappings?` | `any` | The mappings configuration for this controller. |
 
-  Alias for execute.
+> ###### Returns
 
-<hr/>
+> [`HttpController`](#httpcontroller)
 
-#### execute
+> #### Properties
 
-- `execute (request?:any, response?:any):void`
+> | Property | Type | Defined in |
+> | ------ | ------ | ------ |
+> |  `resource` | `Function` | src/http/rs/resource-http-controller.ts:58 |
+> |  `resourcePath` | `Function` | src/http/rs/resource-http-controller.ts:59 |
+> |  `resourceMappings` | [`ResourceMappings`](resource-mappings.md#resourcemappings) | src/http/rs/resource-http-controller.ts:60 |
 
-  Executes the request handling logic, finding the best matching resource and handler.
+> #### Methods
 
-<hr/>
+> ##### listen()
 
-#### mappings
+> > ```ts
+> > listen(request, response): void;
+> > ```
 
-- `mappings ():ResourceMappings`
 
-  Returns the ResourceMappings instance of this controller.
+> Alias for execute.
 
-<hr/>
+> **Parameters**
 
-#### sendError
+> | Parameter | Type |
+> | ------ | ------ |
+> | `request` | `any` |
+> | `response` | `any` |
 
-- `sendError (httpErrorCode:number, applicationErrorCode:any, errorName:string, errorDetails:string):void`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Sends an error response to the client, formatted based on the accepted media type.
+##### execute()
 
-<hr/>
+> ```ts
+> execute(request?, response?): void;
+> ```
 
-#### closeResponse
 
-- `closeResponse ():void`
+> Executes the request handling logic, finding the best matching resource and handler.
 
-  Flushes and closes the HTTP response stream.
+> **Parameters**
 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `request?` | `any` |
+> | `response?` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### mappings()
+
+> ```ts
+> mappings(): ResourceMappings;
+> ```
+
+
+> Returns the ResourceMappings instance of this controller.
+
+> ###### Returns
+
+> [`ResourceMappings`](resource-mappings.md#resourcemappings)
+
+> ##### sendError()
+
+> > ```ts
+> > sendError(
+> >    httpErrorCode, 
+> >    applicationErrorCode, 
+> >    errorName, 
+> >    errorDetails): void;
+> > ```
+
+
+> Sends an error response to the client, formatted based on the accepted media type.
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `httpErrorCode` | `number` |
+> | `applicationErrorCode` | `any` |
+> | `errorName` | `string` |
+> | `errorDetails` | `string` |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### closeResponse()
+
+> ```ts
+> closeResponse(): void;
+> ```
+
+
+Flushes and closes the HTTP response stream.
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+## Functions
+
+### service()
+
+> ```ts
+> function service(oConfig?): HttpController;
+> ```
+
+
+Creates a service (HttpController) instance, optionally initialized with oMappings.
+
+#### Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `oConfig?` | `any` | Configuration object or configuration builder with configuration() getter function. |
+
+#### Returns
+
+[`HttpController`](#httpcontroller)
+
+A new HttpController instance.

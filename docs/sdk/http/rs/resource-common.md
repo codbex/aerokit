@@ -1,13 +1,15 @@
-# API: resource-common
+# http/rs/resource-common
 
-> Source: `http/rs/resource-common.ts`
+> [!tip]
+> Auto-generated from
+> - source: [http/rs/resource-common.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-common.ts)
+> - version: 1.0.0
 
-Commmon function for initializng the callback functions in the ResourceMethod instances.
 
-@param thiz The ResourceMethod instance to which the function is bound (or Resource instance in the case of redirect).
-@param configuration The configuration object where the handler will be attached.
-@param sHandlerFuncName The name of the function that will be attached to the resource mappings configuration (e.g., 'serve', 'redirect').
-@param fHandler The handler function or value that will be attached to the resource mappings configuration.
-@returns The instance passed in as 'thiz' for method chaining.
-@private
+## Overview
 
+The Resource-common API provides...
+
+## Table of Contents
+
+- [Overview](#overview)

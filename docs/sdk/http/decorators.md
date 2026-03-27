@@ -1,52 +1,198 @@
-# API: decorators
+# http/decorators
 
-> Source: `http/decorators.ts`
-
-## Usage
-```javascript
-import { Controller, Get, Documentation } from "@aerokit/sdk/http"
-import { HttpUtils } from "@aerokit/sdk/http/utils";
-import { Options } from "@aerokit/sdk/db";
-import { Injected, Inject } from "@aerokit/sdk/component";
-import { CountryEntity } from "./CountryEntity";
-import { CountryRepository } from "./CountryRepository";
-
-@Controller
-@Documentation("Sample Country Controller")
-@Injected()
-class CountryController {
-
-    @Inject('CountryRepository')
-    private readonly repository!: CountryRepository;
-
-    @Get("/")
-    @Documentation("Sample Get All Countries")
-    public getAll(_: CountryEntity, ctx: any): CountryEntity[] {
-        try {
-            const options: Options = {
-                limit: ctx.queryParameters["$limit"] ? parseInt(ctx.queryParameters["$limit"]) : 20,
-                offset: ctx.queryParameters["$offset"] ? parseInt(ctx.queryParameters["$offset"]) : 0
-            };
-
-            return this.repository.findAll(options);
-        } catch (error: any) {
-            this.handleError(error);
-        }
-        return [];
-    }
-
-    private handleError(error: any) {
-        if (error.name === "ForbiddenError") {
-            HttpUtils.sendForbiddenRequest(error.message);
-        } else if (error.name === "ValidationError") {
-            HttpUtils.sendResponseBadRequest(error.message);
-        } else {
-            HttpUtils.sendInternalServerError(error.message);
-        }
-    }
-
-}
-
-```
+> [!tip]
+> Auto-generated from
+> - source: [http/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/decorators.ts)
+> - version: 1.0.0
 
 
+## Overview
+
+The Decorators API provides...
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Variables](#variables)
+  - [Get](#get)
+  - [Post](#post)
+  - [Put](#put)
+  - [Patch](#patch)
+  - [Delete](#delete)
+  - [Head](#head)
+  - [Options](#options)
+- [Functions](#functions)
+  - [Controller()](#controller())
+  - [Documentation()](#documentation())
+
+## Variables
+
+### Get
+
+> ```ts
+> const Get: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+***
+
+### Post
+
+> ```ts
+> const Post: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+***
+
+### Put
+
+> ```ts
+> const Put: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+***
+
+### Patch
+
+> ```ts
+> const Patch: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+***
+
+### Delete
+
+> ```ts
+> const Delete: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+***
+
+### Head
+
+> ```ts
+> const Head: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+***
+
+### Options
+
+> ```ts
+> const Options: (path) => (target, propertyKey, descriptor?) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `path` | `string` |
+
+#### Returns
+
+(`target`, `propertyKey`, `descriptor?`) => `void`
+
+## Functions
+
+### Controller()
+
+> ```ts
+> function Controller(ctr, _context?): void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `ctr` | () => `any` |
+| `_context?` | `ClassDecoratorContext` |
+
+#### Returns
+
+`void`
+
+***
+
+### Documentation()
+
+> ```ts
+> function Documentation(documentation): (value, context) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `documentation` | `string` |
+
+#### Returns
+
+(`value`, `context`) => `void`

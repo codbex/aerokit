@@ -1,54 +1,94 @@
-# API: sequence
+# db/sequence
 
-> Source: `db/sequence.ts`
+> [!tip]
+> Auto-generated from
+> - source: [db/sequence.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/sequence.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 API Sequence
 
-Provides static methods for managing and accessing database sequences.
+## Table of Contents
 
-## Usage
-```javascript
-import { sequence } from "@aerokit/sdk/db";
-import { response } from "@aerokit/sdk/http";
-
-let value = sequence.nextval("MYSEQUENCE");
-
-response.println(value.toString());
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Sequence](#sequence)
+- [Returns](#returns)
 
 ## Classes
 
 ### Sequence
 
+
 Utility class for interacting with database sequence objects.
+
+## Returns
+
+[`Sequence`](#sequence)
 
 #### Methods
 
-<hr/>
+##### nextval()
 
-#### nextval
+> ```ts
+> static nextval( sequence, tableName?, datasourceName?): number;
+> ```
 
-- `nextval (sequence:string, tableName?:string, datasourceName?:string):number`
 
-  Retrieves the next available value from a specified sequence.<br/><br/>@param sequence The name of the database sequence.<br/>@param tableName Optional: The name of the table associated with the sequence (depends on database dialect/facade implementation).<br/>@param datasourceName Optional: The name of the database connection to use.<br/>@returns The next sequence value as a number.
+> Retrieves the next available value from a specified sequence.
 
-<hr/>
+> **Parameters**
 
-#### create
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` | The name of the database sequence. |
+> | `tableName?` | `string` | Optional: The name of the table associated with the sequence (depends on database dialect/facade implementation). |
+> | `datasourceName?` | `string` | Optional: The name of the database connection to use. |
 
-- `create (sequence:string, start?:number, datasourceName?:string):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The next sequence value as a number.
+> :::
 
-  Creates a new database sequence.<br/><br/>@param sequence The name of the sequence to create.<br/>@param start Optional: The starting value for the sequence (defaults to 1 if not provided).<br/>@param datasourceName Optional: The name of the database connection to use.
+##### create()
 
-<hr/>
+> ```ts
+> static create( sequence, start?, datasourceName?): void;
+> ```
 
-#### drop
 
-- `drop (sequence:string, datasourceName?:string):void`
+> Creates a new database sequence.
 
-  Drops (deletes) an existing database sequence.<br/><br/>@param sequence The name of the sequence to drop.<br/>@param datasourceName Optional: The name of the database connection to use.
+> **Parameters**
 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` | The name of the sequence to create. |
+> | `start?` | `number` | Optional: The starting value for the sequence (defaults to 1 if not provided). |
+> | `datasourceName?` | `string` | Optional: The name of the database connection to use. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### drop()
+
+> ```ts
+> static drop(sequence, datasourceName?): void;
+> ```
+
+
+> Drops (deletes) an existing database sequence.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` | The name of the sequence to drop. |
+> | `datasourceName?` | `string` | Optional: The name of the database connection to use. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

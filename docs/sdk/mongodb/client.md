@@ -1,450 +1,1050 @@
-# API: client
+# mongodb/client
 
-> Source: `mongodb/client.ts`
+> [!tip]
+> Auto-generated from
+> - source: [mongodb/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mongodb/client.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Define a common type for input to functions that accept either a plain JavaScript object
 (which will be implicitly converted to DBObject) or an existing DBObject wrapper instance.
+/
+type DBInput = { [key: string]: any } | DBObject | undefined | null;
 
-## Usage
-```javascript
-import { client } from "@aerokit/sdk/mongodb";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let mongoClient = client.getClient();
-
-let collection = mongoClient.getDB("db").getCollection("people");
-
-let person = client.createBasicDBObject()
-    .append("_id", "jo")
-    .append("name", "Jo Bloggs");
-// or directly create an Object:
-// const person = {"_id": "jo", "name": "Jo Bloggs"};
-collection.insert(person);
-
-let query = client.createBasicDBObject().append("_id", "jo");
-let cursor = collection.find(query)
-let result = cursor.one();
-
-response.println("Result: " + result._id);
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [DBObject](#dbobject)
+- [Parameters](#parameters)
+  - [Client](#client)
+- [Parameters](#parameters)
+  - [DB](#db)
+- [Parameters](#parameters)
+  - [DBCollection](#dbcollection)
+- [Parameters](#parameters)
+  - [DBCursor](#dbcursor)
+- [Parameters](#parameters)
+- [Functions](#functions)
+  - [createBasicDBObject()](#createbasicdbobject())
 
 ## Classes
 
 ### DBObject
 
-DBObject object represents a BSON document used for queries, insertions, and updates.<br/>It wraps the underlying native Java object.
+The underlying native MongoDB client object.
+@private
+/
+    private readonly native: any;
+
+
+
+DBObject object represents a BSON document used for queries, insertions, and updates.
+It wraps the underlying native Java object.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `native` | `any` | The native MongoDB object (e.g., com.mongodb.DBObject) |
+
+###### Returns
+
+[`DBObject`](#dbobject)
 
 #### Methods
 
-<hr/>
+##### append()
 
-#### append
+> ```ts
+> append(key, value): DBObject;
+> ```
 
-- `append (key:string, value:any):DBObject`
 
-  Appends a key-value pair to the DBObject.<br/>@param key The field name.<br/>@param value The value to append.<br/>@returns The current DBObject instance for chaining.
+> Appends a key-value pair to the DBObject.
 
-<hr/>
+> **Parameters**
 
-#### toJson
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The field name. |
+> | `value` | `any` | The value to append. |
+> 
+> ###### Returns
+> 
+> [`DBObject`](#dbobject)
+> 
+> The current DBObject instance for chaining.
+> 
+> ##### toJson()
+> 
+> > ```ts
+> > toJson(): object;
+> > ```
+> 
+> 
+> > Converts the DBObject to a standard JavaScript object representation (JSON).
+> 
+> > > ::: info Returns
+> > > - **Type**: `object`
+> > > - **Description**: A plain JavaScript object.
+> > > :::
+> 
+> > ##### markAsPartialObject()
+> 
+> > > ```ts
+> > > markAsPartialObject(): void;
+> > > ```
+> 
+> 
+> > Marks the object as a partial object (used internally by MongoDB driver).
+> 
+> > > ::: info Returns
+> > > - **Type**: `void`
+> > > :::
+> 
+> > ##### isPartialObject()
+> 
+> > > ```ts
+> > > isPartialObject(): boolean;
+> > > ```
+> 
+> 
+> > Checks if the object is a partial object.
+> 
+> > > ::: info Returns
+> > > - **Type**: `boolean`
+> > > - **Description**: True if partial, false otherwise.
+> > > :::
+> 
+> > ##### containsField()
+> 
+> > > ```ts
+> > > containsField(key): boolean;
+> > > ```
+> 
+> 
+> > Checks if the DBObject contains a field with the specified key.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The field name. |
 
-- `toJson ():any}`
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the field exists, false otherwise.
+> :::
 
-  Converts the DBObject to a standard JavaScript object representation (JSON).<br/>@returns A plain JavaScript object.
+##### get()
 
-<hr/>
+> ```ts
+> get(key): any;
+> ```
 
-#### markAsPartialObject
 
-- `markAsPartialObject ():void`
+> Gets the value associated with the given key.
 
-  Marks the object as a partial object (used internally by MongoDB driver).
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The field name. |
 
-#### isPartialObject
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The field value.
+> :::
 
-- `isPartialObject ():boolean`
+##### put()
 
-  Checks if the object is a partial object.<br/>@returns True if partial, false otherwise.
+> ```ts
+> put(key, value): any;
+> ```
 
-<hr/>
 
-#### containsField
+> Puts a key-value pair into the DBObject.
 
-- `containsField (key:string):boolean`
+> **Parameters**
 
-  Checks if the DBObject contains a field with the specified key.<br/>@param key The field name.<br/>@returns True if the field exists, false otherwise.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The field name. |
+> | `value` | `any` | The value to put. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The previous value associated with the key, or null.
+> :::
 
-#### get
+##### removeField()
 
-- `get (key:string):any`
+> ```ts
+> removeField(key): any;
+> ```
 
-  Gets the value associated with the given key.<br/>@param key The field name.<br/>@returns The field value.
 
-<hr/>
+> Removes a field from the DBObject.
 
-#### put
+> **Parameters**
 
-- `put (key:string, value:any):any`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The field name to remove. |
 
-  Puts a key-value pair into the DBObject.<br/>@param key The field name.<br/>@param value The value to put.<br/>@returns The previous value associated with the key, or null.
-
-<hr/>
-
-#### removeField
-
-- `removeField (key:string):any`
-
-  Removes a field from the DBObject.<br/>@param key The field name to remove.<br/>@returns The removed field value.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The removed field value. ***
+> :::
 
 ### Client
 
+The underlying native Java object representing the BSON document.
+@private
+/
+    public native: any;
+
+
+
 Client object wrapper for connecting to MongoDB.
 
-#### Methods
+## Parameters
 
-<hr/>
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `uri` | `string` | The MongoDB connection URI. |
+| `user` | `string` | The username for authentication. |
+| `password` | `string` | The password for authentication. |
 
-#### getDB
+###### Returns
 
-- `getDB (name?:string):DB`
-
-  Retrieves a database instance.<br/>@param name Optional name of the database. If not provided, the default database name is used.<br/>@returns A DB instance.
-
-### DB
-
-DB object wrapper for a MongoDB database.
+[`Client`](#client)
 
 #### Methods
 
-<hr/>
+##### getDB()
+
+> ```ts
+> getDB(name?): DB;
+> ```
+
+
+> Retrieves a database instance.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name?` | `string` | Optional name of the database. If not provided, the default database name is used. |
+> 
+> ###### Returns
+> 
+> [`DB`](#db)
+> 
+> A DB instance.
+> 
+> ***
+> 
+> ### DB
+> 
+> 
+> DB object wrapper for a MongoDB database.
+> 
+> ## Parameters
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native MongoDB DB object. |
+> 
+> ###### Returns
+> 
+> [`DB`](#db)
+> 
+> #### Methods
+> 
+> ##### getCollection()
+> 
+> > ```ts
+> > getCollection(name): DBCollection;
+> > ```
+> 
+> 
+> > Retrieves a collection instance from the database.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the collection. |
+> 
+> ###### Returns
+> 
+> [`DBCollection`](#dbcollection)
+> 
+> A DBCollection instance.
+> 
+> ***
+> 
+> ### DBCollection
+
+The underlying native MongoDB DB object.
+@private
+/
+    private readonly native: any;
+
+> 
+> 
+> DBCollection object wrapper for a MongoDB collection.
+> 
+> ## Parameters
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native MongoDB DBCollection object. |
+> 
+> ###### Returns
+> 
+> [`DBCollection`](#dbcollection)
+> 
+> #### Methods
+> 
+> ##### insert()
+> 
+> > ```ts
+> > insert(dbObject): void;
+> > ```
+> 
+> 
+> > Inserts a document into the collection.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `dbObject` | `DBInput` | The document to insert (can be a plain JS object or DBObject). |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### find()
+
+> ```ts
+> find(query?, projection?): DBCursor;
+> ```
+
+
+> Finds documents matching the query.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query?` | `DBInput` | The query specification (can be a plain JS object or DBObject). |
+> | `projection?` | `DBInput` | The fields to include or exclude (can be a plain JS object or DBObject). |
+> 
+> ###### Returns
+> 
+> [`DBCursor`](#dbcursor)
+> 
+> A DBCursor for iterating over results.
+> 
+> ##### findOne()
+> 
+> > ```ts
+> > findOne(
+> >    query, 
+> >    projection, 
+> >    sort): DBObject;
+> > ```
+> 
+> 
+> > Finds a single document matching the query.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `DBInput` | The query specification. |
+> | `projection` | `DBInput` | The fields to include or exclude. |
+> | `sort` | `DBInput` | The sorting specification. |
+> 
+> ###### Returns
+> 
+> [`DBObject`](#dbobject)
+> 
+> The found document as a DBObject.
+> 
+> ##### findOneById()
+> 
+> > ```ts
+> > findOneById(id, projection?): DBObject;
+> > ```
+> 
+> 
+> > Finds a single document by its string ID.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `id` | `string` | The string ID of the document. |
+> | `projection?` | `DBInput` | The fields to include or exclude. |
+> 
+> ###### Returns
+> 
+> [`DBObject`](#dbobject)
+> 
+> The found document as a DBObject.
+> 
+> ##### count()
+> 
+> > ```ts
+> > count(query?): number;
+> > ```
+> 
+> 
+> > Counts the number of documents in the collection, optionally filtered by a query.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query?` | `DBInput` | Optional query to filter the count. |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The number of documents.
+> :::
+
+##### getCount()
+
+> ```ts
+> getCount(query): number;
+> ```
+
+
+> Gets the count of documents (alias for count).
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `DBInput` | Optional query to filter the count. |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The number of documents.
+> :::
+
+##### createIndex()
+
+> ```ts
+> createIndex(keys, options): void;
+> ```
+
+
+> Creates an index on the collection.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `keys` | `DBInput` | The index key specification. |
+> | `options` | `DBInput` | Optional index options. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### createIndexForField()
+
+> ```ts
+> createIndexForField(name): void;
+> ```
 
-#### getCollection
+
+> Creates an index on a single field by name.
 
-- `getCollection (name:string):DBCollection`
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the field to index. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Retrieves a collection instance from the database.<br/>@param name The name of the collection.<br/>@returns A DBCollection instance.
+##### distinct()
 
-### DBCollection
+> ```ts
+> distinct(
+>    name, 
+>    query, 
+>    keys): void;
+> ```
 
-DBCollection object wrapper for a MongoDB collection.
 
-#### Methods
+> Retrieves the distinct values for a specified field across a collection.
+> NOTE: The signature in the original code seems slightly off compared to typical MongoDB drivers.
+> This implementation follows the original structure using `keys.native` if `keys` is provided.
 
-<hr/>
+> **Parameters**
 
-#### insert
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The field name. |
+> | `query` | `DBInput` | Optional query to filter results. |
+> | `keys` | `DBInput` | Optional keys to use for distinct (replaces 'name' if provided and query exists). |
 
-- `insert (dbObject:DBInput):void`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Inserts a document into the collection.<br/>@param dbObject The document to insert (can be a plain JS object or DBObject).
+##### dropIndex()
 
-<hr/>
+> ```ts
+> dropIndex(index): void;
+> ```
 
-#### find
 
-- `find (query?:DBInput, projection?:DBInput):DBCursor`
+> Drops a specified index.
 
-  Finds documents matching the query.<br/>@param query The query specification (can be a plain JS object or DBObject).<br/>@param projection The fields to include or exclude (can be a plain JS object or DBObject).<br/>@returns A DBCursor for iterating over results.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` \| `DBInput` | The name of the index or the DBObject representing the index keys. |
 
-#### findOne
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `findOne (query:DBInput, projection:DBInput, sort:DBInput):DBObject`
+##### dropIndexByName()
 
-  Finds a single document matching the query.<br/>@param query The query specification.<br/>@param projection The fields to include or exclude.<br/>@param sort The sorting specification.<br/>@returns The found document as a DBObject.
+> ```ts
+> dropIndexByName(name): void;
+> ```
 
-<hr/>
 
-#### findOneById
+> Drops a specified index by name.
 
-- `findOneById (id:string, projection?:DBInput):DBObject`
+> **Parameters**
 
-  Finds a single document by its string ID.<br/>@param id The string ID of the document.<br/>@param projection The fields to include or exclude.<br/>@returns The found document as a DBObject.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the index. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### count
+##### dropIndexes()
 
-- `count (query?:DBInput):number`
+> ```ts
+> dropIndexes(): void;
+> ```
 
-  Counts the number of documents in the collection, optionally filtered by a query.<br/>@param query Optional query to filter the count.<br/>@returns The number of documents.
 
-<hr/>
+> Drops all indexes on the collection.
 
-#### getCount
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-- `getCount (query:DBInput):number`
+> ##### remove()
 
-  Gets the count of documents (alias for count).<br/>@param query Optional query to filter the count.<br/>@returns The number of documents.
+> > ```ts
+> > remove(query): void;
+> > ```
 
-<hr/>
 
-#### createIndex
+> Removes documents from the collection matching the query.
 
-- `createIndex (keys:DBInput, options:DBInput):void`
+> **Parameters**
 
-  Creates an index on the collection.<br/>@param keys The index key specification.<br/>@param options Optional index options.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `DBInput` | The deletion query specification. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### createIndexForField
+##### rename()
 
-- `createIndexForField (name:string):void`
+> ```ts
+> rename(newName): void;
+> ```
 
-  Creates an index on a single field by name.<br/>@param name The name of the field to index.
 
-<hr/>
+> Renames the collection.
 
-#### distinct
+> **Parameters**
 
-- `distinct (name:string, query:DBInput, keys:DBInput):void`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `newName` | `string` | The new name for the collection. |
 
-  Retrieves the distinct values for a specified field across a collection.<br/>NOTE: The signature in the original code seems slightly off compared to typical MongoDB drivers.<br/>This implementation follows the original structure using `keys.native` if `keys` is provided.<br/>@param name The field name.<br/>@param query Optional query to filter results.<br/>@param keys Optional keys to use for distinct (replaces 'name' if provided and query exists).
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-<hr/>
+##### save()
 
-#### dropIndex
+> ```ts
+> save(dbObject): void;
+> ```
 
-- `dropIndex (index:string|DBInput):void`
 
-  Drops a specified index.<br/>@param index The name of the index or the DBObject representing the index keys.
+> Saves a document to the collection. If the document has an `_id`, it performs an update;
+> otherwise, it performs an insert.
 
-<hr/>
+> **Parameters**
 
-#### dropIndexByName
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `dbObject` | `DBInput` | The document to save. |
 
-- `dropIndexByName (name:string):void`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Drops a specified index by name.<br/>@param name The name of the index.
+##### update()
 
-<hr/>
+> ```ts
+> update(
+>    query, 
+>    update, 
+>    upsert?, 
+>    multi?): void;
+> ```
 
-#### dropIndexes
 
-- `dropIndexes ():void`
+> Updates documents in the collection matching the query.
 
-  Drops all indexes on the collection.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `DBInput` | The update query specification. |
+> | `update` | `DBInput` | The update operation specification (e.g., {$set: {...}}). |
+> | `upsert?` | `boolean` | If true, creates a new document if no documents match the query. |
+> | `multi?` | `boolean` | If true, updates all documents matching the query; otherwise, only one. |
 
-#### remove
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `remove (query:DBInput):void`
+##### updateMulti()
 
-  Removes documents from the collection matching the query.<br/>@param query The deletion query specification.
+> ```ts
+> updateMulti(query, update): void;
+> ```
 
-<hr/>
 
-#### rename
+> Updates multiple documents in the collection matching the query.
+> (Equivalent to calling `update` with `multi=true` and `upsert=true` implicitly).
 
-- `rename (newName:string):void`
+> **Parameters**
 
-  Renames the collection.<br/>@param newName The new name for the collection.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `DBInput` | The update query specification. |
+> | `update` | `DBInput` | The update operation specification. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### save
+##### getNextId()
 
-- `save (dbObject:DBInput):void`
+> ```ts
+> getNextId(): number;
+> ```
 
-  Saves a document to the collection. If the document has an `_id`, it performs an update;<br/>otherwise, it performs an insert.<br/>@param dbObject The document to save.
 
-<hr/>
+> Calculates the next sequential ID based on the largest existing `_id` in the collection.
+> Assumes `_id` is a numeric field.
 
-#### update
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The next available sequential ID (starting at 1 if collection is empty).
+> > :::
 
-- `update (query:DBInput, update:DBInput, upsert?:boolean, multi?:boolean):void`
+> ##### generateUUID()
 
-  Updates documents in the collection matching the query.<br/>@param query The update query specification.<br/>@param update The update operation specification (e.g., \{$set: \{...\}\}).<br/>@param upsert If true, creates a new document if no documents match the query.<br/>@param multi If true, updates all documents matching the query; otherwise, only one.
+> > ```ts
+> > generateUUID(): string;
+> > ```
 
-<hr/>
 
-#### updateMulti
+> Generates a new random UUID (Universally Unique Identifier).
 
-- `updateMulti (query:DBInput, update:DBInput):void`
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: A string representing the UUID. ***
+> > :::
 
-  Updates multiple documents in the collection matching the query.<br/>(Equivalent to calling `update` with `multi=true` and `upsert=true` implicitly).<br/>@param query The update query specification.<br/>@param update The update operation specification.
+> ### DBCursor
 
-<hr/>
+The underlying native MongoDB DBCollection object.
+@private
+/
+    private readonly native: any;
 
-#### getNextId
 
-- `getNextId ():number`
 
-  Calculates the next sequential ID based on the largest existing `_id` in the collection.<br/>Assumes `_id` is a numeric field.<br/>@returns The next available sequential ID (starting at 1 if collection is empty).
+> DBCursor object wrapper for iterating over results of a MongoDB query.
 
-<hr/>
+> ## Parameters
 
-#### generateUUID
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native MongoDB DBCursor object. |
 
-- `generateUUID ():string`
+> ###### Returns
 
-  Generates a new random UUID (Universally Unique Identifier).<br/>@returns A string representing the UUID.
+> [`DBCursor`](#dbcursor)
 
-### DBCursor
+> #### Methods
 
-DBCursor object wrapper for iterating over results of a MongoDB query.
+> ##### one()
 
-#### Methods
+> > ```ts
+> > one(): DBObject;
+> > ```
 
-<hr/>
 
-#### one
+> Returns the single result from the cursor.
 
-- `one ():DBObject`
+> ###### Returns
 
-  Returns the single result from the cursor.<br/>@returns A DBObject representing the document.
+> [`DBObject`](#dbobject)
 
-<hr/>
+> A DBObject representing the document.
 
-#### batchSize
+> ##### batchSize()
 
-- `batchSize (numberOfElements:number):DBCursor`
+> > ```ts
+> > batchSize(numberOfElements): DBCursor;
+> > ```
 
-  Sets the batch size for the cursor.<br/>@param numberOfElements The batch size.<br/>@returns The DBCursor instance for chaining.
 
-<hr/>
+> Sets the batch size for the cursor.
 
-#### getBatchSize
+> **Parameters**
 
-- `getBatchSize ():number`
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `numberOfElements` | `number` | The batch size. |
 
-  Gets the current batch size.<br/>@returns The batch size.
+###### Returns
 
-<hr/>
+[`DBCursor`](#dbcursor)
 
-#### getCollection
+The DBCursor instance for chaining.
 
-- `getCollection ():DBCollection`
+##### getBatchSize()
 
-  Gets the collection associated with this cursor.<br/>@returns The DBCollection instance.
+> ```ts
+> getBatchSize(): number;
+> ```
 
-<hr/>
 
-#### getCursorId
+> Gets the current batch size.
 
-- `getCursorId ():string`
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The batch size.
+> > :::
 
-  Gets the cursor ID.<br/>@returns The cursor ID string.
+> ##### getCollection()
 
-<hr/>
+> > ```ts
+> > getCollection(): DBCollection;
+> > ```
 
-#### getKeysWanted
 
-- `getKeysWanted ():DBObject`
+> Gets the collection associated with this cursor.
 
-  Gets the projection object (fields wanted) used in the query.<br/>@returns The projection DBObject.
+> ###### Returns
 
-<hr/>
+> [`DBCollection`](#dbcollection)
 
-#### getLimit
+> The DBCollection instance.
 
-- `getLimit ():number`
+> ##### getCursorId()
 
-  Gets the limit set on the cursor.<br/>@returns The limit number.
+> > ```ts
+> > getCursorId(): string;
+> > ```
 
-<hr/>
 
-#### close
+> Gets the cursor ID.
 
-- `close ():void`
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The cursor ID string.
+> > :::
 
-  Closes the cursor.
+> ##### getKeysWanted()
 
-<hr/>
+> > ```ts
+> > getKeysWanted(): DBObject;
+> > ```
 
-#### hasNext
 
-- `hasNext ():boolean`
+> Gets the projection object (fields wanted) used in the query.
 
-  Checks if there is a next document in the cursor.<br/>@returns True if there is a next document, false otherwise.
+> ###### Returns
 
-<hr/>
+> [`DBObject`](#dbobject)
 
-#### next
+> The projection DBObject.
 
-- `next ():DBObject`
+> ##### getLimit()
 
-  Retrieves the next document in the cursor.<br/>@returns The next document as a DBObject.
+> > ```ts
+> > getLimit(): number;
+> > ```
 
-<hr/>
 
-#### getQuery
+> Gets the limit set on the cursor.
 
-- `getQuery ():DBObject`
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The limit number.
+> > :::
 
-  Gets the query object used to create this cursor.<br/>@returns The query DBObject.
+> ##### close()
 
-<hr/>
+> > ```ts
+> > close(): void;
+> > ```
 
-#### length
 
-- `length ():number`
+> Closes the cursor.
 
-  Gets the number of documents matched by the query.<br/>@returns The total number of documents.
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-<hr/>
+> ##### hasNext()
 
-#### sort
+> > ```ts
+> > hasNext(): boolean;
+> > ```
 
-- `sort (orderBy:DBInput):DBCursor`
 
-  Specifies the order in which the query returns the results.<br/>@param orderBy The sorting specification (e.g., \{field: 1\} for ascending).<br/>@returns The DBCursor instance for chaining.
+> Checks if there is a next document in the cursor.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if there is a next document, false otherwise.
+> > :::
 
-#### limit
+> ##### next()
 
-- `limit (limit:number):DBCursor`
+> > ```ts
+> > next(): DBObject;
+> > ```
 
-  Limits the number of results to be returned.<br/>@param limit The maximum number of documents to return.<br/>@returns The DBCursor instance for chaining.
 
-<hr/>
+> Retrieves the next document in the cursor.
 
-#### min
+> ###### Returns
 
-- `min (min:number):DBCursor`
+> [`DBObject`](#dbobject)
 
-  Specifies the exclusive upper bound for a specific index.<br/>@param min The minimum value.<br/>@returns The DBCursor instance for chaining.
+> The next document as a DBObject.
 
-<hr/>
+> ##### getQuery()
 
-#### max
+> > ```ts
+> > getQuery(): DBObject;
+> > ```
 
-- `max (max:number):DBCursor`
 
-  Specifies the exclusive upper bound for a specific index.<br/>@param max The maximum value.<br/>@returns The DBCursor instance for chaining.
+> Gets the query object used to create this cursor.
 
-<hr/>
+> ###### Returns
 
-#### maxTime
+> [`DBObject`](#dbobject)
 
-- `maxTime (maxTime:number):DBCursor`
+> The query DBObject.
 
-  Sets a timeout for the server to execute the query.<br/>@param maxTime The maximum time in milliseconds.<br/>@returns The DBCursor instance for chaining.
+> ##### length()
 
-<hr/>
+> > ```ts
+> > length(): number;
+> > ```
 
-#### size
 
-- `size ():number`
+> Gets the number of documents matched by the query.
 
-  Gets the size of the result set.<br/>@returns The size number.
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The total number of documents.
+> > :::
 
-<hr/>
+> ##### sort()
 
-#### skip
+> > ```ts
+> > sort(orderBy): DBCursor;
+> > ```
 
-- `skip (numberOfElements:number):DBCursor`
 
-  Skips the specified number of documents.<br/>@param numberOfElements The number of documents to skip.<br/>@returns The DBCursor instance for chaining.
+> Specifies the order in which the query returns the results.
 
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `orderBy` | `DBInput` | The sorting specification (e.g., {field: 1} for ascending). |
+
+###### Returns
+
+[`DBCursor`](#dbcursor)
+
+The DBCursor instance for chaining.
+
+##### limit()
+
+> ```ts
+> limit(limit): DBCursor;
+> ```
+
+
+> Limits the number of results to be returned.
+
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `limit` | `number` | The maximum number of documents to return. |
+
+###### Returns
+
+[`DBCursor`](#dbcursor)
+
+The DBCursor instance for chaining.
+
+##### min()
+
+> ```ts
+> min(min): DBCursor;
+> ```
+
+
+> Specifies the exclusive upper bound for a specific index.
+
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `min` | `number` | The minimum value. |
+
+###### Returns
+
+[`DBCursor`](#dbcursor)
+
+The DBCursor instance for chaining.
+
+##### max()
+
+> ```ts
+> max(max): DBCursor;
+> ```
+
+
+> Specifies the exclusive upper bound for a specific index.
+
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `max` | `number` | The maximum value. |
+
+###### Returns
+
+[`DBCursor`](#dbcursor)
+
+The DBCursor instance for chaining.
+
+##### maxTime()
+
+> ```ts
+> maxTime(maxTime): DBCursor;
+> ```
+
+
+> Sets a timeout for the server to execute the query.
+
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `maxTime` | `number` | The maximum time in milliseconds. |
+
+###### Returns
+
+[`DBCursor`](#dbcursor)
+
+The DBCursor instance for chaining.
+
+##### size()
+
+> ```ts
+> size(): number;
+> ```
+
+
+> Gets the size of the result set.
+
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The size number.
+> > :::
+
+> ##### skip()
+
+> > ```ts
+> > skip(numberOfElements): DBCursor;
+> > ```
+
+
+> Skips the specified number of documents.
+
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `numberOfElements` | `number` | The number of documents to skip. |
+
+###### Returns
+
+[`DBCursor`](#dbcursor)
+
+The DBCursor instance for chaining.
+
+## Functions
+
+### createBasicDBObject()
+
+> ```ts
+> function createBasicDBObject(): DBObject;
+> ```
+
+
+Creates a new, empty DBObject instance.
+
+#### Returns
+
+[`DBObject`](#dbobject)
+
+A new DBObject.

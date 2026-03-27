@@ -1,122 +1,206 @@
-# API: configurations
+# core/configurations
 
-> Source: `core/configurations.ts`
+> [!tip]
+> Auto-generated from
+> - source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
+> - version: 1.0.0
 
-API Configurations
-* Provides a static interface for accessing and manipulating configuration properties,
-and checking the operating system type.
 
-## Usage
-```javascript
-import { response } from "@aerokit/sdk/http";
-import { configurations } from "@aerokit/sdk/core";
+## Overview
 
-configurations.set("ENV_VAR_1", "ENV_VAR_1");
-configurations.set("ENV_VAR_2", "ENV_VAR_2");
+The Configurations API provides...
 
-let credentials = {
-    envVar1: configurations.get("ENV_VAR_1"),
-    envVar2: configurations.get("ENV_VAR_2")
-};
+## Table of Contents
 
-response.println(JSON.stringify(credentials));
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Configurations](#configurations)
+- [Returns](#returns)
 
 ## Classes
 
 ### Configurations
 
-API Configurations<br/>* Provides a static interface for accessing and manipulating configuration properties,<br/>and checking the operating system type.
+
+## Returns
+
+[`Configurations`](#configurations)
 
 #### Methods
 
-<hr/>
+##### get()
 
-#### get
+> ```ts
+> static get(key, defaultValue?): string;
+> ```
 
-- `get (key:string, defaultValue?:string):string|undefined`
 
-  Retrieves the configuration value associated with the given key.<br/>@param key The configuration key.<br/>@param defaultValue The optional default value to return if the key is not found.<br/>@returns The configuration value as a string, or `undefined` if the key is not found and no default is provided.
+> Retrieves the configuration value associated with the given key.
 
-<hr/>
+> **Parameters**
 
-#### set
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The configuration key. |
+> | `defaultValue?` | `string` | The optional default value to return if the key is not found. |
 
-- `set (key:string, value:string):void`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The configuration value as a string, or `undefined` if the key is not found and no default is provided.
+> :::
 
-  Sets the configuration value for the given key.<br/>If the key already exists, its value is overwritten.<br/>@param key The configuration key.<br/>@param value The configuration value to set.
+##### set()
 
-<hr/>
+> ```ts
+> static set(key, value): void;
+> ```
 
-#### remove
 
-- `remove (key:string):void`
+> Sets the configuration value for the given key.
+> If the key already exists, its value is overwritten.
 
-  Removes the configuration property associated with the given key.<br/>@param key The configuration key to remove.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The configuration key. |
+> | `value` | `string` | The configuration value to set. |
 
-#### getKeys
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `getKeys ():string[]`
+##### remove()
 
-  Retrieves a list of all current configuration keys.<br/>@returns An array of configuration keys (strings).
+> ```ts
+> static remove(key): void;
+> ```
 
-<hr/>
 
-#### load
+> Removes the configuration property associated with the given key.
 
-- `load (path:string):void`
+> **Parameters**
 
-  Loads configuration properties from a file at the specified path, overriding existing ones.<br/>@param path The file path to load configurations from.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The configuration key to remove. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### update
+##### getKeys()
 
-- `update ():void`
+> ```ts
+> static getKeys(): string[];
+> ```
 
-  Reloads or updates the current configuration settings from their source (e.g., persistence layer).
 
-<hr/>
+> Retrieves a list of all current configuration keys.
 
-#### getOS
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of configuration keys (strings).
+> > :::
 
-- `getOS ():string`
+> ##### load()
 
-  Retrieves the name of the current Operating System.<br/>@returns The OS name as a string (e.g., "Windows", "Linux", "Mac OS X").
+> > ```ts
+> > static load(path): void;
+> > ```
 
-<hr/>
 
-#### isOSWindows
+> Loads configuration properties from a file at the specified path, overriding existing ones.
 
-- `isOSWindows ():boolean`
+> **Parameters**
 
-  Checks if the current Operating System is Windows.<br/>@returns True if the OS is Windows, false otherwise.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The file path to load configurations from. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### isOSMac
+##### update()
 
-- `isOSMac ():boolean`
+> ```ts
+> static update(): void;
+> ```
 
-  Checks if the current Operating System is Mac OS (or Mac OS X).<br/>@returns True if the OS is Mac, false otherwise.
 
-<hr/>
+Reloads or updates the current configuration settings from their source (e.g., persistence layer).
 
-#### isOSUNIX
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `isOSUNIX ():boolean`
+##### getOS()
 
-  Checks if the current Operating System is a UNIX-like system (e.g., Linux, macOS, or others).<br/>@returns True if the OS is a UNIX variant, false otherwise.
+> ```ts
+> static getOS(): string;
+> ```
 
-<hr/>
 
-#### isOSSolaris
+Retrieves the name of the current Operating System.
 
-- `isOSSolaris ():boolean`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The OS name as a string (e.g., "Windows", "Linux", "Mac OS X").
+> :::
 
-  Checks if the current Operating System is Solaris.<br/>@returns True if the OS is Solaris, false otherwise.
+##### isOSWindows()
 
+> ```ts
+> static isOSWindows(): boolean;
+> ```
+
+
+Checks if the current Operating System is Windows.
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the OS is Windows, false otherwise.
+> :::
+
+##### isOSMac()
+
+> ```ts
+> static isOSMac(): boolean;
+> ```
+
+
+Checks if the current Operating System is Mac OS (or Mac OS X).
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the OS is Mac, false otherwise.
+> :::
+
+##### isOSUNIX()
+
+> ```ts
+> static isOSUNIX(): boolean;
+> ```
+
+
+Checks if the current Operating System is a UNIX-like system (e.g., Linux, macOS, or others).
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the OS is a UNIX variant, false otherwise.
+> :::
+
+##### isOSSolaris()
+
+> ```ts
+> static isOSSolaris(): boolean;
+> ```
+
+
+Checks if the current Operating System is Solaris.
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the OS is Solaris, false otherwise.
+> :::

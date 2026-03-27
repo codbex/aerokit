@@ -1,45 +1,79 @@
-# API: env
+# core/env
 
-> Source: `core/env.ts`
+> [!tip]
+> Auto-generated from
+> - source: [core/env.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/env.ts)
+> - version: 1.0.0
 
-API Env
-* Provides a static interface for accessing and listing environment variables exposed to the runtime.
 
-## Usage
-```javascript
-import { env } from "@aerokit/sdk/core";
-import { response } from "@aerokit/sdk/http";
+## Overview
 
-let os = env.get("os.name");
-response.println("[OS]: " + os);
+The Env API provides...
 
-response.flush();
-response.close();
+## Table of Contents
 
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Env](#env)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [EnvValues](#envvalues)
 
 ## Classes
 
 ### Env
 
-Interface representing a map of environment variable names to their string values.
+
+## Returns
+
+[`Env`](#env)
 
 #### Methods
 
-<hr/>
+##### get()
 
-#### get
+> ```ts
+> static get(name): string;
+> ```
 
-- `get (name:string):string|undefined`
 
-  Retrieves the value of the environment variable with the specified name.<br/>@param name The name of the environment variable.<br/>@returns The variable's value as a string, or `undefined` if the variable is not set.
+> Retrieves the value of the environment variable with the specified name.
 
-<hr/>
+> **Parameters**
 
-#### list
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the environment variable. |
 
-- `list ():EnvValues`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The variable's value as a string, or `undefined` if the variable is not set.
+> :::
 
-  Retrieves a map of all environment variables currently exposed to the application.<br/>@returns An \{@link EnvValues\} object containing all environment variables as key-value pairs.
+##### list()
 
+> ```ts
+> static list(): EnvValues;
+> ```
+
+
+Retrieves a map of all environment variables currently exposed to the application.
+
+###### Returns
+
+[`EnvValues`](#envvalues)
+
+An [EnvValues](#envvalues) object containing all environment variables as key-value pairs.
+
+## Interfaces
+
+### EnvValues
+
+
+Interface representing a map of environment variable names to their string values.
+
+#### Indexable
+
+> ```ts
+> [key: string]: string
+> ```

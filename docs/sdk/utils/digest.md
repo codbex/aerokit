@@ -1,122 +1,266 @@
-# API: digest
+# utils/digest
 
-> Source: `utils/digest.ts`
+> [!tip]
+> Auto-generated from
+> - source: [utils/digest.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/digest.ts)
+> - version: 1.0.0
 
-Calculate MD5 digest from input (text or byte array) and return result as byte array
 
-## Usage
-```javascript
-import { digest } from "@aerokit/sdk/utils";
-import { response } from "@aerokit/sdk/http";
+## Overview
 
-response.println("" + digest.sha256("admin:admin"));
-response.println("" + digest.sha512("YWRtaW46YWRtaW4="));
+The Digest API provides...
 
-response.flush();
-response.close();
+## Table of Contents
 
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Digest](#digest)
+- [Returns](#returns)
 
 ## Classes
 
 ### Digest
 
+
+## Returns
+
+[`Digest`](#digest)
+
 #### Methods
 
-<hr/>
+##### md5()
 
-#### md5
+> ```ts
+> static md5(input): any[];
+> ```
 
-- `md5 (input:string|any[]):any[]`
 
-  Calculate MD5 digest from input (text or byte array) and return result as byte array
+> Calculate MD5 digest from input (text or byte array) and return result as byte array
 
-<hr/>
+> **Parameters**
 
-#### md5AsNativeBytes
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
-- `md5AsNativeBytes (input:string|any[]):any[]`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
 
-  Calculate MD5 digest from input (text or byte array) and return result as 16 elements java native byte array
+##### md5AsNativeBytes()
 
-<hr/>
+> ```ts
+> static md5AsNativeBytes(input): any[];
+> ```
 
-#### md5Hex
 
-- `md5Hex (input:string|any[]):string`
+> Calculate MD5 digest from input (text or byte array) and return result as 16 elements java native byte array
 
-  Calculate MD5 digest from input (text or byte array) and return result as 32 character hex string
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
-#### sha1
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
 
-- `sha1 (input:string|any[]):any[]`
+##### md5Hex()
 
-  Calculate SHA1 digest from input (text or byte array) and return result as 20 elements byte array
+> ```ts
+> static md5Hex(input): string;
+> ```
 
-<hr/>
 
-#### sha1AsNativeBytes
+> Calculate MD5 digest from input (text or byte array) and return result as 32 character hex string
 
-- `sha1AsNativeBytes (input:string|any[]):any[]`
+> **Parameters**
 
-  Calculate SHA1 digest from input (text or byte array) and return result as 20 elements java native byte array
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `string`
+> :::
 
-#### sha256
+##### sha1()
 
-- `sha256 (input:string|any[]):any[]`
+> ```ts
+> static sha1(input): any[];
+> ```
 
-  Calculate SHA256 digest from input (text or byte array) and return result as 32 elements byte array
 
-<hr/>
+> Calculate SHA1 digest from input (text or byte array) and return result as 20 elements byte array
 
-#### sha256AsNativeBytes
+> **Parameters**
 
-- `sha256AsNativeBytes (input:string|any[]):any[]`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
-  Calculate SHA256 digest from input (text or byte array) and return result as 32 elements java native byte array
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
 
-<hr/>
+##### sha1AsNativeBytes()
 
-#### sha384
+> ```ts
+> static sha1AsNativeBytes(input): any[];
+> ```
 
-- `sha384 (input:string|any[]):any[]`
 
-  Calculate SHA384 digest from input (text or byte array) and return result as 48 elements byte array
+> Calculate SHA1 digest from input (text or byte array) and return result as 20 elements java native byte array
 
-<hr/>
+> **Parameters**
 
-#### sha384AsNativeBytes
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
-- `sha384AsNativeBytes (input:string|any[]):any[]`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
 
-  Calculate SHA384 digest from input (text or byte array) and return result as 48 elements java native byte array
+##### sha256()
 
-<hr/>
+> ```ts
+> static sha256(input): any[];
+> ```
 
-#### sha512
 
-- `sha512 (input:string|any[]):any[]`
+> Calculate SHA256 digest from input (text or byte array) and return result as 32 elements byte array
 
-  Calculate SHA512 digest from input (text or byte array) and return result as 64 elements byte array
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
-#### sha512AsNativeBytes
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
 
-- `sha512AsNativeBytes (input:string|any[]):string|any[])`
+##### sha256AsNativeBytes()
 
-  Calculate SHA512 digest from input (text or byte array) and return result as 64 elements java native byte array
+> ```ts
+> static sha256AsNativeBytes(input): any[];
+> ```
 
-<hr/>
 
-#### sha1Hex
+> Calculate SHA256 digest from input (text or byte array) and return result as 32 elements java native byte array
 
-- `sha1Hex (input:string|any[]):string`
+> **Parameters**
 
-  Calculate SHA1 digest from input (text or byte array) and return result as 40 character hex string
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
 
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
+
+##### sha384()
+
+> ```ts
+> static sha384(input): any[];
+> ```
+
+
+> Calculate SHA384 digest from input (text or byte array) and return result as 48 elements byte array
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
+
+##### sha384AsNativeBytes()
+
+> ```ts
+> static sha384AsNativeBytes(input): any[];
+> ```
+
+
+> Calculate SHA384 digest from input (text or byte array) and return result as 48 elements java native byte array
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
+
+##### sha512()
+
+> ```ts
+> static sha512(input): any[];
+> ```
+
+
+> Calculate SHA512 digest from input (text or byte array) and return result as 64 elements byte array
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
+
+##### sha512AsNativeBytes()
+
+> ```ts
+> static sha512AsNativeBytes(input): any;
+> ```
+
+
+> Calculate SHA512 digest from input (text or byte array) and return result as 64 elements java native byte array
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### sha1Hex()
+
+> ```ts
+> static sha1Hex(input): string;
+> ```
+
+
+> Calculate SHA1 digest from input (text or byte array) and return result as 40 character hex string
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `input` | `string` \| `any`[] |
+
+> ::: info Returns
+> - **Type**: `string`
+> :::

@@ -1,61 +1,77 @@
-# API: producer
+# kafka/producer
 
-> Source: `kafka/producer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [kafka/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/kafka/producer.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides an API for configuring and managing Kafka producers,
 allowing scripts to create topics, send messages, and close the producer connection.
+/
+const KafkaFacade = Java.type("org.eclipse.dirigible.components.api.kafka.KafkaFacade");
 
-## Usage
-```javascript
-// Send
+## Table of Contents
 
-import { producer } from "@aerokit/sdk/producer";
-producer.topic("topic1", "{}").send("key1", "value1");
-
-
-// Close
-
-import { producer } from "@aerokit/sdk/producer";
-producer.close("{}");
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Producer](#producer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Producer
 
-The Producer class serves as the main entry point for creating and configuring<br/>Kafka topic producers.
+
+The Producer class serves as the main entry point for creating and configuring
+Kafka topic producers.
+
+## Returns
+
+[`Producer`](#producer)
 
 #### Methods
 
-<hr/>
+##### topic()
 
-#### topic
+> ```ts
+> static topic(destination, configuration?): Topic;
+> ```
 
-- `topic (destination:string, configuration:{[key:string]:string}={}):Topic`
 
-  Creates a new topic configuration wrapper that can be used to send messages<br/>to a specific Kafka topic.<br/><br/>@param destination The name of the Kafka topic to send messages to.<br/>@param configuration Optional key-value object containing Kafka producer properties<br/>(e.g., 'bootstrap.servers', 'acks').<br/>@returns A \{@link Topic\} instance configured for the specified destination and properties.
+> Creates a new topic configuration wrapper that can be used to send messages
+> to a specific Kafka topic.
 
-<hr/>
+> **Parameters**
 
-#### close
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the Kafka topic to send messages to. |
+> | `configuration` | \{ \[`key`: `string`\]: `string`; \} | Optional key-value object containing Kafka producer properties (e.g., 'bootstrap.servers', 'acks'). |
 
-- `close (configuration:{[key:string]:string}={}):void`
+> ::: info Returns
+> - **Type**: `Topic`
+> - **Description**: A Topic instance configured for the specified destination and properties.
+> :::
 
-  Closes the Kafka producer connection pool, releasing associated resources.<br/>This should be called when message sending is complete to ensure proper cleanup.<br/><br/>@param configuration Optional key-value object containing the configuration<br/>used to initialize the producer to be closed.
+##### close()
 
-### Topic
+> ```ts
+> static close(configuration?): void;
+> ```
 
-Represents a configured Kafka topic that can be used to send messages.
 
-#### Methods
+> Closes the Kafka producer connection pool, releasing associated resources.
+> This should be called when message sending is complete to ensure proper cleanup.
 
-<hr/>
+> **Parameters**
 
-#### send
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `configuration` | \{ \[`key`: `string`\]: `string`; \} | Optional key-value object containing the configuration used to initialize the producer to be closed. |
 
-- `send (key:string, value:string):void`
-
-  Sends a message with an optional key to the configured Kafka topic.<br/><br/>@param key The key of the message. Messages with the same key go to the same partition.<br/>@param value The content of the message to be sent.
-
+> ::: info Returns
+> - **Type**: `void`
+> :::

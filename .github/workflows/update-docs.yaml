@@ -1,0 +1,63 @@
+name: Update Docs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout aerokit repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clone Eclipse Dirigible repository
+        run: git clone https://github.com/eclipse-dirigible/dirigible.git dirigible-repo
+
+      - name: Create src folder
+        run: mkdir -p src
+
+      - name: Copy Eclipse Dirigible src modules
+        run: cp -r dirigible-repo/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/* src/
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate documentation
+        run: npm run docs:generate
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Create branch and commit changes
+        id: commit
+        run: |
+          BRANCH_NAME="update-docs-$(date +%s)"
+          git checkout -b $BRANCH_NAME
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes in docs folder"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          git commit -m "Update docs"
+          git push origin $BRANCH_NAME
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.commit.outputs.has_changes == 'true'
+        run: |
+          gh pr create --base main --head ${{ steps.commit.outputs.branch_name }} --title "Update Docs" --body "Auto-generated documentation update from Eclipse Dirigible repository."
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

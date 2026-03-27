@@ -147,7 +147,7 @@ This triggers the GET / route of your controller, returning the full list of cre
 
 ### What Happens Under the Hood:
 
-* The @Controller decorator registers the class as an HTTP controller.
+* The `@Controller` decorator registers the class as an HTTP controller.
 * Methods decorated with `@Get`, `@Post`, etc., map HTTP routes to class methods.
 * `@Component` creates a singleton service (OrderService) that’s injected into the controller using `@Inject`.
 The runtime automatically generates and exposes OpenAPI / Swagger documentation for these endpoints (since it scans the decorators).

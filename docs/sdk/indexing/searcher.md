@@ -1,62 +1,119 @@
-# API: searcher
+# indexing/searcher
 
-> Source: `indexing/searcher.ts`
+> [!tip]
+> Auto-generated from
+> - source: [indexing/searcher.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/searcher.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides a static façade (`Searcher` class) for performing
 term-based and time-based queries against a native indexing service.
+/
 
-## Usage
-```javascript
-import { writer, searcher } from "@aerokit/sdk/indexing";
+## Table of Contents
 
-writer.add("index2", "file1", "apache lucene", new Date(123));
-writer.add("index2", "file2", "lucene - the search engine", new Date(234), { "name2": "value2" });
-writer.add("index2", "file3", "search engine", new Date(345), { "name2": "value2" });
-
-let found = searcher.between("index2", new Date(124), new Date(344));
-
-console.log(JSON.stringify(found))
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Searcher](#searcher)
+- [Returns](#returns)
 
 ## Classes
 
 ### Searcher
 
-The Searcher class provides methods for querying a specific index<br/>using keywords or date ranges.
+
+The Searcher class provides methods for querying a specific index
+using keywords or date ranges.
+
+## Returns
+
+[`Searcher`](#searcher)
 
 #### Methods
 
-<hr/>
+##### search()
 
-#### search
+> ```ts
+> static search(index, term): object[];
+> ```
 
-- `search (index:string, term:string):string}[]`
 
-  Executes a keyword search against a specified index.<br/>@param index The name or identifier of the index to search (e.g., 'documents', 'products').<br/>@param term The keyword or search phrase to look for.<br/>@returns An array of result objects, parsed from the native JSON string output.
+> Executes a keyword search against a specified index.
 
-<hr/>
+> **Parameters**
 
-#### before
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index to search (e.g., 'documents', 'products'). |
+> | `term` | `string` | The keyword or search phrase to look for. |
 
-- `before (index:string, date:Date):string}[]`
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::
 
-  Finds all entries in the index that were indexed before the specified date.<br/>@param index The name or identifier of the index.<br/>@param date The Date object representing the upper bound (exclusive) of the time range.<br/>@returns An array of result objects, parsed from the native JSON string output.
+##### before()
 
-<hr/>
+> ```ts
+> static before(index, date): object[];
+> ```
 
-#### after
 
-- `after (index:string, date:Date):string}[]`
+> Finds all entries in the index that were indexed before the specified date.
 
-  Finds all entries in the index that were indexed after the specified date.<br/>@param index The name or identifier of the index.<br/>@param date The Date object representing the lower bound (exclusive) of the time range.<br/>@returns An array of result objects, parsed from the native JSON string output.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index. |
+> | `date` | `Date` | The Date object representing the upper bound (exclusive) of the time range. |
 
-#### between
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::
 
-- `between (index:string, lower:Date, upper:Date):string}[]`
+##### after()
 
-  Finds all entries in the index that were indexed within the specified date range.<br/>@param index The name or identifier of the index.<br/>@param lower The Date object for the lower bound (exclusive).<br/>@param upper The Date object for the upper bound (exclusive).<br/>@returns An array of result objects, parsed from the native JSON string output.
+> ```ts
+> static after(index, date): object[];
+> ```
 
+
+> Finds all entries in the index that were indexed after the specified date.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index. |
+> | `date` | `Date` | The Date object representing the lower bound (exclusive) of the time range. |
+
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::
+
+##### between()
+
+> ```ts
+> static between( index, lower, upper): object[];
+> ```
+
+
+> Finds all entries in the index that were indexed within the specified date range.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index. |
+> | `lower` | `Date` | The Date object for the lower bound (exclusive). |
+> | `upper` | `Date` | The Date object for the upper bound (exclusive). |
+
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::

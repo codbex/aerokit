@@ -1,3 +1,0 @@
-# junit
-
-- [junit](junit.md)

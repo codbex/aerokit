@@ -1,64 +1,75 @@
-# API: xml
+# utils/xml
 
-> Source: `utils/xml.ts`
+> [!tip]
+> Auto-generated from
+> - source: [utils/xml.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/xml.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Utility class for converting data between XML and JSON formats.
 It automatically handles input serialization if an object is passed instead of a string.
 
-## Usage
-```javascript
-import { xml } from "@aerokit/sdk/utils";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-const jsonInput = {
-    firstName: "John",
-    lastName: "Doe",
-    bio: {
-        age: 24,
-        sex: "male"
-    }
-};
-
-const xmlInput =
-    "<person>" +
-    "<firstName>John</firstName>" +
-    "<lastName>Doe</lastName>" +
-    "<bio>" +
-    "<age>24</age>" +
-    "<sex>male</sex>" +
-    "</bio>" +
-    "</person>";
-
-response.println(xml.fromJson(JSON.stringify(jsonInput)));
-response.println(xml.toJson(xmlInput));
-
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [XML](#xml)
+- [Returns](#returns)
 
 ## Classes
 
 ### XML
 
-Utility class for converting data between XML and JSON formats.<br/>It automatically handles input serialization if an object is passed instead of a string.
+
+Utility class for converting data between XML and JSON formats.
+It automatically handles input serialization if an object is passed instead of a string.
+
+## Returns
+
+[`XML`](#xml)
 
 #### Methods
 
-<hr/>
+##### fromJson()
 
-#### fromJson
+> ```ts
+> static fromJson(input): string;
+> ```
 
-- `fromJson (input:string|any):string`
 
-  Converts a JSON input (either a JSON string or a raw JavaScript object) into an XML string.<br/><br/>Note: If a JavaScript object is passed, it is first stringified using JSON.stringify().<br/><br/>@param input The JSON string or object to be converted to XML.<br/>@returns The resulting XML content as a string.
+> Converts a JSON input (either a JSON string or a raw JavaScript object) into an XML string.
 
-<hr/>
+> Note: If a JavaScript object is passed, it is first stringified using JSON.stringify().
 
-#### toJson
+> **Parameters**
 
-- `toJson (input:string|any):string`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The JSON string or object to be converted to XML. |
 
-  Converts an XML input (expected as an XML string) into a JSON formatted string.<br/><br/>@param input The XML string to be converted to JSON.<br/>@returns The resulting JSON content as a string.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The resulting XML content as a string.
+> :::
 
+##### toJson()
+
+> ```ts
+> static toJson(input): string;
+> ```
+
+
+> Converts an XML input (expected as an XML string) into a JSON formatted string.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The XML string to be converted to JSON. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The resulting JSON content as a string.
+> :::

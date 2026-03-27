@@ -7,6 +7,25 @@ export default defineConfig({
   title: 'Aerokit',
   description: 'TypeScript SDK for the Low-Code Platform',
   base: basePath,
+  ignoreDeadLinks: [
+    './any',
+    './string', 
+    './number',
+    './boolean',
+    './void',
+    './unknown',
+    './null',
+    './undefined',
+    './object',
+    './symbol',
+    './bigint'
+  ],
+  markdown: {
+    config: (md) => {
+      // Allow HTML in markdown
+      md.set({ html: true });
+    }
+  },
   themeConfig: {
     outline: {
       level: 'deep'
@@ -671,7 +690,7 @@ export default defineConfig({
   vue: {
     template: {
       compilerOptions: {
-        isCustomElement: (tag) => tag === 'component-container' || tag === 'svg-icon',
+        isCustomElement: (tag) => tag === 'component-container' || tag === 'svg-icon' || tag.startsWith('a'),
       },
     },
   },

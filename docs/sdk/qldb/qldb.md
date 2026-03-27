@@ -1,25 +1,26 @@
-# API: qldb
+# qldb/qldb
 
-> Source: `qldb/qldb.ts`
-
-## Usage
-```javascript
-//first we need to create a table
-import { QLDBRepository } from "@aerokit/sdk/qldb";
-
-const qldb = new QLDBRepository("myLedger", "testTable").createTable();
+> [!tip]
+> Auto-generated from
+> - source: [qldb/qldb.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/qldb/qldb.ts)
+> - version: 1.0.0
 
 
+## Overview
 
-//use the newly created object to interact with qldb
-import { QLDBRepository } from "@aerokit/sdk/qldb";
+The Qldb API provides...
 
-const qldb = new QLDBRepository("myLedger", "testTable");
+## Table of Contents
 
-qldb.insert({ "foo": "bar" })
+- [Overview](#overview)
+- [Variables](#variables)
+  - [QLDBRepository](#qldbrepository)
 
-console.log(qldb.getAll())
+## Variables
 
-```
+### QLDBRepository
 
+> ```ts
+> const QLDBRepository: any;
+> ```
 

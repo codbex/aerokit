@@ -1,84 +1,139 @@
-# API: user
+# security/user
 
-> Source: `security/user.ts`
+> [!tip]
+> Auto-generated from
+> - source: [security/user.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security/user.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides static access to the currently authenticated user's security and session context.
 This class acts as a facade for the underlying UserFacade component.
 
-## Usage
-```javascript
-import { user } from "@aerokit/sdk/security";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-response.println("[UserName]: " + user.getName());
-response.println("[Is in Role]: " + user.isInRole("Developer"));
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [User](#user)
+- [Returns](#returns)
 
 ## Classes
 
 ### User
 
-Provides static access to the currently authenticated user's security and session context.<br/>This class acts as a facade for the underlying UserFacade component.
+
+Provides static access to the currently authenticated user's security and session context.
+This class acts as a facade for the underlying UserFacade component.
+
+## Returns
+
+[`User`](#user)
 
 #### Methods
 
-<hr/>
+##### getName()
 
-#### getName
+> ```ts
+> static getName(): string;
+> ```
 
-- `getName ():string`
 
-  Retrieves the principal name (username or ID) of the currently authenticated user.<br/><br/>@returns The user's name or identifier as a string.
+> Retrieves the principal name (username or ID) of the currently authenticated user.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The user's name or identifier as a string.
+> > :::
 
-#### isInRole
+> ##### isInRole()
 
-- `isInRole (role:string):boolean`
+> > ```ts
+> > static isInRole(role): boolean;
+> > ```
 
-  Checks if the currently authenticated user is assigned to a specific security role.<br/><br/>@param role The name of the role to check (e.g., 'Administrator', 'User').<br/>@returns True if the user is in the specified role, false otherwise.
 
-<hr/>
+> Checks if the currently authenticated user is assigned to a specific security role.
 
-#### getTimeout
+> **Parameters**
 
-- `getTimeout ():number`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `role` | `string` | The name of the role to check (e.g., 'Administrator', 'User'). |
 
-  Retrieves the remaining session timeout for the current user session in seconds.<br/><br/>@returns The session timeout duration in seconds.
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the user is in the specified role, false otherwise.
+> :::
 
-<hr/>
+##### getTimeout()
 
-#### getAuthType
+> ```ts
+> static getTimeout(): number;
+> ```
 
-- `getAuthType ():string`
 
-  Retrieves the authentication mechanism used for the current session (e.g., 'BASIC', 'FORM').<br/><br/>@returns The type of authentication used.
+Retrieves the remaining session timeout for the current user session in seconds.
 
-<hr/>
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The session timeout duration in seconds.
+> :::
 
-#### getSecurityToken
+##### getAuthType()
 
-- `getSecurityToken ():string`
+> ```ts
+> static getAuthType(): string;
+> ```
 
-  Retrieves the security token associated with the current user session.<br/>This might be a session ID or an access token.<br/><br/>@returns The security token as a string.
 
-<hr/>
+Retrieves the authentication mechanism used for the current session (e.g., 'BASIC', 'FORM').
 
-#### getInvocationCount
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The type of authentication used.
+> :::
 
-- `getInvocationCount ():number`
+##### getSecurityToken()
 
-  Retrieves the number of requests (invocations) made by the current user<br/>during the lifecycle of the current session.<br/><br/>@returns The total invocation count.
+> ```ts
+> static getSecurityToken(): string;
+> ```
 
-<hr/>
 
-#### getLanguage
+Retrieves the security token associated with the current user session.
+This might be a session ID or an access token.
 
-- `getLanguage ():string`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The security token as a string.
+> :::
 
-  Retrieves the preferred language setting (e.g., 'en', 'de', 'es') for the current user.<br/><br/>@returns The user's preferred language code.
+##### getInvocationCount()
 
+> ```ts
+> static getInvocationCount(): number;
+> ```
+
+
+Retrieves the number of requests (invocations) made by the current user
+during the lifecycle of the current session.
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The total invocation count.
+> :::
+
+##### getLanguage()
+
+> ```ts
+> static getLanguage(): string;
+> ```
+
+
+Retrieves the preferred language setting (e.g., 'en', 'de', 'es') for the current user.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The user's preferred language code.
+> :::

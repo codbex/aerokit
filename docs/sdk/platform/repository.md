@@ -1,495 +1,1074 @@
-# API: repository
+# platform/repository
 
-> Source: `platform/repository.ts`
+> [!tip]
+> Auto-generated from
+> - source: [platform/repository.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/repository.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides a wrapper for the platform's RepositoryFacade to manage files (Resources)
 and folders (Collections), including CRUD operations, movement, and content handling.
+/
+import { Bytes } from "@aerokit/sdk/io/bytes";
 
-## Usage
-```javascript
-import { repository } from "@aerokit/sdk/platform";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let resource = repository.getResource("/registry/public/modules/src/platform/repository.ts");
-
-response.println("Exists: " + resource.exists());
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Repository](#repository)
+- [Returns](#returns)
+  - [Resource](#resource)
+- [Parameters](#parameters)
+  - [Collection](#collection)
+- [Parameters](#parameters)
+  - [EntityInformation](#entityinformation)
+- [Parameters](#parameters)
 
 ## Classes
 
 ### Repository
 
-@class Repository<br/>@description Static utility class providing high-level methods for interacting with the<br/>repository facade to manage resources and collections by path.
+
+Repository
+
+#### Description
+
+Static utility class providing high-level methods for interacting with the
+repository facade to manage resources and collections by path.
+
+## Returns
+
+[`Repository`](#repository)
 
 #### Methods
 
-<hr/>
+##### getResource()
 
-#### getResource
+> ```ts
+> static getResource(path): Resource;
+> ```
 
-- `getResource (path:string):Resource`
 
-  Retrieves a resource (file) object from the repository by its path.<br/><br/>@param \{string\} path The absolute path to the resource.<br/>@returns \{Resource\} A Resource instance wrapping the native repository object.
+> Retrieves a resource (file) object from the repository by its path.
 
-<hr/>
+> **Parameters**
 
-#### createResource
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the resource. |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> A Resource instance wrapping the native repository object.
+> 
+> ##### createResource()
+> 
+> > ```ts
+> > static createResource( path, content, contentType): Resource;
+> > ```
+> 
+> 
+> > Creates a new resource (file) with content provided as a string.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path where the resource should be created. |
+> | `content` | `string` | The string content for the resource. |
+> | `contentType` | `string` | The MIME type of the content (e.g., "text/plain"). |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> The newly created Resource instance.
+> 
+> ##### createResourceNative()
+> 
+> > ```ts
+> > static createResourceNative( path, content, contentType): Resource;
+> > ```
+> 
+> 
+> > Creates a new resource (file) with content provided as a native byte array.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path where the resource should be created. |
+> | `content` | `any`[] | The native byte array content. |
+> | `contentType` | `string` | The MIME type of the content. |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> The newly created Resource instance.
+> 
+> ##### updateResource()
+> 
+> > ```ts
+> > static updateResource(path, content): Resource;
+> > ```
+> 
+> 
+> > Updates the content of an existing resource using a string.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the resource to update. |
+> | `content` | `string` | The new string content. |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> The updated Resource instance.
+> 
+> ##### updateResourceNative()
+> 
+> > ```ts
+> > static updateResourceNative(path, content): Resource;
+> > ```
+> 
+> 
+> > Updates the content of an existing resource using a native byte array.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the resource to update. |
+> | `content` | `any`[] | The new native byte array content. |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> The updated Resource instance.
+> 
+> ##### deleteResource()
+> 
+> > ```ts
+> > static deleteResource(path): void;
+> > ```
+> 
+> 
+> > Deletes the resource (file) at the specified path.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path of the resource to delete. |
 
-- `createResource (path:string, content:string, contentType:string):Resource`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Creates a new resource (file) with content provided as a string.<br/><br/>@param \{string\} path The absolute path where the resource should be created.<br/>@param \{string\} content The string content for the resource.<br/>@param \{string\} contentType The MIME type of the content (e.g., "text/plain").<br/>@returns \{Resource\} The newly created Resource instance.
+##### getCollection()
 
-<hr/>
+> ```ts
+> static getCollection(path): Collection;
+> ```
 
-#### createResourceNative
 
-- `createResourceNative (path:string, content:any[], contentType:string):Resource`
+> Retrieves a collection (folder) object from the repository by its path.
 
-  Creates a new resource (file) with content provided as a native byte array.<br/><br/>@param \{string\} path The absolute path where the resource should be created.<br/>@param \{any[]\} content The native byte array content.<br/>@param \{string\} contentType The MIME type of the content.<br/>@returns \{Resource\} The newly created Resource instance.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path to the collection. |
+> 
+> ###### Returns
+> 
+> [`Collection`](#collection)
+> 
+> A Collection instance wrapping the native repository object.
+> 
+> ##### createCollection()
+> 
+> > ```ts
+> > static createCollection(path): Collection;
+> > ```
+> 
+> 
+> > Creates a new collection (folder) at the specified path.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path where the collection should be created. |
+> 
+> ###### Returns
+> 
+> [`Collection`](#collection)
+> 
+> The newly created Collection instance.
+> 
+> ##### deleteCollection()
+> 
+> > ```ts
+> > static deleteCollection(path): void;
+> > ```
+> 
+> 
+> > Deletes the collection (folder) at the specified path.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The absolute path of the collection to delete. |
 
-#### updateResource
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `updateResource (path:string, content:string):Resource`
+##### find()
 
-  Updates the content of an existing resource using a string.<br/><br/>@param \{string\} path The absolute path to the resource to update.<br/>@param \{string\} content The new string content.<br/>@returns \{Resource\} The updated Resource instance.
+> ```ts
+> static find(path, pattern): string[];
+> ```
 
-<hr/>
 
-#### updateResourceNative
+> Searches the repository starting from a given path for resources matching a glob pattern.
 
-- `updateResourceNative (path:string, content:any[]):Resource`
+> **Parameters**
 
-  Updates the content of an existing resource using a native byte array.<br/><br/>@param \{string\} path The absolute path to the resource to update.<br/>@param \{any[]\} content The new native byte array content.<br/>@returns \{Resource\} The updated Resource instance.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The starting path for the search. |
+> | `pattern` | `string` | The glob pattern to match resource names against (e.g., "*.js"). |
 
-<hr/>
-
-#### deleteResource
-
-- `deleteResource (path:string):void`
-
-  Deletes the resource (file) at the specified path.<br/><br/>@param \{string\} path The absolute path of the resource to delete.
-
-<hr/>
-
-#### getCollection
-
-- `getCollection (path:string):Collection`
-
-  Retrieves a collection (folder) object from the repository by its path.<br/><br/>@param \{string\} path The absolute path to the collection.<br/>@returns \{Collection\} A Collection instance wrapping the native repository object.
-
-<hr/>
-
-#### createCollection
-
-- `createCollection (path:string):Collection`
-
-  Creates a new collection (folder) at the specified path.<br/><br/>@param \{string\} path The absolute path where the collection should be created.<br/>@returns \{Collection\} The newly created Collection instance.
-
-<hr/>
-
-#### deleteCollection
-
-- `deleteCollection (path:string):void`
-
-  Deletes the collection (folder) at the specified path.<br/><br/>@param \{string\} path The absolute path of the collection to delete.
-
-<hr/>
-
-#### find
-
-- `find (path:string, pattern:string):string[]`
-
-  Searches the repository starting from a given path for resources matching a glob pattern.<br/><br/>@param \{string\} path The starting path for the search.<br/>@param \{string\} pattern The glob pattern to match resource names against (e.g., "*.js").<br/>@returns \{string[]\} An array of repository paths (strings) that match the search criteria.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of repository paths (strings) that match the search criteria. ***
+> :::
 
 ### Resource
 
-@class Resource<br/>@description Represents a file or resource (non-collection) within the Repository,<br/>providing instance methods for file operations.
+Retrieves a resource (file) object from the repository by its path.
+
+
+
+Resource
+
+#### Description
+
+Represents a file or resource (non-collection) within the Repository,
+providing instance methods for file operations.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `native` | `any` | The native Java object instance representing the repository resource. |
+
+###### Returns
+
+[`Resource`](#resource)
 
 #### Methods
 
-<hr/>
+##### getName()
 
-#### getName
+> ```ts
+> getName(): string;
+> ```
 
-- `getName ():string`
 
-  Gets the name of the resource (file name).<br/>@returns \{string\} The name.
+> Gets the name of the resource (file name).
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The name.
+> > :::
 
-#### getPath
+> ##### getPath()
 
-- `getPath ():string`
+> > ```ts
+> > getPath(): string;
+> > ```
 
-  Gets the full repository path of the resource.<br/>@returns \{string\} The repository path.
 
-<hr/>
+> Gets the full repository path of the resource.
 
-#### getParent
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The repository path.
+> > :::
 
-- `getParent ():Collection`
+> ##### getParent()
 
-  Gets the parent collection (folder) of this resource.<br/>@returns \{Collection\} The parent Collection instance.
+> > ```ts
+> > getParent(): Collection;
+> > ```
 
-<hr/>
 
-#### getInformation
+> Gets the parent collection (folder) of this resource.
 
-- `getInformation ():EntityInformation`
+> ###### Returns
 
-  Gets detailed metadata about the resource.<br/>@returns \{EntityInformation\} The metadata object.
+> [`Collection`](#collection)
 
-<hr/>
+> The parent Collection instance.
 
-#### create
+> ##### getInformation()
 
-- `create ():void`
+> > ```ts
+> > getInformation(): EntityInformation;
+> > ```
 
-  Creates the resource if it does not already exist.
 
-<hr/>
+> Gets detailed metadata about the resource.
 
-#### delete
+> ###### Returns
 
-- `delete ():void`
+> [`EntityInformation`](#entityinformation)
 
-  Deletes the resource from the repository.
+> The metadata object.
 
-<hr/>
+> ##### create()
 
-#### renameTo
+> > ```ts
+> > create(): void;
+> > ```
 
-- `renameTo (name:string):void`
 
-  Renames the resource within its current collection.<br/>@param \{string\} name The new name for the resource.
+> Creates the resource if it does not already exist.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-#### moveTo
+> ##### delete()
 
-- `moveTo (path:string):void`
+> > ```ts
+> > delete(): void;
+> > ```
 
-  Moves the resource to a new path.<br/>@param \{string\} path The new absolute path for the resource.
 
-<hr/>
+> Deletes the resource from the repository.
 
-#### copyTo
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-- `copyTo (path:string):void`
+> ##### renameTo()
 
-  Copies the resource to a new path.<br/>@param \{string\} path The new absolute path for the copied resource.
+> > ```ts
+> > renameTo(name): void;
+> > ```
 
-<hr/>
 
-#### exists
+> Renames the resource within its current collection.
 
-- `exists ():boolean`
+> **Parameters**
 
-  Checks if the resource currently exists in the repository.<br/>@returns \{boolean\} True if the resource exists, false otherwise.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The new name for the resource. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### isEmpty
+##### moveTo()
 
-- `isEmpty ():boolean`
+> ```ts
+> moveTo(path): void;
+> ```
 
-  Checks if the resource (file) is empty (has zero size).<br/>@returns \{boolean\} True if the content is empty, false otherwise.
 
-<hr/>
+> Moves the resource to a new path.
 
-#### getText
+> **Parameters**
 
-- `getText ():string`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The new absolute path for the resource. |
 
-  Gets the content of the resource as a text string.<br/>@returns \{string\} The text content.
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-<hr/>
+##### copyTo()
 
-#### getContent
+> ```ts
+> copyTo(path): void;
+> ```
 
-- `getContent ():any[]`
 
-  Gets the content of the resource as a JavaScript-friendly byte array.<br/>@returns \{any[]\} The content bytes.
+> Copies the resource to a new path.
 
-<hr/>
+> **Parameters**
 
-#### getContentNative
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The new absolute path for the copied resource. |
 
-- `getContentNative ():any[]`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Gets the content of the resource as its native Java byte array representation.<br/>@returns \{any[]\} The content bytes.
+##### exists()
 
-<hr/>
+> ```ts
+> exists(): boolean;
+> ```
 
-#### setText
 
-- `setText (text:string):void`
+> Checks if the resource currently exists in the repository.
 
-  Sets the content of the resource using a text string.<br/>The string is converted to a byte array before saving.<br/>@param \{string\} text The new text content.
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the resource exists, false otherwise.
+> > :::
 
-<hr/>
+> ##### isEmpty()
 
-#### setContent
+> > ```ts
+> > isEmpty(): boolean;
+> > ```
 
-- `setContent (content:any[]):void`
 
-  Sets the content of the resource using a JavaScript byte array.<br/>The array is converted to a native byte array before saving.<br/>@param \{any[]\} content The new content bytes.
+> Checks if the resource (file) is empty (has zero size).
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the content is empty, false otherwise.
+> > :::
 
-#### setContentNative
+> ##### getText()
 
-- `setContentNative (content:any[]):void`
+> > ```ts
+> > getText(): string;
+> > ```
 
-  Sets the content of the resource using a native Java byte array.<br/>@param \{any[]\} content The new native content bytes.
 
-<hr/>
+> Gets the content of the resource as a text string.
 
-#### isBinary
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The text content.
+> > :::
 
-- `isBinary ():boolean`
+> ##### getContent()
 
-  Checks if the resource content is determined to be binary.<br/>@returns \{boolean\} True if binary, false if text.
+> > ```ts
+> > getContent(): any[];
+> > ```
 
-<hr/>
 
-#### getContentType
+> Gets the content of the resource as a JavaScript-friendly byte array.
 
-- `getContentType ():string`
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
-  Gets the content type (MIME type) of the resource.<br/>@returns \{string\} The content type string.
+> ##### getContentNative()
 
-### Collection
+> > ```ts
+> > getContentNative(): any[];
+> > ```
 
-@class Collection<br/>@description Represents a directory or folder within the Repository, providing<br/>instance methods for collection and resource management.
 
-#### Methods
+> Gets the content of the resource as its native Java byte array representation.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
-#### getName
+> ##### setText()
 
-- `getName ():string`
+> > ```ts
+> > setText(text): void;
+> > ```
 
-  Gets the name of the collection (folder name).<br/>@returns \{string\} The name.
 
-<hr/>
+> Sets the content of the resource using a text string.
+> The string is converted to a byte array before saving.
 
-#### getPath
+> **Parameters**
 
-- `getPath ():string`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `text` | `string` | The new text content. |
 
-  Gets the full repository path of the collection.<br/>@returns \{string\} The repository path.
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-<hr/>
+##### setContent()
 
-#### getParent
+> ```ts
+> setContent(content): void;
+> ```
 
-- `getParent ():Collection`
 
-  Gets the parent collection (folder) of this collection.<br/>@returns \{Collection\} The parent Collection instance.
+> Sets the content of the resource using a JavaScript byte array.
+> The array is converted to a native byte array before saving.
 
-<hr/>
+> **Parameters**
 
-#### getInformation
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `content` | `any`[] | The new content bytes. |
 
-- `getInformation ():EntityInformation`
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-  Gets detailed metadata about the collection.<br/>@returns \{EntityInformation\} The metadata object.
+##### setContentNative()
 
-<hr/>
+> ```ts
+> setContentNative(content): void;
+> ```
 
-#### create
 
-- `create ():void`
+> Sets the content of the resource using a native Java byte array.
 
-  Creates the collection if it does not already exist.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `content` | `any`[] | The new native content bytes. |
 
-#### delete
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `delete ():void`
+##### isBinary()
 
-  Deletes the collection from the repository.
+> ```ts
+> isBinary(): boolean;
+> ```
 
-<hr/>
 
-#### renameTo
+> Checks if the resource content is determined to be binary.
 
-- `renameTo (name:string):void`
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if binary, false if text.
+> > :::
 
-  Renames the collection within its current parent.<br/>@param \{string\} name The new name for the collection.
+> ##### getContentType()
 
-<hr/>
+> > ```ts
+> > getContentType(): string;
+> > ```
 
-#### moveTo
 
-- `moveTo (path:string):void`
+> Gets the content type (MIME type) of the resource.
 
-  Moves the collection to a new path.<br/>@param \{string\} path The new absolute path for the collection.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The content type string. ***
+> > :::
 
-<hr/>
+> ### Collection
 
-#### copyTo
+@constructor
+@param {any} native The native Java object instance representing the repository resource.
+/
+	constructor(native: any) {
+		this.native = native;
+	}
 
-- `copyTo (path:string):void`
 
-  Copies the collection to a new path.<br/>@param \{string\} path The new absolute path for the copied collection.
 
-<hr/>
+> Collection
 
-#### exists
+> #### Description
 
-- `exists ():boolean`
+> Represents a directory or folder within the Repository, providing
+> instance methods for collection and resource management.
 
-  Checks if the collection currently exists in the repository.<br/>@returns \{boolean\} True if the collection exists, false otherwise.
+> ## Parameters
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native Java object instance representing the repository collection. |
 
-#### isEmpty
+> ###### Returns
 
-- `isEmpty ():boolean`
+> [`Collection`](#collection)
 
-  Checks if the collection is empty (contains no files or sub-directories).<br/>@returns \{boolean\} True if empty, false otherwise.
+> #### Methods
 
-<hr/>
+> ##### getName()
 
-#### getCollectionsNames
+> > ```ts
+> > getName(): string;
+> > ```
 
-- `getCollectionsNames ():string[]`
 
-  Gets the names of all sub-collections (folders) within this collection.<br/>@returns \{string[]\} An array of sub-collection names.
+> Gets the name of the collection (folder name).
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The name.
+> > :::
 
-#### createCollection
+> ##### getPath()
 
-- `createCollection (name:string):Collection`
+> > ```ts
+> > getPath(): string;
+> > ```
 
-  Creates a new sub-collection (folder) within this collection.<br/>@param \{string\} name The name of the new sub-collection.<br/>@returns \{Collection\} The newly created Collection instance.
 
-<hr/>
+> Gets the full repository path of the collection.
 
-#### getCollection
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The repository path.
+> > :::
 
-- `getCollection (name:string):Collection`
+> ##### getParent()
 
-  Gets a specific sub-collection by name.<br/>@param \{string\} name The name of the sub-collection.<br/>@returns \{Collection\} The child Collection instance.
+> > ```ts
+> > getParent(): Collection;
+> > ```
 
-<hr/>
 
-#### removeCollection
+> Gets the parent collection (folder) of this collection.
 
-- `removeCollection (name:string):void`
+> ###### Returns
 
-  Removes a sub-collection by name.<br/>@param \{string\} name The name of the sub-collection to remove.
+> [`Collection`](#collection)
 
-<hr/>
+> The parent Collection instance.
 
-#### getResourcesNames
+> ##### getInformation()
 
-- `getResourcesNames ():string[]`
+> > ```ts
+> > getInformation(): EntityInformation;
+> > ```
 
-  Gets the names of all resources (files) within this collection.<br/>@returns \{string[]\} An array of resource names.
 
-<hr/>
+> Gets detailed metadata about the collection.
 
-#### getResource
+> ###### Returns
 
-- `getResource (name:string):Resource`
+> [`EntityInformation`](#entityinformation)
 
-  Gets a specific resource (file) by name.<br/>@param \{string\} name The name of the resource.<br/>@returns \{Resource\} The child Resource instance.
+> The metadata object.
 
-<hr/>
+> ##### create()
 
-#### removeResource
+> > ```ts
+> > create(): void;
+> > ```
 
-- `removeResource (name:string):void`
 
-  Removes a resource (file) by name.<br/>@param \{string\} name The name of the resource to remove.
+> Creates the collection if it does not already exist.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-#### createResource
+> ##### delete()
 
-- `createResource (name:string, content:string):Resource`
+> > ```ts
+> > delete(): void;
+> > ```
 
-  Creates a new resource (file) within this collection.<br/>@param \{string\} name The name of the new resource.<br/>@param \{string\} content The string content for the resource.<br/>@returns \{Resource\} The newly created Resource instance.
 
-### EntityInformation
+> Deletes the collection from the repository.
 
-@class EntityInformation<br/>@description Represents detailed metadata (creation date, size, permissions, etc.) for a<br/>Resource or Collection.
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
 
-#### Methods
+> ##### renameTo()
 
-<hr/>
+> > ```ts
+> > renameTo(name): void;
+> > ```
 
-#### getName
 
-- `getName ():string`
+> Renames the collection within its current parent.
 
-  Gets the name of the entity (resource or collection).<br/>@returns \{string\} The name.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The new name for the collection. |
 
-#### getPath
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-- `getPath ():string`
+##### moveTo()
 
-  Gets the full repository path of the entity.<br/>@returns \{string\} The repository path.
+> ```ts
+> moveTo(path): void;
+> ```
 
-<hr/>
 
-#### getPermissions
+> Moves the collection to a new path.
 
-- `getPermissions ():number`
+> **Parameters**
 
-  Gets the access permissions for the entity (typically an integer bitmask).<br/>@returns \{number\} The permissions value.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The new absolute path for the collection. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-#### getSize
+##### copyTo()
 
-- `getSize ():number`
+> ```ts
+> copyTo(path): void;
+> ```
 
-  Gets the size of the resource content in bytes (0 for a collection).<br/>@returns \{number\} The size in bytes.
 
-<hr/>
+> Copies the collection to a new path.
 
-#### getCreatedBy
+> **Parameters**
 
-- `getCreatedBy ():string`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The new absolute path for the copied collection. |
 
-  Gets the user who created the entity.<br/>@returns \{string\} The creator's name.
+> ::: info Returns
+> - **Type**: `void`
+> :::
 
-<hr/>
+##### exists()
 
-#### getCreatedAt
+> ```ts
+> exists(): boolean;
+> ```
 
-- `getCreatedAt ():Date`
 
-  Gets the creation timestamp.<br/>@returns \{Date\} The creation date and time.
+> Checks if the collection currently exists in the repository.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the collection exists, false otherwise.
+> > :::
 
-#### getModifiedBy
+> ##### isEmpty()
 
-- `getModifiedBy ():string`
+> > ```ts
+> > isEmpty(): boolean;
+> > ```
 
-  Gets the user who last modified the entity.<br/>@returns \{string\} The modifier's name.
 
-<hr/>
+> Checks if the collection is empty (contains no files or sub-directories).
 
-#### getModifiedAt
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if empty, false otherwise.
+> > :::
 
-- `getModifiedAt ():Date`
+> ##### getCollectionsNames()
 
-  Gets the last modification timestamp.<br/>@returns \{Date\} The modification date and time.
+> > ```ts
+> > getCollectionsNames(): string[];
+> > ```
 
+
+> Gets the names of all sub-collections (folders) within this collection.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of sub-collection names.
+> > :::
+
+> ##### createCollection()
+
+> > ```ts
+> > createCollection(name): Collection;
+> > ```
+
+
+> Creates a new sub-collection (folder) within this collection.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the new sub-collection. |
+> 
+> ###### Returns
+> 
+> [`Collection`](#collection)
+> 
+> The newly created Collection instance.
+> 
+> ##### getCollection()
+> 
+> > ```ts
+> > getCollection(name): Collection;
+> > ```
+> 
+> 
+> > Gets a specific sub-collection by name.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the sub-collection. |
+> 
+> ###### Returns
+> 
+> [`Collection`](#collection)
+> 
+> The child Collection instance.
+> 
+> ##### removeCollection()
+> 
+> > ```ts
+> > removeCollection(name): void;
+> > ```
+> 
+> 
+> > Removes a sub-collection by name.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the sub-collection to remove. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### getResourcesNames()
+
+> ```ts
+> getResourcesNames(): string[];
+> ```
+
+
+> Gets the names of all resources (files) within this collection.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of resource names.
+> > :::
+
+> ##### getResource()
+
+> > ```ts
+> > getResource(name): Resource;
+> > ```
+
+
+> Gets a specific resource (file) by name.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the resource. |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> The child Resource instance.
+> 
+> ##### removeResource()
+> 
+> > ```ts
+> > removeResource(name): void;
+> > ```
+> 
+> 
+> > Removes a resource (file) by name.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the resource to remove. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### createResource()
+
+> ```ts
+> createResource(name, content): Resource;
+> ```
+
+
+> Creates a new resource (file) within this collection.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the new resource. |
+> | `content` | `string` | The string content for the resource. |
+> 
+> ###### Returns
+> 
+> [`Resource`](#resource)
+> 
+> The newly created Resource instance.
+> 
+> ***
+> 
+> ### EntityInformation
+
+@constructor
+@param {any} native The native Java object instance representing the repository collection.
+/
+	constructor(native: any) {
+		this.native = native;
+	}
+
+> 
+> 
+> EntityInformation
+> 
+> #### Description
+> 
+> Represents detailed metadata (creation date, size, permissions, etc.) for a
+> Resource or Collection.
+> 
+> ## Parameters
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native Java object instance holding the entity information. |
+> 
+> ###### Returns
+> 
+> [`EntityInformation`](#entityinformation)
+> 
+> #### Methods
+> 
+> ##### getName()
+> 
+> > ```ts
+> > getName(): string;
+> > ```
+> 
+> 
+> Gets the name of the entity (resource or collection).
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The name.
+> :::
+
+##### getPath()
+
+> ```ts
+> getPath(): string;
+> ```
+
+
+Gets the full repository path of the entity.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The repository path.
+> :::
+
+##### getPermissions()
+
+> ```ts
+> getPermissions(): number;
+> ```
+
+
+Gets the access permissions for the entity (typically an integer bitmask).
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The permissions value.
+> :::
+
+##### getSize()
+
+> ```ts
+> getSize(): number;
+> ```
+
+
+Gets the size of the resource content in bytes (0 for a collection).
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The size in bytes.
+> :::
+
+##### getCreatedBy()
+
+> ```ts
+> getCreatedBy(): string;
+> ```
+
+
+Gets the user who created the entity.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The creator's name.
+> :::
+
+##### getCreatedAt()
+
+> ```ts
+> getCreatedAt(): Date;
+> ```
+
+
+Gets the creation timestamp.
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: The creation date and time.
+> :::
+
+##### getModifiedBy()
+
+> ```ts
+> getModifiedBy(): string;
+> ```
+
+
+Gets the user who last modified the entity.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The modifier's name.
+> :::
+
+##### getModifiedAt()
+
+> ```ts
+> getModifiedAt(): Date;
+> ```
+
+
+Gets the last modification timestamp.
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: The modification date and time.
+> :::

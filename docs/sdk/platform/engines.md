@@ -1,44 +1,104 @@
-# API: engines
+# platform/engines
 
-> Source: `platform/engines.ts`
+> [!tip]
+> Auto-generated from
+> - source: [platform/engines.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/engines.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Interface defining the execution parameters expected by the Engine class.
+/
+export interface ExecutionParameters {
+	[key: string]: any
+}
 
-## Usage
-```javascript
-import { Engine } from "@aerokit/sdk/platform";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let result = new Engine("javascript").execute("project1", "hello.js", "", {});
-
-response.println(JSON.stringify(result));
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Engine](#engine)
+- [Parameters](#parameters)
+- [Interfaces](#interfaces)
+  - [ExecutionParameters](#executionparameters)
 
 ## Classes
 
 ### Engine
 
-@class Engine<br/>@description Represents a specific execution engine type (e.g., JavaScript, Groovy)<br/>and provides methods to interact with the platform's execution facade.
+
+Engine
+
+#### Description
+
+Represents a specific execution engine type (e.g., JavaScript, Groovy)
+and provides methods to interact with the platform's execution facade.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `type` | `string` | The type of the execution engine (e.g., "javascript"). |
+
+###### Returns
+
+[`Engine`](#engine)
 
 #### Methods
 
-<hr/>
+##### getTypes()
 
-#### getTypes
+> ```ts
+> static getTypes(): string[];
+> ```
 
-- `getTypes ():string[]`
 
-  Retrieves the list of available engine types from the platform.<br/>@returns \{string[]\} An array of supported engine type names.
+> Retrieves the list of available engine types from the platform.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of supported engine type names.
+> > :::
 
-#### execute
+> ##### execute()
 
-- `execute (projectName:string, projectFilePath:string, projectFilePathParam:string, parameters:ExecutionParameters, debug:boolean=false):any`
+> > ```ts
+> > execute(
+> >    projectName, 
+> >    projectFilePath, 
+> >    projectFilePathParam, 
+> >    parameters, 
+> >    debug?): any;
+> > ```
 
-  Executes a project script or process using the configured engine type.<br/><br/>@param \{string\} projectName The name of the project.<br/>@param \{string\} projectFilePath The relative path to the main file to execute within the project (e.g., "lib/script.js").<br/>@param \{string\} projectFilePathParam A secondary file path parameter (often unused or context-specific).<br/>@param \{ExecutionParameters\} parameters An object containing key/value parameters to pass to the script context.<br/>@param \{boolean\} [debug=false] Whether to execute in debug mode.<br/>@returns \{any\} The result returned by the executed script.
 
+> Executes a project script or process using the configured engine type.
+
+> **Parameters**
+
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `projectName` | `string` | `undefined` | The name of the project. |
+> | `projectFilePath` | `string` | `undefined` | The relative path to the main file to execute within the project (e.g., "lib/script.js"). |
+> | `projectFilePathParam` | `string` | `undefined` | A secondary file path parameter (often unused or context-specific). |
+> | `parameters` | [`ExecutionParameters`](#executionparameters) | `undefined` | An object containing key/value parameters to pass to the script context. |
+> | `debug?` | `boolean` | `false` | Whether to execute in debug mode. |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The result returned by the executed script.
+> :::
+
+## Interfaces
+
+### ExecutionParameters
+
+
+Interface defining the execution parameters expected by the Engine class.
+
+#### Indexable
+
+> ```ts
+> [key: string]: any
+> ```
