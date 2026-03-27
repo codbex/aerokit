@@ -27,3 +27,5 @@ github_pages
 
 # VitePress
 **/.vitepress/cache
+
+src/**
