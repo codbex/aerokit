@@ -4,229 +4,205 @@
 - source: [bpm/process.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/process.ts)
 :::
 
-
 ## Overview
 
-API Process
-* Provides methods for interacting with process instances,
-including starting, updating metadata, and managing variables.
 
 
 ## Classes
 
 ### BpmnError
 
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new BpmnError(code, message?): BpmnError;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `code` | `string` |
-| `message?` | `string` |
-
 ### Process
-#### Constructors
-##### Constructor
-#### Methods
-##### start()
-**Parameters**
+
+#### start()
+
+Starts a new process instance for a given process definition key.
+
+> ```ts
+> static start(key: string, businessKey: string, parameters: any): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The process definition key (ID) of the process to start. |
+> | `businessKey` | `string` | An optional business key to associate with the process instance. Defaults to an empty string. |
+> | `parameters` | `any` | An optional map of process variables to pass to the process instance upon starting. Defaults to an empty object. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unique ID of the newly started process instance.
 > :::
-##### setProcessInstanceName()
 
-```ts
-static setProcessInstanceName(processInstanceId, name): void;
-```
-
+#### setProcessInstanceName()
 
 Sets a human-readable name for an existing process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance to update. |
-| `name` | `string` | The new name for the process instance. |
-
+> ```ts
+> static setProcessInstanceName(processInstanceId: string, name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance to update. |
+> | `name` | `string` | The new name for the process instance. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### updateBusinessKey()
 
-```ts
-static updateBusinessKey(processInstanceId, businessKey): void;
-```
-
+#### updateBusinessKey()
 
 Updates the business key of an existing process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance to update. |
-| `businessKey` | `string` | The new business key. |
-
+> ```ts
+> static updateBusinessKey(processInstanceId: string, businessKey: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance to update. |
+> | `businessKey` | `string` | The new business key. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### updateBusinessStatus()
 
-```ts
-static updateBusinessStatus(processInstanceId, businessStatus): void;
-```
-
+#### updateBusinessStatus()
 
 Updates the business status of an existing process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance to update. |
-| `businessStatus` | `string` | The new business status. |
-
+> ```ts
+> static updateBusinessStatus(processInstanceId: string, businessStatus: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance to update. |
+> | `businessStatus` | `string` | The new business status. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getVariable()
 
-```ts
-static getVariable(processInstanceId, variableName): any;
-```
-
+#### getVariable()
 
 Retrieves the value of a specific variable from a process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance. |
-| `variableName` | `string` | The name of the variable to retrieve. |
-
+> ```ts
+> static getVariable(processInstanceId: string, variableName: string): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance. |
+> | `variableName` | `string` | The name of the variable to retrieve. |
+>
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: The value of the variable, or `null` if the variable does not exist. The type is `any` as it depends on the stored value.
+> - **Description**: The value of the variable, or &#x60;null&#x60; if the variable does not exist. The type is &#x60;any&#x60; as it depends on the stored value.
 > :::
-##### getVariables()
 
-```ts
-static getVariables(processInstanceId): any;
-```
-
+#### getVariables()
 
 Retrieves all variables associated with a process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance. |
-
+> ```ts
+> static getVariables(processInstanceId: string): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance. |
+>
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: An object containing all variables for the process instance, where keys are variable names and values are the variable values.
 > :::
-##### setVariable()
 
-```ts
-static setVariable(
-   processInstanceId, 
-   variableName, 
-   value): void;
-```
-
+#### setVariable()
 
 Sets or updates the value of a variable in a process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance. |
-| `variableName` | `string` | The name of the variable to set. |
-| `value` | `any` | The new value for the variable. The type is `any` to accommodate different data types. |
-
+> ```ts
+> static setVariable(processInstanceId: string, variableName: string, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance. |
+> | `variableName` | `string` | The name of the variable to set. |
+> | `value` | `any` | The new value for the variable. The type is &#x60;any&#x60; to accommodate different data types. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### removeVariable()
 
-```ts
-static removeVariable(processInstanceId, variableName): void;
-```
-
+#### removeVariable()
 
 Removes a variable from a process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance. |
-| `variableName` | `string` | The name of the variable to remove. |
-
+> ```ts
+> static removeVariable(processInstanceId: string, variableName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance. |
+> | `variableName` | `string` | The name of the variable to remove. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### correlateMessageEvent()
 
-```ts
-static correlateMessageEvent(
-   processInstanceId, 
-   messageName, 
-   variables): void;
-```
-
+#### correlateMessageEvent()
 
 Correlates a message event with a running process instance.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `processInstanceId` | `string` | The ID of the process instance to correlate the message to. |
-| `messageName` | `string` | The name of the message event defined in the BPMN process. |
-| `variables` | `Map`\ | A map of variables (`Map`) to pass along with the message event. |
-
+> ```ts
+> static correlateMessageEvent(processInstanceId: string, messageName: string, variables: Map): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `processInstanceId` | `string` | The ID of the process instance to correlate the message to. |
+> | `messageName` | `string` | The name of the message event defined in the BPMN process. |
+> | `variables` | `Map` | A map of variables (&#x60;Map&lt;string, any&gt;&#x60;) to pass along with the message event. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getExecutionContext()
 
-```ts
-static getExecutionContext(): ExecutionContext;
-```
-
+#### getExecutionContext()
 
 Retrieves the current execution context object, typically used within an execution listener or service task.
 
+> ```ts
+> static getExecutionContext(): ExecutionContext;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `ExecutionContext`
-> - **Description**: A new instance of the `ExecutionContext` containing details about the current process execution path.
+> - **Description**: A new instance of the &#x60;ExecutionContext&#x60; containing details about the current process execution path.
 > :::
-##### getTaskContext()
 
-```ts
-static getTaskContext(): TaskContext;
-```
-
+#### getTaskContext()
 
 Retrieves the current task context object, typically used within a task listener or service task.
 
+> ```ts
+> static getTaskContext(): TaskContext;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `TaskContext`
-> - **Description**: A new instance of the `TaskContext` containing details about the current task.
+> - **Description**: A new instance of the &#x60;TaskContext&#x60; containing details about the current task.
 > :::
+

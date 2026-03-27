@@ -4,50 +4,47 @@
 - source: [core/context.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/context.ts)
 :::
 
-
 ## Overview
 
-API Context
-* Provides a static interface for accessing and manipulating key-value pairs in a global, application-wide context.
 
 
 ## Classes
 
 ### Context
 
+#### get()
 
-#### Constructors
+Retrieves the value associated with the specified name from the global context.
 
-##### Constructor
-
-```ts
-new Context(): Context;
-```
-
-#### Methods
-##### get()
-**Parameters**
+> ```ts
+> static get(name: string): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the context variable. |
+>
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: The context value, or `undefined` if the name is not found or the value is null.
+> - **Description**: The context value, or &#x60;undefined&#x60; if the name is not found or the value is null.
 > :::
-##### set()
 
-```ts
-static set(name, value): void;
-```
-
+#### set()
 
 Stores a value in the global context under the specified name.
 If the name already exists, its value is overwritten.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The name of the context variable. |
-| `value` | `any` | The value to store. |
-
+> ```ts
+> static set(name: string, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the context variable. |
+> | `value` | `any` | The value to store. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+

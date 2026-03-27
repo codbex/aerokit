@@ -4,75 +4,67 @@
 - source: [db/sequence.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/sequence.ts)
 :::
 
-
 ## Overview
 
-API Sequence
-
-Provides static methods for managing and accessing database sequences.
 
 
 ## Classes
 
 ### Sequence
 
+#### nextval()
 
-Utility class for interacting with database sequence objects.
+Retrieves the next available value from a specified sequence.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Sequence(): Sequence;
-```
-
-#### Methods
-##### nextval()
-**Parameters**
+> ```ts
+> static nextval(sequence: string, tableName: string, datasourceName: string): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` | The name of the database sequence. |
+> | `tableName` | `string` | Optional: The name of the table associated with the sequence (depends on database dialect/facade implementation). |
+> | `datasourceName` | `string` | Optional: The name of the database connection to use. |
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The next sequence value as a number.
 > :::
-##### create()
 
-```ts
-static create(
-   sequence, 
-   start?, 
-   datasourceName?): void;
-```
-
+#### create()
 
 Creates a new database sequence.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sequence` | `string` | The name of the sequence to create. |
-| `start?` | `number` | Optional: The starting value for the sequence (defaults to 1 if not provided). |
-| `datasourceName?` | `string` | Optional: The name of the database connection to use. |
-
+> ```ts
+> static create(sequence: string, start: number, datasourceName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` | The name of the sequence to create. |
+> | `start` | `number` | Optional: The starting value for the sequence (defaults to 1 if not provided). |
+> | `datasourceName` | `string` | Optional: The name of the database connection to use. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### drop()
 
-```ts
-static drop(sequence, datasourceName?): void;
-```
-
+#### drop()
 
 Drops (deletes) an existing database sequence.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sequence` | `string` | The name of the sequence to drop. |
-| `datasourceName?` | `string` | Optional: The name of the database connection to use. |
-
+> ```ts
+> static drop(sequence: string, datasourceName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` | The name of the sequence to drop. |
+> | `datasourceName` | `string` | Optional: The name of the database connection to use. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+

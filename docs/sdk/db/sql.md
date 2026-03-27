@@ -4,1214 +4,2044 @@
 - source: [db/sql.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/sql.ts)
 :::
 
-
 ## Overview
 
-The Sql API provides...
 
 
 ## Classes
 
 ### SQLBuilder
 
+#### prepareBuilder()
 
-Main entry point for the SQL Builder. Acts as a factory for specific builders.
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-#### Extends
-
-- `AbstractSQLBuilder`
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new SQLBuilder(connection?): SQLBuilder;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `connection?` | [`Connection`](database.md#connection) |
-
-###### Inherited from
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### getDialect()
-
-```ts
-static getDialect(connection?): SQLBuilder;
-```
-
+#### getDialect()
 
 Factory method to get a dialect-specific SQLBuilder instance.
 
-**Parameters**
+> ```ts
+> static getDialect(connection: Connection): SQLBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `connection` | `Connection` |  |
+>
+> ::: info Returns
+> - **Type**: `SQLBuilder`
+> - **Description**: 
+> :::
 
-| Parameter | Type |
-| ------ | ------ |
-| `connection?` | [`Connection`](database.md#connection) |
+#### select()
 
-##### select()
-##### insert()
-##### update()
-##### delete()
-##### nextval()
-**Parameters**
-##### create()
-##### drop()
+
+
+> ```ts
+> select(): SelectBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### insert()
+
+
+
+> ```ts
+> insert(): InsertBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `InsertBuilder`
+> - **Description**: 
+> :::
+
+#### update()
+
+
+
+> ```ts
+> update(): UpdateBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `UpdateBuilder`
+> - **Description**: 
+> :::
+
+#### delete()
+
+
+
+> ```ts
+> delete(): DeleteBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `DeleteBuilder`
+> - **Description**: 
+> :::
+
+#### nextval()
+
+
+
+> ```ts
+> nextval(name: string): NextvalBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `NextvalBuilder`
+> - **Description**: 
+> :::
+
+#### create()
+
+
+
+> ```ts
+> create(): CreateBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `CreateBuilder`
+> - **Description**: 
+> :::
+
+#### drop()
+
+
+
+> ```ts
+> drop(): DropBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `DropBuilder`
+> - **Description**: 
+> :::
+
 ### SelectBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Inherited from
-#### Properties
-#### Methods
-##### parameters()
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+#### parameters()
+
+
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### prepareBuilder()
-
-```ts
-protected prepareBuilder(builder): any;
-```
-
+#### prepareBuilder()
 
 Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `builder` | `any` |
-
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Overrides
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### distinct()
-
-```ts
-distinct(): SelectBuilder;
-```
+#### distinct()
 
 
-##### forUpdate()
-##### column()
-**Parameters**
-##### from()
-**Parameters**
-##### join()
-**Parameters**
-##### innerJoin()
-**Parameters**
-##### outerJoin()
-**Parameters**
-##### leftJoin()
-**Parameters**
-##### rightJoin()
-**Parameters**
-##### fullJoin()
-**Parameters**
-##### where()
-**Parameters**
-##### order()
-**Parameters**
-##### group()
-**Parameters**
-##### limit()
-**Parameters**
-##### offset()
-**Parameters**
-##### having()
-**Parameters**
-##### union()
-**Parameters**
+
+> ```ts
+> distinct(): SelectBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### forUpdate()
+
+
+
+> ```ts
+> forUpdate(): SelectBuilder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### column()
+
+
+
+> ```ts
+> column(column: string): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `column` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### from()
+
+
+
+> ```ts
+> from(table: string, alias: string): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `alias` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### join()
+
+
+
+> ```ts
+> join(table: string, on: string, alias: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `on` | `string` |  |
+> | `alias` | `string` |  |
+> | `parameters` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### innerJoin()
+
+
+
+> ```ts
+> innerJoin(table: string, on: string, alias: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `on` | `string` |  |
+> | `alias` | `string` |  |
+> | `parameters` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### outerJoin()
+
+
+
+> ```ts
+> outerJoin(table: string, on: string, alias: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `on` | `string` |  |
+> | `alias` | `string` |  |
+> | `parameters` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### leftJoin()
+
+
+
+> ```ts
+> leftJoin(table: string, on: string, alias: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `on` | `string` |  |
+> | `alias` | `string` |  |
+> | `parameters` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### rightJoin()
+
+
+
+> ```ts
+> rightJoin(table: string, on: string, alias: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `on` | `string` |  |
+> | `alias` | `string` |  |
+> | `parameters` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### fullJoin()
+
+
+
+> ```ts
+> fullJoin(table: string, on: string, alias: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+> | `on` | `string` |  |
+> | `alias` | `string` |  |
+> | `parameters` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### where()
+
+Sets the WHERE condition.
+
+> ```ts
+> where(condition: string, parameters: any): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `condition` | `string` | The SQL condition string (e.g., &quot;column1 &#x3D; ?&quot;). |
+> | `parameters` | `any` | Optional parameters to replace &#x27;?&#x27; in the condition. |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### order()
+
+
+
+> ```ts
+> order(column: string, asc: boolean): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `column` | `string` |  |
+> | `asc` | `boolean` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### group()
+
+
+
+> ```ts
+> group(column: string): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `column` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### limit()
+
+
+
+> ```ts
+> limit(limit: number): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `limit` | `number` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### offset()
+
+
+
+> ```ts
+> offset(offset: number): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `offset` | `number` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### having()
+
+
+
+> ```ts
+> having(having: string): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `having` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
+#### union()
+
+
+
+> ```ts
+> union(select: string): SelectBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `select` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `SelectBuilder`
+> - **Description**: 
+> :::
+
 ### InsertBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Inherited from
-#### Properties
-#### Methods
-##### parameters()
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+#### parameters()
+
+
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### prepareBuilder()
-
-```ts
-protected prepareBuilder(builder): any;
-```
-
+#### prepareBuilder()
 
 Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `builder` | `any` |
-
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Overrides
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### into()
-
-```ts
-into(table): InsertBuilder;
-```
+#### into()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `table` | `string` |
+> ```ts
+> into(table: string): InsertBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `InsertBuilder`
+> - **Description**: 
+> :::
 
-##### column()
-**Parameters**
-##### value()
-**Parameters**
-##### select()
-**Parameters**
+#### column()
+
+
+
+> ```ts
+> column(column: string): InsertBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `column` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `InsertBuilder`
+> - **Description**: 
+> :::
+
+#### value()
+
+Sets the value for the last column specified.
+
+> ```ts
+> value(value: string, parameters: any): InsertBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `string` | The value placeholder (e.g., &quot;?&quot;) or literal. |
+> | `parameters` | `any` | Optional parameters if a placeholder was used. |
+>
+> ::: info Returns
+> - **Type**: `InsertBuilder`
+> - **Description**: 
+> :::
+
+#### select()
+
+
+
+> ```ts
+> select(select: string): InsertBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `select` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `InsertBuilder`
+> - **Description**: 
+> :::
+
 ### UpdateBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Inherited from
-#### Properties
-#### Methods
-##### parameters()
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+#### parameters()
+
+
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### prepareBuilder()
-
-```ts
-protected prepareBuilder(builder): any;
-```
-
+#### prepareBuilder()
 
 Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `builder` | `any` |
-
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Overrides
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### table()
-
-```ts
-table(table): UpdateBuilder;
-```
+#### table()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `table` | `string` |
+> ```ts
+> table(table: string): UpdateBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `UpdateBuilder`
+> - **Description**: 
+> :::
 
-##### set()
-**Parameters**
-##### where()
-**Parameters**
+#### set()
+
+Sets a column to a value.
+
+> ```ts
+> set(column: string, value: string, parameters: any): UpdateBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `column` | `string` | The column name. |
+> | `value` | `string` | The value placeholder (e.g., &quot;?&quot;) or literal. |
+> | `parameters` | `any` | Optional parameters if a placeholder was used. |
+>
+> ::: info Returns
+> - **Type**: `UpdateBuilder`
+> - **Description**: 
+> :::
+
+#### where()
+
+Sets the WHERE condition for the update.
+
+> ```ts
+> where(condition: string, parameters: any): UpdateBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `condition` | `string` | The SQL condition string (e.g., &quot;column1 &#x3D; ?&quot;). |
+> | `parameters` | `any` | Optional parameters to replace &#x27;?&#x27; in the condition. |
+>
+> ::: info Returns
+> - **Type**: `UpdateBuilder`
+> - **Description**: 
+> :::
+
 ### DeleteBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Inherited from
-#### Properties
-#### Methods
-##### parameters()
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+#### parameters()
+
+
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### prepareBuilder()
-
-```ts
-protected prepareBuilder(builder): any;
-```
-
+#### prepareBuilder()
 
 Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `builder` | `any` |
-
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Overrides
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### from()
-
-```ts
-from(table): DeleteBuilder;
-```
+#### from()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `table` | `string` |
+> ```ts
+> from(table: string): DeleteBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `DeleteBuilder`
+> - **Description**: 
+> :::
 
-##### where()
-**Parameters**
+#### where()
+
+Sets the WHERE condition for the deletion.
+
+> ```ts
+> where(condition: string, parameters: any): DeleteBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `condition` | `string` | The SQL condition string (e.g., &quot;column1 &#x3D; ?&quot;). |
+> | `parameters` | `any` | Optional parameters to replace &#x27;?&#x27; in the condition. |
+>
+> ::: info Returns
+> - **Type**: `DeleteBuilder`
+> - **Description**: 
+> :::
+
 ### NextvalBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Overrides
-#### Properties
-#### Methods
-##### parameters()
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+#### parameters()
+
+
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### prepareBuilder()
-
-```ts
-protected prepareBuilder(builder): any;
-```
-
+#### prepareBuilder()
 
 Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `builder` | `any` |
-
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Overrides
-
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-***
 
 ### CreateBuilder
 
+#### prepareBuilder()
 
-Builder for CREATE statements (Table, View, Sequence).
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-#### Extends
-
-- `AbstractSQLBuilder`
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new CreateBuilder(connection?): CreateBuilder;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `connection?` | [`Connection`](database.md#connection) |
-
-###### Inherited from
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### table()
-
-```ts
-table(table): CreateTableBuilder;
-```
+#### table()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `table` | `string` |
+> ```ts
+> table(table: string): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
 
-##### view()
-**Parameters**
-##### sequence()
-**Parameters**
+#### view()
+
+
+
+> ```ts
+> view(view: string): CreateViewBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `view` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateViewBuilder`
+> - **Description**: 
+> :::
+
+#### sequence()
+
+
+
+> ```ts
+> sequence(sequence: string): CreateSequenceBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateSequenceBuilder`
+> - **Description**: 
+> :::
+
 ### CreateTableBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Overrides
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+
+#### prepareBuilder()
+
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
+
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### column()
-
-```ts
-column(
-   name, 
-   type, 
-   isPrimaryKey?, 
-   isNullable?, 
-   isUnique?, 
-   isIdentity?, 
-   isFuzzyIndexEnabled?, ...
-   args): CreateTableBuilder;
-```
-
+#### column()
 
 Adds a generic column definition.
 
-**Parameters**
+> ```ts
+> column(name: string, type: DataType, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, isFuzzyIndexEnabled: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `type` | `DataType` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `isFuzzyIndexEnabled` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `name` | `string` | `undefined` | - |
-| `type` | [`DataType`](#datatype) | `undefined` | - |
-| `isPrimaryKey` | `boolean` | `false` | - |
-| `isNullable` | `boolean` | `true` | - |
-| `isUnique` | `boolean` | `false` | - |
-| `isIdentity` | `boolean` | `false` | - |
-| `isFuzzyIndexEnabled` | `boolean` | `false` | - |
-| ...`args` | `string`[] | `undefined` | Additional dialect-specific arguments passed as an array to native. |
+#### columnVarchar()
 
-##### columnVarchar()
-**Parameters**
-##### columnNvarchar()
-**Parameters**
-##### columnChar()
-**Parameters**
-##### columnDate()
-**Parameters**
-##### columnTime()
-**Parameters**
-##### columnTimestamp()
-**Parameters**
-##### columnInteger()
-**Parameters**
-##### columnTinyint()
-**Parameters**
-##### columnBigint()
-**Parameters**
-##### columnSmallint()
-**Parameters**
-##### columnReal()
-**Parameters**
-##### columnDouble()
-**Parameters**
-##### columnBoolean()
-**Parameters**
-##### columnBlob()
-**Parameters**
-##### columnDecimal()
-**Parameters**
-##### primaryKey()
-**Parameters**
-##### foreignKey()
-**Parameters**
-##### unique()
-**Parameters**
-##### check()
-**Parameters**
+Adds a VARCHAR column.
+
+> ```ts
+> columnVarchar(name: string, length: number, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `length` | `number` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnNvarchar()
+
+Adds an NVARCHAR column.
+
+> ```ts
+> columnNvarchar(name: string, length: number, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `length` | `number` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnChar()
+
+Adds a CHAR column.
+
+> ```ts
+> columnChar(name: string, length: number, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `length` | `number` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnDate()
+
+Adds a DATE column.
+
+> ```ts
+> columnDate(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnTime()
+
+Adds a TIME column.
+
+> ```ts
+> columnTime(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnTimestamp()
+
+Adds a TIMESTAMP column.
+
+> ```ts
+> columnTimestamp(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnInteger()
+
+Adds an INTEGER column.
+
+> ```ts
+> columnInteger(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnTinyint()
+
+Adds a TINYINT column.
+
+> ```ts
+> columnTinyint(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnBigint()
+
+Adds a BIGINT column.
+
+> ```ts
+> columnBigint(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnSmallint()
+
+Adds a SMALLINT column.
+
+> ```ts
+> columnSmallint(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnReal()
+
+Adds a REAL column.
+
+> ```ts
+> columnReal(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnDouble()
+
+Adds a DOUBLE column.
+
+> ```ts
+> columnDouble(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnBoolean()
+
+Adds a BOOLEAN column.
+
+> ```ts
+> columnBoolean(name: string, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnBlob()
+
+Adds a BLOB column.
+
+> ```ts
+> columnBlob(name: string, isNullable: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `isNullable` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### columnDecimal()
+
+Adds a DECIMAL column with precision and scale.
+
+> ```ts
+> columnDecimal(name: string, precision: number, scale: number, isPrimaryKey: boolean, isNullable: boolean, isUnique: boolean, isIdentity: boolean, args: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `precision` | `number` |  |
+> | `scale` | `number` |  |
+> | `isPrimaryKey` | `boolean` |  |
+> | `isNullable` | `boolean` |  |
+> | `isUnique` | `boolean` |  |
+> | `isIdentity` | `boolean` |  |
+> | `args` | `any` | Additional dialect-specific arguments passed as an array to native. |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### primaryKey()
+
+
+
+> ```ts
+> primaryKey(columns: any, name: string): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `columns` | `any` |  |
+> | `name` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### foreignKey()
+
+
+
+> ```ts
+> foreignKey(name: string, columns: any, referencedTable: string, referencedColumns: any, referencedTableSchema: string): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `columns` | `any` |  |
+> | `referencedTable` | `string` |  |
+> | `referencedColumns` | `any` |  |
+> | `referencedTableSchema` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### unique()
+
+
+
+> ```ts
+> unique(name: string, columns: any): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `columns` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
+#### check()
+
+
+
+> ```ts
+> check(name: string, expression: string): CreateTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `expression` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateTableBuilder`
+> - **Description**: 
+> :::
+
 ### CreateViewBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Overrides
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+
+#### prepareBuilder()
+
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
+
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### column()
-
-```ts
-column(column): CreateViewBuilder;
-```
+#### column()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `column` | `string` |
+> ```ts
+> column(column: string): CreateViewBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `column` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateViewBuilder`
+> - **Description**: 
+> :::
 
-##### asSelect()
-**Parameters**
+#### asSelect()
+
+
+
+> ```ts
+> asSelect(select: string): CreateViewBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `select` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CreateViewBuilder`
+> - **Description**: 
+> :::
+
 ### CreateSequenceBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Overrides
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+
+#### prepareBuilder()
+
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
+
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
-
-```ts
-AbstractSQLBuilder.build
-```
-
-***
 
 ### DropBuilder
 
+#### prepareBuilder()
 
-Builder for DROP statements (Table, View, Sequence).
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-#### Extends
-
-- `AbstractSQLBuilder`
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new DropBuilder(connection?): DropBuilder;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `connection?` | [`Connection`](database.md#connection) |
-
-###### Inherited from
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-##### table()
-
-```ts
-table(table): DropTableBuilder;
-```
+#### table()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `table` | `string` |
+> ```ts
+> table(table: string): DropTableBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `table` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `DropTableBuilder`
+> - **Description**: 
+> :::
 
-##### view()
-**Parameters**
-##### sequence()
-**Parameters**
+#### view()
+
+
+
+> ```ts
+> view(view: string): DropViewBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `view` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `DropViewBuilder`
+> - **Description**: 
+> :::
+
+#### sequence()
+
+
+
+> ```ts
+> sequence(sequence: string): DropSequenceBuilder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sequence` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `DropSequenceBuilder`
+> - **Description**: 
+> :::
+
 ### DropTableBuilder
-#### Extends
-#### Constructors
-##### Constructor
-**Parameters**
-###### Overrides
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+
+#### prepareBuilder()
+
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
+
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
-
-```ts
-AbstractSQLBuilder.build
-```
-
-***
 
 ### DropViewBuilder
 
+#### prepareBuilder()
 
-Builder for DROP VIEW statements.
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-#### Extends
-
-- `AbstractSQLBuilder`
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new DropViewBuilder(view, connection?): DropViewBuilder;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `view` | `string` |
-| `connection?` | [`Connection`](database.md#connection) |
-
-###### Overrides
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
-
-```ts
-AbstractSQLBuilder.build
-```
-
-***
 
 ### DropSequenceBuilder
 
+#### prepareBuilder()
 
-Builder for DROP SEQUENCE statements.
+Hook for subclasses to set up the native builder object (e.g., calling .select()).
 
-#### Extends
-
-- `AbstractSQLBuilder`
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new DropSequenceBuilder(sequence, connection?): DropSequenceBuilder;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `sequence` | `string` |
-| `connection?` | [`Connection`](database.md#connection) |
-
-###### Overrides
-#### Properties
-#### Methods
-##### prepareBuilder()
-**Parameters**
+> ```ts
+> prepareBuilder(builder: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `builder` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.prepareBuilder
-```
-
-##### parameters()
-
-```ts
-parameters(): any[];
-```
+#### parameters()
 
 
-###### Inherited from
-##### addParameter()
-**Parameters**
+
+> ```ts
+> parameters(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.addParameter
-```
+#### addParameter()
 
-##### build()
+Adds parameter(s) to the internal list. Handles single values and arrays of values.
 
-```ts
-build(): string;
-```
+> ```ts
+> addParameter(value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `value` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### build()
 
 Builds and returns the final SQL string.
 
+> ```ts
+> build(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-###### Inherited from
 
-```ts
-AbstractSQLBuilder.build
-```
-
-## Type Aliases
-
-### DataType
-
-```ts
-type DataType = 
-  | "VARCHAR"
-  | "TEXT"
-  | "CHAR"
-  | "DATE"
-  | "SECONDDATE"
-  | "TIME"
-  | "DATETIME"
-  | "TIMESTAMP"
-  | "INTEGER"
-  | "INT"
-  | "TINYINT"
-  | "BIGINT"
-  | "SMALLINT"
-  | "REAL"
-  | "DOUBLE"
-  | "DOUBLE PRECISIO"
-  | "BOOLEAN"
-  | "BLOB"
-  | "DECIMAL"
-  | "BIT"
-  | "NVARCHAR"
-  | "FLOAT"
-  | "BYTE"
-  | "NCLOB"
-  | "ARRAY"
-  | "VARBINARY"
-  | "BINARY VARYIN"
-  | "SHORTTEXT"
-  | "ALPHANUM"
-  | "CLOB"
-  | "SMALLDECIMAL"
-  | "BINARY"
-  | "ST_POINT"
-  | "ST_GEOMETRY"
-  | "CHARACTER VARYIN"
-  | "BINARY LARG OBJECT"
-  | "CHARACTER LARG OBJECT"
-  | "CHARACTER"
-  | "NCHAR"
-  | "NUMERIC";
-```
-
-
-Union type representing all supported SQL data types.

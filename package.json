@@ -1,27 +1,25 @@
 {
-  "name": "codbex.com.aerokit",
+  "name": "codbex-docgen",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typedoc": "^0.28.18",
-    "typedoc-plugin-markdown": "^4.11.0",
-    "vitepress": "^1.5.0",
-    "vue": "^3.5.13"
-  },
   "scripts": {
+    "build": "tsc",
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs --port 8080",
     "docs:preview": "vitepress preview docs --port 8080",
-    "docs:api": "typedoc",
-    "docs:api:watch": "typedoc --watch",
-    "docs:api:clean": "rm -rf docs/sdk && typedoc",
-    "docs:enhance": "ts-node --esm scripts/enhance-docs.ts",
-    "docs:generate": "npm run docs:api && npm run docs:enhance",
-    "docs:full": "npm run docs:api:clean && npm run docs:enhance && npm run docs:build",
-    "docs:serve": "npm run docs:dev"
+    "docs:generate-typedoc": "typedoc",
+    "docs:generate": "rm -rf docs/sdk && node --loader ts-node/esm src/index.ts",
+    "docs:api": "typedoc"
   },
   "dependencies": {
-    "swiper": "^11.2.8"
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.28.18",
+    "typedoc-plugin-markdown": "^4.11.0",
+    "typescript": "^5.4.0"
   }
 }

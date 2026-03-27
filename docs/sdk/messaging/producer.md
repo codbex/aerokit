@@ -4,53 +4,47 @@
 - source: [messaging/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/producer.ts)
 :::
 
-
 ## Overview
 
-Provides an API for producing (sending) messages to JMS-style destinations,
-supporting both Queues (point-to-point) and Topics (publish/subscribe).
 
 
 ## Classes
 
 ### Producer
 
+#### queue()
 
-The entry point for creating messaging producers.
-Use this class to obtain instances of Queue or Topic producers for sending messages.
+Creates a Queue producer instance for point-to-point messaging.
+Messages sent to this destination are intended to be consumed by a single receiver.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Producer(): Producer;
-```
-
-#### Methods
-##### queue()
-**Parameters**
+> ```ts
+> static queue(destination: string): Queue;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the queue destination (e.g., &#x27;task.queue&#x27;). |
+>
 > ::: info Returns
 > - **Type**: `Queue`
 > - **Description**: A Queue instance.
 > :::
-##### topic()
 
-```ts
-static topic(destination): Topic;
-```
-
+#### topic()
 
 Creates a Topic producer instance for publish/subscribe messaging.
 Messages sent to this destination can be consumed by multiple subscribers simultaneously.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `destination` | `string` | The name of the topic destination (e.g., 'sensor.data.topic'). |
-
+> ```ts
+> static topic(destination: string): Topic;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the topic destination (e.g., &#x27;sensor.data.topic&#x27;). |
+>
 > ::: info Returns
 > - **Type**: `Topic`
 > - **Description**: A Topic instance.
 > :::
+

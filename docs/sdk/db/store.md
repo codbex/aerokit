@@ -4,277 +4,265 @@
 - source: [db/store.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/store.ts)
 :::
 
-
 ## Overview
 
-The Store API provides...
 
-
-## Enumerations
-
-### Operator
-
-
-Defines the available comparison operators for query conditions.
-
-#### Enumeration Members
-
-| Enumeration Member | Value | Defined in |
-| ------ | ------ | ------ |
-|  `EQ` | `"="` | src/db/store.ts:7 |
-|  `NE` | `""` | src/db/store.ts:8 |
-|  `GT` | `">"` | src/db/store.ts:9 |
-|  `LT` | `" `GE` | `">="` | src/db/store.ts:11 |
-|  `LE` | `" `LIKE` | `"LIKE"` | src/db/store.ts:13 |
-|  `BETWEEN` | `"BETWEEN"` | src/db/store.ts:14 |
-|  `IN` | `"IN"` | src/db/store.ts:15 |
-
-***
-
-### Direction
-
-
-Defines the direction for sorting.
-
-#### Enumeration Members
-
-| Enumeration Member | Value | Defined in |
-| ------ | ------ | ------ |
-|  `ASC` | `"ASC"` | src/db/store.ts:22 |
-|  `DESC` | `"DESC"` | src/db/store.ts:23 |
 
 ## Classes
 
 ### Store
 
+#### save()
 
-Facade class for interacting with the underlying Dirigible Data Store.
-All methods serialize/deserialize JavaScript objects to/from JSON strings
-before interacting with the native Java facade.
+Saves a new entry to the data store.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Store(): Store;
-```
-
-#### Methods
-##### save()
-**Parameters**
-##### upsert()
-**Parameters**
+> ```ts
+> static save(name: string, entry: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `entry` | `any` | The JavaScript object to save. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: The ID of the newly created entry (string or number).
 > :::
-##### update()
 
-```ts
-static update(name, entry): void;
-```
+#### upsert()
 
+Inserts a new entry or updates an existing one if the ID is present.
+
+> ```ts
+> static upsert(name: string, entry: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `entry` | `any` | The JavaScript object to insert/update. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### update()
 
 Updates an existing entry.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The entity/table name. |
-| `entry` | `any` | The JavaScript object with the ID and updated data. |
-
+> ```ts
+> static update(name: string, entry: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `entry` | `any` | The JavaScript object with the ID and updated data. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### list()
 
-```ts
-static list(name, options?): any[];
-```
-
+#### list()
 
 Lists entries based on optional filtering, sorting, and pagination options.
 
-**Parameters**
+> ```ts
+> static list(name: string, options: Options): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `options` | `Options` | Optional Options for query execution. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of JavaScript objects.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The entity/table name. |
-| `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
+#### count()
 
-##### count()
-**Parameters**
+Counts the number of entries based on optional filtering options.
+
+> ```ts
+> static count(name: string, options: Options): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `options` | `Options` | Optional Options for query execution. |
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The count of matching entries.
 > :::
-##### get()
 
-```ts
-static get(name, id): any;
-```
-
+#### get()
 
 Retrieves a single entry by its ID.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The entity/table name. |
-| `id` | `any` | The ID of the entry. |
-
+> ```ts
+> static get(name: string, id: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `id` | `any` | The ID of the entry. |
+>
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The entry object, or undefined if not found.
 > :::
-##### remove()
 
-```ts
-static remove(name, id): void;
-```
-
+#### remove()
 
 Deletes an entry by its ID.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The entity/table name. |
-| `id` | `any` | The ID of the entry to remove. |
-
+> ```ts
+> static remove(name: string, id: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `id` | `any` | The ID of the entry to remove. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### find()
 
-```ts
-static find(
-   name, 
-   example, 
-   limit?, 
-   offset?): any[];
-```
-
+#### find()
 
 Finds entries matching an example object (query-by-example).
 
-**Parameters**
+> ```ts
+> static find(name: string, example: any, limit: number, offset: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `example` | `any` | An object containing properties to match. |
+> | `limit` | `number` | Maximum number of results to return. |
+> | `offset` | `number` | Number of results to skip. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of matching JavaScript objects.
+> :::
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `name` | `string` | `undefined` | The entity/table name. |
-| `example` | `any` | `undefined` | An object containing properties to match. |
-| `limit` | `number` | `100` | Maximum number of results to return. |
-| `offset` | `number` | `0` | Number of results to skip. |
+#### query()
 
-##### query()
-**Parameters**
-##### queryNative()
-**Parameters**
-##### getEntityName()
-**Parameters**
+Queries all entries for a given script with pagination.
+
+> ```ts
+> static query(query: string, parameters: any, limit: number, offset: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `string` | The query script. |
+> | `parameters` | `any` |  |
+> | `limit` | `number` | Maximum number of results to return. |
+> | `offset` | `number` | Number of results to skip. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of JavaScript objects.
+> :::
+
+#### queryNative()
+
+Queries all entries for a given entity name without pagination.
+
+> ```ts
+> static queryNative(query: string, parameters: any, limit: number, offset: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `query` | `string` | The entity/table name. |
+> | `parameters` | `any` |  |
+> | `limit` | `number` |  |
+> | `offset` | `number` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of all JavaScript objects.
+> :::
+
+#### getEntityName()
+
+Gets the name of the entity associated with the store name.
+
+> ```ts
+> static getEntityName(name: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getTableName()
 
-```ts
-static getTableName(name): string;
-```
-
+#### getTableName()
 
 Gets the underlying database table name for the entity.
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `name` | `string` |
-
+> ```ts
+> static getTableName(name: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getIdName()
 
-```ts
-static getIdName(name): string;
-```
-
+#### getIdName()
 
 Gets the property name used as the ID field in the entity object.
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `name` | `string` |
-
+> ```ts
+> static getIdName(name: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getIdColumn()
 
-```ts
-static getIdColumn(name): string;
-```
-
+#### getIdColumn()
 
 Gets the underlying database column name used for the ID field.
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `name` | `string` |
-
+> ```ts
+> static getIdColumn(name: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-## Interfaces
 
-### Condition
-
-
-Represents a single condition for filtering data.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `propertyName` | `string` | src/db/store.ts:30 |
-|  `operator` | [`Operator`](#operator) | src/db/store.ts:31 |
-|  `value` | `any` | src/db/store.ts:32 |
-
-***
-
-### Sort
-
-
-Represents a single sorting instruction.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `propertyName` | `string` | src/db/store.ts:39 |
-|  `direction` | [`Direction`](#direction) | src/db/store.ts:40 |
-
-***
-
-### Options
-
-
-Defines optional parameters for list and count operations.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `conditions?` | [`Condition`](#condition)[] | src/db/store.ts:47 |
-|  `sorts?` | [`Sort`](#sort)[] | src/db/store.ts:48 |
-|  `limit?` | `number` | src/db/store.ts:49 |
-|  `offset?` | `number` | src/db/store.ts:50 |
-|  `language?` | `string` | src/db/store.ts:51 |

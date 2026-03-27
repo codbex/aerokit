@@ -4,55 +4,102 @@
 - source: [utils/base64.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/base64.ts)
 :::
 
-
 ## Overview
 
-The Base64 API provides...
 
 
 ## Classes
 
 ### Base64
 
+#### encode()
 
-Utility class for performing **Base64 encoding and decoding** of data.
-It handles conversion between JavaScript strings, JavaScript byte arrays (any[]),
-and the native Java byte arrays required by the underlying Base64Facade.
+Base64 encoding: Converts the input data (text or byte array) into a
+standard **Base64 encoded string representation**.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Base64(): Base64;
-```
-
-#### Methods
-##### encode()
-**Parameters**
+> ```ts
+> static encode(input: any): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The data to encode, either as a string or a JavaScript byte array (any[]). |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The resulting Base64 encoded string.
 > :::
-##### encodeAsBytes()
 
-```ts
-static encodeAsBytes(input): any[];
-```
-
+#### encodeAsBytes()
 
 Base64 encoding: Converts the input data (text or byte array) into a
 **JavaScript byte array (any[])** containing the Base64 encoded representation.
 
-**Parameters**
+> ```ts
+> static encodeAsBytes(input: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The data to encode, either as a string or a JavaScript byte array (any[]). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The resulting byte array containing the Base64 encoded data.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
+#### encodeAsNativeBytes()
 
-##### encodeAsNativeBytes()
-**Parameters**
-##### decode()
-**Parameters**
-##### decodeAsNativeBytes()
-**Parameters**
+Base64 encoding: Converts the input data (text or byte array) into a
+**native Java byte array** containing the Base64 encoded representation.
+This method is generally for internal use.
+
+> ```ts
+> static encodeAsNativeBytes(input: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The data to encode, either as a string or a JavaScript byte array (any[]). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The resulting native Java byte array containing the Base64 data.
+> :::
+
+#### decode()
+
+Base64 decoding: Converts a Base64 input (text or byte array) back into
+the original **raw byte array (JavaScript any[])**.
+
+> ```ts
+> static decode(input: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The Base64 data to decode, either as a string or a JavaScript byte array (any[]). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The decoded raw byte array (any[]). Returns null if decoding fails or input is null.
+> :::
+
+#### decodeAsNativeBytes()
+
+Base64 decoding: Converts a Base64 input (text or byte array) back into
+the original **native Java raw byte array**. This method is generally for internal use.
+
+> ```ts
+> static decodeAsNativeBytes(input: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The Base64 data to decode, either as a string or a JavaScript byte array (any[]). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The decoded native Java byte array.
+> :::
+

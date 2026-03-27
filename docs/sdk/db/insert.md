@@ -4,32 +4,51 @@
 - source: [db/insert.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/insert.ts)
 :::
 
-
 ## Overview
 
-The Insert API provides...
 
 
 ## Classes
 
 ### Insert
 
+#### execute()
 
-Provides static methods for executing INSERT SQL statements.
+Executes a single parameterized INSERT statement.
+*
 
-#### Constructors
+> ```ts
+> static execute(sql: string, parameters: any, datasourceName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute, with &#x27;?&#x27; placeholders for parameters. |
+> | `parameters` | `any` | An optional array of values to replace the &#x27;?&#x27; placeholders. |
+> | `datasourceName` | `string` | The name of the database connection to use (optional). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of records representing the result of the insertion (e.g., generated keys).
+> :::
 
-##### Constructor
+#### executeMany()
 
-```ts
-new Insert(): Insert;
-```
+Executes multiple parameterized INSERT statements as a batch operation.
+*
 
-#### Methods
-##### execute()
-**Parameters**
-##### executeMany()
-**Parameters**
-## Interfaces
-### InsertParameter
-#### Properties
+> ```ts
+> static executeMany(sql: string, parameters: any, datasourceName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute, with &#x27;?&#x27; placeholders for parameters. |
+> | `parameters` | `any` | An optional array of parameter arrays, where each inner array corresponds to one execution of the SQL statement. |
+> | `datasourceName` | `string` | The name of the database connection to use (optional). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of records representing the results of the batched insertions.
+> :::
+

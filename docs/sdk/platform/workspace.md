@@ -4,666 +4,889 @@
 - source: [platform/workspace.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/workspace.ts)
 :::
 
-
 ## Overview
 
-Provides a wrapper for the platform's WorkspaceFacade to manage Workspaces,
-Projects, Folders, and Files.
 
 
 ## Classes
 
 ### Workspace
 
+#### createWorkspace()
 
-Workspace
+Creates a new workspace with the given name.
 
-#### Description
+> ```ts
+> static createWorkspace(name: string): Workspace;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the workspace to create. |
+>
+> ::: info Returns
+> - **Type**: `Workspace`
+> - **Description**: The newly created Workspace instance.
+> :::
 
-Represents a logical container for projects, providing static methods for
-high-level workspace management and instance methods for project management within the workspace.
+#### getWorkspace()
 
-#### Constructors
+Retrieves an existing workspace by name.
 
-##### Constructor
+> ```ts
+> static getWorkspace(name: string): Workspace;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the workspace to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `Workspace`
+> - **Description**: The Workspace instance.
+> :::
 
-```ts
-new Workspace(native): Workspace;
-```
+#### getWorkspacesNames()
 
+Retrieves the names of all existing workspaces.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The native Java object instance representing the workspace. |
-
-#### Methods
-##### createWorkspace()
-**Parameters**
-##### getWorkspace()
-**Parameters**
-##### getWorkspacesNames()
-##### deleteWorkspace()
-**Parameters**
+> ```ts
+> static getWorkspacesNames(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: An array of workspace names.
 > :::
-##### getProjects()
 
-```ts
-getProjects(): Projects;
-```
+#### deleteWorkspace()
 
+Deletes the workspace with the specified name.
+
+> ```ts
+> static deleteWorkspace(name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the workspace to delete. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getProjects()
 
 Gets a collection of all projects within this workspace.
 
-##### createProject()
-**Parameters**
-##### getProject()
-**Parameters**
-##### deleteProject()
-**Parameters**
+> ```ts
+> getProjects(): Projects;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `Projects`
+> - **Description**: A Projects collection instance.
+> :::
+
+#### createProject()
+
+Creates a new project within this workspace.
+
+> ```ts
+> createProject(name: string): Project;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the project to create. |
+>
+> ::: info Returns
+> - **Type**: `Project`
+> - **Description**: The newly created Project instance.
+> :::
+
+#### getProject()
+
+Retrieves an existing project by name from this workspace.
+
+> ```ts
+> getProject(name: string): Project;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the project to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `Project`
+> - **Description**: The Project instance.
+> :::
+
+#### deleteProject()
+
+Deletes a project from this workspace by name.
+
+> ```ts
+> deleteProject(name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the project to delete. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### exists()
 
-```ts
-exists(): boolean;
-```
-
+#### exists()
 
 Checks if the workspace currently exists.
 
+> ```ts
+> exists(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the workspace exists, false otherwise.
 > :::
-##### existsFolder()
 
-```ts
-existsFolder(path): boolean;
-```
+#### existsFolder()
 
+Checks if a specific folder path exists within the workspace&#x27;s filesystem structure.
 
-Checks if a specific folder path exists within the workspace's filesystem structure.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the folder. |
-
+> ```ts
+> existsFolder(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the folder. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the folder exists.
 > :::
-##### existsFile()
 
-```ts
-existsFile(path): boolean;
-```
+#### existsFile()
 
+Checks if a specific file path exists within the workspace&#x27;s filesystem structure.
 
-Checks if a specific file path exists within the workspace's filesystem structure.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the file. |
-
+> ```ts
+> existsFile(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the file. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the file exists.
 > :::
-##### copyProject()
 
-```ts
-copyProject(source, target): void;
-```
-
+#### copyProject()
 
 Copies a project from a source name to a target name within the workspace.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `source` | `string` | The name of the project to copy. |
-| `target` | `string` | The name of the new project copy. |
-
+> ```ts
+> copyProject(source: string, target: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `source` | `string` | The name of the project to copy. |
+> | `target` | `string` | The name of the new project copy. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### moveProject()
 
-```ts
-moveProject(source, target): void;
-```
-
+#### moveProject()
 
 Moves a project from a source name to a target name (renaming it).
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `source` | `string` | The current name of the project. |
-| `target` | `string` | The new name/path of the project. |
-
+> ```ts
+> moveProject(source: string, target: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `source` | `string` | The current name of the project. |
+> | `target` | `string` | The new name/path of the project. |
+>
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### Projects
 
+#### size()
 
-Projects
+Gets the number of projects in the collection.
 
-#### Description
-
-A collection/list of projects within a workspace.
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new Projects(native): Projects;
-```
-
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The native Java object representing the list of projects. |
-
-#### Methods
-##### size()
+> ```ts
+> size(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size of the collection.
 > :::
-##### get()
 
-```ts
-get(index): Project;
-```
-
+#### get()
 
 Gets a Project instance at the specified index.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `number` | The index of the project. |
+> ```ts
+> get(index: number): Project;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` | The index of the project. |
+>
+> ::: info Returns
+> - **Type**: `Project`
+> - **Description**: The Project instance.
+> :::
 
 ### Project
-#### Description
-#### Constructors
-##### Constructor
-**Parameters**
-#### Methods
-##### getName()
+
+#### getName()
+
+Gets the name of the project.
+
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The project name.
 > :::
-##### getPath()
 
-```ts
-getPath(): string;
-```
-
+#### getPath()
 
 Gets the path of the project.
 
+> ```ts
+> getPath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The project path (relative to the repository/workspace root).
 > :::
-##### createFolder()
 
-```ts
-createFolder(path): Folder;
-```
-
+#### createFolder()
 
 Creates a new folder within the project.
 
-**Parameters**
+> ```ts
+> createFolder(path: string): Folder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the folder to create (relative to the project root). |
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The newly created Folder instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path of the folder to create (relative to the project root). |
+#### exists()
 
-##### exists()
+Checks if the project itself exists.
+
+> ```ts
+> exists(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the project exists.
 > :::
-##### existsFolder()
 
-```ts
-existsFolder(path): boolean;
-```
-
+#### existsFolder()
 
 Checks if a specific folder path exists within the project.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the folder. |
-
+> ```ts
+> existsFolder(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the folder. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the folder exists.
 > :::
-##### getFolder()
 
-```ts
-getFolder(path): Folder;
-```
-
+#### getFolder()
 
 Retrieves a folder by its path relative to the project root.
 
-**Parameters**
+> ```ts
+> getFolder(path: string): Folder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the folder. |
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The Folder instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the folder. |
+#### getFolders()
 
-##### getFolders()
-**Parameters**
-##### deleteFolder()
-**Parameters**
+Retrieves a collection of folders at a specific path.
+
+> ```ts
+> getFolders(path: string): Folders;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path containing the folders to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `Folders`
+> - **Description**: The Folders collection instance.
+> :::
+
+#### deleteFolder()
+
+Deletes a folder from the project.
+
+> ```ts
+> deleteFolder(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the folder to delete (relative to the project root). |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createFile()
 
-```ts
-createFile(path, input?): File;
-```
-
+#### createFile()
 
 Creates a new file within the project.
 
-**Parameters**
+> ```ts
+> createFile(path: string, input: any): File;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the file to create (relative to the project root). |
+> | `input` | `any` | Optional initial content as a byte array. |
+>
+> ::: info Returns
+> - **Type**: `File`
+> - **Description**: The newly created File instance.
+> :::
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `path` | `string` | `undefined` | The path of the file to create (relative to the project root). |
-| `input?` | `any`[] | `[]` | Optional initial content as a byte array. |
+#### existsFile()
 
-##### existsFile()
-**Parameters**
+Checks if a specific file path exists within the project.
+
+> ```ts
+> existsFile(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the file. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the file exists.
 > :::
-##### getFile()
 
-```ts
-getFile(path): File;
-```
-
+#### getFile()
 
 Retrieves a file by its path relative to the project root.
 
-**Parameters**
+> ```ts
+> getFile(path: string): File;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the file. |
+>
+> ::: info Returns
+> - **Type**: `File`
+> - **Description**: The File instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the file. |
+#### getFiles()
 
-##### getFiles()
-**Parameters**
-##### deleteFile()
-**Parameters**
+Retrieves a collection of files at a specific path.
+
+> ```ts
+> getFiles(path: string): Files;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path containing the files to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `Files`
+> - **Description**: The Files collection instance.
+> :::
+
+#### deleteFile()
+
+Deletes a file from the project.
+
+> ```ts
+> deleteFile(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the file to delete (relative to the project root). |
+>
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### Folders
 
+#### size()
 
-Folders
+Gets the number of folders in the collection.
 
-#### Description
-
-A collection/list of folders.
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new Folders(native): Folders;
-```
-
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The native Java object representing the list of folders. |
-
-#### Methods
-##### size()
+> ```ts
+> size(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size of the collection.
 > :::
-##### get()
 
-```ts
-get(index): Folder;
-```
-
+#### get()
 
 Gets a Folder instance at the specified index.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `number` | The index of the folder. |
+> ```ts
+> get(index: number): Folder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` | The index of the folder. |
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The Folder instance.
+> :::
 
 ### Files
-#### Description
-#### Constructors
-##### Constructor
-**Parameters**
-#### Methods
-##### size()
+
+#### size()
+
+Gets the number of files in the collection.
+
+> ```ts
+> size(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size of the collection.
 > :::
-##### get()
 
-```ts
-get(index): File;
-```
-
+#### get()
 
 Gets a File instance at the specified index.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `number` | The index of the file. |
+> ```ts
+> get(index: number): File;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` | The index of the file. |
+>
+> ::: info Returns
+> - **Type**: `File`
+> - **Description**: The File instance.
+> :::
 
 ### Folder
-#### Description
-#### Constructors
-##### Constructor
-**Parameters**
-#### Methods
-##### getName()
+
+#### getName()
+
+Gets the name of the folder.
+
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The folder name.
 > :::
-##### getPath()
 
-```ts
-getPath(): string;
-```
-
+#### getPath()
 
 Gets the full path of the folder.
 
+> ```ts
+> getPath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The folder path.
 > :::
-##### createFolder()
 
-```ts
-createFolder(path): Folder;
-```
-
+#### createFolder()
 
 Creates a new sub-folder within this folder.
 
-**Parameters**
+> ```ts
+> createFolder(path: string): Folder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the sub-folder to create (relative to this folder). |
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The newly created Folder instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path of the sub-folder to create (relative to this folder). |
+#### exists()
 
-##### exists()
+Checks if the folder itself exists.
+
+> ```ts
+> exists(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the folder exists.
 > :::
-##### existsFolder()
 
-```ts
-existsFolder(path): boolean;
-```
-
+#### existsFolder()
 
 Checks if a specific sub-folder path exists within this folder.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the sub-folder. |
-
+> ```ts
+> existsFolder(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the sub-folder. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the sub-folder exists.
 > :::
-##### getFolder()
 
-```ts
-getFolder(path): Folder;
-```
-
+#### getFolder()
 
 Retrieves a sub-folder by its path relative to this folder.
 
-**Parameters**
+> ```ts
+> getFolder(path: string): Folder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the sub-folder. |
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The Folder instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the sub-folder. |
+#### getFolders()
 
-##### getFolders()
-**Parameters**
-##### deleteFolder()
-**Parameters**
+Retrieves a collection of folders at a specific path relative to this folder.
+
+> ```ts
+> getFolders(path: string): Folders;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path containing the folders to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `Folders`
+> - **Description**: The Folders collection instance.
+> :::
+
+#### deleteFolder()
+
+Deletes a sub-folder from this folder.
+
+> ```ts
+> deleteFolder(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the sub-folder to delete (relative to this folder). |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createFile()
 
-```ts
-createFile(path, input?): File;
-```
-
+#### createFile()
 
 Creates a new file within this folder.
 
-**Parameters**
+> ```ts
+> createFile(path: string, input: any): File;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the file to create (relative to this folder). |
+> | `input` | `any` | Optional initial content as a byte array. |
+>
+> ::: info Returns
+> - **Type**: `File`
+> - **Description**: The newly created File instance.
+> :::
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `path` | `string` | `undefined` | The path of the file to create (relative to this folder). |
-| `input?` | `any`[] | `[]` | Optional initial content as a byte array. |
+#### existsFile()
 
-##### existsFile()
-**Parameters**
+Checks if a specific file path exists within this folder.
+
+> ```ts
+> existsFile(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the file. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the file exists.
 > :::
-##### getFile()
 
-```ts
-getFile(path): File;
-```
-
+#### getFile()
 
 Retrieves a file by its path relative to this folder.
 
-**Parameters**
+> ```ts
+> getFile(path: string): File;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The relative path to the file. |
+>
+> ::: info Returns
+> - **Type**: `File`
+> - **Description**: The File instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The relative path to the file. |
+#### getFiles()
 
-##### getFiles()
-**Parameters**
-##### deleteFile()
-**Parameters**
+Retrieves a collection of files at a specific path relative to this folder.
+
+> ```ts
+> getFiles(path: string): Files;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path containing the files to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `Files`
+> - **Description**: The Files collection instance.
+> :::
+
+#### deleteFile()
+
+Deletes a file from this folder.
+
+> ```ts
+> deleteFile(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the file to delete (relative to this folder). |
+>
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### File
 
+#### getName()
 
-File
+Gets the name of the file.
 
-#### Description
-
-Represents a file (resource) within the workspace, providing methods for
-content access and manipulation.
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new File(native): File;
-```
-
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The native Java object instance representing the file. |
-
-#### Methods
-##### getName()
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The file name.
 > :::
-##### getPath()
 
-```ts
-getPath(): string;
-```
-
+#### getPath()
 
 Gets the full path of the file.
 
+> ```ts
+> getPath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The file path.
 > :::
-##### getContentType()
 
-```ts
-getContentType(): string;
-```
-
+#### getContentType()
 
 Gets the content type (MIME type) of the file.
 
+> ```ts
+> getContentType(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The content type string.
 > :::
-##### isBinary()
 
-```ts
-isBinary(): boolean;
-```
-
+#### isBinary()
 
 Checks if the file content is determined to be binary.
 
+> ```ts
+> isBinary(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if binary, false if text.
 > :::
-##### getContent()
 
-```ts
-getContent(): any[];
-```
-
+#### getContent()
 
 Gets the content of the file as a JavaScript-friendly byte array.
 
-##### getText()
+> ```ts
+> getContent(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The content bytes.
+> :::
+
+#### getText()
+
+Gets the content of the file as a text string.
+
+> ```ts
+> getText(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The text content.
 > :::
-##### setContent()
 
-```ts
-setContent(input): void;
-```
-
+#### setContent()
 
 Sets the content of the file using a byte array.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `any`[] | The new content bytes. |
-
+> ```ts
+> setContent(input: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The new content bytes. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setText()
 
-```ts
-setText(input): void;
-```
-
+#### setText()
 
 Sets the content of the file using a text string.
 The string is converted to a byte array before saving.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The new text content. |
-
+> ```ts
+> setText(input: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The new text content. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### exists()
 
-```ts
-exists(): boolean;
-```
-
+#### exists()
 
 Checks if the file exists.
 
+> ```ts
+> exists(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the file exists.
 > :::
+

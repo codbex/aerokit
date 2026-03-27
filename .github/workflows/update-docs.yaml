@@ -16,11 +16,11 @@ jobs:
       - name: Clone Eclipse Dirigible repository
         run: git clone https://github.com/eclipse-dirigible/dirigible.git dirigible-repo
 
-      - name: Create src folder
-        run: mkdir -p src
+      - name: Create dirigible-sdk folder
+        run: mkdir -p dirigible-sdk
 
       - name: Copy Eclipse Dirigible src modules
-        run: cp -r dirigible-repo/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/* src/
+        run: cp -r dirigible-repo/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/* dirigible-sdk/
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,7 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate typedoc output
+        run: npm run docs:generate-typedoc
+
       - name: Generate documentation
+        if: always()
         run: npm run docs:generate
 
       - name: Configure Git
@@ -45,6 +49,7 @@ jobs:
           BRANCH_NAME="update-docs-$(date +%s)"
           git checkout -b $BRANCH_NAME
           git add docs/
+          git add output.json
           if git diff --staged --quiet; then
             echo "No changes in docs folder"
             echo "has_changes=false" >> $GITHUB_OUTPUT

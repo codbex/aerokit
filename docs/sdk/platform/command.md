@@ -4,35 +4,31 @@
 - source: [platform/command.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/command.ts)
 :::
 
-
 ## Overview
 
-Provides a wrapper for executing system commands via the platform's CommandEngine.
 
 
 ## Classes
 
 ### Command
 
+#### execute()
 
-Command
+Executes a system command with specified configuration, environment variables, and exclusions.
 
-#### Description
-
-Static utility class for executing system commands.
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new Command(): Command;
-```
-
-#### Methods
-##### execute()
-**Parameters**
+> ```ts
+> static execute(command: string, options: CommandOptions, add: EnvironmentVariables, remove: any): CommandOutput;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `command` | `string` | The command string to execute (e.g., &quot;ls -l&quot;). |
+> | `options` | `CommandOptions` | Optional configuration for the execution environment. |
+> | `add` | `EnvironmentVariables` | Optional environment variables to add to the process. |
+> | `remove` | `any` | Optional list of environment variable keys to remove from the process. |
+>
 > ::: info Returns
 > - **Type**: `CommandOutput`
 > - **Description**: A structured object containing the exit code and output streams.
 > :::
+

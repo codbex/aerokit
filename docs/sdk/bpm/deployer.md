@@ -4,71 +4,65 @@
 - source: [bpm/deployer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/deployer.ts)
 :::
 
-
 ## Overview
 
-API Deployer
-
-- Provides methods for managing the lifecycle of Business Process Model and Notation (BPMN) definitions,
-including deployment, undeployment, and deletion.
 
 
 ## Classes
 
 ### Deployer
 
+#### deployProcess()
 
-#### Constructors
+Deploys a new process definition from a specified location (e.g., a file path).
 
-##### Constructor
-
-```ts
-new Deployer(): Deployer;
-```
-
-#### Methods
-##### deployProcess()
-**Parameters**
+> ```ts
+> static deployProcess(location: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `location` | `string` | The path or location of the BPMN XML file to be deployed. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The deployment ID assigned to the new process definition.
 > :::
-##### undeployProcess()
 
-```ts
-static undeployProcess(location): void;
-```
-
+#### undeployProcess()
 
 Undeploys a process definition previously deployed from the specified location.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `location` | `string` | The path or location associated with the deployed BPMN file. |
-
+> ```ts
+> static undeployProcess(location: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `location` | `string` | The path or location associated with the deployed BPMN file. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### deleteProcess()
 
-```ts
-static deleteProcess(id, reason): void;
-```
-
+#### deleteProcess()
 
 Deletes a deployed process definition by its ID.
 
-> **Note:** This permanently removes the process definition and all its associated history and runtime data.
+&gt; **Note:** This permanently removes the process definition and all its associated history and runtime data.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `id` | `string` | The ID of the process definition to delete. |
-| `reason` | `string` | The reason for deleting the process definition (e.g., "Obsolete"). |
-
+> ```ts
+> static deleteProcess(id: string, reason: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `id` | `string` | The ID of the process definition to delete. |
+> | `reason` | `string` | The reason for deleting the process definition (e.g., &quot;Obsolete&quot;). |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+
