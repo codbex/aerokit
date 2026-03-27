@@ -4,35 +4,50 @@
 - source: [db/translator.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/translator.ts)
 :::
 
-
 ## Overview
 
-The Translator API provides...
 
 
 ## Classes
 
 ### Translator
 
+#### translateList()
 
-Provides static methods for translating entity properties based on a dedicated language table.
-Translation is achieved by querying a separate table (e.g., 'BASE_TABLE_LANG') and merging
-the translated fields back into the original data.
+Translates properties for a list of entities by querying the corresponding language table.
 
-#### Constructors
+> ```ts
+> static translateList(list: any, language: any, basetTable: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `list` | `any` | The array of entities to be translated. |
+> | `language` | `any` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
+> | `basetTable` | `string` | The name of the base entity table (used to derive the language table name). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The translated array of entities.
+> :::
 
-##### Constructor
+#### translateEntity()
 
-```ts
-new Translator(): Translator;
-```
+Translates properties for a single entity by querying the corresponding language table.
 
-#### Methods
-##### translateList()
-**Parameters**
-##### translateEntity()
-**Parameters**
+> ```ts
+> static translateEntity(entity: any, id: any, language: any, basetTable: string): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `entity` | `any` | The entity object to be translated. |
+> | `id` | `any` | The ID of the entity. |
+> | `language` | `any` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
+> | `basetTable` | `string` | The name of the base entity table. |
+>
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The translated entity object.
 > :::
+

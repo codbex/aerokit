@@ -4,96 +4,103 @@
 - source: [net/soap.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/soap.ts)
 :::
 
-
 ## Overview
 
-The Soap API provides...
 
 
 ## Classes
 
 ### SOAP
 
+#### call()
 
-Utility class for creating, parsing, and calling SOAP messages.
-It wraps the underlying Java javax.xml.soap API.
+Call a given SOAP endpoint with a given request message
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new SOAP(): SOAP;
-```
-
-#### Methods
-##### call()
-**Parameters**
+> ```ts
+> static call(message: Message, url: string): Message;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `message` | `Message` | The SOAP Message wrapper object. |
+> | `url` | `string` | The target SOAP endpoint URL. |
+>
 > ::: info Returns
 > - **Type**: `Message`
+> - **Description**: 
 > :::
-##### trustAll()
 
-```ts
-static trustAll(): void;
-```
+#### trustAll()
 
 
+
+> ```ts
+> static trustAll(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createMessage()
 
-```ts
-static createMessage(): Message;
-```
-
+#### createMessage()
 
 Creates a new, empty SOAP message.
 
+> ```ts
+> static createMessage(): Message;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `Message`
+> - **Description**: 
 > :::
-##### parseMessage()
 
-```ts
-static parseMessage(mimeHeaders, inputStream): Message;
-```
-
+#### parseMessage()
 
 Parses a SOAP message from an InputStream and MimeHeaders.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `mimeHeaders` | `MimeHeaders` | The MimeHeaders wrapper object. |
-| `inputStream` | `InputStream` | The InputStream wrapper object. |
-
+> ```ts
+> static parseMessage(mimeHeaders: MimeHeaders, inputStream: InputStream): Message;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `mimeHeaders` | `MimeHeaders` | The MimeHeaders wrapper object. |
+> | `inputStream` | `InputStream` | The InputStream wrapper object. |
+>
 > ::: info Returns
 > - **Type**: `Message`
+> - **Description**: 
 > :::
-##### parseRequest()
 
-```ts
-static parseRequest(): Message;
-```
-
+#### parseRequest()
 
 Parses a SOAP message from the current HTTP request input stream.
 
+> ```ts
+> static parseRequest(): Message;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `Message`
+> - **Description**: 
 > :::
-##### createMimeHeaders()
 
-```ts
-static createMimeHeaders(): MimeHeaders;
-```
-
+#### createMimeHeaders()
 
 Creates a new, empty MimeHeaders object.
 
+> ```ts
+> static createMimeHeaders(): MimeHeaders;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `MimeHeaders`
+> - **Description**: 
 > :::
+

@@ -4,93 +4,96 @@
 - source: [bpm/tracer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/tracer.ts)
 :::
 
-
 ## Overview
 
-The Tracer API provides...
 
 
 ## Classes
 
 ### Tracer
 
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new Tracer(): Tracer;
-```
+#### log()
 
 
-#### Methods
-##### log()
-**Parameters**
+
+> ```ts
+> log(message: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `message` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### warn()
 
-```ts
-warn(message): void;
-```
+#### warn()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `message` | `string` |
-
+> ```ts
+> warn(message: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `message` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### error()
 
-```ts
-error(message): void;
-```
+#### error()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `message` | `string` |
-
+> ```ts
+> error(message: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `message` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### complete()
 
-```ts
-complete(message?): void;
-```
+#### complete()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `message?` | `string` |
-
+> ```ts
+> complete(message: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `message` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### fail()
 
-```ts
-fail(message?): void;
-```
+#### fail()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `message?` | `string` |
-
+> ```ts
+> fail(message: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `message` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+

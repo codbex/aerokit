@@ -4,205 +4,232 @@
 - source: [http/rs/resource-method.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-method.ts)
 :::
 
-
 ## Overview
 
-The Resource-method API provides...
 
 
 ## Classes
 
 ### ResourceMethod
 
+#### execute()
 
-Constructor function for ResourceMethod instances.
-This class handles the fluent configuration for a single HTTP method handler (e.g., GET)
-attached to a Resource.
+Delegates to the HttpController&#x27;s execute function to process the request.
 
-/**
-Constructor function for ResourceMethod instances.
-All parameters of the function are optional.
-
-Providing oConfiguration will initialize this instance with some initial configuration instead of starting
-entirely from scratch. Note that the configuration object schema must be compliant with the one produced by
-the ResourceMethod itself. If this parameter is omited, setup will start from scratch.
-
-Provisioning controller, will inject a reference to the execute method of the controller so that it can be
-fluently invoked in the scope of this ResourceMehtod instance as part of the method chaining flow. The execute
-function scope is bound to the controller instance for this ResourceMethod.
-
-#### Examples
-
-```js
-rs.service()
- .resource('')
-		.get()
-	.execute();
-```
-
-Provisioning resource, will inject a reference ot the HTTP method functions of the Resource class (get, post,
-put, delete, remove, method) so that they can be fluently invoked in the scope of this ResourceMethod instance
-as part of the method chaining flow. The functions are bound to the resource instance for this ResourceMethod.
-
-```js
-rs.service()
- .resource('')
-		.get(function(){})
-		.post(function(){})
-		.put(function(){})
-		.remove(function(){})
-.execute();
-```
-
-Provisioning mappings, will inject a reference ot the resource method of the ResourceMappings class so that
-it can be fluently invoked in the scope of this ResourceMethod instance as part of the method chaining flow.
-The function is bound to the mappings instance for this ResourceMethod.
-
-```js
-rs.service()
- .resource('')
-		.get(function(){})
-	.resource('{id}')
-		.get(function(){})
-.execute();
-``
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new ResourceMethod(
-   oConfiguration, 
-   controller, 
-   resource, 
-   mappings): ResourceMethod;
-```
-
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `oConfiguration` | `any` | Initial configuration object. |
-| `controller` | `any` | The HttpController instance. |
-| `resource` | `any` | The parent Resource instance. |
-| `mappings` | `any` | The parent ResourceMappings instance. |
-
-#### Properties
-#### Methods
-##### execute()
+> ```ts
+> execute(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### get()
 
-```ts
-get(): any;
-```
+#### get()
 
+Delegates to the parent Resource&#x27;s &#x27;get&#x27; method.
 
-Delegates to the parent Resource's 'get' method.
-
+> ```ts
+> get(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### post()
 
-```ts
-post(): any;
-```
+#### post()
 
+Delegates to the parent Resource&#x27;s &#x27;post&#x27; method.
 
-Delegates to the parent Resource's 'post' method.
-
+> ```ts
+> post(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### put()
 
-```ts
-put(): any;
-```
+#### put()
 
+Delegates to the parent Resource&#x27;s &#x27;put&#x27; method.
 
-Delegates to the parent Resource's 'put' method.
-
+> ```ts
+> put(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### delete()
 
-```ts
-delete(): any;
-```
+#### delete()
 
+Delegates to the parent Resource&#x27;s &#x27;delete&#x27; method.
 
-Delegates to the parent Resource's 'delete' method.
-
+> ```ts
+> delete(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### remove()
 
-```ts
-remove(): any;
-```
+#### remove()
 
+Delegates to the parent Resource&#x27;s &#x27;remove&#x27; method.
 
-Delegates to the parent Resource's 'remove' method.
-
+> ```ts
+> remove(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### method()
 
-```ts
-method(): any;
-```
+#### method()
 
+Delegates to the parent Resource&#x27;s &#x27;method&#x27; method.
 
-Delegates to the parent Resource's 'method' method.
-
+> ```ts
+> method(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### configuration()
 
-```ts
-configuration(): ResourceMethodConfig;
-```
-
+#### configuration()
 
 Returns the configuration object for this ResourceMethod instance.
 
+> ```ts
+> configuration(): ResourceMethodConfig;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `ResourceMethodConfig`
 > - **Description**: The configuration object.
 > :::
-##### before()
 
-```ts
-before(fHandler): ResourceMethod;
-```
-
+#### before()
 
 Applies a callback function for the **before** phase of processing a matched resource request.
 
-**Parameters**
+> ```ts
+> before(fHandler: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fHandler` | `Function` | Callback function for the before phase. |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance for method chaining.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `fHandler` | `Function` | Callback function for the before phase. |
+#### serve()
 
-##### serve()
-**Parameters**
-##### catch()
-**Parameters**
-##### finally()
-**Parameters**
-##### consumes()
-**Parameters**
-##### produces()
-**Parameters**
-###### Example
+Applies a callback function for processing a matched resource request (**serve** phase).
+
+> ```ts
+> serve(fHandler: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fHandler` | `Function` | Callback function for the serve phase. |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance for method chaining.
+> :::
+
+#### catch()
+
+Applies a callback function for the **catch** errors phase of processing a matched resource request.
+
+> ```ts
+> catch(fHandler: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fHandler` | `Function` | Callback function for the catch phase. |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance for method chaining.
+> :::
+
+#### finally()
+
+Applies a callback function for the **finally** phase of processing a matched resource request.
+
+> ```ts
+> finally(fHandler: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fHandler` | `Function` | Callback function for the finally phase. |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance for method chaining.
+> :::
+
+#### consumes()
+
+Defines the content MIME type(s), which this ResourceMethod expects as input (**consumes**).
+
+> ```ts
+> consumes(mimeTypes: any): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `mimeTypes` | `any` | Sets the mime types that this ResourceMethod is capable to consume. |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance for method chaining.
+> :::
+
+#### produces()
+
+Defines the HTTP response payload MIME type(s), which this ResourceMethod request processing function outputs, i.e.
+those that it &#x27;produces&#x27;. At runtime, the Accept request header will be matched for compatibility with this setting
+to elicit request processing functions.
+Note that the matching is performed by compatibility, not strict equality, i.e. the MIME type format wildcards are
+considered too. For example, a request Accept header &quot;*/json&quot; will match a produces setting &quot;application/json&quot;.
+
+   *
+
+> ```ts
+> produces(mimeTypes: any): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `mimeTypes` | `any` | Sets the mime type(s) that this ResourceMethod may produce.
+   * |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance for method chaining.
+> :::
+

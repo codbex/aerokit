@@ -4,31 +4,29 @@
 - source: [rabbitmq/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/producer.ts)
 :::
 
-
 ## Overview
 
-RabbitMQ Producer
-
-This facade provides a static method to send messages to a RabbitMQ queue,
-wrapping the underlying Java implementation provided by the `RabbitMQFacade`.
 
 
 ## Classes
 
 ### Producer
 
+#### send()
 
-#### Constructors
+Sends a message to the specified RabbitMQ queue.
 
-##### Constructor
-
-```ts
-new Producer(): Producer;
-```
-
-#### Methods
-##### send()
-**Parameters**
+> ```ts
+> static send(queue: string, message: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `queue` | `string` | The name of the RabbitMQ queue to send the message to. |
+> | `message` | `string` | The content of the message to be sent (as a string). |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+

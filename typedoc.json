@@ -1,7 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": [
-    "src/**/*.ts"
+    "dirigible-sdk/**/*.ts"
   ],
   "out": "docs/sdk",
   "plugin": ["typedoc-plugin-markdown"],
@@ -39,6 +39,7 @@
   "propertiesFormat": "table",
   "enumMembersFormat": "table",
   "typeDeclarationFormat": "table",
+  "json": "./output.json",
   "indexFormat": "table",
   "outputFileStrategy": "modules",
   "fileExtension": ".md",

@@ -4,2071 +4,2414 @@
 - source: [db/database.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/database.ts)
 :::
 
-
 ## Overview
 
-API Database
 
-
-## Enumerations
-
-### DatabaseSystem
-
-
-#### Enumeration Members
-
-| Enumeration Member | Value | Defined in |
-| ------ | ------ | ------ |
-|  `UNKNOWN` | `0` | src/db/database.ts:44 |
-|  `DERBY` | `1` | src/db/database.ts:44 |
-|  `POSTGRESQL` | `2` | src/db/database.ts:44 |
-|  `H2` | `3` | src/db/database.ts:44 |
-|  `MARIADB` | `4` | src/db/database.ts:44 |
-|  `HANA` | `5` | src/db/database.ts:44 |
-|  `SNOWFLAKE` | `6` | src/db/database.ts:44 |
-|  `MYSQL` | `7` | src/db/database.ts:44 |
-|  `MONGODB` | `8` | src/db/database.ts:44 |
-|  `SYBASE` | `9` | src/db/database.ts:44 |
-|  `MSSQL` | `10` | src/db/database.ts:44 |
 
 ## Classes
 
 ### PreparedStatement
 
-
-Statement object
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new PreparedStatement(native): PreparedStatement;
-```
+#### close()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `native` | `any` |
-
-#### Methods
-##### close()
+> ```ts
+> close(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getResultSet()
 
-```ts
-getResultSet(): ResultSet;
-```
+#### getResultSet()
 
 
-##### execute()
+
+> ```ts
+> getResultSet(): ResultSet;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `ResultSet`
+> - **Description**: 
+> :::
+
+#### execute()
+
+
+
+> ```ts
+> execute(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### executeQuery()
 
-```ts
-executeQuery(): ResultSet;
-```
+#### executeQuery()
 
 
-##### executeUpdate()
+
+> ```ts
+> executeQuery(): ResultSet;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `ResultSet`
+> - **Description**: 
+> :::
+
+#### executeUpdate()
+
+
+
+> ```ts
+> executeUpdate(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### setNull()
 
-```ts
-setNull(index, sqlType): void;
-```
+#### setNull()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `sqlType` | `number` |
-
+> ```ts
+> setNull(index: number, sqlType: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `sqlType` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBinaryStream()
 
-```ts
-setBinaryStream(
-   parameterIndex, 
-   inputStream, 
-   length?): void;
-```
+#### setBinaryStream()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `inputStream` | `InputStream` |
-| `length?` | `number` |
-
+> ```ts
+> setBinaryStream(parameterIndex: number, inputStream: InputStream, length: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `inputStream` | `InputStream` |  |
+> | `length` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBoolean()
 
-```ts
-setBoolean(index, value?): void;
-```
+#### setBoolean()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `boolean` |
-
+> ```ts
+> setBoolean(index: number, value: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `boolean` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setByte()
 
-```ts
-setByte(index, value?): void;
-```
+#### setByte()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `any` |
-
+> ```ts
+> setByte(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBlob()
 
-```ts
-setBlob(index, value?): void;
-```
+#### setBlob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `any` |
-
+> ```ts
+> setBlob(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setClob()
 
-```ts
-setClob(index, value?): void;
-```
+#### setClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `any` |
-
+> ```ts
+> setClob(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setNClob()
 
-```ts
-setNClob(index, value?): void;
-```
+#### setNClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `any` |
-
+> ```ts
+> setNClob(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBytesNative()
 
-```ts
-setBytesNative(index, value?): void;
-```
+#### setBytesNative()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `any`[] |
-
+> ```ts
+> setBytesNative(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBytes()
 
-```ts
-setBytes(index, value?): void;
-```
+#### setBytes()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `any`[] |
-
+> ```ts
+> setBytes(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setDate()
 
-```ts
-setDate(index, value?): void;
-```
+#### setDate()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `string` \| `Date` |
-
+> ```ts
+> setDate(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setDouble()
 
-```ts
-setDouble(index, value?): void;
-```
+#### setDouble()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setDouble(index: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setFloat()
 
-```ts
-setFloat(index, value?): void;
-```
+#### setFloat()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setFloat(index: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setInt()
 
-```ts
-setInt(index, value?): void;
-```
+#### setInt()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setInt(index: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setLong()
 
-```ts
-setLong(index, value?): void;
-```
+#### setLong()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setLong(index: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setShort()
 
-```ts
-setShort(index, value?): void;
-```
+#### setShort()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setShort(index: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setString()
 
-```ts
-setString(index, value?): void;
-```
+#### setString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `string` |
-
+> ```ts
+> setString(index: number, value: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setTime()
 
-```ts
-setTime(index, value?): void;
-```
+#### setTime()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `string` \| `Date` |
-
+> ```ts
+> setTime(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setTimestamp()
 
-```ts
-setTimestamp(index, value?): void;
-```
+#### setTimestamp()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `string` \| `Date` |
-
+> ```ts
+> setTimestamp(index: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBigDecimal()
 
-```ts
-setBigDecimal(index, value?): void;
-```
+#### setBigDecimal()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setBigDecimal(index: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setNString()
 
-```ts
-setNString(index, value?): void;
-```
+#### setNString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `index` | `number` |
-| `value?` | `string` |
-
+> ```ts
+> setNString(index: number, value: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` |  |
+> | `value` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### addBatch()
 
-```ts
-addBatch(): void;
-```
+#### addBatch()
 
 
+
+> ```ts
+> addBatch(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### executeBatch()
 
-```ts
-executeBatch(): number[];
-```
+#### executeBatch()
 
 
-##### getMetaData()
+
+> ```ts
+> executeBatch(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getMetaData()
+
+
+
+> ```ts
+> getMetaData(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getMoreResults()
 
-```ts
-getMoreResults(): boolean;
-```
+#### getMoreResults()
 
 
+
+> ```ts
+> getMoreResults(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getParameterMetaData()
 
-```ts
-getParameterMetaData(): any;
-```
+#### getParameterMetaData()
 
 
+
+> ```ts
+> getParameterMetaData(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getSQLWarning()
 
-```ts
-getSQLWarning(): any;
-```
+#### getSQLWarning()
 
 
+
+> ```ts
+> getSQLWarning(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### isClosed()
 
-```ts
-isClosed(): boolean;
-```
+#### isClosed()
 
 
+
+> ```ts
+> isClosed(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### CallableStatement
 
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new CallableStatement(native): CallableStatement;
-```
+#### getResultSet()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `native` | `any` |
+> ```ts
+> getResultSet(): ResultSet;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `ResultSet`
+> - **Description**: 
+> :::
 
-#### Methods
-##### getResultSet()
-##### executeQuery()
-##### executeUpdate()
+#### executeQuery()
+
+
+
+> ```ts
+> executeQuery(): ResultSet;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `ResultSet`
+> - **Description**: 
+> :::
+
+#### executeUpdate()
+
+
+
+> ```ts
+> executeUpdate(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### registerOutParameter()
 
-```ts
-registerOutParameter(parameterIndex, sqlType): void;
-```
+#### registerOutParameter()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `sqlType` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
-
+> ```ts
+> registerOutParameter(parameterIndex: number, sqlType: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `sqlType` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### registerOutParameterByScale()
 
-```ts
-registerOutParameterByScale(
-   parameterIndex, 
-   sqlType, 
-   scale): void;
-```
+#### registerOutParameterByScale()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `sqlType` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
-| `scale` | `number` |
-
+> ```ts
+> registerOutParameterByScale(parameterIndex: number, sqlType: any, scale: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `sqlType` | `any` |  |
+> | `scale` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### registerOutParameterByTypeName()
 
-```ts
-registerOutParameterByTypeName(
-   parameterIndex, 
-   sqlType, 
-   typeName): void;
-```
+#### registerOutParameterByTypeName()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `sqlType` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
-| `typeName` | `string` |
-
+> ```ts
+> registerOutParameterByTypeName(parameterIndex: number, sqlType: any, typeName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `sqlType` | `any` |  |
+> | `typeName` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### wasNull()
 
-```ts
-wasNull(): boolean;
-```
+#### wasNull()
 
 
+
+> ```ts
+> wasNull(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getString()
 
-```ts
-getString(parameterIndex): string;
-```
+#### getString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getString(parameterIndex: number): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getBoolean()
 
-```ts
-getBoolean(parameterIndex): boolean;
-```
+#### getBoolean()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getBoolean(parameterIndex: number): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getByte()
 
-```ts
-getByte(parameterIndex): any;
-```
+#### getByte()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getByte(parameterIndex: number): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getShort()
 
-```ts
-getShort(parameterIndex): number;
-```
+#### getShort()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getShort(parameterIndex: number): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getInt()
 
-```ts
-getInt(parameterIndex): number;
-```
+#### getInt()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getInt(parameterIndex: number): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getLong()
 
-```ts
-getLong(parameterIndex): number;
-```
+#### getLong()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getLong(parameterIndex: number): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getFloat()
 
-```ts
-getFloat(parameterIndex): number;
-```
+#### getFloat()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getFloat(parameterIndex: number): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getDouble()
 
-```ts
-getDouble(parameterIndex): number;
-```
+#### getDouble()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getDouble(parameterIndex: number): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getDate()
 
-```ts
-getDate(parameterIndex): Date;
-```
+#### getDate()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getDate(parameterIndex: number): Date;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `Date`
+> - **Description**: 
 > :::
-##### getTime()
 
-```ts
-getTime(parameterIndex): Date;
-```
+#### getTime()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getTime(parameterIndex: number): Date;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `Date`
+> - **Description**: 
 > :::
-##### getTimestamp()
 
-```ts
-getTimestamp(parameterIndex): Date;
-```
+#### getTimestamp()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getTimestamp(parameterIndex: number): Date;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `Date`
+> - **Description**: 
 > :::
-##### getObject()
 
-```ts
-getObject(parameterIndex): any;
-```
+#### getObject()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getObject(parameterIndex: number): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getBigDecimal()
 
-```ts
-getBigDecimal(parameterIndex): number;
-```
+#### getBigDecimal()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getBigDecimal(parameterIndex: number): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getRef()
 
-```ts
-getRef(parameterIndex): any;
-```
+#### getRef()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getRef(parameterIndex: number): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getBytes()
 
-```ts
-getBytes(parameterIndex): any[];
-```
+#### getBytes()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
+> ```ts
+> getBytes(parameterIndex: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
-##### getBytesNative()
-**Parameters**
-##### getBlob()
-**Parameters**
+#### getBytesNative()
+
+
+
+> ```ts
+> getBytesNative(parameterIndex: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getBlob()
+
+
+
+> ```ts
+> getBlob(parameterIndex: number): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getBlobNative()
 
-```ts
-getBlobNative(parameterIndex): any;
-```
+#### getBlobNative()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getBlobNative(parameterIndex: number): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getClob()
 
-```ts
-getClob(parameterIndex): any;
-```
+#### getClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-
+> ```ts
+> getClob(parameterIndex: number): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getNClob()
 
-```ts
-getNClob(parameterIndex): any;
-```
+#### getNClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `string` \| `number` |
-
+> ```ts
+> getNClob(parameterIndex: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getNString()
 
-```ts
-getNString(parameterIndex): string;
-```
+#### getNString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `string` \| `number` |
-
+> ```ts
+> getNString(parameterIndex: any): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getArray()
 
-```ts
-getArray(parameterIndex): any[];
-```
+#### getArray()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `string` \| `number` |
+> ```ts
+> getArray(parameterIndex: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
-##### getURL()
-**Parameters**
+#### getURL()
+
+
+
+> ```ts
+> getURL(parameterIndex: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getRowId()
 
-```ts
-getRowId(parameterIndex): any;
-```
+#### getRowId()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `string` \| `number` |
-
+> ```ts
+> getRowId(parameterIndex: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getSQLXML()
 
-```ts
-getSQLXML(parameterIndex): any;
-```
+#### getSQLXML()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `string` \| `number` |
-
+> ```ts
+> getSQLXML(parameterIndex: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### setURL()
 
-```ts
-setURL(parameterIndex, value): void;
-```
+#### setURL()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `any` |
-
+> ```ts
+> setURL(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setNull()
 
-```ts
-setNull(
-   parameterIndex, 
-   sqlTypeStr, 
-   typeName?): void;
-```
+#### setNull()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `sqlTypeStr` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
-| `typeName?` | `string` |
-
+> ```ts
+> setNull(parameterIndex: number, sqlTypeStr: any, typeName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `sqlTypeStr` | `any` |  |
+> | `typeName` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBoolean()
 
-```ts
-setBoolean(parameterIndex, value?): void;
-```
+#### setBoolean()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `boolean` |
-
+> ```ts
+> setBoolean(parameterIndex: number, value: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `boolean` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setByte()
 
-```ts
-setByte(parameterIndex, value?): void;
-```
+#### setByte()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `any` |
-
+> ```ts
+> setByte(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setShort()
 
-```ts
-setShort(parameterIndex, value?): void;
-```
+#### setShort()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setShort(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setInt()
 
-```ts
-setInt(parameterIndex, value?): void;
-```
+#### setInt()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setInt(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setLong()
 
-```ts
-setLong(parameterIndex, value?): void;
-```
+#### setLong()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setLong(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setFloat()
 
-```ts
-setFloat(parameterIndex, value?): void;
-```
+#### setFloat()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setFloat(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setDouble()
 
-```ts
-setDouble(parameterIndex, value?): void;
-```
+#### setDouble()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setDouble(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBigDecimal()
 
-```ts
-setBigDecimal(parameterIndex, value?): void;
-```
+#### setBigDecimal()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `number` |
-
+> ```ts
+> setBigDecimal(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setString()
 
-```ts
-setString(parameterIndex, value?): void;
-```
+#### setString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `string` |
-
+> ```ts
+> setString(parameterIndex: number, value: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBytes()
 
-```ts
-setBytes(parameterIndex, value?): void;
-```
+#### setBytes()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `any`[] |
-
+> ```ts
+> setBytes(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setDate()
 
-```ts
-setDate(parameterIndex, value?): void;
-```
+#### setDate()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `string` \| `Date` |
-
+> ```ts
+> setDate(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setTime()
 
-```ts
-setTime(parameterIndex, value?): void;
-```
+#### setTime()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `string` \| `Date` |
-
+> ```ts
+> setTime(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setTimestamp()
 
-```ts
-setTimestamp(parameterIndex, value?): void;
-```
+#### setTimestamp()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value?` | `string` \| `Date` |
-
+> ```ts
+> setTimestamp(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setAsciiStream()
 
-```ts
-setAsciiStream(
-   parameterIndex, 
-   inputStream, 
-   length?): void;
-```
+#### setAsciiStream()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `inputStream` | `InputStream` |
-| `length?` | `number` |
-
+> ```ts
+> setAsciiStream(parameterIndex: number, inputStream: InputStream, length: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `inputStream` | `InputStream` |  |
+> | `length` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBinaryStream()
 
-```ts
-setBinaryStream(
-   parameterIndex, 
-   inputStream, 
-   length?): void;
-```
+#### setBinaryStream()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `inputStream` | `InputStream` |
-| `length?` | `number` |
-
+> ```ts
+> setBinaryStream(parameterIndex: number, inputStream: InputStream, length: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `inputStream` | `InputStream` |  |
+> | `length` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setObject()
 
-```ts
-setObject(
-   parameterIndex, 
-   value, 
-   targetSqlType?, 
-   scale?): void;
-```
+#### setObject()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `any` |
-| `targetSqlType?` | `number` |
-| `scale?` | `number` |
-
+> ```ts
+> setObject(parameterIndex: number, value: any, targetSqlType: number, scale: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+> | `targetSqlType` | `number` |  |
+> | `scale` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setRowId()
 
-```ts
-setRowId(parameterIndex, value): void;
-```
+#### setRowId()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `number` |
-
+> ```ts
+> setRowId(parameterIndex: number, value: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setNString()
 
-```ts
-setNString(parameterIndex, value): void;
-```
+#### setNString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `string` |
-
+> ```ts
+> setNString(parameterIndex: number, value: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setSQLXML()
 
-```ts
-setSQLXML(parameterIndex, value): void;
-```
+#### setSQLXML()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `any` |
-
+> ```ts
+> setSQLXML(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setBlob()
 
-```ts
-setBlob(parameterIndex, value): void;
-```
+#### setBlob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `any` |
-
+> ```ts
+> setBlob(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setClob()
 
-```ts
-setClob(parameterIndex, value): void;
-```
+#### setClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `any` |
-
+> ```ts
+> setClob(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setNClob()
 
-```ts
-setNClob(parameterIndex, value): void;
-```
+#### setNClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `parameterIndex` | `number` |
-| `value` | `any` |
-
+> ```ts
+> setNClob(parameterIndex: number, value: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `parameterIndex` | `number` |  |
+> | `value` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### execute()
 
-```ts
-execute(): boolean;
-```
+#### execute()
 
 
+
+> ```ts
+> execute(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getMoreResults()
 
-```ts
-getMoreResults(): boolean;
-```
+#### getMoreResults()
 
 
+
+> ```ts
+> getMoreResults(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getParameterMetaData()
 
-```ts
-getParameterMetaData(): any;
-```
+#### getParameterMetaData()
 
 
+
+> ```ts
+> getParameterMetaData(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### isClosed()
 
-```ts
-isClosed(): boolean;
-```
+#### isClosed()
 
 
+
+> ```ts
+> isClosed(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### close()
 
-```ts
-close(): void;
-```
+#### close()
 
 
+
+> ```ts
+> close(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### ResultSet
 
+#### toJson()
 
-ResultSet object
+Converts the ResultSet into a JSON array of objects.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new ResultSet(native): ResultSet;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `native` | `any` |
-
-#### Methods
-##### toJson()
-**Parameters**
-##### close()
+> ```ts
+> toJson(limited: boolean, stringify: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `limited` | `boolean` | Whether to use limited JSON conversion (optimized). |
+> | `stringify` | `boolean` | Whether to return the JSON as a string or a parsed array. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: A JavaScript array of objects representing the result set, or a string if stringify is true.
 > :::
-##### getBigDecimal()
 
-```ts
-getBigDecimal(identifier): any;
-```
+#### close()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
+> ```ts
+> close(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
+#### getBigDecimal()
+
+
+
+> ```ts
+> getBigDecimal(identifier: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getBoolean()
 
-```ts
-getBoolean(identifier): boolean;
-```
+#### getBoolean()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getBoolean(identifier: any): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getByte()
 
-```ts
-getByte(identifier): any;
-```
+#### getByte()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getByte(identifier: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getBytes()
 
-```ts
-getBytes(identifier): any[];
-```
+#### getBytes()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
+> ```ts
+> getBytes(identifier: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
-##### getBytesNative()
-**Parameters**
-##### getBlob()
-**Parameters**
+#### getBytesNative()
+
+
+
+> ```ts
+> getBytesNative(identifier: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getBlob()
+
+
+
+> ```ts
+> getBlob(identifier: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getBlobNative()
 
-```ts
-getBlobNative(identifier): any;
-```
+#### getBlobNative()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getBlobNative(identifier: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getClob()
 
-```ts
-getClob(identifier): any;
-```
+#### getClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getClob(identifier: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getNClob()
 
-```ts
-getNClob(identifier): any;
-```
+#### getNClob()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getNClob(identifier: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getDate()
 
-```ts
-getDate(identifier): Date;
-```
+#### getDate()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getDate(identifier: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
-> - **Type**: `Date`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### getDouble()
 
-```ts
-getDouble(identifier): number;
-```
+#### getDouble()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
-> ::: info Returns
-> - **Type**: `number`
-> :::
-##### getFloat()
-
-```ts
-getFloat(identifier): number;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getDouble(identifier: any): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getInt()
 
-```ts
-getInt(identifier): number;
-```
+#### getFloat()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getFloat(identifier: any): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getLong()
 
-```ts
-getLong(identifier): number;
-```
+#### getInt()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getInt(identifier: any): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getShort()
 
-```ts
-getShort(identifier): number;
-```
+#### getLong()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getLong(identifier: any): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getString()
 
-```ts
-getString(identifier): string;
-```
+#### getShort()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
+> ```ts
+> getShort(identifier: any): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: 
+> :::
 
+#### getString()
+
+
+
+> ```ts
+> getString(identifier: any): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getTime()
 
-```ts
-getTime(identifier): Date;
-```
+#### getTime()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getTime(identifier: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
-> - **Type**: `Date`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### getTimestamp()
 
-```ts
-getTimestamp(identifier): Date;
-```
+#### getTimestamp()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `identifier` | `string` \| `number` |
-
+> ```ts
+> getTimestamp(identifier: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `identifier` | `any` |  |
+>
 > ::: info Returns
-> - **Type**: `Date`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### isAfterLast()
 
-```ts
-isAfterLast(): boolean;
-```
+#### isAfterLast()
 
 
-> ::: info Returns
-> - **Type**: `boolean`
-> :::
-##### isBeforeFirst()
 
-```ts
-isBeforeFirst(): boolean;
-```
-
-
+> ```ts
+> isAfterLast(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### isClosed()
 
-```ts
-isClosed(): boolean;
-```
+#### isBeforeFirst()
 
 
+
+> ```ts
+> isBeforeFirst(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### isFirst()
 
-```ts
-isFirst(): boolean;
-```
+#### isClosed()
 
 
+
+> ```ts
+> isClosed(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### isLast()
 
-```ts
-isLast(): boolean;
-```
+#### isFirst()
 
 
+
+> ```ts
+> isFirst(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### next()
 
-```ts
-next(): boolean;
-```
+#### isLast()
 
 
+
+> ```ts
+> isLast(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getMetaData()
 
-```ts
-getMetaData(): any;
-```
+#### next()
 
 
+
+> ```ts
+> next(): boolean;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: 
+> :::
+
+#### getMetaData()
+
+
+
+> ```ts
+> getMetaData(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getNString()
 
-```ts
-getNString(columnIndex): string;
-```
+#### getNString()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `columnIndex` | `number` |
-
+> ```ts
+> getNString(columnIndex: number): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `columnIndex` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### Connection
 
+#### isOfType()
 
-Connection object wrapper around a native Java `Connection`.
+Checks if the connection is for a specific database system.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Connection(datasourceName?): Connection;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `datasourceName?` | `string` |
-
-#### Properties
-#### Methods
-##### isOfType()
-**Parameters**
+> ```ts
+> isOfType(databaseSystem: DatabaseSystem): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `databaseSystem` | `DatabaseSystem` |  |
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getDatabaseSystem()
 
-```ts
-getDatabaseSystem(): DatabaseSystem;
-```
+#### getDatabaseSystem()
+
+Returns the type of the underlying database system as a DatabaseSystem enum.
+
+> ```ts
+> getDatabaseSystem(): DatabaseSystem;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `DatabaseSystem`
+> - **Description**: 
+> :::
+
+#### prepareStatement()
+
+Creates a new PreparedStatement object for sending parameterized SQL statements to the database.
+
+> ```ts
+> prepareStatement(sql: string): PreparedStatement;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `PreparedStatement`
+> - **Description**: 
+> :::
+
+#### prepareCall()
+
+Creates a CallableStatement object for calling database stored procedures or functions.
+
+> ```ts
+> prepareCall(sql: string): CallableStatement;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `CallableStatement`
+> - **Description**: 
+> :::
+
+#### close()
 
 
-Returns the type of the underlying database system as a [DatabaseSystem](#databasesystem) enum.
 
-##### prepareStatement()
-**Parameters**
-##### prepareCall()
-**Parameters**
-##### close()
+> ```ts
+> close(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### commit()
 
-```ts
-commit(): void;
-```
+#### commit()
 
 
+
+> ```ts
+> commit(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getAutoCommit()
 
-```ts
-getAutoCommit(): boolean;
-```
+#### getAutoCommit()
 
 
+
+> ```ts
+> getAutoCommit(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getCatalog()
 
-```ts
-getCatalog(): string;
-```
+#### getCatalog()
 
 
+
+> ```ts
+> getCatalog(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getSchema()
 
-```ts
-getSchema(): string;
-```
+#### getSchema()
 
 
+
+> ```ts
+> getSchema(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getTransactionIsolation()
 
-```ts
-getTransactionIsolation(): number;
-```
+#### getTransactionIsolation()
 
 
+
+> ```ts
+> getTransactionIsolation(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### isClosed()
 
-```ts
-isClosed(): boolean;
-```
+#### isClosed()
 
 
+
+> ```ts
+> isClosed(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### isReadOnly()
 
-```ts
-isReadOnly(): boolean;
-```
+#### isReadOnly()
 
 
+
+> ```ts
+> isReadOnly(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### isValid()
 
-```ts
-isValid(): boolean;
-```
+#### isValid()
 
 
+
+> ```ts
+> isValid(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### rollback()
 
-```ts
-rollback(): void;
-```
+#### rollback()
 
 
+
+> ```ts
+> rollback(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setAutoCommit()
 
-```ts
-setAutoCommit(autoCommit): void;
-```
+#### setAutoCommit()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `autoCommit` | `boolean` |
-
+> ```ts
+> setAutoCommit(autoCommit: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `autoCommit` | `boolean` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setCatalog()
 
-```ts
-setCatalog(catalog): void;
-```
+#### setCatalog()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `catalog` | `string` |
-
+> ```ts
+> setCatalog(catalog: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `catalog` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setReadOnly()
 
-```ts
-setReadOnly(readOnly): void;
-```
+#### setReadOnly()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `readOnly` | `boolean` |
-
+> ```ts
+> setReadOnly(readOnly: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `readOnly` | `boolean` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setSchema()
 
-```ts
-setSchema(schema): void;
-```
+#### setSchema()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `schema` | `string` |
-
+> ```ts
+> setSchema(schema: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `schema` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### setTransactionIsolation()
 
-```ts
-setTransactionIsolation(transactionIsolation): void;
-```
+#### setTransactionIsolation()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `transactionIsolation` | `number` |
-
+> ```ts
+> setTransactionIsolation(transactionIsolation: number): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `transactionIsolation` | `number` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getMetaData()
 
-```ts
-getMetaData(): any;
-```
+#### getMetaData()
 
 
+
+> ```ts
+> getMetaData(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### Database
 
+#### getDataSources()
 
-#### Constructors
+Returns a list of available data source names.
 
-##### Constructor
+> ```ts
+> static getDataSources(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
-```ts
-new Database(): Database;
-```
+#### getMetadata()
 
-#### Methods
-##### getDataSources()
-##### getMetadata()
-**Parameters**
-##### getProductName()
-**Parameters**
+Returns database metadata for the specified data source.
+
+> ```ts
+> static getMetadata(datasourceName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `datasourceName` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getProductName()
+
+Returns the product name of the underlying database system.
+
+> ```ts
+> static getProductName(datasourceName: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `datasourceName` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getConnection()
 
-```ts
-static getConnection(datasourceName?): Connection;
-```
-
+#### getConnection()
 
 Gets a new database connection object.
 
-**Parameters**
+> ```ts
+> static getConnection(datasourceName: string): Connection;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `datasourceName` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `Connection`
+> - **Description**: 
+> :::
 
-| Parameter | Type |
-| ------ | ------ |
-| `datasourceName?` | `string` |
-
-## Interfaces
-### TableMetadata
-#### Properties
-### ColumnMetadata
-#### Properties
-### IndexMetadata
-#### Properties
-### ForeignKeyMetadata
-#### Properties
-### SchemaMetadata
-#### Properties
-### ProcedureMetadata
-#### Properties
-### FunctionMetadata
-#### Properties
-### ParameterColumnMetadata
-#### Properties
-### SequenceMetadata
-#### Properties
-### DatabaseMetadata
-#### Properties
-## Variables
-### SQLTypes

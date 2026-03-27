@@ -4,100 +4,223 @@
 - source: [http/rs/resource.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource.ts)
 :::
 
-
 ## Overview
 
-The Resource API provides...
 
 
 ## Classes
 
 ### Resource
 
+#### path()
 
-Constructs a new Resource instance, initialized with the supplied path parameter and optionally with the second, configuration object parameter.
+Sets the URL path for this resource, overriding the one specified upon its construction,
+if a path string is provided as argument ot the method (i.e. acts as setter),
+or returns the path set for this resource, if the method is invoked without arguments (i.e. acts as getter).
 
-#### Constructors
+> ```ts
+> path(sPath: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sPath` | `string` | The path property to be set for this resource. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The resource instance for method chaining (setter mode), or the path set for this resource (getter mode).
+> :::
 
-##### Constructor
+#### method()
 
-```ts
-new Resource(
-   sPath, 
-   oConfiguration?, 
-   controller?, 
-   mappings?): Resource;
-```
+Creates a new HTTP method handling specification.
 
+> ```ts
+> method(sHttpMethod: string, oConfiguration: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sHttpMethod` | `string` | The HTTP method (method) (e.g., &quot;GET&quot;). |
+> | `oConfiguration` | `any` | The handler specification(s) for this HTTP method. Can be a single object or array. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The ResourceMethod instance, or an array of ResourceMethod instances.
+> :::
 
-**Parameters**
+#### get()
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sPath` | `string` | The base URL path for the resource. |
-| `oConfiguration?` | `any` | Optional configuration object (map of method handlers). |
-| `controller?` | `any` | Optional controller instance containing an execute method. |
-| `mappings?` | `any` | Optional object for resource mappings. |
+Creates a handling specification for the HTTP method &quot;GET&quot;.
 
-#### Properties
-#### Methods
-##### path()
-**Parameters**
-##### method()
-**Parameters**
-##### get()
-###### Call Signature
-**Parameters**
-###### Call Signature
-**Parameters**
-###### Call Signature
-##### post()
-###### Call Signature
-**Parameters**
-###### Call Signature
-**Parameters**
-###### Call Signature
-##### put()
-###### Call Signature
-**Parameters**
-###### Call Signature
-**Parameters**
-###### Call Signature
-##### delete()
-###### Call Signature
-**Parameters**
-###### Call Signature
-**Parameters**
-###### Call Signature
-##### remove()
-###### Call Signature
-**Parameters**
-###### Call Signature
-**Parameters**
-###### Call Signature
-##### find()
-**Parameters**
-##### configuration()
+> ```ts
+> get(fServeCb: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fServeCb` | `Function` |  |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance or array.
+> :::
+
+#### post()
+
+Creates a handling specification for the HTTP method &quot;POST&quot;.
+
+> ```ts
+> post(fServeCb: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fServeCb` | `Function` |  |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance or array.
+> :::
+
+#### put()
+
+Creates a handling specification for the HTTP method &quot;PUT&quot;.
+
+> ```ts
+> put(fServeCb: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fServeCb` | `Function` |  |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance or array.
+> :::
+
+#### delete()
+
+Creates a handling specification for the HTTP method &quot;DELETE&quot;.
+
+> ```ts
+> delete(fServeCb: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fServeCb` | `Function` |  |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance or array.
+> :::
+
+#### remove()
+
+Creates a handling specification for the HTTP method &quot;DELETE&quot; (alias for delete()).
+
+> ```ts
+> remove(fServeCb: Function): ResourceMethod;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fServeCb` | `Function` |  |
+>
+> ::: info Returns
+> - **Type**: `ResourceMethod`
+> - **Description**: The ResourceMethod instance or array.
+> :::
+
+#### find()
+
+Finds a ResourceMethod with the given constraints.
+
+> ```ts
+> find(sVerb: string, arrConsumesMimeTypeStrings: any, arrProducesMimeTypeStrings: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sVerb` | `string` | The name of the method property of the ResourceMethod in search (e.g., &quot;GET&quot;). |
+> | `arrConsumesMimeTypeStrings` | `any` | The consumes constraint property of the ResourceMethod in search. |
+> | `arrProducesMimeTypeStrings` | `any` | The produces constraint property of the ResourceMethod in search. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The found ResourceMethod instance, or undefined if not found.
+> :::
+
+#### configuration()
+
+Returns the configuration of this resource.
+
+> ```ts
+> configuration(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The resource configuration object.
 > :::
-##### redirect()
 
-```ts
-redirect(fRedirector): Resource;
-```
-
+#### redirect()
 
 Instructs redirection of the request base don the parameter. If it is a stirng representing URI, the request will be
-redirected to this URI for any method. If it's a function it will be invoked and epxected to return a URI string to redirect to.
+redirected to this URI for any method. If it&#x27;s a function it will be invoked and epxected to return a URI string to redirect to.
 
-**Parameters**
+> ```ts
+> redirect(fRedirector: any): Resource;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `fRedirector` | `any` | The function or string URI to redirect to.
+   * |
+>
+> ::: info Returns
+> - **Type**: `Resource`
+> - **Description**: The resource instance for method chaining.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `fRedirector` | `string` \| `Function` | The function or string URI to redirect to. * |
+#### disable()
 
-##### disable()
-**Parameters**
-##### readonly()
+Disables the ResourceMethods that match the given constraints
+   *
+   *
+
+> ```ts
+> disable(sVerb: string, arrConsumesTypeStrings: any, arrProducesTypeStrings: any): Resource;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sVerb` | `string` | The HTTP verb (e.g., &quot;GET&quot;). |
+> | `arrConsumesTypeStrings` | `any` | The consumes constraint property of the ResourceMethod in search. |
+> | `arrProducesTypeStrings` | `any` | The produces constraint property of the ResourceMethod in search.
+   * |
+>
+> ::: info Returns
+> - **Type**: `Resource`
+> - **Description**: The resource instance for method chaining.
+> :::
+
+#### readonly()
+
+Disables all but &#x27;read&#x27; HTTP methods in this resource (GET, HEAD, TRACE).
+   *
+   *
+
+> ```ts
+> readonly(): Resource;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `Resource`
+> - **Description**: The resource instance for method chaining.
+> :::
+

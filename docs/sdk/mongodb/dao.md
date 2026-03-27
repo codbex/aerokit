@@ -4,193 +4,225 @@
 - source: [mongodb/dao.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mongodb/dao.ts)
 :::
 
-
 ## Overview
 
-The Dao API provides...
 
 
 ## Classes
 
 ### DAO
 
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new DAO(orm, logCtxName?): DAO;
-```
+#### notify()
 
 
-**Parameters**
 
-| Parameter | Type | Default value |
-| ------ | ------ | ------ |
-| `orm` | `any` | `undefined` |
-| `logCtxName` | `string` | `'mongodb.dao'` |
-
-#### Properties
-#### Methods
-##### notify()
-**Parameters**
+> ```ts
+> notify(event: any, a: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `event` | `any` |  |
+> | `a` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createNoSQLEntity()
 
-```ts
-createNoSQLEntity(entity): any;
-```
+#### createNoSQLEntity()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `entity` | `any` |
-
+> ```ts
+> createNoSQLEntity(entity: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `entity` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### validateEntity()
 
-```ts
-validateEntity(entity, skip): void;
-```
+#### validateEntity()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `entity` | `any` |
-| `skip` | `any` |
-
+> ```ts
+> validateEntity(entity: any, skip: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `entity` | `any` |  |
+> | `skip` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### insert()
 
-```ts
-insert(_entity): any;
-```
+#### insert()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `_entity` | `any` |
-
+> ```ts
+> insert(_entity: any): any;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `_entity` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### update()
 
-```ts
-update(entity): DAO;
-```
+#### update()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `entity` | `any` |
+> ```ts
+> update(entity: any): DAO;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `entity` | `any` |  |
+>
+> ::: info Returns
+> - **Type**: `DAO`
+> - **Description**: 
+> :::
 
-##### remove()
-**Parameters**
+#### remove()
+
+
+
+> ```ts
+> remove(id: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `id` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### expand()
 
-```ts
-expand(expansionPath, context): void;
-```
+#### expand()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `expansionPath` | `any` |
-| `context` | `any` |
-
+> ```ts
+> expand(expansionPath: any, context: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `expansionPath` | `any` |  |
+> | `context` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### find()
 
-```ts
-find(
-   id, 
-   expand, 
-   select): any;
-```
+#### find()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `id` | `any` |
-| `expand` | `any` |
-| `select` | `any` |
-
+> ```ts
+> find(id: any, expand: any, select: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `id` | `any` |  |
+> | `expand` | `any` |  |
+> | `select` | `any` |  |
+>
 > ::: info Returns
-> - **Type**: `any`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### count()
 
-```ts
-count(): number;
-```
+#### count()
 
 
+
+> ```ts
+> count(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### list()
 
-```ts
-list(settings): any[];
-```
+#### list()
 
 
-**Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `settings` | `any` |
-
-##### existsTable()
-> ::: info Returns
-> - **Type**: `boolean`
-> :::
-##### createTable()
-
-```ts
-createTable(): void;
-```
-
-
+> ```ts
+> list(settings: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `settings` | `any` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### dropTable()
 
-```ts
-dropTable(): DAO;
-```
+#### existsTable()
 
 
-## Functions
-### create()
-#### Parameters
-#### Returns
-### dao()
-#### Parameters
-#### Returns
+
+> ```ts
+> existsTable(): boolean;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: 
+> :::
+
+#### createTable()
+
+
+
+> ```ts
+> createTable(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### dropTable()
+
+
+
+> ```ts
+> dropTable(): DAO;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `DAO`
+> - **Description**: 
+> :::
+

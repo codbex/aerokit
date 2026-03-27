@@ -4,305 +4,374 @@
 - source: [io/zip.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/zip.ts)
 :::
 
-
 ## Overview
 
-Provides a façade for handling ZIP archive operations, including
-file compression, decompression, and stream-based entry processing.
 
 
 ## Classes
 
 ### Zip
 
+#### zip()
 
-The Zip class provides static utility methods for managing ZIP archives
-at both file path level and stream level.
+Zips the content of a source directory or file into a target ZIP file.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Zip(): Zip;
-```
-
-#### Methods
-##### zip()
-**Parameters**
+> ```ts
+> static zip(sourcePath: string, zipTargetPath: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sourcePath` | `string` | The file system path to the content to be compressed. |
+> | `zipTargetPath` | `string` | The file system path where the resulting ZIP file should be saved. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### unzip()
 
-```ts
-static unzip(zipPath, targetPath): void;
-```
-
+#### unzip()
 
 Unzips an existing ZIP file into a target directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `zipPath` | `string` | The file system path to the ZIP file to be extracted. |
-| `targetPath` | `string` | The file system path to the directory where content should be extracted. |
-
+> ```ts
+> static unzip(zipPath: string, targetPath: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `zipPath` | `string` | The file system path to the ZIP file to be extracted. |
+> | `targetPath` | `string` | The file system path to the directory where content should be extracted. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createZipInputStream()
 
-```ts
-static createZipInputStream(inputStream): ZipInputStream;
-```
+#### createZipInputStream()
 
-
-Creates a [ZipInputStream](#zipinputstream) that reads ZIP archive data from a provided
+Creates a ZipInputStream that reads ZIP archive data from a provided
 generic InputStream. This allows for reading ZIP entries without
 writing the archive to disk first.
 
-**Parameters**
+> ```ts
+> static createZipInputStream(inputStream: InputStream): ZipInputStream;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `inputStream` | `InputStream` | The source stream containing the raw ZIP data. |
+>
+> ::: info Returns
+> - **Type**: `ZipInputStream`
+> - **Description**: A new ZipInputStream instance.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `inputStream` | `InputStream` | The source stream containing the raw ZIP data. |
+#### createZipOutputStream()
 
-##### createZipOutputStream()
-**Parameters**
+Creates a ZipOutputStream that writes compressed ZIP archive data
+to a provided generic OutputStream. This allows for creating ZIP archives
+in memory or streaming them directly.
+
+> ```ts
+> static createZipOutputStream(outputStream: OutputStream): ZipOutputStream;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `outputStream` | `OutputStream` | The destination stream where the raw ZIP data will be written. |
+>
+> ::: info Returns
+> - **Type**: `ZipOutputStream`
+> - **Description**: A new ZipOutputStream instance.
+> :::
+
 ### ZipInputStream
-#### Constructors
-##### Constructor
-**Parameters**
-#### Methods
-##### getNextEntry()
-##### read()
-##### readNative()
-##### readText()
+
+#### getNextEntry()
+
+Reads the next ZIP file entry and positions the stream at the beginning of the entry data.
+Must be called before reading data for an entry.
+
+> ```ts
+> getNextEntry(): ZipEntry;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `ZipEntry`
+> - **Description**: The next ZipEntry object, or null if there are no more entries.
+> :::
+
+#### read()
+
+Reads the data for the current entry and returns it as a JavaScript byte array.
+
+> ```ts
+> read(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: A JavaScript array (&#x60;number[]&#x60;) of the byte values for the current entry.
+> :::
+
+#### readNative()
+
+Reads the data for the current entry and returns the native Java byte array.
+
+> ```ts
+> readNative(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The native Java byte array object.
+> :::
+
+#### readText()
+
+Reads the data for the current entry and converts it to a string
+using the platform&#x27;s default character encoding.
+
+> ```ts
+> readText(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The content of the current entry as a string.
 > :::
-##### close()
 
-```ts
-close(): void;
-```
-
+#### close()
 
 Closes the underlying native ZipInputStream.
 
+> ```ts
+> close(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### ZipOutputStream
 
+#### createZipEntry()
 
-Represents an output stream for writing data to a ZIP archive.
-Entries must be explicitly created and closed.
+Creates a new ZipEntry with the given name, and begins writing the
+entry&#x27;s header to the archive stream. All subsequent write operations
+will apply to this entry until closeEntry is called.
 
-#### Constructors
+> ```ts
+> createZipEntry(name: string): ZipEntry;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The file or directory name to use inside the ZIP archive. |
+>
+> ::: info Returns
+> - **Type**: `ZipEntry`
+> - **Description**: The newly created ZipEntry object.
+> :::
 
-##### Constructor
+#### write()
 
-```ts
-new ZipOutputStream(native): ZipOutputStream;
-```
+Writes the data from a JavaScript byte array to the current active entry in the stream.
 
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The underlying native ZipOutputStream object. |
-
-#### Methods
-##### createZipEntry()
-**Parameters**
-##### write()
-**Parameters**
+> ```ts
+> write(data: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `data` | `any` | The JavaScript array (&#x60;number[]&#x60;) of byte values to write. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### writeNative()
 
-```ts
-writeNative(data): void;
-```
-
+#### writeNative()
 
 Writes the data from a native Java byte array to the current active entry in the stream.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `data` | `any`[] | The native Java byte array object to write. |
-
+> ```ts
+> writeNative(data: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `data` | `any` | The native Java byte array object to write. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### writeText()
 
-```ts
-writeText(text): void;
-```
-
+#### writeText()
 
 Converts the string to bytes and writes it to the current active entry in the stream.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `text` | `string` | The string content to write. |
-
+> ```ts
+> writeText(text: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `text` | `string` | The string content to write. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### closeEntry()
 
-```ts
-closeEntry(): void;
-```
-
+#### closeEntry()
 
 Closes the current active ZIP entry and positions the stream for the next entry.
 
+> ```ts
+> closeEntry(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### close()
 
-```ts
-close(): void;
-```
-
+#### close()
 
 Finalizes the writing of the ZIP file, flushes the stream, and closes the native object.
 This must be called after all entries have been written.
 
+> ```ts
+> close(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ***
+> - **Description**: 
 > :::
+
 ### ZipEntry
 
+#### getName()
 
-Represents an entry (file or directory) within a ZIP archive.
-It holds metadata about the archived item.
+Gets the name of the entry (path relative to the ZIP root).
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new ZipEntry(native): ZipEntry;
-```
-
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The underlying native ZipEntry object. |
-
-#### Methods
-##### getName()
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The name of the entry.
 > :::
-##### getSize()
 
-```ts
-getSize(): number;
-```
-
+#### getSize()
 
 Gets the uncompressed size of the entry data.
 
+> ```ts
+> getSize(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size in bytes.
 > :::
-##### getCompressedSize()
 
-```ts
-getCompressedSize(): number;
-```
-
+#### getCompressedSize()
 
 Gets the compressed size of the entry data.
 
+> ```ts
+> getCompressedSize(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The compressed size in bytes.
 > :::
-##### getTime()
 
-```ts
-getTime(): number;
-```
-
+#### getTime()
 
 Gets the modification time of the entry.
 
+> ```ts
+> getTime(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The time as a numerical timestamp.
 > :::
-##### getCrc()
 
-```ts
-getCrc(): number;
-```
-
+#### getCrc()
 
 Gets the CRC-32 checksum of the uncompressed entry data.
 
+> ```ts
+> getCrc(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The CRC value.
 > :::
-##### getComment()
 
-```ts
-getComment(): string;
-```
-
+#### getComment()
 
 Gets the optional comment for the entry.
 
+> ```ts
+> getComment(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The comment string.
 > :::
-##### isDirectory()
 
-```ts
-isDirectory(): boolean;
-```
-
+#### isDirectory()
 
 Checks if the entry represents a directory.
 
+> ```ts
+> isDirectory(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if it is a directory, false otherwise.
 > :::
-##### isValid()
 
-```ts
-isValid(): boolean;
-```
-
+#### isValid()
 
 Checks if the underlying native ZipEntry object is defined and non-null.
 
+> ```ts
+> isValid(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the entry is valid, false otherwise.
 > :::
+

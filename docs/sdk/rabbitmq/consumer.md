@@ -4,51 +4,50 @@
 - source: [rabbitmq/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/consumer.ts)
 :::
 
-
 ## Overview
 
-RabbitMQ Consumer
-
-This facade provides static methods to start and stop listening on RabbitMQ queues,
-wrapping the underlying Java implementation provided by the `RabbitMQFacade`.
 
 
 ## Classes
 
 ### Consumer
 
+#### startListening()
 
-#### Constructors
+Starts listening for messages on a specified RabbitMQ queue.
+The handler is typically a service or script URI that will be executed
+when a message arrives.
 
-##### Constructor
-
-```ts
-new Consumer(): Consumer;
-```
-
-#### Methods
-##### startListening()
-**Parameters**
+> ```ts
+> static startListening(queue: string, handler: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `queue` | `string` | The name of the RabbitMQ queue to listen to. |
+> | `handler` | `string` | The URI/name of the component/script that will handle the message. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### stopListening()
 
-```ts
-static stopListening(queue, handler): void;
-```
-
+#### stopListening()
 
 Stops the message listener previously started on a specified RabbitMQ queue
 for a given handler.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `queue` | `string` | The name of the RabbitMQ queue. |
-| `handler` | `string` | The URI/name of the component/script whose listener should be stopped. |
-
+> ```ts
+> static stopListening(queue: string, handler: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `queue` | `string` | The name of the RabbitMQ queue. |
+> | `handler` | `string` | The URI/name of the component/script whose listener should be stopped. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+

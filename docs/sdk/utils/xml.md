@@ -4,51 +4,47 @@
 - source: [utils/xml.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/xml.ts)
 :::
 
-
 ## Overview
 
-The Xml API provides...
 
 
 ## Classes
 
 ### XML
 
+#### fromJson()
 
-Utility class for converting data between XML and JSON formats.
-It automatically handles input serialization if an object is passed instead of a string.
+Converts a JSON input (either a JSON string or a raw JavaScript object) into an XML string.
 
-#### Constructors
+Note: If a JavaScript object is passed, it is first stringified using JSON.stringify().
 
-##### Constructor
-
-```ts
-new XML(): XML;
-```
-
-#### Methods
-##### fromJson()
-**Parameters**
+> ```ts
+> static fromJson(input: any): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The JSON string or object to be converted to XML. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The resulting XML content as a string.
 > :::
-##### toJson()
 
-```ts
-static toJson(input): string;
-```
-
+#### toJson()
 
 Converts an XML input (expected as an XML string) into a JSON formatted string.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `any` | The XML string to be converted to JSON. |
-
+> ```ts
+> static toJson(input: any): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `any` | The XML string to be converted to JSON. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The resulting JSON content as a string.
 > :::
+

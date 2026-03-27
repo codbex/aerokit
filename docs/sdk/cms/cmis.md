@@ -4,307 +4,341 @@
 - source: [cms/cmis.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cms/cmis.ts)
 :::
 
-
 ## Overview
 
-API CMIS
-* Note: This module is supported only with the Mozilla Rhino engine
-* Provides static access to the CMIS (Content Management Interoperability Services) repository session and utility constants.
 
 
 ## Classes
 
 ### Cmis
 
+#### getSession()
 
-#### Constructors
+Gets a new CMIS session instance to interact with the repository.
 
-##### Constructor
-
-```ts
-new Cmis(): Cmis;
-```
-
-#### Properties
-#### Methods
-##### getSession()
+> ```ts
+> static getSession(): Session;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `Session`
 > - **Description**: A new Session instance.
 > :::
-##### getAccessDefinitions()
 
-```ts
-static getAccessDefinitions(path, method): AccessDefinition[];
-```
-
+#### getAccessDefinitions()
 
 Retrieves access control definitions for a specific path and method.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path of the CMIS object. |
-| `method` | `string` | The operation method (e.g., [Cmis.METHOD\_READ](#method_read), [Cmis.METHOD\_WRITE](#method_write)). |
+> ```ts
+> static getAccessDefinitions(path: string, method: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path of the CMIS object. |
+> | `method` | `string` | The operation method (e.g., Cmis.METHOD_READ, Cmis.METHOD_WRITE). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: A list of access definitions.
+> :::
 
 ### Folder
-#### Constructors
-##### Constructor
-**Parameters**
-#### Methods
-##### getId()
+
+#### getId()
+
+Gets the unique identifier of the folder.
+
+> ```ts
+> getId(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The folder ID.
 > :::
-##### getName()
 
-```ts
-getName(): string;
-```
-
+#### getName()
 
 Gets the name of the folder.
 
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The folder name.
 > :::
-##### createFolder()
 
-```ts
-createFolder(properties): Folder;
-```
-
+#### createFolder()
 
 Creates a new folder within this folder.
 
-**Parameters**
+> ```ts
+> createFolder(properties: any): Folder;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `properties` | `any` | A map of CMIS properties for the new folder (must include Cmis.NAME). |
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The newly created Folder object.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `properties` | \{ \[`key`: `string`\]: `any`; \} | A map of CMIS properties for the new folder (must include [Cmis.NAME](#name)). |
+#### createDocument()
 
-###### Throws
-##### createDocument()
-**Parameters**
-###### Throws
-##### getChildren()
-###### Throws
-##### getPath()
+Creates a new document within this folder.
+
+> ```ts
+> createDocument(properties: any, contentStream: ContentStream, versioningState: string): Document;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `properties` | `any` | A map of CMIS properties for the new document (must include Cmis.NAME). |
+> | `contentStream` | `ContentStream` | The content stream containing the document&#x27;s binary data. |
+> | `versioningState` | `string` | The versioning state (e.g., Cmis.VERSIONING_STATE_MAJOR). |
+>
+> ::: info Returns
+> - **Type**: `Document`
+> - **Description**: The newly created Document object.
+> :::
+
+#### getChildren()
+
+Retrieves the children of this folder.
+
+> ```ts
+> getChildren(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: A list of generic CmisObject wrappers for the children.
+> :::
+
+#### getPath()
+
+Gets the path of the folder.
+
+> ```ts
+> getPath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The folder path.
 > :::
-##### isRootFolder()
 
-```ts
-isRootFolder(): boolean;
-```
-
+#### isRootFolder()
 
 Checks if this folder is the root folder of the repository.
 
+> ```ts
+> isRootFolder(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if it is the root folder, false otherwise.
 > :::
-##### getFolderParent()
 
-```ts
-getFolderParent(): Folder;
-```
-
+#### getFolderParent()
 
 Gets the parent folder of this folder.
 
-##### delete()
+> ```ts
+> getFolderParent(): Folder;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `Folder`
+> - **Description**: The parent Folder object.
+> :::
+
+#### delete()
+
+Deletes this folder (must be empty to succeed).
+
+> ```ts
+> delete(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Throws
 
-Error if write access is not allowed.
-
-##### rename()
-
-```ts
-rename(newName): void;
-```
-
+#### rename()
 
 Renames this folder.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `newName` | `string` | The new name for the folder. |
-
+> ```ts
+> rename(newName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `newName` | `string` | The new name for the folder. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Throws
 
-Error if write access is not allowed.
-
-##### deleteTree()
-
-```ts
-deleteTree(): void;
-```
-
+#### deleteTree()
 
 Deletes this folder and all its contents recursively.
 
+> ```ts
+> deleteTree(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Throws
 
-Error if write access is not allowed.
-
-##### getType()
-
-```ts
-getType(): TypeDefinition;
-```
-
+#### getType()
 
 Gets the type definition of the folder.
 
+> ```ts
+> getType(): TypeDefinition;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `TypeDefinition`
-> - **Description**: The folder's TypeDefinition. ***
+> - **Description**: The folder&#x27;s TypeDefinition.
 > :::
+
 ### Document
 
+#### getId()
 
-Document object
-* Represents a CMIS document object, allowing operations like reading content, deleting, and renaming.
+Gets the unique identifier of the document.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Document(native, path): Document;
-```
-
-
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `native` | `any` |
-| `path` | `string` |
-
-#### Methods
-##### getId()
+> ```ts
+> getId(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The document ID.
 > :::
-##### getName()
 
-```ts
-getName(): string;
-```
-
+#### getName()
 
 Gets the name of the document.
 
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The document name.
 > :::
-##### getType()
 
-```ts
-getType(): TypeDefinition;
-```
-
+#### getType()
 
 Gets the type definition of the document.
 
+> ```ts
+> getType(): TypeDefinition;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `TypeDefinition`
-> - **Description**: The document's TypeDefinition.
+> - **Description**: The document&#x27;s TypeDefinition.
 > :::
-##### getPath()
 
-```ts
-getPath(): string;
-```
-
+#### getPath()
 
 Gets the path of the document.
 
+> ```ts
+> getPath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The document path.
 > :::
-##### delete()
 
-```ts
-delete(): void;
-```
-
+#### delete()
 
 Deletes this document.
 
+> ```ts
+> delete(): void;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Throws
 
-Error if write access is not allowed.
-
-##### getContentStream()
-
-```ts
-getContentStream(): ContentStream;
-```
-
+#### getContentStream()
 
 Gets the binary content stream of the document.
 
+> ```ts
+> getContentStream(): void;
+> ```
+>
+>
 > ::: info Returns
-> - **Type**: `ContentStream`
-> - **Description**: The ContentStream object, or `null` if the document has no content.
+> - **Type**: `void`
+> - **Description**: The ContentStream object, or &#x60;null&#x60; if the document has no content.
 > :::
-##### getSize()
 
-```ts
-getSize(): number;
-```
+#### getSize()
 
+Gets the size of the document&#x27;s content stream in bytes.
 
-Gets the size of the document's content stream in bytes.
-
+> ```ts
+> getSize(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size in bytes.
 > :::
-##### rename()
 
-```ts
-rename(newName): void;
-```
-
+#### rename()
 
 Renames this document.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `newName` | `string` | The new name for the document. |
-
+> ```ts
+> rename(newName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `newName` | `string` | The new name for the document. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-###### Throws
 
-Error if write access is not allowed.

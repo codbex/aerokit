@@ -1,0 +1,39 @@
+# {{moduleLocation}}
+
+::: tip Documentation
+- source: [{{moduleLocation}}.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/{{moduleLocation}}.ts)
+:::
+
+## Overview
+
+{{overview}}
+
+## Classes
+
+{{#each classes}}
+### {{name}}
+
+{{#each methods}}
+#### {{name}}()
+
+{{description}}
+
+> ```ts
+> {{signature}}
+> ```
+>
+{{#if params.length}}
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+{{#each params}}
+> | `{{name}}` | `{{type}}` | {{description}} |
+{{/each}}
+{{/if}}
+>
+> ::: info Returns
+> - **Type**: `{{returnType}}`
+> - **Description**: {{returnDescription}}
+> :::
+
+{{/each}}
+{{/each}}

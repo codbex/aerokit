@@ -4,34 +4,31 @@
 - source: [io/image.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/image.ts)
 :::
 
-
 ## Overview
 
-Provides a static façade for image manipulation operations,
-primarily focusing on resizing image streams.
 
 
 ## Classes
 
 ### Image
 
+#### resize()
 
-The Image class provides static methods for common image processing tasks.
-All methods operate on and return InputStream objects, making them
-suitable for piping image data through the file system or network.
+Resizes an image contained within an InputStream to the specified dimensions.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Image(): Image;
-```
-
-#### Methods
-##### resize()
-**Parameters**
+> ```ts
+> static resize(original: InputStream, type: string, width: number, height: number): InputStream;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `original` | `InputStream` | The InputStream containing the original image data. |
+> | `type` | `string` | The target format of the resized image (e.g., &quot;png&quot;, &quot;jpeg&quot;, &quot;gif&quot;). |
+> | `width` | `number` | The target width in pixels. |
+> | `height` | `number` | The target height in pixels. |
+>
 > ::: info Returns
 > - **Type**: `InputStream`
 > - **Description**: A new InputStream containing the resized image data in the specified format.
 > :::
+

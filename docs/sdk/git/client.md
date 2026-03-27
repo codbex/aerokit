@@ -4,1008 +4,456 @@
 - source: [git/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/git/client.ts)
 :::
 
-
 ## Overview
 
-The Client API provides...
 
 
 ## Classes
 
 ### Client
 
+#### initRepository()
 
-Static client facade for workspace-level Git operations, abstracting the native GitFacade.
+Initializes a new Git repository for a project, performs an initial commit, and pushes.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Client(): Client;
-```
-
-#### Methods
-##### initRepository()
-**Parameters**
+> ```ts
+> static initRepository(user: string, email: string, workspaceName: string, projectName: string, repositoryName: string, commitMessage: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `user` | `string` | The username of the committer. |
+> | `email` | `string` | The email address of the committer. |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `projectName` | `string` | The name of the project. |
+> | `repositoryName` | `string` | The name of the repository (where to put the git folder). |
+> | `commitMessage` | `string` | The initial commit message. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### commit()
 
-```ts
-static commit(
-   user, 
-   email, 
-   workspaceName, 
-   repositoryName, 
-   commitMessage, 
-   all): void;
-```
-
+#### commit()
 
 Performs a commit in the specified repository.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `user` | `string` | The username of the committer. |
-| `email` | `string` | The email address of the committer. |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `commitMessage` | `string` | The commit message. |
-| `all` | `boolean` | If true, automatically stages modified and deleted files before committing. |
-
+> ```ts
+> static commit(user: string, email: string, workspaceName: string, repositoryName: string, commitMessage: string, all: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `user` | `string` | The username of the committer. |
+> | `email` | `string` | The email address of the committer. |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `commitMessage` | `string` | The commit message. |
+> | `all` | `boolean` | If true, automatically stages modified and deleted files before committing. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getGitRepositories()
 
-```ts
-static getGitRepositories(workspaceName): ProjectDescriptor[];
-```
-
+#### getGitRepositories()
 
 Retrieves a list of all Git repositories (projects) within the specified workspace.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-
-##### getHistory()
-**Parameters**
-##### deleteRepository()
-**Parameters**
+> ```ts
+> static getGitRepositories(workspaceName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: An array of ProjectDescriptor objects.
 > :::
-##### cloneRepository()
 
-```ts
-static cloneRepository(
-   workspaceName, 
-   repositoryUri, 
-   username, 
-   password, 
-   branch): GitConnector;
-```
+#### getHistory()
 
+Retrieves the commit history for the specified repository or a specific file path within it.
+
+> ```ts
+> static getHistory(repositoryName: string, workspaceName: string, path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `path` | `string` | The file path for history, or null/empty string for full repository history. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of GitCommitInfo objects.
+> :::
+
+#### deleteRepository()
+
+Deletes the specified Git repository.
+
+> ```ts
+> static deleteRepository(workspaceName: string, repositoryName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository to delete. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### cloneRepository()
 
 Clones a remote repository into the local workspace.
 
-**Parameters**
+> ```ts
+> static cloneRepository(workspaceName: string, repositoryUri: string, username: string, password: string, branch: string): GitConnector;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryUri` | `string` | The URI of the remote repository. |
+> | `username` | `string` | The username for authentication. |
+> | `password` | `string` | The password for authentication. |
+> | `branch` | `string` | The specific branch to checkout after cloning. |
+>
+> ::: info Returns
+> - **Type**: `GitConnector`
+> - **Description**: A GitConnector instance for interacting directly with the cloned repository.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryUri` | `string` | The URI of the remote repository. |
-| `username` | `string` | The username for authentication. |
-| `password` | `string` | The password for authentication. |
-| `branch` | `string` | The specific branch to checkout after cloning. |
+#### pull()
 
-##### pull()
-**Parameters**
+Pulls changes from the remote repository and attempts to merge them into the current branch.
+
+> ```ts
+> static pull(workspaceName: string, repositoryName: string, username: string, password: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `username` | `string` | The username for authentication. |
+> | `password` | `string` | The password for authentication. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### push()
 
-```ts
-static push(
-   workspaceName, 
-   repositoryName, 
-   username, 
-   password): void;
-```
-
+#### push()
 
 Pushes the local commits to the remote repository.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `username` | `string` | The username for authentication. |
-| `password` | `string` | The password for authentication. |
-
+> ```ts
+> static push(workspaceName: string, repositoryName: string, username: string, password: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `username` | `string` | The username for authentication. |
+> | `password` | `string` | The password for authentication. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### checkout()
 
-```ts
-static checkout(
-   workspaceName, 
-   repositoryName, 
-   branch): void;
-```
-
+#### checkout()
 
 Checks out a specific branch, commit, or tag in the repository.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `branch` | `string` | The branch or tree-ish object to check out. |
-
+> ```ts
+> static checkout(workspaceName: string, repositoryName: string, branch: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `branch` | `string` | The branch or tree-ish object to check out. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createBranch()
 
-```ts
-static createBranch(
-   workspaceName, 
-   repositoryName, 
-   branch, 
-   startingPoint): void;
-```
-
+#### createBranch()
 
 Creates a new branch starting from a specified point (e.g., HEAD, a commit hash, or another branch).
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `branch` | `string` | The name of the new branch to create. |
-| `startingPoint` | `string` | The tree-ish object to start the new branch from. |
-
+> ```ts
+> static createBranch(workspaceName: string, repositoryName: string, branch: string, startingPoint: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `branch` | `string` | The name of the new branch to create. |
+> | `startingPoint` | `string` | The tree-ish object to start the new branch from. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### deleteBranch()
 
-```ts
-static deleteBranch(
-   workspaceName, 
-   repositoryName, 
-   branch): void;
-```
-
+#### deleteBranch()
 
 Deletes a local branch.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `branch` | `string` | The name of the branch to delete. |
-
+> ```ts
+> static deleteBranch(workspaceName: string, repositoryName: string, branch: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `branch` | `string` | The name of the branch to delete. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### renameBranch()
 
-```ts
-static renameBranch(
-   workspaceName, 
-   repositoryName, 
-   oldName, 
-   newName): void;
-```
-
+#### renameBranch()
 
 Renames a local branch.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `oldName` | `string` | The current name of the branch. |
-| `newName` | `string` | The new name for the branch. |
-
+> ```ts
+> static renameBranch(workspaceName: string, repositoryName: string, oldName: string, newName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `oldName` | `string` | The current name of the branch. |
+> | `newName` | `string` | The new name for the branch. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createRemoteBranch()
 
-```ts
-static createRemoteBranch(
-   workspaceName, 
-   repositoryName, 
-   branch, 
-   startingPoint, 
-   username, 
-   password): void;
-```
-
+#### createRemoteBranch()
 
 Creates a new remote branch on the Git server.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `branch` | `string` | The name of the remote branch to create. |
-| `startingPoint` | `string` | The tree-ish object to start the new remote branch from. |
-| `username` | `string` | The username for authentication. |
-| `password` | `string` | The password for authentication. |
-
+> ```ts
+> static createRemoteBranch(workspaceName: string, repositoryName: string, branch: string, startingPoint: string, username: string, password: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `branch` | `string` | The name of the remote branch to create. |
+> | `startingPoint` | `string` | The tree-ish object to start the new remote branch from. |
+> | `username` | `string` | The username for authentication. |
+> | `password` | `string` | The password for authentication. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### deleteRemoteBranch()
 
-```ts
-static deleteRemoteBranch(
-   workspaceName, 
-   repositoryName, 
-   branch, 
-   username, 
-   password): void;
-```
-
+#### deleteRemoteBranch()
 
 Deletes a remote branch on the Git server.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `branch` | `string` | The name of the remote branch to delete. |
-| `username` | `string` | The username for authentication. |
-| `password` | `string` | The password for authentication. |
-
+> ```ts
+> static deleteRemoteBranch(workspaceName: string, repositoryName: string, branch: string, username: string, password: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `branch` | `string` | The name of the remote branch to delete. |
+> | `username` | `string` | The username for authentication. |
+> | `password` | `string` | The password for authentication. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### hardReset()
 
-```ts
-static hardReset(workspaceName, repositoryName): void;
-```
-
+#### hardReset()
 
 Resets the repository, discarding all uncommitted changes in the working directory and index.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-
+> ```ts
+> static hardReset(workspaceName: string, repositoryName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### rebase()
 
-```ts
-static rebase(
-   workspaceName, 
-   repositoryName, 
-   branch): void;
-```
-
+#### rebase()
 
 Reapplies commits from the specified branch onto the current branch.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-| `branch` | `string` | The branch to rebase. |
-
+> ```ts
+> static rebase(workspaceName: string, repositoryName: string, branch: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `branch` | `string` | The branch to rebase. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### status()
 
-```ts
-static status(workspaceName, repositoryName): string;
-```
-
+#### status()
 
 Retrieves the current status of the repository (staged, unstaged, untracked files).
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-
+> ```ts
+> static status(workspaceName: string, repositoryName: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: A string representation of the repository status.
 > :::
-##### getBranch()
 
-```ts
-static getBranch(workspaceName, repositoryName): string;
-```
-
+#### getBranch()
 
 Retrieves the name of the currently active branch.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
-
+> ```ts
+> static getBranch(workspaceName: string, repositoryName: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The name of the current branch.
 > :::
-##### getLocalBranches()
 
-```ts
-static getLocalBranches(workspaceName, repositoryName): GitBranch[];
-```
-
+#### getLocalBranches()
 
 Retrieves a list of all local branches in the repository.
 
-**Parameters**
+> ```ts
+> static getLocalBranches(workspaceName: string, repositoryName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of GitBranch objects representing local branches.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `workspaceName` | `string` | The name of the workspace. |
-| `repositoryName` | `string` | The name of the repository. |
+#### getRemoteBranches()
 
-##### getRemoteBranches()
-**Parameters**
-##### getUnstagedChanges()
-**Parameters**
-##### getStagedChanges()
-**Parameters**
-##### getFileContent()
-**Parameters**
+Retrieves a list of all remote branches configured for the repository.
+
+> ```ts
+> static getRemoteBranches(workspaceName: string, repositoryName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of GitBranch objects representing remote branches.
+> :::
+
+#### getUnstagedChanges()
+
+Retrieves a list of all unstaged files (changes not yet added to the index).
+
+> ```ts
+> static getUnstagedChanges(workspaceName: string, repositoryName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of GitChangedFile objects.
+> :::
+
+#### getStagedChanges()
+
+Retrieves a list of all staged files (changes added to the index, ready for commit).
+
+> ```ts
+> static getStagedChanges(workspaceName: string, repositoryName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of GitChangedFile objects.
+> :::
+
+#### getFileContent()
+
+Retrieves the content of a file at a specific revision (commit, branch, or tag).
+
+> ```ts
+> static getFileContent(workspaceName: string, repositoryName: string, filePath: string, revStr: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `workspaceName` | `string` | The name of the workspace. |
+> | `repositoryName` | `string` | The name of the repository. |
+> | `filePath` | `string` | The path to the file. |
+> | `revStr` | `string` | The revision string (e.g., commit hash or branch name). |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The content of the file as a string.
 > :::
-## Interfaces
 
-### FileDescriptor
-
-
-Describes a file within the workspace, potentially with Git status information.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `name` | `string` | src/git/client.ts:7 |
-|  `path` | `string` | src/git/client.ts:8 |
-|  `contentType` | `string` | src/git/client.ts:9 |
-|  `status` | `string` | src/git/client.ts:10 |
-
-***
-
-### FolderDescriptor
-
-
-Describes a folder within the workspace, potentially with Git status information.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `name` | `string` | src/git/client.ts:17 |
-|  `path` | `string` | src/git/client.ts:18 |
-|  `status` | `string` | src/git/client.ts:19 |
-|  `folders` | [`FolderDescriptor`](#folderdescriptor)[] | src/git/client.ts:20 |
-|  `files` | [`FileDescriptor`](#filedescriptor)[] | src/git/client.ts:21 |
-
-***
-
-### ProjectDescriptor
-
-
-Describes a Git-managed project/repository in the workspace.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `name` | `string` | src/git/client.ts:28 |
-|  `path` | `string` | src/git/client.ts:29 |
-|  `git` | `boolean` | src/git/client.ts:30 |
-|  `gitName` | `string` | src/git/client.ts:31 |
-|  `folders` | [`FolderDescriptor`](#folderdescriptor)[] | src/git/client.ts:32 |
-|  `files` | [`FileDescriptor`](#filedescriptor)[] | src/git/client.ts:33 |
-
-***
-
-### GitCommitInfo
-
-
-Describes a single Git commit.
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `id` | `string` | src/git/client.ts:40 |
-|  `author` | `string` | src/git/client.ts:41 |
-|  `emailAddress` | `string` | src/git/client.ts:42 |
-|  `dateTime` | `string` | src/git/client.ts:43 |
-|  `message` | `string` | src/git/client.ts:44 |
-
-***
-
-### GitBranch
-
-
-Describes a Git branch (local or remote).
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `name` | `string` | src/git/client.ts:52 |
-|  `remote` | `boolean` | src/git/client.ts:53 |
-|  `current` | `boolean` | src/git/client.ts:54 |
-|  `commitObjectId` | `string` | src/git/client.ts:55 |
-|  `commitShortId` | `string` | src/git/client.ts:56 |
-|  `commitDate` | `string` | src/git/client.ts:57 |
-|  `commitMessage` | `string` | src/git/client.ts:58 |
-|  `commitAuthor` | `string` | src/git/client.ts:59 |
-
-***
-
-### GitChangedFile
-
-
-Describes a file that has been changed (staged or unstaged).
-
-#### Properties
-
-| Property | Type | Defined in |
-| ------ | ------ | ------ |
-|  `path` | `string` | src/git/client.ts:66 |
-|  `type` | `number` | src/git/client.ts:67 |
-
-***
-
-### GitConnector
-
-
-The IGitConnector provides the simplified methods for communicating with a Git SCM server.
-This interface is primarily implemented by the object returned from the native Java facade.
-
-#### Methods
-
-##### getOriginUrls()
-
-```ts
-getOriginUrls(): object;
-```
-
-
-Gets the origin urls.
-
-> ::: info Returns
-> - **Type**: `object`
-> - **Description**: An object containing the fetch and push URLs. | Name | Type | Defined in | | ------ | ------ | ------ | | `fetchUrl` | `string` | src/git/client.ts:81 | | `pushUrl` | `string` | src/git/client.ts:81 |
-> :::
-##### setFetchUrl()
-
-```ts
-setFetchUrl(fetchUrl): void;
-```
-
-
-Sets the fetch url.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `fetchUrl` | `string` | The new fetch URL. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-URISyntaxException, GitAPIException
-
-##### setPushUrl()
-
-```ts
-setPushUrl(pushUrl): void;
-```
-
-
-Sets the push url.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `pushUrl` | `string` | The new push URL. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-URISyntaxException, GitAPIException
-
-##### add()
-
-```ts
-add(filePattern): void;
-```
-
-
-Adds file(s) to the staging index.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `filePattern` | `string` | File to add content from. Example: "." includes all files. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-IOException, NoFilepatternException, GitAPIException
-
-##### addDeleted()
-
-```ts
-addDeleted(filePattern): void;
-```
-
-
-Adds deleted file(s) to the staging index.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `filePattern` | `string` | File to add content from. Example: "." includes all files. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-IOException, NoFilepatternException, GitAPIException
-
-##### remove()
-
-```ts
-remove(path): void;
-```
-
-
-Remove from the index.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to be removed. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-IOException, NoFilepatternException, GitAPIException
-
-##### revert()
-
-```ts
-revert(path): void;
-```
-
-
-Revert to head revision.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to be reverted. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-IOException, NoFilepatternException, GitAPIException
-
-##### commit()
-
-```ts
-commit(
-   message, 
-   name, 
-   email, 
-   all): void;
-```
-
-
-Adds changes to the staging index, then performs a commit.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `message` | `string` | The commit message. |
-| `name` | `string` | The name of the committer. |
-| `email` | `string` | The email of the committer. |
-| `all` | `boolean` | If true, automatically stages modified and deleted files. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-Various Git exceptions
-
-##### createBranch()
-
-```ts
-createBranch(name, startPoint): void;
-```
-
-
-Creates new branch from a particular start point.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The new branch name. |
-| `startPoint` | `string` | Valid tree-ish object (e.g., "master", "HEAD", commit hash). |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-RefAlreadyExistsException, GitAPIException
-
-##### deleteBranch()
-
-```ts
-deleteBranch(name): void;
-```
-
-
-Deletes the branch.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The branch name to delete. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-RefAlreadyExistsException, GitAPIException
-
-##### renameBranch()
-
-```ts
-renameBranch(oldName, newName): void;
-```
-
-
-Renames the branch.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `oldName` | `string` | The old branch name. |
-| `newName` | `string` | The new branch name. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-RefAlreadyExistsException, GitAPIException
-
-##### createRemoteBranch()
-
-```ts
-createRemoteBranch(
-   name, 
-   startPoint, 
-   username, 
-   password): void;
-```
-
-
-Creates new remote branch from a particular start point.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The branch name. |
-| `startPoint` | `string` | Valid tree-ish object. |
-| `username` | `string` | Username for the remote repository. |
-| `password` | `string` | Password for the remote repository. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-RefAlreadyExistsException, GitAPIException
-
-##### deleteRemoteBranch()
-
-```ts
-deleteRemoteBranch(
-   name, 
-   username, 
-   password): void;
-```
-
-
-Deletes the remote branch.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The name of the remote branch to delete. |
-| `username` | `string` | Username for the remote repository. |
-| `password` | `string` | Password for the remote repository. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-RefAlreadyExistsException, GitAPIException
-
-##### checkout()
-
-```ts
-checkout(name): any;
-```
-
-
-Checkout to a valid tree-ish object (e.g., branch name, commit hash).
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The tree-ish object. |
-
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: The JGit Ref object.
-> :::
-###### Throws
-
-RefAlreadyExistsException, GitAPIException
-
-##### hardReset()
-
-```ts
-hardReset(): void;
-```
-
-
-Hard reset the repository. Resets working directory and staging index to match the Git repository HEAD.
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-CheckoutConflictException, GitAPIException
-
-##### pull()
-
-###### Call Signature
-
-```ts
-pull(): void;
-```
-
-
-Fetches from a remote repository and tries to merge into the current branch (Pull).
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-Various Git exceptions
-
-###### Call Signature
-
-```ts
-pull(username, password): void;
-```
-
-
-Fetches from a remote repository and tries to merge into the current branch (Pull).
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `username` | `string` | Username for the remote repository. |
-| `password` | `string` | Password for the remote repository. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-Various Git exceptions
-
-##### push()
-
-```ts
-push(username, password): void;
-```
-
-
-Pushes the committed changes to the remote repository.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `username` | `string` | Username for the remote repository. |
-| `password` | `string` | Password for the remote repository. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-InvalidRemoteException, TransportException, GitAPIException
-
-##### rebase()
-
-```ts
-rebase(name): void;
-```
-
-
-Tries to rebase the selected branch on top of the current one.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The branch to rebase. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-###### Throws
-
-NoHeadException, WrongRepositoryStateException, GitAPIException
-
-##### status()
-
-```ts
-status(): any;
-```
-
-
-Get the current status of the Git repository.
-
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: The JGit Status object.
-> :::
-###### Throws
-
-NoWorkTreeException, GitAPIException
-
-##### getBranch()
-
-```ts
-getBranch(): string;
-```
-
-
-Get the name of the current branch of the Git repository.
-
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: The branch name as a string.
-> :::
-###### Throws
-
-IOException
-
-##### getLocalBranches()
-
-```ts
-getLocalBranches(): GitBranch[];
-```
-
-
-List all the local branches info.
-
-###### Throws
-##### getRemoteBranches()
-###### Throws
-##### getUnstagedChanges()
-###### Throws
-##### getStagedChanges()
-###### Throws
-##### getFileContent()
-**Parameters**
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: The content of the file as a string.
-> :::
-###### Throws
-
-GitConnectorException
-
-##### getHistory()
-
-```ts
-getHistory(path): GitCommitInfo[];
-```
-
-
-Get history of the repository or a specific file.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The file path or null to get the entire repository history. |
-
-###### Throws

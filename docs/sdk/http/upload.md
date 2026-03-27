@@ -4,150 +4,193 @@
 - source: [http/upload.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/upload.ts)
 :::
 
-
 ## Overview
 
-Provides a static façade (`Upload` class) for checking and parsing
-multipart/form-data HTTP requests, typically used for file uploads.
 
 
 ## Classes
 
 ### Upload
 
+#### isMultipartContent()
 
-The static Upload class provides methods to determine if a request contains
-multipart content and to parse that content into file items.
+Checks if the current incoming HTTP request contains multipart content
+(e.g., from an HTML form with &#x60;enctype&#x3D;&quot;multipart/form-data&quot;&#x60;).
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Upload(): Upload;
-```
-
-#### Methods
-##### isMultipartContent()
+> ```ts
+> static isMultipartContent(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the request is multipart, false otherwise.
 > :::
-##### parseRequest()
 
-```ts
-static parseRequest(): FileItems;
-```
-
+#### parseRequest()
 
 Parses the incoming multipart request content into a collection of file items.
 This operation typically consumes the request body.
 
+> ```ts
+> static parseRequest(): FileItems;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `FileItems`
+> - **Description**: A FileItems object representing all parts (files and form fields) of the request.
+> :::
+
 ### FileItems
-#### Constructors
-##### Constructor
-**Parameters**
-#### Methods
-##### get()
-**Parameters**
-##### size()
+
+#### get()
+
+Retrieves a specific item (file or form field) by its index in the collection.
+
+> ```ts
+> get(index: number): FileItem;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` | The zero-based index of the item. |
+>
+> ::: info Returns
+> - **Type**: `FileItem`
+> - **Description**: A FileItem object representing the item at the specified index.
+> :::
+
+#### size()
+
+Returns the total number of items (files and form fields) in the collection.
+
+> ```ts
+> size(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: The size of the collection. ***
+> - **Description**: The size of the collection.
 > :::
+
 ### FileItem
 
+#### getName()
 
-Represents a single item (either an uploaded file or a regular form field)
-within a multipart request.
+For a file upload, returns the original filename as reported by the client.
+For a regular form field, this is typically null or undefined.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new FileItem(native): FileItem;
-```
-
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `native` | `any` | The native Java object representing the file item. |
-
-#### Methods
-##### getName()
+> ```ts
+> getName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The original filename string.
 > :::
-##### getContentType()
 
-```ts
-getContentType(): string;
-```
-
+#### getContentType()
 
 Returns the MIME type of the uploaded file or content part.
 
+> ```ts
+> getContentType(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The content type string (e.g., 'image/png', 'text/plain').
+> - **Description**: The content type string (e.g., &#x27;image/png&#x27;, &#x27;text/plain&#x27;).
 > :::
-##### isEmpty()
 
-```ts
-isEmpty(): boolean;
-```
-
+#### isEmpty()
 
 Checks if the uploaded item is empty (e.g., a file upload with zero bytes).
 
+> ```ts
+> isEmpty(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the item is empty, false otherwise.
 > :::
-##### getSize()
 
-```ts
-getSize(): number;
-```
-
+#### getSize()
 
 Returns the size of the uploaded item in bytes.
 
+> ```ts
+> getSize(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size as a number.
 > :::
-##### getBytes()
 
-```ts
-getBytes(): any[];
-```
-
+#### getBytes()
 
 Retrieves the content of the file item as a JavaScript array of bytes.
-This uses a utility (`Bytes.toJavaScriptBytes`) to convert the native Java byte array.
+This uses a utility (&#x60;Bytes.toJavaScriptBytes&#x60;) to convert the native Java byte array.
 
-##### getBytesNative()
-##### getText()
+> ```ts
+> getBytes(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of bytes (&#x60;any[]&#x60;).
+> :::
+
+#### getBytesNative()
+
+Retrieves the content of the file item as the native Java byte array.
+
+> ```ts
+> getBytesNative(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The native byte array (&#x60;any[]&#x60;).
+> :::
+
+#### getText()
+
+Retrieves the content of the file item as a string.
+Note: This assumes the content is text and may not handle all encodings correctly.
+It relies on JavaScript&#x27;s &#x60;String.fromCharCode.apply&#x60; for conversion.
+
+> ```ts
+> getText(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The content as a string.
 > :::
-##### getInputStream()
 
-```ts
-getInputStream(): InputStream;
-```
-
+#### getInputStream()
 
 Gets an input stream for reading the content of the file item.
 This is useful for handling large files without loading the entire content into memory.
 
+> ```ts
+> getInputStream(): InputStream;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `InputStream`
 > - **Description**: An InputStream object wrapping the native input stream.
 > :::
+

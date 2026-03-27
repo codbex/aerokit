@@ -4,32 +4,32 @@
 - source: [indexing/writer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/writer.ts)
 :::
 
-
 ## Overview
 
-Provides a static façade (`Writer` class) for adding new documents
-or content to the native indexing service.
 
 
 ## Classes
 
 ### Writer
 
+#### add()
 
-The Writer class provides a static method for indexing documents, allowing
-for full-text content, a last modification timestamp, and optional metadata.
+Adds a new document entry to the specified index.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Writer(): Writer;
-```
-
-#### Methods
-##### add()
-**Parameters**
+> ```ts
+> static add(index: string, location: string, contents: string, lastModified: Date, parameters: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index (e.g., &#x27;documents&#x27;, &#x27;users&#x27;). |
+> | `location` | `string` | A unique identifier or path for the indexed document (e.g., a file path or URL). |
+> | `contents` | `string` | The full-text content of the document to be indexed and made searchable. |
+> | `lastModified` | `Date` | The Date object representing the last modification time of the document. Defaults to the current date/time if omitted. |
+> | `parameters` | `any` | Optional key-value map of additional metadata to associate with the document. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
+

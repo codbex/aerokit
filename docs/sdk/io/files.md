@@ -4,658 +4,658 @@
 - source: [io/files.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/files.ts)
 :::
 
-
 ## Overview
 
-Provides a comprehensive static façade for file and directory operations,
-abstracting the underlying Java file system implementation.
 
 
 ## Classes
 
 ### Files
 
+#### exists()
 
-The Files class provides static methods for high-level file system manipulation,
-including checking properties, reading/writing content, and navigating the structure.
+Checks if a file or directory exists at the given path.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Files(): Files;
-```
-
-#### Properties
-#### Methods
-##### exists()
-**Parameters**
+> ```ts
+> static exists(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the path exists, false otherwise.
 > :::
-##### isExecutable()
 
-```ts
-static isExecutable(path): boolean;
-```
-
+#### isExecutable()
 
 Checks if the file or directory at the given path is executable.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to check. |
-
+> ```ts
+> static isExecutable(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if executable, false otherwise.
 > :::
-##### isReadable()
 
-```ts
-static isReadable(path): boolean;
-```
-
+#### isReadable()
 
 Checks if the file or directory at the given path is readable.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to check. |
-
+> ```ts
+> static isReadable(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if readable, false otherwise.
 > :::
-##### isWritable()
 
-```ts
-static isWritable(path): boolean;
-```
-
+#### isWritable()
 
 Checks if the file or directory at the given path is writable.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to check. |
-
+> ```ts
+> static isWritable(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if writable, false otherwise.
 > :::
-##### isHidden()
 
-```ts
-static isHidden(path): boolean;
-```
-
+#### isHidden()
 
 Checks if the file or directory at the given path is hidden.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to check. |
-
+> ```ts
+> static isHidden(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if hidden, false otherwise.
 > :::
-##### isDirectory()
 
-```ts
-static isDirectory(path): boolean;
-```
-
+#### isDirectory()
 
 Checks if the path refers to a directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to check. |
-
+> ```ts
+> static isDirectory(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if it's a directory, false otherwise.
+> - **Description**: True if it&#x27;s a directory, false otherwise.
 > :::
-##### isFile()
 
-```ts
-static isFile(path): boolean;
-```
-
+#### isFile()
 
 Checks if the path refers to a regular file.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to check. |
-
+> ```ts
+> static isFile(path: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if it's a file, false otherwise.
+> - **Description**: True if it&#x27;s a file, false otherwise.
 > :::
-##### isSameFile()
 
-```ts
-static isSameFile(path1, path2): boolean;
-```
-
+#### isSameFile()
 
 Checks if two paths refer to the same underlying file system object.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path1` | `string` | The first path. |
-| `path2` | `string` | The second path. |
-
+> ```ts
+> static isSameFile(path1: string, path2: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path1` | `string` | The first path. |
+> | `path2` | `string` | The second path. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if they reference the same file/directory, false otherwise.
 > :::
-##### getCanonicalPath()
 
-```ts
-static getCanonicalPath(path): string;
-```
-
+#### getCanonicalPath()
 
 Returns the canonical (absolute and normalized) path for the given path.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to normalize. |
-
+> ```ts
+> static getCanonicalPath(path: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to normalize. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The canonical path string.
 > :::
-##### getName()
 
-```ts
-static getName(path): string;
-```
-
+#### getName()
 
 Gets the simple name of the file or directory at the given path (the last element).
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path. |
-
+> ```ts
+> static getName(path: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The name.
 > :::
-##### getParentPath()
 
-```ts
-static getParentPath(path): string;
-```
-
+#### getParentPath()
 
 Gets the path of the parent directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path. |
-
+> ```ts
+> static getParentPath(path: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The parent path string, or null/empty if none exists.
 > :::
-##### readBytes()
 
-```ts
-static readBytes(path): any[];
-```
-
+#### readBytes()
 
 Reads all bytes from a file into a JavaScript byte array (an array of numbers).
 
 Note: This method automatically converts the native Java byte array to a
-JavaScript array using `Bytes.toJavaScriptBytes()`.
+JavaScript array using &#x60;Bytes.toJavaScriptBytes()&#x60;.
 
-**Parameters**
+> ```ts
+> static readBytes(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: A JavaScript array of byte values.
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
+#### readBytesNative()
 
-##### readBytesNative()
-**Parameters**
-##### readText()
-**Parameters**
+Reads all bytes from a file and returns the native Java byte array object.
+
+> ```ts
+> static readBytesNative(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The native Java byte array.
+> :::
+
+#### readText()
+
+Reads all text content from a file using the platform&#x27;s default character encoding.
+
+> ```ts
+> static readText(path: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The content of the file as a string.
 > :::
-##### writeBytes()
 
-```ts
-static writeBytes(path, data): void;
-```
-
+#### writeBytes()
 
 Writes the content of a JavaScript byte array to a file. Overwrites existing content.
 
 Note: This method automatically converts the JavaScript array to a native
-Java byte array using `Bytes.toJavaBytes()` before writing.
+Java byte array using &#x60;Bytes.toJavaBytes()&#x60; before writing.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
-| `data` | `any`[] | The JavaScript array of byte values to write. |
-
+> ```ts
+> static writeBytes(path: string, data: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+> | `data` | `any` | The JavaScript array of byte values to write. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### writeBytesNative()
 
-```ts
-static writeBytesNative(path, data): void;
-```
-
+#### writeBytesNative()
 
 Writes the content of a native Java byte array to a file. Overwrites existing content.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
-| `data` | `any`[] | The native Java byte array to write. |
-
+> ```ts
+> static writeBytesNative(path: string, data: any): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+> | `data` | `any` | The native Java byte array to write. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### writeText()
 
-```ts
-static writeText(path, text): void;
-```
+#### writeText()
 
+Writes a string of text to a file using the platform&#x27;s default character encoding. Overwrites existing content.
 
-Writes a string of text to a file using the platform's default character encoding. Overwrites existing content.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
-| `text` | `string` | The string content to write. |
-
+> ```ts
+> static writeText(path: string, text: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+> | `text` | `string` | The string content to write. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getLastModified()
 
-```ts
-static getLastModified(path): Date;
-```
-
+#### getLastModified()
 
 Gets the last modified time of the file or directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file or directory. |
-
+> ```ts
+> static getLastModified(path: string): Date;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file or directory. |
+>
 > ::: info Returns
 > - **Type**: `Date`
 > - **Description**: A JavaScript Date object representing the last modified time.
 > :::
-##### setLastModified()
 
-```ts
-static setLastModified(path, time): void;
-```
-
+#### setLastModified()
 
 Sets the last modified time of the file or directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file or directory. |
-| `time` | `Date` | The new Date object to set as the last modified time. |
-
+> ```ts
+> static setLastModified(path: string, time: Date): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file or directory. |
+> | `time` | `Date` | The new Date object to set as the last modified time. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getOwner()
 
-```ts
-static getOwner(path): string;
-```
-
+#### getOwner()
 
 Gets the owner of the file or directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file or directory. |
-
+> ```ts
+> static getOwner(path: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file or directory. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The owner name as a string.
 > :::
-##### setOwner()
 
-```ts
-static setOwner(path, owner): void;
-```
-
+#### setOwner()
 
 Sets the owner of the file or directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file or directory. |
-| `owner` | `string` | The new owner name. |
-
+> ```ts
+> static setOwner(path: string, owner: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file or directory. |
+> | `owner` | `string` | The new owner name. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getPermissions()
 
-```ts
-static getPermissions(path): string;
-```
-
+#### getPermissions()
 
 Gets the permissions string for the file or directory (implementation dependent).
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file or directory. |
-
+> ```ts
+> static getPermissions(path: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file or directory. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The permissions string.
 > :::
-##### setPermissions()
 
-```ts
-static setPermissions(path, permissions): void;
-```
-
+#### setPermissions()
 
 Sets the permissions for the file or directory (implementation dependent).
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file or directory. |
-| `permissions` | `string` | The permissions string. |
-
+> ```ts
+> static setPermissions(path: string, permissions: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file or directory. |
+> | `permissions` | `string` | The permissions string. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### size()
 
-```ts
-static size(path): number;
-```
-
+#### size()
 
 Gets the size of the file in bytes.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
-
+> ```ts
+> static size(path: string): number;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+>
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The size in bytes.
 > :::
-##### createFile()
 
-```ts
-static createFile(path): void;
-```
-
+#### createFile()
 
 Creates a new, empty file at the specified path.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path where the file should be created. |
-
+> ```ts
+> static createFile(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path where the file should be created. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createDirectory()
 
-```ts
-static createDirectory(path): void;
-```
-
+#### createDirectory()
 
 Creates a new directory at the specified path.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path where the directory should be created. |
-
+> ```ts
+> static createDirectory(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path where the directory should be created. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### copy()
 
-```ts
-static copy(source, target): void;
-```
-
+#### copy()
 
 Copies a file or directory from a source path to a target path.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `source` | `string` | The source path. |
-| `target` | `string` | The target path. |
-
+> ```ts
+> static copy(source: string, target: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `source` | `string` | The source path. |
+> | `target` | `string` | The target path. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### move()
 
-```ts
-static move(source, target): void;
-```
-
+#### move()
 
 Moves or renames a file or directory.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `source` | `string` | The source path. |
-| `target` | `string` | The target path. |
-
+> ```ts
+> static move(source: string, target: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `source` | `string` | The source path. |
+> | `target` | `string` | The target path. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### deleteFile()
 
-```ts
-static deleteFile(path): void;
-```
-
+#### deleteFile()
 
 Deletes the file at the specified path.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file to delete. |
-
+> ```ts
+> static deleteFile(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file to delete. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### deleteDirectory()
 
-```ts
-static deleteDirectory(path, forced?): void;
-```
-
+#### deleteDirectory()
 
 Deletes the directory at the specified path.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the directory to delete. |
-| `forced?` | `boolean` | If true, recursively deletes the directory and its contents. |
-
+> ```ts
+> static deleteDirectory(path: string, forced: boolean): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the directory to delete. |
+> | `forced` | `boolean` | If true, recursively deletes the directory and its contents. |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### createTempFile()
 
-```ts
-static createTempFile(prefix, suffix): string;
-```
-
+#### createTempFile()
 
 Creates a new temporary file with the given prefix and suffix.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `prefix` | `string` | The prefix string to be used in generating the file's name. |
-| `suffix` | `string` | The suffix string to be used in generating the file's name. |
-
+> ```ts
+> static createTempFile(prefix: string, suffix: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `prefix` | `string` | The prefix string to be used in generating the file&#x27;s name. |
+> | `suffix` | `string` | The suffix string to be used in generating the file&#x27;s name. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The path of the created temporary file.
 > :::
-##### createTempDirectory()
 
-```ts
-static createTempDirectory(prefix): string;
-```
-
+#### createTempDirectory()
 
 Creates a new temporary directory with the given prefix.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `prefix` | `string` | The prefix string to be used in generating the directory's name. |
-
+> ```ts
+> static createTempDirectory(prefix: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `prefix` | `string` | The prefix string to be used in generating the directory&#x27;s name. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The path of the created temporary directory.
 > :::
-##### createInputStream()
 
-```ts
-static createInputStream(path): InputStream;
-```
-
+#### createInputStream()
 
 Creates and returns a new InputStream for reading data from the file.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
-
+> ```ts
+> static createInputStream(path: string): InputStream;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+>
 > ::: info Returns
 > - **Type**: `InputStream`
 > - **Description**: A new InputStream instance.
 > :::
-##### createOutputStream()
 
-```ts
-static createOutputStream(path): OutputStream;
-```
-
+#### createOutputStream()
 
 Creates and returns a new OutputStream for writing data to the file.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the file. |
-
+> ```ts
+> static createOutputStream(path: string): OutputStream;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the file. |
+>
 > ::: info Returns
 > - **Type**: `OutputStream`
 > - **Description**: A new OutputStream instance.
 > :::
-##### traverse()
 
-```ts
-static traverse(path): FolderObject[];
-```
+#### traverse()
 
+Traverses a directory and returns a structured FolderObject hierarchy.
 
-Traverses a directory and returns a structured [FolderObject](#folderobject) hierarchy.
+> ```ts
+> static traverse(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the folder to traverse. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: The root FolderObject containing the file system tree structure.
+> :::
 
-**Parameters**
+#### list()
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the folder to traverse. |
+Lists the direct children (files and folders) of a directory, returning only their paths.
 
-##### list()
-**Parameters**
-##### find()
-**Parameters**
-## Interfaces
-### FileObject
-#### Extended by
-#### Properties
-### FolderObject
-#### Extends
-#### Properties
+> ```ts
+> static list(path: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the directory. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of string paths for the contents of the directory.
+> :::
+
+#### find()
+
+Finds files and directories matching a specified glob pattern within a directory tree.
+
+> ```ts
+> static find(path: string, pattern: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The starting path for the search. |
+> | `pattern` | `string` | The glob pattern to match (e.g., &quot;*.js&quot;, &quot;**.txt&quot;). |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of string paths that match the pattern.
+> :::
+

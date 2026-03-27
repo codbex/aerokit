@@ -4,29 +4,30 @@
 - source: [utils/qrcode.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/qrcode.ts)
 :::
 
-
 ## Overview
 
-The Qrcode API provides...
 
 
 ## Classes
 
 ### QRCode
 
+#### generateQRCode()
 
-Utility class for generating QR codes.
-It uses the underlying native Java QRCodeFacade to convert text into
-a QR code image represented as a raw byte array.
+Generates a QR code image byte array from the given text.
+The returned byte array represents the image data (e.g., PNG or JPEG format,
+depending on the native implementation&#x27;s default output).
 
-#### Constructors
+> ```ts
+> static generateQRCode(text: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `text` | `string` | The string content to be encoded in the QR code. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: A **JavaScript byte array (any[])** containing the raw QR code image data.
+> :::
 
-##### Constructor
-
-```ts
-new QRCode(): QRCode;
-```
-
-#### Methods
-##### generateQRCode()
-**Parameters**

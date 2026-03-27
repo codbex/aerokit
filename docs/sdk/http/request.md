@@ -4,550 +4,683 @@
 - source: [http/request.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/request.ts)
 :::
 
-
 ## Overview
 
-The Request API under the HTTP module is responsible for
-managing standard HTTP request parameters, headers, cookies,
-and request metadata provided to server-side scripting services.
 
 
 ## Classes
 
 ### Request
 
+#### isValid()
 
-Represents the HTTP Request object available within a service execution
-context. It provides access to HTTP metadata, query parameters, request
-body content, cookies, and security information.
+Determines whether the current thread is handling a valid HTTP request.
 
-All functions in this class are static: no instance of `Request`
-needs to be created.
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new Request(): Request;
-```
-
-#### Methods
-##### isValid()
+> ```ts
+> static isValid(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: `true` if called in a valid HTTP request context, otherwise `false`.
+> - **Description**: &#x60;true&#x60; if called in a valid HTTP request context, otherwise &#x60;false&#x60;.
 > :::
-##### getMethod()
 
-```ts
-static getMethod(): string;
-```
-
+#### getMethod()
 
 Returns the HTTP method (GET, POST, PUT, DELETE, etc.).
 
+> ```ts
+> static getMethod(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getRemoteUser()
 
-```ts
-static getRemoteUser(): string;
-```
-
+#### getRemoteUser()
 
 Returns the authenticated remote user name if available.
 
+> ```ts
+> static getRemoteUser(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getPathInfo()
 
-```ts
-static getPathInfo(): string;
-```
-
+#### getPathInfo()
 
 Returns the portion of the request path following the servlet path.
 
+> ```ts
+> static getPathInfo(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getPathTranslated()
 
-```ts
-static getPathTranslated(): string;
-```
-
+#### getPathTranslated()
 
 Returns the translated file system path for the request.
 
+> ```ts
+> static getPathTranslated(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getHeader()
 
-```ts
-static getHeader(name): string;
-```
-
+#### getHeader()
 
 Returns the value of a specific HTTP header.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | Header name to retrieve. |
-
+> ```ts
+> static getHeader(name: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | Header name to retrieve. |
+>
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The header value or `undefined` if not found.
+> - **Description**: The header value or &#x60;undefined&#x60; if not found.
 > :::
-##### isUserInRole()
 
-```ts
-static isUserInRole(role): boolean;
-```
-
+#### isUserInRole()
 
 Checks whether the remote user has the given role.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `role` | `string` | The role name to check. |
-
+> ```ts
+> static isUserInRole(role: string): boolean;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `role` | `string` | The role name to check. |
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getAttribute()
 
-```ts
-static getAttribute(name): string;
-```
-
+#### getAttribute()
 
 Returns a request attribute value previously associated with the request.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | The attribute name. |
-
+> ```ts
+> static getAttribute(name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The attribute name. |
+>
 > ::: info Returns
-> - **Type**: `string`
-> - **Description**: A string value or `undefined`.
+> - **Type**: `void`
+> - **Description**: A string value or &#x60;undefined&#x60;.
 > :::
-##### getAuthType()
 
-```ts
-static getAuthType(): string;
-```
-
+#### getAuthType()
 
 Returns the authentication type if known (BASIC, CLIENT_CERT, etc.).
 
+> ```ts
+> static getAuthType(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getCookies()
 
-```ts
-static getCookies(): Cookie[];
-```
-
+#### getCookies()
 
 Returns all cookies sent with the request.
 
-##### getAttributeNames()
-##### getCharacterEncoding()
+> ```ts
+> static getCookies(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of Cookie objects.
+> :::
+
+#### getAttributeNames()
+
+Returns all available request attribute names.
+
+> ```ts
+> static getAttributeNames(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getCharacterEncoding()
+
+Returns the character encoding used in the request body.
+
+> ```ts
+> static getCharacterEncoding(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getContentLength()
 
-```ts
-static getContentLength(): number;
-```
-
+#### getContentLength()
 
 Returns the size of the request body in bytes, if known.
 
+> ```ts
+> static getContentLength(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getHeaders()
 
-```ts
-static getHeaders(name): string[];
-```
-
+#### getHeaders()
 
 Returns all values of a specific header.
 
-**Parameters**
+> ```ts
+> static getHeaders(name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | Header name to retrieve. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `name` | `string` | Header name to retrieve. |
+#### getContentType()
 
-##### getContentType()
+Returns the MIME content type of the request body.
+
+> ```ts
+> static getContentType(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getBytes()
 
-```ts
-static getBytes(): any[];
-```
-
+#### getBytes()
 
 Returns the raw request body as a byte array.
 
-##### getText()
+> ```ts
+> static getBytes(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getText()
+
+Returns the request body as text. This is computed once and cached.
+
+> ```ts
+> static getText(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### json()
 
-```ts
-static json(): object;
-```
-
+#### json()
 
 Returns the request body parsed as JSON if valid.
 
+> ```ts
+> static json(): void;
+> ```
+>
+>
 > ::: info Returns
-> - **Type**: `object`
-> - **Description**: A JSON object or `undefined` if parsing fails.
+> - **Type**: `void`
+> - **Description**: A JSON object or &#x60;undefined&#x60; if parsing fails.
 > :::
-##### getJSON()
 
-```ts
-static getJSON(): object;
-```
-
+#### getJSON()
 
 Same as json(); explicit form.
 
+> ```ts
+> static getJSON(): void;
+> ```
+>
+>
 > ::: info Returns
-> - **Type**: `object`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### getParameter()
 
-```ts
-static getParameter(name): string;
-```
-
+#### getParameter()
 
 Returns a request parameter value.
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `name` | `string` |
-
+> ```ts
+> static getParameter(name: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getParameters()
 
-```ts
-static getParameters(): object;
-```
-
+#### getParameters()
 
 Returns a map of request parameters to arrays of values.
 
+> ```ts
+> static getParameters(): void;
+> ```
+>
+>
 > ::: info Returns
-> - **Type**: `object`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### getResourcePath()
 
-```ts
-static getResourcePath(): string;
-```
-
+#### getResourcePath()
 
 Returns the allocated request resource path.
 
+> ```ts
+> static getResourcePath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getHeaderNames()
 
-```ts
-static getHeaderNames(): string[];
-```
-
+#### getHeaderNames()
 
 Returns all header names.
 
-##### getParameterNames()
-##### getParameterValues()
-**Parameters**
-##### getProtocol()
+> ```ts
+> static getHeaderNames(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getParameterNames()
+
+Returns all parameter names.
+
+> ```ts
+> static getParameterNames(): void;
+> ```
+>
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getParameterValues()
+
+Returns all values for a given parameter name.
+
+> ```ts
+> static getParameterValues(name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: 
+> :::
+
+#### getProtocol()
+
+Returns the HTTP protocol version.
+
+> ```ts
+> static getProtocol(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getScheme()
 
-```ts
-static getScheme(): string;
-```
-
+#### getScheme()
 
 Returns the transport scheme (e.g., http, https).
 
+> ```ts
+> static getScheme(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getContextPath()
 
-```ts
-static getContextPath(): string;
-```
-
+#### getContextPath()
 
 Returns the context path of the request.
 
+> ```ts
+> static getContextPath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getServerName()
 
-```ts
-static getServerName(): string;
-```
-
+#### getServerName()
 
 Returns the server host name.
 
+> ```ts
+> static getServerName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getServerPort()
 
-```ts
-static getServerPort(): number;
-```
-
+#### getServerPort()
 
 Returns the server port number.
 
+> ```ts
+> static getServerPort(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getQueryString()
 
-```ts
-static getQueryString(): string;
-```
-
+#### getQueryString()
 
 Returns the full raw query string.
 
+> ```ts
+> static getQueryString(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getQueryParametersMap()
 
-```ts
-static getQueryParametersMap(): object;
-```
-
+#### getQueryParametersMap()
 
 Parses the query string and returns a map of parameter keys to values.
 If the same key appears multiple times, values are collected into arrays.
 
+> ```ts
+> static getQueryParametersMap(): void;
+> ```
+>
+>
 > ::: info Returns
-> - **Type**: `object`
+> - **Type**: `void`
+> - **Description**: 
 > :::
-##### getRemoteAddress()
 
-```ts
-static getRemoteAddress(): string;
-```
-
+#### getRemoteAddress()
 
 Returns the remote client IP address.
 
+> ```ts
+> static getRemoteAddress(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getRemoteHost()
 
-```ts
-static getRemoteHost(): string;
-```
-
+#### getRemoteHost()
 
 Returns the remote client host name.
 
+> ```ts
+> static getRemoteHost(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### setAttribute()
 
-```ts
-static setAttribute(name, value): void;
-```
-
+#### setAttribute()
 
 Assigns a new attribute to the request.
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `name` | `string` |
-| `value` | `string` |
-
+> ```ts
+> static setAttribute(name: string, value: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+> | `value` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### removeAttribute()
 
-```ts
-static removeAttribute(name): void;
-```
-
+#### removeAttribute()
 
 Removes an attribute from the request.
 
-**Parameters**
-
-| Parameter | Type |
-| ------ | ------ |
-| `name` | `string` |
-
+> ```ts
+> static removeAttribute(name: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` |  |
+>
 > ::: info Returns
 > - **Type**: `void`
+> - **Description**: 
 > :::
-##### getLocale()
 
-```ts
-static getLocale(): any;
-```
-
+#### getLocale()
 
 Returns the client locale preferences.
 
+> ```ts
+> static getLocale(): any;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `any`
+> - **Description**: 
 > :::
-##### getRequestURI()
 
-```ts
-static getRequestURI(): string;
-```
-
+#### getRequestURI()
 
 Returns the full request URI.
 
+> ```ts
+> static getRequestURI(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### isSecure()
 
-```ts
-static isSecure(): boolean;
-```
+#### isSecure()
 
+Returns &#x60;true&#x60; if the request was made over HTTPS.
 
-Returns `true` if the request was made over HTTPS.
-
+> ```ts
+> static isSecure(): boolean;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `boolean`
+> - **Description**: 
 > :::
-##### getRequestURL()
 
-```ts
-static getRequestURL(): string;
-```
-
+#### getRequestURL()
 
 Returns the full request URL including protocol and host.
 
+> ```ts
+> static getRequestURL(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getServicePath()
 
-```ts
-static getServicePath(): string;
-```
-
+#### getServicePath()
 
 Returns the internal service path for routing.
 
+> ```ts
+> static getServicePath(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getRemotePort()
 
-```ts
-static getRemotePort(): number;
-```
-
+#### getRemotePort()
 
 Returns the remote client port number.
 
+> ```ts
+> static getRemotePort(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getLocalName()
 
-```ts
-static getLocalName(): string;
-```
-
+#### getLocalName()
 
 Returns the local network host name.
 
+> ```ts
+> static getLocalName(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getLocalAddress()
 
-```ts
-static getLocalAddress(): string;
-```
-
+#### getLocalAddress()
 
 Returns the local IP address.
 
+> ```ts
+> static getLocalAddress(): string;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `string`
+> - **Description**: 
 > :::
-##### getLocalPort()
 
-```ts
-static getLocalPort(): number;
-```
-
+#### getLocalPort()
 
 Returns the server local port number handling the request.
 
+> ```ts
+> static getLocalPort(): number;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `number`
+> - **Description**: 
 > :::
-##### getInputStream()
 
-```ts
-static getInputStream(): InputStream;
-```
-
+#### getInputStream()
 
 Returns the request body as a binary input stream.
 
 Useful for processing binary uploads.
 
+> ```ts
+> static getInputStream(): InputStream;
+> ```
+>
+>
 > ::: info Returns
 > - **Type**: `InputStream`
+> - **Description**: 
 > :::
+

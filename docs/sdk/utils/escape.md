@@ -4,284 +4,254 @@
 - source: [utils/escape.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/escape.ts)
 :::
 
-
 ## Overview
 
-The Escape API provides...
 
 
 ## Classes
 
 ### Escape
 
+#### escapeCsv()
 
-Utility class for performing context-aware string escaping and unescaping operations,
-delegating to a native Java EscapeFacade. These methods are essential for security
-(preventing injection attacks) and ensuring correct data serialization across different formats.
+Escapes special characters in a string to make it safe for use as a value within a CSV file.
+Typically handles double quotes, commas, and newlines.
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new Escape(): Escape;
-```
-
-#### Methods
-##### escapeCsv()
-**Parameters**
+> ```ts
+> static escapeCsv(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The CSV-safe escaped string.
 > :::
-##### escapeJavascript()
 
-```ts
-static escapeJavascript(input): string;
-```
-
+#### escapeJavascript()
 
 Escapes characters in a string to create a valid JavaScript string literal.
 This makes it safe for embedding string values within JavaScript code blocks.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The string to be escaped. |
-
+> ```ts
+> static escapeJavascript(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The JavaScript-safe escaped string.
 > :::
-##### escapeHtml3()
 
-```ts
-static escapeHtml3(input): string;
-```
-
+#### escapeHtml3()
 
 Escapes characters in a string using HTML 3.2 entity references.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The string to be escaped. |
-
+> ```ts
+> static escapeHtml3(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The HTML 3.2 escaped string.
 > :::
-##### escapeHtml4()
 
-```ts
-static escapeHtml4(input): string;
-```
-
+#### escapeHtml4()
 
 Escapes characters in a string using HTML 4.0 entity references.
-This is the common standard for escaping characters like , &, and ".
+This is the common standard for escaping characters like &lt;, &gt;, &amp;, and &quot;.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The string to be escaped. |
-
+> ```ts
+> static escapeHtml4(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The HTML 4.0 escaped string.
 > :::
-##### escapeJava()
 
-```ts
-static escapeJava(input): string;
-```
-
+#### escapeJava()
 
 Escapes characters in a string to create a valid Java string literal.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The string to be escaped. |
-
+> ```ts
+> static escapeJava(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The Java-safe escaped string.
 > :::
-##### escapeJson()
 
-```ts
-static escapeJson(input): string;
-```
-
+#### escapeJson()
 
 Escapes characters (like quotes, backslashes, and control characters) in a string
 to make it safe for embedding as a value within a JSON document.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The string to be escaped. |
-
+> ```ts
+> static escapeJson(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The JSON-safe escaped string.
 > :::
-##### escapeXml()
 
-```ts
-static escapeXml(input): string;
-```
-
+#### escapeXml()
 
 Escapes characters in a string to make it valid for use within an XML document.
-Typically handles characters like , &, ", and '.
+Typically handles characters like &lt;, &gt;, &amp;, &quot;, and &#x27;.
 
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The string to be escaped. |
-
+> ```ts
+> static escapeXml(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be escaped. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The XML-safe escaped string.
 > :::
-##### unescapeCsv()
 
-```ts
-static unescapeCsv(input): string;
-```
+#### unescapeCsv()
 
+The inverse of &#x60;escapeCsv&#x60;: unescapes CSV-specific escape sequences back to their original form.
 
-The inverse of `escapeCsv`: unescapes CSV-specific escape sequences back to their original form.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The CSV-escaped string. |
-
+> ```ts
+> static unescapeCsv(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The CSV-escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
-##### unescapeJavascript()
 
-```ts
-static unescapeJavascript(input): string;
-```
+#### unescapeJavascript()
 
+The inverse of &#x60;escapeJavascript&#x60;: unescapes JavaScript string literals.
 
-The inverse of `escapeJavascript`: unescapes JavaScript string literals.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The JavaScript-escaped string. |
-
+> ```ts
+> static unescapeJavascript(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The JavaScript-escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
-##### unescapeHtml3()
 
-```ts
-static unescapeHtml3(input): string;
-```
+#### unescapeHtml3()
 
+The inverse of &#x60;escapeHtml3&#x60;: unescapes HTML 3.2 entity references.
 
-The inverse of `escapeHtml3`: unescapes HTML 3.2 entity references.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The HTML 3.2 escaped string. |
-
+> ```ts
+> static unescapeHtml3(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The HTML 3.2 escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
-##### unescapeHtml4()
 
-```ts
-static unescapeHtml4(input): string;
-```
+#### unescapeHtml4()
 
+The inverse of &#x60;escapeHtml4&#x60;: unescapes HTML 4.0 entity references.
 
-The inverse of `escapeHtml4`: unescapes HTML 4.0 entity references.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The HTML 4.0 escaped string. |
-
+> ```ts
+> static unescapeHtml4(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The HTML 4.0 escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
-##### unescapeJava()
 
-```ts
-static unescapeJava(input): string;
-```
+#### unescapeJava()
 
+The inverse of &#x60;escapeJava&#x60;: unescapes Java string literals.
 
-The inverse of `escapeJava`: unescapes Java string literals.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The Java-escaped string. |
-
+> ```ts
+> static unescapeJava(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The Java-escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
-##### unescapeJson()
 
-```ts
-static unescapeJson(input): string;
-```
+#### unescapeJson()
 
+The inverse of &#x60;escapeJson&#x60;: unescapes JSON string escape sequences.
 
-The inverse of `escapeJson`: unescapes JSON string escape sequences.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The JSON-escaped string. |
-
+> ```ts
+> static unescapeJson(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The JSON-escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
-##### unescapeXml()
 
-```ts
-static unescapeXml(input): string;
-```
+#### unescapeXml()
 
+The inverse of &#x60;escapeXml&#x60;: unescapes XML entity references.
 
-The inverse of `escapeXml`: unescapes XML entity references.
-
-**Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` | The XML-escaped string. |
-
+> ```ts
+> static unescapeXml(input: string): string;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The XML-escaped string. |
+>
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The unescaped string.
 > :::
+
