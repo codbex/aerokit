@@ -50,24 +50,23 @@ the translated fields back into the original data.
 > | `list` | `any`[] | The array of entities to be translated. |
 > | `language` | `string` | The target language code (e.g., 'en', 'de'). If undefined, no translation occurs. |
 > | `basetTable` | `string` | The name of the base entity table (used to derive the language table name). |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> The translated array of entities.
-> 
-> ##### translateEntity()
-> 
-> > ```ts
-> > static translateEntity( entity, id, language, basetTable): any;
-> > ```
-> 
-> 
-> > Translates properties for a single entity by querying the corresponding language table.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The translated array of entities.
+> :::
+
+##### translateEntity()
+
+> ```ts
+> static translateEntity( entity, id, language, basetTable): any;
+> ```
+
+
+> Translates properties for a single entity by querying the corresponding language table.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `entity` | `any` | The entity object to be translated. |

@@ -62,8 +62,19 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### postAsync() > ```ts postAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP POST request.
 > :::
+
+##### postAsync()
+
+> ```ts
+> postAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
+
+
+> Executes an asynchronous HTTP POST request.
 
 > **Parameters**
 
@@ -75,8 +86,19 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### putAsync() > ```ts putAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP PUT request.
 > :::
+
+##### putAsync()
+
+> ```ts
+> putAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
+
+
+> Executes an asynchronous HTTP PUT request.
 
 > **Parameters**
 
@@ -88,8 +110,19 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### patchAsync() > ```ts patchAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP PATCH request.
 > :::
+
+##### patchAsync()
+
+> ```ts
+> patchAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
+
+
+> Executes an asynchronous HTTP PATCH request.
 
 > **Parameters**
 
@@ -101,8 +134,19 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteAsync() > ```ts deleteAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP DELETE request.
 > :::
+
+##### deleteAsync()
+
+> ```ts
+> deleteAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
+
+
+> Executes an asynchronous HTTP DELETE request.
 
 > **Parameters**
 
@@ -114,8 +158,19 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### headAsync() > ```ts headAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP HEAD request.
 > :::
+
+##### headAsync()
+
+> ```ts
+> headAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
+
+
+> Executes an asynchronous HTTP HEAD request.
 
 > **Parameters**
 
@@ -127,8 +182,19 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### traceAsync() > ```ts traceAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP TRACE request.
 > :::
+
+##### traceAsync()
+
+> ```ts
+> traceAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
+
+
+> Executes an asynchronous HTTP TRACE request.
 
 > **Parameters**
 
@@ -140,13 +206,22 @@ and execute callbacks upon completion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### execute() > ```ts execute(): void; ``` Initiates the execution of queued asynchronous requests (depending on the underlying Java client's threading model).
 > :::
+
+##### execute()
+
+> ```ts
+> execute(): void;
+> ```
+
+
+Initiates the execution of queued asynchronous requests (depending on the underlying Java client's threading model).
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ## Interfaces
 > :::
+
+## Interfaces
 
 ### HttpClientHeader
 

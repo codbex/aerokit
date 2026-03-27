@@ -110,16 +110,13 @@ API CMIS
 > | ------ | ------ | ------ |
 > | `path` | `string` | The path of the CMIS object. |
 > | `method` | `string` | The operation method (e.g., [Cmis.METHOD\_READ](#method_read), [Cmis.METHOD\_WRITE](#method_write)). |
-> 
-> ###### Returns
-> 
-> `AccessDefinition`[]
-> 
-> A list of access definitions.
-> 
-> ***
-> 
-> ### Folder
+
+> ::: info Returns
+> - **Type**: `AccessDefinition`
+> - **Description**: [] A list of access definitions. ***
+> :::
+
+### Folder
 
 Gets the unique identifier of the repository.
 @returns The repository ID.
@@ -128,63 +125,63 @@ Gets the unique identifier of the repository.
 		return this.native.getId();
 	}
 
-> 
-> 
-> Folder object
-> * Represents a CMIS folder object, allowing operations like creating children, deleting, and renaming.
-> 
-> ## Parameters
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `native` | `any` |
-> | `path` | `any` |
-> 
-> ###### Returns
-> 
-> [`Folder`](#folder)
-> 
-> #### Methods
-> 
-> ##### getId()
-> 
+
+
+Folder object
+* Represents a CMIS folder object, allowing operations like creating children, deleting, and renaming.
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `native` | `any` |
+| `path` | `any` |
+
+###### Returns
+
+[`Folder`](#folder)
+
+#### Methods
+
+##### getId()
+
+> ```ts
+> getId(): string;
+> ```
+
+
+> Gets the unique identifier of the folder.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The folder ID.
+> > :::
+
+> ##### getName()
+
 > > ```ts
-> > getId(): string;
+> > getName(): string;
 > > ```
-> 
-> 
-> > Gets the unique identifier of the folder.
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: The folder ID.
-> > > :::
-> 
-> > ##### getName()
-> 
-> > > ```ts
-> > > getName(): string;
-> > > ```
-> 
-> 
-> > Gets the name of the folder.
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: The folder name.
-> > > :::
-> 
-> > ##### createFolder()
-> 
-> > > ```ts
-> > > createFolder(properties): Folder;
-> > > ```
-> 
-> 
-> > Creates a new folder within this folder.
-> 
-> > **Parameters**
-> 
+
+
+> Gets the name of the folder.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The folder name.
+> > :::
+
+> ##### createFolder()
+
+> > ```ts
+> > createFolder(properties): Folder;
+> > ```
+
+
+> Creates a new folder within this folder.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `properties` | \{ \[`key`: `string`\]: `any`; \} | A map of CMIS properties for the new folder (must include [Cmis.NAME](#name)). |
@@ -238,11 +235,10 @@ Gets the unique identifier of the repository.
 > 
 > > Retrieves the children of this folder.
 > 
-> > ###### Returns
-> 
-> > `CmisObject`[]
-> 
-> > A list of generic CmisObject wrappers for the children.
+> > > ::: info Returns
+> > > - **Type**: `CmisObject`
+> > > - **Description**: [] A list of generic CmisObject wrappers for the children.
+> > > :::
 > 
 > > ###### Throws
 > 
@@ -302,8 +298,11 @@ Gets the unique identifier of the repository.
 > 
 > > > ::: info Returns
 > > > - **Type**: `void`
-> > > - **Description**: ###### Throws Error if write access is not allowed.
 > > > :::
+> 
+> > ###### Throws
+> 
+> > Error if write access is not allowed.
 > 
 > > ##### rename()
 > 
@@ -322,8 +321,11 @@ Gets the unique identifier of the repository.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws Error if write access is not allowed.
 > :::
+
+###### Throws
+
+Error if write access is not allowed.
 
 ##### deleteTree()
 
@@ -336,8 +338,11 @@ Gets the unique identifier of the repository.
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ###### Throws Error if write access is not allowed.
 > > :::
+
+> ###### Throws
+
+> Error if write access is not allowed.
 
 > ##### getType()
 
@@ -448,8 +453,11 @@ Gets the Java-backed input stream for reading the content.
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ###### Throws Error if write access is not allowed.
 > > :::
+
+> ###### Throws
+
+> Error if write access is not allowed.
 
 > ##### getContentStream()
 
@@ -496,5 +504,8 @@ Gets the Java-backed input stream for reading the content.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws Error if write access is not allowed.
 > :::
+
+###### Throws
+
+Error if write access is not allowed.

@@ -47,12 +47,11 @@ a QR code image represented as a raw byte array.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `text` | `string` | The string content to be encoded in the QR code. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `text` | `string` | The string content to be encoded in the QR code. |
 
-###### Returns
-
-`any`[]
-
-A **JavaScript byte array (any[])** containing the raw QR code image data.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A **JavaScript byte array (any[])** containing the raw QR code image data.
+> :::

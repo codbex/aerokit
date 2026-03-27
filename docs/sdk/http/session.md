@@ -80,11 +80,10 @@ The static Session class provides methods to interact with the current user sess
 > Retrieves an array of all attribute names currently stored in the session.
 > The names are retrieved as a JSON string from the facade and then parsed.
 
-> ###### Returns
-
-> `string`[]
-
-> An array of attribute names (strings), or an empty array if no attributes are present.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of attribute names (strings), or an empty array if no attributes are present.
+> > :::
 
 > ##### getCreationTime()
 
@@ -156,8 +155,17 @@ The static Session class provides methods to interact with the current user sess
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### isNew() > ```ts static isNew(): boolean; ``` Checks if the client does not yet know about the session, typically meaning the server has not yet returned the session ID via a cookie or encoded URL.
 > > :::
+
+> ##### isNew()
+
+> > ```ts
+> > static isNew(): boolean;
+> > ```
+
+
+> Checks if the client does not yet know about the session, typically meaning
+> the server has not yet returned the session ID via a cookie or encoded URL.
 
 > > ::: info Returns
 > > - **Type**: `boolean`
@@ -183,8 +191,16 @@ The static Session class provides methods to interact with the current user sess
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### removeAttribute() > ```ts static removeAttribute(name): void; ``` Removes the attribute with the given name from the session.
 > :::
+
+##### removeAttribute()
+
+> ```ts
+> static removeAttribute(name): void;
+> ```
+
+
+> Removes the attribute with the given name from the session.
 
 > **Parameters**
 
@@ -194,8 +210,17 @@ The static Session class provides methods to interact with the current user sess
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setMaxInactiveInterval() > ```ts static setMaxInactiveInterval(interval): void; ``` Specifies the maximum time interval, in seconds, that the server should keep this session open between client requests before automatically invalidating it.
 > :::
+
+##### setMaxInactiveInterval()
+
+> ```ts
+> static setMaxInactiveInterval(interval): void;
+> ```
+
+
+> Specifies the maximum time interval, in seconds, that the server should keep this session open
+> between client requests before automatically invalidating it.
 
 > **Parameters**
 

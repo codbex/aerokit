@@ -137,19 +137,27 @@ with predefined Apache Camel integration routes.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getBody() > ```ts getBody(): any; ``` Retrieves the body of the message.
 > :::
 
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: The message body (can be any type, e.g., string, object, stream).
-> :::
-
-##### getExchangeProperty()
+##### getBody()
 
 > ```ts
-> getExchangeProperty(propertyName): any;
+> getBody(): any;
 > ```
+
+
+> Retrieves the body of the message.
+
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: The message body (can be any type, e.g., string, object, stream).
+> > :::
+
+> ##### getExchangeProperty()
+
+> > ```ts
+> > getExchangeProperty(propertyName): any;
+> > ```
 
 
 > Retrieves a specific property from the current Exchange context.
@@ -183,20 +191,27 @@ with predefined Apache Camel integration routes.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getExchangeProperties() > ```ts getExchangeProperties(): Record; ``` Retrieves all properties from the current Exchange context.
 > :::
 
-###### Returns
-
-`Record`\
-
-A map of all exchange properties.
-
-##### getBodyAsString()
+##### getExchangeProperties()
 
 > ```ts
-> getBodyAsString(): string;
+> getExchangeProperties(): Record;
 > ```
+
+
+> Retrieves all properties from the current Exchange context.
+
+> > ::: info Returns
+> > - **Type**: `Record`
+> > - **Description**: \ A map of all exchange properties.
+> > :::
+
+> ##### getBodyAsString()
+
+> > ```ts
+> > getBodyAsString(): string;
+> > ```
 
 
 > Retrieves the body of the message as a string.
@@ -223,20 +238,28 @@ A map of all exchange properties.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getHeaders() > ```ts getHeaders(): HeadersMap; ``` Retrieves all headers associated with the message.
 > :::
 
-###### Returns
-
-[`HeadersMap`](#headersmap)
-
-A map of headers.
-
-##### getHeader()
+##### getHeaders()
 
 > ```ts
-> getHeader(key): string | string[];
+> getHeaders(): HeadersMap;
 > ```
+
+
+> Retrieves all headers associated with the message.
+
+> ###### Returns
+
+> [`HeadersMap`](#headersmap)
+
+> A map of headers.
+
+> ##### getHeader()
+
+> > ```ts
+> > getHeader(key): string | string[];
+> > ```
 
 
 > Retrieves a specific header value.
@@ -246,32 +269,39 @@ A map of headers.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `key` | `string` | The header key. |
-> 
-> ###### Returns
-> 
-> `string` \| `string`[]
-> 
-> The header value(s).
-> 
-> ##### setHeaders()
-> 
-> > ```ts
-> > setHeaders(headers): void;
-> > ```
-> 
-> 
-> > Sets multiple headers on the message.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: \| `string`[] The header value(s).
+> :::
+
+##### setHeaders()
+
+> ```ts
+> setHeaders(headers): void;
+> ```
+
+
+> Sets multiple headers on the message.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `headers` | [`HeadersMap`](#headersmap) | The map of headers to set. |
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setHeader() > ```ts setHeader(key, value): void; ``` Sets a single header on the message.
 > :::
+
+##### setHeader()
+
+> ```ts
+> setHeader(key, value): void;
+> ```
+
+
+> Sets a single header on the message.
 
 > **Parameters**
 
@@ -282,8 +312,16 @@ A map of headers.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getCamelMessage() > ```ts getCamelMessage(): any; ``` Retrieves the underlying native Camel Message object.
 > :::
+
+##### getCamelMessage()
+
+> ```ts
+> getCamelMessage(): any;
+> ```
+
+
+Retrieves the underlying native Camel Message object.
 
 > ::: info Returns
 > - **Type**: `any`

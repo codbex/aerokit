@@ -65,8 +65,16 @@ and interfacing with the underlying MailFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### send() > ```ts static send( from, recipients, subject, text, contentType): void; ``` A static convenience method to send a simple email with only a single text or HTML body.
 > :::
+
+##### send()
+
+> ```ts
+> static send( from, recipients, subject, text, contentType): void;
+> ```
+
+
+> A static convenience method to send a simple email with only a single text or HTML body.
 
 > **Parameters**
 
@@ -80,8 +88,21 @@ and interfacing with the underlying MailFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### send() > ```ts send(    from,     _recipients,     subject,     text,     contentType): void; ``` Sends a simple email with a single body part (text or HTML).
 > :::
+
+##### send()
+
+> ```ts
+> send(
+>    from, 
+>    _recipients, 
+>    subject, 
+>    text, 
+>    contentType): void;
+> ```
+
+
+> Sends a simple email with a single body part (text or HTML).
 
 > **Parameters**
 
@@ -95,8 +116,11 @@ and interfacing with the underlying MailFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws Throws an error if the recipient format is invalid or the native call fails.
 > :::
+
+###### Throws
+
+Throws an error if the recipient format is invalid or the native call fails.
 
 ##### sendMultipart()
 
@@ -122,8 +146,11 @@ and interfacing with the underlying MailFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws Throws an error if the recipient format is invalid or the native call fails.
 > :::
+
+###### Throws
+
+Throws an error if the recipient format is invalid or the native call fails.
 
 ## Interfaces
 

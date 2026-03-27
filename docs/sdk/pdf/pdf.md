@@ -58,16 +58,15 @@ Utility class for generating PDF documents using a template engine and the PDFFa
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `data` | [`PDFTableData`](#pdftabledata) | The structured data to populate the table. |
-| `config?` | [`PDFTableConfig`](#pdftableconfig) | Optional configuration for page size and alignment. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `data` | [`PDFTableData`](#pdftabledata) | The structured data to populate the table. |
+> | `config?` | [`PDFTableConfig`](#pdftableconfig) | Optional configuration for page size and alignment. |
 
-###### Returns
-
-`any`[]
-
-The generated PDF content as a byte array (Array).
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The generated PDF content as a byte array (Array).
+> :::
 
 ##### generate()
 
@@ -80,16 +79,15 @@ The generated PDF content as a byte array (Array).
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `templatePath` | `string` | The path to the custom template file (e.g., in the Registry). |
-| `data` | [`PDFTableData`](#pdftabledata) | The data to be injected into the template. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `templatePath` | `string` | The path to the custom template file (e.g., in the Registry). |
+> | `data` | [`PDFTableData`](#pdftabledata) | The data to be injected into the template. |
 
-###### Returns
-
-`any`[]
-
-The generated PDF content as a byte array (Array).
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The generated PDF content as a byte array (Array).
+> :::
 
 ## Interfaces
 

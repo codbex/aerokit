@@ -71,8 +71,16 @@ Utility class for interacting with database sequence objects.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### drop() > ```ts static drop(sequence, datasourceName?): void; ``` Drops (deletes) an existing database sequence.
 > :::
+
+##### drop()
+
+> ```ts
+> static drop(sequence, datasourceName?): void;
+> ```
+
+
+> Drops (deletes) an existing database sequence.
 
 > **Parameters**
 

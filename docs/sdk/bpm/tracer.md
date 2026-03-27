@@ -43,8 +43,14 @@ The Tracer API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### warn() > ```ts warn(message): void; ```
-> > :::
+> :::
+
+##### warn()
+
+> ```ts
+> warn(message): void;
+> ```
+
 
 > **Parameters**
 
@@ -54,8 +60,14 @@ The Tracer API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### error() > ```ts error(message): void; ```
-> > :::
+> :::
+
+##### error()
+
+> ```ts
+> error(message): void;
+> ```
+
 
 > **Parameters**
 
@@ -65,8 +77,14 @@ The Tracer API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### complete() > ```ts complete(message?): void; ```
-> > :::
+> :::
+
+##### complete()
+
+> ```ts
+> complete(message?): void;
+> ```
+
 
 > **Parameters**
 
@@ -76,8 +94,14 @@ The Tracer API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### fail() > ```ts fail(message?): void; ```
-> > :::
+> :::
+
+##### fail()
+
+> ```ts
+> fail(message?): void;
+> ```
+
 
 > **Parameters**
 

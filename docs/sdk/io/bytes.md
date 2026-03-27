@@ -48,67 +48,64 @@ used to bridge data types between the JavaScript environment and native Java com
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `bytes` | `any`[] | The JavaScript array of bytes (e.g., [104, 101, 108, 108, 111]). |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> A native Java byte array (internal representation).
-> 
-> ##### toJavaScriptBytes()
-> 
-> > ```ts
-> > static toJavaScriptBytes(internalBytes): any[];
-> > ```
-> 
-> 
-> > Converts a native Java byte array back to a JavaScript array of numbers.
-> > This is used internally by the API layer to retrieve data from Java methods.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A native Java byte array (internal representation).
+> :::
+
+##### toJavaScriptBytes()
+
+> ```ts
+> static toJavaScriptBytes(internalBytes): any[];
+> ```
+
+
+> Converts a native Java byte array back to a JavaScript array of numbers.
+> This is used internally by the API layer to retrieve data from Java methods.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `internalBytes` | `any`[] | The native Java byte array. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> A JavaScript array containing the byte values (numbers).
-> 
-> ##### textToByteArray()
-> 
-> > ```ts
-> > static textToByteArray(text): any[];
-> > ```
-> 
-> 
-> > Converts a standard text string into a byte array using the default platform encoding.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A JavaScript array containing the byte values (numbers).
+> :::
+
+##### textToByteArray()
+
+> ```ts
+> static textToByteArray(text): any[];
+> ```
+
+
+> Converts a standard text string into a byte array using the default platform encoding.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `text` | `string` | The input text string. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> A JavaScript array representing the bytes of the text.
-> 
-> ##### byteArrayToText()
-> 
-> > ```ts
-> > static byteArrayToText(data): string;
-> > ```
-> 
-> 
-> > Converts a byte array back into a text string.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A JavaScript array representing the bytes of the text.
+> :::
+
+##### byteArrayToText()
+
+> ```ts
+> static byteArrayToText(data): string;
+> ```
+
+
+> Converts a byte array back into a text string.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `data` | `any`[] | The JavaScript array of bytes. |
@@ -133,24 +130,23 @@ used to bridge data types between the JavaScript environment and native Java com
 > | ------ | ------ | ------ |
 > | `value` | `number` | The integer value to convert. |
 > | `byteOrder` | `"BIG_ENDIAN"` \| `"LITTLE_ENDIAN"` | Specifies the byte ordering: "BIG_ENDIAN" (most significant byte first) or "LITTLE_ENDIAN" (least significant byte first). |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> A JavaScript array representing the 4-byte integer.
-> 
-> ##### byteArrayToInt()
-> 
-> > ```ts
-> > static byteArrayToInt(data, byteOrder): number;
-> > ```
-> 
-> 
-> > Converts a 4-byte array back into a 32-bit integer value, respecting the specified byte order.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A JavaScript array representing the 4-byte integer.
+> :::
+
+##### byteArrayToInt()
+
+> ```ts
+> static byteArrayToInt(data, byteOrder): number;
+> ```
+
+
+> Converts a 4-byte array back into a 32-bit integer value, respecting the specified byte order.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `data` | `any`[] | The 4-byte array (JavaScript array of numbers). |

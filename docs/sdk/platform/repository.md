@@ -172,8 +172,16 @@ repository facade to manage resources and collections by path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getCollection() > ```ts static getCollection(path): Collection; ``` Retrieves a collection (folder) object from the repository by its path.
 > :::
+
+##### getCollection()
+
+> ```ts
+> static getCollection(path): Collection;
+> ```
+
+
+> Retrieves a collection (folder) object from the repository by its path.
 
 > **Parameters**
 
@@ -225,8 +233,16 @@ repository facade to manage resources and collections by path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### find() > ```ts static find(path, pattern): string[]; ``` Searches the repository starting from a given path for resources matching a glob pattern.
 > :::
+
+##### find()
+
+> ```ts
+> static find(path, pattern): string[];
+> ```
+
+
+> Searches the repository starting from a given path for resources matching a glob pattern.
 
 > **Parameters**
 
@@ -234,127 +250,148 @@ repository facade to manage resources and collections by path.
 > | ------ | ------ | ------ |
 > | `path` | `string` | The starting path for the search. |
 > | `pattern` | `string` | The glob pattern to match resource names against (e.g., "*.js"). |
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> An array of repository paths (strings) that match the search criteria.
-> 
-> ***
-> 
-> ### Resource
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of repository paths (strings) that match the search criteria. ***
+> :::
+
+### Resource
 
 Retrieves a resource (file) object from the repository by its path.
 
-> 
-> 
-> Resource
-> 
-> #### Description
-> 
-> Represents a file or resource (non-collection) within the Repository,
-> providing instance methods for file operations.
-> 
-> ## Parameters
-> 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `native` | `any` | The native Java object instance representing the repository resource. |
-> 
-> ###### Returns
-> 
-> [`Resource`](#resource)
-> 
-> #### Methods
-> 
-> ##### getName()
-> 
+
+
+Resource
+
+#### Description
+
+Represents a file or resource (non-collection) within the Repository,
+providing instance methods for file operations.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `native` | `any` | The native Java object instance representing the repository resource. |
+
+###### Returns
+
+[`Resource`](#resource)
+
+#### Methods
+
+##### getName()
+
+> ```ts
+> getName(): string;
+> ```
+
+
+> Gets the name of the resource (file name).
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The name.
+> > :::
+
+> ##### getPath()
+
 > > ```ts
-> > getName(): string;
+> > getPath(): string;
 > > ```
-> 
-> 
-> > Gets the name of the resource (file name).
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: The name.
-> > > :::
-> 
-> > ##### getPath()
-> 
-> > > ```ts
-> > > getPath(): string;
-> > > ```
-> 
-> 
-> > Gets the full repository path of the resource.
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: The repository path.
-> > > :::
-> 
-> > ##### getParent()
-> 
-> > > ```ts
-> > > getParent(): Collection;
-> > > ```
-> 
-> 
-> > Gets the parent collection (folder) of this resource.
-> 
-> > ###### Returns
-> 
-> > [`Collection`](#collection)
-> 
-> > The parent Collection instance.
-> 
-> > ##### getInformation()
-> 
-> > > ```ts
-> > > getInformation(): EntityInformation;
-> > > ```
-> 
-> 
-> > Gets detailed metadata about the resource.
-> 
-> > ###### Returns
-> 
-> > [`EntityInformation`](#entityinformation)
-> 
-> > The metadata object.
-> 
-> > ##### create()
-> 
-> > > ```ts
-> > > create(): void;
-> > > ```
-> 
-> 
-> > Creates the resource if it does not already exist.
-> 
-> > > ::: info Returns
-> > > - **Type**: `void`
-> > > - **Description**: ##### delete() > ```ts delete(): void; ``` Deletes the resource from the repository.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `void`
-> > > - **Description**: ##### renameTo() > ```ts renameTo(name): void; ``` Renames the resource within its current collection.
-> > > :::
-> 
-> > **Parameters**
-> 
+
+
+> Gets the full repository path of the resource.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The repository path.
+> > :::
+
+> ##### getParent()
+
+> > ```ts
+> > getParent(): Collection;
+> > ```
+
+
+> Gets the parent collection (folder) of this resource.
+
+> ###### Returns
+
+> [`Collection`](#collection)
+
+> The parent Collection instance.
+
+> ##### getInformation()
+
+> > ```ts
+> > getInformation(): EntityInformation;
+> > ```
+
+
+> Gets detailed metadata about the resource.
+
+> ###### Returns
+
+> [`EntityInformation`](#entityinformation)
+
+> The metadata object.
+
+> ##### create()
+
+> > ```ts
+> > create(): void;
+> > ```
+
+
+> Creates the resource if it does not already exist.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### delete()
+
+> > ```ts
+> > delete(): void;
+> > ```
+
+
+> Deletes the resource from the repository.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### renameTo()
+
+> > ```ts
+> > renameTo(name): void;
+> > ```
+
+
+> Renames the resource within its current collection.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `name` | `string` | The new name for the resource. |
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### moveTo() > ```ts moveTo(path): void; ``` Moves the resource to a new path.
 > :::
+
+##### moveTo()
+
+> ```ts
+> moveTo(path): void;
+> ```
+
+
+> Moves the resource to a new path.
 
 > **Parameters**
 
@@ -364,8 +401,16 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### copyTo() > ```ts copyTo(path): void; ``` Copies the resource to a new path.
 > :::
+
+##### copyTo()
+
+> ```ts
+> copyTo(path): void;
+> ```
+
+
+> Copies the resource to a new path.
 
 > **Parameters**
 
@@ -375,19 +420,27 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### exists() > ```ts exists(): boolean; ``` Checks if the resource currently exists in the repository.
 > :::
 
-> ::: info Returns
-> - **Type**: `boolean`
-> - **Description**: True if the resource exists, false otherwise.
-> :::
-
-##### isEmpty()
+##### exists()
 
 > ```ts
-> isEmpty(): boolean;
+> exists(): boolean;
 > ```
+
+
+> Checks if the resource currently exists in the repository.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the resource exists, false otherwise.
+> > :::
+
+> ##### isEmpty()
+
+> > ```ts
+> > isEmpty(): boolean;
+> > ```
 
 
 > Checks if the resource (file) is empty (has zero size).
@@ -420,11 +473,10 @@ Retrieves a resource (file) object from the repository by its path.
 
 > Gets the content of the resource as a JavaScript-friendly byte array.
 
-> ###### Returns
-
-> `any`[]
-
-> The content bytes.
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
 > ##### getContentNative()
 
@@ -435,11 +487,10 @@ Retrieves a resource (file) object from the repository by its path.
 
 > Gets the content of the resource as its native Java byte array representation.
 
-> ###### Returns
-
-> `any`[]
-
-> The content bytes.
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
 > ##### setText()
 
@@ -459,8 +510,17 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setContent() > ```ts setContent(content): void; ``` Sets the content of the resource using a JavaScript byte array. The array is converted to a native byte array before saving.
 > :::
+
+##### setContent()
+
+> ```ts
+> setContent(content): void;
+> ```
+
+
+> Sets the content of the resource using a JavaScript byte array.
+> The array is converted to a native byte array before saving.
 
 > **Parameters**
 
@@ -470,8 +530,16 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setContentNative() > ```ts setContentNative(content): void; ``` Sets the content of the resource using a native Java byte array.
 > :::
+
+##### setContentNative()
+
+> ```ts
+> setContentNative(content): void;
+> ```
+
+
+> Sets the content of the resource using a native Java byte array.
 
 > **Parameters**
 
@@ -481,19 +549,27 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### isBinary() > ```ts isBinary(): boolean; ``` Checks if the resource content is determined to be binary.
 > :::
 
-> ::: info Returns
-> - **Type**: `boolean`
-> - **Description**: True if binary, false if text.
-> :::
-
-##### getContentType()
+##### isBinary()
 
 > ```ts
-> getContentType(): string;
+> isBinary(): boolean;
 > ```
+
+
+> Checks if the resource content is determined to be binary.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if binary, false if text.
+> > :::
+
+> ##### getContentType()
+
+> > ```ts
+> > getContentType(): string;
+> > ```
 
 
 > Gets the content type (MIME type) of the resource.
@@ -602,13 +678,29 @@ Retrieves a resource (file) object from the repository by its path.
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### delete() > ```ts delete(): void; ``` Deletes the collection from the repository.
 > > :::
+
+> ##### delete()
+
+> > ```ts
+> > delete(): void;
+> > ```
+
+
+> Deletes the collection from the repository.
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### renameTo() > ```ts renameTo(name): void; ``` Renames the collection within its current parent.
 > > :::
+
+> ##### renameTo()
+
+> > ```ts
+> > renameTo(name): void;
+> > ```
+
+
+> Renames the collection within its current parent.
 
 > **Parameters**
 
@@ -618,8 +710,16 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### moveTo() > ```ts moveTo(path): void; ``` Moves the collection to a new path.
 > :::
+
+##### moveTo()
+
+> ```ts
+> moveTo(path): void;
+> ```
+
+
+> Moves the collection to a new path.
 
 > **Parameters**
 
@@ -629,8 +729,16 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### copyTo() > ```ts copyTo(path): void; ``` Copies the collection to a new path.
 > :::
+
+##### copyTo()
+
+> ```ts
+> copyTo(path): void;
+> ```
+
+
+> Copies the collection to a new path.
 
 > **Parameters**
 
@@ -640,19 +748,27 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### exists() > ```ts exists(): boolean; ``` Checks if the collection currently exists in the repository.
 > :::
 
-> ::: info Returns
-> - **Type**: `boolean`
-> - **Description**: True if the collection exists, false otherwise.
-> :::
-
-##### isEmpty()
+##### exists()
 
 > ```ts
-> isEmpty(): boolean;
+> exists(): boolean;
 > ```
+
+
+> Checks if the collection currently exists in the repository.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the collection exists, false otherwise.
+> > :::
+
+> ##### isEmpty()
+
+> > ```ts
+> > isEmpty(): boolean;
+> > ```
 
 
 > Checks if the collection is empty (contains no files or sub-directories).
@@ -671,11 +787,10 @@ Retrieves a resource (file) object from the repository by its path.
 
 > Gets the names of all sub-collections (folders) within this collection.
 
-> ###### Returns
-
-> `string`[]
-
-> An array of sub-collection names.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of sub-collection names.
+> > :::
 
 > ##### createCollection()
 
@@ -736,20 +851,27 @@ Retrieves a resource (file) object from the repository by its path.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getResourcesNames() > ```ts getResourcesNames(): string[]; ``` Gets the names of all resources (files) within this collection.
 > :::
 
-###### Returns
-
-`string`[]
-
-An array of resource names.
-
-##### getResource()
+##### getResourcesNames()
 
 > ```ts
-> getResource(name): Resource;
+> getResourcesNames(): string[];
 > ```
+
+
+> Gets the names of all resources (files) within this collection.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of resource names.
+> > :::
+
+> ##### getResource()
+
+> > ```ts
+> > getResource(name): Resource;
+> > ```
 
 
 > Gets a specific resource (file) by name.
@@ -783,8 +905,16 @@ An array of resource names.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createResource() > ```ts createResource(name, content): Resource; ``` Creates a new resource (file) within this collection.
 > :::
+
+##### createResource()
+
+> ```ts
+> createResource(name, content): Resource;
+> ```
+
+
+> Creates a new resource (file) within this collection.
 
 > **Parameters**
 

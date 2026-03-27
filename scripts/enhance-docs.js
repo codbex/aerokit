@@ -213,7 +213,7 @@ class DocEnhancer {
     });
 
     // Improve return documentation formatting using a callout to separate it clearly
-    content = content.replace(/###### Returns\s*\n\s*`([^`]+)`\s*\n\s*([\s\S]*?)(?=\n#####|\n##|$)/g, (match, type, description) => {
+    content = content.replace(/###### Returns\s*\n\s*`([^`]+)`[ \t]*([\s\S]*?)(?=\n(?:#{2,6})|$)/g, (match, type, description) => {
       const formattedDesc = description.trim().replace(/\n+/g, ' ');
       const descPart = formattedDesc ? `\n> - **Description**: ${formattedDesc}` : '';
       return `> ::: info Returns\n> - **Type**: \`${type.trim()}\`${descPart}\n> :::\n`;

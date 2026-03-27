@@ -184,24 +184,23 @@ The Client API provides...
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `pattern` | `string` | The pattern to match keys against (e.g., "user:*"). |
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> An array of matching keys.
-> 
-> ##### set()
-> 
-> > ```ts
-> > set(key, value): string;
-> > ```
-> 
-> 
-> > Sets the string value of a key.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of matching keys.
+> :::
+
+##### set()
+
+> ```ts
+> set(key, value): string;
+> ```
+
+
+> Sets the string value of a key.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `key` | `string` | The key to set. |
@@ -313,24 +312,23 @@ The Client API provides...
 > | `key` | `string` | The key of the list. |
 > | `start` | `number` | The starting zero-based offset. |
 > | `stop` | `number` | The stopping zero-based offset. |
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> An array of elements in the specified range.
-> 
-> ##### rpop()
-> 
-> > ```ts
-> > rpop(key): string;
-> > ```
-> 
-> 
-> > Removes and returns the last element of the list stored at the key (Right POP).
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of elements in the specified range.
+> :::
+
+##### rpop()
+
+> ```ts
+> rpop(key): string;
+> ```
+
+
+> Removes and returns the last element of the list stored at the key (Right POP).
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `key` | `string` | The key of the list. |

@@ -193,8 +193,16 @@ The logger name is typically used to categorize log messages (e.g., 'com.app.ser
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### debug() > ```ts debug(msg, ..._): void; ``` Logs a message at the DEBUG level.
 > :::
+
+##### debug()
+
+> ```ts
+> debug(msg, ..._): void;
+> ```
+
+
+> Logs a message at the DEBUG level.
 
 > **Parameters**
 
@@ -205,8 +213,16 @@ The logger name is typically used to categorize log messages (e.g., 'com.app.ser
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### info() > ```ts info(msg, ..._): void; ``` Logs a message at the INFO level.
 > :::
+
+##### info()
+
+> ```ts
+> info(msg, ..._): void;
+> ```
+
+
+> Logs a message at the INFO level.
 
 > **Parameters**
 
@@ -217,8 +233,16 @@ The logger name is typically used to categorize log messages (e.g., 'com.app.ser
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### trace() > ```ts trace(msg, ..._): void; ``` Logs a message at the TRACE level.
 > :::
+
+##### trace()
+
+> ```ts
+> trace(msg, ..._): void;
+> ```
+
+
+> Logs a message at the TRACE level.
 
 > **Parameters**
 
@@ -229,8 +253,16 @@ The logger name is typically used to categorize log messages (e.g., 'com.app.ser
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### warn() > ```ts warn(msg, ..._): void; ``` Logs a message at the WARN level.
 > :::
+
+##### warn()
+
+> ```ts
+> warn(msg, ..._): void;
+> ```
+
+
+> Logs a message at the WARN level.
 
 > **Parameters**
 
@@ -241,8 +273,16 @@ The logger name is typically used to categorize log messages (e.g., 'com.app.ser
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### error() > ```ts error(msg, ..._): void; ``` Logs a message at the ERROR level.
 > :::
+
+##### error()
+
+> ```ts
+> error(msg, ..._): void;
+> ```
+
+
+> Logs a message at the ERROR level.
 
 > **Parameters**
 

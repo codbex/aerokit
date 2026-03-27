@@ -42,15 +42,14 @@ against the Dirigible extension model.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `extensionPoint` | `string` | The unique identifier of the extension point (e.g., "my.extension.point"). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `extensionPoint` | `string` | The unique identifier of the extension point (e.g., "my.extension.point"). |
 
-###### Returns
-
-`string`[]
-
-An array of string paths (modules) registered for the given extension point.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of string paths (modules) registered for the given extension point.
+> :::
 
 ##### getExtensionPoints()
 
@@ -61,11 +60,10 @@ An array of string paths (modules) registered for the given extension point.
 
 > Retrieves all available extension point identifiers.
 
-> ###### Returns
-
-> `string`[]
-
-> An array of strings representing all registered extension point IDs.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of strings representing all registered extension point IDs.
+> > :::
 
 > ##### loadExtensionModules()
 
@@ -79,17 +77,16 @@ An array of string paths (modules) registered for the given extension point.
 
 > **Parameters**
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `extensionPoint` | `string` | `undefined` | The unique identifier of the extension point. |
-| `requiredFunctions` | `string`[] | `[]` | An optional list of function names that the extension module must export to be included. |
-| `throwError` | `boolean` | `false` | If true, throws an error on failure; otherwise, logs the error and continues. |
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `extensionPoint` | `string` | `undefined` | The unique identifier of the extension point. |
+> | `requiredFunctions` | `string`[] | `[]` | An optional list of function names that the extension module must export to be included. |
+> | `throwError` | `boolean` | `false` | If true, throws an error on failure; otherwise, logs the error and continues. |
 
-###### Returns
-
-`Promise`\
-
-A Promise that resolves to an array of successfully loaded and validated extension modules (exports).
+> ::: info Returns
+> - **Type**: `Promise`
+> - **Description**: \ A Promise that resolves to an array of successfully loaded and validated extension modules (exports).
+> :::
 
 ##### load()
 
@@ -102,12 +99,13 @@ A Promise that resolves to an array of successfully loaded and validated extensi
 
 > **Parameters**
 
-| Parameter | Type | Default value |
-| ------ | ------ | ------ |
-| `extensionPoint` | `string` | `undefined` |
-| `requiredFunctions` | `string`[] | `[]` |
-| `throwError` | `boolean` | `false` |
+> | Parameter | Type | Default value |
+> | ------ | ------ | ------ |
+> | `extensionPoint` | `string` | `undefined` |
+> | `requiredFunctions` | `string`[] | `[]` |
+> | `throwError` | `boolean` | `false` |
 
-###### Returns
-
-`Promise`\
+> ::: info Returns
+> - **Type**: `Promise`
+> - **Description**: \
+> :::

@@ -50,8 +50,15 @@ within an object structure, typically for persistence or API consumption.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Example > ```ts // Before: { date: "2024-01-01T10:00:00Z" } Converter.setDate(obj, 'date'); // After: { date: 1704096000000 } ```
-> > :::
+> :::
+
+###### Example
+
+> ```ts
+> // Before: { date: "2024-01-01T10:00:00Z" }
+> Converter.setDate(obj, 'date');
+> // After: { date: 1704096000000 }
+> ```
 
 > ##### setLocalDate()
 
@@ -73,8 +80,16 @@ within an object structure, typically for persistence or API consumption.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Example > ```ts // If local timezone is EST (UTC-5): // Before: { date: "2024-01-01" } Converter.setLocalDate(obj, 'date'); // After: { date: "2024-01-01T05:00:00.000Z" } (start of day UTC) ```
-> > :::
+> :::
+
+###### Example
+
+> ```ts
+> // If local timezone is EST (UTC-5):
+> // Before: { date: "2024-01-01" }
+> Converter.setLocalDate(obj, 'date');
+> // After: { date: "2024-01-01T05:00:00.000Z" } (start of day UTC)
+> ```
 
 > ##### setBoolean()
 
@@ -95,5 +110,13 @@ within an object structure, typically for persistence or API consumption.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Example > ```ts // Before: { flag: 1, other: null } Converter.setBoolean(obj, 'flag'); Converter.setBoolean(obj, 'other'); // After: { flag: true, other: false } ```
 > :::
+
+###### Example
+
+> ```ts
+> // Before: { flag: 1, other: null }
+> Converter.setBoolean(obj, 'flag');
+> Converter.setBoolean(obj, 'other');
+> // After: { flag: true, other: false }
+> ```

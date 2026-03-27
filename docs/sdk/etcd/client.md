@@ -57,18 +57,42 @@ Represents the header metadata of an Etcd response.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getClusterId() > ```ts getClusterId(): string; ``` The ID of the cluster which the request was sent to.
 > > :::
+
+> ##### getClusterId()
+
+> > ```ts
+> > getClusterId(): string;
+> > ```
+
+
+> The ID of the cluster which the request was sent to.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getMemberId() > ```ts getMemberId(): string; ``` The ID of the member which the request was handled by.
 > > :::
+
+> ##### getMemberId()
+
+> > ```ts
+> > getMemberId(): string;
+> > ```
+
+
+> The ID of the member which the request was handled by.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getRaftTerm() > ```ts getRaftTerm(): string; ``` The Raft term.
 > > :::
+
+> ##### getRaftTerm()
+
+> > ```ts
+> > getRaftTerm(): string;
+> > ```
+
+
+> The Raft term.
 
 > > ::: info Returns
 > > - **Type**: `string`
@@ -119,13 +143,29 @@ Represents the response object for a Get operation from Etcd.
 
 > > ::: info Returns
 > > - **Type**: `object`
-> > - **Description**: ##### getKvsByteArray() > ```ts getKvsByteArray(): object; ``` Retrieves the Key-Value pairs with values converted to Int8Array (byte arrays).
 > > :::
+
+> ##### getKvsByteArray()
+
+> > ```ts
+> > getKvsByteArray(): object;
+> > ```
+
+
+> Retrieves the Key-Value pairs with values converted to Int8Array (byte arrays).
 
 > > ::: info Returns
 > > - **Type**: `object`
-> > - **Description**: ##### getCount() > ```ts getCount(): number; ``` Retrieves the number of Key-Value pairs returned.
 > > :::
+
+> ##### getCount()
+
+> > ```ts
+> > getCount(): number;
+> > ```
+
+
+> Retrieves the number of Key-Value pairs returned.
 
 > > ::: info Returns
 > > - **Type**: `number`
@@ -164,8 +204,16 @@ Client facade for interacting with the Etcd key-value store.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### putByteArrayValue() > ```ts putByteArrayValue(key, value): void; ``` Puts (writes) a byte array value to the specified key.
 > :::
+
+##### putByteArrayValue()
+
+> ```ts
+> putByteArrayValue(key, value): void;
+> ```
+
+
+> Puts (writes) a byte array value to the specified key.
 
 > **Parameters**
 
@@ -176,8 +224,16 @@ Client facade for interacting with the Etcd key-value store.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getHeader() > ```ts getHeader(key): Header; ``` Retrieves the response header metadata for a key.
 > :::
+
+##### getHeader()
+
+> ```ts
+> getHeader(key): Header;
+> ```
+
+
+> Retrieves the response header metadata for a key.
 
 > **Parameters**
 

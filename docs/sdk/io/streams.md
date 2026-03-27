@@ -57,8 +57,17 @@ manipulation, and data copying.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### copyLarge() > ```ts static copyLarge(input, output): void; ``` Copies all bytes from the input stream to the output stream using a large buffer, suitable for large file transfers.
 > :::
+
+##### copyLarge()
+
+> ```ts
+> static copyLarge(input, output): void;
+> ```
+
+
+> Copies all bytes from the input stream to the output stream using a large buffer,
+> suitable for large file transfers.
 
 > **Parameters**
 
@@ -69,8 +78,17 @@ manipulation, and data copying.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getResourceAsByteArrayInputStream() > ```ts static getResourceAsByteArrayInputStream(path): InputStream; ``` Creates a new [InputStream](#inputstream) from a resource accessible via the class loader. This is typically used to read bundled resources within the application runtime.
 > :::
+
+##### getResourceAsByteArrayInputStream()
+
+> ```ts
+> static getResourceAsByteArrayInputStream(path): InputStream;
+> ```
+
+
+> Creates a new [InputStream](#inputstream) from a resource accessible via the class loader.
+> This is typically used to read bundled resources within the application runtime.
 
 > **Parameters**
 
@@ -219,11 +237,10 @@ This method is generally used for smaller streams.
 > 
 > > Reads all remaining bytes from the stream and returns them as a JavaScript array.
 > 
-> > ###### Returns
-> 
-> > `any`[]
-> 
-> > A JavaScript array (`number[]`) of the byte values.
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: [] A JavaScript array (`number[]`) of the byte values.
+> > > :::
 > 
 > > ##### readBytesNative()
 > 
@@ -234,11 +251,10 @@ This method is generally used for smaller streams.
 > 
 > > Reads all remaining bytes from the stream and returns the native Java byte array.
 > 
-> > ###### Returns
-> 
-> > `any`[]
-> 
-> > The native Java byte array object.
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: [] The native Java byte array object.
+> > > :::
 > 
 > > ##### readText()
 > 
@@ -266,8 +282,16 @@ This method is generally used for smaller streams.
 > 
 > > > ::: info Returns
 > > > - **Type**: `void`
-> > > - **Description**: ##### isValid() > ```ts isValid(): boolean; ``` Checks if the underlying native stream object is defined and non-null.
 > > > :::
+> 
+> > ##### isValid()
+> 
+> > > ```ts
+> > > isValid(): boolean;
+> > > ```
+> 
+> 
+> > Checks if the underlying native stream object is defined and non-null.
 > 
 > > > ::: info Returns
 > > > - **Type**: `boolean`
@@ -322,8 +346,16 @@ This method is generally used for smaller streams.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeBytes() > ```ts writeBytes(data): void; ``` Writes the entire content of a JavaScript byte array to this output stream.
 > :::
+
+##### writeBytes()
+
+> ```ts
+> writeBytes(data): void;
+> ```
+
+
+> Writes the entire content of a JavaScript byte array to this output stream.
 
 > **Parameters**
 
@@ -333,8 +365,16 @@ This method is generally used for smaller streams.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeBytesNative() > ```ts writeBytesNative(data): void; ``` Writes the entire content of a native Java byte array to this output stream.
 > :::
+
+##### writeBytesNative()
+
+> ```ts
+> writeBytesNative(data): void;
+> ```
+
+
+> Writes the entire content of a native Java byte array to this output stream.
 
 > **Parameters**
 
@@ -344,8 +384,17 @@ This method is generally used for smaller streams.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeText() > ```ts writeText(text): void; ``` Converts the string to bytes using the platform's default character encoding and writes them to this output stream.
 > :::
+
+##### writeText()
+
+> ```ts
+> writeText(text): void;
+> ```
+
+
+> Converts the string to bytes using the platform's default character encoding
+> and writes them to this output stream.
 
 > **Parameters**
 
@@ -355,19 +404,35 @@ This method is generally used for smaller streams.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### close() > ```ts close(): void; ``` Closes this output stream and releases any system resources associated with it.
 > :::
+
+##### close()
+
+> ```ts
+> close(): void;
+> ```
+
+
+Closes this output stream and releases any system resources associated with it.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getBytes() > ```ts getBytes(): any[]; ``` Retrieves the content written to this stream as a JavaScript byte array. This is typically used with a ByteArrayOutputStream.
 > :::
 
-###### Returns
+##### getBytes()
 
-`any`[]
+> ```ts
+> getBytes(): any[];
+> ```
 
-A JavaScript array (`number[]`) of the byte values written to the stream.
+
+Retrieves the content written to this stream as a JavaScript byte array.
+This is typically used with a ByteArrayOutputStream.
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A JavaScript array (`number[]`) of the byte values written to the stream.
+> :::
 
 ##### getBytesNative()
 
@@ -379,11 +444,10 @@ A JavaScript array (`number[]`) of the byte values written to the stream.
 Retrieves the content written to this stream as the native Java byte array.
 This is typically used with a ByteArrayOutputStream.
 
-###### Returns
-
-`any`[]
-
-The native Java byte array object.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The native Java byte array object.
+> :::
 
 ##### getText()
 

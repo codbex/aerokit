@@ -48,17 +48,16 @@ Provides static methods for executing INSERT SQL statements.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sql` | `string` | The SQL query to execute, with '?' placeholders for parameters. |
-| `parameters?` | `ParameterValue`[] | An optional array of values to replace the '?' placeholders. |
-| `datasourceName?` | `string` | The name of the database connection to use (optional). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute, with '?' placeholders for parameters. |
+> | `parameters?` | `ParameterValue`[] | An optional array of values to replace the '?' placeholders. |
+> | `datasourceName?` | `string` | The name of the database connection to use (optional). |
 
-###### Returns
-
-`Record`\[]
-
-An array of records representing the result of the insertion (e.g., generated keys).
+> ::: info Returns
+> - **Type**: `Record`
+> - **Description**: \[] An array of records representing the result of the insertion (e.g., generated keys).
+> :::
 
 ##### executeMany()
 
@@ -72,17 +71,16 @@ An array of records representing the result of the insertion (e.g., generated ke
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sql` | `string` | The SQL query to execute, with '?' placeholders for parameters. |
-| `parameters?` | `ParameterValue`[][] | An optional array of parameter arrays, where each inner array corresponds to one execution of the SQL statement. |
-| `datasourceName?` | `string` | The name of the database connection to use (optional). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute, with '?' placeholders for parameters. |
+> | `parameters?` | `ParameterValue`[][] | An optional array of parameter arrays, where each inner array corresponds to one execution of the SQL statement. |
+> | `datasourceName?` | `string` | The name of the database connection to use (optional). |
 
-###### Returns
-
-`Record`\[]
-
-An array of records representing the results of the batched insertions.
+> ::: info Returns
+> - **Type**: `Record`
+> - **Description**: \[] An array of records representing the results of the batched insertions.
+> :::
 
 ## Interfaces
 

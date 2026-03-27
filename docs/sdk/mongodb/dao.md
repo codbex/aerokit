@@ -60,8 +60,14 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createNoSQLEntity() > ```ts createNoSQLEntity(entity): any; ```
-> > :::
+> :::
+
+##### createNoSQLEntity()
+
+> ```ts
+> createNoSQLEntity(entity): any;
+> ```
+
 
 > **Parameters**
 
@@ -71,8 +77,14 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### validateEntity() > ```ts validateEntity(entity, skip): void; ```
-> > :::
+> :::
+
+##### validateEntity()
+
+> ```ts
+> validateEntity(entity, skip): void;
+> ```
+
 
 > **Parameters**
 
@@ -83,8 +95,14 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### insert() > ```ts insert(_entity): any; ```
-> > :::
+> :::
+
+##### insert()
+
+> ```ts
+> insert(_entity): any;
+> ```
+
 
 > **Parameters**
 
@@ -94,8 +112,14 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### update() > ```ts update(entity): DAO; ```
-> > :::
+> :::
+
+##### update()
+
+> ```ts
+> update(entity): DAO;
+> ```
+
 
 > **Parameters**
 
@@ -122,8 +146,14 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### expand() > ```ts expand(expansionPath, context): void; ```
-> > :::
+> :::
+
+##### expand()
+
+> ```ts
+> expand(expansionPath, context): void;
+> ```
+
 
 > **Parameters**
 
@@ -134,8 +164,17 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### find() > ```ts find(    id,     expand,     select): any; ```
-> > :::
+> :::
+
+##### find()
+
+> ```ts
+> find(
+>    id, 
+>    expand, 
+>    select): any;
+> ```
+
 
 > **Parameters**
 
@@ -147,40 +186,65 @@ The Dao API provides...
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### count() > ```ts count(): number; ```
-> > :::
+> :::
+
+##### count()
+
+> ```ts
+> count(): number;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ##### list() > ```ts list(settings): any[]; ```
 > > :::
+
+> ##### list()
+
+> > ```ts
+> > list(settings): any[];
+> > ```
+
 
 > **Parameters**
 
 > | Parameter | Type |
 > | ------ | ------ |
 > | `settings` | `any` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### existsTable()
-> 
-> > ```ts
-> > existsTable(): boolean;
-> > ```
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
+
+##### existsTable()
+
+> ```ts
+> existsTable(): boolean;
+> ```
+
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### createTable() > ```ts createTable(): void; ```
 > :::
+
+##### createTable()
+
+> ```ts
+> createTable(): void;
+> ```
+
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### dropTable() > ```ts dropTable(): DAO; ```
 > :::
+
+##### dropTable()
+
+> ```ts
+> dropTable(): DAO;
+> ```
+
 
 ###### Returns
 

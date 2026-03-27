@@ -89,8 +89,16 @@ including starting, updating metadata, and managing variables.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### updateBusinessKey() > ```ts static updateBusinessKey(processInstanceId, businessKey): void; ``` Updates the business key of an existing process instance.
 > :::
+
+##### updateBusinessKey()
+
+> ```ts
+> static updateBusinessKey(processInstanceId, businessKey): void;
+> ```
+
+
+> Updates the business key of an existing process instance.
 
 > **Parameters**
 
@@ -101,8 +109,16 @@ including starting, updating metadata, and managing variables.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### updateBusinessStatus() > ```ts static updateBusinessStatus(processInstanceId, businessStatus): void; ``` Updates the business status of an existing process instance.
 > :::
+
+##### updateBusinessStatus()
+
+> ```ts
+> static updateBusinessStatus(processInstanceId, businessStatus): void;
+> ```
+
+
+> Updates the business status of an existing process instance.
 
 > **Parameters**
 
@@ -113,8 +129,16 @@ including starting, updating metadata, and managing variables.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getVariable() > ```ts static getVariable(processInstanceId, variableName): any; ``` Retrieves the value of a specific variable from a process instance.
 > :::
+
+##### getVariable()
+
+> ```ts
+> static getVariable(processInstanceId, variableName): any;
+> ```
+
+
+> Retrieves the value of a specific variable from a process instance.
 
 > **Parameters**
 
@@ -167,8 +191,16 @@ including starting, updating metadata, and managing variables.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### removeVariable() > ```ts static removeVariable(processInstanceId, variableName): void; ``` Removes a variable from a process instance.
 > :::
+
+##### removeVariable()
+
+> ```ts
+> static removeVariable(processInstanceId, variableName): void;
+> ```
+
+
+> Removes a variable from a process instance.
 
 > **Parameters**
 
@@ -179,8 +211,16 @@ including starting, updating metadata, and managing variables.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### correlateMessageEvent() > ```ts static correlateMessageEvent( processInstanceId, messageName, variables): void; ``` Correlates a message event with a running process instance.
 > :::
+
+##### correlateMessageEvent()
+
+> ```ts
+> static correlateMessageEvent( processInstanceId, messageName, variables): void;
+> ```
+
+
+> Correlates a message event with a running process instance.
 
 > **Parameters**
 
@@ -192,8 +232,16 @@ including starting, updating metadata, and managing variables.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getExecutionContext() > ```ts static getExecutionContext(): ExecutionContext; ``` Retrieves the current execution context object, typically used within an execution listener or service task.
 > :::
+
+##### getExecutionContext()
+
+> ```ts
+> static getExecutionContext(): ExecutionContext;
+> ```
+
+
+Retrieves the current execution context object, typically used within an execution listener or service task.
 
 > ::: info Returns
 > - **Type**: `ExecutionContext`

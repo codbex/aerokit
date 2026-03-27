@@ -48,8 +48,17 @@ The Consumer API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### stopListening() > ```ts static stopListening(queue, handler): void; ``` Stops the message listener previously started on a specified RabbitMQ queue for a given handler.
 > :::
+
+##### stopListening()
+
+> ```ts
+> static stopListening(queue, handler): void;
+> ```
+
+
+> Stops the message listener previously started on a specified RabbitMQ queue
+> for a given handler.
 
 > **Parameters**
 

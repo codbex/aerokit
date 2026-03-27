@@ -59,8 +59,16 @@ at both file path level and stream level.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### unzip() > ```ts static unzip(zipPath, targetPath): void; ``` Unzips an existing ZIP file into a target directory.
 > :::
+
+##### unzip()
+
+> ```ts
+> static unzip(zipPath, targetPath): void;
+> ```
+
+
+> Unzips an existing ZIP file into a target directory.
 
 > **Parameters**
 
@@ -71,8 +79,18 @@ at both file path level and stream level.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createZipInputStream() > ```ts static createZipInputStream(inputStream): ZipInputStream; ``` Creates a [ZipInputStream](#zipinputstream) that reads ZIP archive data from a provided generic InputStream. This allows for reading ZIP entries without writing the archive to disk first.
 > :::
+
+##### createZipInputStream()
+
+> ```ts
+> static createZipInputStream(inputStream): ZipInputStream;
+> ```
+
+
+> Creates a [ZipInputStream](#zipinputstream) that reads ZIP archive data from a provided
+> generic InputStream. This allows for reading ZIP entries without
+> writing the archive to disk first.
 
 > **Parameters**
 
@@ -157,11 +175,10 @@ Zips the content of a source directory or file into a target ZIP file.
 > 
 > > Reads the data for the current entry and returns it as a JavaScript byte array.
 > 
-> > ###### Returns
-> 
-> > `any`[]
-> 
-> > A JavaScript array (`number[]`) of the byte values for the current entry.
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: [] A JavaScript array (`number[]`) of the byte values for the current entry.
+> > > :::
 > 
 > > ##### readNative()
 > 
@@ -172,11 +189,10 @@ Zips the content of a source directory or file into a target ZIP file.
 > 
 > > Reads the data for the current entry and returns the native Java byte array.
 > 
-> > ###### Returns
-> 
-> > `any`[]
-> 
-> > The native Java byte array object.
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: [] The native Java byte array object.
+> > > :::
 > 
 > > ##### readText()
 > 
@@ -272,8 +288,16 @@ Zips the content of a source directory or file into a target ZIP file.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeNative() > ```ts writeNative(data): void; ``` Writes the data from a native Java byte array to the current active entry in the stream.
 > :::
+
+##### writeNative()
+
+> ```ts
+> writeNative(data): void;
+> ```
+
+
+> Writes the data from a native Java byte array to the current active entry in the stream.
 
 > **Parameters**
 
@@ -283,8 +307,16 @@ Zips the content of a source directory or file into a target ZIP file.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeText() > ```ts writeText(text): void; ``` Converts the string to bytes and writes it to the current active entry in the stream.
 > :::
+
+##### writeText()
+
+> ```ts
+> writeText(text): void;
+> ```
+
+
+> Converts the string to bytes and writes it to the current active entry in the stream.
 
 > **Parameters**
 
@@ -294,13 +326,30 @@ Zips the content of a source directory or file into a target ZIP file.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### closeEntry() > ```ts closeEntry(): void; ``` Closes the current active ZIP entry and positions the stream for the next entry.
 > :::
+
+##### closeEntry()
+
+> ```ts
+> closeEntry(): void;
+> ```
+
+
+Closes the current active ZIP entry and positions the stream for the next entry.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### close() > ```ts close(): void; ``` Finalizes the writing of the ZIP file, flushes the stream, and closes the native object. This must be called after all entries have been written.
 > :::
+
+##### close()
+
+> ```ts
+> close(): void;
+> ```
+
+
+Finalizes the writing of the ZIP file, flushes the stream, and closes the native object.
+This must be called after all entries have been written.
 
 > ::: info Returns
 > - **Type**: `void`

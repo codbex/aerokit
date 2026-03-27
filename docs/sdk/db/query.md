@@ -46,18 +46,17 @@ Provides static methods for executing parameterized SQL SELECT statements.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sql` | `string` | The SQL query to execute. |
-| `parameters?` | \| `string` \| ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](#typedqueryparameter) \| [`NamedQueryParameter`](#namedqueryparameter))[] | An optional array of values (primitives, TypedQueryParameter or NamedQueryParameter objects) to replace '?' or :paramName placeholders. |
-| `datasourceName?` | `string` | The name of the database connection to use (optional). |
-| `formatting?` | [`FormattingParameter`](#formattingparameter) | Optional formatting parameters for the result set (e.g., date format). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute. |
+> | `parameters?` | \| `string` \| ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](#typedqueryparameter) \| [`NamedQueryParameter`](#namedqueryparameter))[] | An optional array of values (primitives, TypedQueryParameter or NamedQueryParameter objects) to replace '?' or :paramName placeholders. |
+> | `datasourceName?` | `string` | The name of the database connection to use (optional). |
+> | `formatting?` | [`FormattingParameter`](#formattingparameter) | Optional formatting parameters for the result set (e.g., date format). |
 
-###### Returns
-
-`any`[]
-
-An array of records representing the query results.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of records representing the query results.
+> :::
 
 ##### executeNamed()
 
@@ -70,17 +69,16 @@ An array of records representing the query results.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sql` | `string` | The SQL query to execute. |
-| `parameters?` | [`NamedQueryParameter`](#namedqueryparameter)[] | An optional array of NamedQueryParameter objects. |
-| `datasourceName?` | `string` | The name of the database connection to use (optional). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute. |
+> | `parameters?` | [`NamedQueryParameter`](#namedqueryparameter)[] | An optional array of NamedQueryParameter objects. |
+> | `datasourceName?` | `string` | The name of the database connection to use (optional). |
 
-###### Returns
-
-`any`[]
-
-An array of records representing the query results.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of records representing the query results.
+> :::
 
 ## Interfaces
 

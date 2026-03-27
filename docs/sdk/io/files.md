@@ -282,45 +282,43 @@ including checking properties, reading/writing content, and navigating the struc
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `path` | `string` | The path to the file. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> A JavaScript array of byte values.
-> 
-> ##### readBytesNative()
-> 
-> > ```ts
-> > static readBytesNative(path): any[];
-> > ```
-> 
-> 
-> > Reads all bytes from a file and returns the native Java byte array object.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A JavaScript array of byte values.
+> :::
+
+##### readBytesNative()
+
+> ```ts
+> static readBytesNative(path): any[];
+> ```
+
+
+> Reads all bytes from a file and returns the native Java byte array object.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `path` | `string` | The path to the file. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> The native Java byte array.
-> 
-> ##### readText()
-> 
-> > ```ts
-> > static readText(path): string;
-> > ```
-> 
-> 
-> > Reads all text content from a file using the platform's default character encoding.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The native Java byte array.
+> :::
+
+##### readText()
+
+> ```ts
+> static readText(path): string;
+> ```
+
+
+> Reads all text content from a file using the platform's default character encoding.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `path` | `string` | The path to the file. |
@@ -351,8 +349,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeBytesNative() > ```ts static writeBytesNative(path, data): void; ``` Writes the content of a native Java byte array to a file. Overwrites existing content.
 > :::
+
+##### writeBytesNative()
+
+> ```ts
+> static writeBytesNative(path, data): void;
+> ```
+
+
+> Writes the content of a native Java byte array to a file. Overwrites existing content.
 
 > **Parameters**
 
@@ -363,8 +369,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### writeText() > ```ts static writeText(path, text): void; ``` Writes a string of text to a file using the platform's default character encoding. Overwrites existing content.
 > :::
+
+##### writeText()
+
+> ```ts
+> static writeText(path, text): void;
+> ```
+
+
+> Writes a string of text to a file using the platform's default character encoding. Overwrites existing content.
 
 > **Parameters**
 
@@ -375,8 +389,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getLastModified() > ```ts static getLastModified(path): Date; ``` Gets the last modified time of the file or directory.
 > :::
+
+##### getLastModified()
+
+> ```ts
+> static getLastModified(path): Date;
+> ```
+
+
+> Gets the last modified time of the file or directory.
 
 > **Parameters**
 
@@ -407,8 +429,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getOwner() > ```ts static getOwner(path): string; ``` Gets the owner of the file or directory.
 > :::
+
+##### getOwner()
+
+> ```ts
+> static getOwner(path): string;
+> ```
+
+
+> Gets the owner of the file or directory.
 
 > **Parameters**
 
@@ -439,8 +469,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getPermissions() > ```ts static getPermissions(path): string; ``` Gets the permissions string for the file or directory (implementation dependent).
 > :::
+
+##### getPermissions()
+
+> ```ts
+> static getPermissions(path): string;
+> ```
+
+
+> Gets the permissions string for the file or directory (implementation dependent).
 
 > **Parameters**
 
@@ -471,8 +509,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### size() > ```ts static size(path): number; ``` Gets the size of the file in bytes.
 > :::
+
+##### size()
+
+> ```ts
+> static size(path): number;
+> ```
+
+
+> Gets the size of the file in bytes.
 
 > **Parameters**
 
@@ -502,8 +548,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createDirectory() > ```ts static createDirectory(path): void; ``` Creates a new directory at the specified path.
 > :::
+
+##### createDirectory()
+
+> ```ts
+> static createDirectory(path): void;
+> ```
+
+
+> Creates a new directory at the specified path.
 
 > **Parameters**
 
@@ -513,8 +567,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### copy() > ```ts static copy(source, target): void; ``` Copies a file or directory from a source path to a target path.
 > :::
+
+##### copy()
+
+> ```ts
+> static copy(source, target): void;
+> ```
+
+
+> Copies a file or directory from a source path to a target path.
 
 > **Parameters**
 
@@ -525,8 +587,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### move() > ```ts static move(source, target): void; ``` Moves or renames a file or directory.
 > :::
+
+##### move()
+
+> ```ts
+> static move(source, target): void;
+> ```
+
+
+> Moves or renames a file or directory.
 
 > **Parameters**
 
@@ -537,8 +607,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteFile() > ```ts static deleteFile(path): void; ``` Deletes the file at the specified path.
 > :::
+
+##### deleteFile()
+
+> ```ts
+> static deleteFile(path): void;
+> ```
+
+
+> Deletes the file at the specified path.
 
 > **Parameters**
 
@@ -548,8 +626,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteDirectory() > ```ts static deleteDirectory(path, forced?): void; ``` Deletes the directory at the specified path.
 > :::
+
+##### deleteDirectory()
+
+> ```ts
+> static deleteDirectory(path, forced?): void;
+> ```
+
+
+> Deletes the directory at the specified path.
 
 > **Parameters**
 
@@ -560,8 +646,16 @@ including checking properties, reading/writing content, and navigating the struc
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createTempFile() > ```ts static createTempFile(prefix, suffix): string; ``` Creates a new temporary file with the given prefix and suffix.
 > :::
+
+##### createTempFile()
+
+> ```ts
+> static createTempFile(prefix, suffix): string;
+> ```
+
+
+> Creates a new temporary file with the given prefix and suffix.
 
 > **Parameters**
 
@@ -646,36 +740,35 @@ including checking properties, reading/writing content, and navigating the struc
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the folder to traverse. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the folder to traverse. |
+> 
+> ###### Returns
+> 
+> [`FolderObject`](#folderobject)[]
+> 
+> The root FolderObject containing the file system tree structure.
+> 
+> ##### list()
+> 
+> > ```ts
+> > static list(path): string[];
+> > ```
+> 
+> 
+> > Lists the direct children (files and folders) of a directory, returning only their paths.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The path to the directory. |
 
-###### Returns
-
-[`FolderObject`](#folderobject)[]
-
-The root FolderObject containing the file system tree structure.
-
-##### list()
-
-> ```ts
-> static list(path): string[];
-> ```
-
-
-> Lists the direct children (files and folders) of a directory, returning only their paths.
-
-> **Parameters**
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The path to the directory. |
-
-###### Returns
-
-`string`[]
-
-An array of string paths for the contents of the directory.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of string paths for the contents of the directory.
+> :::
 
 ##### find()
 
@@ -688,16 +781,15 @@ An array of string paths for the contents of the directory.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `path` | `string` | The starting path for the search. |
-| `pattern` | `string` | The glob pattern to match (e.g., "*.js", "**.txt"). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `path` | `string` | The starting path for the search. |
+> | `pattern` | `string` | The glob pattern to match (e.g., "*.js", "**.txt"). |
 
-###### Returns
-
-`string`[]
-
-An array of string paths that match the pattern.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of string paths that match the pattern.
+> :::
 
 ## Interfaces
 

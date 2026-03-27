@@ -124,8 +124,16 @@ store for the HttpController.
 > 
 > > > ::: info Returns
 > > > - **Type**: `object`
-> > > - **Description**: ##### readonly() > ```ts readonly(): this; ``` Removes all but GET resource handlers from all managed resources, making them read-only.
 > > > :::
+> 
+> > ##### readonly()
+> 
+> > > ```ts
+> > > readonly(): this;
+> > > ```
+> 
+> 
+> > Removes all but GET resource handlers from all managed resources, making them read-only.
 > 
 > > > ::: info Returns
 > > > - **Type**: `this`

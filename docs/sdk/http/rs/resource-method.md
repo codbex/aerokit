@@ -122,38 +122,94 @@ rs.service()
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### get() > ```ts get(): any; ``` Delegates to the parent Resource's 'get' method.
 > > :::
+
+> ##### get()
+
+> > ```ts
+> > get(): any;
+> > ```
+
+
+> Delegates to the parent Resource's 'get' method.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### post() > ```ts post(): any; ``` Delegates to the parent Resource's 'post' method.
 > > :::
+
+> ##### post()
+
+> > ```ts
+> > post(): any;
+> > ```
+
+
+> Delegates to the parent Resource's 'post' method.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### put() > ```ts put(): any; ``` Delegates to the parent Resource's 'put' method.
 > > :::
+
+> ##### put()
+
+> > ```ts
+> > put(): any;
+> > ```
+
+
+> Delegates to the parent Resource's 'put' method.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### delete() > ```ts delete(): any; ``` Delegates to the parent Resource's 'delete' method.
 > > :::
+
+> ##### delete()
+
+> > ```ts
+> > delete(): any;
+> > ```
+
+
+> Delegates to the parent Resource's 'delete' method.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### remove() > ```ts remove(): any; ``` Delegates to the parent Resource's 'remove' method.
 > > :::
+
+> ##### remove()
+
+> > ```ts
+> > remove(): any;
+> > ```
+
+
+> Delegates to the parent Resource's 'remove' method.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### method() > ```ts method(): any; ``` Delegates to the parent Resource's 'method' method.
 > > :::
+
+> ##### method()
+
+> > ```ts
+> > method(): any;
+> > ```
+
+
+> Delegates to the parent Resource's 'method' method.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### configuration() > ```ts configuration(): ResourceMethodConfig; ``` Returns the configuration object for this ResourceMethod instance.
 > > :::
+
+> ##### configuration()
+
+> > ```ts
+> > configuration(): ResourceMethodConfig;
+> > ```
+
+
+> Returns the configuration object for this ResourceMethod instance.
 
 > > ::: info Returns
 > > - **Type**: `ResourceMethodConfig`

@@ -63,15 +63,14 @@ Constructs a new Resource instance, initialized with the supplied path parameter
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `sPath?` | `string` | The path property to be set for this resource. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sPath?` | `string` | The path property to be set for this resource. |
 
-###### Returns
-
-`string` \| [`Resource`](#resource)
-
-The resource instance for method chaining (setter mode), or the path set for this resource (getter mode).
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: \| [`Resource`](#resource) The resource instance for method chaining (setter mode), or the path set for this resource (getter mode).
+> :::
 
 ##### method()
 

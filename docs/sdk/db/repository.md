@@ -54,45 +54,72 @@ It handles entity metadata lookup, CRUD operations, translation, and event trigg
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTableName() > ```ts protected getTableName(): string; ```
 > > :::
+
+> ##### getTableName()
+
+> > ```ts
+> > protected getTableName(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getIdName() > ```ts protected getIdName(): string; ```
 > > :::
+
+> ##### getIdName()
+
+> > ```ts
+> > protected getIdName(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getIdColumn() > ```ts protected getIdColumn(): string; ```
 > > :::
+
+> ##### getIdColumn()
+
+> > ```ts
+> > protected getIdColumn(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### findAll() > ```ts findAll(options?): T[]; ``` Finds all entities matching the given options.
 > > :::
+
+> ##### findAll()
+
+> > ```ts
+> > findAll(options?): T[];
+> > ```
+
+
+> Finds all entities matching the given options.
 
 > **Parameters**
 
 > | Parameter | Type |
 > | ------ | ------ |
 > | `options` | `Options` |
-> 
-> ###### Returns
-> 
-> `T`[]
-> 
-> ##### findById()
-> 
-> > ```ts
-> > findById(id, options?): T;
-> > ```
-> 
-> 
-> > Finds a single entity by its primary key ID.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `T`
+> - **Description**: []
+> :::
+
+##### findById()
+
+> ```ts
+> findById(id, options?): T;
+> ```
+
+
+> Finds a single entity by its primary key ID.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `id` | `string` \| `number` |
@@ -100,73 +127,96 @@ It handles entity metadata lookup, CRUD operations, translation, and event trigg
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### create() > ```ts create(entity): string | number; ``` Creates a new entity in the database.
 > :::
+
+##### create()
+
+> ```ts
+> create(entity): string | number;
+> ```
+
+
+> Creates a new entity in the database.
 
 > **Parameters**
 
 > | Parameter | Type |
 > | ------ | ------ |
 > | `entity` | `T` |
-> 
-> ###### Returns
-> 
-> `string` \| `number`
-> 
-> The generated ID (string or number).
-> 
-> ##### update()
-> 
-> > ```ts
-> > update(entity): void;
-> > ```
-> 
-> 
-> > Updates an existing entity.
-> > The entity must contain the primary key.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: \| `number` The generated ID (string or number).
+> :::
+
+##### update()
+
+> ```ts
+> update(entity): void;
+> ```
+
+
+> Updates an existing entity.
+> The entity must contain the primary key.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `entity` | `T` |
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### upsert() > ```ts upsert(entity): string | number; ``` Creates the entity if the ID is null/undefined, otherwise updates it. If an ID is provided but the entity doesn't exist, it creates it.
 > :::
+
+##### upsert()
+
+> ```ts
+> upsert(entity): string | number;
+> ```
+
+
+> Creates the entity if the ID is null/undefined, otherwise updates it.
+> If an ID is provided but the entity doesn't exist, it creates it.
 
 > **Parameters**
 
 > | Parameter | Type |
 > | ------ | ------ |
 > | `entity` | `T` |
-> 
-> ###### Returns
-> 
-> `string` \| `number`
-> 
-> The entity's ID.
-> 
-> ##### deleteById()
-> 
-> > ```ts
-> > deleteById(id): void;
-> > ```
-> 
-> 
-> > Deletes an entity by its primary key ID.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: \| `number` The entity's ID.
+> :::
+
+##### deleteById()
+
+> ```ts
+> deleteById(id): void;
+> ```
+
+
+> Deletes an entity by its primary key ID.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `id` | `string` \| `number` |
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### count() > ```ts count(options?): number; ``` Counts the number of entities matching the given options.
 > :::
+
+##### count()
+
+> ```ts
+> count(options?): number;
+> ```
+
+
+> Counts the number of entities matching the given options.
 
 > **Parameters**
 
@@ -176,18 +226,27 @@ It handles entity metadata lookup, CRUD operations, translation, and event trigg
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### triggerEvent() > ```ts protected triggerEvent(_data): Promise; ``` Protected method intended for subclass overriding or internal event handling.
 > :::
+
+##### triggerEvent()
+
+> ```ts
+> protected triggerEvent(_data): Promise;
+> ```
+
+
+> Protected method intended for subclass overriding or internal event handling.
 
 > **Parameters**
 
-| Parameter | Type |
-| ------ | ------ |
-| `_data` | [`EntityEvent`](#entityevent)\ |
+> | Parameter | Type |
+> | ------ | ------ |
+> | `_data` | [`EntityEvent`](#entityevent)\ |
 
-###### Returns
-
-`Promise`\
+> ::: info Returns
+> - **Type**: `Promise`
+> - **Description**: \
+> :::
 
 ## Interfaces
 

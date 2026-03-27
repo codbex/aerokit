@@ -87,8 +87,16 @@ The Cache API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### delete() > ```ts static delete(key): void; ``` Removes the key and its associated value from the cache.
 > :::
+
+##### delete()
+
+> ```ts
+> static delete(key): void;
+> ```
+
+
+> Removes the key and its associated value from the cache.
 
 > **Parameters**
 
@@ -98,8 +106,16 @@ The Cache API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### clear() > ```ts static clear(): void; ``` Clears all entries from the cache.
 > :::
+
+##### clear()
+
+> ```ts
+> static clear(): void;
+> ```
+
+
+Clears all entries from the cache.
 
 > ::: info Returns
 > - **Type**: `void`

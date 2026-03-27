@@ -81,9 +81,10 @@ API Tasks
 > ```
 
 
-> ###### Returns
-
-> `TaskData`[]
+> > ::: info Returns
+> > - **Type**: `TaskData`
+> > - **Description**: []
+> > :::
 
 > ##### getVariable()
 
@@ -101,28 +102,37 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getVariables() > ```ts static getVariables(taskId): Map; ``` Returns all variables. This will include all variables of parent scopes too.
 > :::
+
+##### getVariables()
+
+> ```ts
+> static getVariables(taskId): Map;
+> ```
+
+
+> Returns all variables. This will include all variables of parent scopes too.
 
 > **Parameters**
 
 > | Parameter | Type |
 > | ------ | ------ |
 > | `taskId` | `string` |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> ##### setVariable()
-> 
-> > ```ts
-> > static setVariable( taskId, variableName, value): void;
-> > ```
-> 
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \
+> :::
+
+##### setVariable()
+
+> ```ts
+> static setVariable( taskId, variableName, value): void;
+> ```
+
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `taskId` | `string` |
@@ -131,8 +141,14 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setVariables() > ```ts static setVariables(taskId, variables): void; ```
-> > :::
+> :::
+
+##### setVariables()
+
+> ```ts
+> static setVariables(taskId, variables): void;
+> ```
+
 
 > **Parameters**
 
@@ -143,8 +159,14 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### complete() > ```ts static complete(taskId, variables?): void; ```
-> > :::
+> :::
+
+##### complete()
+
+> ```ts
+> static complete(taskId, variables?): void;
+> ```
+
 
 > **Parameters**
 
@@ -155,8 +177,14 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getTaskService() > ```ts static getTaskService(): TaskService; ```
-> > :::
+> :::
+
+##### getTaskService()
+
+> ```ts
+> static getTaskService(): TaskService;
+> ```
+
 
 > ###### Returns
 
@@ -235,8 +263,17 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### bulkSaveTasks() > ```ts bulkSaveTasks(taskList): void; ``` Saves the given tasks to the persistent data store. If the tasks are already present in the persistent store, it is updated. After a new task has been saved, the task instance passed into this method is updated with the id of the newly created task.
 > :::
+
+##### bulkSaveTasks()
+
+> ```ts
+> bulkSaveTasks(taskList): void;
+> ```
+
+
+> Saves the given tasks to the persistent data store. If the tasks are already present in the persistent store, it is updated. After a new task has been saved, the task instance passed into this
+> method is updated with the id of the newly created task.
 
 > **Parameters**
 
@@ -246,8 +283,16 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteTask() > ```ts deleteTask(taskId, cascade?): void; ``` Deletes the given task, not deleting historic information that is related to this task.
 > :::
+
+##### deleteTask()
+
+> ```ts
+> deleteTask(taskId, cascade?): void;
+> ```
+
+
+> Deletes the given task, not deleting historic information that is related to this task.
 
 > **Parameters**
 
@@ -258,8 +303,12 @@ API Tasks
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task with given id does not exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task with given id does not exist.
 
 ###### Throws
 
@@ -284,8 +333,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when one of the task does not exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when one of the task does not exist.
 
 ###### Throws
 
@@ -310,8 +363,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task with given id does not exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task with given id does not exist.
 
 ###### Throws
 
@@ -336,8 +393,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when one of the tasks does not exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when one of the tasks does not exist.
 
 ###### Throws
 
@@ -363,8 +424,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task doesn't exist.
 
 ###### Throws
 
@@ -388,8 +453,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task doesn't exist.
 
 ##### startProgress()
 
@@ -409,8 +478,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task doesn't exist.
 
 ##### suspendTask()
 
@@ -430,8 +503,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task doesn't exist.
 
 ##### activateTask()
 
@@ -451,8 +528,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task doesn't exist.
 
 ##### delegateTask()
 
@@ -473,8 +554,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when no task exists with the given id.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task exists with the given id.
 
 ##### resolveTask()
 
@@ -499,8 +584,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when no task exists with the given id.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task exists with the given id.
 
 ##### complete()
 
@@ -528,8 +617,12 @@ org.flowable.common.engine.api.FlowableTaskAlreadyClaimedException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when no task exists with the given id.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task exists with the given id.
 
 ###### Throws
 
@@ -566,8 +659,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when no task exists with the given id.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task exists with the given id.
 
 ##### getTaskFormModel()
 
@@ -612,8 +709,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or user doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or user doesn't exist.
 
 ##### setOwner()
 
@@ -633,8 +734,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or user doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or user doesn't exist.
 
 ##### getIdentityLinksForTask()
 
@@ -674,8 +779,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or user doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or user doesn't exist.
 
 ##### addCandidateGroup()
 
@@ -695,8 +804,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or group doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or group doesn't exist.
 
 ##### addUserIdentityLink()
 
@@ -720,8 +833,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or user doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or user doesn't exist.
 
 ##### addGroupIdentityLink()
 
@@ -745,8 +862,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or group doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or group doesn't exist.
 
 ##### deleteCandidateUser()
 
@@ -766,8 +887,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or user doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or user doesn't exist.
 
 ##### deleteCandidateGroup()
 
@@ -787,8 +912,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or group doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or group doesn't exist.
 
 ##### deleteUserIdentityLink()
 
@@ -812,8 +941,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or user doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or user doesn't exist.
 
 ##### deleteGroupIdentityLink()
 
@@ -837,8 +970,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task or group doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task or group doesn't exist.
 
 ##### setPriority()
 
@@ -860,8 +997,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when the task doesn't exist.
 
 ##### setDueDate()
 
@@ -881,8 +1022,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableException             when the task doesn't exist.
 > :::
+
+###### Throws
+
+FlowableException
+            when the task doesn't exist.
 
 ##### setVariable()
 
@@ -906,8 +1051,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setVariables() > ```ts setVariables(taskId, variables): void; ``` set variables on a task. If the variable is not already existing, it will be created in the most outer scope. This means the process instance in case this task is related to an execution.
 > :::
+
+##### setVariables()
+
+> ```ts
+> setVariables(taskId, variables): void;
+> ```
+
+
+> set variables on a task. If the variable is not already existing, it will be created in the most outer scope. This means the process instance in case this task is related to an execution.
 
 > **Parameters**
 
@@ -918,8 +1071,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setVariableLocal() > ```ts setVariableLocal(    taskId,     variableName,     value): void; ``` set variable on a task. If the variable is not already existing, it will be created in the task.
 > :::
+
+##### setVariableLocal()
+
+> ```ts
+> setVariableLocal(
+>    taskId, 
+>    variableName, 
+>    value): void;
+> ```
+
+
+> set variable on a task. If the variable is not already existing, it will be created in the task.
 
 > **Parameters**
 
@@ -931,8 +1095,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setVariablesLocal() > ```ts setVariablesLocal(taskId, variables): void; ``` set variables on a task. If the variable is not already existing, it will be created in the task.
 > :::
+
+##### setVariablesLocal()
+
+> ```ts
+> setVariablesLocal(taskId, variables): void;
+> ```
+
+
+> set variables on a task. If the variable is not already existing, it will be created in the task.
 
 > **Parameters**
 
@@ -943,8 +1115,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getVariable() > ```ts getVariable(taskId, variableName): any; ``` get a variables and search in the task scope and if available also the execution scopes.
 > :::
+
+##### getVariable()
+
+> ```ts
+> getVariable(taskId, variableName): any;
+> ```
+
+
+> get a variables and search in the task scope and if available also the execution scopes.
 
 > **Parameters**
 
@@ -955,8 +1135,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getVariableInstance() > ```ts getVariableInstance(taskId, variableName): VariableInstance; ``` The variable. Searching for the variable is done in all scopes that are visible to the given task (including parent scopes). Returns null when no variable value is found with the given name.
 > :::
+
+##### getVariableInstance()
+
+> ```ts
+> getVariableInstance(taskId, variableName): VariableInstance;
+> ```
+
+
+> The variable. Searching for the variable is done in all scopes that are visible to the given task (including parent scopes). Returns null when no variable value is found with the given name.
 
 > **Parameters**
 
@@ -994,8 +1182,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getVariableLocal() > ```ts getVariableLocal(taskId, variableName): any; ``` checks whether or not the task has a variable defined with the given name.
 > :::
+
+##### getVariableLocal()
+
+> ```ts
+> getVariableLocal(taskId, variableName): any;
+> ```
+
+
+> checks whether or not the task has a variable defined with the given name.
 
 > **Parameters**
 
@@ -1006,8 +1202,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getVariableInstanceLocal() > ```ts getVariableInstanceLocal(taskId, variableName): VariableInstance; ``` The variable for a task. Returns the variable when it is set for the task (and not searching parent scopes). Returns null when no variable is found with the given name.
 > :::
+
+##### getVariableInstanceLocal()
+
+> ```ts
+> getVariableInstanceLocal(taskId, variableName): VariableInstance;
+> ```
+
+
+> The variable for a task. Returns the variable when it is set for the task (and not searching parent scopes). Returns null when no variable is found with the given name.
 
 > **Parameters**
 
@@ -1045,8 +1249,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getVariables() > ```ts getVariables(taskId, variableNames?): Map; ``` get all variables and search in the task scope and if available also the execution scopes. If you have many variables and you only need a few, consider using #getVariables(String, Collection) for better performance.
 > :::
+
+##### getVariables()
+
+> ```ts
+> getVariables(taskId, variableNames?): Map;
+> ```
+
+
+> get all variables and search in the task scope and if available also the execution scopes. If you have many variables and you only need a few, consider using
+> #getVariables(String, Collection) for better performance.
 
 > **Parameters**
 
@@ -1054,70 +1267,71 @@ FlowableException
 > | ------ | ------ |
 > | `taskId` | `string` |
 > | `variableNames?` | `string`[] |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> ##### getVariableInstances()
-> 
-> > ```ts
-> > getVariableInstances(taskId, variableNames?): Map;
-> > ```
-> 
-> 
-> > All variables visible from the given task scope (including parent scopes).
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \
+> :::
+
+##### getVariableInstances()
+
+> ```ts
+> getVariableInstances(taskId, variableNames?): Map;
+> ```
+
+
+> All variables visible from the given task scope (including parent scopes).
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `taskId` | `string` | id of task, cannot be null. |
 > | `variableNames?` | `string`[] | the collection of variable names that should be retrieved. |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> the variable instances or an empty map if no such variables are found.
-> 
-> ###### Throws
-> 
-> FlowableObjectNotFoundException
->             when no task is found for the given taskId.
-> 
-> ##### getVariablesLocal()
-> 
-> > ```ts
-> > getVariablesLocal(taskId, variableNames?): Map;
-> > ```
-> 
-> 
-> > get all variables and search only in the task scope. If you have many task local variables and you only need a few, consider using #getVariablesLocal(String, Collection) for better
-> > performance.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \ the variable instances or an empty map if no such variables are found.
+> :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task is found for the given taskId.
+
+##### getVariablesLocal()
+
+> ```ts
+> getVariablesLocal(taskId, variableNames?): Map;
+> ```
+
+
+> get all variables and search only in the task scope. If you have many task local variables and you only need a few, consider using #getVariablesLocal(String, Collection) for better
+> performance.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `taskId` | `string` |
 > | `variableNames?` | `string`[] |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> ##### getVariableInstancesLocalByTaskIds()
-> 
-> > ```ts
-> > getVariableInstancesLocalByTaskIds(taskIds): VariableInstance[];
-> > ```
-> 
-> 
-> > get all variables and search only in the task scope.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \
+> :::
+
+##### getVariableInstancesLocalByTaskIds()
+
+> ```ts
+> getVariableInstancesLocalByTaskIds(taskIds): VariableInstance[];
+> ```
+
+
+> get all variables and search only in the task scope.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `taskIds` | `Set`\ |
@@ -1142,38 +1356,25 @@ FlowableException
 > | ------ | ------ | ------ |
 > | `taskId` | `string` | id of task, cannot be null. |
 > | `variableNames?` | `string`[] | - |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> the variables or an empty map if no such variables are found.
-> 
-> ###### Throws
-> 
-> FlowableObjectNotFoundException
->             when no task is found for the given taskId.
-> 
-> ##### removeVariable()
-> 
-> > ```ts
-> > removeVariable(taskId, variableName): void;
-> > ```
-> 
-> 
-> > Removes the variable from the task. When the variable does not exist, nothing happens.
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `taskId` | `string` |
-> | `variableName` | `string` |
 
 > ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### removeVariableLocal() > ```ts removeVariableLocal(taskId, variableName): void; ``` Removes the variable from the task (not considering parent scopes). When the variable does not exist, nothing happens.
+> - **Type**: `Map`
+> - **Description**: \ the variables or an empty map if no such variables are found.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task is found for the given taskId.
+
+##### removeVariable()
+
+> ```ts
+> removeVariable(taskId, variableName): void;
+> ```
+
+
+> Removes the variable from the task. When the variable does not exist, nothing happens.
 
 > **Parameters**
 
@@ -1184,8 +1385,36 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### removeVariables() > ```ts removeVariables(taskId, variableNames): void; ``` Removes all variables in the given collection from the task. Non existing variable names are simply ignored.
 > :::
+
+##### removeVariableLocal()
+
+> ```ts
+> removeVariableLocal(taskId, variableName): void;
+> ```
+
+
+> Removes the variable from the task (not considering parent scopes). When the variable does not exist, nothing happens.
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `taskId` | `string` |
+> | `variableName` | `string` |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::
+
+##### removeVariables()
+
+> ```ts
+> removeVariables(taskId, variableNames): void;
+> ```
+
+
+> Removes all variables in the given collection from the task. Non existing variable names are simply ignored.
 
 > **Parameters**
 
@@ -1196,8 +1425,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### removeVariablesLocal() > ```ts removeVariablesLocal(taskId, variableNames): void; ``` Removes all variables in the given collection from the task (not considering parent scopes). Non existing variable names are simply ignored.
 > :::
+
+##### removeVariablesLocal()
+
+> ```ts
+> removeVariablesLocal(taskId, variableNames): void;
+> ```
+
+
+> Removes all variables in the given collection from the task (not considering parent scopes). Non existing variable names are simply ignored.
 
 > **Parameters**
 
@@ -1208,8 +1445,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getDataObjects() > ```ts getDataObjects(    taskId,     dataObjectNames?,     locale?,  withLocalizationFallback?): Map; ``` All DataObjects visible from the given execution scope (including parent scopes).
 > :::
+
+##### getDataObjects()
+
+> ```ts
+> getDataObjects(
+>    taskId, 
+>    dataObjectNames?, 
+>    locale?, 
+> withLocalizationFallback?): Map;
+> ```
+
+
+> All DataObjects visible from the given execution scope (including parent scopes).
 
 > **Parameters**
 
@@ -1219,34 +1468,33 @@ FlowableException
 > | `dataObjectNames?` | `string`[] | the collection of DataObject names that should be retrieved. |
 > | `locale?` | `string` | locale the DataObject name and description should be returned in (if available). |
 > | `withLocalizationFallback?` | `boolean` | When true localization will fallback to more general locales if the specified locale is not found. |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> the DataObjects or an empty map if no such variables are found.
-> 
-> ###### Throws
-> 
-> FlowableObjectNotFoundException
->             when no task is found for the given taskId.
-> 
-> ##### getDataObject()
-> 
-> > ```ts
-> > getDataObject(
-> >    taskId, 
-> >    dataObject, 
-> >    locale?, 
-> >    withLocalizationFallback?): DataObject;
-> > ```
-> 
-> 
-> > The DataObject. Searching for the DataObject is done in all scopes that are visible to the given task (including parent scopes). Returns null when no DataObject value is found with the given
-> > name.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \ the DataObjects or an empty map if no such variables are found.
+> :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no task is found for the given taskId.
+
+##### getDataObject()
+
+> ```ts
+> getDataObject(
+>    taskId, 
+>    dataObject, 
+>    locale?, 
+>    withLocalizationFallback?): DataObject;
+> ```
+
+
+> The DataObject. Searching for the DataObject is done in all scopes that are visible to the given task (including parent scopes). Returns null when no DataObject value is found with the given
+> name.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `taskId` | `string` | id of task, cannot be null. |
@@ -1308,8 +1556,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getComment() > ```ts getComment(commentId): Comment; ``` Returns an individual comment with the given id. Returns null if no comment exists with the given id.
 > :::
+
+##### getComment()
+
+> ```ts
+> getComment(commentId): Comment;
+> ```
+
+
+> Returns an individual comment with the given id. Returns null if no comment exists with the given id.
 
 > **Parameters**
 
@@ -1339,8 +1595,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteComment() > ```ts deleteComment(commentId): void; ``` Removes an individual comment with the given id.
 > :::
+
+##### deleteComment()
+
+> ```ts
+> deleteComment(commentId): void;
+> ```
+
+
+> Removes an individual comment with the given id.
 
 > **Parameters**
 
@@ -1350,8 +1614,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws FlowableObjectNotFoundException             when no comment exists with the given id.
 > :::
+
+###### Throws
+
+FlowableObjectNotFoundException
+            when no comment exists with the given id.
 
 ##### getTaskComments()
 
@@ -1499,8 +1767,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getAttachment() > ```ts getAttachment(attachmentId): Attachment; ``` Retrieve a particular attachment
 > :::
+
+##### getAttachment()
+
+> ```ts
+> getAttachment(attachmentId): Attachment;
+> ```
+
+
+> Retrieve a particular attachment
 
 > **Parameters**
 
@@ -1526,22 +1802,23 @@ FlowableException
 > | Parameter | Type |
 > | ------ | ------ |
 > | `attachmentId` | `string` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### getTaskAttachments()
-> 
-> > ```ts
-> > getTaskAttachments(taskId): Attachment[];
-> > ```
-> 
-> 
-> > The list of attachments associated to a task
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: []
+> :::
+
+##### getTaskAttachments()
+
+> ```ts
+> getTaskAttachments(taskId): Attachment[];
+> ```
+
+
+> The list of attachments associated to a task
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `taskId` | `string` |
@@ -1586,8 +1863,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getSubTasks() > ```ts getSubTasks(parentTaskId): Task[]; ``` The list of subtasks for this parent task
 > :::
+
+##### getSubTasks()
+
+> ```ts
+> getSubTasks(parentTaskId): Task[];
+> ```
+
+
+> The list of subtasks for this parent task
 
 > **Parameters**
 
@@ -1635,8 +1920,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setLocalizedName() > ```ts setLocalizedName(name): void; ``` Sets an optional localized name for the task.
 > :::
+
+##### setLocalizedName()
+
+> ```ts
+> setLocalizedName(name): void;
+> ```
+
+
+> Sets an optional localized name for the task.
 
 > **Parameters**
 
@@ -1646,8 +1939,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setDescription() > ```ts setDescription(description): void; ``` Change the description of the task
 > :::
+
+##### setDescription()
+
+> ```ts
+> setDescription(description): void;
+> ```
+
+
+> Change the description of the task
 
 > **Parameters**
 
@@ -1657,8 +1958,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setLocalizedDescription() > ```ts setLocalizedDescription(description): void; ``` Sets an optional localized description for the task.
 > :::
+
+##### setLocalizedDescription()
+
+> ```ts
+> setLocalizedDescription(description): void;
+> ```
+
+
+> Sets an optional localized description for the task.
 
 > **Parameters**
 
@@ -1668,8 +1977,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setPriority() > ```ts setPriority(priority): void; ``` Sets the indication of how important/urgent this task is
 > :::
+
+##### setPriority()
+
+> ```ts
+> setPriority(priority): void;
+> ```
+
+
+> Sets the indication of how important/urgent this task is
 
 > **Parameters**
 
@@ -1679,8 +1996,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setOwner() > ```ts setOwner(owner): void; ``` The user id of the person that is responsible for this task.
 > :::
+
+##### setOwner()
+
+> ```ts
+> setOwner(owner): void;
+> ```
+
+
+> The user id of the person that is responsible for this task.
 
 > **Parameters**
 
@@ -1690,8 +2015,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setAssignee() > ```ts setAssignee(assignee): void; ``` The user id of the person to which this task is delegated.
 > :::
+
+##### setAssignee()
+
+> ```ts
+> setAssignee(assignee): void;
+> ```
+
+
+> The user id of the person to which this task is delegated.
 
 > **Parameters**
 
@@ -1701,18 +2034,26 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getDelegationState() > ```ts getDelegationState(): DelegationState; ``` The current [DelegationState](#delegationstate) for this task.
 > :::
 
-###### Returns
-
-[`DelegationState`](#delegationstate)
-
-##### setDelegationState()
+##### getDelegationState()
 
 > ```ts
-> setDelegationState(delegationState): void;
+> getDelegationState(): DelegationState;
 > ```
+
+
+> The current [DelegationState](#delegationstate) for this task.
+
+> ###### Returns
+
+> [`DelegationState`](#delegationstate)
+
+> ##### setDelegationState()
+
+> > ```ts
+> > setDelegationState(delegationState): void;
+> > ```
 
 
 > The current [DelegationState](#delegationstate) for this task.
@@ -1725,8 +2066,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setDueDate() > ```ts setDueDate(dueDate): void; ``` Change due date of the task.
 > :::
+
+##### setDueDate()
+
+> ```ts
+> setDueDate(dueDate): void;
+> ```
+
+
+> Change due date of the task.
 
 > **Parameters**
 
@@ -1736,8 +2085,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setCategory() > ```ts setCategory(category): void; ``` Change the category of the task. This is an optional field and allows to 'tag' tasks as belonging to a certain category.
 > :::
+
+##### setCategory()
+
+> ```ts
+> setCategory(category): void;
+> ```
+
+
+> Change the category of the task. This is an optional field and allows to 'tag' tasks as belonging to a certain category.
 
 > **Parameters**
 
@@ -1747,8 +2104,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setParentTaskId() > ```ts setParentTaskId(parentTaskId): void; ``` the parent task for which this task is a subtask
 > :::
+
+##### setParentTaskId()
+
+> ```ts
+> setParentTaskId(parentTaskId): void;
+> ```
+
+
+> the parent task for which this task is a subtask
 
 > **Parameters**
 
@@ -1758,8 +2123,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setTenantId() > ```ts setTenantId(tenantId): void; ``` Change the tenantId of the task
 > :::
+
+##### setTenantId()
+
+> ```ts
+> setTenantId(tenantId): void;
+> ```
+
+
+> Change the tenantId of the task
 
 > **Parameters**
 
@@ -1769,8 +2142,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setFormKey() > ```ts setFormKey(formKey): void; ``` Change the form key of the task
 > :::
+
+##### setFormKey()
+
+> ```ts
+> setFormKey(formKey): void;
+> ```
+
+
+> Change the form key of the task
 
 > **Parameters**
 
@@ -1780,32 +2161,54 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### isSuspended() > ```ts isSuspended(): boolean; ``` Indicates whether this task is suspended or not.
 > :::
 
-> ::: info Returns
-> - **Type**: `boolean`
-> - **Description**: ##### getId() > ```ts getId(): string; ``` DB id of the task.
-> :::
-
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getId`](#getid-1)
-> :::
-
-##### getName()
+##### isSuspended()
 
 > ```ts
-> getName(): string;
+> isSuspended(): boolean;
 > ```
+
+
+> Indicates whether this task is suspended or not.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > :::
+
+> ##### getId()
+
+> > ```ts
+> > getId(): string;
+> > ```
+
+
+> DB id of the task.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getId`](#getid-1)
+
+> ##### getName()
+
+> > ```ts
+> > getName(): string;
+> > ```
 
 
 > Name or title of the task.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getName`](#getname-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getName`](#getname-1)
 
 > ##### getDescription()
 
@@ -1818,8 +2221,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getDescription`](#getdescription-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getDescription`](#getdescription-1)
 
 > ##### getPriority()
 
@@ -1832,8 +2238,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getPriority`](#getpriority-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getPriority`](#getpriority-1)
 
 > ##### getOwner()
 
@@ -1846,8 +2255,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getOwner`](#getowner-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getOwner`](#getowner-1)
 
 > ##### getAssignee()
 
@@ -1860,8 +2272,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getAssignee`](#getassignee-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getAssignee`](#getassignee-1)
 
 > ##### getProcessInstanceId()
 
@@ -1874,8 +2289,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getProcessInstanceId`](#getprocessinstanceid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getProcessInstanceId`](#getprocessinstanceid-1)
 
 > ##### getExecutionId()
 
@@ -1888,8 +2306,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getExecutionId`](#getexecutionid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getExecutionId`](#getexecutionid-1)
 
 > ##### getTaskDefinitionId()
 
@@ -1902,8 +2323,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getTaskDefinitionId`](#gettaskdefinitionid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getTaskDefinitionId`](#gettaskdefinitionid-1)
 
 > ##### getProcessDefinitionId()
 
@@ -1916,8 +2340,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getProcessDefinitionId`](#getprocessdefinitionid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getProcessDefinitionId`](#getprocessdefinitionid-1)
 
 > ##### getScopeId()
 
@@ -1930,8 +2357,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getScopeId`](#getscopeid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getScopeId`](#getscopeid-1)
 
 > ##### getSubScopeId()
 
@@ -1944,8 +2374,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getSubScopeId`](#getsubscopeid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getSubScopeId`](#getsubscopeid-1)
 
 > ##### getScopeType()
 
@@ -1958,8 +2391,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getScopeType`](#getscopetype-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getScopeType`](#getscopetype-1)
 
 > ##### getScopeDefinitionId()
 
@@ -1972,8 +2408,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getScopeDefinitionId`](#getscopedefinitionid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getScopeDefinitionId`](#getscopedefinitionid-1)
 
 > ##### getPropagatedStageInstanceId()
 
@@ -2006,8 +2445,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getState`](#getstate-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getState`](#getstate-1)
 
 > ##### getCreateTime()
 
@@ -2020,8 +2462,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getCreateTime`](#getcreatetime-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getCreateTime`](#getcreatetime-1)
 
 > ##### getInProgressStartTime()
 
@@ -2034,8 +2479,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getInProgressStartTime`](#getinprogressstarttime-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getInProgressStartTime`](#getinprogressstarttime-1)
 
 > ##### getInProgressStartedBy()
 
@@ -2048,8 +2496,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getInProgressStartedBy`](#getinprogressstartedby-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getInProgressStartedBy`](#getinprogressstartedby-1)
 
 > ##### getClaimTime()
 
@@ -2062,8 +2513,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getClaimTime`](#getclaimtime-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getClaimTime`](#getclaimtime-1)
 
 > ##### getClaimedBy()
 
@@ -2076,8 +2530,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `String`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getClaimedBy`](#getclaimedby-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getClaimedBy`](#getclaimedby-1)
 
 > ##### getSuspendedTime()
 
@@ -2090,8 +2547,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getSuspendedTime`](#getsuspendedtime-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getSuspendedTime`](#getsuspendedtime-1)
 
 > ##### getSuspendedBy()
 
@@ -2104,8 +2564,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getSuspendedBy`](#getsuspendedby-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getSuspendedBy`](#getsuspendedby-1)
 
 > ##### getTaskDefinitionKey()
 
@@ -2118,8 +2581,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getTaskDefinitionKey`](#gettaskdefinitionkey-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getTaskDefinitionKey`](#gettaskdefinitionkey-1)
 
 > ##### getInProgressStartDueDate()
 
@@ -2132,8 +2598,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getInProgressStartDueDate`](#getinprogressstartduedate-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getInProgressStartDueDate`](#getinprogressstartduedate-1)
 
 > ##### getDueDate()
 
@@ -2146,8 +2615,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getDueDate`](#getduedate-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getDueDate`](#getduedate-1)
 
 > ##### getCategory()
 
@@ -2160,8 +2632,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getCategory`](#getcategory-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getCategory`](#getcategory-1)
 
 > ##### getParentTaskId()
 
@@ -2174,8 +2649,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getParentTaskId`](#getparenttaskid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getParentTaskId`](#getparenttaskid-1)
 
 > ##### getTenantId()
 
@@ -2188,8 +2666,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getTenantId`](#gettenantid-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getTenantId`](#gettenantid-1)
 
 > ##### getFormKey()
 
@@ -2202,8 +2683,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`TaskInfo`](#taskinfo).[`getFormKey`](#getformkey-1)
 > > :::
+
+> ###### Inherited from
+
+> [`TaskInfo`](#taskinfo).[`getFormKey`](#getformkey-1)
 
 > ##### getTaskLocalVariables()
 
@@ -2214,9 +2698,10 @@ FlowableException
 
 > Returns the local task variables if requested in the task query
 
-> ###### Returns
-
-> `Map`\
+> > ::: info Returns
+> > - **Type**: `Map`
+> > - **Description**: \
+> > :::
 
 > ###### Inherited from
 
@@ -2231,9 +2716,10 @@ FlowableException
 
 > Returns the process variables if requested in the task query
 
-> ###### Returns
-
-> `Map`\
+> > ::: info Returns
+> > - **Type**: `Map`
+> > - **Description**: \
+> > :::
 
 > ###### Inherited from
 
@@ -2248,9 +2734,10 @@ FlowableException
 
 > Returns the case variables if requested in the task query
 
-> ###### Returns
-
-> `Map`\
+> > ::: info Returns
+> > - **Type**: `Map`
+> > - **Description**: \
+> > :::
 
 > ###### Inherited from
 
@@ -2301,73 +2788,187 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getName() > ```ts getName(): string; ``` Name or title of the task.
 > > :::
+
+> ##### getName()
+
+> > ```ts
+> > getName(): string;
+> > ```
+
+
+> Name or title of the task.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getDescription() > ```ts getDescription(): string; ``` Free text description of the task.
 > > :::
+
+> ##### getDescription()
+
+> > ```ts
+> > getDescription(): string;
+> > ```
+
+
+> Free text description of the task.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getPriority() > ```ts getPriority(): number; ``` Indication of how important/urgent this task is
 > > :::
+
+> ##### getPriority()
+
+> > ```ts
+> > getPriority(): number;
+> > ```
+
+
+> Indication of how important/urgent this task is
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ##### getOwner() > ```ts getOwner(): string; ``` The user id of the person that is responsible for this task.
 > > :::
+
+> ##### getOwner()
+
+> > ```ts
+> > getOwner(): string;
+> > ```
+
+
+> The user id of the person that is responsible for this task.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getAssignee() > ```ts getAssignee(): string; ``` The user id of the person to which this task is delegated.
 > > :::
+
+> ##### getAssignee()
+
+> > ```ts
+> > getAssignee(): string;
+> > ```
+
+
+> The user id of the person to which this task is delegated.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getProcessInstanceId() > ```ts getProcessInstanceId(): string; ``` Reference to the process instance or null if it is not related to a process instance.
 > > :::
+
+> ##### getProcessInstanceId()
+
+> > ```ts
+> > getProcessInstanceId(): string;
+> > ```
+
+
+> Reference to the process instance or null if it is not related to a process instance.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getExecutionId() > ```ts getExecutionId(): string; ``` Reference to the path of execution or null if it is not related to a process instance.
 > > :::
+
+> ##### getExecutionId()
+
+> > ```ts
+> > getExecutionId(): string;
+> > ```
+
+
+> Reference to the path of execution or null if it is not related to a process instance.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTaskDefinitionId() > ```ts getTaskDefinitionId(): string; ``` Reference to the task definition or null if it is not related to any task definition.
 > > :::
+
+> ##### getTaskDefinitionId()
+
+> > ```ts
+> > getTaskDefinitionId(): string;
+> > ```
+
+
+> Reference to the task definition or null if it is not related to any task definition.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getProcessDefinitionId() > ```ts getProcessDefinitionId(): string; ``` Reference to the process definition or null if it is not related to a process.
 > > :::
+
+> ##### getProcessDefinitionId()
+
+> > ```ts
+> > getProcessDefinitionId(): string;
+> > ```
+
+
+> Reference to the process definition or null if it is not related to a process.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getScopeId() > ```ts getScopeId(): string; ``` Reference to a scope identifier or null if none is set (e.g. for bpmn process task it is null)
 > > :::
+
+> ##### getScopeId()
+
+> > ```ts
+> > getScopeId(): string;
+> > ```
+
+
+> Reference to a scope identifier or null if none is set (e.g. for bpmn process task it is null)
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getSubScopeId() > ```ts getSubScopeId(): string; ``` Reference to a sub scope identifier or null if none is set (e.g. for bpmn process task it is null)
 > > :::
+
+> ##### getSubScopeId()
+
+> > ```ts
+> > getSubScopeId(): string;
+> > ```
+
+
+> Reference to a sub scope identifier or null if none is set (e.g. for bpmn process task it is null)
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getScopeType() > ```ts getScopeType(): string; ``` Reference to a scope type or null if none is set (e.g. for bpmn process task it is null)
 > > :::
+
+> ##### getScopeType()
+
+> > ```ts
+> > getScopeType(): string;
+> > ```
+
+
+> Reference to a scope type or null if none is set (e.g. for bpmn process task it is null)
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getScopeDefinitionId() > ```ts getScopeDefinitionId(): string; ``` Reference to a scope definition identifier or null if none is set (e.g. for bpmn process task it is null)
 > > :::
+
+> ##### getScopeDefinitionId()
+
+> > ```ts
+> > getScopeDefinitionId(): string;
+> > ```
+
+
+> Reference to a scope definition identifier or null if none is set (e.g. for bpmn process task it is null)
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getPropagatedStageInstanceId() > ```ts getPropagatedStageInstanceId(): string; ``` If this task runs in the context of a case and stage, this method returns it's closest parent stage instance id (the stage plan item instance id to be precise). Even if the direct parent of the task is a process which itself might have been created out of a process task of a case, its stage instance is reflected in the task.
 > > :::
+
+> ##### getPropagatedStageInstanceId()
+
+> > ```ts
+> > getPropagatedStageInstanceId(): string;
+> > ```
+
+
+> If this task runs in the context of a case and stage, this method returns it's closest parent stage instance id (the stage plan item instance id to be
+> precise). Even if the direct parent of the task is a process which itself might have been created out of a process task of a case, its stage instance
+> is reflected in the task.
 
 > > ::: info Returns
 > > - **Type**: `string`
@@ -2385,82 +2986,203 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getCreateTime() > ```ts getCreateTime(): Date; ``` The date/time when this task was created
 > > :::
+
+> ##### getCreateTime()
+
+> > ```ts
+> > getCreateTime(): Date;
+> > ```
+
+
+> The date/time when this task was created
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getInProgressStartTime() > ```ts getInProgressStartTime(): Date; ``` The date/time when this task was put in progress
 > > :::
+
+> ##### getInProgressStartTime()
+
+> > ```ts
+> > getInProgressStartTime(): Date;
+> > ```
+
+
+> The date/time when this task was put in progress
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getInProgressStartedBy() > ```ts getInProgressStartedBy(): string; ``` The user reference that put this task in progress
 > > :::
+
+> ##### getInProgressStartedBy()
+
+> > ```ts
+> > getInProgressStartedBy(): string;
+> > ```
+
+
+> The user reference that put this task in progress
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getClaimTime() > ```ts getClaimTime(): Date; ``` The claim time of this task
 > > :::
+
+> ##### getClaimTime()
+
+> > ```ts
+> > getClaimTime(): Date;
+> > ```
+
+
+> The claim time of this task
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getClaimedBy() > ```ts getClaimedBy(): String; ``` The user reference that claimed this task
 > > :::
+
+> ##### getClaimedBy()
+
+> > ```ts
+> > getClaimedBy(): String;
+> > ```
+
+
+> The user reference that claimed this task
 
 > > ::: info Returns
 > > - **Type**: `String`
-> > - **Description**: ##### getSuspendedTime() > ```ts getSuspendedTime(): Date; ``` The suspended time of this task
 > > :::
+
+> ##### getSuspendedTime()
+
+> > ```ts
+> > getSuspendedTime(): Date;
+> > ```
+
+
+> The suspended time of this task
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getSuspendedBy() > ```ts getSuspendedBy(): string; ``` The user reference that suspended this task
 > > :::
+
+> ##### getSuspendedBy()
+
+> > ```ts
+> > getSuspendedBy(): string;
+> > ```
+
+
+> The user reference that suspended this task
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTaskDefinitionKey() > ```ts getTaskDefinitionKey(): string; ``` The id of the activity in the process defining this task or null if this is not related to a process
 > > :::
+
+> ##### getTaskDefinitionKey()
+
+> > ```ts
+> > getTaskDefinitionKey(): string;
+> > ```
+
+
+> The id of the activity in the process defining this task or null if this is not related to a process
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getInProgressStartDueDate() > ```ts getInProgressStartDueDate(): Date; ``` In progress start due date of the task.
 > > :::
+
+> ##### getInProgressStartDueDate()
+
+> > ```ts
+> > getInProgressStartDueDate(): Date;
+> > ```
+
+
+> In progress start due date of the task.
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getDueDate() > ```ts getDueDate(): Date; ``` Due date of the task.
 > > :::
+
+> ##### getDueDate()
+
+> > ```ts
+> > getDueDate(): Date;
+> > ```
+
+
+> Due date of the task.
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getCategory() > ```ts getCategory(): any; ``` The category of the task. This is an optional field and allows to 'tag' tasks as belonging to a certain category.
 > > :::
+
+> ##### getCategory()
+
+> > ```ts
+> > getCategory(): any;
+> > ```
+
+
+> The category of the task. This is an optional field and allows to 'tag' tasks as belonging to a certain category.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### getParentTaskId() > ```ts getParentTaskId(): string; ``` The parent task for which this task is a subtask
 > > :::
+
+> ##### getParentTaskId()
+
+> > ```ts
+> > getParentTaskId(): string;
+> > ```
+
+
+> The parent task for which this task is a subtask
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTenantId() > ```ts getTenantId(): string; ``` The tenant identifier of this task
 > > :::
+
+> ##### getTenantId()
+
+> > ```ts
+> > getTenantId(): string;
+> > ```
+
+
+> The tenant identifier of this task
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getFormKey() > ```ts getFormKey(): string; ``` The form key for the user task
 > > :::
+
+> ##### getFormKey()
+
+> > ```ts
+> > getFormKey(): string;
+> > ```
+
+
+> The form key for the user task
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTaskLocalVariables() > ```ts getTaskLocalVariables(): Map; ``` Returns the local task variables if requested in the task query
 > > :::
 
-> ###### Returns
+> ##### getTaskLocalVariables()
 
-> `Map`\
+> > ```ts
+> > getTaskLocalVariables(): Map;
+> > ```
+
+
+> Returns the local task variables if requested in the task query
+
+> > ::: info Returns
+> > - **Type**: `Map`
+> > - **Description**: \
+> > :::
 
 > ##### getProcessVariables()
 
@@ -2471,9 +3193,10 @@ FlowableException
 
 > Returns the process variables if requested in the task query
 
-> ###### Returns
-
-> `Map`\
+> > ::: info Returns
+> > - **Type**: `Map`
+> > - **Description**: \
+> > :::
 
 > ##### getCaseVariables()
 
@@ -2484,9 +3207,10 @@ FlowableException
 
 > Returns the case variables if requested in the task query
 
-> ###### Returns
-
-> `Map`\
+> > ::: info Returns
+> > - **Type**: `Map`
+> > - **Description**: \
+> > :::
 
 > ##### getIdentityLinks()
 
@@ -2521,43 +3245,91 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getUserId() > ```ts getUserId(): string; ```
 > > :::
+
+> ##### getUserId()
+
+> > ```ts
+> > getUserId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getGroupId() > ```ts getGroupId(): string; ```
 > > :::
+
+> ##### getGroupId()
+
+> > ```ts
+> > getGroupId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTaskId() > ```ts getTaskId(): string; ```
 > > :::
+
+> ##### getTaskId()
+
+> > ```ts
+> > getTaskId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getProcessInstanceId() > ```ts getProcessInstanceId(): string; ```
 > > :::
+
+> ##### getProcessInstanceId()
+
+> > ```ts
+> > getProcessInstanceId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getScopeId() > ```ts getScopeId(): string; ```
 > > :::
+
+> ##### getScopeId()
+
+> > ```ts
+> > getScopeId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getSubScopeId() > ```ts getSubScopeId(): string; ```
 > > :::
+
+> ##### getSubScopeId()
+
+> > ```ts
+> > getSubScopeId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getScopeType() > ```ts getScopeType(): string; ```
 > > :::
+
+> ##### getScopeType()
+
+> > ```ts
+> > getScopeType(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getScopeDefinitionId() > ```ts getScopeDefinitionId(): string; ```
 > > :::
+
+> ##### getScopeDefinitionId()
+
+> > ```ts
+> > getScopeDefinitionId(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
@@ -2582,8 +3354,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getType`](#gettype)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getType`](#gettype)
 
 > ##### getUserId()
 
@@ -2594,8 +3369,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getUserId`](#getuserid)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getUserId`](#getuserid)
 
 > ##### getGroupId()
 
@@ -2606,8 +3384,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getGroupId`](#getgroupid)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getGroupId`](#getgroupid)
 
 > ##### getTaskId()
 
@@ -2618,8 +3399,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getTaskId`](#gettaskid)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getTaskId`](#gettaskid)
 
 > ##### getProcessInstanceId()
 
@@ -2630,8 +3414,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getProcessInstanceId`](#getprocessinstanceid-2)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getProcessInstanceId`](#getprocessinstanceid-2)
 
 > ##### getScopeId()
 
@@ -2642,8 +3429,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getScopeId`](#getscopeid-2)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getScopeId`](#getscopeid-2)
 
 > ##### getSubScopeId()
 
@@ -2654,8 +3444,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getSubScopeId`](#getsubscopeid-2)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getSubScopeId`](#getsubscopeid-2)
 
 > ##### getScopeType()
 
@@ -2666,8 +3459,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getScopeType`](#getscopetype-2)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getScopeType`](#getscopetype-2)
 
 > ##### getScopeDefinitionId()
 
@@ -2678,8 +3474,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from [`IdentityLinkInfo`](#identitylinkinfo).[`getScopeDefinitionId`](#getscopedefinitionid-2)
 > > :::
+
+> ###### Inherited from
+
+> [`IdentityLinkInfo`](#identitylinkinfo).[`getScopeDefinitionId`](#getscopedefinitionid-2)
 
 > ##### getProcessDefinitionId()
 
@@ -2745,8 +3544,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### name() > ```ts name(name): TaskBuilder; ``` Name or title of the task.
 > > > :::
+> 
+> > ##### name()
+> 
+> > > ```ts
+> > > name(name): TaskBuilder;
+> > > ```
+> 
+> 
+> > Name or title of the task.
 > 
 > > **Parameters**
 > 
@@ -2767,8 +3574,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### description() > ```ts description(description): TaskBuilder; ``` Free text description of the task.
 > > > :::
+> 
+> > ##### description()
+> 
+> > > ```ts
+> > > description(description): TaskBuilder;
+> > > ```
+> 
+> 
+> > Free text description of the task.
 > 
 > > **Parameters**
 > 
@@ -2789,8 +3604,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### priority() > ```ts priority(priority): TaskBuilder; ``` Indication of how important/urgent this task is
 > > > :::
+> 
+> > ##### priority()
+> 
+> > > ```ts
+> > > priority(priority): TaskBuilder;
+> > > ```
+> 
+> 
+> > Indication of how important/urgent this task is
 > 
 > > **Parameters**
 > 
@@ -2811,8 +3634,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `number`
-> > > - **Description**: ##### owner() > ```ts owner(ownerId): TaskBuilder; ``` The userId of the person that is responsible for this task.
 > > > :::
+> 
+> > ##### owner()
+> 
+> > > ```ts
+> > > owner(ownerId): TaskBuilder;
+> > > ```
+> 
+> 
+> > The userId of the person that is responsible for this task.
 > 
 > > **Parameters**
 > 
@@ -2833,8 +3664,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### assignee() > ```ts assignee(assigneId): TaskBuilder; ``` The userId of the person to which this task is delegated.
 > > > :::
+> 
+> > ##### assignee()
+> 
+> > > ```ts
+> > > assignee(assigneId): TaskBuilder;
+> > > ```
+> 
+> 
+> > The userId of the person to which this task is delegated.
 > 
 > > **Parameters**
 > 
@@ -2855,8 +3694,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### dueDate() > ```ts dueDate(dueDate): TaskBuilder; ``` Change due date of the task.
 > > > :::
+> 
+> > ##### dueDate()
+> 
+> > > ```ts
+> > > dueDate(dueDate): TaskBuilder;
+> > > ```
+> 
+> 
+> > Change due date of the task.
 > 
 > > **Parameters**
 > 
@@ -2877,8 +3724,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `Date`
-> > > - **Description**: ##### category() > ```ts category(category): TaskBuilder; ``` Change the category of the task. This is an optional field and allows to 'tag' tasks as belonging to a certain category.
 > > > :::
+> 
+> > ##### category()
+> 
+> > > ```ts
+> > > category(category): TaskBuilder;
+> > > ```
+> 
+> 
+> > Change the category of the task. This is an optional field and allows to 'tag' tasks as belonging to a certain category.
 > 
 > > **Parameters**
 > 
@@ -2899,8 +3754,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### parentTaskId() > ```ts parentTaskId(parentTaskId): TaskBuilder; ``` the parent task for which this task is a subtask
 > > > :::
+> 
+> > ##### parentTaskId()
+> 
+> > > ```ts
+> > > parentTaskId(parentTaskId): TaskBuilder;
+> > > ```
+> 
+> 
+> > the parent task for which this task is a subtask
 > 
 > > **Parameters**
 > 
@@ -2921,8 +3784,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### tenantId() > ```ts tenantId(tenantId): TaskBuilder; ``` Change the tenantId of the task
 > > > :::
+> 
+> > ##### tenantId()
+> 
+> > > ```ts
+> > > tenantId(tenantId): TaskBuilder;
+> > > ```
+> 
+> 
+> > Change the tenantId of the task
 > 
 > > **Parameters**
 > 
@@ -2943,8 +3814,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### formKey() > ```ts formKey(formKey): TaskBuilder; ``` Change the form key of the task
 > > > :::
+> 
+> > ##### formKey()
+> 
+> > > ```ts
+> > > formKey(formKey): TaskBuilder;
+> > > ```
+> 
+> 
+> > Change the form key of the task
 > 
 > > **Parameters**
 > 
@@ -2965,8 +3844,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### taskDefinitionId() > ```ts taskDefinitionId(taskDefinitionId): TaskBuilder; ``` task definition id to create task from
 > > > :::
+> 
+> > ##### taskDefinitionId()
+> 
+> > > ```ts
+> > > taskDefinitionId(taskDefinitionId): TaskBuilder;
+> > > ```
+> 
+> 
+> > task definition id to create task from
 > 
 > > **Parameters**
 > 
@@ -2987,8 +3874,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### taskDefinitionKey() > ```ts taskDefinitionKey(taskDefinitionKey): TaskBuilder; ``` task definition key to create task from
 > > > :::
+> 
+> > ##### taskDefinitionKey()
+> 
+> > > ```ts
+> > > taskDefinitionKey(taskDefinitionKey): TaskBuilder;
+> > > ```
+> 
+> 
+> > task definition key to create task from
 > 
 > > **Parameters**
 > 
@@ -3009,8 +3904,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### identityLinks() > ```ts identityLinks(identityLinks): TaskBuilder; ``` add identity links to the task
 > > > :::
+> 
+> > ##### identityLinks()
+> 
+> > > ```ts
+> > > identityLinks(identityLinks): TaskBuilder;
+> > > ```
+> 
+> 
+> > add identity links to the task
 > 
 > > **Parameters**
 > 
@@ -3029,9 +3932,10 @@ FlowableException
 > > ```
 > 
 > 
-> > ###### Returns
-> 
-> > `Set`\
+> > > ::: info Returns
+> > > - **Type**: `Set`
+> > > - **Description**: \
+> > > :::
 > 
 > > ##### scopeId()
 > 
@@ -3061,8 +3965,16 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### scopeType() > ```ts scopeType(scopeType): TaskBuilder; ``` Add scope type
 > > > :::
+> 
+> > ##### scopeType()
+> 
+> > > ```ts
+> > > scopeType(scopeType): TaskBuilder;
+> > > ```
+> 
+> 
+> > Add scope type
 > 
 > > **Parameters**
 > 
@@ -3100,8 +4012,14 @@ FlowableException
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### setId() > ```ts setId(id): void; ```
 > > > :::
+> 
+> > ##### setId()
+> 
+> > > ```ts
+> > > setId(id): void;
+> > > ```
+> 
 > 
 > > **Parameters**
 > 
@@ -3111,13 +4029,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getName() > ```ts getName(): string; ```
-> > :::
+> :::
+
+##### getName()
+
+> ```ts
+> getName(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setName() > ```ts setName(name): void; ```
 > > :::
+
+> ##### setName()
+
+> > ```ts
+> > setName(name): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3127,13 +4057,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getDescription() > ```ts getDescription(): string; ```
-> > :::
+> :::
+
+##### getDescription()
+
+> ```ts
+> getDescription(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setDescription() > ```ts setDescription(description): void; ```
 > > :::
+
+> ##### setDescription()
+
+> > ```ts
+> > setDescription(description): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3143,13 +4085,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getKey() > ```ts getKey(): string; ```
-> > :::
+> :::
+
+##### getKey()
+
+> ```ts
+> getKey(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setKey() > ```ts setKey(key): void; ```
 > > :::
+
+> ##### setKey()
+
+> > ```ts
+> > setKey(key): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3159,13 +4113,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getVersion() > ```ts getVersion(): number; ```
-> > :::
+> :::
+
+##### getVersion()
+
+> ```ts
+> getVersion(): number;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ##### setVersion() > ```ts setVersion(version): void; ```
 > > :::
+
+> ##### setVersion()
+
+> > ```ts
+> > setVersion(version): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3175,13 +4141,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getFormModel() > ```ts getFormModel(): any; ```
-> > :::
+> :::
+
+##### getFormModel()
+
+> ```ts
+> getFormModel(): any;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### setFormModel() > ```ts setFormModel(formModel): void; ```
 > > :::
+
+> ##### setFormModel()
+
+> > ```ts
+> > setFormModel(formModel): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3316,8 +4294,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getTextValue2() > ```ts getTextValue2(): string; ```
-> > :::
+> :::
+
+##### getTextValue2()
+
+> ```ts
+> getTextValue2(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
@@ -3341,8 +4325,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getLongValue() > ```ts getLongValue(): number; ```
-> > :::
+> :::
+
+##### getLongValue()
+
+> ```ts
+> getLongValue(): number;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `number`
@@ -3366,8 +4356,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getDoubleValue() > ```ts getDoubleValue(): number; ```
-> > :::
+> :::
+
+##### getDoubleValue()
+
+> ```ts
+> getDoubleValue(): number;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `number`
@@ -3391,14 +4387,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getBytes() > ```ts getBytes(): any[]; ```
+> :::
+
+##### getBytes()
+
+> ```ts
+> getBytes(): any[];
+> ```
+
+
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] the byte array value, if any, or null.
 > > :::
-
-> ###### Returns
-
-> `any`[]
-
-> the byte array value, if any, or null.
 
 > ##### setBytes()
 
@@ -3417,13 +4418,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getCachedValue() > ```ts getCachedValue(): any; ```
-> > :::
+> :::
+
+##### getCachedValue()
+
+> ```ts
+> getCachedValue(): any;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### setCachedValue() > ```ts setCachedValue(cachedValue): void; ```
 > > :::
+
+> ##### setCachedValue()
+
+> > ```ts
+> > setCachedValue(cachedValue): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3590,8 +4603,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`setTextValue`](#settextvalue)
 > :::
+
+###### Inherited from
+
+[`ValueFields`](#valuefields).[`setTextValue`](#settextvalue)
 
 ##### getTextValue2()
 
@@ -3626,8 +4642,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`setTextValue2`](#settextvalue2)
 > :::
+
+###### Inherited from
+
+[`ValueFields`](#valuefields).[`setTextValue2`](#settextvalue2)
 
 ##### getLongValue()
 
@@ -3662,8 +4681,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`setLongValue`](#setlongvalue)
 > :::
+
+###### Inherited from
+
+[`ValueFields`](#valuefields).[`setLongValue`](#setlongvalue)
 
 ##### getDoubleValue()
 
@@ -3698,8 +4720,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`setDoubleValue`](#setdoublevalue)
 > :::
+
+###### Inherited from
+
+[`ValueFields`](#valuefields).[`setDoubleValue`](#setdoublevalue)
 
 ##### getBytes()
 
@@ -3708,11 +4733,10 @@ FlowableException
 > ```
 
 
-> ###### Returns
-
-> `any`[]
-
-> the byte array value, if any, or null.
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] the byte array value, if any, or null.
+> > :::
 
 > ###### Inherited from
 
@@ -3735,8 +4759,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`setBytes`](#setbytes)
 > :::
+
+###### Inherited from
+
+[`ValueFields`](#valuefields).[`setBytes`](#setbytes)
 
 ##### getCachedValue()
 
@@ -3747,8 +4774,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`getCachedValue`](#getcachedvalue)
 > > :::
+
+> ###### Inherited from
+
+> [`ValueFields`](#valuefields).[`getCachedValue`](#getcachedvalue)
 
 > ##### setCachedValue()
 
@@ -3765,8 +4795,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from [`ValueFields`](#valuefields).[`setCachedValue`](#setcachedvalue)
 > :::
+
+###### Inherited from
+
+[`ValueFields`](#valuefields).[`setCachedValue`](#setcachedvalue)
 
 ##### getId()
 
@@ -3777,8 +4810,14 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setId() > ```ts setId(id): void; ```
 > > :::
+
+> ##### setId()
+
+> > ```ts
+> > setId(id): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3788,8 +4827,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setName() > ```ts setName(name): void; ```
-> > :::
+> :::
+
+##### setName()
+
+> ```ts
+> setName(name): void;
+> ```
+
 
 > **Parameters**
 
@@ -3799,8 +4844,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setExecutionId() > ```ts setExecutionId(executionId): void; ```
-> > :::
+> :::
+
+##### setExecutionId()
+
+> ```ts
+> setExecutionId(executionId): void;
+> ```
+
 
 > **Parameters**
 
@@ -3810,8 +4861,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setProcessInstanceId() > ```ts setProcessInstanceId(processInstanceId): void; ```
-> > :::
+> :::
+
+##### setProcessInstanceId()
+
+> ```ts
+> setProcessInstanceId(processInstanceId): void;
+> ```
+
 
 > **Parameters**
 
@@ -3821,8 +4878,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setProcessDefinitionId() > ```ts setProcessDefinitionId(processDefinitionId): void; ```
-> > :::
+> :::
+
+##### setProcessDefinitionId()
+
+> ```ts
+> setProcessDefinitionId(processDefinitionId): void;
+> ```
+
 
 > **Parameters**
 
@@ -3832,18 +4895,36 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getProcessDefinitionId() > ```ts getProcessDefinitionId(): string; ```
-> > :::
+> :::
+
+##### getProcessDefinitionId()
+
+> ```ts
+> getProcessDefinitionId(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getValue() > ```ts getValue(): any; ```
 > > :::
+
+> ##### getValue()
+
+> > ```ts
+> > getValue(): any;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### setValue() > ```ts setValue(value): void; ```
 > > :::
+
+> ##### setValue()
+
+> > ```ts
+> > setValue(value): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3853,13 +4934,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getTypeName() > ```ts getTypeName(): string; ```
-> > :::
+> :::
+
+##### getTypeName()
+
+> ```ts
+> getTypeName(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setTypeName() > ```ts setTypeName(typeName): void; ```
 > > :::
+
+> ##### setTypeName()
+
+> > ```ts
+> > setTypeName(typeName): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3869,13 +4962,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### isReadOnly() > ```ts isReadOnly(): boolean; ```
-> > :::
+> :::
+
+##### isReadOnly()
+
+> ```ts
+> isReadOnly(): boolean;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### setTaskId() > ```ts setTaskId(taskId): void; ```
 > > :::
+
+> ##### setTaskId()
+
+> > ```ts
+> > setTaskId(taskId): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3885,8 +4990,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setScopeId() > ```ts setScopeId(scopeId): void; ```
-> > :::
+> :::
+
+##### setScopeId()
+
+> ```ts
+> setScopeId(scopeId): void;
+> ```
+
 
 > **Parameters**
 
@@ -3896,8 +5007,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setSubScopeId() > ```ts setSubScopeId(subScopeId): void; ```
-> > :::
+> :::
+
+##### setSubScopeId()
+
+> ```ts
+> setSubScopeId(subScopeId): void;
+> ```
+
 
 > **Parameters**
 
@@ -3907,8 +5024,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setScopeType() > ```ts setScopeType(scopeType): void; ```
-> > :::
+> :::
+
+##### setScopeType()
+
+> ```ts
+> setScopeType(scopeType): void;
+> ```
+
 
 > **Parameters**
 
@@ -3918,8 +5041,14 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setScopeDefinitionId() > ```ts setScopeDefinitionId(scopeDefinitionId): void; ```
-> > :::
+> :::
+
+##### setScopeDefinitionId()
+
+> ```ts
+> setScopeDefinitionId(scopeDefinitionId): void;
+> ```
+
 
 > **Parameters**
 
@@ -3929,18 +5058,36 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getScopeDefinitionId() > ```ts getScopeDefinitionId(): string; ```
-> > :::
+> :::
+
+##### getScopeDefinitionId()
+
+> ```ts
+> getScopeDefinitionId(): string;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getMetaInfo() > ```ts getMetaInfo(): string; ```
 > > :::
+
+> ##### getMetaInfo()
+
+> > ```ts
+> > getMetaInfo(): string;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setMetaInfo() > ```ts setMetaInfo(metaInfo): void; ```
 > > :::
+
+> ##### setMetaInfo()
+
+> > ```ts
+> > setMetaInfo(metaInfo): void;
+> > ```
+
 
 > **Parameters**
 
@@ -3969,43 +5116,109 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getProcessInstanceId() > ```ts getProcessInstanceId(): string; ``` /** * The id of the process instance that this Data Object is associated with.
 > > :::
+
+> ##### getProcessInstanceId()
+
+> > ```ts
+> > getProcessInstanceId(): string;
+> > ```
+
+
+> /**
+> * The id of the process instance that this Data Object is associated with.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getExecutionId() > ```ts getExecutionId(): string; ``` The id of the execution in which this Data Object resides. A DataObject only resides on a process instance execution or a subprocess execution.
 > > :::
+
+> ##### getExecutionId()
+
+> > ```ts
+> > getExecutionId(): string;
+> > ```
+
+
+> The id of the execution in which this Data Object resides. A DataObject only resides on a process instance
+> execution or a subprocess execution.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getName() > ```ts getName(): string; ``` Name of the DataObject.
 > > :::
+
+> ##### getName()
+
+> > ```ts
+> > getName(): string;
+> > ```
+
+
+> Name of the DataObject.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getLocalizedName() > ```ts getLocalizedName(): string; ``` Localized Name of the DataObject.
 > > :::
+
+> ##### getLocalizedName()
+
+> > ```ts
+> > getLocalizedName(): string;
+> > ```
+
+
+> Localized Name of the DataObject.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getDescription() > ```ts getDescription(): string; ``` Description of the DataObject.
 > > :::
+
+> ##### getDescription()
+
+> > ```ts
+> > getDescription(): string;
+> > ```
+
+
+> Description of the DataObject.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getValue() > ```ts getValue(): any; ``` Value of the DataObject.
 > > :::
+
+> ##### getValue()
+
+> > ```ts
+> > getValue(): any;
+> > ```
+
+
+> Value of the DataObject.
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### getType() > ```ts getType(): string; ``` Type of the DataObject.
 > > :::
+
+> ##### getType()
+
+> > ```ts
+> > getType(): string;
+> > ```
+
+
+> Type of the DataObject.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getDataObjectDefinitionKey() > ```ts getDataObjectDefinitionKey(): string; ``` The id of the flow element in the process defining this data object.
 > > :::
+
+> ##### getDataObjectDefinitionKey()
+
+> > ```ts
+> > getDataObjectDefinitionKey(): string;
+> > ```
+
+
+> The id of the flow element in the process defining this data object.
 
 > > ::: info Returns
 > > - **Type**: `string`
@@ -4028,13 +5241,27 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getUserId() > ```ts getUserId(): string; ``` reference to the user that made the comment
 > > :::
+
+> ##### getUserId()
+
+> > ```ts
+> > getUserId(): string;
+> > ```
+
+
+> reference to the user that made the comment
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setUserId() > ```ts setUserId(userId): void; ```
 > > :::
+
+> ##### setUserId()
+
+> > ```ts
+> > setUserId(userId): void;
+> > ```
+
 
 > **Parameters**
 
@@ -4044,13 +5271,25 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getTime() > ```ts getTime(): Date; ```
-> > :::
+> :::
+
+##### getTime()
+
+> ```ts
+> getTime(): Date;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### setTime() > ```ts setTime(time): any; ```
 > > :::
+
+> ##### setTime()
+
+> > ```ts
+> > setTime(time): any;
+> > ```
+
 
 > **Parameters**
 
@@ -4060,13 +5299,27 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getTaskId() > ```ts getTaskId(): string; ``` reference to the task on which this comment was made
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### setTaskId() > ```ts setTaskId(taskId): void; ```
+##### getTaskId()
+
+> ```ts
+> getTaskId(): string;
+> ```
+
+
+> reference to the task on which this comment was made
+
+> > ::: info Returns
+> > - **Type**: `string`
 > > :::
+
+> ##### setTaskId()
+
+> > ```ts
+> > setTaskId(taskId): void;
+> > ```
+
 
 > **Parameters**
 
@@ -4076,13 +5329,27 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getProcessInstanceId() > ```ts getProcessInstanceId(): string; ``` reference to the process instance on which this comment was made
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### setProcessInstanceId() > ```ts setProcessInstanceId(processInstanceId): void; ```
+##### getProcessInstanceId()
+
+> ```ts
+> getProcessInstanceId(): string;
+> ```
+
+
+> reference to the process instance on which this comment was made
+
+> > ::: info Returns
+> > - **Type**: `string`
 > > :::
+
+> ##### setProcessInstanceId()
+
+> > ```ts
+> > setProcessInstanceId(processInstanceId): void;
+> > ```
+
 
 > **Parameters**
 
@@ -4092,13 +5359,27 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getType() > ```ts getType(): string; ``` reference to the type given to the comment
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### setType() > ```ts setType(type): void; ```
+##### getType()
+
+> ```ts
+> getType(): string;
+> ```
+
+
+> reference to the type given to the comment
+
+> > ::: info Returns
+> > - **Type**: `string`
 > > :::
+
+> ##### setType()
+
+> > ```ts
+> > setType(type): void;
+> > ```
+
 
 > **Parameters**
 
@@ -4108,19 +5389,30 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getFullMessage() > ```ts getFullMessage(): string; ``` the full comment message the user had related to the task and/or process instance
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ###### See TaskService#getTaskComments(String)
-> :::
-
-##### setFullMessage()
+##### getFullMessage()
 
 > ```ts
-> setFullMessage(fullMessage): void;
+> getFullMessage(): string;
 > ```
+
+
+> the full comment message the user had related to the task and/or process instance
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ###### See
+
+> TaskService#getTaskComments(String)
+
+> ##### setFullMessage()
+
+> > ```ts
+> > setFullMessage(fullMessage): void;
+> > ```
 
 
 > **Parameters**
@@ -4150,17 +5442,34 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getAction() > ```ts getAction(): string; ``` Indicates the type of of action and also indicates the meaning of the parts as exposed in #getMessageParts()
 > > :::
+
+> ##### getAction()
+
+> > ```ts
+> > getAction(): string;
+> > ```
+
+
+> Indicates the type of of action and also indicates the meaning of the parts as exposed in #getMessageParts()
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getMessageParts() > ```ts getMessageParts(): string[]; ``` The meaning of the message parts is defined by the action as you can find in #getAction()
 > > :::
 
-> ###### Returns
+> ##### getMessageParts()
 
-> `string`[]
+> > ```ts
+> > getMessageParts(): string[];
+> > ```
+
+
+> The meaning of the message parts is defined by the action as you can find in #getAction()
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: []
+> > :::
 
 > ##### getMessage()
 
@@ -4173,23 +5482,55 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getUserId() > ```ts getUserId(): string; ``` reference to the user that made the comment
 > > :::
+
+> ##### getUserId()
+
+> > ```ts
+> > getUserId(): string;
+> > ```
+
+
+> reference to the user that made the comment
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getTime() > ```ts getTime(): Date; ``` time and date when the user made the comment
 > > :::
+
+> ##### getTime()
+
+> > ```ts
+> > getTime(): Date;
+> > ```
+
+
+> time and date when the user made the comment
 
 > > ::: info Returns
 > > - **Type**: `Date`
-> > - **Description**: ##### getTaskId() > ```ts getTaskId(): string; ``` reference to the task on which this comment was made
 > > :::
+
+> ##### getTaskId()
+
+> > ```ts
+> > getTaskId(): string;
+> > ```
+
+
+> reference to the task on which this comment was made
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getProcessInstanceId() > ```ts getProcessInstanceId(): string; ``` reference to the process instance on which this comment was made
 > > :::
+
+> ##### getProcessInstanceId()
+
+> > ```ts
+> > getProcessInstanceId(): string;
+> > ```
+
+
+> reference to the process instance on which this comment was made
 
 > > ::: info Returns
 > > - **Type**: `string`
@@ -4212,13 +5553,29 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getName() > ```ts getName(): string; ``` free user defined short (max 255 chars) name for this attachment
 > > :::
+
+> ##### getName()
+
+> > ```ts
+> > getName(): string;
+> > ```
+
+
+> free user defined short (max 255 chars) name for this attachment
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### setName() > ```ts setName(name): void; ``` free user defined short (max 255 chars) name for this attachment
 > > :::
+
+> ##### setName()
+
+> > ```ts
+> > setName(name): void;
+> > ```
+
+
+> free user defined short (max 255 chars) name for this attachment
 
 > **Parameters**
 
@@ -4228,13 +5585,29 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getDescription() > ```ts getDescription(): string; ``` long (max 255 chars) explanation what this attachment is about in context of the task and/or process instance it's linked to.
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### setDescription() > ```ts setDescription(description): void; ``` long (max 255 chars) explanation what this attachment is about in context of the task and/or process instance it's linked to.
-> :::
+##### getDescription()
+
+> ```ts
+> getDescription(): string;
+> ```
+
+
+> long (max 255 chars) explanation what this attachment is about in context of the task and/or process instance it's linked to.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### setDescription()
+
+> > ```ts
+> > setDescription(description): void;
+> > ```
+
+
+> long (max 255 chars) explanation what this attachment is about in context of the task and/or process instance it's linked to.
 
 > **Parameters**
 
@@ -4244,38 +5617,94 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getType() > ```ts getType(): string; ``` indication of the type of content that this attachment refers to. Can be mime type or any other indication.
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getTaskId() > ```ts getTaskId(): string; ``` reference to the task to which this attachment is associated.
-> :::
+##### getType()
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getProcessInstanceId() > ```ts getProcessInstanceId(): string; ``` reference to the process instance to which this attachment is associated.
-> :::
+> ```ts
+> getType(): string;
+> ```
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getUrl() > ```ts getUrl(): string; ``` the remote URL in case this is remote content. If the attachment content was [(String, String, String, String, String, java.io.InputStream) uploaded with an](#createattachment), then this method returns null and the content can be fetched with [(String)](#getattachmentcontent).
-> :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getUserId() > ```ts getUserId(): string; ``` reference to the user who created this attachment.
-> :::
+> indication of the type of content that this attachment refers to. Can be mime type or any other indication.
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getTime() > ```ts getTime(): Date; ``` timestamp when this attachment was created
-> :::
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
 
-> ::: info Returns
-> - **Type**: `Date`
-> - **Description**: ##### setTime() > ```ts setTime(time): void; ``` timestamp when this attachment was created
-> :::
+> ##### getTaskId()
+
+> > ```ts
+> > getTaskId(): string;
+> > ```
+
+
+> reference to the task to which this attachment is associated.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getProcessInstanceId()
+
+> > ```ts
+> > getProcessInstanceId(): string;
+> > ```
+
+
+> reference to the process instance to which this attachment is associated.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getUrl()
+
+> > ```ts
+> > getUrl(): string;
+> > ```
+
+
+> the remote URL in case this is remote content. If the attachment content was [(String, String, String, String, String, java.io.InputStream) uploaded with an](#createattachment), then this method returns null and the content can be fetched with [(String)](#getattachmentcontent).
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getUserId()
+
+> > ```ts
+> > getUserId(): string;
+> > ```
+
+
+> reference to the user who created this attachment.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getTime()
+
+> > ```ts
+> > getTime(): Date;
+> > ```
+
+
+> timestamp when this attachment was created
+
+> > ::: info Returns
+> > - **Type**: `Date`
+> > :::
+
+> ##### setTime()
+
+> > ```ts
+> > setTime(time): void;
+> > ```
+
+
+> timestamp when this attachment was created
 
 > **Parameters**
 
@@ -4285,24 +5714,32 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getContentId() > ```ts getContentId(): string; ``` the id of the byte array entity storing the content
 > :::
 
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ***
-> :::
-
-### QueryProperty
-
-
-#### Methods
-
-##### getName()
+##### getContentId()
 
 > ```ts
-> getName(): string;
+> getContentId(): string;
 > ```
+
+
+> the id of the byte array entity storing the content
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: ***
+> > :::
+
+> ### QueryProperty
+
+
+> #### Methods
+
+> ##### getName()
+
+> > ```ts
+> > getName(): string;
+> > ```
 
 
 > > ::: info Returns
@@ -4337,13 +5774,22 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `T`
-> > - **Description**: ##### desc() > ```ts desc(): T; ``` Order the results descending on the given property as defined in this class (needs to come after a call to one of the orderByXxxx methods).
 > > :::
+
+> ##### desc()
+
+> > ```ts
+> > desc(): T;
+> > ```
+
+
+> Order the results descending on the given property as defined in this class (needs to come after a call to one of the orderByXxxx methods).
 
 > > ::: info Returns
 > > - **Type**: `T`
-> > - **Description**: ##### orderBy()
 > > :::
+
+> ##### orderBy()
 
 > ###### Call Signature
 
@@ -4360,128 +5806,6 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Call Signature > ```ts orderBy(property, nullHandlingOnOrder): T; ```
-> > :::
-
-> **Parameters**
-
-> | Parameter | Type |
-> | ------ | ------ |
-> | `property` | [`QueryProperty`](#queryproperty) |
-> | `nullHandlingOnOrder` | [`NullHandlingOnOrder`](#nullhandlingonorder) |
-
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### count() > ```ts count(): number; ``` Executes the query and returns the number of results
-> :::
-
-> ::: info Returns
-> - **Type**: `number`
-> - **Description**: ##### singleResult() > ```ts singleResult(): U; ``` Executes the query and returns the resulting entity or null if no entity matches the query criteria.
-> :::
-
-> ::: info Returns
-> - **Type**: `U`
-> - **Description**: ###### Throws org.flowable.common.engine.api.FlowableException when the query results in more than one entities.
-> :::
-
-##### list()
-
-> ```ts
-> list(): U[];
-> ```
-
-
-> Executes the query and get a list of entities as the result.
-
-> ###### Returns
-
-> `U`[]
-
-> ##### listPage()
-
-> > ```ts
-> > listPage(firstResult, maxResults): U[];
-> > ```
-
-
-> Executes the query and get a list of entities as the result.
-
-> **Parameters**
-
-> | Parameter | Type |
-> | ------ | ------ |
-> | `firstResult` | `number` |
-> | `maxResults` | `number` |
-> 
-> ###### Returns
-> 
-> `U`[]
-> 
-> ***
-> 
-> ### TaskInfoQuery
-> 
-> 
-> #### Extends
-> 
-> - [`Query`](#query)\
-> 
-> #### Type Parameters
-> 
-> | Type Parameter |
-> | ------ |
-> | `T` |
-> | `V` *extends* [`TaskInfo`](#taskinfo) |
-> 
-> #### Methods
-> 
-> ##### asc()
-> 
-> > ```ts
-> > asc(): T;
-> > ```
-> 
-> 
-> > Order the results ascending on the given property as defined in this class (needs to come after a call to one of the orderByXxxx methods).
-> 
-> > > ::: info Returns
-> > > - **Type**: `T`
-> > > - **Description**: ###### Inherited from [`Query`](#query).[`asc`](#asc)
-> > > :::
-> 
-> > ##### desc()
-> 
-> > > ```ts
-> > > desc(): T;
-> > > ```
-> 
-> 
-> > Order the results descending on the given property as defined in this class (needs to come after a call to one of the orderByXxxx methods).
-> 
-> > > ::: info Returns
-> > > - **Type**: `T`
-> > > - **Description**: ###### Inherited from [`Query`](#query).[`desc`](#desc)
-> > > :::
-> 
-> > ##### orderBy()
-> 
-> > ###### Call Signature
-> 
-> > > ```ts
-> > > orderBy(property): T;
-> > > ```
-> 
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `property` | [`QueryProperty`](#queryproperty) |
-
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ###### Inherited from [`Query`](#query).[`orderBy`](#orderby)
 > :::
 
 ###### Call Signature
@@ -4500,7 +5824,6 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Inherited from [`Query`](#query).[`orderBy`](#orderby)
 > :::
 
 ##### count()
@@ -4514,8 +5837,171 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ###### Inherited from [`Query`](#query).[`count`](#count)
 > > :::
+
+> ##### singleResult()
+
+> > ```ts
+> > singleResult(): U;
+> > ```
+
+
+> Executes the query and returns the resulting entity or null if no entity matches the query criteria.
+
+> > ::: info Returns
+> > - **Type**: `U`
+> > :::
+
+> ###### Throws
+
+> org.flowable.common.engine.api.FlowableException when the query results in more than one entities.
+
+> ##### list()
+
+> > ```ts
+> > list(): U[];
+> > ```
+
+
+> Executes the query and get a list of entities as the result.
+
+> > ::: info Returns
+> > - **Type**: `U`
+> > - **Description**: []
+> > :::
+
+> ##### listPage()
+
+> > ```ts
+> > listPage(firstResult, maxResults): U[];
+> > ```
+
+
+> Executes the query and get a list of entities as the result.
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `firstResult` | `number` |
+> | `maxResults` | `number` |
+
+> ::: info Returns
+> - **Type**: `U`
+> - **Description**: [] ***
+> :::
+
+### TaskInfoQuery
+
+
+#### Extends
+
+- [`Query`](#query)\
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| `T` |
+| `V` *extends* [`TaskInfo`](#taskinfo) |
+
+#### Methods
+
+##### asc()
+
+> ```ts
+> asc(): T;
+> ```
+
+
+> Order the results ascending on the given property as defined in this class (needs to come after a call to one of the orderByXxxx methods).
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ###### Inherited from
+
+> [`Query`](#query).[`asc`](#asc)
+
+> ##### desc()
+
+> > ```ts
+> > desc(): T;
+> > ```
+
+
+> Order the results descending on the given property as defined in this class (needs to come after a call to one of the orderByXxxx methods).
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ###### Inherited from
+
+> [`Query`](#query).[`desc`](#desc)
+
+> ##### orderBy()
+
+> ###### Call Signature
+
+> > ```ts
+> > orderBy(property): T;
+> > ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `property` | [`QueryProperty`](#queryproperty) |
+
+> ::: info Returns
+> - **Type**: `T`
+> :::
+
+###### Inherited from
+
+[`Query`](#query).[`orderBy`](#orderby)
+
+###### Call Signature
+
+> ```ts
+> orderBy(property, nullHandlingOnOrder): T;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `property` | [`QueryProperty`](#queryproperty) |
+> | `nullHandlingOnOrder` | [`NullHandlingOnOrder`](#nullhandlingonorder) |
+
+> ::: info Returns
+> - **Type**: `T`
+> :::
+
+###### Inherited from
+
+[`Query`](#query).[`orderBy`](#orderby)
+
+##### count()
+
+> ```ts
+> count(): number;
+> ```
+
+
+> Executes the query and returns the number of results
+
+> > ::: info Returns
+> > - **Type**: `number`
+> > :::
+
+> ###### Inherited from
+
+> [`Query`](#query).[`count`](#count)
 
 > ##### singleResult()
 
@@ -4528,8 +6014,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `V`
-> > - **Description**: ###### Throws org.flowable.common.engine.api.FlowableException when the query results in more than one entities.
 > > :::
+
+> ###### Throws
+
+> org.flowable.common.engine.api.FlowableException when the query results in more than one entities.
 
 > ###### Inherited from
 
@@ -4544,9 +6033,10 @@ FlowableException
 
 > Executes the query and get a list of entities as the result.
 
-> ###### Returns
-
-> `V`[]
+> > ::: info Returns
+> > - **Type**: `V`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -4567,34 +6057,43 @@ FlowableException
 > | ------ | ------ |
 > | `firstResult` | `number` |
 > | `maxResults` | `number` |
-> 
-> ###### Returns
-> 
-> `V`[]
-> 
-> ###### Inherited from
-> 
-> [`Query`](#query).[`listPage`](#listpage)
-> 
-> ##### taskId()
-> 
-> > ```ts
-> > taskId(taskId): T;
-> > ```
-> 
-> 
-> > Only select tasks with the given task id (in practice, there will be maximum one of this kind)
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `V`
+> - **Description**: []
+> :::
+
+###### Inherited from
+
+[`Query`](#query).[`listPage`](#listpage)
+
+##### taskId()
+
+> ```ts
+> taskId(taskId): T;
+> ```
+
+
+> Only select tasks with the given task id (in practice, there will be maximum one of this kind)
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `taskId` | `string` |
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskIds() > ```ts taskIds(taskIds): T; ``` Only select tasks with an id that is in the given list
 > :::
+
+##### taskIds()
+
+> ```ts
+> taskIds(taskIds): T;
+> ```
+
+
+> Only select tasks with an id that is in the given list
 
 > **Parameters**
 
@@ -4604,8 +6103,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When passed id list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When passed id list is empty or null or contains null String.
 
 ##### taskName()
 
@@ -4624,8 +6127,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskNameIn() > ```ts taskNameIn(nameList): T; ``` Only select tasks with a name that is in the given list
 > :::
+
+##### taskNameIn()
+
+> ```ts
+> taskNameIn(nameList): T;
+> ```
+
+
+> Only select tasks with a name that is in the given list
 
 > **Parameters**
 
@@ -4635,8 +6146,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When passed name list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When passed name list is empty or null or contains null String.
 
 ##### taskNameInIgnoreCase()
 
@@ -4657,8 +6172,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When passed name list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When passed name list is empty or null or contains null String.
 
 ##### taskNameLike()
 
@@ -4677,8 +6196,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskNameLikeIgnoreCase() > ```ts taskNameLikeIgnoreCase(nameLike): T; ``` Only select tasks with a name matching the parameter. The syntax is that of SQL: for example usage: nameLike(%test%) This method, unlike the #taskNameLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### taskNameLikeIgnoreCase()
+
+> ```ts
+> taskNameLikeIgnoreCase(nameLike): T;
+> ```
+
+
+> Only select tasks with a name matching the parameter. The syntax is that of SQL: for example usage: nameLike(%test%)
+
+> This method, unlike the #taskNameLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is
+> executed.
 
 > **Parameters**
 
@@ -4688,8 +6218,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDescription() > ```ts taskDescription(description): T; ``` Only select tasks with the given description.
 > :::
+
+##### taskDescription()
+
+> ```ts
+> taskDescription(description): T;
+> ```
+
+
+> Only select tasks with the given description.
 
 > **Parameters**
 
@@ -4699,8 +6237,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDescriptionLike() > ```ts taskDescriptionLike(descriptionLike): T; ``` Only select tasks with a description matching the parameter . The syntax is that of SQL: for example usage: descriptionLike(%test%)
 > :::
+
+##### taskDescriptionLike()
+
+> ```ts
+> taskDescriptionLike(descriptionLike): T;
+> ```
+
+
+> Only select tasks with a description matching the parameter . The syntax is that of SQL: for example usage: descriptionLike(%test%)
 
 > **Parameters**
 
@@ -4710,8 +6256,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDescriptionLikeIgnoreCase() > ```ts taskDescriptionLikeIgnoreCase(descriptionLike): T; ``` Only select tasks with a description matching the parameter . The syntax is that of SQL: for example usage: descriptionLike(%test%) This method, unlike the #taskDescriptionLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### taskDescriptionLikeIgnoreCase()
+
+> ```ts
+> taskDescriptionLikeIgnoreCase(descriptionLike): T;
+> ```
+
+
+> Only select tasks with a description matching the parameter . The syntax is that of SQL: for example usage: descriptionLike(%test%)
+
+> This method, unlike the #taskDescriptionLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is
+> executed.
 
 > **Parameters**
 
@@ -4721,8 +6278,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskPriority() > ```ts taskPriority(priority): T; ``` Only select tasks with the given priority.
 > :::
+
+##### taskPriority()
+
+> ```ts
+> taskPriority(priority): T;
+> ```
+
+
+> Only select tasks with the given priority.
 
 > **Parameters**
 
@@ -4732,8 +6297,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskMinPriority() > ```ts taskMinPriority(minPriority): T; ``` Only select tasks with the given priority or higher.
 > :::
+
+##### taskMinPriority()
+
+> ```ts
+> taskMinPriority(minPriority): T;
+> ```
+
+
+> Only select tasks with the given priority or higher.
 
 > **Parameters**
 
@@ -4743,8 +6316,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskMaxPriority() > ```ts taskMaxPriority(maxPriority): T; ``` Only select tasks with the given priority or lower.
 > :::
+
+##### taskMaxPriority()
+
+> ```ts
+> taskMaxPriority(maxPriority): T;
+> ```
+
+
+> Only select tasks with the given priority or lower.
 
 > **Parameters**
 
@@ -4754,8 +6335,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskAssignee() > ```ts taskAssignee(assignee): T; ``` Only select tasks which are assigned to the given user.
 > :::
+
+##### taskAssignee()
+
+> ```ts
+> taskAssignee(assignee): T;
+> ```
+
+
+> Only select tasks which are assigned to the given user.
 
 > **Parameters**
 
@@ -4765,8 +6354,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskAssigneeLike() > ```ts taskAssigneeLike(assigneeLike): T; ``` Only select tasks which were last assigned to an assignee like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 > :::
+
+##### taskAssigneeLike()
+
+> ```ts
+> taskAssigneeLike(assigneeLike): T;
+> ```
+
+
+> Only select tasks which were last assigned to an assignee like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 
 > **Parameters**
 
@@ -4776,8 +6373,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskAssigneeLikeIgnoreCase() > ```ts taskAssigneeLikeIgnoreCase(assigneeLikeIgnoreCase): T; ``` Only select tasks which were last assigned to an assignee like the given value. The syntax that should be used is the same as in SQL, eg. %test%. This method, unlike the #taskAssigneeLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### taskAssigneeLikeIgnoreCase()
+
+> ```ts
+> taskAssigneeLikeIgnoreCase(assigneeLikeIgnoreCase): T;
+> ```
+
+
+> Only select tasks which were last assigned to an assignee like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
+
+> This method, unlike the #taskAssigneeLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is
+> executed.
 
 > **Parameters**
 
@@ -4787,18 +6395,42 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskUnassigned() > ```ts taskUnassigned(): T; ``` Only select tasks which don't have an assignee.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### taskAssigned() > ```ts taskAssigned(): T; ``` Only select tasks which are assigned to any user
-> :::
+##### taskUnassigned()
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### taskAssigneeIds() > ```ts taskAssigneeIds(assigneeListIds): T; ``` Only select tasks with an assignee that is in the given list
-> :::
+> ```ts
+> taskUnassigned(): T;
+> ```
+
+
+> Only select tasks which don't have an assignee.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### taskAssigned()
+
+> > ```ts
+> > taskAssigned(): T;
+> > ```
+
+
+> Only select tasks which are assigned to any user
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### taskAssigneeIds()
+
+> > ```ts
+> > taskAssigneeIds(assigneeListIds): T;
+> > ```
+
+
+> Only select tasks with an assignee that is in the given list
 
 > **Parameters**
 
@@ -4808,8 +6440,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When passed name list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When passed name list is empty or null or contains null String.
 
 ##### taskOwner()
 
@@ -4828,8 +6464,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskOwnerLike() > ```ts taskOwnerLike(ownerLike): T; ``` Only select tasks which were last assigned to an owner like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 > :::
+
+##### taskOwnerLike()
+
+> ```ts
+> taskOwnerLike(ownerLike): T;
+> ```
+
+
+> Only select tasks which were last assigned to an owner like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 
 > **Parameters**
 
@@ -4839,8 +6483,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskOwnerLikeIgnoreCase() > ```ts taskOwnerLikeIgnoreCase(ownerLikeIgnoreCase): T; ``` Only select tasks which were last assigned to an owner like the given value. The syntax that should be used is the same as in SQL, eg. %test%. This method, unlike the #taskOwnerLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### taskOwnerLikeIgnoreCase()
+
+> ```ts
+> taskOwnerLikeIgnoreCase(ownerLikeIgnoreCase): T;
+> ```
+
+
+> Only select tasks which were last assigned to an owner like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
+
+> This method, unlike the #taskOwnerLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is
+> executed.
 
 > **Parameters**
 
@@ -4850,8 +6505,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCandidateUser() > ```ts taskCandidateUser(candidateUser): T; ``` Only select tasks for which the given user is a candidate.
 > :::
+
+##### taskCandidateUser()
+
+> ```ts
+> taskCandidateUser(candidateUser): T;
+> ```
+
+
+> Only select tasks for which the given user is a candidate.
 
 > **Parameters**
 
@@ -4861,8 +6524,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInvolvedUser() > ```ts taskInvolvedUser(involvedUser): T; ``` Only select tasks for which there exist an [IdentityLink](#identitylink) with the given user, including tasks which have been assigned to the given user (assignee) or owned by the given user (owner).
 > :::
+
+##### taskInvolvedUser()
+
+> ```ts
+> taskInvolvedUser(involvedUser): T;
+> ```
+
+
+> Only select tasks for which there exist an [IdentityLink](#identitylink) with the given user, including tasks which have been assigned to the given user (assignee) or owned by the given user (owner).
 
 > **Parameters**
 
@@ -4872,8 +6543,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInvolvedGroups() > ```ts taskInvolvedGroups(involvedGroup): T; ``` Only select tasks for which there exist an [IdentityLink](#identitylink) with the given Groups.
 > :::
+
+##### taskInvolvedGroups()
+
+> ```ts
+> taskInvolvedGroups(involvedGroup): T;
+> ```
+
+
+> Only select tasks for which there exist an [IdentityLink](#identitylink) with the given Groups.
 
 > **Parameters**
 
@@ -4883,13 +6562,29 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### ignoreAssigneeValue() > ```ts ignoreAssigneeValue(): T; ``` Allows to select a task using #taskCandidateGroup(String) #taskCandidateGroupIn(Collection) or #taskCandidateUser(String) but ignore the assignee value instead of querying for an empty assignee.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### taskCandidateGroup() > ```ts taskCandidateGroup(candidateGroup): T; ``` Only select tasks for which users in the given group are candidates.
-> :::
+##### ignoreAssigneeValue()
+
+> ```ts
+> ignoreAssigneeValue(): T;
+> ```
+
+
+> Allows to select a task using #taskCandidateGroup(String) #taskCandidateGroupIn(Collection) or #taskCandidateUser(String) but ignore the assignee value instead of querying for an empty assignee.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### taskCandidateGroup()
+
+> > ```ts
+> > taskCandidateGroup(candidateGroup): T;
+> > ```
+
+
+> Only select tasks for which users in the given group are candidates.
 
 > **Parameters**
 
@@ -4899,8 +6594,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCandidateGroupIn() > ```ts taskCandidateGroupIn(candidateGroups): T; ``` Only select tasks for which the 'candidateGroup' is one of the given groups.
 > :::
+
+##### taskCandidateGroupIn()
+
+> ```ts
+> taskCandidateGroupIn(candidateGroups): T;
+> ```
+
+
+> Only select tasks for which the 'candidateGroup' is one of the given groups.
 
 > **Parameters**
 
@@ -4910,8 +6613,13 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When query is executed and #taskCandidateGroup(String) or #taskCandidateUser(String) has been executed on the query instance. When passed group list is empty or             null.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When query is executed and #taskCandidateGroup(String) or #taskCandidateUser(String) has been executed on the query instance. When passed group list is empty or
+            null.
 
 ##### taskTenantId()
 
@@ -4930,8 +6638,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskTenantIdLike() > ```ts taskTenantIdLike(tenantIdLike): T; ``` Only select tasks with a tenant id like the given one.
 > :::
+
+##### taskTenantIdLike()
+
+> ```ts
+> taskTenantIdLike(tenantIdLike): T;
+> ```
+
+
+> Only select tasks with a tenant id like the given one.
 
 > **Parameters**
 
@@ -4941,13 +6657,29 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskWithoutTenantId() > ```ts taskWithoutTenantId(): T; ``` Only select tasks that do not have a tenant id.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### processInstanceId() > ```ts processInstanceId(processInstanceId): T; ``` Only select tasks for the given process instance id.
-> :::
+##### taskWithoutTenantId()
+
+> ```ts
+> taskWithoutTenantId(): T;
+> ```
+
+
+> Only select tasks that do not have a tenant id.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### processInstanceId()
+
+> > ```ts
+> > processInstanceId(processInstanceId): T;
+> > ```
+
+
+> Only select tasks for the given process instance id.
 
 > **Parameters**
 
@@ -4957,8 +6689,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processInstanceIdIn() > ```ts processInstanceIdIn(processInstanceIds): T; ``` Only select tasks for the given process ids.
 > :::
+
+##### processInstanceIdIn()
+
+> ```ts
+> processInstanceIdIn(processInstanceIds): T;
+> ```
+
+
+> Only select tasks for the given process ids.
 
 > **Parameters**
 
@@ -4968,13 +6708,29 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### withoutProcessInstanceId() > ```ts withoutProcessInstanceId(): T; ``` Only select tasks without a process instance id.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### processInstanceBusinessKey() > ```ts processInstanceBusinessKey(processInstanceBusinessKey): T; ``` Only select tasks for the given business key
-> :::
+##### withoutProcessInstanceId()
+
+> ```ts
+> withoutProcessInstanceId(): T;
+> ```
+
+
+> Only select tasks without a process instance id.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### processInstanceBusinessKey()
+
+> > ```ts
+> > processInstanceBusinessKey(processInstanceBusinessKey): T;
+> > ```
+
+
+> Only select tasks for the given business key
 
 > **Parameters**
 
@@ -4984,8 +6740,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processInstanceBusinessKeyLike() > ```ts processInstanceBusinessKeyLike(processInstanceBusinessKeyLike): T; ``` Only select tasks with a business key like the given value The syntax is that of SQL: for example usage: processInstanceBusinessKeyLike("%test%").
 > :::
+
+##### processInstanceBusinessKeyLike()
+
+> ```ts
+> processInstanceBusinessKeyLike(processInstanceBusinessKeyLike): T;
+> ```
+
+
+> Only select tasks with a business key like the given value The syntax is that of SQL: for example usage: processInstanceBusinessKeyLike("%test%").
 
 > **Parameters**
 
@@ -4995,8 +6759,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processInstanceBusinessKeyLikeIgnoreCase() > ```ts processInstanceBusinessKeyLikeIgnoreCase(processInstanceBusinessKeyLikeIgnoreCase): T; ``` Only select tasks with a business key like the given value The syntax is that of SQL: for example usage: processInstanceBusinessKeyLike("%test%"). This method, unlike the #processInstanceBusinessKeyLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### processInstanceBusinessKeyLikeIgnoreCase()
+
+> ```ts
+> processInstanceBusinessKeyLikeIgnoreCase(processInstanceBusinessKeyLikeIgnoreCase): T;
+> ```
+
+
+> Only select tasks with a business key like the given value The syntax is that of SQL: for example usage: processInstanceBusinessKeyLike("%test%").
+
+> This method, unlike the #processInstanceBusinessKeyLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when
+> the query is executed.
 
 > **Parameters**
 
@@ -5006,8 +6781,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### executionId() > ```ts executionId(executionId): T; ``` Only select tasks for the given execution.
 > :::
+
+##### executionId()
+
+> ```ts
+> executionId(executionId): T;
+> ```
+
+
+> Only select tasks for the given execution.
 
 > **Parameters**
 
@@ -5017,8 +6800,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseInstanceId() > ```ts caseInstanceId(caseInstanceId): T; ``` Only select tasks for the given case instance.
 > :::
+
+##### caseInstanceId()
+
+> ```ts
+> caseInstanceId(caseInstanceId): T;
+> ```
+
+
+> Only select tasks for the given case instance.
 
 > **Parameters**
 
@@ -5028,8 +6819,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseDefinitionId() > ```ts caseDefinitionId(caseDefinitionId): T; ``` Only select tasks for the given case definition.
 > :::
+
+##### caseDefinitionId()
+
+> ```ts
+> caseDefinitionId(caseDefinitionId): T;
+> ```
+
+
+> Only select tasks for the given case definition.
 
 > **Parameters**
 
@@ -5039,8 +6838,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseDefinitionKey() > ```ts caseDefinitionKey(caseDefinitionKey): T; ``` Only select tasks which are part of a case instance which has the given case definition key.
 > :::
+
+##### caseDefinitionKey()
+
+> ```ts
+> caseDefinitionKey(caseDefinitionKey): T;
+> ```
+
+
+> Only select tasks which are part of a case instance which has the given case definition key.
 
 > **Parameters**
 
@@ -5050,8 +6857,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseDefinitionKeyLike() > ```ts caseDefinitionKeyLike(caseDefinitionKeyLike): T; ``` Only select tasks which are part of a case instance which has a case definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 > :::
+
+##### caseDefinitionKeyLike()
+
+> ```ts
+> caseDefinitionKeyLike(caseDefinitionKeyLike): T;
+> ```
+
+
+> Only select tasks which are part of a case instance which has a case definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 
 > **Parameters**
 
@@ -5061,8 +6876,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseDefinitionKeyLikeIgnoreCase() > ```ts caseDefinitionKeyLikeIgnoreCase(caseDefinitionKeyLikeIgnoreCase): T; ``` Only select tasks which are part of a case instance which has a case definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%. This method, unlike the #caseDefinitionKeyLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### caseDefinitionKeyLikeIgnoreCase()
+
+> ```ts
+> caseDefinitionKeyLikeIgnoreCase(caseDefinitionKeyLikeIgnoreCase): T;
+> ```
+
+
+> Only select tasks which are part of a case instance which has a case definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
+
+> This method, unlike the #caseDefinitionKeyLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the
+> query is executed.
 
 > **Parameters**
 
@@ -5072,8 +6898,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseDefinitionKeyIn() > ```ts caseDefinitionKeyIn(caseDefinitionKeys): T; ``` Only select tasks that have a case definition for which the key is present in the given list *
 > :::
+
+##### caseDefinitionKeyIn()
+
+> ```ts
+> caseDefinitionKeyIn(caseDefinitionKeys): T;
+> ```
+
+
+> Only select tasks that have a case definition for which the key is present in the given list *
 
 > **Parameters**
 
@@ -5083,8 +6917,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### planItemInstanceId() > ```ts planItemInstanceId(planItemInstanceId): T; ``` Only select tasks for the given plan item instance.
 > :::
+
+##### planItemInstanceId()
+
+> ```ts
+> planItemInstanceId(planItemInstanceId): T;
+> ```
+
+
+> Only select tasks for the given plan item instance.
 
 > **Parameters**
 
@@ -5094,8 +6936,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### scopeId() > ```ts scopeId(scopeId): T; ``` Only select tasks for the given scope identifier.
 > :::
+
+##### scopeId()
+
+> ```ts
+> scopeId(scopeId): T;
+> ```
+
+
+> Only select tasks for the given scope identifier.
 
 > **Parameters**
 
@@ -5105,8 +6955,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### subScopeId() > ```ts subScopeId(subScopeId): T; ``` Only select tasks for the given sub scope identifier.
 > :::
+
+##### subScopeId()
+
+> ```ts
+> subScopeId(subScopeId): T;
+> ```
+
+
+> Only select tasks for the given sub scope identifier.
 
 > **Parameters**
 
@@ -5116,8 +6974,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### scopeType() > ```ts scopeType(scopeType): T; ``` Only select tasks for the given scope type.
 > :::
+
+##### scopeType()
+
+> ```ts
+> scopeType(scopeType): T;
+> ```
+
+
+> Only select tasks for the given scope type.
 
 > **Parameters**
 
@@ -5127,8 +6993,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### scopeDefinitionId() > ```ts scopeDefinitionId(scopeDefinitionId): T; ``` Only select tasks for the given scope definition identifier.
 > :::
+
+##### scopeDefinitionId()
+
+> ```ts
+> scopeDefinitionId(scopeDefinitionId): T;
+> ```
+
+
+> Only select tasks for the given scope definition identifier.
 
 > **Parameters**
 
@@ -5138,8 +7012,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### propagatedStageInstanceId() > ```ts propagatedStageInstanceId(propagatedStageInstanceId): T; ``` Only select tasks for the given stage, defined through its stage instance id.
 > :::
+
+##### propagatedStageInstanceId()
+
+> ```ts
+> propagatedStageInstanceId(propagatedStageInstanceId): T;
+> ```
+
+
+> Only select tasks for the given stage, defined through its stage instance id.
 
 > **Parameters**
 
@@ -5149,8 +7031,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processInstanceIdWithChildren() > ```ts processInstanceIdWithChildren(processInstanceId): T; ``` Select all tasks for the given process instance id and its children.
 > :::
+
+##### processInstanceIdWithChildren()
+
+> ```ts
+> processInstanceIdWithChildren(processInstanceId): T;
+> ```
+
+
+> Select all tasks for the given process instance id and its children.
 
 > **Parameters**
 
@@ -5160,8 +7050,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseInstanceIdWithChildren() > ```ts caseInstanceIdWithChildren(caseInstanceId): T; ``` Select all tasks for the given case instance id and its children.
 > :::
+
+##### caseInstanceIdWithChildren()
+
+> ```ts
+> caseInstanceIdWithChildren(caseInstanceId): T;
+> ```
+
+
+> Select all tasks for the given case instance id and its children.
 
 > **Parameters**
 
@@ -5171,8 +7069,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCreatedOn() > ```ts taskCreatedOn(createTime): T; ``` Only select tasks that are created on the given date.
 > :::
+
+##### taskCreatedOn()
+
+> ```ts
+> taskCreatedOn(createTime): T;
+> ```
+
+
+> Only select tasks that are created on the given date.
 
 > **Parameters**
 
@@ -5182,8 +7088,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCreatedBefore() > ```ts taskCreatedBefore(before): T; ``` Only select tasks that are created before the given date.
 > :::
+
+##### taskCreatedBefore()
+
+> ```ts
+> taskCreatedBefore(before): T;
+> ```
+
+
+> Only select tasks that are created before the given date.
 
 > **Parameters**
 
@@ -5193,8 +7107,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCreatedAfter() > ```ts taskCreatedAfter(after): T; ``` Only select tasks that are created after the given date.
 > :::
+
+##### taskCreatedAfter()
+
+> ```ts
+> taskCreatedAfter(after): T;
+> ```
+
+
+> Only select tasks that are created after the given date.
 
 > **Parameters**
 
@@ -5204,8 +7126,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartTimeOn() > ```ts taskInProgressStartTimeOn(claimedTime): T; ``` Only select tasks that are started in progress on the given date.
 > :::
+
+##### taskInProgressStartTimeOn()
+
+> ```ts
+> taskInProgressStartTimeOn(claimedTime): T;
+> ```
+
+
+> Only select tasks that are started in progress on the given date.
 
 > **Parameters**
 
@@ -5215,8 +7145,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartTimeBefore() > ```ts taskInProgressStartTimeBefore(before): T; ``` Only select tasks that are started in progress before the given date.
 > :::
+
+##### taskInProgressStartTimeBefore()
+
+> ```ts
+> taskInProgressStartTimeBefore(before): T;
+> ```
+
+
+> Only select tasks that are started in progress before the given date.
 
 > **Parameters**
 
@@ -5226,8 +7164,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartTimeAfter() > ```ts taskInProgressStartTimeAfter(after): T; ``` Only select tasks that are started in progress after the given date.
 > :::
+
+##### taskInProgressStartTimeAfter()
+
+> ```ts
+> taskInProgressStartTimeAfter(after): T;
+> ```
+
+
+> Only select tasks that are started in progress after the given date.
 
 > **Parameters**
 
@@ -5237,8 +7183,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartedBy() > ```ts taskInProgressStartedBy(startedBy): T; ``` Select all tasks that have an in progress started user reference for the given value.
 > :::
+
+##### taskInProgressStartedBy()
+
+> ```ts
+> taskInProgressStartedBy(startedBy): T;
+> ```
+
+
+> Select all tasks that have an in progress started user reference for the given value.
 
 > **Parameters**
 
@@ -5248,8 +7202,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskClaimedOn() > ```ts taskClaimedOn(claimedTime): T; ``` Only select tasks that are claimed on the given date.
 > :::
+
+##### taskClaimedOn()
+
+> ```ts
+> taskClaimedOn(claimedTime): T;
+> ```
+
+
+> Only select tasks that are claimed on the given date.
 
 > **Parameters**
 
@@ -5259,8 +7221,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskClaimedBefore() > ```ts taskClaimedBefore(before): T; ``` Only select tasks that are claimed before the given date.
 > :::
+
+##### taskClaimedBefore()
+
+> ```ts
+> taskClaimedBefore(before): T;
+> ```
+
+
+> Only select tasks that are claimed before the given date.
 
 > **Parameters**
 
@@ -5270,8 +7240,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskClaimedAfter() > ```ts taskClaimedAfter(after): T; ``` Only select tasks that are claimed after the given date.
 > :::
+
+##### taskClaimedAfter()
+
+> ```ts
+> taskClaimedAfter(after): T;
+> ```
+
+
+> Only select tasks that are claimed after the given date.
 
 > **Parameters**
 
@@ -5281,8 +7259,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskClaimedBy() > ```ts taskClaimedBy(claimedBy): T; ``` Select all tasks that have a claimed by user reference for the given value.
 > :::
+
+##### taskClaimedBy()
+
+> ```ts
+> taskClaimedBy(claimedBy): T;
+> ```
+
+
+> Select all tasks that have a claimed by user reference for the given value.
 
 > **Parameters**
 
@@ -5292,8 +7278,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskSuspendedOn() > ```ts taskSuspendedOn(suspendedTime): T; ``` Only select tasks that are suspended on the given date.
 > :::
+
+##### taskSuspendedOn()
+
+> ```ts
+> taskSuspendedOn(suspendedTime): T;
+> ```
+
+
+> Only select tasks that are suspended on the given date.
 
 > **Parameters**
 
@@ -5303,8 +7297,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskSuspendedBefore() > ```ts taskSuspendedBefore(before): T; ``` Only select tasks that are suspended before the given date.
 > :::
+
+##### taskSuspendedBefore()
+
+> ```ts
+> taskSuspendedBefore(before): T;
+> ```
+
+
+> Only select tasks that are suspended before the given date.
 
 > **Parameters**
 
@@ -5314,8 +7316,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskSuspendedAfter() > ```ts taskSuspendedAfter(after): T; ``` Only select tasks that are suspended after the given date.
 > :::
+
+##### taskSuspendedAfter()
+
+> ```ts
+> taskSuspendedAfter(after): T;
+> ```
+
+
+> Only select tasks that are suspended after the given date.
 
 > **Parameters**
 
@@ -5325,8 +7335,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskSuspendedBy() > ```ts taskSuspendedBy(suspendedBy): T; ``` Select all tasks that have a suspended by user reference for the given value.
 > :::
+
+##### taskSuspendedBy()
+
+> ```ts
+> taskSuspendedBy(suspendedBy): T;
+> ```
+
+
+> Select all tasks that have a suspended by user reference for the given value.
 
 > **Parameters**
 
@@ -5336,8 +7354,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCategory() > ```ts taskCategory(category): T; ``` Only select tasks with the given category.
 > :::
+
+##### taskCategory()
+
+> ```ts
+> taskCategory(category): T;
+> ```
+
+
+> Only select tasks with the given category.
 
 > **Parameters**
 
@@ -5347,8 +7373,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskCategoryIn() > ```ts taskCategoryIn(taskCategoryInList): T; ``` Only select tasks belonging to one of the categories in the given list.
 > :::
+
+##### taskCategoryIn()
+
+> ```ts
+> taskCategoryIn(taskCategoryInList): T;
+> ```
+
+
+> Only select tasks belonging to one of the categories in the given list.
 
 > **Parameters**
 
@@ -5358,8 +7392,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException When passed category list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException When passed category list is empty or null or contains null String.
 
 ##### taskCategoryNotIn()
 
@@ -5382,8 +7419,11 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException When passed category list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException When passed category list is empty or null or contains null String.
 
 ###### See
 
@@ -5403,8 +7443,11 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `T`
-> > - **Description**: ###### See #taskCategoryNotIn(Collection)
 > > :::
+
+> ###### See
+
+> #taskCategoryNotIn(Collection)
 
 > ##### taskWithFormKey()
 
@@ -5417,8 +7460,16 @@ FlowableException
 
 > > ::: info Returns
 > > - **Type**: `T`
-> > - **Description**: ##### taskFormKey() > ```ts taskFormKey(formKey): T; ``` Only select tasks with the given formKey.
 > > :::
+
+> ##### taskFormKey()
+
+> > ```ts
+> > taskFormKey(formKey): T;
+> > ```
+
+
+> Only select tasks with the given formKey.
 
 > **Parameters**
 
@@ -5428,8 +7479,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDefinitionKey() > ```ts taskDefinitionKey(key): T; ``` Only select tasks with the given taskDefinitionKey. The task definition key is the id of the userTask: &lt;userTask id="xxx" .../&gt;
 > :::
+
+##### taskDefinitionKey()
+
+> ```ts
+> taskDefinitionKey(key): T;
+> ```
+
+
+> Only select tasks with the given taskDefinitionKey. The task definition key is the id of the userTask: &lt;userTask id="xxx" .../&gt;
 
 > **Parameters**
 
@@ -5439,8 +7498,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDefinitionKeyLike() > ```ts taskDefinitionKeyLike(keyLike): T; ``` Only select tasks with a taskDefinitionKey that match the given parameter. The syntax is that of SQL: for example usage: taskDefinitionKeyLike("%test%"). The task definition key is the id of the userTask: &lt;userTask id="xxx" .../&gt;
 > :::
+
+##### taskDefinitionKeyLike()
+
+> ```ts
+> taskDefinitionKeyLike(keyLike): T;
+> ```
+
+
+> Only select tasks with a taskDefinitionKey that match the given parameter. The syntax is that of SQL: for example usage: taskDefinitionKeyLike("%test%"). The task definition key is the id of
+> the userTask: &lt;userTask id="xxx" .../&gt;
 
 > **Parameters**
 
@@ -5450,8 +7518,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDefinitionKeys() > ```ts taskDefinitionKeys(keys): T; ``` Only select tasks with the given taskDefinitionKeys. The task definition key is the id of the userTask: &lt;userTask id="xxx" .../&gt;
 > :::
+
+##### taskDefinitionKeys()
+
+> ```ts
+> taskDefinitionKeys(keys): T;
+> ```
+
+
+> Only select tasks with the given taskDefinitionKeys. The task definition key is the id of the userTask: &lt;userTask id="xxx" .../&gt;
 
 > **Parameters**
 
@@ -5461,8 +7537,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskState() > ```ts taskState(state): T; ``` Only select tasks with the given state.
 > :::
+
+##### taskState()
+
+> ```ts
+> taskState(state): T;
+> ```
+
+
+> Only select tasks with the given state.
 
 > **Parameters**
 
@@ -5472,8 +7556,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartDueDate() > ```ts taskInProgressStartDueDate(dueDate): T; ``` Only select tasks with the given in progress start due date.
 > :::
+
+##### taskInProgressStartDueDate()
+
+> ```ts
+> taskInProgressStartDueDate(dueDate): T;
+> ```
+
+
+> Only select tasks with the given in progress start due date.
 
 > **Parameters**
 
@@ -5483,8 +7575,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartDueBefore() > ```ts taskInProgressStartDueBefore(dueDate): T; ``` Only select tasks which have an in progress start due date before the given date.
 > :::
+
+##### taskInProgressStartDueBefore()
+
+> ```ts
+> taskInProgressStartDueBefore(dueDate): T;
+> ```
+
+
+> Only select tasks which have an in progress start due date before the given date.
 
 > **Parameters**
 
@@ -5494,8 +7594,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskInProgressStartDueAfter() > ```ts taskInProgressStartDueAfter(dueDate): T; ``` Only select tasks which have an in progress start due date after the given date.
 > :::
+
+##### taskInProgressStartDueAfter()
+
+> ```ts
+> taskInProgressStartDueAfter(dueDate): T;
+> ```
+
+
+> Only select tasks which have an in progress start due date after the given date.
 
 > **Parameters**
 
@@ -5505,13 +7613,29 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### withoutTaskInProgressStartDueDate() > ```ts withoutTaskInProgressStartDueDate(): T; ``` Only select tasks with no in progress start due date.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### taskDueDate() > ```ts taskDueDate(dueDate): T; ``` Only select tasks with the given due date.
-> :::
+##### withoutTaskInProgressStartDueDate()
+
+> ```ts
+> withoutTaskInProgressStartDueDate(): T;
+> ```
+
+
+> Only select tasks with no in progress start due date.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### taskDueDate()
+
+> > ```ts
+> > taskDueDate(dueDate): T;
+> > ```
+
+
+> Only select tasks with the given due date.
 
 > **Parameters**
 
@@ -5521,8 +7645,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDueBefore() > ```ts taskDueBefore(dueDate): T; ``` Only select tasks which have a due date before the given date.
 > :::
+
+##### taskDueBefore()
+
+> ```ts
+> taskDueBefore(dueDate): T;
+> ```
+
+
+> Only select tasks which have a due date before the given date.
 
 > **Parameters**
 
@@ -5532,8 +7664,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDueAfter() > ```ts taskDueAfter(dueDate): T; ``` Only select tasks which have a due date after the given date.
 > :::
+
+##### taskDueAfter()
+
+> ```ts
+> taskDueAfter(dueDate): T;
+> ```
+
+
+> Only select tasks which have a due date after the given date.
 
 > **Parameters**
 
@@ -5543,13 +7683,29 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### withoutTaskDueDate() > ```ts withoutTaskDueDate(): T; ``` Only select tasks with no due date.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### processDefinitionKey() > ```ts processDefinitionKey(processDefinitionKey): T; ``` Only select tasks which are part of a process instance which has the given process definition key.
-> :::
+##### withoutTaskDueDate()
+
+> ```ts
+> withoutTaskDueDate(): T;
+> ```
+
+
+> Only select tasks with no due date.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### processDefinitionKey()
+
+> > ```ts
+> > processDefinitionKey(processDefinitionKey): T;
+> > ```
+
+
+> Only select tasks which are part of a process instance which has the given process definition key.
 
 > **Parameters**
 
@@ -5559,8 +7715,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processDefinitionKeyLike() > ```ts processDefinitionKeyLike(processDefinitionKeyLike): T; ``` Only select tasks which are part of a process instance which has a process definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 > :::
+
+##### processDefinitionKeyLike()
+
+> ```ts
+> processDefinitionKeyLike(processDefinitionKeyLike): T;
+> ```
+
+
+> Only select tasks which are part of a process instance which has a process definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 
 > **Parameters**
 
@@ -5570,8 +7734,19 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processDefinitionKeyLikeIgnoreCase() > ```ts processDefinitionKeyLikeIgnoreCase(processDefinitionKeyLikeIgnoreCase): T; ``` Only select tasks which are part of a process instance which has a process definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%. This method, unlike the #processDefinitionKeyLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the query is executed.
 > :::
+
+##### processDefinitionKeyLikeIgnoreCase()
+
+> ```ts
+> processDefinitionKeyLikeIgnoreCase(processDefinitionKeyLikeIgnoreCase): T;
+> ```
+
+
+> Only select tasks which are part of a process instance which has a process definition key like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
+
+> This method, unlike the #processDefinitionKeyLike(String) method will not take in account the upper/lower case: both the input parameter as the column value are lowercased when the
+> query is executed.
 
 > **Parameters**
 
@@ -5581,8 +7756,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processDefinitionKeyIn() > ```ts processDefinitionKeyIn(processDefinitionKeys): T; ``` Only select tasks that have a process definition for which the key is present in the given list *
 > :::
+
+##### processDefinitionKeyIn()
+
+> ```ts
+> processDefinitionKeyIn(processDefinitionKeys): T;
+> ```
+
+
+> Only select tasks that have a process definition for which the key is present in the given list *
 
 > **Parameters**
 
@@ -5592,8 +7775,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskDefinitionId() > ```ts taskDefinitionId(taskDefinitionId): T; ``` Only select tasks which created from the given task definition referenced by id.
 > :::
+
+##### taskDefinitionId()
+
+> ```ts
+> taskDefinitionId(taskDefinitionId): T;
+> ```
+
+
+> Only select tasks which created from the given task definition referenced by id.
 
 > **Parameters**
 
@@ -5603,8 +7794,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processDefinitionId() > ```ts processDefinitionId(processDefinitionId): T; ``` Only select tasks which are part of a process instance which has the given process definition id.
 > :::
+
+##### processDefinitionId()
+
+> ```ts
+> processDefinitionId(processDefinitionId): T;
+> ```
+
+
+> Only select tasks which are part of a process instance which has the given process definition id.
 
 > **Parameters**
 
@@ -5614,8 +7813,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processDefinitionName() > ```ts processDefinitionName(processDefinitionName): T; ``` Only select tasks which are part of a process instance which has the given process definition name.
 > :::
+
+##### processDefinitionName()
+
+> ```ts
+> processDefinitionName(processDefinitionName): T;
+> ```
+
+
+> Only select tasks which are part of a process instance which has the given process definition name.
 
 > **Parameters**
 
@@ -5625,8 +7832,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processDefinitionNameLike() > ```ts processDefinitionNameLike(processDefinitionNameLike): T; ``` Only select tasks which are part of a process instance which has a process definition name like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 > :::
+
+##### processDefinitionNameLike()
+
+> ```ts
+> processDefinitionNameLike(processDefinitionNameLike): T;
+> ```
+
+
+> Only select tasks which are part of a process instance which has a process definition name like the given value. The syntax that should be used is the same as in SQL, eg. %test%.
 
 > **Parameters**
 
@@ -5636,8 +7851,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processCategoryIn() > ```ts processCategoryIn(processCategoryInList): T; ``` Only select tasks which are part of a process instance whose definition belongs to the category which is present in the given list.
 > :::
+
+##### processCategoryIn()
+
+> ```ts
+> processCategoryIn(processCategoryInList): T;
+> ```
+
+
+> Only select tasks which are part of a process instance whose definition belongs to the category which is present in the given list.
 
 > **Parameters**
 
@@ -5647,8 +7870,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When passed category list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When passed category list is empty or null or contains null String.
 
 ##### processCategoryNotIn()
 
@@ -5667,8 +7894,12 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Throws FlowableIllegalArgumentException             When passed category list is empty or null or contains null String.
 > :::
+
+###### Throws
+
+FlowableIllegalArgumentException
+            When passed category list is empty or null or contains null String.
 
 ##### deploymentId()
 
@@ -5687,8 +7918,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### deploymentIdIn() > ```ts deploymentIdIn(deploymentIds): T; ``` Only select tasks which are part of a process instance which has the given deployment id.
 > :::
+
+##### deploymentIdIn()
+
+> ```ts
+> deploymentIdIn(deploymentIds): T;
+> ```
+
+
+> Only select tasks which are part of a process instance which has the given deployment id.
 
 > **Parameters**
 
@@ -5698,8 +7937,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### cmmnDeploymentId() > ```ts cmmnDeploymentId(cmmnDeploymentId): T; ``` Only select tasks which are related to a case instance for to the given deployment id.
 > :::
+
+##### cmmnDeploymentId()
+
+> ```ts
+> cmmnDeploymentId(cmmnDeploymentId): T;
+> ```
+
+
+> Only select tasks which are related to a case instance for to the given deployment id.
 
 > **Parameters**
 
@@ -5709,8 +7956,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### cmmnDeploymentIdIn() > ```ts cmmnDeploymentIdIn(cmmnDeploymentIds): T; ``` Only select tasks which are related to a case instances for the given deployment id.
 > :::
+
+##### cmmnDeploymentIdIn()
+
+> ```ts
+> cmmnDeploymentIdIn(cmmnDeploymentIds): T;
+> ```
+
+
+> Only select tasks which are related to a case instances for the given deployment id.
 
 > **Parameters**
 
@@ -5720,19 +7975,28 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### withoutScopeId() > ```ts withoutScopeId(): T; ``` Only select tasks which don't have a scope id set.
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### taskVariableValueEquals()
-> :::
-
-###### Call Signature
+##### withoutScopeId()
 
 > ```ts
-> taskVariableValueEquals(variableName, variableValue): T;
+> withoutScopeId(): T;
 > ```
+
+
+> Only select tasks which don't have a scope id set.
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### taskVariableValueEquals()
+
+> ###### Call Signature
+
+> > ```ts
+> > taskVariableValueEquals(variableName, variableValue): T;
+> > ```
 
 
 > Only select tasks which have a local task variable with the given name set to the given value.
@@ -5746,8 +8010,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Call Signature > ```ts taskVariableValueEquals(variableValue): T; ``` Only select tasks which have at least one local task variable with the given value.
 > :::
+
+###### Call Signature
+
+> ```ts
+> taskVariableValueEquals(variableValue): T;
+> ```
+
+
+> Only select tasks which have at least one local task variable with the given value.
 
 > **Parameters**
 
@@ -5757,8 +8029,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueEqualsIgnoreCase() > ```ts taskVariableValueEqualsIgnoreCase(name, value): T; ``` Only select tasks which have a local string variable with the given value, case insensitive. This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive Collations available (MSDN Server Collation Reference).
 > :::
+
+##### taskVariableValueEqualsIgnoreCase()
+
+> ```ts
+> taskVariableValueEqualsIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which have a local string variable with the given value, case insensitive.
+
+> This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive
+> Collations available (MSDN Server Collation Reference).
+
 
 > **Parameters**
 
@@ -5769,8 +8053,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueNotEquals() > ```ts taskVariableValueNotEquals(variableName, variableValue): T; ``` Only select tasks which have a local task variable with the given name, but with a different value than the passed value. Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### taskVariableValueNotEquals()
+
+> ```ts
+> taskVariableValueNotEquals(variableName, variableValue): T;
+> ```
+
+
+> Only select tasks which have a local task variable with the given name, but with a different value than the passed value. Byte-arrays and Serializable objects (which are not primitive
+> type wrappers) are not supported.
 
 > **Parameters**
 
@@ -5781,8 +8074,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueNotEqualsIgnoreCase() > ```ts taskVariableValueNotEqualsIgnoreCase(name, value): T; ``` Only select tasks which have a local string variable with is not the given value, case insensitive. This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive Collations available (MSDN Server Collation Reference).
 > :::
+
+##### taskVariableValueNotEqualsIgnoreCase()
+
+> ```ts
+> taskVariableValueNotEqualsIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which have a local string variable with is not the given value, case insensitive.
+
+> This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive
+> Collations available (MSDN Server Collation Reference).
+
 
 > **Parameters**
 
@@ -5793,8 +8098,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueGreaterThan() > ```ts taskVariableValueGreaterThan(name, value): T; ``` Only select tasks which have a local variable value greater than the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### taskVariableValueGreaterThan()
+
+> ```ts
+> taskVariableValueGreaterThan(name, value): T;
+> ```
+
+
+> Only select tasks which have a local variable value greater than the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers)
+> are not supported.
 
 > **Parameters**
 
@@ -5805,8 +8119,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueGreaterThanOrEqual() > ```ts taskVariableValueGreaterThanOrEqual(name, value): T; ``` Only select tasks which have a local variable value greater than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### taskVariableValueGreaterThanOrEqual()
+
+> ```ts
+> taskVariableValueGreaterThanOrEqual(name, value): T;
+> ```
+
+
+> Only select tasks which have a local variable value greater than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive
+> type wrappers) are not supported.
 
 > **Parameters**
 
@@ -5817,8 +8140,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueLessThan() > ```ts taskVariableValueLessThan(name, value): T; ``` Only select tasks which have a local variable value less than the passed value when the ended.Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### taskVariableValueLessThan()
+
+> ```ts
+> taskVariableValueLessThan(name, value): T;
+> ```
+
+
+> Only select tasks which have a local variable value less than the passed value when the ended.Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are
+> not supported.
 
 > **Parameters**
 
@@ -5829,8 +8161,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueLessThanOrEqual() > ```ts taskVariableValueLessThanOrEqual(name, value): T; ``` Only select tasks which have a local variable value less than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### taskVariableValueLessThanOrEqual()
+
+> ```ts
+> taskVariableValueLessThanOrEqual(name, value): T;
+> ```
+
+
+> Only select tasks which have a local variable value less than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -5841,8 +8182,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueLike() > ```ts taskVariableValueLike(name, value): T; ``` Only select tasks which have a local variable value like the given value when they ended. This can be used on string variables only.
 > :::
+
+##### taskVariableValueLike()
+
+> ```ts
+> taskVariableValueLike(name, value): T;
+> ```
+
+
+> Only select tasks which have a local variable value like the given value when they ended. This can be used on string variables only.
 
 > **Parameters**
 
@@ -5853,8 +8202,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableValueLikeIgnoreCase() > ```ts taskVariableValueLikeIgnoreCase(name, value): T; ``` Only select tasks which have a local variable value like the given value (case insensitive) when they ended. This can be used on string variables only.
 > :::
+
+##### taskVariableValueLikeIgnoreCase()
+
+> ```ts
+> taskVariableValueLikeIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which have a local variable value like the given value (case insensitive) when they ended. This can be used on string variables only.
 
 > **Parameters**
 
@@ -5865,8 +8222,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableExists() > ```ts taskVariableExists(name): T; ``` Only select tasks which have a local variable with the given name.
 > :::
+
+##### taskVariableExists()
+
+> ```ts
+> taskVariableExists(name): T;
+> ```
+
+
+> Only select tasks which have a local variable with the given name.
 
 > **Parameters**
 
@@ -5876,8 +8241,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskVariableNotExists() > ```ts taskVariableNotExists(name): T; ``` Only select tasks which does not have a local variable with the given name.
 > :::
+
+##### taskVariableNotExists()
+
+> ```ts
+> taskVariableNotExists(name): T;
+> ```
+
+
+> Only select tasks which does not have a local variable with the given name.
 
 > **Parameters**
 
@@ -5887,8 +8260,9 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueEquals()
 > :::
+
+##### processVariableValueEquals()
 
 ###### Call Signature
 
@@ -5908,8 +8282,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Call Signature > ```ts processVariableValueEquals(variableValue): T; ``` Only select tasks which are part of a process that has at least one variable with the given value.
 > :::
+
+###### Call Signature
+
+> ```ts
+> processVariableValueEquals(variableValue): T;
+> ```
+
+
+> Only select tasks which are part of a process that has at least one variable with the given value.
 
 > **Parameters**
 
@@ -5919,8 +8301,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueEqualsIgnoreCase() > ```ts processVariableValueEqualsIgnoreCase(name, value): T; ``` Only select tasks which are part of a process that has a local string variable which is not the given value, case insensitive. This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive Collations available (MSDN Server Collation Reference).
 > :::
+
+##### processVariableValueEqualsIgnoreCase()
+
+> ```ts
+> processVariableValueEqualsIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which are part of a process that has a local string variable which is not the given value, case insensitive.
+
+> This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive
+> Collations available (MSDN Server Collation Reference).
+
 
 > **Parameters**
 
@@ -5931,8 +8325,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueNotEquals() > ```ts processVariableValueNotEquals(variableName, variableValue): T; ``` Only select tasks which have a variable with the given name, but with a different value than the passed value. Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### processVariableValueNotEquals()
+
+> ```ts
+> processVariableValueNotEquals(variableName, variableValue): T;
+> ```
+
+
+> Only select tasks which have a variable with the given name, but with a different value than the passed value. Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -5943,8 +8346,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueNotEqualsIgnoreCase() > ```ts processVariableValueNotEqualsIgnoreCase(name, value): T; ``` Only select tasks which are part of a process that has a string variable with the given value, case insensitive. This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive Collations available (MSDN Server Collation Reference).
 > :::
+
+##### processVariableValueNotEqualsIgnoreCase()
+
+> ```ts
+> processVariableValueNotEqualsIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which are part of a process that has a string variable with the given value, case insensitive.
+
+> This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive
+> Collations available (MSDN Server Collation Reference).
+
 
 > **Parameters**
 
@@ -5955,8 +8370,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueGreaterThan() > ```ts processVariableValueGreaterThan(name, value): T; ``` Only select tasks which have a global variable value greater than the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### processVariableValueGreaterThan()
+
+> ```ts
+> processVariableValueGreaterThan(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value greater than the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -5967,8 +8391,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueGreaterThanOrEqual() > ```ts processVariableValueGreaterThanOrEqual(name, value): T; ``` Only select tasks which have a global variable value greater than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### processVariableValueGreaterThanOrEqual()
+
+> ```ts
+> processVariableValueGreaterThanOrEqual(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value greater than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive
+> type wrappers) are not supported.
 
 > **Parameters**
 
@@ -5979,8 +8412,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueLessThan() > ```ts processVariableValueLessThan(name, value): T; ``` Only select tasks which have a global variable value less than the passed value when the ended.Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### processVariableValueLessThan()
+
+> ```ts
+> processVariableValueLessThan(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value less than the passed value when the ended.Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are
+> not supported.
 
 > **Parameters**
 
@@ -5991,8 +8433,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueLessThanOrEqual() > ```ts processVariableValueLessThanOrEqual(name, value): T; ``` Only select tasks which have a global variable value less than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### processVariableValueLessThanOrEqual()
+
+> ```ts
+> processVariableValueLessThanOrEqual(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value less than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -6003,8 +8454,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueLike() > ```ts processVariableValueLike(name, value): T; ``` Only select tasks which have a global variable value like the given value when they ended. This can be used on string variables only.
 > :::
+
+##### processVariableValueLike()
+
+> ```ts
+> processVariableValueLike(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value like the given value when they ended. This can be used on string variables only.
 
 > **Parameters**
 
@@ -6015,8 +8474,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableValueLikeIgnoreCase() > ```ts processVariableValueLikeIgnoreCase(name, value): T; ``` Only select tasks which have a global variable value like the given value (case insensitive) when they ended. This can be used on string variables only.
 > :::
+
+##### processVariableValueLikeIgnoreCase()
+
+> ```ts
+> processVariableValueLikeIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value like the given value (case insensitive) when they ended. This can be used on string variables only.
 
 > **Parameters**
 
@@ -6027,8 +8494,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableExists() > ```ts processVariableExists(name): T; ``` Only select tasks which have a global variable with the given name.
 > :::
+
+##### processVariableExists()
+
+> ```ts
+> processVariableExists(name): T;
+> ```
+
+
+> Only select tasks which have a global variable with the given name.
 
 > **Parameters**
 
@@ -6038,8 +8513,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### processVariableNotExists() > ```ts processVariableNotExists(name): T; ``` Only select tasks which does not have a global variable with the given name.
 > :::
+
+##### processVariableNotExists()
+
+> ```ts
+> processVariableNotExists(name): T;
+> ```
+
+
+> Only select tasks which does not have a global variable with the given name.
 
 > **Parameters**
 
@@ -6049,8 +8532,9 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueEquals()
 > :::
+
+##### caseVariableValueEquals()
 
 ###### Call Signature
 
@@ -6070,8 +8554,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ###### Call Signature > ```ts caseVariableValueEquals(variableValue): T; ``` Only select tasks which are part of a case that has at least one variable with the given value.
 > :::
+
+###### Call Signature
+
+> ```ts
+> caseVariableValueEquals(variableValue): T;
+> ```
+
+
+> Only select tasks which are part of a case that has at least one variable with the given value.
 
 > **Parameters**
 
@@ -6081,8 +8573,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueEqualsIgnoreCase() > ```ts caseVariableValueEqualsIgnoreCase(name, value): T; ``` Only select tasks which are part of a case that has a local string variable which is not the given value, case insensitive. This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive Collations available (MSDN Server Collation Reference).
 > :::
+
+##### caseVariableValueEqualsIgnoreCase()
+
+> ```ts
+> caseVariableValueEqualsIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which are part of a case that has a local string variable which is not the given value, case insensitive.
+
+> This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive
+> Collations available (MSDN Server Collation Reference).
+
 
 > **Parameters**
 
@@ -6093,8 +8597,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueNotEquals() > ```ts caseVariableValueNotEquals(variableName, variableValue): T; ``` Only select tasks which have a variable with the given name, but with a different value than the passed value. Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### caseVariableValueNotEquals()
+
+> ```ts
+> caseVariableValueNotEquals(variableName, variableValue): T;
+> ```
+
+
+> Only select tasks which have a variable with the given name, but with a different value than the passed value. Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -6105,8 +8618,20 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueNotEqualsIgnoreCase() > ```ts caseVariableValueNotEqualsIgnoreCase(name, value): T; ``` Only select tasks which are part of a case that has a string variable with the given value, case insensitive. This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive Collations available (MSDN Server Collation Reference).
 > :::
+
+##### caseVariableValueNotEqualsIgnoreCase()
+
+> ```ts
+> caseVariableValueNotEqualsIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which are part of a case that has a string variable with the given value, case insensitive.
+
+> This method only works if your database has encoding/collation that supports case-sensitive queries. For example, use "collate UTF-8" on MySQL and for MSSQL, select one of the case-sensitive
+> Collations available (MSDN Server Collation Reference).
+
 
 > **Parameters**
 
@@ -6117,8 +8642,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueGreaterThan() > ```ts caseVariableValueGreaterThan(name, value): T; ``` Only select tasks which have a global variable value greater than the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### caseVariableValueGreaterThan()
+
+> ```ts
+> caseVariableValueGreaterThan(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value greater than the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -6129,8 +8663,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueGreaterThanOrEqual() > ```ts caseVariableValueGreaterThanOrEqual(name, value): T; ``` Only select tasks which have a global variable value greater than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### caseVariableValueGreaterThanOrEqual()
+
+> ```ts
+> caseVariableValueGreaterThanOrEqual(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value greater than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive
+> type wrappers) are not supported.
 
 > **Parameters**
 
@@ -6141,8 +8684,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueLessThan() > ```ts caseVariableValueLessThan(name, value): T; ``` Only select tasks which have a global variable value less than the passed value when the ended.Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### caseVariableValueLessThan()
+
+> ```ts
+> caseVariableValueLessThan(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value less than the passed value when the ended.Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are
+> not supported.
 
 > **Parameters**
 
@@ -6153,8 +8705,17 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueLessThanOrEqual() > ```ts caseVariableValueLessThanOrEqual(name, value): T; ``` Only select tasks which have a global variable value less than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type wrappers) are not supported.
 > :::
+
+##### caseVariableValueLessThanOrEqual()
+
+> ```ts
+> caseVariableValueLessThanOrEqual(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value less than or equal to the passed value when they ended. Booleans, Byte-arrays and Serializable objects (which are not primitive type
+> wrappers) are not supported.
 
 > **Parameters**
 
@@ -6165,8 +8726,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueLike() > ```ts caseVariableValueLike(name, value): T; ``` Only select tasks which have a global variable value like the given value when they ended. This can be used on string variables only.
 > :::
+
+##### caseVariableValueLike()
+
+> ```ts
+> caseVariableValueLike(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value like the given value when they ended. This can be used on string variables only.
 
 > **Parameters**
 
@@ -6177,8 +8746,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableValueLikeIgnoreCase() > ```ts caseVariableValueLikeIgnoreCase(name, value): T; ``` Only select tasks which have a global variable value like the given value (case insensitive) when they ended. This can be used on string variables only.
 > :::
+
+##### caseVariableValueLikeIgnoreCase()
+
+> ```ts
+> caseVariableValueLikeIgnoreCase(name, value): T;
+> ```
+
+
+> Only select tasks which have a global variable value like the given value (case insensitive) when they ended. This can be used on string variables only.
 
 > **Parameters**
 
@@ -6189,8 +8766,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableExists() > ```ts caseVariableExists(name): T; ``` Only select tasks which have a global variable with the given name.
 > :::
+
+##### caseVariableExists()
+
+> ```ts
+> caseVariableExists(name): T;
+> ```
+
+
+> Only select tasks which have a global variable with the given name.
 
 > **Parameters**
 
@@ -6200,8 +8785,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### caseVariableNotExists() > ```ts caseVariableNotExists(name): T; ``` Only select tasks which does not have a global variable with the given name.
 > :::
+
+##### caseVariableNotExists()
+
+> ```ts
+> caseVariableNotExists(name): T;
+> ```
+
+
+> Only select tasks which does not have a global variable with the given name.
 
 > **Parameters**
 
@@ -6211,8 +8804,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskRootScopeId() > ```ts taskRootScopeId(parentScopeId): T; ``` Only selects tasks which with the given root scope id
 > :::
+
+##### taskRootScopeId()
+
+> ```ts
+> taskRootScopeId(parentScopeId): T;
+> ```
+
+
+> Only selects tasks which with the given root scope id
 
 > **Parameters**
 
@@ -6222,8 +8823,16 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### taskParentScopeId() > ```ts taskParentScopeId(parentScopeId): T; ``` Only selects tasks which with the given parent scope id
 > :::
+
+##### taskParentScopeId()
+
+> ```ts
+> taskParentScopeId(parentScopeId): T;
+> ```
+
+
+> Only selects tasks which with the given parent scope id
 
 > **Parameters**
 
@@ -6233,28 +8842,68 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### includeTaskLocalVariables() > ```ts includeTaskLocalVariables(): T; ``` Include local task variables in the task query result
 > :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### includeProcessVariables() > ```ts includeProcessVariables(): T; ``` Include global process variables in the task query result
-> :::
+##### includeTaskLocalVariables()
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### includeCaseVariables() > ```ts includeCaseVariables(): T; ``` Include global case variables in the task query result
-> :::
+> ```ts
+> includeTaskLocalVariables(): T;
+> ```
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### includeIdentityLinks() > ```ts includeIdentityLinks(): T; ``` Include identity links in the task query result
-> :::
 
-> ::: info Returns
-> - **Type**: `T`
-> - **Description**: ##### locale() > ```ts locale(locale): T; ``` Localize task name and description to specified locale.
-> :::
+> Include local task variables in the task query result
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### includeProcessVariables()
+
+> > ```ts
+> > includeProcessVariables(): T;
+> > ```
+
+
+> Include global process variables in the task query result
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### includeCaseVariables()
+
+> > ```ts
+> > includeCaseVariables(): T;
+> > ```
+
+
+> Include global case variables in the task query result
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### includeIdentityLinks()
+
+> > ```ts
+> > includeIdentityLinks(): T;
+> > ```
+
+
+> Include identity links in the task query result
+
+> > ::: info Returns
+> > - **Type**: `T`
+> > :::
+
+> ##### locale()
+
+> > ```ts
+> > locale(locale): T;
+> > ```
+
+
+> Localize task name and description to specified locale.
 
 > **Parameters**
 
@@ -6264,98 +8913,258 @@ FlowableException
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### withLocalizationFallback() > ```ts withLocalizationFallback(): T; ``` Instruct localization to fallback to more general locales including the default locale of the JVM if the specified locale is not found.
 > :::
+
+##### withLocalizationFallback()
+
+> ```ts
+> withLocalizationFallback(): T;
+> ```
+
+
+Instruct localization to fallback to more general locales including the default locale of the JVM if the specified locale is not found.
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### or() > ```ts or(): T; ``` All query clauses called will be added to a single or-statement. This or-statement will be included with the other already existing clauses in the query, joined by an 'and'. Calling endOr() will add all clauses to the regular query again. Calling or() after or() has been called or calling endOr() after endOr() has been called will result in an exception. It is possible to call or() endOr() several times if each or() has a matching endOr(), e.g.: query.\ .or().\.\.endOr() .\.\ .or().\.\.endOr() will result in: conditionA &amp; (conditionB | conditionC) &amp; conditionD &amp; conditionE &amp; (conditionF | conditionG)
 > :::
+
+##### or()
+
+> ```ts
+> or(): T;
+> ```
+
+
+All query clauses called will be added to a single or-statement. This or-statement will be included with the other already existing clauses in the query, joined by an 'and'.
+
+Calling endOr() will add all clauses to the regular query again. Calling or() after or() has been called or calling endOr() after endOr() has been called will result in an exception.
+It is possible to call or() endOr() several times if each or() has a matching endOr(), e.g.:
+
+query.\
+.or().\.\.endOr()
+.\.\
+.or().\.\.endOr()
+
+will result in: conditionA &amp; (conditionB | conditionC) &amp; conditionD &amp; conditionE &amp; (conditionF | conditionG)
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### endOr() > ```ts endOr(): T; ```
 > :::
+
+##### endOr()
+
+> ```ts
+> endOr(): T;
+> ```
+
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskId() > ```ts orderByTaskId(): T; ``` Order by task id (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskId()
+
+> ```ts
+> orderByTaskId(): T;
+> ```
+
+
+Order by task id (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskName() > ```ts orderByTaskName(): T; ``` Order by task name (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskName()
+
+> ```ts
+> orderByTaskName(): T;
+> ```
+
+
+Order by task name (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskDescription() > ```ts orderByTaskDescription(): T; ``` Order by description (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskDescription()
+
+> ```ts
+> orderByTaskDescription(): T;
+> ```
+
+
+Order by description (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskPriority() > ```ts orderByTaskPriority(): T; ``` Order by priority (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskPriority()
+
+> ```ts
+> orderByTaskPriority(): T;
+> ```
+
+
+Order by priority (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskAssignee() > ```ts orderByTaskAssignee(): T; ``` Order by assignee (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskAssignee()
+
+> ```ts
+> orderByTaskAssignee(): T;
+> ```
+
+
+Order by assignee (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskCreateTime() > ```ts orderByTaskCreateTime(): T; ``` Order by the time on which the tasks were created (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskCreateTime()
+
+> ```ts
+> orderByTaskCreateTime(): T;
+> ```
+
+
+Order by the time on which the tasks were created (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByProcessInstanceId() > ```ts orderByProcessInstanceId(): T; ``` Order by process instance id (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByProcessInstanceId()
+
+> ```ts
+> orderByProcessInstanceId(): T;
+> ```
+
+
+Order by process instance id (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByExecutionId() > ```ts orderByExecutionId(): T; ``` Order by execution id (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByExecutionId()
+
+> ```ts
+> orderByExecutionId(): T;
+> ```
+
+
+Order by execution id (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByProcessDefinitionId() > ```ts orderByProcessDefinitionId(): T; ``` Order by process definition id (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByProcessDefinitionId()
+
+> ```ts
+> orderByProcessDefinitionId(): T;
+> ```
+
+
+Order by process definition id (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskDueDate() > ```ts orderByTaskDueDate(): T; ``` Order by task due date (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskDueDate()
+
+> ```ts
+> orderByTaskDueDate(): T;
+> ```
+
+
+Order by task due date (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskOwner() > ```ts orderByTaskOwner(): T; ``` Order by task owner (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskOwner()
+
+> ```ts
+> orderByTaskOwner(): T;
+> ```
+
+
+Order by task owner (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTaskDefinitionKey() > ```ts orderByTaskDefinitionKey(): T; ``` Order by task definition key (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTaskDefinitionKey()
+
+> ```ts
+> orderByTaskDefinitionKey(): T;
+> ```
+
+
+Order by task definition key (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByTenantId() > ```ts orderByTenantId(): T; ``` Order by tenant id (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByTenantId()
+
+> ```ts
+> orderByTenantId(): T;
+> ```
+
+
+Order by tenant id (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByDueDateNullsFirst() > ```ts orderByDueDateNullsFirst(): T; ``` Order by due date (needs to be followed by #asc() or #desc()). If any of the tasks have null for the due date, these will be first in the result.
 > :::
+
+##### orderByDueDateNullsFirst()
+
+> ```ts
+> orderByDueDateNullsFirst(): T;
+> ```
+
+
+Order by due date (needs to be followed by #asc() or #desc()). If any of the tasks have null for the due date, these will be first in the result.
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByDueDateNullsLast() > ```ts orderByDueDateNullsLast(): T; ``` Order by due date (needs to be followed by #asc() or #desc()). If any of the tasks have null for the due date, these will be last in the result.
 > :::
+
+##### orderByDueDateNullsLast()
+
+> ```ts
+> orderByDueDateNullsLast(): T;
+> ```
+
+
+Order by due date (needs to be followed by #asc() or #desc()). If any of the tasks have null for the due date, these will be last in the result.
 
 > ::: info Returns
 > - **Type**: `T`
-> - **Description**: ##### orderByCategory() > ```ts orderByCategory(): T; ``` Order by category (needs to be followed by #asc() or #desc()).
 > :::
+
+##### orderByCategory()
+
+> ```ts
+> orderByCategory(): T;
+> ```
+
+
+Order by category (needs to be followed by #asc() or #desc()).
 
 > ::: info Returns
 > - **Type**: `T`

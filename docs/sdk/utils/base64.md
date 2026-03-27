@@ -67,15 +67,14 @@ and the native Java byte arrays required by the underlying Base64Facade.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
 
-###### Returns
-
-`any`[]
-
-The resulting byte array containing the Base64 encoded data.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The resulting byte array containing the Base64 encoded data.
+> :::
 
 ##### encodeAsNativeBytes()
 
@@ -90,15 +89,14 @@ The resulting byte array containing the Base64 encoded data.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
 
-###### Returns
-
-`any`[]
-
-The resulting native Java byte array containing the Base64 data.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The resulting native Java byte array containing the Base64 data.
+> :::
 
 ##### decode()
 
@@ -112,15 +110,14 @@ The resulting native Java byte array containing the Base64 data.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` \| `any`[] | The Base64 data to decode, either as a string or a JavaScript byte array (any[]). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` \| `any`[] | The Base64 data to decode, either as a string or a JavaScript byte array (any[]). |
 
-###### Returns
-
-`any`[]
-
-The decoded raw byte array (any[]). Returns null if decoding fails or input is null.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The decoded raw byte array (any[]). Returns null if decoding fails or input is null.
+> :::
 
 ##### decodeAsNativeBytes()
 
@@ -134,12 +131,11 @@ The decoded raw byte array (any[]). Returns null if decoding fails or input is n
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `input` | `string` \| `any`[] | The Base64 data to decode, either as a string or a JavaScript byte array (any[]). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` \| `any`[] | The Base64 data to decode, either as a string or a JavaScript byte array (any[]). |
 
-###### Returns
-
-`any`[]
-
-The decoded native Java byte array.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The decoded native Java byte array.
+> :::

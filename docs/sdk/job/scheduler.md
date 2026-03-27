@@ -42,11 +42,10 @@ offering global control over the system's defined jobs.
 
 > Retrieves all job definitions currently configured in the system.
 
-> ###### Returns
-
-> `Job`[]
-
-> An array of Job objects.
+> > ::: info Returns
+> > - **Type**: `Job`
+> > - **Description**: [] An array of Job objects.
+> > :::
 
 > ##### getJob()
 
@@ -85,8 +84,16 @@ offering global control over the system's defined jobs.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### disable() > ```ts static disable(name): void; ``` Disables a job, preventing it from executing on its schedule.
 > :::
+
+##### disable()
+
+> ```ts
+> static disable(name): void;
+> ```
+
+
+> Disables a job, preventing it from executing on its schedule.
 
 > **Parameters**
 
@@ -96,8 +103,16 @@ offering global control over the system's defined jobs.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### trigger() > ```ts static trigger(name, parameters?): void; ``` Triggers the immediate execution of a job.
 > :::
+
+##### trigger()
+
+> ```ts
+> static trigger(name, parameters?): void;
+> ```
+
+
+> Triggers the immediate execution of a job.
 
 > **Parameters**
 
@@ -108,8 +123,17 @@ offering global control over the system's defined jobs.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### log() > ```ts static log(name, message): void; ``` Logs a message at the standard log level for a specific job instance. This is useful when the log context needs to be associated with a running job.
 > :::
+
+##### log()
+
+> ```ts
+> static log(name, message): void;
+> ```
+
+
+> Logs a message at the standard log level for a specific job instance.
+> This is useful when the log context needs to be associated with a running job.
 
 > **Parameters**
 
@@ -120,8 +144,16 @@ offering global control over the system's defined jobs.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### error() > ```ts static error(name, message): void; ``` Logs an error message for a specific job instance.
 > :::
+
+##### error()
+
+> ```ts
+> static error(name, message): void;
+> ```
+
+
+> Logs an error message for a specific job instance.
 
 > **Parameters**
 
@@ -132,8 +164,16 @@ offering global control over the system's defined jobs.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### warn() > ```ts static warn(name, message): void; ``` Logs a warning message for a specific job instance.
 > :::
+
+##### warn()
+
+> ```ts
+> static warn(name, message): void;
+> ```
+
+
+> Logs a warning message for a specific job instance.
 
 > **Parameters**
 
@@ -144,8 +184,16 @@ offering global control over the system's defined jobs.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### info() > ```ts static info(name, message): void; ``` Logs an informational message for a specific job instance.
 > :::
+
+##### info()
+
+> ```ts
+> static info(name, message): void;
+> ```
+
+
+> Logs an informational message for a specific job instance.
 
 > **Parameters**
 

@@ -49,22 +49,30 @@ The Procedure API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### execute() > ```ts static execute( sql, parameters?, datasourceName?): any[]; ``` Executes a stored procedure call and returns the result set(s). *
 > :::
+
+##### execute()
+
+> ```ts
+> static execute( sql, parameters?, datasourceName?): any[];
+> ```
+
+
+> Executes a stored procedure call and returns the result set(s).
+> *
 
 > **Parameters**
 
-| Parameter | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `sql` | `string` | `undefined` | The callable statement (e.g., {CALL my_procedure(?, ?)}). |
-| `parameters?` | (`string` \| `number` \| [`ProcedureParameter`](#procedureparameter))[] | `[]` | An array of parameters. Primitives (string/number) are automatically typed. Use ProcedureParameter for explicit types. |
-| `datasourceName?` | `string` | `undefined` | Optional name of the data source to use. |
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `sql` | `string` | `undefined` | The callable statement (e.g., {CALL my_procedure(?, ?)}). |
+> | `parameters?` | (`string` \| `number` \| [`ProcedureParameter`](#procedureparameter))[] | `[]` | An array of parameters. Primitives (string/number) are automatically typed. Use ProcedureParameter for explicit types. |
+> | `datasourceName?` | `string` | `undefined` | Optional name of the data source to use. |
 
-###### Returns
-
-`any`[]
-
-An array of JSON objects representing the result set(s).
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of JSON objects representing the result set(s).
+> :::
 
 ## Interfaces
 

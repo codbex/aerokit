@@ -85,8 +85,16 @@ The main class for handling HTTP requests and routing them to the correct resour
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### execute() > ```ts execute(request?, response?): void; ``` Executes the request handling logic, finding the best matching resource and handler.
 > :::
+
+##### execute()
+
+> ```ts
+> execute(request?, response?): void;
+> ```
+
+
+> Executes the request handling logic, finding the best matching resource and handler.
 
 > **Parameters**
 
@@ -97,22 +105,30 @@ The main class for handling HTTP requests and routing them to the correct resour
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### mappings() > ```ts mappings(): ResourceMappings; ``` Returns the ResourceMappings instance of this controller.
 > :::
 
-###### Returns
-
-[`ResourceMappings`](resource-mappings.md#resourcemappings)
-
-##### sendError()
+##### mappings()
 
 > ```ts
-> sendError(
->    httpErrorCode, 
->    applicationErrorCode, 
->    errorName, 
->    errorDetails): void;
+> mappings(): ResourceMappings;
 > ```
+
+
+> Returns the ResourceMappings instance of this controller.
+
+> ###### Returns
+
+> [`ResourceMappings`](resource-mappings.md#resourcemappings)
+
+> ##### sendError()
+
+> > ```ts
+> > sendError(
+> >    httpErrorCode, 
+> >    applicationErrorCode, 
+> >    errorName, 
+> >    errorDetails): void;
+> > ```
 
 
 > Sends an error response to the client, formatted based on the accepted media type.
@@ -128,13 +144,22 @@ The main class for handling HTTP requests and routing them to the correct resour
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### closeResponse() > ```ts closeResponse(): void; ``` Flushes and closes the HTTP response stream.
 > :::
+
+##### closeResponse()
+
+> ```ts
+> closeResponse(): void;
+> ```
+
+
+Flushes and closes the HTTP response stream.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ## Functions
 > :::
+
+## Functions
 
 ### service()
 

@@ -107,11 +107,10 @@ high-level workspace management and instance methods for project management with
 > 
 > > Retrieves the names of all existing workspaces.
 > 
-> > ###### Returns
-> 
-> > `string`[]
-> 
-> > An array of workspace names.
+> > > ::: info Returns
+> > > - **Type**: `string`
+> > > - **Description**: [] An array of workspace names.
+> > > :::
 > 
 > > ##### deleteWorkspace()
 > 
@@ -130,20 +129,28 @@ high-level workspace management and instance methods for project management with
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getProjects() > ```ts getProjects(): Projects; ``` Gets a collection of all projects within this workspace.
 > :::
 
-###### Returns
-
-[`Projects`](#projects)
-
-A Projects collection instance.
-
-##### createProject()
+##### getProjects()
 
 > ```ts
-> createProject(name): Project;
+> getProjects(): Projects;
 > ```
+
+
+> Gets a collection of all projects within this workspace.
+
+> ###### Returns
+
+> [`Projects`](#projects)
+
+> A Projects collection instance.
+
+> ##### createProject()
+
+> > ```ts
+> > createProject(name): Project;
+> > ```
 
 
 > Creates a new project within this workspace.
@@ -198,19 +205,27 @@ A Projects collection instance.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### exists() > ```ts exists(): boolean; ``` Checks if the workspace currently exists.
 > :::
 
-> ::: info Returns
-> - **Type**: `boolean`
-> - **Description**: True if the workspace exists, false otherwise.
-> :::
-
-##### existsFolder()
+##### exists()
 
 > ```ts
-> existsFolder(path): boolean;
+> exists(): boolean;
 > ```
+
+
+> Checks if the workspace currently exists.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the workspace exists, false otherwise.
+> > :::
+
+> ##### existsFolder()
+
+> > ```ts
+> > existsFolder(path): boolean;
+> > ```
 
 
 > Checks if a specific folder path exists within the workspace's filesystem structure.
@@ -264,8 +279,16 @@ A Projects collection instance.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### moveProject() > ```ts moveProject(source, target): void; ``` Moves a project from a source name to a target name (renaming it).
 > :::
+
+##### moveProject()
+
+> ```ts
+> moveProject(source, target): void;
+> ```
+
+
+> Moves a project from a source name to a target name (renaming it).
 
 > **Parameters**
 
@@ -512,8 +535,16 @@ A collection/list of projects within a workspace.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createFile() > ```ts createFile(path, input?): File; ``` Creates a new file within the project.
 > :::
+
+##### createFile()
+
+> ```ts
+> createFile(path, input?): File;
+> ```
+
+
+> Creates a new file within the project.
 
 > **Parameters**
 
@@ -922,8 +953,16 @@ A collection/list of folders.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createFile() > ```ts createFile(path, input?): File; ``` Creates a new file within this folder.
 > :::
+
+##### createFile()
+
+> ```ts
+> createFile(path, input?): File;
+> ```
+
+
+> Creates a new file within this folder.
 
 > **Parameters**
 
@@ -1107,11 +1146,10 @@ content access and manipulation.
 
 > Gets the content of the file as a JavaScript-friendly byte array.
 
-> ###### Returns
-
-> `any`[]
-
-> The content bytes.
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: [] The content bytes.
+> > :::
 
 > ##### getText()
 
@@ -1144,8 +1182,17 @@ content access and manipulation.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setText() > ```ts setText(input): void; ``` Sets the content of the file using a text string. The string is converted to a byte array before saving.
 > :::
+
+##### setText()
+
+> ```ts
+> setText(input): void;
+> ```
+
+
+> Sets the content of the file using a text string.
+> The string is converted to a byte array before saving.
 
 > **Parameters**
 
@@ -1155,8 +1202,16 @@ content access and manipulation.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### exists() > ```ts exists(): boolean; ``` Checks if the file exists.
 > :::
+
+##### exists()
+
+> ```ts
+> exists(): boolean;
+> ```
+
+
+Checks if the file exists.
 
 > ::: info Returns
 > - **Type**: `boolean`

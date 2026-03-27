@@ -141,8 +141,13 @@ Main entry point for the SQL Builder. Acts as a factory for specific builders.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -151,9 +156,10 @@ Main entry point for the SQL Builder. Acts as a factory for specific builders.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -178,8 +184,13 @@ Main entry point for the SQL Builder. Acts as a factory for specific builders.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -192,8 +203,13 @@ Main entry point for the SQL Builder. Acts as a factory for specific builders.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### getDialect()
 
@@ -348,9 +364,10 @@ Factory method to get a dialect-specific SQLBuilder instance.
 > > > ```
 > 
 > 
-> > ###### Returns
-> 
-> > `any`[]
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: []
+> > > :::
 > 
 > > ###### Inherited from
 > 
@@ -375,8 +392,13 @@ Factory method to get a dialect-specific SQLBuilder instance.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -389,8 +411,13 @@ Factory method to get a dialect-specific SQLBuilder instance.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### prepareBuilder()
 
@@ -409,8 +436,13 @@ Factory method to get a dialect-specific SQLBuilder instance.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Overrides > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Overrides
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### distinct()
 
@@ -791,9 +823,10 @@ Sets the WHERE condition.
 > > > ```
 > 
 > 
-> > ###### Returns
-> 
-> > `any`[]
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: []
+> > > :::
 > 
 > > ###### Inherited from
 > 
@@ -818,8 +851,13 @@ Sets the WHERE condition.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -832,8 +870,13 @@ Sets the WHERE condition.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### prepareBuilder()
 
@@ -852,8 +895,13 @@ Sets the WHERE condition.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Overrides > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Overrides
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### into()
 
@@ -981,9 +1029,10 @@ Sets the value for the last column specified.
 > > > ```
 > 
 > 
-> > ###### Returns
-> 
-> > `any`[]
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: []
+> > > :::
 > 
 > > ###### Inherited from
 > 
@@ -1008,8 +1057,13 @@ Sets the value for the last column specified.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -1022,8 +1076,13 @@ Sets the value for the last column specified.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### prepareBuilder()
 
@@ -1042,8 +1101,13 @@ Sets the value for the last column specified.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Overrides > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Overrides
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### table()
 
@@ -1162,9 +1226,10 @@ Sets a column to a value.
 > > > ```
 > 
 > 
-> > ###### Returns
-> 
-> > `any`[]
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: []
+> > > :::
 > 
 > > ###### Inherited from
 > 
@@ -1189,8 +1254,13 @@ Sets a column to a value.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -1203,8 +1273,13 @@ Sets a column to a value.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### prepareBuilder()
 
@@ -1223,8 +1298,13 @@ Sets a column to a value.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Overrides > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Overrides
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### from()
 
@@ -1320,9 +1400,10 @@ Sets the WHERE condition for the deletion.
 > > > ```
 > 
 > 
-> > ###### Returns
-> 
-> > `any`[]
+> > > ::: info Returns
+> > > - **Type**: `any`
+> > > - **Description**: []
+> > > :::
 > 
 > > ###### Inherited from
 > 
@@ -1347,8 +1428,13 @@ Sets the WHERE condition for the deletion.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -1361,8 +1447,13 @@ Sets the WHERE condition for the deletion.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### prepareBuilder()
 
@@ -1381,36 +1472,43 @@ Sets the WHERE condition for the deletion.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Overrides > ```ts AbstractSQLBuilder.prepareBuilder ``` ***
 > :::
 
-### CreateBuilder
-
-Builder for CREATE statements (Table, View, Sequence).
-
-
-
-Builder for CREATE statements (Table, View, Sequence).
-
-#### Extends
-
-- `AbstractSQLBuilder`
-
-## Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `connection?` | [`Connection`](database.md#connection) |
-
-###### Returns
-
-[`CreateBuilder`](#createbuilder)
-
-###### Inherited from
+###### Overrides
 
 > ```ts
-> AbstractSQLBuilder.constructor
+> AbstractSQLBuilder.prepareBuilder
 > ```
+
+> ***
+
+> ### CreateBuilder
+
+Builder for CREATE statements (Table, View, Sequence).
+
+
+
+> Builder for CREATE statements (Table, View, Sequence).
+
+> #### Extends
+
+> - `AbstractSQLBuilder`
+
+> ## Parameters
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `connection?` | [`Connection`](database.md#connection) |
+
+> ###### Returns
+
+> [`CreateBuilder`](#createbuilder)
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.constructor
+> > ```
 
 > #### Properties
 
@@ -1439,8 +1537,13 @@ Builder for CREATE statements (Table, View, Sequence).
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -1449,9 +1552,10 @@ Builder for CREATE statements (Table, View, Sequence).
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -1476,8 +1580,13 @@ Builder for CREATE statements (Table, View, Sequence).
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -1490,8 +1599,13 @@ Builder for CREATE statements (Table, View, Sequence).
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### table()
 
@@ -1602,8 +1716,13 @@ Builder for CREATE TABLE statements.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -1612,9 +1731,10 @@ Builder for CREATE TABLE statements.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -1639,8 +1759,13 @@ Builder for CREATE TABLE statements.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -1653,8 +1778,13 @@ Builder for CREATE TABLE statements.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### column()
 
@@ -2282,8 +2412,13 @@ Adds a generic column definition.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -2292,9 +2427,10 @@ Adds a generic column definition.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -2319,8 +2455,13 @@ Adds a generic column definition.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -2333,8 +2474,13 @@ Adds a generic column definition.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### column()
 
@@ -2428,8 +2574,13 @@ Builder for CREATE SEQUENCE statements.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -2438,9 +2589,10 @@ Builder for CREATE SEQUENCE statements.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -2465,8 +2617,13 @@ Builder for CREATE SEQUENCE statements.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -2479,8 +2636,15 @@ Builder for CREATE SEQUENCE statements.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ``` ***
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
+
+> ***
 
 > ### DropBuilder
 
@@ -2537,8 +2701,13 @@ Builder for DROP statements (Table, View, Sequence).
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -2547,9 +2716,10 @@ Builder for DROP statements (Table, View, Sequence).
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -2574,8 +2744,13 @@ Builder for DROP statements (Table, View, Sequence).
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -2588,8 +2763,13 @@ Builder for DROP statements (Table, View, Sequence).
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
 
 > ##### table()
 
@@ -2700,8 +2880,13 @@ Builder for DROP TABLE statements.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -2710,9 +2895,10 @@ Builder for DROP TABLE statements.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -2737,8 +2923,13 @@ Builder for DROP TABLE statements.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -2751,8 +2942,15 @@ Builder for DROP TABLE statements.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ``` ***
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
+
+> ***
 
 > ### DropViewBuilder
 
@@ -2810,8 +3008,13 @@ Builder for DROP VIEW statements.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -2820,9 +3023,10 @@ Builder for DROP VIEW statements.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -2847,8 +3051,13 @@ Builder for DROP VIEW statements.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 > ##### build()
 
@@ -2861,8 +3070,15 @@ Builder for DROP VIEW statements.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ``` ***
 > > :::
+
+> ###### Inherited from
+
+> > ```ts
+> > AbstractSQLBuilder.build
+> > ```
+
+> ***
 
 > ### DropSequenceBuilder
 
@@ -2920,8 +3136,13 @@ Builder for DROP SEQUENCE statements.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.prepareBuilder ```
-> > :::
+> :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.prepareBuilder
+> ```
 
 > ##### parameters()
 
@@ -2930,9 +3151,10 @@ Builder for DROP SEQUENCE statements.
 > > ```
 
 
-> ###### Returns
-
-> `any`[]
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
 
 > ###### Inherited from
 
@@ -2957,8 +3179,13 @@ Builder for DROP SEQUENCE statements.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.addParameter ```
 > :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.addParameter
+> ```
 
 ##### build()
 
@@ -2971,8 +3198,13 @@ Builds and returns the final SQL string.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ###### Inherited from > ```ts AbstractSQLBuilder.build ```
 > :::
+
+###### Inherited from
+
+> ```ts
+> AbstractSQLBuilder.build
+> ```
 
 ## Type Aliases
 

@@ -68,11 +68,10 @@ Static utility class for accessing and managing WebSocket functionality.
 
 > Retrieves a list of all active WebSocket clients.
 
-> ###### Returns
-
-> `object`[]
-
-> An array of objects detailing the URI and handler of each client.
+> > ::: info Returns
+> > - **Type**: `object`
+> > - **Description**: [] An array of objects detailing the URI and handler of each client.
+> > :::
 
 > ##### getClient()
 

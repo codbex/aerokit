@@ -62,23 +62,55 @@ needs to be created.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getRemoteUser() > ```ts static getRemoteUser(): string; ``` Returns the authenticated remote user name if available.
 > > :::
+
+> ##### getRemoteUser()
+
+> > ```ts
+> > static getRemoteUser(): string;
+> > ```
+
+
+> Returns the authenticated remote user name if available.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getPathInfo() > ```ts static getPathInfo(): string; ``` Returns the portion of the request path following the servlet path.
 > > :::
+
+> ##### getPathInfo()
+
+> > ```ts
+> > static getPathInfo(): string;
+> > ```
+
+
+> Returns the portion of the request path following the servlet path.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getPathTranslated() > ```ts static getPathTranslated(): string; ``` Returns the translated file system path for the request.
 > > :::
+
+> ##### getPathTranslated()
+
+> > ```ts
+> > static getPathTranslated(): string;
+> > ```
+
+
+> Returns the translated file system path for the request.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getHeader() > ```ts static getHeader(name): string; ``` Returns the value of a specific HTTP header.
 > > :::
+
+> ##### getHeader()
+
+> > ```ts
+> > static getHeader(name): string;
+> > ```
+
+
+> Returns the value of a specific HTTP header.
 
 > **Parameters**
 
@@ -108,8 +140,16 @@ needs to be created.
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getAttribute() > ```ts static getAttribute(name): string; ``` Returns a request attribute value previously associated with the request.
 > :::
+
+##### getAttribute()
+
+> ```ts
+> static getAttribute(name): string;
+> ```
+
+
+> Returns a request attribute value previously associated with the request.
 
 > **Parameters**
 
@@ -133,8 +173,16 @@ needs to be created.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getCookies() > ```ts static getCookies(): Cookie[]; ``` Returns all cookies sent with the request.
 > > :::
+
+> ##### getCookies()
+
+> > ```ts
+> > static getCookies(): Cookie[];
+> > ```
+
+
+> Returns all cookies sent with the request.
 
 > ###### Returns
 
@@ -151,9 +199,10 @@ needs to be created.
 
 > Returns all available request attribute names.
 
-> ###### Returns
-
-> `string`[]
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: []
+> > :::
 
 > ##### getCharacterEncoding()
 
@@ -166,112 +215,180 @@ needs to be created.
 
 > > ::: info Returns
 > > - **Type**: `string`
-> > - **Description**: ##### getContentLength() > ```ts static getContentLength(): number; ``` Returns the size of the request body in bytes, if known.
 > > :::
+
+> ##### getContentLength()
+
+> > ```ts
+> > static getContentLength(): number;
+> > ```
+
+
+> Returns the size of the request body in bytes, if known.
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ##### getHeaders() > ```ts static getHeaders(name): string[]; ``` Returns all values of a specific header.
 > > :::
+
+> ##### getHeaders()
+
+> > ```ts
+> > static getHeaders(name): string[];
+> > ```
+
+
+> Returns all values of a specific header.
 
 > **Parameters**
 
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `name` | `string` | Header name to retrieve. |
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> ##### getContentType()
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: []
+> :::
+
+##### getContentType()
+
+> ```ts
+> static getContentType(): string;
+> ```
+
+
+> Returns the MIME content type of the request body.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getBytes()
+
 > > ```ts
-> > static getContentType(): string;
+> > static getBytes(): any[];
 > > ```
-> 
-> 
-> > Returns the MIME content type of the request body.
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getBytes() > ```ts static getBytes(): any[]; ``` Returns the raw request body as a byte array.
-> > > :::
-> 
-> > ###### Returns
-> 
-> > `any`[]
-> 
-> > ##### getText()
-> 
-> > > ```ts
-> > > static getText(): string;
-> > > ```
-> 
-> 
-> > Returns the request body as text. This is computed once and cached.
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### json() > ```ts static json(): object; ``` Returns the request body parsed as JSON if valid.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `object`
-> > > - **Description**: A JSON object or `undefined` if parsing fails.
-> > > :::
-> 
-> > ##### getJSON()
-> 
-> > > ```ts
-> > > static getJSON(): object;
-> > > ```
-> 
-> 
-> > Same as json(); explicit form.
-> 
-> > > ::: info Returns
-> > > - **Type**: `object`
-> > > - **Description**: ##### getParameter() > ```ts static getParameter(name): string; ``` Returns a request parameter value.
-> > > :::
-> 
-> > **Parameters**
-> 
+
+
+> Returns the raw request body as a byte array.
+
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: []
+> > :::
+
+> ##### getText()
+
+> > ```ts
+> > static getText(): string;
+> > ```
+
+
+> Returns the request body as text. This is computed once and cached.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### json()
+
+> > ```ts
+> > static json(): object;
+> > ```
+
+
+> Returns the request body parsed as JSON if valid.
+
+> > ::: info Returns
+> > - **Type**: `object`
+> > - **Description**: A JSON object or `undefined` if parsing fails.
+> > :::
+
+> ##### getJSON()
+
+> > ```ts
+> > static getJSON(): object;
+> > ```
+
+
+> Same as json(); explicit form.
+
+> > ::: info Returns
+> > - **Type**: `object`
+> > :::
+
+> ##### getParameter()
+
+> > ```ts
+> > static getParameter(name): string;
+> > ```
+
+
+> Returns a request parameter value.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `name` | `string` |
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getParameters() > ```ts static getParameters(): object; ``` Returns a map of request parameters to arrays of values.
 > :::
 
-> ::: info Returns
-> - **Type**: `object`
-> - **Description**: ##### getResourcePath() > ```ts static getResourcePath(): string; ``` Returns the allocated request resource path.
-> :::
-
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getHeaderNames() > ```ts static getHeaderNames(): string[]; ``` Returns all header names.
-> :::
-
-###### Returns
-
-`string`[]
-
-##### getParameterNames()
+##### getParameters()
 
 > ```ts
-> static getParameterNames(): string[];
+> static getParameters(): object;
 > ```
+
+
+> Returns a map of request parameters to arrays of values.
+
+> > ::: info Returns
+> > - **Type**: `object`
+> > :::
+
+> ##### getResourcePath()
+
+> > ```ts
+> > static getResourcePath(): string;
+> > ```
+
+
+> Returns the allocated request resource path.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getHeaderNames()
+
+> > ```ts
+> > static getHeaderNames(): string[];
+> > ```
+
+
+> Returns all header names.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: []
+> > :::
+
+> ##### getParameterNames()
+
+> > ```ts
+> > static getParameterNames(): string[];
+> > ```
 
 
 > Returns all parameter names.
 
-> ###### Returns
-
-> `string`[]
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: []
+> > :::
 
 > ##### getParameterValues()
 
@@ -287,67 +404,141 @@ needs to be created.
 > | Parameter | Type |
 > | ------ | ------ |
 > | `name` | `string` |
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> ##### getProtocol()
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: []
+> :::
+
+##### getProtocol()
+
+> ```ts
+> static getProtocol(): string;
+> ```
+
+
+> Returns the HTTP protocol version.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getScheme()
+
 > > ```ts
-> > static getProtocol(): string;
+> > static getScheme(): string;
 > > ```
-> 
-> 
-> > Returns the HTTP protocol version.
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getScheme() > ```ts static getScheme(): string; ``` Returns the transport scheme (e.g., http, https).
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getContextPath() > ```ts static getContextPath(): string; ``` Returns the context path of the request.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getServerName() > ```ts static getServerName(): string; ``` Returns the server host name.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getServerPort() > ```ts static getServerPort(): number; ``` Returns the server port number.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `number`
-> > > - **Description**: ##### getQueryString() > ```ts static getQueryString(): string; ``` Returns the full raw query string.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getQueryParametersMap() > ```ts static getQueryParametersMap(): object; ``` Parses the query string and returns a map of parameter keys to values. If the same key appears multiple times, values are collected into arrays.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `object`
-> > > - **Description**: ##### getRemoteAddress() > ```ts static getRemoteAddress(): string; ``` Returns the remote client IP address.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### getRemoteHost() > ```ts static getRemoteHost(): string; ``` Returns the remote client host name.
-> > > :::
-> 
-> > > ::: info Returns
-> > > - **Type**: `string`
-> > > - **Description**: ##### setAttribute() > ```ts static setAttribute(name, value): void; ``` Assigns a new attribute to the request.
-> > > :::
-> 
-> > **Parameters**
-> 
+
+
+> Returns the transport scheme (e.g., http, https).
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getContextPath()
+
+> > ```ts
+> > static getContextPath(): string;
+> > ```
+
+
+> Returns the context path of the request.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getServerName()
+
+> > ```ts
+> > static getServerName(): string;
+> > ```
+
+
+> Returns the server host name.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getServerPort()
+
+> > ```ts
+> > static getServerPort(): number;
+> > ```
+
+
+> Returns the server port number.
+
+> > ::: info Returns
+> > - **Type**: `number`
+> > :::
+
+> ##### getQueryString()
+
+> > ```ts
+> > static getQueryString(): string;
+> > ```
+
+
+> Returns the full raw query string.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getQueryParametersMap()
+
+> > ```ts
+> > static getQueryParametersMap(): object;
+> > ```
+
+
+> Parses the query string and returns a map of parameter keys to values.
+> If the same key appears multiple times, values are collected into arrays.
+
+> > ::: info Returns
+> > - **Type**: `object`
+> > :::
+
+> ##### getRemoteAddress()
+
+> > ```ts
+> > static getRemoteAddress(): string;
+> > ```
+
+
+> Returns the remote client IP address.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### getRemoteHost()
+
+> > ```ts
+> > static getRemoteHost(): string;
+> > ```
+
+
+> Returns the remote client host name.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > :::
+
+> ##### setAttribute()
+
+> > ```ts
+> > static setAttribute(name, value): void;
+> > ```
+
+
+> Assigns a new attribute to the request.
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `name` | `string` |
@@ -355,8 +546,16 @@ needs to be created.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### removeAttribute() > ```ts static removeAttribute(name): void; ``` Removes an attribute from the request.
 > :::
+
+##### removeAttribute()
+
+> ```ts
+> static removeAttribute(name): void;
+> ```
+
+
+> Removes an attribute from the request.
 
 > **Parameters**
 
@@ -366,53 +565,135 @@ needs to be created.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getLocale() > ```ts static getLocale(): any; ``` Returns the client locale preferences.
 > :::
+
+##### getLocale()
+
+> ```ts
+> static getLocale(): any;
+> ```
+
+
+Returns the client locale preferences.
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getRequestURI() > ```ts static getRequestURI(): string; ``` Returns the full request URI.
 > :::
+
+##### getRequestURI()
+
+> ```ts
+> static getRequestURI(): string;
+> ```
+
+
+Returns the full request URI.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### isSecure() > ```ts static isSecure(): boolean; ``` Returns `true` if the request was made over HTTPS.
 > :::
+
+##### isSecure()
+
+> ```ts
+> static isSecure(): boolean;
+> ```
+
+
+Returns `true` if the request was made over HTTPS.
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getRequestURL() > ```ts static getRequestURL(): string; ``` Returns the full request URL including protocol and host.
 > :::
+
+##### getRequestURL()
+
+> ```ts
+> static getRequestURL(): string;
+> ```
+
+
+Returns the full request URL including protocol and host.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getServicePath() > ```ts static getServicePath(): string; ``` Returns the internal service path for routing.
 > :::
+
+##### getServicePath()
+
+> ```ts
+> static getServicePath(): string;
+> ```
+
+
+Returns the internal service path for routing.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getRemotePort() > ```ts static getRemotePort(): number; ``` Returns the remote client port number.
 > :::
+
+##### getRemotePort()
+
+> ```ts
+> static getRemotePort(): number;
+> ```
+
+
+Returns the remote client port number.
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getLocalName() > ```ts static getLocalName(): string; ``` Returns the local network host name.
 > :::
+
+##### getLocalName()
+
+> ```ts
+> static getLocalName(): string;
+> ```
+
+
+Returns the local network host name.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getLocalAddress() > ```ts static getLocalAddress(): string; ``` Returns the local IP address.
 > :::
+
+##### getLocalAddress()
+
+> ```ts
+> static getLocalAddress(): string;
+> ```
+
+
+Returns the local IP address.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getLocalPort() > ```ts static getLocalPort(): number; ``` Returns the server local port number handling the request.
 > :::
+
+##### getLocalPort()
+
+> ```ts
+> static getLocalPort(): number;
+> ```
+
+
+Returns the server local port number handling the request.
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getInputStream() > ```ts static getInputStream(): InputStream; ``` Returns the request body as a binary input stream. Useful for processing binary uploads.
 > :::
+
+##### getInputStream()
+
+> ```ts
+> static getInputStream(): InputStream;
+> ```
+
+
+Returns the request body as a binary input stream.
+
+Useful for processing binary uploads.
 
 > ::: info Returns
 > - **Type**: `InputStream`

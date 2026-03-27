@@ -89,8 +89,14 @@ Statement object
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### getResultSet() > ```ts getResultSet(): ResultSet; ```
 > > :::
+
+> ##### getResultSet()
+
+> > ```ts
+> > getResultSet(): ResultSet;
+> > ```
+
 
 > ###### Returns
 
@@ -105,8 +111,14 @@ Statement object
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### executeQuery() > ```ts executeQuery(): ResultSet; ```
 > > :::
+
+> ##### executeQuery()
+
+> > ```ts
+> > executeQuery(): ResultSet;
+> > ```
+
 
 > ###### Returns
 
@@ -121,8 +133,14 @@ Statement object
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ##### setNull() > ```ts setNull(index, sqlType): void; ```
 > > :::
+
+> ##### setNull()
+
+> > ```ts
+> > setNull(index, sqlType): void;
+> > ```
+
 
 > **Parameters**
 
@@ -133,8 +151,17 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBinaryStream() > ```ts setBinaryStream(    parameterIndex,     inputStream,     length?): void; ```
-> > :::
+> :::
+
+##### setBinaryStream()
+
+> ```ts
+> setBinaryStream(
+>    parameterIndex, 
+>    inputStream, 
+>    length?): void;
+> ```
+
 
 > **Parameters**
 
@@ -146,8 +173,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBoolean() > ```ts setBoolean(index, value?): void; ```
-> > :::
+> :::
+
+##### setBoolean()
+
+> ```ts
+> setBoolean(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -158,8 +191,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setByte() > ```ts setByte(index, value?): void; ```
-> > :::
+> :::
+
+##### setByte()
+
+> ```ts
+> setByte(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -170,8 +209,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBlob() > ```ts setBlob(index, value?): void; ```
-> > :::
+> :::
+
+##### setBlob()
+
+> ```ts
+> setBlob(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -182,8 +227,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setClob() > ```ts setClob(index, value?): void; ```
-> > :::
+> :::
+
+##### setClob()
+
+> ```ts
+> setClob(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -194,8 +245,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setNClob() > ```ts setNClob(index, value?): void; ```
-> > :::
+> :::
+
+##### setNClob()
+
+> ```ts
+> setNClob(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -206,8 +263,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBytesNative() > ```ts setBytesNative(index, value?): void; ```
-> > :::
+> :::
+
+##### setBytesNative()
+
+> ```ts
+> setBytesNative(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -218,8 +281,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBytes() > ```ts setBytes(index, value?): void; ```
-> > :::
+> :::
+
+##### setBytes()
+
+> ```ts
+> setBytes(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -230,8 +299,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setDate() > ```ts setDate(index, value?): void; ```
-> > :::
+> :::
+
+##### setDate()
+
+> ```ts
+> setDate(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -242,8 +317,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setDouble() > ```ts setDouble(index, value?): void; ```
-> > :::
+> :::
+
+##### setDouble()
+
+> ```ts
+> setDouble(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -254,8 +335,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setFloat() > ```ts setFloat(index, value?): void; ```
-> > :::
+> :::
+
+##### setFloat()
+
+> ```ts
+> setFloat(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -266,8 +353,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setInt() > ```ts setInt(index, value?): void; ```
-> > :::
+> :::
+
+##### setInt()
+
+> ```ts
+> setInt(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -278,8 +371,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setLong() > ```ts setLong(index, value?): void; ```
-> > :::
+> :::
+
+##### setLong()
+
+> ```ts
+> setLong(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -290,8 +389,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setShort() > ```ts setShort(index, value?): void; ```
-> > :::
+> :::
+
+##### setShort()
+
+> ```ts
+> setShort(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -302,8 +407,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setString() > ```ts setString(index, value?): void; ```
-> > :::
+> :::
+
+##### setString()
+
+> ```ts
+> setString(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -314,8 +425,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setTime() > ```ts setTime(index, value?): void; ```
-> > :::
+> :::
+
+##### setTime()
+
+> ```ts
+> setTime(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -326,8 +443,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setTimestamp() > ```ts setTimestamp(index, value?): void; ```
-> > :::
+> :::
+
+##### setTimestamp()
+
+> ```ts
+> setTimestamp(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -338,8 +461,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBigDecimal() > ```ts setBigDecimal(index, value?): void; ```
-> > :::
+> :::
+
+##### setBigDecimal()
+
+> ```ts
+> setBigDecimal(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -350,8 +479,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setNString() > ```ts setNString(index, value?): void; ```
-> > :::
+> :::
+
+##### setNString()
+
+> ```ts
+> setNString(index, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -362,17 +497,30 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### addBatch() > ```ts addBatch(): void; ```
-> > :::
+> :::
+
+##### addBatch()
+
+> ```ts
+> addBatch(): void;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### executeBatch() > ```ts executeBatch(): number[]; ```
 > > :::
 
-> ###### Returns
+> ##### executeBatch()
 
-> `number`[]
+> > ```ts
+> > executeBatch(): number[];
+> > ```
+
+
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: []
+> > :::
 
 > ##### getMetaData()
 
@@ -383,23 +531,47 @@ Statement object
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### getMoreResults() > ```ts getMoreResults(): boolean; ```
 > > :::
+
+> ##### getMoreResults()
+
+> > ```ts
+> > getMoreResults(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### getParameterMetaData() > ```ts getParameterMetaData(): any; ```
 > > :::
+
+> ##### getParameterMetaData()
+
+> > ```ts
+> > getParameterMetaData(): any;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### getSQLWarning() > ```ts getSQLWarning(): any; ```
 > > :::
+
+> ##### getSQLWarning()
+
+> > ```ts
+> > getSQLWarning(): any;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
 > > :::
+
+> ##### isClosed()
+
+> > ```ts
+> > isClosed(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
@@ -452,8 +624,14 @@ Statement object
 
 > > ::: info Returns
 > > - **Type**: `number`
-> > - **Description**: ##### registerOutParameter() > ```ts registerOutParameter(parameterIndex, sqlType): void; ```
 > > :::
+
+> ##### registerOutParameter()
+
+> > ```ts
+> > registerOutParameter(parameterIndex, sqlType): void;
+> > ```
+
 
 > **Parameters**
 
@@ -464,8 +642,17 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### registerOutParameterByScale() > ```ts registerOutParameterByScale(    parameterIndex,     sqlType,     scale): void; ```
-> > :::
+> :::
+
+##### registerOutParameterByScale()
+
+> ```ts
+> registerOutParameterByScale(
+>    parameterIndex, 
+>    sqlType, 
+>    scale): void;
+> ```
+
 
 > **Parameters**
 
@@ -477,8 +664,17 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### registerOutParameterByTypeName() > ```ts registerOutParameterByTypeName(    parameterIndex,     sqlType,     typeName): void; ```
-> > :::
+> :::
+
+##### registerOutParameterByTypeName()
+
+> ```ts
+> registerOutParameterByTypeName(
+>    parameterIndex, 
+>    sqlType, 
+>    typeName): void;
+> ```
+
 
 > **Parameters**
 
@@ -490,13 +686,25 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### wasNull() > ```ts wasNull(): boolean; ```
-> > :::
+> :::
+
+##### wasNull()
+
+> ```ts
+> wasNull(): boolean;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### getString() > ```ts getString(parameterIndex): string; ```
 > > :::
+
+> ##### getString()
+
+> > ```ts
+> > getString(parameterIndex): string;
+> > ```
+
 
 > **Parameters**
 
@@ -506,8 +714,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getBoolean() > ```ts getBoolean(parameterIndex): boolean; ```
-> > :::
+> :::
+
+##### getBoolean()
+
+> ```ts
+> getBoolean(parameterIndex): boolean;
+> ```
+
 
 > **Parameters**
 
@@ -517,8 +731,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getByte() > ```ts getByte(parameterIndex): any; ```
-> > :::
+> :::
+
+##### getByte()
+
+> ```ts
+> getByte(parameterIndex): any;
+> ```
+
 
 > **Parameters**
 
@@ -528,8 +748,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getShort() > ```ts getShort(parameterIndex): number; ```
-> > :::
+> :::
+
+##### getShort()
+
+> ```ts
+> getShort(parameterIndex): number;
+> ```
+
 
 > **Parameters**
 
@@ -539,8 +765,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getInt() > ```ts getInt(parameterIndex): number; ```
-> > :::
+> :::
+
+##### getInt()
+
+> ```ts
+> getInt(parameterIndex): number;
+> ```
+
 
 > **Parameters**
 
@@ -550,8 +782,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getLong() > ```ts getLong(parameterIndex): number; ```
-> > :::
+> :::
+
+##### getLong()
+
+> ```ts
+> getLong(parameterIndex): number;
+> ```
+
 
 > **Parameters**
 
@@ -561,8 +799,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getFloat() > ```ts getFloat(parameterIndex): number; ```
-> > :::
+> :::
+
+##### getFloat()
+
+> ```ts
+> getFloat(parameterIndex): number;
+> ```
+
 
 > **Parameters**
 
@@ -572,8 +816,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getDouble() > ```ts getDouble(parameterIndex): number; ```
-> > :::
+> :::
+
+##### getDouble()
+
+> ```ts
+> getDouble(parameterIndex): number;
+> ```
+
 
 > **Parameters**
 
@@ -583,8 +833,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getDate() > ```ts getDate(parameterIndex): Date; ```
-> > :::
+> :::
+
+##### getDate()
+
+> ```ts
+> getDate(parameterIndex): Date;
+> ```
+
 
 > **Parameters**
 
@@ -594,8 +850,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: ##### getTime() > ```ts getTime(parameterIndex): Date; ```
-> > :::
+> :::
+
+##### getTime()
+
+> ```ts
+> getTime(parameterIndex): Date;
+> ```
+
 
 > **Parameters**
 
@@ -605,8 +867,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: ##### getTimestamp() > ```ts getTimestamp(parameterIndex): Date; ```
-> > :::
+> :::
+
+##### getTimestamp()
+
+> ```ts
+> getTimestamp(parameterIndex): Date;
+> ```
+
 
 > **Parameters**
 
@@ -616,8 +884,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: ##### getObject() > ```ts getObject(parameterIndex): any; ```
-> > :::
+> :::
+
+##### getObject()
+
+> ```ts
+> getObject(parameterIndex): any;
+> ```
+
 
 > **Parameters**
 
@@ -627,8 +901,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getBigDecimal() > ```ts getBigDecimal(parameterIndex): number; ```
-> > :::
+> :::
+
+##### getBigDecimal()
+
+> ```ts
+> getBigDecimal(parameterIndex): number;
+> ```
+
 
 > **Parameters**
 
@@ -638,8 +918,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getRef() > ```ts getRef(parameterIndex): any; ```
-> > :::
+> :::
+
+##### getRef()
+
+> ```ts
+> getRef(parameterIndex): any;
+> ```
+
 
 > **Parameters**
 
@@ -649,53 +935,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getBytes() > ```ts getBytes(parameterIndex): any[]; ```
-> > :::
+> :::
 
-> **Parameters**
+##### getBytes()
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `parameterIndex` | `number` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### getBytesNative()
-> 
-> > ```ts
-> > getBytesNative(parameterIndex): any[];
-> > ```
-> 
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `parameterIndex` | `number` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### getBlob()
-> 
-> > ```ts
-> > getBlob(parameterIndex): any;
-> > ```
-> 
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `parameterIndex` | `number` |
+> ```ts
+> getBytes(parameterIndex): any[];
+> ```
 
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: ##### getBlobNative() > ```ts getBlobNative(parameterIndex): any; ```
-> > :::
 
 > **Parameters**
 
@@ -705,8 +952,15 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getClob() > ```ts getClob(parameterIndex): any; ```
-> > :::
+> - **Description**: []
+> :::
+
+##### getBytesNative()
+
+> ```ts
+> getBytesNative(parameterIndex): any[];
+> ```
+
 
 > **Parameters**
 
@@ -716,8 +970,66 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getNClob() > ```ts getNClob(parameterIndex): any; ```
-> > :::
+> - **Description**: []
+> :::
+
+##### getBlob()
+
+> ```ts
+> getBlob(parameterIndex): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getBlobNative()
+
+> ```ts
+> getBlobNative(parameterIndex): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getClob()
+
+> ```ts
+> getClob(parameterIndex): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getNClob()
+
+> ```ts
+> getNClob(parameterIndex): any;
+> ```
+
 
 > **Parameters**
 
@@ -727,8 +1039,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getNString() > ```ts getNString(parameterIndex): string; ```
-> > :::
+> :::
+
+##### getNString()
+
+> ```ts
+> getNString(parameterIndex): string;
+> ```
+
 
 > **Parameters**
 
@@ -738,36 +1056,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getArray() > ```ts getArray(parameterIndex): any[]; ```
-> > :::
+> :::
 
-> **Parameters**
+##### getArray()
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `parameterIndex` | `string` \| `number` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### getURL()
-> 
-> > ```ts
-> > getURL(parameterIndex): any;
-> > ```
-> 
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `parameterIndex` | `string` \| `number` |
+> ```ts
+> getArray(parameterIndex): any[];
+> ```
 
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: ##### getRowId() > ```ts getRowId(parameterIndex): any; ```
-> > :::
 
 > **Parameters**
 
@@ -777,8 +1073,15 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getSQLXML() > ```ts getSQLXML(parameterIndex): any; ```
-> > :::
+> - **Description**: []
+> :::
+
+##### getURL()
+
+> ```ts
+> getURL(parameterIndex): any;
+> ```
+
 
 > **Parameters**
 
@@ -788,8 +1091,48 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### setURL() > ```ts setURL(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### getRowId()
+
+> ```ts
+> getRowId(parameterIndex): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getSQLXML()
+
+> ```ts
+> getSQLXML(parameterIndex): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### setURL()
+
+> ```ts
+> setURL(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -800,8 +1143,17 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setNull() > ```ts setNull(    parameterIndex,     sqlTypeStr,     typeName?): void; ```
-> > :::
+> :::
+
+##### setNull()
+
+> ```ts
+> setNull(
+>    parameterIndex, 
+>    sqlTypeStr, 
+>    typeName?): void;
+> ```
+
 
 > **Parameters**
 
@@ -813,8 +1165,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBoolean() > ```ts setBoolean(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setBoolean()
+
+> ```ts
+> setBoolean(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -825,8 +1183,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setByte() > ```ts setByte(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setByte()
+
+> ```ts
+> setByte(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -837,8 +1201,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setShort() > ```ts setShort(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setShort()
+
+> ```ts
+> setShort(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -849,8 +1219,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setInt() > ```ts setInt(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setInt()
+
+> ```ts
+> setInt(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -861,8 +1237,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setLong() > ```ts setLong(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setLong()
+
+> ```ts
+> setLong(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -873,8 +1255,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setFloat() > ```ts setFloat(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setFloat()
+
+> ```ts
+> setFloat(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -885,8 +1273,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setDouble() > ```ts setDouble(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setDouble()
+
+> ```ts
+> setDouble(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -897,8 +1291,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBigDecimal() > ```ts setBigDecimal(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setBigDecimal()
+
+> ```ts
+> setBigDecimal(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -909,8 +1309,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setString() > ```ts setString(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setString()
+
+> ```ts
+> setString(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -921,8 +1327,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBytes() > ```ts setBytes(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setBytes()
+
+> ```ts
+> setBytes(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -933,8 +1345,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setDate() > ```ts setDate(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setDate()
+
+> ```ts
+> setDate(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -945,8 +1363,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setTime() > ```ts setTime(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setTime()
+
+> ```ts
+> setTime(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -957,8 +1381,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setTimestamp() > ```ts setTimestamp(parameterIndex, value?): void; ```
-> > :::
+> :::
+
+##### setTimestamp()
+
+> ```ts
+> setTimestamp(parameterIndex, value?): void;
+> ```
+
 
 > **Parameters**
 
@@ -969,8 +1399,17 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setAsciiStream() > ```ts setAsciiStream(    parameterIndex,     inputStream,     length?): void; ```
-> > :::
+> :::
+
+##### setAsciiStream()
+
+> ```ts
+> setAsciiStream(
+>    parameterIndex, 
+>    inputStream, 
+>    length?): void;
+> ```
+
 
 > **Parameters**
 
@@ -982,8 +1421,17 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBinaryStream() > ```ts setBinaryStream(    parameterIndex,     inputStream,     length?): void; ```
-> > :::
+> :::
+
+##### setBinaryStream()
+
+> ```ts
+> setBinaryStream(
+>    parameterIndex, 
+>    inputStream, 
+>    length?): void;
+> ```
+
 
 > **Parameters**
 
@@ -995,8 +1443,18 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setObject() > ```ts setObject(    parameterIndex,     value,     targetSqlType?,     scale?): void; ```
-> > :::
+> :::
+
+##### setObject()
+
+> ```ts
+> setObject(
+>    parameterIndex, 
+>    value, 
+>    targetSqlType?, 
+>    scale?): void;
+> ```
+
 
 > **Parameters**
 
@@ -1009,8 +1467,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setRowId() > ```ts setRowId(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### setRowId()
+
+> ```ts
+> setRowId(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -1021,8 +1485,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setNString() > ```ts setNString(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### setNString()
+
+> ```ts
+> setNString(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -1033,8 +1503,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setSQLXML() > ```ts setSQLXML(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### setSQLXML()
+
+> ```ts
+> setSQLXML(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -1045,8 +1521,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setBlob() > ```ts setBlob(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### setBlob()
+
+> ```ts
+> setBlob(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -1057,8 +1539,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setClob() > ```ts setClob(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### setClob()
+
+> ```ts
+> setClob(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -1069,8 +1557,14 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setNClob() > ```ts setNClob(parameterIndex, value): void; ```
-> > :::
+> :::
+
+##### setNClob()
+
+> ```ts
+> setNClob(parameterIndex, value): void;
+> ```
+
 
 > **Parameters**
 
@@ -1081,28 +1575,58 @@ Statement object
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### execute() > ```ts execute(): boolean; ```
-> > :::
+> :::
+
+##### execute()
+
+> ```ts
+> execute(): boolean;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### getMoreResults() > ```ts getMoreResults(): boolean; ```
 > > :::
+
+> ##### getMoreResults()
+
+> > ```ts
+> > getMoreResults(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### getParameterMetaData() > ```ts getParameterMetaData(): any; ```
 > > :::
+
+> ##### getParameterMetaData()
+
+> > ```ts
+> > getParameterMetaData(): any;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
 > > :::
+
+> ##### isClosed()
+
+> > ```ts
+> > isClosed(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### close() > ```ts close(): void; ```
 > > :::
+
+> ##### close()
+
+> > ```ts
+> > close(): void;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `void`
@@ -1144,35 +1668,46 @@ ResultSet object
 > | ------ | ------ | ------ | ------ |
 > | `limited` | `boolean` | `false` | Whether to use limited JSON conversion (optimized). |
 > | `stringify` | `boolean` | `false` | Whether to return the JSON as a string or a parsed array. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> A JavaScript array of objects representing the result set, or a string if stringify is true.
-> 
-> ##### close()
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] A JavaScript array of objects representing the result set, or a string if stringify is true.
+> :::
+
+##### close()
+
+> ```ts
+> close(): void;
+> ```
+
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### getBigDecimal()
+
 > > ```ts
-> > close(): void;
+> > getBigDecimal(identifier): any;
 > > ```
-> 
-> 
-> > > ::: info Returns
-> > > - **Type**: `void`
-> > > - **Description**: ##### getBigDecimal() > ```ts getBigDecimal(identifier): any; ```
-> > > :::
-> 
-> > **Parameters**
-> 
+
+
+> **Parameters**
+
 > | Parameter | Type |
 > | ------ | ------ |
 > | `identifier` | `string` \| `number` |
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getBoolean() > ```ts getBoolean(identifier): boolean; ```
-> > :::
+> :::
+
+##### getBoolean()
+
+> ```ts
+> getBoolean(identifier): boolean;
+> ```
+
 
 > **Parameters**
 
@@ -1182,8 +1717,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getByte() > ```ts getByte(identifier): any; ```
-> > :::
+> :::
+
+##### getByte()
+
+> ```ts
+> getByte(identifier): any;
+> ```
+
 
 > **Parameters**
 
@@ -1193,53 +1734,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getBytes() > ```ts getBytes(identifier): any[]; ```
-> > :::
+> :::
 
-> **Parameters**
+##### getBytes()
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `identifier` | `string` \| `number` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### getBytesNative()
-> 
-> > ```ts
-> > getBytesNative(identifier): any[];
-> > ```
-> 
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `identifier` | `string` \| `number` |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> ##### getBlob()
-> 
-> > ```ts
-> > getBlob(identifier): any;
-> > ```
-> 
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `identifier` | `string` \| `number` |
+> ```ts
+> getBytes(identifier): any[];
+> ```
 
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: ##### getBlobNative() > ```ts getBlobNative(identifier): any; ```
-> > :::
 
 > **Parameters**
 
@@ -1249,8 +1751,15 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getClob() > ```ts getClob(identifier): any; ```
-> > :::
+> - **Description**: []
+> :::
+
+##### getBytesNative()
+
+> ```ts
+> getBytesNative(identifier): any[];
+> ```
+
 
 > **Parameters**
 
@@ -1260,8 +1769,15 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getNClob() > ```ts getNClob(identifier): any; ```
-> > :::
+> - **Description**: []
+> :::
+
+##### getBlob()
+
+> ```ts
+> getBlob(identifier): any;
+> ```
+
 
 > **Parameters**
 
@@ -1271,8 +1787,65 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ##### getDate() > ```ts getDate(identifier): Date; ```
-> > :::
+> :::
+
+##### getBlobNative()
+
+> ```ts
+> getBlobNative(identifier): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getClob()
+
+> ```ts
+> getClob(identifier): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getNClob()
+
+> ```ts
+> getNClob(identifier): any;
+> ```
+
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> :::
+
+##### getDate()
+
+> ```ts
+> getDate(identifier): Date;
+> ```
+
 
 > **Parameters**
 
@@ -1282,8 +1855,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: ##### getDouble() > ```ts getDouble(identifier): number; ```
-> > :::
+> :::
+
+##### getDouble()
+
+> ```ts
+> getDouble(identifier): number;
+> ```
+
 
 > **Parameters**
 
@@ -1293,8 +1872,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getFloat() > ```ts getFloat(identifier): number; ```
-> > :::
+> :::
+
+##### getFloat()
+
+> ```ts
+> getFloat(identifier): number;
+> ```
+
 
 > **Parameters**
 
@@ -1304,8 +1889,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getInt() > ```ts getInt(identifier): number; ```
-> > :::
+> :::
+
+##### getInt()
+
+> ```ts
+> getInt(identifier): number;
+> ```
+
 
 > **Parameters**
 
@@ -1315,8 +1906,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getLong() > ```ts getLong(identifier): number; ```
-> > :::
+> :::
+
+##### getLong()
+
+> ```ts
+> getLong(identifier): number;
+> ```
+
 
 > **Parameters**
 
@@ -1326,8 +1923,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getShort() > ```ts getShort(identifier): number; ```
-> > :::
+> :::
+
+##### getShort()
+
+> ```ts
+> getShort(identifier): number;
+> ```
+
 
 > **Parameters**
 
@@ -1337,8 +1940,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `number`
-> - **Description**: ##### getString() > ```ts getString(identifier): string; ```
-> > :::
+> :::
+
+##### getString()
+
+> ```ts
+> getString(identifier): string;
+> ```
+
 
 > **Parameters**
 
@@ -1348,8 +1957,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getTime() > ```ts getTime(identifier): Date; ```
-> > :::
+> :::
+
+##### getTime()
+
+> ```ts
+> getTime(identifier): Date;
+> ```
+
 
 > **Parameters**
 
@@ -1359,8 +1974,14 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: ##### getTimestamp() > ```ts getTimestamp(identifier): Date; ```
-> > :::
+> :::
+
+##### getTimestamp()
+
+> ```ts
+> getTimestamp(identifier): Date;
+> ```
+
 
 > **Parameters**
 
@@ -1370,43 +1991,91 @@ ResultSet object
 
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: ##### isAfterLast() > ```ts isAfterLast(): boolean; ```
-> > :::
+> :::
+
+##### isAfterLast()
+
+> ```ts
+> isAfterLast(): boolean;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### isBeforeFirst() > ```ts isBeforeFirst(): boolean; ```
 > > :::
+
+> ##### isBeforeFirst()
+
+> > ```ts
+> > isBeforeFirst(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
 > > :::
+
+> ##### isClosed()
+
+> > ```ts
+> > isClosed(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### isFirst() > ```ts isFirst(): boolean; ```
 > > :::
+
+> ##### isFirst()
+
+> > ```ts
+> > isFirst(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### isLast() > ```ts isLast(): boolean; ```
 > > :::
+
+> ##### isLast()
+
+> > ```ts
+> > isLast(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### next() > ```ts next(): boolean; ```
 > > :::
+
+> ##### next()
+
+> > ```ts
+> > next(): boolean;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `boolean`
-> > - **Description**: ##### getMetaData() > ```ts getMetaData(): any; ```
 > > :::
+
+> ##### getMetaData()
+
+> > ```ts
+> > getMetaData(): any;
+> > ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
-> > - **Description**: ##### getNString() > ```ts getNString(columnIndex): string; ```
 > > :::
+
+> ##### getNString()
+
+> > ```ts
+> > getNString(columnIndex): string;
+> > ```
+
 
 > **Parameters**
 
@@ -1477,18 +2146,26 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### getDatabaseSystem() > ```ts getDatabaseSystem(): DatabaseSystem; ``` Returns the type of the underlying database system as a [DatabaseSystem](#databasesystem) enum.
 > :::
 
-###### Returns
-
-[`DatabaseSystem`](#databasesystem)
-
-##### prepareStatement()
+##### getDatabaseSystem()
 
 > ```ts
-> prepareStatement(sql): PreparedStatement;
+> getDatabaseSystem(): DatabaseSystem;
 > ```
+
+
+> Returns the type of the underlying database system as a [DatabaseSystem](#databasesystem) enum.
+
+> ###### Returns
+
+> [`DatabaseSystem`](#databasesystem)
+
+> ##### prepareStatement()
+
+> > ```ts
+> > prepareStatement(sql): PreparedStatement;
+> > ```
 
 
 > Creates a new [PreparedStatement](#preparedstatement) object for sending parameterized SQL statements to the database.
@@ -1531,53 +2208,113 @@ Connection object wrapper around a native Java `Connection`.
 > 
 > > > ::: info Returns
 > > > - **Type**: `void`
-> > > - **Description**: ##### commit() > ```ts commit(): void; ```
 > > > :::
+> 
+> > ##### commit()
+> 
+> > > ```ts
+> > > commit(): void;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `void`
-> > > - **Description**: ##### getAutoCommit() > ```ts getAutoCommit(): boolean; ```
 > > > :::
+> 
+> > ##### getAutoCommit()
+> 
+> > > ```ts
+> > > getAutoCommit(): boolean;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `boolean`
-> > > - **Description**: ##### getCatalog() > ```ts getCatalog(): string; ```
 > > > :::
+> 
+> > ##### getCatalog()
+> 
+> > > ```ts
+> > > getCatalog(): string;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### getSchema() > ```ts getSchema(): string; ```
 > > > :::
+> 
+> > ##### getSchema()
+> 
+> > > ```ts
+> > > getSchema(): string;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `string`
-> > > - **Description**: ##### getTransactionIsolation() > ```ts getTransactionIsolation(): number; ```
 > > > :::
+> 
+> > ##### getTransactionIsolation()
+> 
+> > > ```ts
+> > > getTransactionIsolation(): number;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `number`
-> > > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
 > > > :::
+> 
+> > ##### isClosed()
+> 
+> > > ```ts
+> > > isClosed(): boolean;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `boolean`
-> > > - **Description**: ##### isReadOnly() > ```ts isReadOnly(): boolean; ```
 > > > :::
+> 
+> > ##### isReadOnly()
+> 
+> > > ```ts
+> > > isReadOnly(): boolean;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `boolean`
-> > > - **Description**: ##### isValid() > ```ts isValid(): boolean; ```
 > > > :::
+> 
+> > ##### isValid()
+> 
+> > > ```ts
+> > > isValid(): boolean;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `boolean`
-> > > - **Description**: ##### rollback() > ```ts rollback(): void; ```
 > > > :::
+> 
+> > ##### rollback()
+> 
+> > > ```ts
+> > > rollback(): void;
+> > > ```
+> 
 > 
 > > > ::: info Returns
 > > > - **Type**: `void`
-> > > - **Description**: ##### setAutoCommit() > ```ts setAutoCommit(autoCommit): void; ```
 > > > :::
+> 
+> > ##### setAutoCommit()
+> 
+> > > ```ts
+> > > setAutoCommit(autoCommit): void;
+> > > ```
+> 
 > 
 > > **Parameters**
 > 
@@ -1587,8 +2324,14 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setCatalog() > ```ts setCatalog(catalog): void; ```
-> > :::
+> :::
+
+##### setCatalog()
+
+> ```ts
+> setCatalog(catalog): void;
+> ```
+
 
 > **Parameters**
 
@@ -1598,8 +2341,14 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setReadOnly() > ```ts setReadOnly(readOnly): void; ```
-> > :::
+> :::
+
+##### setReadOnly()
+
+> ```ts
+> setReadOnly(readOnly): void;
+> ```
+
 
 > **Parameters**
 
@@ -1609,8 +2358,14 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setSchema() > ```ts setSchema(schema): void; ```
-> > :::
+> :::
+
+##### setSchema()
+
+> ```ts
+> setSchema(schema): void;
+> ```
+
 
 > **Parameters**
 
@@ -1620,8 +2375,14 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setTransactionIsolation() > ```ts setTransactionIsolation(transactionIsolation): void; ```
-> > :::
+> :::
+
+##### setTransactionIsolation()
+
+> ```ts
+> setTransactionIsolation(transactionIsolation): void;
+> ```
+
 
 > **Parameters**
 
@@ -1631,8 +2392,14 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getMetaData() > ```ts getMetaData(): any; ```
-> > :::
+> :::
+
+##### getMetaData()
+
+> ```ts
+> getMetaData(): any;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `any`
@@ -1657,9 +2424,10 @@ Connection object wrapper around a native Java `Connection`.
 
 > Returns a list of available data source names.
 
-> ###### Returns
-
-> `string`[]
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: []
+> > :::
 
 > ##### getMetadata()
 
@@ -1697,8 +2465,16 @@ Connection object wrapper around a native Java `Connection`.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getConnection() > ```ts static getConnection(datasourceName?): Connection; ``` Gets a new database connection object.
 > :::
+
+##### getConnection()
+
+> ```ts
+> static getConnection(datasourceName?): Connection;
+> ```
+
+
+> Gets a new database connection object.
 
 > **Parameters**
 

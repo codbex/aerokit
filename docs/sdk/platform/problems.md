@@ -73,8 +73,17 @@ Static utility class for managing system problems via the ProblemsFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### findProblem() > ```ts static findProblem(id): Problem; ``` Finds a specific problem by its unique ID. Note: The underlying facade returns a JSON string which is parsed here.
 > :::
+
+##### findProblem()
+
+> ```ts
+> static findProblem(id): Problem;
+> ```
+
+
+> Finds a specific problem by its unique ID.
+> Note: The underlying facade returns a JSON string which is parsed here.
 
 > **Parameters**
 
@@ -143,8 +152,16 @@ Static utility class for managing system problems via the ProblemsFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteAllByStatus() > ```ts static deleteAllByStatus(status): void; ``` Deletes all problem records that currently have the specified status.
 > :::
+
+##### deleteAllByStatus()
+
+> ```ts
+> static deleteAllByStatus(status): void;
+> ```
+
+
+> Deletes all problem records that currently have the specified status.
 
 > **Parameters**
 
@@ -154,13 +171,29 @@ Static utility class for managing system problems via the ProblemsFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### clearAllProblems() > ```ts static clearAllProblems(): void; ``` Clears (deletes) all problem records in the system, regardless of status.
 > :::
 
-> ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### updateStatus() > ```ts static updateStatus(id, status): void; ``` Updates the status of a single problem by its ID.
-> :::
+##### clearAllProblems()
+
+> ```ts
+> static clearAllProblems(): void;
+> ```
+
+
+> Clears (deletes) all problem records in the system, regardless of status.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### updateStatus()
+
+> > ```ts
+> > static updateStatus(id, status): void;
+> > ```
+
+
+> Updates the status of a single problem by its ID.
 
 > **Parameters**
 
@@ -171,8 +204,16 @@ Static utility class for managing system problems via the ProblemsFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### updateStatusMultiple() > ```ts static updateStatusMultiple(ids, status): void; ``` Updates the status of multiple problems identified by an array of IDs.
 > :::
+
+##### updateStatusMultiple()
+
+> ```ts
+> static updateStatusMultiple(ids, status): void;
+> ```
+
+
+> Updates the status of multiple problems identified by an array of IDs.
 
 > **Parameters**
 
@@ -183,8 +224,9 @@ Static utility class for managing system problems via the ProblemsFacade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ## Interfaces
 > :::
+
+## Interfaces
 
 ### Problem
 

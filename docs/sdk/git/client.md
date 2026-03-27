@@ -67,8 +67,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### commit() > ```ts static commit( user, email, workspaceName, repositoryName, commitMessage, all): void; ``` Performs a commit in the specified repository.
 > :::
+
+##### commit()
+
+> ```ts
+> static commit( user, email, workspaceName, repositoryName, commitMessage, all): void;
+> ```
+
+
+> Performs a commit in the specified repository.
 
 > **Parameters**
 
@@ -83,8 +91,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getGitRepositories() > ```ts static getGitRepositories(workspaceName): ProjectDescriptor[]; ``` Retrieves a list of all Git repositories (projects) within the specified workspace.
 > :::
+
+##### getGitRepositories()
+
+> ```ts
+> static getGitRepositories(workspaceName): ProjectDescriptor[];
+> ```
+
+
+> Retrieves a list of all Git repositories (projects) within the specified workspace.
 
 > **Parameters**
 
@@ -139,8 +155,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### cloneRepository() > ```ts static cloneRepository( workspaceName, repositoryUri, username, password, branch): GitConnector; ``` Clones a remote repository into the local workspace.
 > :::
+
+##### cloneRepository()
+
+> ```ts
+> static cloneRepository( workspaceName, repositoryUri, username, password, branch): GitConnector;
+> ```
+
+
+> Clones a remote repository into the local workspace.
 
 > **Parameters**
 
@@ -178,8 +202,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### push() > ```ts static push( workspaceName, repositoryName, username, password): void; ``` Pushes the local commits to the remote repository.
 > :::
+
+##### push()
+
+> ```ts
+> static push( workspaceName, repositoryName, username, password): void;
+> ```
+
+
+> Pushes the local commits to the remote repository.
 
 > **Parameters**
 
@@ -192,8 +224,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### checkout() > ```ts static checkout( workspaceName, repositoryName, branch): void; ``` Checks out a specific branch, commit, or tag in the repository.
 > :::
+
+##### checkout()
+
+> ```ts
+> static checkout( workspaceName, repositoryName, branch): void;
+> ```
+
+
+> Checks out a specific branch, commit, or tag in the repository.
 
 > **Parameters**
 
@@ -205,8 +245,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createBranch() > ```ts static createBranch( workspaceName, repositoryName, branch, startingPoint): void; ``` Creates a new branch starting from a specified point (e.g., HEAD, a commit hash, or another branch).
 > :::
+
+##### createBranch()
+
+> ```ts
+> static createBranch( workspaceName, repositoryName, branch, startingPoint): void;
+> ```
+
+
+> Creates a new branch starting from a specified point (e.g., HEAD, a commit hash, or another branch).
 
 > **Parameters**
 
@@ -219,8 +267,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteBranch() > ```ts static deleteBranch( workspaceName, repositoryName, branch): void; ``` Deletes a local branch.
 > :::
+
+##### deleteBranch()
+
+> ```ts
+> static deleteBranch( workspaceName, repositoryName, branch): void;
+> ```
+
+
+> Deletes a local branch.
 
 > **Parameters**
 
@@ -232,8 +288,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### renameBranch() > ```ts static renameBranch( workspaceName, repositoryName, oldName, newName): void; ``` Renames a local branch.
 > :::
+
+##### renameBranch()
+
+> ```ts
+> static renameBranch( workspaceName, repositoryName, oldName, newName): void;
+> ```
+
+
+> Renames a local branch.
 
 > **Parameters**
 
@@ -246,8 +310,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createRemoteBranch() > ```ts static createRemoteBranch( workspaceName, repositoryName, branch, startingPoint, username, password): void; ``` Creates a new remote branch on the Git server.
 > :::
+
+##### createRemoteBranch()
+
+> ```ts
+> static createRemoteBranch( workspaceName, repositoryName, branch, startingPoint, username, password): void;
+> ```
+
+
+> Creates a new remote branch on the Git server.
 
 > **Parameters**
 
@@ -262,8 +334,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteRemoteBranch() > ```ts static deleteRemoteBranch( workspaceName, repositoryName, branch, username, password): void; ``` Deletes a remote branch on the Git server.
 > :::
+
+##### deleteRemoteBranch()
+
+> ```ts
+> static deleteRemoteBranch( workspaceName, repositoryName, branch, username, password): void;
+> ```
+
+
+> Deletes a remote branch on the Git server.
 
 > **Parameters**
 
@@ -277,8 +357,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### hardReset() > ```ts static hardReset(workspaceName, repositoryName): void; ``` Resets the repository, discarding all uncommitted changes in the working directory and index.
 > :::
+
+##### hardReset()
+
+> ```ts
+> static hardReset(workspaceName, repositoryName): void;
+> ```
+
+
+> Resets the repository, discarding all uncommitted changes in the working directory and index.
 
 > **Parameters**
 
@@ -289,8 +377,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### rebase() > ```ts static rebase( workspaceName, repositoryName, branch): void; ``` Reapplies commits from the specified branch onto the current branch.
 > :::
+
+##### rebase()
+
+> ```ts
+> static rebase( workspaceName, repositoryName, branch): void;
+> ```
+
+
+> Reapplies commits from the specified branch onto the current branch.
 
 > **Parameters**
 
@@ -302,8 +398,16 @@ Static client facade for workspace-level Git operations, abstracting the native 
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### status() > ```ts static status(workspaceName, repositoryName): string; ``` Retrieves the current status of the repository (staged, unstaged, untracked files).
 > :::
+
+##### status()
+
+> ```ts
+> static status(workspaceName, repositoryName): string;
+> ```
+
+
+> Retrieves the current status of the repository (staged, unstaged, untracked files).
 
 > **Parameters**
 
@@ -592,8 +696,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws URISyntaxException, GitAPIException
 > :::
+
+###### Throws
+
+URISyntaxException, GitAPIException
 
 ##### setPushUrl()
 
@@ -612,8 +719,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws URISyntaxException, GitAPIException
 > :::
+
+###### Throws
+
+URISyntaxException, GitAPIException
 
 ##### add()
 
@@ -632,8 +742,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws IOException, NoFilepatternException, GitAPIException
 > :::
+
+###### Throws
+
+IOException, NoFilepatternException, GitAPIException
 
 ##### addDeleted()
 
@@ -652,8 +765,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws IOException, NoFilepatternException, GitAPIException
 > :::
+
+###### Throws
+
+IOException, NoFilepatternException, GitAPIException
 
 ##### remove()
 
@@ -672,8 +788,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws IOException, NoFilepatternException, GitAPIException
 > :::
+
+###### Throws
+
+IOException, NoFilepatternException, GitAPIException
 
 ##### revert()
 
@@ -692,8 +811,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws IOException, NoFilepatternException, GitAPIException
 > :::
+
+###### Throws
+
+IOException, NoFilepatternException, GitAPIException
 
 ##### commit()
 
@@ -719,8 +841,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws Various Git exceptions
 > :::
+
+###### Throws
+
+Various Git exceptions
 
 ##### createBranch()
 
@@ -740,8 +865,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws RefAlreadyExistsException, GitAPIException
 > :::
+
+###### Throws
+
+RefAlreadyExistsException, GitAPIException
 
 ##### deleteBranch()
 
@@ -760,8 +888,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws RefAlreadyExistsException, GitAPIException
 > :::
+
+###### Throws
+
+RefAlreadyExistsException, GitAPIException
 
 ##### renameBranch()
 
@@ -781,8 +912,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws RefAlreadyExistsException, GitAPIException
 > :::
+
+###### Throws
+
+RefAlreadyExistsException, GitAPIException
 
 ##### createRemoteBranch()
 
@@ -808,8 +942,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws RefAlreadyExistsException, GitAPIException
 > :::
+
+###### Throws
+
+RefAlreadyExistsException, GitAPIException
 
 ##### deleteRemoteBranch()
 
@@ -833,8 +970,11 @@ This interface is primarily implemented by the object returned from the native J
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws RefAlreadyExistsException, GitAPIException
 > :::
+
+###### Throws
+
+RefAlreadyExistsException, GitAPIException
 
 ##### checkout()
 
@@ -871,8 +1011,11 @@ RefAlreadyExistsException, GitAPIException
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ###### Throws CheckoutConflictException, GitAPIException
 > > :::
+
+> ###### Throws
+
+> CheckoutConflictException, GitAPIException
 
 > ##### pull()
 
@@ -887,8 +1030,11 @@ RefAlreadyExistsException, GitAPIException
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ###### Throws Various Git exceptions
 > > :::
+
+> ###### Throws
+
+> Various Git exceptions
 
 > ###### Call Signature
 
@@ -908,8 +1054,11 @@ RefAlreadyExistsException, GitAPIException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws Various Git exceptions
 > :::
+
+###### Throws
+
+Various Git exceptions
 
 ##### push()
 
@@ -929,8 +1078,11 @@ RefAlreadyExistsException, GitAPIException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws InvalidRemoteException, TransportException, GitAPIException
 > :::
+
+###### Throws
+
+InvalidRemoteException, TransportException, GitAPIException
 
 ##### rebase()
 
@@ -949,8 +1101,11 @@ RefAlreadyExistsException, GitAPIException
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ###### Throws NoHeadException, WrongRepositoryStateException, GitAPIException
 > :::
+
+###### Throws
+
+NoHeadException, WrongRepositoryStateException, GitAPIException
 
 ##### status()
 

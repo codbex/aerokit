@@ -50,18 +50,40 @@ It wraps the underlying Java javax.xml.soap API.
 
 > ::: info Returns
 > - **Type**: `Message`
-> - **Description**: ##### trustAll() > ```ts static trustAll(): void; ```
-> > :::
+> :::
+
+##### trustAll()
+
+> ```ts
+> static trustAll(): void;
+> ```
+
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### createMessage() > ```ts static createMessage(): Message; ``` Creates a new, empty SOAP message.
 > > :::
+
+> ##### createMessage()
+
+> > ```ts
+> > static createMessage(): Message;
+> > ```
+
+
+> Creates a new, empty SOAP message.
 
 > > ::: info Returns
 > > - **Type**: `Message`
-> > - **Description**: ##### parseMessage() > ```ts static parseMessage(mimeHeaders, inputStream): Message; ``` Parses a SOAP message from an InputStream and MimeHeaders.
 > > :::
+
+> ##### parseMessage()
+
+> > ```ts
+> > static parseMessage(mimeHeaders, inputStream): Message;
+> > ```
+
+
+> Parses a SOAP message from an InputStream and MimeHeaders.
 
 > **Parameters**
 
@@ -72,13 +94,29 @@ It wraps the underlying Java javax.xml.soap API.
 
 > ::: info Returns
 > - **Type**: `Message`
-> - **Description**: ##### parseRequest() > ```ts static parseRequest(): Message; ``` Parses a SOAP message from the current HTTP request input stream.
 > :::
+
+##### parseRequest()
+
+> ```ts
+> static parseRequest(): Message;
+> ```
+
+
+Parses a SOAP message from the current HTTP request input stream.
 
 > ::: info Returns
 > - **Type**: `Message`
-> - **Description**: ##### createMimeHeaders() > ```ts static createMimeHeaders(): MimeHeaders; ``` Creates a new, empty MimeHeaders object.
 > :::
+
+##### createMimeHeaders()
+
+> ```ts
+> static createMimeHeaders(): MimeHeaders;
+> ```
+
+
+Creates a new, empty MimeHeaders object.
 
 > ::: info Returns
 > - **Type**: `MimeHeaders`

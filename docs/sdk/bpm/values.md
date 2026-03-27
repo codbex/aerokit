@@ -71,27 +71,26 @@ to and from JSON strings for storage or transfer across the API boundary.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `variables` | `Map`\ | The Map of variable names to their values (which may be JSON strings). |
-> 
-> ###### Returns
-> 
-> `Map`\
-> 
-> The Map with all values deserialized where possible.
-> 
-> ##### stringifyValue()
-> 
-> > ```ts
-> > static stringifyValue(value): any;
-> > ```
-> 
-> 
-> > Serializes a value for persistence or API transfer.
-> > Arrays and objects are converted into their respective JSON string representations.
-> > Note: Arrays are additionally converted into a `java.util.List` of stringified elements for Java API compatibility.
-> > Primitive types are returned as is.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \ The Map with all values deserialized where possible.
+> :::
+
+##### stringifyValue()
+
+> ```ts
+> static stringifyValue(value): any;
+> ```
+
+
+> Serializes a value for persistence or API transfer.
+> Arrays and objects are converted into their respective JSON string representations.
+> Note: Arrays are additionally converted into a `java.util.List` of stringified elements for Java API compatibility.
+> Primitive types are returned as is.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `value` | `any` | The value to serialize. |
@@ -113,12 +112,11 @@ to and from JSON strings for storage or transfer across the API boundary.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `variables` | `Map`\ | The Map of variable names to their values. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `variables` | `Map`\ | The Map of variable names to their values. |
 
-###### Returns
-
-`Map`\
-
-The Map with all values serialized.
+> ::: info Returns
+> - **Type**: `Map`
+> - **Description**: \ The Map with all values serialized.
+> :::

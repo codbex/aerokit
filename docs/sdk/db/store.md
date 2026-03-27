@@ -99,24 +99,23 @@ before interacting with the native Java facade.
 > | ------ | ------ | ------ |
 > | `name` | `string` | The entity/table name. |
 > | `entry` | `any` | The JavaScript object to save. |
-> 
-> ###### Returns
-> 
-> `string` \| `number`
-> 
-> The ID of the newly created entry (string or number).
-> 
-> ##### upsert()
-> 
-> > ```ts
-> > static upsert(name, entry): void;
-> > ```
-> 
-> 
-> > Inserts a new entry or updates an existing one if the ID is present.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: \| `number` The ID of the newly created entry (string or number).
+> :::
+
+##### upsert()
+
+> ```ts
+> static upsert(name, entry): void;
+> ```
+
+
+> Inserts a new entry or updates an existing one if the ID is present.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `name` | `string` | The entity/table name. |
@@ -124,8 +123,16 @@ before interacting with the native Java facade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### update() > ```ts static update(name, entry): void; ``` Updates an existing entry.
 > :::
+
+##### update()
+
+> ```ts
+> static update(name, entry): void;
+> ```
+
+
+> Updates an existing entry.
 
 > **Parameters**
 
@@ -136,8 +143,16 @@ before interacting with the native Java facade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### list() > ```ts static list(name, options?): any[]; ``` Lists entries based on optional filtering, sorting, and pagination options.
 > :::
+
+##### list()
+
+> ```ts
+> static list(name, options?): any[];
+> ```
+
+
+> Lists entries based on optional filtering, sorting, and pagination options.
 
 > **Parameters**
 
@@ -145,24 +160,23 @@ before interacting with the native Java facade.
 > | ------ | ------ | ------ |
 > | `name` | `string` | The entity/table name. |
 > | `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> An array of JavaScript objects.
-> 
-> ##### count()
-> 
-> > ```ts
-> > static count(name, options?): number;
-> > ```
-> 
-> 
-> > Counts the number of entries based on optional filtering options.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of JavaScript objects.
+> :::
+
+##### count()
+
+> ```ts
+> static count(name, options?): number;
+> ```
+
+
+> Counts the number of entries based on optional filtering options.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `name` | `string` | The entity/table name. |
@@ -212,8 +226,16 @@ before interacting with the native Java facade.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### find() > ```ts static find( name, example, limit?, offset?): any[]; ``` Finds entries matching an example object (query-by-example).
 > :::
+
+##### find()
+
+> ```ts
+> static find( name, example, limit?, offset?): any[];
+> ```
+
+
+> Finds entries matching an example object (query-by-example).
 
 > **Parameters**
 
@@ -223,80 +245,66 @@ before interacting with the native Java facade.
 > | `example` | `any` | `undefined` | An object containing properties to match. |
 > | `limit` | `number` | `100` | Maximum number of results to return. |
 > | `offset` | `number` | `0` | Number of results to skip. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> An array of matching JavaScript objects.
-> 
-> ##### query()
-> 
-> > ```ts
-> > static query( query, parameters?, limit?, offset?): any[];
-> > ```
-> 
-> 
-> > Queries all entries for a given script with pagination.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of matching JavaScript objects.
+> :::
+
+##### query()
+
+> ```ts
+> static query( query, parameters?, limit?, offset?): any[];
+> ```
+
+
+> Queries all entries for a given script with pagination.
+
+> **Parameters**
+
 > | Parameter | Type | Default value | Description |
 > | ------ | ------ | ------ | ------ |
 > | `query` | `string` | `undefined` | The query script. |
 > | `parameters?` | ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](query.md#typedqueryparameter) \| [`NamedQueryParameter`](query.md#namedqueryparameter))[] | `undefined` | - |
 > | `limit?` | `number` | `100` | Maximum number of results to return. |
 > | `offset?` | `number` | `0` | Number of results to skip. |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> An array of JavaScript objects.
-> 
-> ##### queryNative()
-> 
-> > ```ts
-> > static queryNative( query, parameters?, limit?, offset?): any[];
-> > ```
-> 
-> 
-> > Queries all entries for a given entity name without pagination.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of JavaScript objects.
+> :::
+
+##### queryNative()
+
+> ```ts
+> static queryNative( query, parameters?, limit?, offset?): any[];
+> ```
+
+
+> Queries all entries for a given entity name without pagination.
+
+> **Parameters**
+
 > | Parameter | Type | Default value | Description |
 > | ------ | ------ | ------ | ------ |
 > | `query` | `string` | `undefined` | The entity/table name. |
 > | `parameters?` | ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](query.md#typedqueryparameter) \| [`NamedQueryParameter`](query.md#namedqueryparameter))[] | `undefined` | - |
 > | `limit?` | `number` | `100` | - |
 > | `offset?` | `number` | `0` | - |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> An array of all JavaScript objects.
-> 
-> ##### getEntityName()
-> 
-> > ```ts
-> > static getEntityName(name): string;
-> > ```
-> 
-> 
-> > Gets the name of the entity associated with the store name.
-> 
-> > **Parameters**
-> 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `name` | `string` |
 
 > ::: info Returns
-> - **Type**: `string`
-> - **Description**: ##### getTableName() > ```ts static getTableName(name): string; ``` Gets the underlying database table name for the entity.
+> - **Type**: `any`
+> - **Description**: [] An array of all JavaScript objects.
 > :::
+
+##### getEntityName()
+
+> ```ts
+> static getEntityName(name): string;
+> ```
+
+
+> Gets the name of the entity associated with the store name.
 
 > **Parameters**
 
@@ -306,8 +314,16 @@ before interacting with the native Java facade.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getIdName() > ```ts static getIdName(name): string; ``` Gets the property name used as the ID field in the entity object.
 > :::
+
+##### getTableName()
+
+> ```ts
+> static getTableName(name): string;
+> ```
+
+
+> Gets the underlying database table name for the entity.
 
 > **Parameters**
 
@@ -317,8 +333,16 @@ before interacting with the native Java facade.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### getIdColumn() > ```ts static getIdColumn(name): string; ``` Gets the underlying database column name used for the ID field.
 > :::
+
+##### getIdName()
+
+> ```ts
+> static getIdName(name): string;
+> ```
+
+
+> Gets the property name used as the ID field in the entity object.
 
 > **Parameters**
 
@@ -328,8 +352,28 @@ before interacting with the native Java facade.
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ## Interfaces
 > :::
+
+##### getIdColumn()
+
+> ```ts
+> static getIdColumn(name): string;
+> ```
+
+
+> Gets the underlying database column name used for the ID field.
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `name` | `string` |
+
+> ::: info Returns
+> - **Type**: `string`
+> :::
+
+## Interfaces
 
 ### Condition
 

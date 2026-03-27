@@ -225,11 +225,10 @@ Returns the size of the uploaded item in bytes.
 Retrieves the content of the file item as a JavaScript array of bytes.
 This uses a utility (`Bytes.toJavaScriptBytes`) to convert the native Java byte array.
 
-###### Returns
-
-`any`[]
-
-An array of bytes (`any[]`).
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] An array of bytes (`any[]`).
+> :::
 
 ##### getBytesNative()
 
@@ -240,11 +239,10 @@ An array of bytes (`any[]`).
 
 Retrieves the content of the file item as the native Java byte array.
 
-###### Returns
-
-`any`[]
-
-The native byte array (`any[]`).
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The native byte array (`any[]`).
+> :::
 
 ##### getText()
 

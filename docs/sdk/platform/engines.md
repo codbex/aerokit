@@ -56,11 +56,10 @@ and provides methods to interact with the platform's execution facade.
 
 > Retrieves the list of available engine types from the platform.
 
-> ###### Returns
-
-> `string`[]
-
-> An array of supported engine type names.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of supported engine type names.
+> > :::
 
 > ##### execute()
 

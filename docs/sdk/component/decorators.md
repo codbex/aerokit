@@ -40,8 +40,13 @@ Extends a standard constructor function to include properties used for internal 
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts Function.constructor ```
 > :::
+
+###### Inherited from
+
+> ```ts
+> Function.constructor
+> ```
 
 #### Properties
 

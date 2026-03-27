@@ -69,8 +69,16 @@ The Globals API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### list() > ```ts static list(): GlobalsValues; ``` Retrieves a map of all global variables currently defined in the application.
 > :::
+
+##### list()
+
+> ```ts
+> static list(): GlobalsValues;
+> ```
+
+
+Retrieves a map of all global variables currently defined in the application.
 
 ###### Returns
 

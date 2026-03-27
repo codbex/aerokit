@@ -68,8 +68,16 @@ The Configurations API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### remove() > ```ts static remove(key): void; ``` Removes the configuration property associated with the given key.
 > :::
+
+##### remove()
+
+> ```ts
+> static remove(key): void;
+> ```
+
+
+> Removes the configuration property associated with the given key.
 
 > **Parameters**
 
@@ -79,20 +87,27 @@ The Configurations API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getKeys() > ```ts static getKeys(): string[]; ``` Retrieves a list of all current configuration keys.
 > :::
 
-###### Returns
-
-`string`[]
-
-An array of configuration keys (strings).
-
-##### load()
+##### getKeys()
 
 > ```ts
-> static load(path): void;
+> static getKeys(): string[];
 > ```
+
+
+> Retrieves a list of all current configuration keys.
+
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: [] An array of configuration keys (strings).
+> > :::
+
+> ##### load()
+
+> > ```ts
+> > static load(path): void;
+> > ```
 
 
 > Loads configuration properties from a file at the specified path, overriding existing ones.
@@ -105,13 +120,29 @@ An array of configuration keys (strings).
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### update() > ```ts static update(): void; ``` Reloads or updates the current configuration settings from their source (e.g., persistence layer).
 > :::
+
+##### update()
+
+> ```ts
+> static update(): void;
+> ```
+
+
+Reloads or updates the current configuration settings from their source (e.g., persistence layer).
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getOS() > ```ts static getOS(): string; ``` Retrieves the name of the current Operating System.
 > :::
+
+##### getOS()
+
+> ```ts
+> static getOS(): string;
+> ```
+
+
+Retrieves the name of the current Operating System.
 
 > ::: info Returns
 > - **Type**: `string`

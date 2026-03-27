@@ -103,8 +103,16 @@ It wraps the underlying native Java object.
 > 
 > > > ::: info Returns
 > > > - **Type**: `void`
-> > > - **Description**: ##### isPartialObject() > ```ts isPartialObject(): boolean; ``` Checks if the object is a partial object.
 > > > :::
+> 
+> > ##### isPartialObject()
+> 
+> > > ```ts
+> > > isPartialObject(): boolean;
+> > > ```
+> 
+> 
+> > Checks if the object is a partial object.
 > 
 > > > ::: info Returns
 > > > - **Type**: `boolean`
@@ -320,8 +328,16 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### find() > ```ts find(query?, projection?): DBCursor; ``` Finds documents matching the query.
 > :::
+
+##### find()
+
+> ```ts
+> find(query?, projection?): DBCursor;
+> ```
+
+
+> Finds documents matching the query.
 
 > **Parameters**
 
@@ -442,8 +458,16 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### createIndexForField() > ```ts createIndexForField(name): void; ``` Creates an index on a single field by name.
 > :::
+
+##### createIndexForField()
+
+> ```ts
+> createIndexForField(name): void;
+> ```
+
+
+> Creates an index on a single field by name.
 
 > **Parameters**
 
@@ -453,8 +477,21 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### distinct() > ```ts distinct(    name,     query,     keys): void; ``` Retrieves the distinct values for a specified field across a collection. NOTE: The signature in the original code seems slightly off compared to typical MongoDB drivers. This implementation follows the original structure using `keys.native` if `keys` is provided.
 > :::
+
+##### distinct()
+
+> ```ts
+> distinct(
+>    name, 
+>    query, 
+>    keys): void;
+> ```
+
+
+> Retrieves the distinct values for a specified field across a collection.
+> NOTE: The signature in the original code seems slightly off compared to typical MongoDB drivers.
+> This implementation follows the original structure using `keys.native` if `keys` is provided.
 
 > **Parameters**
 
@@ -466,8 +503,16 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### dropIndex() > ```ts dropIndex(index): void; ``` Drops a specified index.
 > :::
+
+##### dropIndex()
+
+> ```ts
+> dropIndex(index): void;
+> ```
+
+
+> Drops a specified index.
 
 > **Parameters**
 
@@ -477,8 +522,16 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### dropIndexByName() > ```ts dropIndexByName(name): void; ``` Drops a specified index by name.
 > :::
+
+##### dropIndexByName()
+
+> ```ts
+> dropIndexByName(name): void;
+> ```
+
+
+> Drops a specified index by name.
 
 > **Parameters**
 
@@ -488,13 +541,29 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### dropIndexes() > ```ts dropIndexes(): void; ``` Drops all indexes on the collection.
 > :::
 
-> ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### remove() > ```ts remove(query): void; ``` Removes documents from the collection matching the query.
-> :::
+##### dropIndexes()
+
+> ```ts
+> dropIndexes(): void;
+> ```
+
+
+> Drops all indexes on the collection.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### remove()
+
+> > ```ts
+> > remove(query): void;
+> > ```
+
+
+> Removes documents from the collection matching the query.
 
 > **Parameters**
 
@@ -504,8 +573,16 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### rename() > ```ts rename(newName): void; ``` Renames the collection.
 > :::
+
+##### rename()
+
+> ```ts
+> rename(newName): void;
+> ```
+
+
+> Renames the collection.
 
 > **Parameters**
 
@@ -515,8 +592,17 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### save() > ```ts save(dbObject): void; ``` Saves a document to the collection. If the document has an `_id`, it performs an update; otherwise, it performs an insert.
 > :::
+
+##### save()
+
+> ```ts
+> save(dbObject): void;
+> ```
+
+
+> Saves a document to the collection. If the document has an `_id`, it performs an update;
+> otherwise, it performs an insert.
 
 > **Parameters**
 
@@ -526,8 +612,20 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### update() > ```ts update(    query,     update,     upsert?,     multi?): void; ``` Updates documents in the collection matching the query.
 > :::
+
+##### update()
+
+> ```ts
+> update(
+>    query, 
+>    update, 
+>    upsert?, 
+>    multi?): void;
+> ```
+
+
+> Updates documents in the collection matching the query.
 
 > **Parameters**
 
@@ -540,8 +638,17 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### updateMulti() > ```ts updateMulti(query, update): void; ``` Updates multiple documents in the collection matching the query. (Equivalent to calling `update` with `multi=true` and `upsert=true` implicitly).
 > :::
+
+##### updateMulti()
+
+> ```ts
+> updateMulti(query, update): void;
+> ```
+
+
+> Updates multiple documents in the collection matching the query.
+> (Equivalent to calling `update` with `multi=true` and `upsert=true` implicitly).
 
 > **Parameters**
 
@@ -552,19 +659,28 @@ The underlying native MongoDB DB object.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getNextId() > ```ts getNextId(): number; ``` Calculates the next sequential ID based on the largest existing `_id` in the collection. Assumes `_id` is a numeric field.
 > :::
 
-> ::: info Returns
-> - **Type**: `number`
-> - **Description**: The next available sequential ID (starting at 1 if collection is empty).
-> :::
-
-##### generateUUID()
+##### getNextId()
 
 > ```ts
-> generateUUID(): string;
+> getNextId(): number;
 > ```
+
+
+> Calculates the next sequential ID based on the largest existing `_id` in the collection.
+> Assumes `_id` is a numeric field.
+
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The next available sequential ID (starting at 1 if collection is empty).
+> > :::
+
+> ##### generateUUID()
+
+> > ```ts
+> > generateUUID(): string;
+> > ```
 
 
 > Generates a new random UUID (Universally Unique Identifier).
@@ -716,8 +832,16 @@ The DBCursor instance for chaining.
 
 > > ::: info Returns
 > > - **Type**: `void`
-> > - **Description**: ##### hasNext() > ```ts hasNext(): boolean; ``` Checks if there is a next document in the cursor.
 > > :::
+
+> ##### hasNext()
+
+> > ```ts
+> > hasNext(): boolean;
+> > ```
+
+
+> Checks if there is a next document in the cursor.
 
 > > ::: info Returns
 > > - **Type**: `boolean`

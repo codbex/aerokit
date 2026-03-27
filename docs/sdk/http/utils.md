@@ -52,8 +52,17 @@ All responses are automatically formatted as 'application/json'.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### sendResponseCreated() > ```ts static sendResponseCreated(entity): void; ``` Sends a successful response with HTTP status 201 (Created). Typically used after a resource has been successfully created.
 > :::
+
+##### sendResponseCreated()
+
+> ```ts
+> static sendResponseCreated(entity): void;
+> ```
+
+
+> Sends a successful response with HTTP status 201 (Created).
+> Typically used after a resource has been successfully created.
 
 > **Parameters**
 
@@ -63,13 +72,31 @@ All responses are automatically formatted as 'application/json'.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### sendResponseNoContent() > ```ts static sendResponseNoContent(): void; ``` Sends a successful response with HTTP status 204 (No Content). Typically used for successful DELETE requests or updates that do not return a body.
 > :::
 
-> ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### sendResponseBadRequest() > ```ts static sendResponseBadRequest(message): void; ``` Sends an error response with HTTP status 400 (Bad Request). Used when the request could not be understood or processed due to client-side errors (e.g., validation failure).
-> :::
+##### sendResponseNoContent()
+
+> ```ts
+> static sendResponseNoContent(): void;
+> ```
+
+
+> Sends a successful response with HTTP status 204 (No Content).
+> Typically used for successful DELETE requests or updates that do not return a body.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### sendResponseBadRequest()
+
+> > ```ts
+> > static sendResponseBadRequest(message): void;
+> > ```
+
+
+> Sends an error response with HTTP status 400 (Bad Request).
+> Used when the request could not be understood or processed due to client-side errors (e.g., validation failure).
 
 > **Parameters**
 
@@ -79,8 +106,17 @@ All responses are automatically formatted as 'application/json'.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### sendForbiddenRequest() > ```ts static sendForbiddenRequest(message): void; ``` Sends an error response with HTTP status 403 (Forbidden). Used when the client is authenticated but does not have the necessary permissions to access the resource.
 > :::
+
+##### sendForbiddenRequest()
+
+> ```ts
+> static sendForbiddenRequest(message): void;
+> ```
+
+
+> Sends an error response with HTTP status 403 (Forbidden).
+> Used when the client is authenticated but does not have the necessary permissions to access the resource.
 
 > **Parameters**
 
@@ -90,8 +126,17 @@ All responses are automatically formatted as 'application/json'.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### sendResponseNotFound() > ```ts static sendResponseNotFound(message): void; ``` Sends an error response with HTTP status 404 (Not Found). Used when the requested resource could not be found.
 > :::
+
+##### sendResponseNotFound()
+
+> ```ts
+> static sendResponseNotFound(message): void;
+> ```
+
+
+> Sends an error response with HTTP status 404 (Not Found).
+> Used when the requested resource could not be found.
 
 > **Parameters**
 
@@ -101,8 +146,17 @@ All responses are automatically formatted as 'application/json'.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### sendInternalServerError() > ```ts static sendInternalServerError(message): void; ``` Sends an error response with HTTP status 500 (Internal Server Error). Used for unexpected server-side conditions encountered during processing.
 > :::
+
+##### sendInternalServerError()
+
+> ```ts
+> static sendInternalServerError(message): void;
+> ```
+
+
+> Sends an error response with HTTP status 500 (Internal Server Error).
+> Used for unexpected server-side conditions encountered during processing.
 
 > **Parameters**
 

@@ -44,16 +44,15 @@ using keywords or date ranges.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `string` | The name or identifier of the index to search (e.g., 'documents', 'products'). |
-| `term` | `string` | The keyword or search phrase to look for. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index to search (e.g., 'documents', 'products'). |
+> | `term` | `string` | The keyword or search phrase to look for. |
 
-###### Returns
-
-`object`[]
-
-An array of result objects, parsed from the native JSON string output.
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::
 
 ##### before()
 
@@ -66,16 +65,15 @@ An array of result objects, parsed from the native JSON string output.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `string` | The name or identifier of the index. |
-| `date` | `Date` | The Date object representing the upper bound (exclusive) of the time range. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index. |
+> | `date` | `Date` | The Date object representing the upper bound (exclusive) of the time range. |
 
-###### Returns
-
-`object`[]
-
-An array of result objects, parsed from the native JSON string output.
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::
 
 ##### after()
 
@@ -88,16 +86,15 @@ An array of result objects, parsed from the native JSON string output.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `string` | The name or identifier of the index. |
-| `date` | `Date` | The Date object representing the lower bound (exclusive) of the time range. |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index. |
+> | `date` | `Date` | The Date object representing the lower bound (exclusive) of the time range. |
 
-###### Returns
-
-`object`[]
-
-An array of result objects, parsed from the native JSON string output.
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::
 
 ##### between()
 
@@ -110,14 +107,13 @@ An array of result objects, parsed from the native JSON string output.
 
 > **Parameters**
 
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `index` | `string` | The name or identifier of the index. |
-| `lower` | `Date` | The Date object for the lower bound (exclusive). |
-| `upper` | `Date` | The Date object for the upper bound (exclusive). |
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `string` | The name or identifier of the index. |
+> | `lower` | `Date` | The Date object for the lower bound (exclusive). |
+> | `upper` | `Date` | The Date object for the upper bound (exclusive). |
 
-###### Returns
-
-`object`[]
-
-An array of result objects, parsed from the native JSON string output.
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: [] An array of result objects, parsed from the native JSON string output.
+> :::

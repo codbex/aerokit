@@ -43,8 +43,16 @@ The Alphanumeric API provides...
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### randomString() > ```ts static randomString(length, charset): string; ``` Generates a random alphanumeric sequence with the specified length
 > :::
+
+##### randomString()
+
+> ```ts
+> static randomString(length, charset): string;
+> ```
+
+
+> Generates a random alphanumeric sequence with the specified length
 
 > **Parameters**
 
@@ -55,8 +63,16 @@ The Alphanumeric API provides...
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### alphanumeric() > ```ts static alphanumeric(length, lowercase): string; ``` Generates a random alphanumeric sequence with the specified length
 > :::
+
+##### alphanumeric()
+
+> ```ts
+> static alphanumeric(length, lowercase): string;
+> ```
+
+
+> Generates a random alphanumeric sequence with the specified length
 
 > **Parameters**
 
@@ -67,8 +83,16 @@ The Alphanumeric API provides...
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### alpha() > ```ts static alpha(length, lowercase): string; ``` Generates a random ASCII sequence with the specified length
 > :::
+
+##### alpha()
+
+> ```ts
+> static alpha(length, lowercase): string;
+> ```
+
+
+> Generates a random ASCII sequence with the specified length
 
 > **Parameters**
 
@@ -79,8 +103,16 @@ The Alphanumeric API provides...
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### numeric() > ```ts static numeric(length): string; ``` Generates a random numeric value
 > :::
+
+##### numeric()
+
+> ```ts
+> static numeric(length): string;
+> ```
+
+
+> Generates a random numeric value
 
 > **Parameters**
 
@@ -90,8 +122,16 @@ The Alphanumeric API provides...
 
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: ##### isNumeric() > ```ts static isNumeric(str): boolean; ``` Tests is the provided `str` argument is a valid numeric sequence.
 > :::
+
+##### isNumeric()
+
+> ```ts
+> static isNumeric(str): boolean;
+> ```
+
+
+> Tests is the provided `str` argument is a valid numeric sequence.
 
 > **Parameters**
 
@@ -101,8 +141,16 @@ The Alphanumeric API provides...
 
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: ##### isAlphanumeric() > ```ts static isAlphanumeric(str): boolean; ``` Tests is the provided `str` argument is a valid alphanumeric sequence.
 > :::
+
+##### isAlphanumeric()
+
+> ```ts
+> static isAlphanumeric(str): boolean;
+> ```
+
+
+> Tests is the provided `str` argument is a valid alphanumeric sequence.
 
 > **Parameters**
 

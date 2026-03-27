@@ -101,8 +101,13 @@ The Decorators API provides...
 
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: ###### Inherited from > ```ts Function.constructor ```
 > :::
+
+###### Inherited from
+
+> ```ts
+> Function.constructor
+> ```
 
 #### Properties
 

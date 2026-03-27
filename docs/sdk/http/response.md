@@ -159,8 +159,17 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### print() > ```ts static print(text): void; ``` Writes a string of text to the response body using **UTF-8** encoding. Note: This method automatically handles flushing the output stream.
 > :::
+
+##### print()
+
+> ```ts
+> static print(text): void;
+> ```
+
+
+> Writes a string of text to the response body using **UTF-8** encoding.
+> Note: This method automatically handles flushing the output stream.
 
 > **Parameters**
 
@@ -170,8 +179,17 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### println() > ```ts static println(text): void; ``` Writes a string of text followed by a newline character (`\n`) to the response body using **UTF-8** encoding.
 > :::
+
+##### println()
+
+> ```ts
+> static println(text): void;
+> ```
+
+
+> Writes a string of text followed by a newline character (`\n`) to the response body
+> using **UTF-8** encoding.
 
 > **Parameters**
 
@@ -181,8 +199,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### write() > ```ts static write(bytes): void; ``` Writes an array of bytes directly to the response output stream, typically used for binary data.
 > :::
+
+##### write()
+
+> ```ts
+> static write(bytes): void;
+> ```
+
+
+> Writes an array of bytes directly to the response output stream, typically used for binary data.
 
 > **Parameters**
 
@@ -192,19 +218,27 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### isCommitted() > ```ts static isCommitted(): boolean; ``` Checks if the response headers and status have already been sent to the client.
 > :::
 
-> ::: info Returns
-> - **Type**: `boolean`
-> - **Description**: True if the response is committed, false otherwise.
-> :::
-
-##### setContentType()
+##### isCommitted()
 
 > ```ts
-> static setContentType(contentType): void;
+> static isCommitted(): boolean;
 > ```
+
+
+> Checks if the response headers and status have already been sent to the client.
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the response is committed, false otherwise.
+> > :::
+
+> ##### setContentType()
+
+> > ```ts
+> > static setContentType(contentType): void;
+> > ```
 
 
 > Sets the value of the `Content-Type` header.
@@ -217,18 +251,43 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### flush() > ```ts static flush(): void; ``` Forces any buffered output to be written to the client.
 > :::
 
-> ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### close() > ```ts static close(): void; ``` Closes the response output stream.
-> :::
+##### flush()
 
-> ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### addCookie() > ```ts static addCookie(cookie): void; ``` Adds a cookie to the response. The cookie object is serialized to JSON before being passed to the underlying Java facade.
-> :::
+> ```ts
+> static flush(): void;
+> ```
+
+
+> Forces any buffered output to be written to the client.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### close()
+
+> > ```ts
+> > static close(): void;
+> > ```
+
+
+> Closes the response output stream.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### addCookie()
+
+> > ```ts
+> > static addCookie(cookie): void;
+> > ```
+
+
+> Adds a cookie to the response. The cookie object is serialized to JSON before being passed
+> to the underlying Java facade.
 
 > **Parameters**
 
@@ -238,8 +297,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### containsHeader() > ```ts static containsHeader(name): boolean; ``` Checks if a response header with the specified name has already been set.
 > :::
+
+##### containsHeader()
+
+> ```ts
+> static containsHeader(name): boolean;
+> ```
+
+
+> Checks if a response header with the specified name has already been set.
 
 > **Parameters**
 
@@ -339,8 +406,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setCharacterEncoding() > ```ts static setCharacterEncoding(charset): void; ``` Sets the character encoding to be used for the response body (e.g., 'UTF-8').
 > :::
+
+##### setCharacterEncoding()
+
+> ```ts
+> static setCharacterEncoding(charset): void;
+> ```
+
+
+> Sets the character encoding to be used for the response body (e.g., 'UTF-8').
 
 > **Parameters**
 
@@ -350,8 +425,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### sendRedirect() > ```ts static sendRedirect(location): void; ``` Sends a redirect response (status code 302 by default) to the client.
 > :::
+
+##### sendRedirect()
+
+> ```ts
+> static sendRedirect(location): void;
+> ```
+
+
+> Sends a redirect response (status code 302 by default) to the client.
 
 > **Parameters**
 
@@ -361,8 +444,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setContentLength() > ```ts static setContentLength(length): void; ``` Sets the `Content-Length` header for the response.
 > :::
+
+##### setContentLength()
+
+> ```ts
+> static setContentLength(length): void;
+> ```
+
+
+> Sets the `Content-Length` header for the response.
 
 > **Parameters**
 
@@ -372,8 +463,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setHeader() > ```ts static setHeader(name, value): void; ``` Sets a response header with the given name and value. If the header already exists, its value is overwritten.
 > :::
+
+##### setHeader()
+
+> ```ts
+> static setHeader(name, value): void;
+> ```
+
+
+> Sets a response header with the given name and value. If the header already exists, its value is overwritten.
 
 > **Parameters**
 
@@ -384,8 +483,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### addHeader() > ```ts static addHeader(name, value): void; ``` Adds a response header with the given name and value. If the header already exists, a second header with the same name is added.
 > :::
+
+##### addHeader()
+
+> ```ts
+> static addHeader(name, value): void;
+> ```
+
+
+> Adds a response header with the given name and value. If the header already exists, a second header with the same name is added.
 
 > **Parameters**
 
@@ -396,8 +503,16 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### setStatus() > ```ts static setStatus(status): void; ``` Sets the HTTP status code for the response.
 > :::
+
+##### setStatus()
+
+> ```ts
+> static setStatus(status): void;
+> ```
+
+
+> Sets the HTTP status code for the response.
 
 > **Parameters**
 
@@ -407,13 +522,30 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### reset() > ```ts static reset(): void; ``` Clears all buffers, status code, and headers from the response, allowing a new response to be generated. This is only possible if the response has not yet been committed.
 > :::
 
-> ::: info Returns
-> - **Type**: `void`
-> - **Description**: ##### getHeader() > ```ts static getHeader(name): string; ``` Gets the value of a specific header. If multiple headers with the same name exist, it returns the first one.
-> :::
+##### reset()
+
+> ```ts
+> static reset(): void;
+> ```
+
+
+> Clears all buffers, status code, and headers from the response, allowing a new response to be generated.
+> This is only possible if the response has not yet been committed.
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > :::
+
+> ##### getHeader()
+
+> > ```ts
+> > static getHeader(name): string;
+> > ```
+
+
+> Gets the value of a specific header. If multiple headers with the same name exist, it returns the first one.
 
 > **Parameters**
 
@@ -445,44 +577,50 @@ for constructing the server's response.
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### getHeaders() > ```ts static getHeaders(name): string[]; ``` Gets all header values for a specific header name as an array of strings.
 > :::
+
+##### getHeaders()
+
+> ```ts
+> static getHeaders(name): string[];
+> ```
+
+
+> Gets all header values for a specific header name as an array of strings.
 
 > **Parameters**
 
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `name` | `string` | The name of the header. |
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> An array of header values.
-> 
-> ##### getHeaderNames()
-> 
-> > ```ts
-> > static getHeaderNames(): string[];
-> > ```
-> 
-> 
-> Gets the names of all headers that have been set on the response.
-> 
-> ###### Returns
-> 
-> `string`[]
-> 
-> An array of header names.
-> 
-> ##### getLocale()
-> 
-> > ```ts
-> > static getLocale(): string;
-> > ```
-> 
-> 
-> Gets the currently set locale string for the response.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of header values.
+> :::
+
+##### getHeaderNames()
+
+> ```ts
+> static getHeaderNames(): string[];
+> ```
+
+
+Gets the names of all headers that have been set on the response.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: [] An array of header names.
+> :::
+
+##### getLocale()
+
+> ```ts
+> static getLocale(): string;
+> ```
+
+
+Gets the currently set locale string for the response.
 
 > ::: info Returns
 > - **Type**: `string`

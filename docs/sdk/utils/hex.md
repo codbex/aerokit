@@ -70,70 +70,67 @@ and the native Java byte arrays required by the underlying HexFacade.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> The resulting byte array containing the hexadecimal data.
-> 
-> ##### encodeAsNativeBytes()
-> 
-> > ```ts
-> > static encodeAsNativeBytes(input): any[];
-> > ```
-> 
-> 
-> > Hexadecimal encoding: Converts the input data (text or byte array) into a
-> > **native Java byte array** containing the hexadecimal representation.
-> > This method is generally for internal use.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The resulting byte array containing the hexadecimal data.
+> :::
+
+##### encodeAsNativeBytes()
+
+> ```ts
+> static encodeAsNativeBytes(input): any[];
+> ```
+
+
+> Hexadecimal encoding: Converts the input data (text or byte array) into a
+> **native Java byte array** containing the hexadecimal representation.
+> This method is generally for internal use.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `input` | `string` \| `any`[] | The data to encode, either as a string or a JavaScript byte array (any[]). |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> The resulting native Java byte array.
-> 
-> ##### decode()
-> 
-> > ```ts
-> > static decode(input): any[];
-> > ```
-> 
-> 
-> > Hexadecimal decoding: Converts a hexadecimal input (text or byte array) back into
-> > the original **raw byte array (JavaScript any[])**.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The resulting native Java byte array.
+> :::
+
+##### decode()
+
+> ```ts
+> static decode(input): any[];
+> ```
+
+
+> Hexadecimal decoding: Converts a hexadecimal input (text or byte array) back into
+> the original **raw byte array (JavaScript any[])**.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `input` | `string` \| `any`[] | The hexadecimal data to decode, either as a string or a JavaScript byte array (any[]). |
-> 
-> ###### Returns
-> 
-> `any`[]
-> 
-> The decoded raw byte array (any[]). Returns null if decoding fails or input is null.
-> 
-> ##### decodeAsNativeBytes()
-> 
-> > ```ts
-> > static decodeAsNativeBytes(input): any;
-> > ```
-> 
-> 
-> > Hexadecimal decoding: Converts a hexadecimal input (text or byte array) back into
-> > the original **native Java raw byte array**. This method is generally for internal use.
-> 
-> > **Parameters**
-> 
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: [] The decoded raw byte array (any[]). Returns null if decoding fails or input is null.
+> :::
+
+##### decodeAsNativeBytes()
+
+> ```ts
+> static decodeAsNativeBytes(input): any;
+> ```
+
+
+> Hexadecimal decoding: Converts a hexadecimal input (text or byte array) back into
+> the original **native Java raw byte array**. This method is generally for internal use.
+
+> **Parameters**
+
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `input` | `string` \| `any`[] | The hexadecimal data to decode, either as a string or a JavaScript byte array (any[]). |

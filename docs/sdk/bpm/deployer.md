@@ -65,8 +65,18 @@ The Deployer API provides...
 
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: ##### deleteProcess() > ```ts static deleteProcess(id, reason): void; ``` Deletes a deployed process definition by its ID. > **Note:** This permanently removes the process definition and all its associated history and runtime data.
 > :::
+
+##### deleteProcess()
+
+> ```ts
+> static deleteProcess(id, reason): void;
+> ```
+
+
+> Deletes a deployed process definition by its ID.
+
+> > **Note:** This permanently removes the process definition and all its associated history and runtime data.
 
 > **Parameters**
 
