@@ -80,6 +80,29 @@ Provides static methods for executing parameterized SQL SELECT statements.
 > - **Description**: [] An array of records representing the query results.
 > :::
 
+##### exportCsv()
+
+> ```ts
+> static exportCsv( sql, parameters?, datasourceName?, fileName?): void;
+> ```
+
+
+> Exports a SQL query with named parameters (e.g., ":name", ":id").
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute. |
+> | `parameters?` | [`NamedQueryParameter`](#namedqueryparameter)[] | An optional array of NamedQueryParameter objects. |
+> | `datasourceName?` | `string` | The name of the database connection to use (optional). |
+> | `fileName?` | `string` | The file name pattern. |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of records representing the query results.
+> :::
+
 ## Interfaces
 
 ### NamedQueryParameter
