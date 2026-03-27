@@ -8,6 +8,7 @@
 
 | Module | Description |
 | ------ | ------ |
+| [index](index-1.md) | - |
 | [bpm/deployer](bpm/deployer.md) | - |
 | [bpm](bpm.md) | - |
 | [bpm/process](bpm/process.md) | - |
@@ -65,7 +66,6 @@
 | [http/session](http/session.md) | - |
 | [http/upload](http/upload.md) | - |
 | [http/utils](http/utils.md) | - |
-| [index](index-1.md) | - |
 | [indexing](indexing.md) | - |
 | [indexing/searcher](indexing/searcher.md) | - |
 | [indexing/writer](indexing/writer.md) | - |
