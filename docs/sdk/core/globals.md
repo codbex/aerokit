@@ -1,55 +1,92 @@
-# API: globals
+# core/globals
 
-> Source: `core/globals.ts`
-
-API Globals
-* Provides a static interface for accessing and manipulating global application variables, typically backed by a central configuration or registry.
-
-## Usage
-```javascript
-import { globals } from "@aerokit/sdk/core";
-import { response } from "@aerokit/sdk/http";
+> [!tip]
+> Auto-generated from
+> - source: [core/globals.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/globals.ts)
+> - version: 1.0.0
 
 
-globals.set("attr1", "value1");
-let attr = globals.get("attr1");
+## Overview
 
-response.println("[Attribute]: " + attr);
-response.flush();
-response.close();
+The Globals API provides...
 
-```
+## Table of Contents
 
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Globals](#globals)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [GlobalsValues](#globalsvalues)
 
 ## Classes
 
 ### Globals
 
-Interface representing a map of global variable names to their string values.
+
+## Returns
+
+[`Globals`](#globals)
 
 #### Methods
 
-<hr/>
+##### get()
 
-#### get
+> ```ts
+> static get(name): string;
+> ```
 
-- `get (name:string):string|undefined`
 
-  Retrieves the value of the global variable with the specified name.<br/>@param name The name of the global variable.<br/>@returns The variable's value as a string, or `undefined` if the variable is not set or its value is null.
+> Retrieves the value of the global variable with the specified name.
 
-<hr/>
+> **Parameters**
 
-#### set
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the global variable. |
 
-- `set (name:string, value:string):void`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The variable's value as a string, or `undefined` if the variable is not set or its value is null.
+> :::
 
-  Sets the value of a global variable.<br/>If the variable already exists, its value is overwritten.<br/>@param name The name of the global variable.<br/>@param value The value to set (must be a string).
+##### set()
 
-<hr/>
+> ```ts
+> static set(name, value): void;
+> ```
 
-#### list
 
-- `list ():GlobalsValues`
+> Sets the value of a global variable.
+> If the variable already exists, its value is overwritten.
 
-  Retrieves a map of all global variables currently defined in the application.<br/>@returns A \{@link GlobalsValues\} object containing all global variables as key-value pairs.
+> **Parameters**
 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the global variable. |
+> | `value` | `string` | The value to set (must be a string). |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### list() > ```ts static list(): GlobalsValues; ``` Retrieves a map of all global variables currently defined in the application.
+> :::
+
+###### Returns
+
+[`GlobalsValues`](#globalsvalues)
+
+A [GlobalsValues](#globalsvalues) object containing all global variables as key-value pairs.
+
+## Interfaces
+
+### GlobalsValues
+
+
+Interface representing a map of global variable names to their string values.
+
+#### Indexable
+
+> ```ts
+> [key: string]: string
+> ```

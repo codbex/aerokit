@@ -1,68 +1,76 @@
-# API: producer
+# messaging/producer
 
-> Source: `messaging/producer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [messaging/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/producer.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides an API for producing (sending) messages to JMS-style destinations,
 supporting both Queues (point-to-point) and Topics (publish/subscribe).
+/
 
-## Usage
-```javascript
-import { producer } from "@aerokit/sdk/messaging"
+## Table of Contents
 
-producer.queue("queue1").send("Text Message");
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Producer](#producer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Producer
 
-The entry point for creating messaging producers.<br/>Use this class to obtain instances of Queue or Topic producers for sending messages.
+
+The entry point for creating messaging producers.
+Use this class to obtain instances of Queue or Topic producers for sending messages.
+
+## Returns
+
+[`Producer`](#producer)
 
 #### Methods
 
-<hr/>
+##### queue()
 
-#### queue
+> ```ts
+> static queue(destination): Queue;
+> ```
 
-- `queue (destination:string):Queue`
 
-  Creates a Queue producer instance for point-to-point messaging.<br/>Messages sent to this destination are intended to be consumed by a single receiver.<br/><br/>@param destination The name of the queue destination (e.g., 'task.queue').<br/>@returns A \{@link Queue\} instance.
+> Creates a Queue producer instance for point-to-point messaging.
+> Messages sent to this destination are intended to be consumed by a single receiver.
 
-<hr/>
+> **Parameters**
 
-#### topic
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the queue destination (e.g., 'task.queue'). |
 
-- `topic (destination:string):Topic`
+> ::: info Returns
+> - **Type**: `Queue`
+> - **Description**: A Queue instance.
+> :::
 
-  Creates a Topic producer instance for publish/subscribe messaging.<br/>Messages sent to this destination can be consumed by multiple subscribers simultaneously.<br/><br/>@param destination The name of the topic destination (e.g., 'sensor.data.topic').<br/>@returns A \{@link Topic\} instance.
+##### topic()
 
-### Queue
+> ```ts
+> static topic(destination): Topic;
+> ```
 
-Represents a producer for a Queue destination (point-to-point).
 
-#### Methods
+> Creates a Topic producer instance for publish/subscribe messaging.
+> Messages sent to this destination can be consumed by multiple subscribers simultaneously.
 
-<hr/>
+> **Parameters**
 
-#### send
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the topic destination (e.g., 'sensor.data.topic'). |
 
-- `send (message:string):void`
-
-  Sends a message to the configured queue destination.<br/><br/>@param message The content of the message to send (typically a string or serialized object).
-
-### Topic
-
-Represents a producer for a Topic destination (publish/subscribe).
-
-#### Methods
-
-<hr/>
-
-#### send
-
-- `send (message:string):void`
-
-  Sends a message to the configured topic destination. All active subscribers will receive the message.<br/><br/>@param message The content of the message to publish (typically a string or serialized object).
-
+> ::: info Returns
+> - **Type**: `Topic`
+> - **Description**: A Topic instance.
+> :::

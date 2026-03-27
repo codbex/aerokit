@@ -1,76 +1,57 @@
-# API: consumer
+# kafka/consumer
 
-> Source: `kafka/consumer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [kafka/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/kafka/consumer.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides an API for configuring and managing Kafka consumers,
 allowing scripts to start and stop listening to specific topics.
+/
+const KafkaFacade = Java.type("org.eclipse.dirigible.components.api.kafka.KafkaFacade");
 
-## Usage
-```javascript
-// --------
-// start.ts
-// --------
+## Table of Contents
 
-import { consumer } from "@aerokit/sdk/kafka";
-consumer.topic("topic1", "{}").startListening("my-kafka-project/my-kafka-handler", 1000);
-
-// -------------------
-// my-kafka-handler.ts
-// -------------------
-
-exports.onMessage = function(message) {
-    console.log("Hello from My Kafka Listener! Message: " + message);
-};
-
-exports.onError = function(error) {
-    console.error("Error from My Kafka Listener! Error: " + error);
-};
-
-// -------
-// stop.ts
-// -------
-
-import { consumer } from "@aerokit/sdk/kafka";
-consumer.topic("topic1", "{}").stopListening();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Consumer](#consumer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Consumer
 
-The Consumer class acts as the main entry point for creating and configuring<br/>Kafka topic consumers.
+
+The Consumer class acts as the main entry point for creating and configuring
+Kafka topic consumers.
+
+## Returns
+
+[`Consumer`](#consumer)
 
 #### Methods
 
-<hr/>
+##### topic()
 
-#### topic
+> ```ts
+> static topic(destination, configuration?): Topic;
+> ```
 
-- `topic (destination:string, configuration:{[key:string]:string}={}):Topic`
 
-  Creates a new topic configuration wrapper that can be used to start or<br/>stop listening for messages on a Kafka topic.<br/><br/>@param destination The name of the Kafka topic to consume messages from.<br/>@param configuration Optional key-value object containing Kafka consumer properties<br/>(e.g., 'group.id', 'auto.offset.reset').<br/>@returns A \{@link Topic\} instance configured for the specified destination and properties.
+> Creates a new topic configuration wrapper that can be used to start or
+> stop listening for messages on a Kafka topic.
 
-### Topic
+> **Parameters**
 
-Represents a configured Kafka topic consumer capable of starting and stopping<br/>background message listening.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the Kafka topic to consume messages from. |
+> | `configuration` | \{ \[`key`: `string`\]: `string`; \} | Optional key-value object containing Kafka consumer properties (e.g., 'group.id', 'auto.offset.reset'). |
 
-#### Methods
-
-<hr/>
-
-#### startListening
-
-- `startListening (handler:string, timeout:number):void`
-
-  Starts listening to the configured topic in a background process.<br/><br/>@param handler The path to the script or function name that will handle the incoming Kafka messages.<br/>This function should accept two arguments: `message` (string) and `headers` (object).<br/>@param timeout The maximum amount of time (in milliseconds) the consumer should wait for messages.
-
-<hr/>
-
-#### stopListening
-
-- `stopListening ():void`
-
-  Stops the background process that is listening to the configured topic.<br/>Note: Stopping is based on matching the topic and configuration, so the same<br/>configuration object used in `startListening` should be used here.
-
+> ::: info Returns
+> - **Type**: `Topic`
+> - **Description**: A Topic instance configured for the specified destination and properties.
+> :::

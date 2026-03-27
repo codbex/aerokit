@@ -1,126 +1,208 @@
-# API: session
+# http/session
 
-> Source: `http/session.ts`
+> [!tip]
+> Auto-generated from
+> - source: [http/session.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/session.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides a static façade (`Session` class) for accessing and manipulating
 the HTTP session associated with the current request. This module is often used
 to store user-specific data during their interaction with the application.
+/
 
-## Usage
-```javascript
-import { session, response } from "@aerokit/sdk/http";
+## Table of Contents
 
-session.setAttribute("attr1", "value1");
-let attr = session.getAttribute("attr1");
-
-response.println("[Attribute]: " + attr);
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Session](#session)
+- [Returns](#returns)
 
 ## Classes
 
 ### Session
 
-The static Session class provides methods to interact with the current user session<br/>(e.g., storing attributes, checking status, managing lifetime).
+
+The static Session class provides methods to interact with the current user session
+(e.g., storing attributes, checking status, managing lifetime).
+
+## Returns
+
+[`Session`](#session)
 
 #### Methods
 
-<hr/>
+##### isValid()
 
-#### isValid
+> ```ts
+> static isValid(): boolean;
+> ```
 
-- `isValid ():boolean`
 
-  Checks if a session is currently valid and active for the request context.<br/>@returns True if the session is valid, false otherwise (e.g., if it has been invalidated or timed out).
+> Checks if a session is currently valid and active for the request context.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the session is valid, false otherwise (e.g., if it has been invalidated or timed out).
+> > :::
 
-#### getAttribute
+> ##### getAttribute()
 
-- `getAttribute (name:string):string`
+> > ```ts
+> > static getAttribute(name): string;
+> > ```
 
-  Retrieves the value of a named attribute stored in the session.<br/>Note: The underlying Java facade typically stores strings, but the value may represent<br/>serialized data that should be parsed if complex.<br/>@param name The name of the attribute.<br/>@returns The attribute value as a string, or null/undefined if not found.
 
-<hr/>
+> Retrieves the value of a named attribute stored in the session.
+> Note: The underlying Java facade typically stores strings, but the value may represent
+>    * serialized data that should be parsed if complex.
 
-#### getAttributeNames
+> **Parameters**
 
-- `getAttributeNames ():string[]`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the attribute. |
 
-  Retrieves an array of all attribute names currently stored in the session.<br/>The names are retrieved as a JSON string from the facade and then parsed.<br/>@returns An array of attribute names (strings), or an empty array if no attributes are present.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The attribute value as a string, or null/undefined if not found.
+> :::
 
-<hr/>
+##### getAttributeNames()
 
-#### getCreationTime
+> ```ts
+> static getAttributeNames(): string[];
+> ```
 
-- `getCreationTime ():Date`
 
-  Returns the time at which this session was created, converted to a JavaScript Date object.<br/>@returns A Date object representing the session's creation time.
+> Retrieves an array of all attribute names currently stored in the session.
+> The names are retrieved as a JSON string from the facade and then parsed.
 
-<hr/>
+> ###### Returns
 
-#### getId
+> `string`[]
 
-- `getId ():string`
+> An array of attribute names (strings), or an empty array if no attributes are present.
 
-  Returns the unique identifier assigned to this session.<br/>@returns The session ID string.
+> ##### getCreationTime()
 
-<hr/>
+> > ```ts
+> > static getCreationTime(): Date;
+> > ```
 
-#### getLastAccessedTime
 
-- `getLastAccessedTime ():Date`
+> Returns the time at which this session was created, converted to a JavaScript Date object.
 
-  Returns the last time the client accessed this session, converted to a JavaScript Date object.<br/>Access includes requests that retrieve or set session attributes.<br/>@returns A Date object representing the last access time.
+> > ::: info Returns
+> > - **Type**: `Date`
+> > - **Description**: A Date object representing the session's creation time.
+> > :::
 
-<hr/>
+> ##### getId()
 
-#### getMaxInactiveInterval
+> > ```ts
+> > static getId(): string;
+> > ```
 
-- `getMaxInactiveInterval ():number`
 
-  Returns the maximum time interval, in seconds, that the server should keep this session open<br/>between client requests. After this interval, the session will be invalidated.<br/>@returns The maximum inactive interval in seconds.
+> Returns the unique identifier assigned to this session.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: The session ID string.
+> > :::
 
-#### invalidate
+> ##### getLastAccessedTime()
 
-- `invalidate ():void`
+> > ```ts
+> > static getLastAccessedTime(): Date;
+> > ```
 
-  Invalidates this session, unbinding any objects bound to it.<br/>After this call, the session is no longer valid.
 
-<hr/>
+> Returns the last time the client accessed this session, converted to a JavaScript Date object.
+> Access includes requests that retrieve or set session attributes.
 
-#### isNew
+> > ::: info Returns
+> > - **Type**: `Date`
+> > - **Description**: A Date object representing the last access time.
+> > :::
 
-- `isNew ():boolean`
+> ##### getMaxInactiveInterval()
 
-  Checks if the client does not yet know about the session, typically meaning<br/>the server has not yet returned the session ID via a cookie or encoded URL.<br/>@returns True if the session is new (not yet used in a response), false otherwise.
+> > ```ts
+> > static getMaxInactiveInterval(): number;
+> > ```
 
-<hr/>
 
-#### setAttribute
+> Returns the maximum time interval, in seconds, that the server should keep this session open
+> between client requests. After this interval, the session will be invalidated.
 
-- `setAttribute (name:string, value:any):void`
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: The maximum inactive interval in seconds.
+> > :::
 
-  Binds an object to this session, using the specified name.<br/>This is the primary way to store data in the user's session.<br/>@param name The name to bind the object under.<br/>@param value The value/object to store in the session.
+> ##### invalidate()
 
-<hr/>
+> > ```ts
+> > static invalidate(): void;
+> > ```
 
-#### removeAttribute
 
-- `removeAttribute (name:string):void`
+> Invalidates this session, unbinding any objects bound to it.
+> After this call, the session is no longer valid.
 
-  Removes the attribute with the given name from the session.<br/>@param name The name of the attribute to remove.
+> > ::: info Returns
+> > - **Type**: `void`
+> > - **Description**: ##### isNew() > ```ts static isNew(): boolean; ``` Checks if the client does not yet know about the session, typically meaning the server has not yet returned the session ID via a cookie or encoded URL.
+> > :::
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the session is new (not yet used in a response), false otherwise.
+> > :::
 
-#### setMaxInactiveInterval
+> ##### setAttribute()
 
-- `setMaxInactiveInterval (interval:number):void`
+> > ```ts
+> > static setAttribute(name, value): void;
+> > ```
 
-  Specifies the maximum time interval, in seconds, that the server should keep this session open<br/>between client requests before automatically invalidating it.<br/>@param interval The new interval in seconds.
 
+> Binds an object to this session, using the specified name.
+> This is the primary way to store data in the user's session.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name to bind the object under. |
+> | `value` | `any` | The value/object to store in the session. |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### removeAttribute() > ```ts static removeAttribute(name): void; ``` Removes the attribute with the given name from the session.
+> :::
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the attribute to remove. |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setMaxInactiveInterval() > ```ts static setMaxInactiveInterval(interval): void; ``` Specifies the maximum time interval, in seconds, that the server should keep this session open between client requests before automatically invalidating it.
+> :::
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `interval` | `number` | The new interval in seconds. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

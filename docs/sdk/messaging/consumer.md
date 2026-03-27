@@ -1,70 +1,76 @@
-# API: consumer
+# messaging/consumer
 
-> Source: `messaging/consumer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [messaging/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/consumer.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides an API for consuming messages from JMS-style destinations,
 supporting both Queues (point-to-point) and Topics (publish/subscribe).
+/
 
-## Usage
-```javascript
-import { consumer } from "@aerokit/sdk/messaging";
+## Table of Contents
 
-let message = consumer.queue("queue1").receive(1000);
-
-console.log(message)
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Consumer](#consumer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Consumer
 
-The entry point for creating messaging consumers.<br/>Use this class to obtain instances of Queue or Topic consumers.
+
+The entry point for creating messaging consumers.
+Use this class to obtain instances of Queue or Topic consumers.
+
+## Returns
+
+[`Consumer`](#consumer)
 
 #### Methods
 
-<hr/>
+##### queue()
 
-#### queue
+> ```ts
+> static queue(destination): Queue;
+> ```
 
-- `queue (destination:string):Queue`
 
-  Creates a Queue consumer instance for point-to-point messaging.<br/>Messages sent to this destination are consumed by only one receiver.<br/><br/>@param destination The name of the queue destination (e.g., 'orders.queue').<br/>@returns A \{@link Queue\} instance.
+> Creates a Queue consumer instance for point-to-point messaging.
+> Messages sent to this destination are consumed by only one receiver.
 
-<hr/>
+> **Parameters**
 
-#### topic
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the queue destination (e.g., 'orders.queue'). |
 
-- `topic (destination:string):Topic`
+> ::: info Returns
+> - **Type**: `Queue`
+> - **Description**: A Queue instance.
+> :::
 
-  Creates a Topic consumer instance for publish/subscribe messaging.<br/>Messages sent to this destination can be consumed by multiple subscribers.<br/><br/>@param destination The name of the topic destination (e.g., 'market.updates.topic').<br/>@returns A \{@link Topic\} instance.
+##### topic()
 
-### Queue
+> ```ts
+> static topic(destination): Topic;
+> ```
 
-Represents a consumer for a Queue destination (point-to-point).
 
-#### Methods
+> Creates a Topic consumer instance for publish/subscribe messaging.
+> Messages sent to this destination can be consumed by multiple subscribers.
 
-<hr/>
+> **Parameters**
 
-#### receive
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `destination` | `string` | The name of the topic destination (e.g., 'market.updates.topic'). |
 
-- `receive (timeout:number=1000):number=1000)`
-
-  Attempts to synchronously receive a message from the queue.<br/><br/>@param timeout The maximum time (in milliseconds) to wait for a message. Defaults to 1000ms.<br/>@returns The received message content (usually a string or object), or null if the timeout is reached.
-
-### Topic
-
-Represents a consumer for a Topic destination (publish/subscribe).
-
-#### Methods
-
-<hr/>
-
-#### receive
-
-- `receive (timeout:number=1000):number=1000)`
-
-  Attempts to synchronously receive a message from the topic.<br/><br/>@param timeout The maximum time (in milliseconds) to wait for a message. Defaults to 1000ms.<br/>@returns The received message content (usually a string or object), or null if the timeout is reached.
-
+> ::: info Returns
+> - **Type**: `Topic`
+> - **Description**: A Topic instance.
+> :::

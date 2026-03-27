@@ -1,40 +1,80 @@
-# API: deployer
+# bpm/deployer
 
-> Source: `bpm/deployer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [bpm/deployer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/deployer.ts)
+> - version: 1.0.0
 
-API Deployer
-* Provides methods for managing the lifecycle of Business Process Model and Notation (BPMN) definitions,
-including deployment, undeployment, and deletion.
+
+## Overview
+
+The Deployer API provides...
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Deployer](#deployer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Deployer
 
-API Deployer<br/>* Provides methods for managing the lifecycle of Business Process Model and Notation (BPMN) definitions,<br/>including deployment, undeployment, and deletion.
+
+## Returns
+
+[`Deployer`](#deployer)
 
 #### Methods
 
-<hr/>
+##### deployProcess()
 
-#### deployProcess
+> ```ts
+> static deployProcess(location): string;
+> ```
 
-- `deployProcess (location:string):string`
 
-  Deploys a new process definition from a specified location (e.g., a file path).<br/><br/>@param location The path or location of the BPMN XML file to be deployed.<br/>@returns The deployment ID assigned to the new process definition.
+> Deploys a new process definition from a specified location (e.g., a file path).
 
-<hr/>
+> **Parameters**
 
-#### undeployProcess
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `location` | `string` | The path or location of the BPMN XML file to be deployed. |
 
-- `undeployProcess (location:string):void`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The deployment ID assigned to the new process definition.
+> :::
 
-  Undeploys a process definition previously deployed from the specified location.<br/><br/>@param location The path or location associated with the deployed BPMN file.
+##### undeployProcess()
 
-<hr/>
+> ```ts
+> static undeployProcess(location): void;
+> ```
 
-#### deleteProcess
 
-- `deleteProcess (id:string, reason:string):void`
+> Undeploys a process definition previously deployed from the specified location.
 
-  Deletes a deployed process definition by its ID.<br/><br/>> **Note:** This permanently removes the process definition and all its associated history and runtime data.<br/><br/>@param id The ID of the process definition to delete.<br/>@param reason The reason for deleting the process definition (e.g., "Obsolete").
+> **Parameters**
 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `location` | `string` | The path or location associated with the deployed BPMN file. |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### deleteProcess() > ```ts static deleteProcess(id, reason): void; ``` Deletes a deployed process definition by its ID. > **Note:** This permanently removes the process definition and all its associated history and runtime data.
+> :::
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `id` | `string` | The ID of the process definition to delete. |
+> | `reason` | `string` | The reason for deleting the process definition (e.g., "Obsolete"). |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

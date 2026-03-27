@@ -1,1007 +1,2013 @@
-# API: database
+# db/database
 
-> Source: `db/database.ts`
+> [!tip]
+> Auto-generated from
+> - source: [db/database.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/database.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 API Database
 
-## Usage
-```javascript
-import { database } from "@aerokit/sdk/db";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let connection = database.getConnection("SystemDB");
-try {
-    let statement = connection.prepareStatement("select * from DIRIGIBLE_EXTENSIONS");
-    let resultSet = statement.executeQuery();
-    while (resultSet.next()) {
-        response.println("[path]: " + resultSet.getString("ARTEFACT_LOCATION"));
-    }
-    resultSet.close();
-    statement.close();
-} catch (e) {
-    if (e instanceof Error) {
-        console.error(e);
-        response.println(e.message);
-    } else {
-        console.error("Something went wrong", e);
-    }
-} finally {
-    connection.close();
-}
+- [Overview](#overview)
+- [Enumerations](#enumerations)
+  - [DatabaseSystem](#databasesystem)
+- [Classes](#classes)
+  - [PreparedStatement](#preparedstatement)
+- [Parameters](#parameters)
+  - [CallableStatement](#callablestatement)
+- [Parameters](#parameters)
+  - [ResultSet](#resultset)
+- [Parameters](#parameters)
+  - [Connection](#connection)
+- [Parameters](#parameters)
+  - [Database](#database)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [TableMetadata](#tablemetadata)
+  - [ColumnMetadata](#columnmetadata)
+  - [IndexMetadata](#indexmetadata)
+  - [ForeignKeyMetadata](#foreignkeymetadata)
+  - [SchemaMetadata](#schemametadata)
+  - [ProcedureMetadata](#proceduremetadata)
+  - [FunctionMetadata](#functionmetadata)
+  - [ParameterColumnMetadata](#parametercolumnmetadata)
+  - [SequenceMetadata](#sequencemetadata)
+  - [DatabaseMetadata](#databasemetadata)
+- [Variables](#variables)
+  - [SQLTypes](#sqltypes)
 
-response.flush();
-response.close();
+## Enumerations
 
-```
+### DatabaseSystem
 
+
+#### Enumeration Members
+
+| Enumeration Member | Value | Defined in |
+| ------ | ------ | ------ |
+|  `UNKNOWN` | `0` | src/db/database.ts:44 |
+|  `DERBY` | `1` | src/db/database.ts:44 |
+|  `POSTGRESQL` | `2` | src/db/database.ts:44 |
+|  `H2` | `3` | src/db/database.ts:44 |
+|  `MARIADB` | `4` | src/db/database.ts:44 |
+|  `HANA` | `5` | src/db/database.ts:44 |
+|  `SNOWFLAKE` | `6` | src/db/database.ts:44 |
+|  `MYSQL` | `7` | src/db/database.ts:44 |
+|  `MONGODB` | `8` | src/db/database.ts:44 |
+|  `SYBASE` | `9` | src/db/database.ts:44 |
+|  `MSSQL` | `10` | src/db/database.ts:44 |
 
 ## Classes
 
 ### PreparedStatement
 
+
 Statement object
 
-#### Methods
+## Parameters
 
-<hr/>
+| Parameter | Type |
+| ------ | ------ |
+| `native` | `any` |
 
-#### close
+###### Returns
 
-- `close ():void`
-
-  Statement object
-
-<hr/>
-
-#### getResultSet
-
-- `getResultSet ():ResultSet`
-
-<hr/>
-
-#### execute
-
-- `execute ():boolean`
-
-<hr/>
-
-#### executeQuery
-
-- `executeQuery ():ResultSet`
-
-<hr/>
-
-#### executeUpdate
-
-- `executeUpdate ():number`
-
-<hr/>
-
-#### setNull
-
-- `setNull (index:number, sqlType:number):void`
-
-<hr/>
-
-#### setBinaryStream
-
-- `setBinaryStream (parameterIndex:number, inputStream:InputStream, length?:number):void`
-
-<hr/>
-
-#### setBoolean
-
-- `setBoolean (index:number, value?:boolean):void`
-
-<hr/>
-
-#### setByte
-
-- `setByte (index:number, value?:any):void`
-
-<hr/>
-
-#### setBlob
-
-- `setBlob (index:number, value?:any):void`
-
-<hr/>
-
-#### setClob
-
-- `setClob (index:number, value?:any):void`
-
-<hr/>
-
-#### setNClob
-
-- `setNClob (index:number, value?:any):void`
-
-<hr/>
-
-#### setBytesNative
-
-- `setBytesNative (index:number, value?:any[]):void`
-
-<hr/>
-
-#### setBytes
-
-- `setBytes (index:number, value?:any[]):void`
-
-<hr/>
-
-#### setDate
-
-- `setDate (index:number, value?:string|Date):void`
-
-<hr/>
-
-#### setDouble
-
-- `setDouble (index:number, value?:number):void`
-
-<hr/>
-
-#### setFloat
-
-- `setFloat (index:number, value?:number):void`
-
-<hr/>
-
-#### setInt
-
-- `setInt (index:number, value?:number):void`
-
-<hr/>
-
-#### setLong
-
-- `setLong (index:number, value?:number):void`
-
-<hr/>
-
-#### setShort
-
-- `setShort (index:number, value?:number):void`
-
-<hr/>
-
-#### setString
-
-- `setString (index:number, value?:string):void`
-
-<hr/>
-
-#### setTime
-
-- `setTime (index:number, value?:string|Date):void`
-
-<hr/>
-
-#### setTimestamp
-
-- `setTimestamp (index:number, value?:string|Date):void`
-
-<hr/>
-
-#### setBigDecimal
-
-- `setBigDecimal (index:number, value?:number):void`
-
-<hr/>
-
-#### setNString
-
-- `setNString (index:number, value?:string):void`
-
-<hr/>
-
-#### addBatch
-
-- `addBatch ():void`
-
-<hr/>
-
-#### executeBatch
-
-- `executeBatch ():number[]`
-
-<hr/>
-
-#### getMetaData
-
-- `getMetaData ():any`
-
-<hr/>
-
-#### getMoreResults
-
-- `getMoreResults ():boolean`
-
-<hr/>
-
-#### getParameterMetaData
-
-- `getParameterMetaData ():any`
-
-<hr/>
-
-#### getSQLWarning
-
-- `getSQLWarning ():any`
-
-<hr/>
-
-#### isClosed
-
-- `isClosed ():boolean`
-
-### CallableStatement
+[`PreparedStatement`](#preparedstatement)
 
 #### Methods
 
-<hr/>
+##### close()
 
-#### getResultSet
+> ```ts
+> close(): void;
+> ```
 
-- `getResultSet ():ResultSet`
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `void`
+> > - **Description**: ##### getResultSet() > ```ts getResultSet(): ResultSet; ```
+> > :::
 
-#### executeQuery
+> ###### Returns
 
-- `executeQuery ():ResultSet`
+> [`ResultSet`](#resultset)
 
-<hr/>
+> ##### execute()
 
-#### executeUpdate
+> > ```ts
+> > execute(): boolean;
+> > ```
 
-- `executeUpdate ():number`
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### executeQuery() > ```ts executeQuery(): ResultSet; ```
+> > :::
 
-#### registerOutParameter
+> ###### Returns
 
-- `registerOutParameter (parameterIndex:number, sqlType:keyoftypeofSQLTypes|number):void`
+> [`ResultSet`](#resultset)
 
-<hr/>
+> ##### executeUpdate()
 
-#### registerOutParameterByScale
+> > ```ts
+> > executeUpdate(): number;
+> > ```
 
-- `registerOutParameterByScale (parameterIndex:number, sqlType:keyoftypeofSQLTypes|number, scale:number):void`
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: ##### setNull() > ```ts setNull(index, sqlType): void; ```
+> > :::
 
-#### registerOutParameterByTypeName
+> **Parameters**
 
-- `registerOutParameterByTypeName (parameterIndex:number, sqlType:keyoftypeofSQLTypes|number, typeName:string):void`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `sqlType` | `number` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBinaryStream() > ```ts setBinaryStream(    parameterIndex,     inputStream,     length?): void; ```
+> > :::
 
-#### wasNull
+> **Parameters**
 
-- `wasNull ():boolean`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `inputStream` | `InputStream` |
+> | `length?` | `number` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBoolean() > ```ts setBoolean(index, value?): void; ```
+> > :::
 
-#### getString
+> **Parameters**
 
-- `getString (parameterIndex:number):string`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `boolean` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setByte() > ```ts setByte(index, value?): void; ```
+> > :::
 
-#### getBoolean
+> **Parameters**
 
-- `getBoolean (parameterIndex:number):boolean`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `any` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBlob() > ```ts setBlob(index, value?): void; ```
+> > :::
 
-#### getByte
+> **Parameters**
 
-- `getByte (parameterIndex:number):any`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `any` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setClob() > ```ts setClob(index, value?): void; ```
+> > :::
 
-#### getShort
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setNClob() > ```ts setNClob(index, value?): void; ```
+> > :::
 
-- `getShort (parameterIndex:number):number`
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBytesNative() > ```ts setBytesNative(index, value?): void; ```
+> > :::
 
-  : byte
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `any`[] |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBytes() > ```ts setBytes(index, value?): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `any`[] |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setDate() > ```ts setDate(index, value?): void; ```
+> > :::
 
-#### getInt
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `string` \| `Date` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setDouble() > ```ts setDouble(index, value?): void; ```
+> > :::
 
-- `getInt (parameterIndex:number):number`
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setFloat() > ```ts setFloat(index, value?): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setInt() > ```ts setInt(index, value?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `number` |
 
-#### getLong
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setLong() > ```ts setLong(index, value?): void; ```
+> > :::
 
-- `getLong (parameterIndex:number):number`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `number` |
 
-#### getFloat
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setShort() > ```ts setShort(index, value?): void; ```
+> > :::
 
-- `getFloat (parameterIndex:number):number`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `number` |
 
-#### getDouble
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setString() > ```ts setString(index, value?): void; ```
+> > :::
 
-- `getDouble (parameterIndex:number):number`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `string` |
 
-#### getDate
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setTime() > ```ts setTime(index, value?): void; ```
+> > :::
 
-- `getDate (parameterIndex:number):Date`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `string` \| `Date` |
 
-#### getTime
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setTimestamp() > ```ts setTimestamp(index, value?): void; ```
+> > :::
 
-- `getTime (parameterIndex:number):Date`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `string` \| `Date` |
 
-#### getTimestamp
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBigDecimal() > ```ts setBigDecimal(index, value?): void; ```
+> > :::
 
-- `getTimestamp (parameterIndex:number):Date`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `number` |
 
-#### getObject
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setNString() > ```ts setNString(index, value?): void; ```
+> > :::
 
-- `getObject (parameterIndex:number):any`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `index` | `number` |
+> | `value?` | `string` |
 
-#### getBigDecimal
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### addBatch() > ```ts addBatch(): void; ```
+> > :::
 
-- `getBigDecimal (parameterIndex:number):number`
+> > ::: info Returns
+> > - **Type**: `void`
+> > - **Description**: ##### executeBatch() > ```ts executeBatch(): number[]; ```
+> > :::
 
-<hr/>
+> ###### Returns
 
-#### getRef
+> `number`[]
 
-- `getRef (parameterIndex:number):any`
+> ##### getMetaData()
 
-  : sql.BigDecimal
+> > ```ts
+> > getMetaData(): any;
+> > ```
 
-<hr/>
 
-#### getBytes
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: ##### getMoreResults() > ```ts getMoreResults(): boolean; ```
+> > :::
 
-- `getBytes (parameterIndex:number):any[]`
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### getParameterMetaData() > ```ts getParameterMetaData(): any; ```
+> > :::
 
-  : sql.Ref
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: ##### getSQLWarning() > ```ts getSQLWarning(): any; ```
+> > :::
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
+> > :::
 
-#### getBytesNative
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ***
+> > :::
 
-- `getBytesNative (parameterIndex:number):any[]`
+> ### CallableStatement
 
-  : byte[]
 
-<hr/>
+> ## Parameters
 
-#### getBlob
+> | Parameter | Type |
+> | ------ | ------ |
+> | `native` | `any` |
 
-- `getBlob (parameterIndex:number):any`
+> ###### Returns
 
-  : byte[]
+> [`CallableStatement`](#callablestatement)
 
-<hr/>
+> #### Methods
 
-#### getBlobNative
+> ##### getResultSet()
 
-- `getBlobNative (parameterIndex:number):any`
+> > ```ts
+> > getResultSet(): ResultSet;
+> > ```
 
-  : sql.Blob
 
-<hr/>
+> ###### Returns
 
-#### getClob
+> [`ResultSet`](#resultset)
 
-- `getClob (parameterIndex:number):any`
+> ##### executeQuery()
 
-  : sql.Blob
+> > ```ts
+> > executeQuery(): ResultSet;
+> > ```
 
-<hr/>
 
-#### getNClob
+> ###### Returns
 
-- `getNClob (parameterIndex:string|number):any`
+> [`ResultSet`](#resultset)
 
-  : sql.Clob
+> ##### executeUpdate()
 
-<hr/>
+> > ```ts
+> > executeUpdate(): number;
+> > ```
 
-#### getNString
 
-- `getNString (parameterIndex:string|number):string`
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: ##### registerOutParameter() > ```ts registerOutParameter(parameterIndex, sqlType): void; ```
+> > :::
 
-  : sql.NClob
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `sqlType` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
 
-#### getArray
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### registerOutParameterByScale() > ```ts registerOutParameterByScale(    parameterIndex,     sqlType,     scale): void; ```
+> > :::
 
-- `getArray (parameterIndex:string|number):any[]`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `sqlType` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
+> | `scale` | `number` |
 
-#### getURL
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### registerOutParameterByTypeName() > ```ts registerOutParameterByTypeName(    parameterIndex,     sqlType,     typeName): void; ```
+> > :::
 
-- `getURL (parameterIndex:string|number):any`
+> **Parameters**
 
-  : sql.Array
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `sqlType` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
+> | `typeName` | `string` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### wasNull() > ```ts wasNull(): boolean; ```
+> > :::
 
-#### getRowId
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### getString() > ```ts getString(parameterIndex): string; ```
+> > :::
 
-- `getRowId (parameterIndex:string|number):any`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-#### getSQLXML
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getBoolean() > ```ts getBoolean(parameterIndex): boolean; ```
+> > :::
 
-- `getSQLXML (parameterIndex:string|number):any`
+> **Parameters**
 
-  : sql.RowId
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: ##### getByte() > ```ts getByte(parameterIndex): any; ```
+> > :::
 
-#### setURL
+> **Parameters**
 
-- `setURL (parameterIndex:number, value:any):void`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-  : sql.SQLXML
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getShort() > ```ts getShort(parameterIndex): number; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setNull
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setNull (parameterIndex:number, sqlTypeStr:keyoftypeofSQLTypes|number, typeName?:string):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getInt() > ```ts getInt(parameterIndex): number; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setBoolean
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setBoolean (parameterIndex:number, value?:boolean):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getLong() > ```ts getLong(parameterIndex): number; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setByte
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setByte (parameterIndex:number, value?:any):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getFloat() > ```ts getFloat(parameterIndex): number; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setShort
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setShort (parameterIndex:number, value?:number):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getDouble() > ```ts getDouble(parameterIndex): number; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setInt
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setInt (parameterIndex:number, value?:number):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getDate() > ```ts getDate(parameterIndex): Date; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setLong
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setLong (parameterIndex:number, value?:number):void`
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: ##### getTime() > ```ts getTime(parameterIndex): Date; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setFloat
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setFloat (parameterIndex:number, value?:number):void`
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: ##### getTimestamp() > ```ts getTimestamp(parameterIndex): Date; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setDouble
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setDouble (parameterIndex:number, value?:number):void`
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: ##### getObject() > ```ts getObject(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setBigDecimal
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setBigDecimal (parameterIndex:number, value?:number):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getBigDecimal() > ```ts getBigDecimal(parameterIndex): number; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setString
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setString (parameterIndex:number, value?:string):void`
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getRef() > ```ts getRef(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setBytes
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setBytes (parameterIndex:number, value?:any[]):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getBytes() > ```ts getBytes(parameterIndex): any[]; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setDate
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> ##### getBytesNative()
+> 
+> > ```ts
+> > getBytesNative(parameterIndex): any[];
+> > ```
+> 
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> ##### getBlob()
+> 
+> > ```ts
+> > getBlob(parameterIndex): any;
+> > ```
+> 
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setDate (parameterIndex:number, value?:string|Date):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getBlobNative() > ```ts getBlobNative(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setTime
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setTime (parameterIndex:number, value?:string|Date):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getClob() > ```ts getClob(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setTimestamp
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
 
-- `setTimestamp (parameterIndex:number, value?:string|Date):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getNClob() > ```ts getNClob(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setAsciiStream
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
 
-- `setAsciiStream (parameterIndex:number, inputStream:InputStream, length?:number):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getNString() > ```ts getNString(parameterIndex): string; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setBinaryStream
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
 
-- `setBinaryStream (parameterIndex:number, inputStream:InputStream, length?:number):void`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getArray() > ```ts getArray(parameterIndex): any[]; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setObject
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> ##### getURL()
+> 
+> > ```ts
+> > getURL(parameterIndex): any;
+> > ```
+> 
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
 
-- `setObject (parameterIndex:number, value:any, targetSqlType?:number, scale?:number):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getRowId() > ```ts getRowId(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setRowId
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
 
-- `setRowId (parameterIndex:number, value:number):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getSQLXML() > ```ts getSQLXML(parameterIndex): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### setNString
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `string` \| `number` |
 
-- `setNString (parameterIndex:number, value:string):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### setURL() > ```ts setURL(parameterIndex, value): void; ```
+> > :::
 
-  : RowId
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `any` |
 
-#### setSQLXML
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setNull() > ```ts setNull(    parameterIndex,     sqlTypeStr,     typeName?): void; ```
+> > :::
 
-- `setSQLXML (parameterIndex:number, value:any):void`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `sqlTypeStr` | \| `number` \| `"BOOLEAN"` \| `"DATE"` \| `"TIME"` \| `"TIMESTAMP"` \| `"DOUBLE"` \| `"FLOAT"` \| `"REAL"` \| `"TINYINT"` \| `"SMALLINT"` \| `"INTEGER"` \| `"BIGINT"` \| `"VARCHAR"` \| `"CHAR"` \| `"CLOB"` \| `"BLOB"` \| `"VARBINARY"` \| `"DECIMAL"` \| `"ARRAY"` \| `"NVARCHAR"` \| `"NCLOB"` \| `"BIT"` |
+> | `typeName?` | `string` |
 
-#### setBlob
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBoolean() > ```ts setBoolean(parameterIndex, value?): void; ```
+> > :::
 
-- `setBlob (parameterIndex:number, value:any):void`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `boolean` |
 
-#### setClob
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setByte() > ```ts setByte(parameterIndex, value?): void; ```
+> > :::
 
-- `setClob (parameterIndex:number, value:any):void`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `any` |
 
-#### setNClob
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setShort() > ```ts setShort(parameterIndex, value?): void; ```
+> > :::
 
-- `setNClob (parameterIndex:number, value:any):void`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `number` |
 
-#### execute
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setInt() > ```ts setInt(parameterIndex, value?): void; ```
+> > :::
 
-- `execute ():boolean`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `number` |
 
-#### getMoreResults
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setLong() > ```ts setLong(parameterIndex, value?): void; ```
+> > :::
 
-- `getMoreResults ():boolean`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `number` |
 
-#### getParameterMetaData
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setFloat() > ```ts setFloat(parameterIndex, value?): void; ```
+> > :::
 
-- `getParameterMetaData ():any`
+> **Parameters**
 
-<hr/>
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `number` |
 
-#### isClosed
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setDouble() > ```ts setDouble(parameterIndex, value?): void; ```
+> > :::
 
-- `isClosed ():boolean`
+> **Parameters**
 
-  : ParameterMetaData
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `number` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBigDecimal() > ```ts setBigDecimal(parameterIndex, value?): void; ```
+> > :::
 
-#### close
+> **Parameters**
 
-- `close ():void`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setString() > ```ts setString(parameterIndex, value?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `string` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBytes() > ```ts setBytes(parameterIndex, value?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `any`[] |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setDate() > ```ts setDate(parameterIndex, value?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `string` \| `Date` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setTime() > ```ts setTime(parameterIndex, value?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `string` \| `Date` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setTimestamp() > ```ts setTimestamp(parameterIndex, value?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value?` | `string` \| `Date` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setAsciiStream() > ```ts setAsciiStream(    parameterIndex,     inputStream,     length?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `inputStream` | `InputStream` |
+> | `length?` | `number` |
 
-  : ParameterMetaData
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBinaryStream() > ```ts setBinaryStream(    parameterIndex,     inputStream,     length?): void; ```
+> > :::
 
-### ResultSet
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `inputStream` | `InputStream` |
+> | `length?` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setObject() > ```ts setObject(    parameterIndex,     value,     targetSqlType?,     scale?): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `any` |
+> | `targetSqlType?` | `number` |
+> | `scale?` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setRowId() > ```ts setRowId(parameterIndex, value): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setNString() > ```ts setNString(parameterIndex, value): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `string` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setSQLXML() > ```ts setSQLXML(parameterIndex, value): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setBlob() > ```ts setBlob(parameterIndex, value): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setClob() > ```ts setClob(parameterIndex, value): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setNClob() > ```ts setNClob(parameterIndex, value): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `parameterIndex` | `number` |
+> | `value` | `any` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### execute() > ```ts execute(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### getMoreResults() > ```ts getMoreResults(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### getParameterMetaData() > ```ts getParameterMetaData(): any; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### close() > ```ts close(): void; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `void`
+> > - **Description**: ***
+> > :::
+
+> ### ResultSet
 
 ResultSet object
 
-#### Methods
 
-<hr/>
 
-#### toJson
-
-- `toJson (limited=false, stringify=false):any[]`
-
-  Converts the ResultSet into a JSON array of objects.<br/>@param limited Whether to use limited JSON conversion (optimized).<br/>@param stringify Whether to return the JSON as a string or a parsed array.<br/>@returns A JavaScript array of objects representing the result set, or a string if stringify is true.
-
-<hr/>
-
-#### close
-
-- `close ():void`
-
-<hr/>
-
-#### getBigDecimal
-
-- `getBigDecimal (identifier:number|string):any`
-
-<hr/>
-
-#### getBoolean
-
-- `getBoolean (identifier:number|string):boolean`
-
-  : BigDecimal
-
-<hr/>
-
-#### getByte
-
-- `getByte (identifier:number|string):any`
-
-<hr/>
-
-#### getBytes
-
-- `getBytes (identifier:number|string):any[]`
-
-  : byte
-
-<hr/>
-
-#### getBytesNative
-
-- `getBytesNative (identifier:number|string):any[]`
-
-  : byte[]
-
-<hr/>
-
-#### getBlob
-
-- `getBlob (identifier:number|string):any`
-
-  : byte[]
-
-<hr/>
-
-#### getBlobNative
-
-- `getBlobNative (identifier:number|string):any`
-
-  : sql.Blob
-
-<hr/>
-
-#### getClob
-
-- `getClob (identifier:number|string):any`
-
-  : sql.Blob
-
-<hr/>
-
-#### getNClob
-
-- `getNClob (identifier:number|string):any`
-
-  : sql.Clob
-
-<hr/>
-
-#### getDate
-
-- `getDate (identifier:number|string):Date|undefined`
-
-  : sql.NClob
-
-<hr/>
-
-#### getDouble
-
-- `getDouble (identifier:number|string):number`
-
-<hr/>
-
-#### getFloat
-
-- `getFloat (identifier:number|string):number`
-
-<hr/>
-
-#### getInt
-
-- `getInt (identifier:number|string):number`
-
-<hr/>
-
-#### getLong
-
-- `getLong (identifier:number|string):number`
-
-<hr/>
-
-#### getShort
-
-- `getShort (identifier:number|string):number`
-
-<hr/>
-
-#### getString
-
-- `getString (identifier:number|string):string`
-
-<hr/>
-
-#### getTime
-
-- `getTime (identifier:number|string):Date|undefined`
-
-<hr/>
-
-#### getTimestamp
-
-- `getTimestamp (identifier:number|string):Date|undefined`
-
-<hr/>
-
-#### isAfterLast
-
-- `isAfterLast ():boolean`
-
-<hr/>
-
-#### isBeforeFirst
-
-- `isBeforeFirst ():boolean`
-
-<hr/>
-
-#### isClosed
-
-- `isClosed ():boolean`
-
-<hr/>
-
-#### isFirst
-
-- `isFirst ():boolean`
-
-<hr/>
-
-#### isLast
-
-- `isLast ():boolean`
-
-<hr/>
-
-#### next
-
-- `next ():boolean`
-
-<hr/>
-
-#### getMetaData
-
-- `getMetaData ():any`
-
-<hr/>
-
-#### getNString
-
-- `getNString (columnIndex:number):string`
-
-  : ResultSetMetaData
+> ResultSet object
+
+> ## Parameters
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `native` | `any` |
+
+> ###### Returns
+
+> [`ResultSet`](#resultset)
+
+> #### Methods
+
+> ##### toJson()
+
+> > ```ts
+> > toJson(limited?, stringify?): any[];
+> > ```
+
+
+> Converts the ResultSet into a JSON array of objects.
+
+> **Parameters**
+
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `limited` | `boolean` | `false` | Whether to use limited JSON conversion (optimized). |
+> | `stringify` | `boolean` | `false` | Whether to return the JSON as a string or a parsed array. |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> A JavaScript array of objects representing the result set, or a string if stringify is true.
+> 
+> ##### close()
+> 
+> > ```ts
+> > close(): void;
+> > ```
+> 
+> 
+> > > ::: info Returns
+> > > - **Type**: `void`
+> > > - **Description**: ##### getBigDecimal() > ```ts getBigDecimal(identifier): any; ```
+> > > :::
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getBoolean() > ```ts getBoolean(identifier): boolean; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: ##### getByte() > ```ts getByte(identifier): any; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getBytes() > ```ts getBytes(identifier): any[]; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> ##### getBytesNative()
+> 
+> > ```ts
+> > getBytesNative(identifier): any[];
+> > ```
+> 
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> ##### getBlob()
+> 
+> > ```ts
+> > getBlob(identifier): any;
+> > ```
+> 
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getBlobNative() > ```ts getBlobNative(identifier): any; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getClob() > ```ts getClob(identifier): any; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getNClob() > ```ts getNClob(identifier): any; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### getDate() > ```ts getDate(identifier): Date; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: ##### getDouble() > ```ts getDouble(identifier): number; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getFloat() > ```ts getFloat(identifier): number; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getInt() > ```ts getInt(identifier): number; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getLong() > ```ts getLong(identifier): number; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getShort() > ```ts getShort(identifier): number; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ##### getString() > ```ts getString(identifier): string; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getTime() > ```ts getTime(identifier): Date; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: ##### getTimestamp() > ```ts getTimestamp(identifier): Date; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `identifier` | `string` \| `number` |
+
+> ::: info Returns
+> - **Type**: `Date`
+> - **Description**: ##### isAfterLast() > ```ts isAfterLast(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### isBeforeFirst() > ```ts isBeforeFirst(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### isFirst() > ```ts isFirst(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### isLast() > ```ts isLast(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### next() > ```ts next(): boolean; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: ##### getMetaData() > ```ts getMetaData(): any; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: ##### getNString() > ```ts getNString(columnIndex): string; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `columnIndex` | `number` |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ***
+> :::
 
 ### Connection
 
+Converts the ResultSet into a JSON array of objects.
+@param limited Whether to use limited JSON conversion (optimized).
+@param stringify Whether to return the JSON as a string or a parsed array.
+@returns A JavaScript array of objects representing the result set, or a string if stringify is true.
+/
+	public toJson(limited = false, stringify = false): any[] {
+		const sw = new StringWriter();
+		const output = WriterOutputStream
+			.builder()
+			.setWriter(sw)
+			.setCharset(StandardCharsets.UTF_8)
+			.get();
+		DatabaseFacade.toJson(this.native, limited, stringify, output);
+		const jsonString = sw.toString();
+		return stringify ? jsonString : JSON.parse(jsonString);
+	}
+
+
+
 Connection object wrapper around a native Java `Connection`.
 
-#### Methods
+## Parameters
 
-<hr/>
+| Parameter | Type |
+| ------ | ------ |
+| `datasourceName?` | `string` |
 
-#### isOfType
+###### Returns
 
-- `isOfType (databaseSystem:DatabaseSystem):boolean`
+[`Connection`](#connection)
 
-  Checks if the connection is for a specific database system.
+#### Properties
 
-<hr/>
-
-#### getDatabaseSystem
-
-- `getDatabaseSystem ():DatabaseSystem`
-
-  Returns the type of the underlying database system as a \{@link DatabaseSystem\} enum.
-
-<hr/>
-
-#### prepareStatement
-
-- `prepareStatement (sql:string):PreparedStatement`
-
-  Creates a new \{@link PreparedStatement\} object for sending parameterized SQL statements to the database.
-
-<hr/>
-
-#### prepareCall
-
-- `prepareCall (sql:string):CallableStatement`
-
-  Creates a \{@link CallableStatement\} object for calling database stored procedures or functions.
-
-<hr/>
-
-#### close
-
-- `close ():void`
-
-  Creates a \{@link CallableStatement\} object for calling database stored procedures or functions.
-
-<hr/>
-
-#### commit
-
-- `commit ():void`
-
-<hr/>
-
-#### getAutoCommit
-
-- `getAutoCommit ():boolean`
-
-<hr/>
-
-#### getCatalog
-
-- `getCatalog ():string`
-
-<hr/>
-
-#### getSchema
-
-- `getSchema ():string`
-
-<hr/>
-
-#### getTransactionIsolation
-
-- `getTransactionIsolation ():number`
-
-<hr/>
-
-#### isClosed
-
-- `isClosed ():boolean`
-
-<hr/>
-
-#### isReadOnly
-
-- `isReadOnly ():boolean`
-
-<hr/>
-
-#### isValid
-
-- `isValid ():boolean`
-
-<hr/>
-
-#### rollback
-
-- `rollback ():void`
-
-<hr/>
-
-#### setAutoCommit
-
-- `setAutoCommit (autoCommit:boolean):void`
-
-<hr/>
-
-#### setCatalog
-
-- `setCatalog (catalog:string):void`
-
-<hr/>
-
-#### setReadOnly
-
-- `setReadOnly (readOnly:boolean):void`
-
-<hr/>
-
-#### setSchema
-
-- `setSchema (schema:string):void`
-
-<hr/>
-
-#### setTransactionIsolation
-
-- `setTransactionIsolation (transactionIsolation:number):void`
-
-<hr/>
-
-#### getMetaData
-
-- `getMetaData ():any`
-
-### Database
-
-: DatabaseMetaData
+| Property | Modifier | Type | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `native` | `readonly` | `any` | src/db/database.ts:1173 |
 
 #### Methods
 
-<hr/>
+##### isOfType()
 
-#### getDataSources
+> ```ts
+> isOfType(databaseSystem): boolean;
+> ```
 
-- `getDataSources ():string[]`
 
-  Returns a list of available data source names.
+> Checks if the connection is for a specific database system.
 
-<hr/>
+> **Parameters**
 
-#### getMetadata
+> | Parameter | Type |
+> | ------ | ------ |
+> | `databaseSystem` | [`DatabaseSystem`](#databasesystem) |
 
-- `getMetadata (datasourceName?:string):DatabaseMetadata|undefined`
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: ##### getDatabaseSystem() > ```ts getDatabaseSystem(): DatabaseSystem; ``` Returns the type of the underlying database system as a [DatabaseSystem](#databasesystem) enum.
+> :::
 
-  Returns database metadata for the specified data source.
+###### Returns
 
-<hr/>
+[`DatabaseSystem`](#databasesystem)
 
-#### getProductName
+##### prepareStatement()
 
-- `getProductName (datasourceName?:string):string`
+> ```ts
+> prepareStatement(sql): PreparedStatement;
+> ```
 
-  Returns the product name of the underlying database system.
 
-<hr/>
+> Creates a new [PreparedStatement](#preparedstatement) object for sending parameterized SQL statements to the database.
 
-#### getConnection
+> **Parameters**
 
-- `getConnection (datasourceName?:string):Connection`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `sql` | `string` |
+> 
+> ###### Returns
+> 
+> [`PreparedStatement`](#preparedstatement)
+> 
+> ##### prepareCall()
+> 
+> > ```ts
+> > prepareCall(sql): CallableStatement;
+> > ```
+> 
+> 
+> > Creates a [CallableStatement](#callablestatement) object for calling database stored procedures or functions.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `sql` | `string` |
+> 
+> ###### Returns
+> 
+> [`CallableStatement`](#callablestatement)
+> 
+> ##### close()
+> 
+> > ```ts
+> > close(): void;
+> > ```
+> 
+> 
+> > > ::: info Returns
+> > > - **Type**: `void`
+> > > - **Description**: ##### commit() > ```ts commit(): void; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `void`
+> > > - **Description**: ##### getAutoCommit() > ```ts getAutoCommit(): boolean; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `boolean`
+> > > - **Description**: ##### getCatalog() > ```ts getCatalog(): string; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `string`
+> > > - **Description**: ##### getSchema() > ```ts getSchema(): string; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `string`
+> > > - **Description**: ##### getTransactionIsolation() > ```ts getTransactionIsolation(): number; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `number`
+> > > - **Description**: ##### isClosed() > ```ts isClosed(): boolean; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `boolean`
+> > > - **Description**: ##### isReadOnly() > ```ts isReadOnly(): boolean; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `boolean`
+> > > - **Description**: ##### isValid() > ```ts isValid(): boolean; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `boolean`
+> > > - **Description**: ##### rollback() > ```ts rollback(): void; ```
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `void`
+> > > - **Description**: ##### setAutoCommit() > ```ts setAutoCommit(autoCommit): void; ```
+> > > :::
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `autoCommit` | `boolean` |
 
-  Gets a new database connection object.
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setCatalog() > ```ts setCatalog(catalog): void; ```
+> > :::
 
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `catalog` | `string` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setReadOnly() > ```ts setReadOnly(readOnly): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `readOnly` | `boolean` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setSchema() > ```ts setSchema(schema): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `schema` | `string` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### setTransactionIsolation() > ```ts setTransactionIsolation(transactionIsolation): void; ```
+> > :::
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `transactionIsolation` | `number` |
+
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### getMetaData() > ```ts getMetaData(): any; ```
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `any`
+> > - **Description**: ***
+> > :::
+
+> ### Database
+
+
+> ## Returns
+
+> [`Database`](#database)
+
+> #### Methods
+
+> ##### getDataSources()
+
+> > ```ts
+> > static getDataSources(): string[];
+> > ```
+
+
+> Returns a list of available data source names.
+
+> ###### Returns
+
+> `string`[]
+
+> ##### getMetadata()
+
+> > ```ts
+> > static getMetadata(datasourceName?): DatabaseMetadata;
+> > ```
+
+
+> Returns database metadata for the specified data source.
+
+> **Parameters**
+
+> | Parameter | Type |
+> | ------ | ------ |
+> | `datasourceName?` | `string` |
+> 
+> ###### Returns
+> 
+> [`DatabaseMetadata`](#databasemetadata)
+> 
+> ##### getProductName()
+> 
+> > ```ts
+> > static getProductName(datasourceName?): string;
+> > ```
+> 
+> 
+> > Returns the product name of the underlying database system.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `datasourceName?` | `string` |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getConnection() > ```ts static getConnection(datasourceName?): Connection; ``` Gets a new database connection object.
+> :::
+
+> **Parameters**
+
+| Parameter | Type |
+| ------ | ------ |
+| `datasourceName?` | `string` |
+
+###### Returns
+
+[`Connection`](#connection)
+
+## Interfaces
+
+### TableMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:51 |
+|  `type` | `readonly` | `string` | The type. | src/db/database.ts:53 |
+|  `remarks` | `readonly` | `string` | The remarks. | src/db/database.ts:55 |
+|  `columns` | `readonly` | [`ColumnMetadata`](#columnmetadata)[] | The columns. | src/db/database.ts:57 |
+|  `indices` | `readonly` | [`IndexMetadata`](#indexmetadata)[] | The indices. | src/db/database.ts:59 |
+|  `foreignKeys` | `readonly` | [`ForeignKeyMetadata`](#foreignkeymetadata)[] | The indices. | src/db/database.ts:61 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:63 |
+
+***
+
+### ColumnMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:68 |
+|  `type` | `readonly` | `string` | The type. | src/db/database.ts:70 |
+|  `size` | `readonly` | `number` | The size. | src/db/database.ts:72 |
+|  `nullable` | `readonly` | `boolean` | The nullable. | src/db/database.ts:74 |
+|  `key` | `readonly` | `boolean` | The key. | src/db/database.ts:76 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:78 |
+|  `scale` | `readonly` | `number` | The scale. | src/db/database.ts:80 |
+
+***
+
+### IndexMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:85 |
+|  `type` | `readonly` | `string` | The type. | src/db/database.ts:87 |
+|  `column` | `readonly` | `string` | The column. | src/db/database.ts:89 |
+|  `nonUnique` | `readonly` | `boolean` | The non unique. | src/db/database.ts:91 |
+|  `qualifier` | `readonly` | `string` | The qualifier. | src/db/database.ts:93 |
+|  `ordinalPosition` | `readonly` | `string` | The ordinal position. | src/db/database.ts:95 |
+|  `sortOrder` | `readonly` | `string` | The sort order. | src/db/database.ts:97 |
+|  `cardinality` | `readonly` | `number` | The cardinality. | src/db/database.ts:99 |
+|  `pages` | `readonly` | `number` | The pages. | src/db/database.ts:101 |
+|  `filterCondition` | `readonly` | `string` | The filter condition. | src/db/database.ts:103 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:105 |
+
+***
+
+### ForeignKeyMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:110 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:112 |
+
+***
+
+### SchemaMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:117 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:119 |
+|  `tables` | `readonly` | [`TableMetadata`](#tablemetadata)[] | The tables. | src/db/database.ts:121 |
+|  `views` | `readonly` | [`TableMetadata`](#tablemetadata)[] | The views. | src/db/database.ts:123 |
+|  `procedures` | `readonly` | [`ProcedureMetadata`](#proceduremetadata)[] | The procedures. | src/db/database.ts:125 |
+|  `functions` | `readonly` | [`FunctionMetadata`](#functionmetadata)[] | The functions. | src/db/database.ts:127 |
+|  `sequences` | `readonly` | [`SequenceMetadata`](#sequencemetadata)[] | The functions. | src/db/database.ts:129 |
+
+***
+
+### ProcedureMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:134 |
+|  `type` | `readonly` | `string` | The type. | src/db/database.ts:136 |
+|  `remarks` | `readonly` | `string` | The remarks. | src/db/database.ts:138 |
+|  `columns` | `readonly` | [`ParameterColumnMetadata`](#parametercolumnmetadata)[] | The columns. | src/db/database.ts:140 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:142 |
+
+***
+
+### FunctionMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:147 |
+|  `type` | `readonly` | `string` | The type. | src/db/database.ts:149 |
+|  `remarks` | `readonly` | `string` | The remarks. | src/db/database.ts:151 |
+|  `columns` | `readonly` | [`ParameterColumnMetadata`](#parametercolumnmetadata)[] | The columns. | src/db/database.ts:153 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:155 |
+
+***
+
+### ParameterColumnMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:160 |
+|  `kind` | `readonly` | `number` | The kind. | src/db/database.ts:162 |
+|  `type` | `readonly` | `string` | The type. | src/db/database.ts:164 |
+|  `precision` | `readonly` | `number` | The precision. | src/db/database.ts:166 |
+|  `length` | `readonly` | `number` | The length. | src/db/database.ts:168 |
+|  `scale` | `readonly` | `number` | The scale. | src/db/database.ts:170 |
+|  `radix` | `readonly` | `number` | The radix. | src/db/database.ts:172 |
+|  `nullable` | `readonly` | `boolean` | The nullable. | src/db/database.ts:174 |
+|  `remarks` | `readonly` | `string` | The remarks. | src/db/database.ts:176 |
+
+***
+
+### SequenceMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `name` | `readonly` | `string` | The name. | src/db/database.ts:181 |
+|  `kind` | `readonly` | `string` | The kind. | src/db/database.ts:183 |
+
+***
+
+### DatabaseMetadata
+
+
+#### Properties
+
+| Property | Modifier | Type | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `allProceduresAreCallable` | `readonly` | `boolean` | src/db/database.ts:187 |
+|  `allTablesAreSelectable` | `readonly` | `boolean` | src/db/database.ts:188 |
+|  `url` | `readonly` | `string` | src/db/database.ts:189 |
+|  `userName` | `readonly` | `string` | src/db/database.ts:190 |
+|  `isReadOnly` | `readonly` | `boolean` | src/db/database.ts:191 |
+|  `nullsAreSortedHigh` | `readonly` | `boolean` | src/db/database.ts:192 |
+|  `nullsAreSortedLow` | `readonly` | `boolean` | src/db/database.ts:193 |
+|  `nullsAreSortedAtStart` | `readonly` | `boolean` | src/db/database.ts:194 |
+|  `nullsAreSortedAtEnd` | `readonly` | `boolean` | src/db/database.ts:195 |
+|  `databaseProductName` | `readonly` | `string` | src/db/database.ts:196 |
+|  `databaseProductVersion` | `readonly` | `string` | src/db/database.ts:197 |
+|  `driverName` | `readonly` | `string` | src/db/database.ts:198 |
+|  `driverVersion` | `readonly` | `string` | src/db/database.ts:199 |
+|  `driverMajorVersion` | `readonly` | `number` | src/db/database.ts:200 |
+|  `driverMinorVersion` | `readonly` | `number` | src/db/database.ts:201 |
+|  `usesLocalFiles` | `readonly` | `boolean` | src/db/database.ts:202 |
+|  `usesLocalFilePerTable` | `readonly` | `boolean` | src/db/database.ts:203 |
+|  `supportsMixedCaseIdentifiers` | `readonly` | `boolean` | src/db/database.ts:204 |
+|  `storesUpperCaseIdentifiers` | `readonly` | `boolean` | src/db/database.ts:205 |
+|  `storesLowerCaseIdentifiers` | `readonly` | `boolean` | src/db/database.ts:206 |
+|  `storesMixedCaseIdentifiers` | `readonly` | `boolean` | src/db/database.ts:207 |
+|  `supportsMixedCaseQuotedIdentifiers` | `readonly` | `boolean` | src/db/database.ts:208 |
+|  `storesUpperCaseQuotedIdentifiers` | `readonly` | `boolean` | src/db/database.ts:209 |
+|  `storesLowerCaseQuotedIdentifiers` | `readonly` | `boolean` | src/db/database.ts:210 |
+|  `storesMixedCaseQuotedIdentifiers` | `readonly` | `boolean` | src/db/database.ts:211 |
+|  `identifierQuoteString` | `readonly` | `string` | src/db/database.ts:212 |
+|  `sqlKeywords` | `readonly` | `string` | src/db/database.ts:213 |
+|  `numericFunctions` | `readonly` | `string` | src/db/database.ts:214 |
+|  `stringFunctions` | `readonly` | `string` | src/db/database.ts:215 |
+|  `systemFunctions` | `readonly` | `string` | src/db/database.ts:216 |
+|  `timeDateFunctions` | `readonly` | `string` | src/db/database.ts:217 |
+|  `searchStringEscape` | `readonly` | `string` | src/db/database.ts:218 |
+|  `extraNameCharacters` | `readonly` | `string` | src/db/database.ts:219 |
+|  `supportsAlterTableWithAddColumn` | `readonly` | `boolean` | src/db/database.ts:220 |
+|  `supportsAlterTableWithDropColumn` | `readonly` | `boolean` | src/db/database.ts:221 |
+|  `supportsColumnAliasing` | `readonly` | `boolean` | src/db/database.ts:222 |
+|  `nullPlusNonNullIsNull` | `readonly` | `boolean` | src/db/database.ts:223 |
+|  `supportsConvert` | `readonly` | `boolean` | src/db/database.ts:224 |
+|  `supportsTableCorrelationNames` | `readonly` | `boolean` | src/db/database.ts:225 |
+|  `supportsDifferentTableCorrelationNames` | `readonly` | `boolean` | src/db/database.ts:226 |
+|  `supportsExpressionsInOrderBy` | `readonly` | `boolean` | src/db/database.ts:227 |
+|  `supportsOrderByUnrelated` | `readonly` | `boolean` | src/db/database.ts:228 |
+|  `supportsGroupBy` | `readonly` | `boolean` | src/db/database.ts:229 |
+|  `supportsGroupByUnrelated` | `readonly` | `boolean` | src/db/database.ts:230 |
+|  `supportsGroupByBeyondSelect` | `readonly` | `boolean` | src/db/database.ts:231 |
+|  `supportsLikeEscapeClause` | `readonly` | `boolean` | src/db/database.ts:232 |
+|  `supportsMultipleResultSets` | `readonly` | `boolean` | src/db/database.ts:233 |
+|  `supportsMultipleTransactions` | `readonly` | `boolean` | src/db/database.ts:234 |
+|  `supportsNonNullableColumns` | `readonly` | `boolean` | src/db/database.ts:235 |
+|  `supportsMinimumSQLGrammar` | `readonly` | `boolean` | src/db/database.ts:236 |
+|  `supportsCoreSQLGrammar` | `readonly` | `boolean` | src/db/database.ts:237 |
+|  `supportsExtendedSQLGrammar` | `readonly` | `boolean` | src/db/database.ts:238 |
+|  `supportsANSI92EntryLevelSQL` | `readonly` | `boolean` | src/db/database.ts:239 |
+|  `supportsANSI92IntermediateSQL` | `readonly` | `boolean` | src/db/database.ts:240 |
+|  `supportsANSI92FullSQL` | `readonly` | `boolean` | src/db/database.ts:241 |
+|  `supportsIntegrityEnhancementFacility` | `readonly` | `boolean` | src/db/database.ts:242 |
+|  `supportsOuterJoins` | `readonly` | `boolean` | src/db/database.ts:243 |
+|  `supportsFullOuterJoins` | `readonly` | `boolean` | src/db/database.ts:244 |
+|  `supportsLimitedOuterJoins` | `readonly` | `boolean` | src/db/database.ts:245 |
+|  `schemaTerm` | `readonly` | `string` | src/db/database.ts:246 |
+|  `procedureTerm` | `readonly` | `string` | src/db/database.ts:247 |
+|  `catalogTerm` | `readonly` | `string` | src/db/database.ts:248 |
+|  `isCatalogAtStart` | `readonly` | `boolean` | src/db/database.ts:249 |
+|  `catalogSeparator` | `readonly` | `string` | src/db/database.ts:250 |
+|  `supportsSchemasInDataManipulation` | `readonly` | `boolean` | src/db/database.ts:251 |
+|  `supportsSchemasInProcedureCalls` | `readonly` | `boolean` | src/db/database.ts:252 |
+|  `supportsSchemasInTableDefinitions` | `readonly` | `boolean` | src/db/database.ts:253 |
+|  `supportsSchemasInIndexDefinitions` | `readonly` | `boolean` | src/db/database.ts:254 |
+|  `supportsSchemasInPrivilegeDefinitions` | `readonly` | `boolean` | src/db/database.ts:255 |
+|  `supportsCatalogsInDataManipulation` | `readonly` | `boolean` | src/db/database.ts:256 |
+|  `supportsCatalogsInProcedureCalls` | `readonly` | `boolean` | src/db/database.ts:257 |
+|  `supportsCatalogsInTableDefinitions` | `readonly` | `boolean` | src/db/database.ts:258 |
+|  `supportsCatalogsInIndexDefinitions` | `readonly` | `boolean` | src/db/database.ts:259 |
+|  `supportsCatalogsInPrivilegeDefinitions` | `readonly` | `boolean` | src/db/database.ts:260 |
+|  `supportsPositionedDelete` | `readonly` | `boolean` | src/db/database.ts:261 |
+|  `supportsPositionedUpdate` | `readonly` | `boolean` | src/db/database.ts:262 |
+|  `supportsSelectForUpdate` | `readonly` | `boolean` | src/db/database.ts:263 |
+|  `supportsStoredProcedures` | `readonly` | `boolean` | src/db/database.ts:264 |
+|  `supportsSubqueriesInComparisons` | `readonly` | `boolean` | src/db/database.ts:265 |
+|  `supportsSubqueriesInExists` | `readonly` | `boolean` | src/db/database.ts:266 |
+|  `supportsSubqueriesInIns` | `readonly` | `boolean` | src/db/database.ts:267 |
+|  `supportsSubqueriesInQuantifieds` | `readonly` | `boolean` | src/db/database.ts:268 |
+|  `supportsCorrelatedSubqueries` | `readonly` | `boolean` | src/db/database.ts:269 |
+|  `supportsUnion` | `readonly` | `boolean` | src/db/database.ts:270 |
+|  `supportsUnionAll` | `readonly` | `boolean` | src/db/database.ts:271 |
+|  `supportsOpenCursorsAcrossCommit` | `readonly` | `boolean` | src/db/database.ts:272 |
+|  `supportsOpenCursorsAcrossRollback` | `readonly` | `boolean` | src/db/database.ts:273 |
+|  `supportsOpenStatementsAcrossCommit` | `readonly` | `boolean` | src/db/database.ts:274 |
+|  `supportsOpenStatementsAcrossRollback` | `readonly` | `boolean` | src/db/database.ts:275 |
+|  `maxBinaryLiteralLength` | `readonly` | `number` | src/db/database.ts:276 |
+|  `maxCharLiteralLength` | `readonly` | `number` | src/db/database.ts:277 |
+|  `maxColumnNameLength` | `readonly` | `number` | src/db/database.ts:278 |
+|  `maxColumnsInGroupBy` | `readonly` | `number` | src/db/database.ts:279 |
+|  `maxColumnsInIndex` | `readonly` | `number` | src/db/database.ts:280 |
+|  `maxColumnsInOrderBy` | `readonly` | `number` | src/db/database.ts:281 |
+|  `maxColumnsInSelect` | `readonly` | `number` | src/db/database.ts:282 |
+|  `maxColumnsInTable` | `readonly` | `number` | src/db/database.ts:283 |
+|  `maxConnections` | `readonly` | `number` | src/db/database.ts:284 |
+|  `maxCursorNameLength` | `readonly` | `number` | src/db/database.ts:285 |
+|  `maxIndexLength` | `readonly` | `number` | src/db/database.ts:286 |
+|  `maxSchemaNameLength` | `readonly` | `number` | src/db/database.ts:287 |
+|  `maxProcedureNameLength` | `readonly` | `number` | src/db/database.ts:288 |
+|  `maxCatalogNameLength` | `readonly` | `number` | src/db/database.ts:289 |
+|  `maxRowSize` | `readonly` | `number` | src/db/database.ts:290 |
+|  `maxRowSizeIncludeBlobs` | `readonly` | `boolean` | src/db/database.ts:291 |
+|  `maxStatementLength` | `readonly` | `number` | src/db/database.ts:292 |
+|  `maxStatements` | `readonly` | `number` | src/db/database.ts:293 |
+|  `maxTableNameLength` | `readonly` | `number` | src/db/database.ts:294 |
+|  `maxTablesInSelect` | `readonly` | `number` | src/db/database.ts:295 |
+|  `maxUserNameLength` | `readonly` | `number` | src/db/database.ts:296 |
+|  `defaultTransactionIsolation` | `readonly` | `number` | src/db/database.ts:297 |
+|  `supportsTransactions` | `readonly` | `boolean` | src/db/database.ts:298 |
+|  `supportsDataDefinitionAndDataManipulationTransactions` | `readonly` | `boolean` | src/db/database.ts:299 |
+|  `supportsDataManipulationTransactionsOnly` | `readonly` | `boolean` | src/db/database.ts:300 |
+|  `dataDefinitionCausesTransactionCommit` | `readonly` | `boolean` | src/db/database.ts:301 |
+|  `dataDefinitionIgnoredInTransactions` | `readonly` | `boolean` | src/db/database.ts:302 |
+|  `supportsBatchUpdates` | `readonly` | `boolean` | src/db/database.ts:303 |
+|  `supportsSavepoints` | `readonly` | `boolean` | src/db/database.ts:304 |
+|  `supportsNamedParameters` | `readonly` | `boolean` | src/db/database.ts:305 |
+|  `supportsMultipleOpenResults` | `readonly` | `boolean` | src/db/database.ts:306 |
+|  `supportsGetGeneratedKeys` | `readonly` | `boolean` | src/db/database.ts:307 |
+|  `resultSetHoldability` | `readonly` | `number` | src/db/database.ts:308 |
+|  `databaseMajorVersion` | `readonly` | `number` | src/db/database.ts:309 |
+|  `databaseMinorVersion` | `readonly` | `number` | src/db/database.ts:310 |
+|  `jdbcMajorVersion` | `readonly` | `number` | src/db/database.ts:311 |
+|  `jdbcMinorVersion` | `readonly` | `number` | src/db/database.ts:312 |
+|  `sqlStateType` | `readonly` | `number` | src/db/database.ts:313 |
+|  `locatorsUpdateCopy` | `readonly` | `boolean` | src/db/database.ts:314 |
+|  `supportsStatementPooling` | `readonly` | `boolean` | src/db/database.ts:315 |
+|  `supportsStoredFunctionsUsingCallSyntax` | `readonly` | `boolean` | src/db/database.ts:316 |
+|  `autoCommitFailureClosesAllResultSets` | `readonly` | `boolean` | src/db/database.ts:317 |
+|  `generatedKeyAlwaysReturned` | `readonly` | `boolean` | src/db/database.ts:318 |
+|  `maxLogicalLobSize` | `readonly` | `number` | src/db/database.ts:319 |
+|  `supportsRefCursors` | `readonly` | `boolean` | src/db/database.ts:320 |
+|  `schemas` | `readonly` | [`SchemaMetadata`](#schemametadata)[] | src/db/database.ts:321 |
+|  `kind` | `readonly` | `string` | src/db/database.ts:322 |
+
+## Variables
+
+### SQLTypes
+
+> ```ts
+> const SQLTypes: Readonly;
+> ```
+
+
+Mapping of SQL type names to their java.sql.Types integer constants.

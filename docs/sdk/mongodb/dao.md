@@ -1,151 +1,242 @@
-# API: dao
+# mongodb/dao
 
-> Source: `mongodb/dao.ts`
+> [!tip]
+> Auto-generated from
+> - source: [mongodb/dao.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mongodb/dao.ts)
+> - version: 1.0.0
 
-Reads a single entity by id, parsed into JSON object.
-If requested as expanded the returned entity will comprise associated (dependent) entities too. Expand can be a string tha tis a valid association name defined in this dao orm or
-an array of such names.
 
-## Usage
-```javascript
-import { dao } from "@aerokit/sdk/mongodb";
-import { response } from "@aerokit/sdk/http";
+## Overview
 
-//create a DAO from configuration
-let customers = dao.create({
-    table: "CUSTOMERS",
-    properties: [{
-        name: "id",
-        column: "ID",
-        type: "BIGINT",
-        id: true
-    }, {
-        name: "orgName",
-        column: "ORG_NAME",
-        type: "VARCHAR",
-        required: true
-    }, {
-        name: "employeesNumber",
-        column: "ORG_EMP_NUM",
-        type: "INTEGER",
-        required: true
-    }, {
-        name: "orgDescription",
-        column: "ORG_DESCR",
-        type: "VARCHAR",
-        required: false
-    }]
-});
+The Dao API provides...
 
-//Create a new customer entity
-let customerId = customers.insert({
-    orgName: "ACME",
-    employeesNumber: 1000
-});
+## Table of Contents
 
-response.println("Id: " + customerId);
-
-//List all customer entities
-let customersList = customers.list();
-
-//Get a particular customer entity by its id
-let customer = customers.find(customerId);
-
-//Update a customer entity property
-customer.orgDescription = "ACME is a company";
-customers.update(customer);
-
-//Delete a customer entity
-customers.remove(customerId);
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [DAO](#dao)
+- [Parameters](#parameters)
+- [Functions](#functions)
+  - [create()](#create())
+  - [dao()](#dao())
 
 ## Classes
 
 ### DAO
 
+
+## Parameters
+
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `orm` | `any` | `undefined` |
+| `logCtxName` | `string` | `'mongodb.dao'` |
+
+###### Returns
+
+[`DAO`](#dao)
+
+#### Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `$log` | `any` | src/mongodb/dao.ts:16 |
+
 #### Methods
 
-<hr/>
+##### notify()
 
-#### notify
+> ```ts
+> notify(event, ...a): void;
+> ```
 
-- `notify (event, ...a):void`
 
-<hr/>
+> **Parameters**
 
-#### createNoSQLEntity
+> | Parameter | Type |
+> | ------ | ------ |
+> | `event` | `any` |
+> | ...`a` | `any`[] |
 
-- `createNoSQLEntity (entity):any`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### createNoSQLEntity() > ```ts createNoSQLEntity(entity): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### validateEntity
+> | Parameter | Type |
+> | ------ | ------ |
+> | `entity` | `any` |
 
-- `validateEntity (entity, skip):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### validateEntity() > ```ts validateEntity(entity, skip): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### insert
+> | Parameter | Type |
+> | ------ | ------ |
+> | `entity` | `any` |
+> | `skip` | `any` |
 
-- `insert (_entity)void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### insert() > ```ts insert(_entity): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### update
+> | Parameter | Type |
+> | ------ | ------ |
+> | `_entity` | `any` |
 
-- `update (entity)void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### update() > ```ts update(entity): DAO; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### remove
+> | Parameter | Type |
+> | ------ | ------ |
+> | `entity` | `any` |
+> 
+> ###### Returns
+> 
+> [`DAO`](#dao)
+> 
+> ##### remove()
+> 
+> > ```ts
+> > remove(id): void;
+> > ```
+> 
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `id` | `any` |
 
-- `remove (id)void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### expand() > ```ts expand(expansionPath, context): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### expand
+> | Parameter | Type |
+> | ------ | ------ |
+> | `expansionPath` | `any` |
+> | `context` | `any` |
 
-- `expand (expansionPath, context)void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### find() > ```ts find(    id,     expand,     select): any; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### find
+> | Parameter | Type |
+> | ------ | ------ |
+> | `id` | `any` |
+> | `expand` | `any` |
+> | `select` | `any` |
 
-- `find (id, expand, select)void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: ##### count() > ```ts count(): number; ```
+> > :::
 
-  Reads a single entity by id, parsed into JSON object.<br/>If requested as expanded the returned entity will comprise associated (dependent) entities too. Expand can be a string tha tis a valid association name defined in this dao orm or<br/>an array of such names.
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: ##### list() > ```ts list(settings): any[]; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### count
+> | Parameter | Type |
+> | ------ | ------ |
+> | `settings` | `any` |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> ##### existsTable()
+> 
+> > ```ts
+> > existsTable(): boolean;
+> > ```
+> 
 
-- `count ():number`
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: ##### createTable() > ```ts createTable(): void; ```
+> :::
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### dropTable() > ```ts dropTable(): DAO; ```
+> :::
 
-#### list
+###### Returns
 
-- `list (settings)void`
+[`DAO`](#dao)
 
-  list parameters:<br/>- $expand<br/>- $filter<br/>- $select<br/>- $sort<br/>- $order<br/>- $limit<br/>- $offset
+## Functions
 
-<hr/>
+### create()
 
-#### existsTable
+> ```ts
+> function create(
+>    oDefinition, 
+>    logCtxName, 
+>    dataSourceName, 
+>    databaseType): DAO;
+> ```
 
-- `existsTable ():boolean`
 
-<hr/>
+oDefinition can be table definition or standard orm definition object. Or it can be a valid path to
+a .table file, or any other text file contianing a standard dao orm definition.
 
-#### createTable
+#### Parameters
 
-- `createTable ():void`
+| Parameter | Type |
+| ------ | ------ |
+| `oDefinition` | `any` |
+| `logCtxName` | `any` |
+| `dataSourceName` | `any` |
+| `databaseType` | `any` |
 
-<hr/>
+#### Returns
 
-#### dropTable
+[`DAO`](#dao)
 
-- `dropTable ():DAO`
+***
 
+### dao()
+
+> ```ts
+> function dao(
+>    oDefinition, 
+>    logCtxName, 
+>    dataSourceName, 
+>    databaseType): DAO;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `oDefinition` | `any` |
+| `logCtxName` | `any` |
+| `dataSourceName` | `any` |
+| `databaseType` | `any` |
+
+#### Returns
+
+[`DAO`](#dao)

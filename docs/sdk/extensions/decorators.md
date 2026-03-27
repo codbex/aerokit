@@ -1,53 +1,57 @@
-# API: decorators
+# extensions/decorators
 
-> Source: `extensions/decorators.ts`
+> [!tip]
+> Auto-generated from
+> - source: [extensions/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions/decorators.ts)
+> - version: 1.0.0
 
-@Extension decorator
+
+## Overview
+
+The Decorators API provides...
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Interfaces](#interfaces)
+  - [ExtensionOptions](#extensionoptions)
+- [Functions](#functions)
+  - [Extension()](#extension())
+
+## Interfaces
+
+### ExtensionOptions
+
+
+#### Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `name` | `string` | src/extensions/decorators.ts:4 |
+|  `to` | `string` | src/extensions/decorators.ts:5 |
+
+## Functions
+
+### Extension()
+
+> ```ts
+> function Extension(options): (target, context) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `options` | [`ExtensionOptions`](#extensionoptions) |
+
+#### Returns
+
+\(`target`, `context`) => `void`
+
+#### Extension
+
+decorator
 Marks an entire class as a extension
 
 introduced in TypeScript 5.0, which expects a ClassDecoratorContext object.
-
-## Usage
-```javascript
-// ----------------
-// OrderExtension.ts
-// ----------------
-
-import { Extension } from "@aerokit/sdk/extensions";
-
-@Extension({
-    name: "OrderExtension",
-    to: "order-extension-point"
-})
-export class OrderExtension {
-    public static getDiscount(): number {
-        return 5;
-    }
-}
-
-export function getDiscount() {
-    return OrderExtension.getDiscount();
-}
-
-// ----------
-// Usage
-// ----------
-
-import { response } from "@aerokit/sdk/http";
-import { extensions } from "@aerokit/sdk/extensions";
-
-const orderExtensions = await Promise.resolve(extensions.load('order-extension-point'));
-
-let discount = 0;
-for (let i = 0; i < orderExtensions?.length; i++) {
-    discount += orderExtensions[i].getDiscount();
-}
-
-response.setContentType("application/json");
-response.println(JSON.stringify("Discount: " + discount));
-response.flush();
-response.close();
-
-```
-
-

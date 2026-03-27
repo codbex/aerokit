@@ -1,109 +1,125 @@
-# API: pdf
+# pdf/pdf
 
-> Source: `pdf/pdf.ts`
+> [!tip]
+> Auto-generated from
+> - source: [pdf/pdf.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/pdf/pdf.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Interface defining the structured data required to generate a table in a PDF.
+/
+export interface PDFTableData {
+    title: string;
+    description: string;
+    columns: {
+        name: string // Display name of the column
+        key: string  // Data key to look up in the rows
+    }[],
+    rows: { [key: string]: any }[] // Array of data objects for each row
+}
 
-## Usage
-```javascript
-import { response } from "@aerokit/sdk/http";
-import { pdf } from "@aerokit/sdk/pdf";
+## Table of Contents
 
-const data = {
-    title: "Lorem Ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia fermentum magna, sit amet accumsan felis auctor ac.",
-    columns: [{
-        name: "Id",
-        key: "id"
-    }, {
-        name: "First Name",
-        key: "firstName",
-    }, {
-        name: "Last Name",
-        key: "lastName"
-    }, {
-        name: "Age",
-        key: "age"
-    }],
-    rows: [{
-        id: 1001,
-        firstName: "John",
-        lastName: "Doe",
-        age: 29
-    }, {
-        id: 1002,
-        firstName: "Jane",
-        lastName: "Doe",
-        age: 26
-    }, {
-        id: 1003,
-        firstName: "Joe",
-        lastName: "Doe",
-        age: 44
-    }, {
-        id: 1004,
-        firstName: "Jill",
-        lastName: "Doe",
-        age: 40
-    }]
-};
-
-let document = pdf.generateTable(data);
-
-response.setContentType("application/pdf");
-response.setHeader('Content-Disposition', 'filename="data.pdf"');
-response.write(document);
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [PDF](#pdf)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [PDFTableData](#pdftabledata)
+  - [PDFTableConfig](#pdftableconfig)
 
 ## Classes
 
 ### PDF
 
-@class PDF<br/>@description Utility class for generating PDF documents using a template engine and the PDFFacade.
+
+PDF
+
+#### Description
+
+Utility class for generating PDF documents using a template engine and the PDFFacade.
+
+## Returns
+
+[`PDF`](#pdf)
 
 #### Methods
 
-<hr/>
+##### generateTable()
 
-#### generateTable
+> ```ts
+> static generateTable(data, config?): any[];
+> ```
 
-- `generateTable (data:PDFTableData, config?:PDFTableConfig):any[]`
 
-  Generates a PDF document containing a styled table based on the standard table template.<br/><br/>@param \{PDFTableData\} data The structured data to populate the table.<br/>@param \{PDFTableConfig\} [config] Optional configuration for page size and alignment.<br/>@returns \{any[]\} The generated PDF content as a byte array (Array&lt;number&gt;).
+> Generates a PDF document containing a styled table based on the standard table template.
 
-<hr/>
+> **Parameters**
 
-#### generate
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `data` | [`PDFTableData`](#pdftabledata) | The structured data to populate the table. |
+| `config?` | [`PDFTableConfig`](#pdftableconfig) | Optional configuration for page size and alignment. |
 
-- `generate (templatePath:string, data:PDFTableData):any[]`
+###### Returns
 
-  Generates a PDF document using a custom template path and data payload.<br/><br/>@param \{string\} templatePath The path to the custom template file (e.g., in the Registry).<br/>@param \{PDFTableData\} data The data to be injected into the template.<br/>@returns \{any[]\} The generated PDF content as a byte array (Array&lt;number&gt;).
+`any`[]
 
-<hr/>
+The generated PDF content as a byte array (Array).
 
-#### setTemplateParameters
+##### generate()
 
-- `setTemplateParameters (templateParameters:TemplateParameters, config?:PDFTableConfig):void`
+> ```ts
+> static generate(templatePath, data): any[];
+> ```
 
-  Internal method to set template parameters based on optional configuration.<br/><br/>@param \{TemplateParameters\} templateParameters The object containing parameters to be modified.<br/>@param \{PDFTableConfig\} [config] The optional configuration object.
 
-<hr/>
+> Generates a PDF document using a custom template path and data payload.
 
-#### setDocumentAlign
+> **Parameters**
 
-- `setDocumentAlign (templateParameters:TemplateParameters, config?:PDFTableConfig):void`
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `templatePath` | `string` | The path to the custom template file (e.g., in the Registry). |
+| `data` | [`PDFTableData`](#pdftabledata) | The data to be injected into the template. |
 
-  Internal method to set column and row alignment parameters.<br/><br/>@param \{TemplateParameters\} templateParameters The object containing parameters to be modified.<br/>@param \{PDFTableConfig\} [config] The optional configuration object.
+###### Returns
 
-<hr/>
+`any`[]
 
-#### setDocumentSize
+The generated PDF content as a byte array (Array).
 
-- `setDocumentSize (templateParameters:TemplateParameters, config?:PDFTableConfig):void`
+## Interfaces
 
-  Internal method to set the document size (width and height in mm) based on a standard 'size' or custom dimensions.<br/><br/>@param \{TemplateParameters\} templateParameters The object containing parameters to be modified.<br/>@param \{PDFTableConfig\} [config] The optional configuration object.
+### PDFTableData
 
+
+Interface defining the structured data required to generate a table in a PDF.
+
+#### Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `title` | `string` | src/pdf/pdf.ts:13 |
+|  `description` | `string` | src/pdf/pdf.ts:14 |
+|  `columns` | `object`[] | src/pdf/pdf.ts:15 |
+|  `rows` | `object`[] | src/pdf/pdf.ts:19 |
+
+***
+
+### PDFTableConfig
+
+
+Interface defining optional configuration for PDF document layout.
+
+#### Properties
+
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `pageWidth?` | `number` | Document width in mm. Overrides size if present. | src/pdf/pdf.ts:27 |
+|  `pageHeight?` | `number` | Document height in mm. Overrides size if present. | src/pdf/pdf.ts:29 |
+|  `alignColumns?` | `boolean` | Whether to apply column alignment (based on template default). | src/pdf/pdf.ts:31 |
+|  `alignRows?` | `boolean` | Whether to apply row alignment (based on template default). | src/pdf/pdf.ts:33 |
+|  `size?` | `"a0"` \| `"a1"` \| `"a2"` \| `"a3"` \| `"a4"` \| `"a5"` \| `"a6"` \| `"a7"` \| `"a8"` \| `"a9"` \| `"a10"` | Standard ISO 216 paper size (A0-A10). Sets standard dimensions if custom width/height are not provided. | src/pdf/pdf.ts:35 |

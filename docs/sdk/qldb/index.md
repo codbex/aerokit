@@ -1,3 +1,0 @@
-# qldb
-
-- [qldb](qldb.md)

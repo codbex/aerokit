@@ -1,70 +1,143 @@
-# API: url
+# utils/url
 
-> Source: `utils/url.ts`
+> [!tip]
+> Auto-generated from
+> - source: [utils/url.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/url.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Utility class for performing various forms of URL encoding and decoding.
 It wraps native Java URL utility methods for handling query parameters,
 path segments, and form data.
 
-## Usage
-```javascript
-import { url } from "@aerokit/sdk/utils";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-response.println(url.encode('<![CDATA[<meta http-equiv="refresh" content="0;url=javascript:document.vulnerable=true;">]]>', 'UTF8'));
-response.println(url.decode('%3C%21%5BCDATA%5B%3Cmeta+http-equiv%3D%22refresh%22+content%3D%220%3Burl%3Djavascript%3Adocument.vulnerable%3Dtrue%3B%22%3E%5D%5D%3E', 'UTF8'));
-
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [URL](#url)
+- [Returns](#returns)
 
 ## Classes
 
 ### URL
 
-Utility class for performing various forms of URL encoding and decoding.<br/>It wraps native Java URL utility methods for handling query parameters,<br/>path segments, and form data.
+
+Utility class for performing various forms of URL encoding and decoding.
+It wraps native Java URL utility methods for handling query parameters,
+path segments, and form data.
+
+## Returns
+
+[`URL`](#url)
 
 #### Methods
 
-<hr/>
+##### encode()
 
-#### encode
+> ```ts
+> static encode(input, charset?): string;
+> ```
 
-- `encode (input:string, charset?:string):string`
 
-  URL-encodes the input string, typically used for encoding query parameter values.<br/><br/>@param input The string to be encoded.<br/>@param charset The character set (e.g., 'UTF-8', 'ISO-8859-1') to use for encoding. Defaults to the system's preferred encoding if omitted.<br/>@returns The URL-encoded string.
+> URL-encodes the input string, typically used for encoding query parameter values.
 
-<hr/>
+> **Parameters**
 
-#### decode
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be encoded. |
+> | `charset?` | `string` | The character set (e.g., 'UTF-8', 'ISO-8859-1') to use for encoding. Defaults to the system's preferred encoding if omitted. |
 
-- `decode (input:string, charset?:string):string`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The URL-encoded string.
+> :::
 
-  URL-decodes the input string, typically used for decoding query parameter values.<br/><br/>@param input The string to be decoded.<br/>@param charset The character set (e.g., 'UTF-8', 'ISO-8859-1') that was used for encoding. Defaults to the system's preferred encoding if omitted.<br/>@returns The URL-decoded string.
+##### decode()
 
-<hr/>
+> ```ts
+> static decode(input, charset?): string;
+> ```
 
-#### escape
 
-- `escape (input:string):string`
+> URL-decodes the input string, typically used for decoding query parameter values.
 
-  Escapes the input string using general URL escaping rules.<br/>This is typically equivalent to `encodeURIComponent` and is suitable for<br/>encoding query parameter *values*.<br/><br/>@param input The string to escape.<br/>@returns The escaped string.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to be decoded. |
+> | `charset?` | `string` | The character set (e.g., 'UTF-8', 'ISO-8859-1') that was used for encoding. Defaults to the system's preferred encoding if omitted. |
 
-#### escapePath
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The URL-decoded string.
+> :::
 
-- `escapePath (input:string):string`
+##### escape()
 
-  Escapes the input string specifically for use as a **URL path segment**.<br/>It typically preserves path delimiters like `/` that might otherwise be escaped<br/>in standard URL encoding.<br/><br/>@param input The path string to escape.<br/>@returns The escaped path string.
+> ```ts
+> static escape(input): string;
+> ```
 
-<hr/>
 
-#### escapeForm
+> Escapes the input string using general URL escaping rules.
+> This is typically equivalent to `encodeURIComponent` and is suitable for
+> encoding query parameter *values*.
 
-- `escapeForm (input:string):string`
+> **Parameters**
 
-  Escapes the input string according to the rules for **HTML Form Data**<br/>(application/x-www-form-urlencoded). This typically replaces spaces with `+`<br/>instead of `%20`.<br/><br/>@param input The form data string to escape.<br/>@returns The escaped form data string.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The string to escape. |
 
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The escaped string.
+> :::
+
+##### escapePath()
+
+> ```ts
+> static escapePath(input): string;
+> ```
+
+
+> Escapes the input string specifically for use as a **URL path segment**.
+> It typically preserves path delimiters like `/` that might otherwise be escaped
+> in standard URL encoding.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The path string to escape. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The escaped path string.
+> :::
+
+##### escapeForm()
+
+> ```ts
+> static escapeForm(input): string;
+> ```
+
+
+> Escapes the input string according to the rules for **HTML Form Data**
+> (application/x-www-form-urlencoded). This typically replaces spaces with `+`
+> instead of `%20`.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` | The form data string to escape. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The escaped form data string.
+> :::

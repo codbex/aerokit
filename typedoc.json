@@ -1,0 +1,50 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": [
+    "src/**/*.ts"
+  ],
+  "out": "docs/sdk",
+  "plugin": ["typedoc-plugin-markdown"],
+  "theme": "markdown",
+  "exclude": [
+    "**/node_modules/**",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/*.sample"
+  ],
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "excludeExternals": false,
+  "includeVersion": true,
+  "disableSources": false,
+  "categorizeByGroup": true,
+  "defaultCategory": "Other",
+  "categoryOrder": [
+    "Core",
+    "HTTP",
+    "Database",
+    "Messaging",
+    "Security",
+    "Utils",
+    "*"
+  ],
+  "sort": ["source-order", "required-first", "kind"],
+  "name": "Aerokit SDK",
+  "readme": "none",
+  "hideGenerator": true,
+  "useCodeBlocks": true,
+  "expandObjects": false,
+  "expandParameters": false,
+  "parametersFormat": "table",
+  "propertiesFormat": "table",
+  "enumMembersFormat": "table",
+  "typeDeclarationFormat": "table",
+  "indexFormat": "table",
+  "outputFileStrategy": "modules",
+  "fileExtension": ".md",
+  "entryFileName": "index.md",
+  "flattenOutputFiles": false,
+  "pretty": true,
+  "emit": "docs",
+  "skipErrorChecking": true
+}

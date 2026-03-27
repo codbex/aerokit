@@ -1,223 +1,376 @@
-# API: store
+# db/store
 
-> Source: `db/store.ts`
+> [!tip]
+> Auto-generated from
+> - source: [db/store.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/store.ts)
+> - version: 1.0.0
+
+
+## Overview
+
+Defines the available comparison operators for query conditions.
+/
+export enum Operator {
+	EQ = "=", // Equals
+	NE = "<>", // Not Equals
+	GT = ">", // Greater Than
+	LT = "<", // Less Than
+	GE = ">=", // Greater Than or Equals
+	LE = "<=", // Less Than or Equals
+	LIKE = "LIKE", // SQL LIKE operator
+	BETWEEN = "BETWEEN", // SQL BETWEEN operator (requires two values)
+	IN = "IN" // SQL IN operator (requires a List or Array of values)
+}
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Enumerations](#enumerations)
+  - [Operator](#operator)
+  - [Direction](#direction)
+- [Classes](#classes)
+  - [Store](#store)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [Condition](#condition)
+  - [Sort](#sort)
+  - [Options](#options)
+
+## Enumerations
+
+### Operator
+
 
 Defines the available comparison operators for query conditions.
 
-## Usage
-```javascript
-// ---------
-// Entity.ts
-// ---------
+#### Enumeration Members
 
-@Entity("Customer")
-@Table("CUSTOMER")
-export class Customer {
+| Enumeration Member | Value | Defined in |
+| ------ | ------ | ------ |
+|  `EQ` | `"="` | src/db/store.ts:7 |
+|  `NE` | `""` | src/db/store.ts:8 |
+|  `GT` | `">"` | src/db/store.ts:9 |
+|  `LT` | `" `GE` | `">="` | src/db/store.ts:11 |
+|  `LE` | `" `LIKE` | `"LIKE"` | src/db/store.ts:13 |
+|  `BETWEEN` | `"BETWEEN"` | src/db/store.ts:14 |
+|  `IN` | `"IN"` | src/db/store.ts:15 |
 
-    @Id()
-    @Generated("sequence")
-    @Column({ name: "CUSTOMER_ID", type: "long" })
-    public id: number;
+***
 
-    @Column({ name: "CUSTOMER_NAME", type: "string" })
-    public name: string;
+### Direction
 
-    @Column({ name: "CUSTOMER_ADDRESS", type: "string" })
-    public address: string;
-}
 
-// ---------
-// Service.ts
-// ---------
+Defines the direction for sorting.
 
-import { store } from "@aerokit/sdk/db";
-import { response } from "@aerokit/sdk/http";
+#### Enumeration Members
 
-// Basic
-
-let entry = { 'name': 'John', 'address': 'Sofia, Bulgaria' };
-
-store.save('Customer', entry);
-
-let list = store.list('Customer');
-
-response.println(JSON.stringify(list));
-
-// Advanced
-
-let entry1 = { 'name': 'John', 'address': 'Sofia, Bulgaria' };
-let entry2 = { 'name': 'Jane', 'address': 'Varna, Bulgaria' };
-let entry3 = { 'name': 'Matthias', 'address': 'Berlin, Germany' };
-
-store.save('Customer', entry1);
-store.save('Customer', entry2);
-store.save('Customer', entry3);
-
-let list = store.list('Customer');
-response.println("List all customers:");
-response.println(JSON.stringify(list, null, 2));
-
-response.println("");
-response.println("Select customers with first name John:");
-let select = store.query("from Customer c where c.name = 'John'");
-response.println(JSON.stringify(select, null, 2));
-
-response.println("");
-response.println("Select native customers with first name John:");
-let selectNative = store.queryNative("select * from \"CUSTOMER\" c where c.name = 'John'");
-response.println(JSON.stringify(selectNative, null, 2));
-
-response.println("");
-response.println("Find customers by Example:");
-let findByExample = store.find('Customer', {"name":"John"});
-response.println(JSON.stringify(findByExample, null, 2));
-
-response.println("");
-response.println("List customers with filter options:");
-let listWithOptions = store.list('Customer', {"conditions":[{"propertyName":"name","operator":"LIKE","value":"J%"}],"sorts":[{"propertyName":"name","direction":"ASC"}],"limit":"100"});
-response.println(JSON.stringify(listWithOptions, null, 2));
-
-response.println("");
-response.println("Select customers with first name starts with J:");
-let selectWithParams = store.query("from Customer c where c.name like ?1", ["J%"]);
-response.println(JSON.stringify(selectWithParams, null, 2));
-
-response.println("");
-response.println("Select customers with first name starts with M with named query:");
-let selectWithParamsNamed = store.query("from Customer c where c.name like :first_name", [{ "name": "first_name", "type": "VARCHAR", "value": "M%" }]);
-response.println(JSON.stringify(selectWithParamsNamed, null, 2));
-
-response.flush();
-response.close();
-
-```
-
+| Enumeration Member | Value | Defined in |
+| ------ | ------ | ------ |
+|  `ASC` | `"ASC"` | src/db/store.ts:22 |
+|  `DESC` | `"DESC"` | src/db/store.ts:23 |
 
 ## Classes
 
 ### Store
 
-Facade class for interacting with the underlying Dirigible Data Store.<br/>All methods serialize/deserialize JavaScript objects to/from JSON strings<br/>before interacting with the native Java facade.
+
+Facade class for interacting with the underlying Dirigible Data Store.
+All methods serialize/deserialize JavaScript objects to/from JSON strings
+before interacting with the native Java facade.
+
+## Returns
+
+[`Store`](#store)
 
 #### Methods
 
-<hr/>
+##### save()
 
-#### save
+> ```ts
+> static save(name, entry): string | number;
+> ```
 
-- `save (name:string, entry:any):string|number`
 
-  Saves a new entry to the data store.<br/>@param name The entity/table name.<br/>@param entry The JavaScript object to save.<br/>@returns The ID of the newly created entry (string or number).
+> Saves a new entry to the data store.
 
-<hr/>
+> **Parameters**
 
-#### upsert
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `entry` | `any` | The JavaScript object to save. |
+> 
+> ###### Returns
+> 
+> `string` \| `number`
+> 
+> The ID of the newly created entry (string or number).
+> 
+> ##### upsert()
+> 
+> > ```ts
+> > static upsert(name, entry): void;
+> > ```
+> 
+> 
+> > Inserts a new entry or updates an existing one if the ID is present.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `entry` | `any` | The JavaScript object to insert/update. |
 
-- `upsert (name:string, entry:any):void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### update() > ```ts static update(name, entry): void; ``` Updates an existing entry.
+> :::
 
-  Inserts a new entry or updates an existing one if the ID is present.<br/>@param name The entity/table name.<br/>@param entry The JavaScript object to insert/update.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `entry` | `any` | The JavaScript object with the ID and updated data. |
 
-#### update
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### list() > ```ts static list(name, options?): any[]; ``` Lists entries based on optional filtering, sorting, and pagination options.
+> :::
 
-- `update (name:string, entry:any):void`
+> **Parameters**
 
-  Updates an existing entry.<br/>@param name The entity/table name.<br/>@param entry The JavaScript object with the ID and updated data.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> An array of JavaScript objects.
+> 
+> ##### count()
+> 
+> > ```ts
+> > static count(name, options?): number;
+> > ```
+> 
+> 
+> > Counts the number of entries based on optional filtering options.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The count of matching entries.
+> :::
 
-#### list
+##### get()
 
-- `list (name:string, options?:Options):any[]`
+> ```ts
+> static get(name, id): any;
+> ```
 
-  Lists entries based on optional filtering, sorting, and pagination options.<br/>@param name The entity/table name.<br/>@param options Optional \{@link Options\} for query execution.<br/>@returns An array of JavaScript objects.
 
-<hr/>
+> Retrieves a single entry by its ID.
 
-#### count
+> **Parameters**
 
-- `count (name:string, options?:Options):number`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `id` | `any` | The ID of the entry. |
 
-  Counts the number of entries based on optional filtering options.<br/>@param name The entity/table name.<br/>@param options Optional \{@link Options\} for query execution.<br/>@returns The count of matching entries.
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The entry object, or undefined if not found.
+> :::
 
-<hr/>
+##### remove()
 
-#### get
+> ```ts
+> static remove(name, id): void;
+> ```
 
-- `get (name:string, id:any):any|undefined`
 
-  Retrieves a single entry by its ID.<br/>@param name The entity/table name.<br/>@param id The ID of the entry.<br/>@returns The entry object, or undefined if not found.
+> Deletes an entry by its ID.
 
-<hr/>
+> **Parameters**
 
-#### remove
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The entity/table name. |
+> | `id` | `any` | The ID of the entry to remove. |
 
-- `remove (name:string, id:any):void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### find() > ```ts static find( name, example, limit?, offset?): any[]; ``` Finds entries matching an example object (query-by-example).
+> :::
 
-  Deletes an entry by its ID.<br/>@param name The entity/table name.<br/>@param id The ID of the entry to remove.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `name` | `string` | `undefined` | The entity/table name. |
+> | `example` | `any` | `undefined` | An object containing properties to match. |
+> | `limit` | `number` | `100` | Maximum number of results to return. |
+> | `offset` | `number` | `0` | Number of results to skip. |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> An array of matching JavaScript objects.
+> 
+> ##### query()
+> 
+> > ```ts
+> > static query( query, parameters?, limit?, offset?): any[];
+> > ```
+> 
+> 
+> > Queries all entries for a given script with pagination.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `query` | `string` | `undefined` | The query script. |
+> | `parameters?` | ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](query.md#typedqueryparameter) \| [`NamedQueryParameter`](query.md#namedqueryparameter))[] | `undefined` | - |
+> | `limit?` | `number` | `100` | Maximum number of results to return. |
+> | `offset?` | `number` | `0` | Number of results to skip. |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> An array of JavaScript objects.
+> 
+> ##### queryNative()
+> 
+> > ```ts
+> > static queryNative( query, parameters?, limit?, offset?): any[];
+> > ```
+> 
+> 
+> > Queries all entries for a given entity name without pagination.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Default value | Description |
+> | ------ | ------ | ------ | ------ |
+> | `query` | `string` | `undefined` | The entity/table name. |
+> | `parameters?` | ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](query.md#typedqueryparameter) \| [`NamedQueryParameter`](query.md#namedqueryparameter))[] | `undefined` | - |
+> | `limit?` | `number` | `100` | - |
+> | `offset?` | `number` | `0` | - |
+> 
+> ###### Returns
+> 
+> `any`[]
+> 
+> An array of all JavaScript objects.
+> 
+> ##### getEntityName()
+> 
+> > ```ts
+> > static getEntityName(name): string;
+> > ```
+> 
+> 
+> > Gets the name of the entity associated with the store name.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `name` | `string` |
 
-#### find
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getTableName() > ```ts static getTableName(name): string; ``` Gets the underlying database table name for the entity.
+> :::
 
-- `find (name:string, example:any, limit:number=100, offset:number=0):any[]`
+> **Parameters**
 
-  Finds entries matching an example object (query-by-example).<br/>@param name The entity/table name.<br/>@param example An object containing properties to match.<br/>@param limit Maximum number of results to return.<br/>@param offset Number of results to skip.<br/>@returns An array of matching JavaScript objects.
+> | Parameter | Type |
+> | ------ | ------ |
+> | `name` | `string` |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getIdName() > ```ts static getIdName(name): string; ``` Gets the property name used as the ID field in the entity object.
+> :::
 
-#### query
+> **Parameters**
 
-- `query (query:string, parameters?:(string|number|boolean|Date|TypedQueryParameter|NamedQueryParameter):any[]`
+> | Parameter | Type |
+> | ------ | ------ |
+> | `name` | `string` |
 
-  Queries all entries for a given script with pagination.<br/>@param query The query script.<br/>@param limit Maximum number of results to return.<br/>@param offset Number of results to skip.<br/>@returns An array of JavaScript objects.
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ##### getIdColumn() > ```ts static getIdColumn(name): string; ``` Gets the underlying database column name used for the ID field.
+> :::
 
-<hr/>
+> **Parameters**
 
-#### queryNative
+> | Parameter | Type |
+> | ------ | ------ |
+> | `name` | `string` |
 
-- `queryNative (query:string, parameters?:(string|number|boolean|Date|TypedQueryParameter|NamedQueryParameter):any[]`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ## Interfaces
+> :::
 
-  Queries all entries for a given entity name without pagination.<br/>@param query The entity/table name.<br/>@returns An array of all JavaScript objects.
+### Condition
 
-<hr/>
 
-#### getEntityName
+Represents a single condition for filtering data.
 
-- `getEntityName (name:string):string`
+#### Properties
 
-  Gets the name of the entity associated with the store name.
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `propertyName` | `string` | src/db/store.ts:30 |
+|  `operator` | [`Operator`](#operator) | src/db/store.ts:31 |
+|  `value` | `any` | src/db/store.ts:32 |
 
-<hr/>
+***
 
-#### getTableName
+### Sort
 
-- `getTableName (name:string):string`
 
-  Gets the underlying database table name for the entity.
+Represents a single sorting instruction.
 
-<hr/>
+#### Properties
 
-#### getIdName
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `propertyName` | `string` | src/db/store.ts:39 |
+|  `direction` | [`Direction`](#direction) | src/db/store.ts:40 |
 
-- `getIdName (name:string):string`
+***
 
-  Gets the property name used as the ID field in the entity object.
+### Options
 
-<hr/>
 
-#### getIdColumn
+Defines optional parameters for list and count operations.
 
-- `getIdColumn (name:string):string`
+#### Properties
 
-  Gets the underlying database column name used for the ID field.
-
-<hr/>
-
-#### parseResult
-
-- `parseResult (result:any):any`
-
-  Parse a JSON string.<br/>Returns undefined for null/empty inputs.
-
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `conditions?` | [`Condition`](#condition)[] | src/db/store.ts:47 |
+|  `sorts?` | [`Sort`](#sort)[] | src/db/store.ts:48 |
+|  `limit?` | `number` | src/db/store.ts:49 |
+|  `offset?` | `number` | src/db/store.ts:50 |
+|  `language?` | `string` | src/db/store.ts:51 |

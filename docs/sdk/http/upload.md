@@ -1,170 +1,278 @@
-# API: upload
+# http/upload
 
-> Source: `http/upload.ts`
+> [!tip]
+> Auto-generated from
+> - source: [http/upload.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/upload.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides a static façade (`Upload` class) for checking and parsing
 multipart/form-data HTTP requests, typically used for file uploads.
+/
+import { InputStream } from "@aerokit/sdk/io/streams"
+import { Bytes } from "@aerokit/sdk/io/bytes"
 
-## Usage
-```javascript
-import { upload, request, response } from "@aerokit/sdk/http";
+## Table of Contents
 
-if (request.getMethod() === "POST") {
-    if (upload.isMultipartContent()) {
-        const fileItems = upload.parseRequest();
-        for (let i = 0; i < fileItems.size(); i++) {
-            const fileItem = fileItems.get(i);
-            const contentType = fileItem.getContentType();
-            console.log(`Content Type: ${contentType}`);
-            console.log(`Filename: ${fileItem.getOriginalFilename()}`);
-            // console.log(`Text: ${fileItem.getText()}`);
-
-            response.setContentType(contentType);
-            response.write(fileItem.getBytesNative());
-        }
-    } else {
-        response.println("The request's content must be 'multipart'");
-    }
-} else if (request.getMethod() === "GET") {
-    response.println("Use POST request.");
-}
-
-response.flush();
-response.close();
-
-
-// -----------
-// upload.html
-// -----------
-
-<!DOCTYPE html>
-<html>
-    <body>
-        <form action="/services/js/http-tests/upload/upload.js" method="post" enctype="multipart/form-data">
-            <label for="file">Filename:</label>
-            <input type="file" name="file" id="file" multiple>
-            <br>
-            <input type="submit" name="submit" value="Submit">
-        </form>
-    </body>
-</html>
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Upload](#upload)
+- [Returns](#returns)
+  - [FileItems](#fileitems)
+- [Parameters](#parameters)
+  - [FileItem](#fileitem)
+- [Parameters](#parameters)
 
 ## Classes
 
 ### Upload
 
-The static Upload class provides methods to determine if a request contains<br/>multipart content and to parse that content into file items.
+
+The static Upload class provides methods to determine if a request contains
+multipart content and to parse that content into file items.
+
+## Returns
+
+[`Upload`](#upload)
 
 #### Methods
 
-<hr/>
+##### isMultipartContent()
 
-#### isMultipartContent
+> ```ts
+> static isMultipartContent(): boolean;
+> ```
 
-- `isMultipartContent ():boolean`
 
-  Checks if the current incoming HTTP request contains multipart content<br/>(e.g., from an HTML form with `enctype="multipart/form-data"`).<br/>@returns True if the request is multipart, false otherwise.
+> Checks if the current incoming HTTP request contains multipart content
+> (e.g., from an HTML form with `enctype="multipart/form-data"`).
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `boolean`
+> > - **Description**: True if the request is multipart, false otherwise.
+> > :::
 
-#### parseRequest
+> ##### parseRequest()
 
-- `parseRequest ():FileItems`
+> > ```ts
+> > static parseRequest(): FileItems;
+> > ```
 
-  Parses the incoming multipart request content into a collection of file items.<br/>This operation typically consumes the request body.<br/>@returns A FileItems object representing all parts (files and form fields) of the request.
 
-### FileItems
+> Parses the incoming multipart request content into a collection of file items.
+> This operation typically consumes the request body.
 
-Represents a collection of uploaded file and form field items parsed from a multipart request.
+> ###### Returns
 
-#### Methods
+> [`FileItems`](#fileitems)
 
-<hr/>
+> A FileItems object representing all parts (files and form fields) of the request.
 
-#### get
+> ***
 
-- `get (index:number):FileItem`
+> ### FileItems
 
-  Retrieves a specific item (file or form field) by its index in the collection.<br/>@param index The zero-based index of the item.<br/>@returns A FileItem object representing the item at the specified index.
+@param native The native Java collection object holding the file items.
+/
+    constructor(native: any) {
+        this.native = native;
+    }
 
-<hr/>
 
-#### size
+Checks if the current incoming HTTP request contains multipart content
+(e.g., from an HTML form with `enctype="multipart/form-data"`).
+@returns True if the request is multipart, false otherwise.
+/
+    public static isMultipartContent(): boolean {
+        return HttpUploadFacade.isMultipartContent();
+    }
 
-- `size ():number`
 
-  Returns the total number of items (files and form fields) in the collection.<br/>@returns The size of the collection.
+
+> Represents a collection of uploaded file and form field items parsed from a multipart request.
+
+> ## Parameters
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `native` | `any` | The native Java collection object holding the file items. |
+
+> ###### Returns
+
+> [`FileItems`](#fileitems)
+
+> #### Methods
+
+> ##### get()
+
+> > ```ts
+> > get(index): FileItem;
+> > ```
+
+
+> Retrieves a specific item (file or form field) by its index in the collection.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `index` | `number` | The zero-based index of the item. |
+> 
+> ###### Returns
+> 
+> [`FileItem`](#fileitem)
+> 
+> A FileItem object representing the item at the specified index.
+> 
+> ##### size()
+> 
+> > ```ts
+> > size(): number;
+> > ```
+> 
+> 
+> Returns the total number of items (files and form fields) in the collection.
+
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The size of the collection. ***
+> :::
 
 ### FileItem
 
-Represents a single item (either an uploaded file or a regular form field)<br/>within a multipart request.
+
+Represents a single item (either an uploaded file or a regular form field)
+within a multipart request.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `native` | `any` | The native Java object representing the file item. |
+
+###### Returns
+
+[`FileItem`](#fileitem)
 
 #### Methods
 
-<hr/>
+##### getName()
 
-#### getName
+> ```ts
+> getName(): string;
+> ```
 
-- `getName ():string`
 
-  For a file upload, returns the original filename as reported by the client.<br/>For a regular form field, this is typically null or undefined.<br/>@returns The original filename string.
+For a file upload, returns the original filename as reported by the client.
+For a regular form field, this is typically null or undefined.
 
-<hr/>
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The original filename string.
+> :::
 
-#### getContentType
+##### getContentType()
 
-- `getContentType ():string`
+> ```ts
+> getContentType(): string;
+> ```
 
-  Returns the MIME type of the uploaded file or content part.<br/>@returns The content type string (e.g., 'image/png', 'text/plain').
 
-<hr/>
+Returns the MIME type of the uploaded file or content part.
 
-#### isEmpty
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The content type string (e.g., 'image/png', 'text/plain').
+> :::
 
-- `isEmpty ():boolean`
+##### isEmpty()
 
-  Checks if the uploaded item is empty (e.g., a file upload with zero bytes).<br/>@returns True if the item is empty, false otherwise.
+> ```ts
+> isEmpty(): boolean;
+> ```
 
-<hr/>
 
-#### getSize
+Checks if the uploaded item is empty (e.g., a file upload with zero bytes).
 
-- `getSize ():number`
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the item is empty, false otherwise.
+> :::
 
-  Returns the size of the uploaded item in bytes.<br/>@returns The size as a number.
+##### getSize()
 
-<hr/>
+> ```ts
+> getSize(): number;
+> ```
 
-#### getBytes
 
-- `getBytes ():any[]`
+Returns the size of the uploaded item in bytes.
 
-  Retrieves the content of the file item as a JavaScript array of bytes.<br/>This uses a utility (`Bytes.toJavaScriptBytes`) to convert the native Java byte array.<br/>@returns An array of bytes (`any[]`).
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The size as a number.
+> :::
 
-<hr/>
+##### getBytes()
 
-#### getBytesNative
+> ```ts
+> getBytes(): any[];
+> ```
 
-- `getBytesNative ():any[]`
 
-  Retrieves the content of the file item as the native Java byte array.<br/>@returns The native byte array (`any[]`).
+Retrieves the content of the file item as a JavaScript array of bytes.
+This uses a utility (`Bytes.toJavaScriptBytes`) to convert the native Java byte array.
 
-<hr/>
+###### Returns
 
-#### getText
+`any`[]
 
-- `getText ():string`
+An array of bytes (`any[]`).
 
-  Retrieves the content of the file item as a string.<br/>Note: This assumes the content is text and may not handle all encodings correctly.<br/>It relies on JavaScript's `String.fromCharCode.apply` for conversion.<br/>@returns The content as a string.
+##### getBytesNative()
 
-<hr/>
+> ```ts
+> getBytesNative(): any[];
+> ```
 
-#### getInputStream
 
-- `getInputStream ():InputStream`
+Retrieves the content of the file item as the native Java byte array.
 
-  Gets an input stream for reading the content of the file item.<br/>This is useful for handling large files without loading the entire content into memory.<br/>@returns An InputStream object wrapping the native input stream.
+###### Returns
 
+`any`[]
+
+The native byte array (`any[]`).
+
+##### getText()
+
+> ```ts
+> getText(): string;
+> ```
+
+
+Retrieves the content of the file item as a string.
+Note: This assumes the content is text and may not handle all encodings correctly.
+It relies on JavaScript's `String.fromCharCode.apply` for conversion.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The content as a string.
+> :::
+
+##### getInputStream()
+
+> ```ts
+> getInputStream(): InputStream;
+> ```
+
+
+Gets an input stream for reading the content of the file item.
+This is useful for handling large files without loading the entire content into memory.
+
+> ::: info Returns
+> - **Type**: `InputStream`
+> - **Description**: An InputStream object wrapping the native input stream.
+> :::

@@ -1,201 +1,143 @@
-# API Documentation
-
-## BPM
-
-- [deployer](./bpm/deployer.md)
-- [process](./bpm/process.md)
-- [tasks](./bpm/tasks.md)
-- [tracer](./bpm/tracer.md)
-- [values](./bpm/values.md)
-
-## CACHE
-
-- [cache](./cache/cache.md)
-
-## CMS
-
-- [cmis](./cms/cmis.md)
-
-## COMPONENT
-
-- [decorators](./component/decorators.md)
-
-## CORE
-
-- [configurations](./core/configurations.md)
-- [context](./core/context.md)
-- [env](./core/env.md)
-- [globals](./core/globals.md)
-
-## DB
-
-- [dao](./db/dao.md)
-- [database](./db/database.md)
-- [decorators](./db/decorators.md)
-- [insert](./db/insert.md)
-- [orm](./db/orm.md)
-- [ormstatements](./db/ormstatements.md)
-- [procedure](./db/procedure.md)
-- [query](./db/query.md)
-- [repository](./db/repository.md)
-- [sequence](./db/sequence.md)
-- [sql](./db/sql.md)
-- [store](./db/store.md)
-- [translator](./db/translator.md)
-- [update](./db/update.md)
-
-## ERRORS
-
-- [ForbiddenError](./http/errors/ForbiddenError.md)
-- [ValidationError](./http/errors/ValidationError.md)
-
-## ETCD
-
-- [client](./etcd/client.md)
-
-## EXTENSIONS
-
-- [decorators](./extensions/decorators.md)
-- [extensions](./extensions/extensions.md)
-
-## GIT
-
-- [client](./git/client.md)
-
-## HTTP
-
-- [client-async](./http/client-async.md)
-- [client](./http/client.md)
-- [decorators](./http/decorators.md)
-- [errors](./http/errors.md)
-- [request](./http/request.md)
-- [response](./http/response.md)
-- [rs](./http/rs.md)
-- [session](./http/session.md)
-- [upload](./http/upload.md)
-- [utils](./http/utils.md)
-
-## INDEXING
-
-- [searcher](./indexing/searcher.md)
-- [writer](./indexing/writer.md)
-
-## INTEGRATIONS
-
-- [integrations](./integrations/integrations.md)
-
-## IO
-
-- [bytes](./io/bytes.md)
-- [files](./io/files.md)
-- [image](./io/image.md)
-- [streams](./io/streams.md)
-- [zip](./io/zip.md)
-
-## JOB
-
-- [decorators](./job/decorators.md)
-- [scheduler](./job/scheduler.md)
-
-## JUNIT
-
-- [junit](./junit/junit.md)
-
-## KAFKA
-
-- [consumer](./kafka/consumer.md)
-- [producer](./kafka/producer.md)
-
-## LOG
-
-- [logging](./log/logging.md)
-
-## MAIL
-
-- [client](./mail/client.md)
-
-## MESSAGING
-
-- [consumer](./messaging/consumer.md)
-- [decorators](./messaging/decorators.md)
-- [producer](./messaging/producer.md)
-
-## MONGODB
-
-- [client](./mongodb/client.md)
-- [dao](./mongodb/dao.md)
-
-## NET
-
-- [decorators](./net/decorators.md)
-- [soap](./net/soap.md)
-- [websockets](./net/websockets.md)
-
-## PDF
-
-- [pdf](./pdf/pdf.md)
-
-## PLATFORM
-
-- [command](./platform/command.md)
-- [engines](./platform/engines.md)
-- [lifecycle](./platform/lifecycle.md)
-- [os](./platform/os.md)
-- [problems](./platform/problems.md)
-- [registry](./platform/registry.md)
-- [repository](./platform/repository.md)
-- [workspace](./platform/workspace.md)
-
-## QLDB
-
-- [qldb](./qldb/qldb.md)
-
-## RABBITMQ
-
-- [consumer](./rabbitmq/consumer.md)
-- [producer](./rabbitmq/producer.md)
-
-## REDIS
-
-- [client](./redis/client.md)
-
-## RS
-
-- [resource-common](./http/rs/resource-common.md)
-- [resource-http-controller](./http/rs/resource-http-controller.md)
-- [resource-mappings](./http/rs/resource-mappings.md)
-- [resource-method](./http/rs/resource-method.md)
-- [resource](./http/rs/resource.md)
-
-## SECURITY
-
-- [decorators](./security/decorators.md)
-- [oauth](./security/oauth.md)
-- [user](./security/user.md)
-
-## TEMPLATE
-
-- [engines](./template/engines.md)
-
-## UTILS
-
-- [alphanumeric](./utils/alphanumeric.md)
-- [base64](./utils/base64.md)
-- [converter](./utils/converter.md)
-- [digest](./utils/digest.md)
-- [escape](./utils/escape.md)
-- [hex](./utils/hex.md)
-- [jsonpath](./utils/jsonpath.md)
-- [qrcode](./utils/qrcode.md)
-- [url](./utils/url.md)
-- [utf8](./utils/utf8.md)
-- [uuid](./utils/uuid.md)
-- [xml](./utils/xml.md)
-
-## WRAPPERS
-
-- [onClose](./net/wrappers/onClose.md)
-- [onError](./net/wrappers/onError.md)
-- [onMessage](./net/wrappers/onMessage.md)
-- [onOpen](./net/wrappers/onOpen.md)
-
+**Aerokit SDK**
+
+***
+
+# Aerokit SDK
+
+## Modules
+
+| Module | Description |
+| ------ | ------ |
+| [bpm/deployer](bpm/deployer.md) | - |
+| [bpm](bpm.md) | - |
+| [bpm/process](bpm/process.md) | - |
+| [bpm/tasks](bpm/tasks.md) | - |
+| [bpm/tracer](bpm/tracer.md) | - |
+| [bpm/values](bpm/values.md) | - |
+| [cache/cache](cache/cache.md) | - |
+| [cache](cache.md) | - |
+| [cms/cmis](cms/cmis.md) | - |
+| [cms](cms.md) | - |
+| [component/decorators](component/decorators.md) | - |
+| [component](component.md) | - |
+| [core/configurations](core/configurations.md) | - |
+| [core/context](core/context.md) | - |
+| [core/env](core/env.md) | - |
+| [core/globals](core/globals.md) | - |
+| [core](core.md) | - |
+| [db/dao](db/dao.md) | - |
+| [db/database](db/database.md) | - |
+| [db/decorators](db/decorators.md) | - |
+| [db](db.md) | - |
+| [db/insert](db/insert.md) | - |
+| [db/orm](db/orm.md) | - |
+| [db/ormstatements](db/ormstatements.md) | - |
+| [db/procedure](db/procedure.md) | - |
+| [db/query](db/query.md) | - |
+| [db/repository](db/repository.md) | - |
+| [db/sequence](db/sequence.md) | - |
+| [db/sql](db/sql.md) | - |
+| [db/store](db/store.md) | - |
+| [db/translator](db/translator.md) | - |
+| [db/update](db/update.md) | - |
+| [etcd/client](etcd/client.md) | - |
+| [etcd](etcd.md) | - |
+| [extensions/decorators](extensions/decorators.md) | - |
+| [extensions/extensions](extensions/extensions.md) | - |
+| [extensions](extensions.md) | - |
+| [git/client](git/client.md) | - |
+| [git](git.md) | - |
+| [http/client-async](http/client-async.md) | - |
+| [http/client](http/client.md) | - |
+| [http/decorators](http/decorators.md) | - |
+| [http/errors](http/errors.md) | - |
+| [http/errors/ForbiddenError](http/errors/ForbiddenError.md) | - |
+| [http/errors/ValidationError](http/errors/ValidationError.md) | - |
+| [http](http.md) | - |
+| [http/request](http/request.md) | - |
+| [http/response](http/response.md) | - |
+| [http/rs](http/rs.md) | - |
+| [http/rs/resource-common](http/rs/resource-common.md) | - |
+| [http/rs/resource-http-controller](http/rs/resource-http-controller.md) | - |
+| [http/rs/resource-mappings](http/rs/resource-mappings.md) | - |
+| [http/rs/resource-method](http/rs/resource-method.md) | - |
+| [http/rs/resource](http/rs/resource.md) | - |
+| [http/session](http/session.md) | - |
+| [http/upload](http/upload.md) | - |
+| [http/utils](http/utils.md) | - |
+| [index](index-1.md) | - |
+| [indexing](indexing.md) | - |
+| [indexing/searcher](indexing/searcher.md) | - |
+| [indexing/writer](indexing/writer.md) | - |
+| [integrations](integrations.md) | - |
+| [integrations/integrations](integrations/integrations.md) | - |
+| [io/bytes](io/bytes.md) | - |
+| [io/files](io/files.md) | - |
+| [io/image](io/image.md) | - |
+| [io](io.md) | - |
+| [io/streams](io/streams.md) | - |
+| [io/zip](io/zip.md) | - |
+| [job/decorators](job/decorators.md) | - |
+| [job](job.md) | - |
+| [job/scheduler](job/scheduler.md) | - |
+| [junit](junit.md) | - |
+| [junit/junit](junit/junit.md) | - |
+| [kafka/consumer](kafka/consumer.md) | - |
+| [kafka](kafka.md) | - |
+| [kafka/producer](kafka/producer.md) | - |
+| [log](log.md) | - |
+| [log/logging](log/logging.md) | - |
+| [mail/client](mail/client.md) | - |
+| [mail](mail.md) | - |
+| [messaging/consumer](messaging/consumer.md) | - |
+| [messaging/decorators](messaging/decorators.md) | - |
+| [messaging](messaging.md) | - |
+| [messaging/producer](messaging/producer.md) | - |
+| [mongodb/client](mongodb/client.md) | - |
+| [mongodb/dao](mongodb/dao.md) | - |
+| [mongodb](mongodb.md) | - |
+| [net/decorators](net/decorators.md) | - |
+| [net](net.md) | - |
+| [net/soap](net/soap.md) | - |
+| [net/websockets](net/websockets.md) | - |
+| [pdf](pdf.md) | - |
+| [pdf/pdf](pdf/pdf.md) | - |
+| [platform/command](platform/command.md) | - |
+| [platform/engines](platform/engines.md) | - |
+| [platform](platform.md) | - |
+| [platform/lifecycle](platform/lifecycle.md) | - |
+| [platform/os](platform/os.md) | - |
+| [platform/problems](platform/problems.md) | - |
+| [platform/registry](platform/registry.md) | - |
+| [platform/repository](platform/repository.md) | - |
+| [platform/workspace](platform/workspace.md) | - |
+| [qldb](qldb.md) | - |
+| [qldb/qldb](qldb/qldb.md) | - |
+| [rabbitmq/consumer](rabbitmq/consumer.md) | - |
+| [rabbitmq](rabbitmq.md) | - |
+| [rabbitmq/producer](rabbitmq/producer.md) | - |
+| [redis/client](redis/client.md) | - |
+| [redis](redis.md) | - |
+| [security/decorators](security/decorators.md) | - |
+| [security](security.md) | - |
+| [security/oauth](security/oauth.md) | - |
+| [security/user](security/user.md) | - |
+| [template/engines](template/engines.md) | - |
+| [template](template.md) | - |
+| [utils/alphanumeric](utils/alphanumeric.md) | - |
+| [utils/base64](utils/base64.md) | - |
+| [utils/converter](utils/converter.md) | - |
+| [utils/digest](utils/digest.md) | - |
+| [utils/escape](utils/escape.md) | - |
+| [utils/hex](utils/hex.md) | - |
+| [utils](utils.md) | - |
+| [utils/jsonpath](utils/jsonpath.md) | - |
+| [utils/qrcode](utils/qrcode.md) | - |
+| [utils/url](utils/url.md) | - |
+| [utils/utf8](utils/utf8.md) | - |
+| [utils/uuid](utils/uuid.md) | - |
+| [utils/xml](utils/xml.md) | - |
+| [net/wrappers/onClose](net/wrappers/onClose.md) | - |
+| [net/wrappers/onError](net/wrappers/onError.md) | - |
+| [net/wrappers/onMessage](net/wrappers/onMessage.md) | - |
+| [net/wrappers/onOpen](net/wrappers/onOpen.md) | - |

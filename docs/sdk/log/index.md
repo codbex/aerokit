@@ -1,3 +1,0 @@
-# log
-
-- [logging](logging.md)

@@ -1,46 +1,90 @@
-# API: tracer
+# bpm/tracer
 
-> Source: `bpm/tracer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [bpm/tracer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/tracer.ts)
+> - version: 1.0.0
+
+
+## Overview
+
+The Tracer API provides...
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Tracer](#tracer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Tracer
 
+
+## Returns
+
+[`Tracer`](#tracer)
+
 #### Methods
 
-<hr/>
+##### log()
 
-#### log
+> ```ts
+> log(message): void;
+> ```
 
-- `log (message:string):string)`
 
-<hr/>
+> **Parameters**
 
-#### warn
+> | Parameter | Type |
+> | ------ | ------ |
+> | `message` | `string` |
 
-- `warn (message:string):string)`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### warn() > ```ts warn(message): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### error
+> | Parameter | Type |
+> | ------ | ------ |
+> | `message` | `string` |
 
-- `error (message:string):string)`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### error() > ```ts error(message): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### complete
+> | Parameter | Type |
+> | ------ | ------ |
+> | `message` | `string` |
 
-- `complete (message?:string):string)`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### complete() > ```ts complete(message?): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### fail
+> | Parameter | Type |
+> | ------ | ------ |
+> | `message?` | `string` |
 
-- `fail (message?:string):string)`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### fail() > ```ts fail(message?): void; ```
+> > :::
 
-<hr/>
+> **Parameters**
 
-#### getId
+> | Parameter | Type |
+> | ------ | ------ |
+> | `message?` | `string` |
 
-- `getId ():string`
-
+> ::: info Returns
+> - **Type**: `void`
+> :::

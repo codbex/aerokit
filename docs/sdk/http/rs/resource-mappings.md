@@ -1,72 +1,187 @@
-# API: resource-mappings
+# http/rs/resource-mappings
 
-> Source: `http/rs/resource-mappings.ts`
+> [!tip]
+> Auto-generated from
+> - source: [http/rs/resource-mappings.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-mappings.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 The ResourceMappings class abstracts the mappings between resource URL path templates
 and their corresponding resource handler specifications. It acts as the configuration
 store for the HttpController.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [ResourceMappings](#resourcemappings)
+- [Parameters](#parameters)
+
 ## Classes
 
 ### ResourceMappings
 
-The ResourceMappings class abstracts the mappings between resource URL path templates<br/>and their corresponding resource handler specifications. It acts as the configuration<br/>store for the HttpController.
+
+The ResourceMappings class abstracts the mappings between resource URL path templates
+and their corresponding resource handler specifications. It acts as the configuration
+store for the HttpController.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `oConfiguration` | `any` | Configuration object defining initial resource paths and their handlers. |
+| `controller` | `any` | The HttpController instance, for which this ResourceMappings handles configuration. |
+
+###### Returns
+
+[`ResourceMappings`](#resourcemappings)
+
+#### Properties
+
+| Property | Type | Default value | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `resources` | `object` | `{}` | src/http/rs/resource-mappings.ts:10 |
+|  `controller` | `any` | `undefined` | src/http/rs/resource-mappings.ts:11 |
+|  `execute` | `any` | `undefined` | src/http/rs/resource-mappings.ts:12 |
 
 #### Methods
 
-<hr/>
+##### path()
 
-#### path
+> ```ts
+> path(sPath, oConfiguration?): Resource;
+> ```
 
-- `path (sPath:string, oConfiguration?:any):Resource`
 
-  Creates or retrieves a Resource object corresponding to the given path.<br/>The second, optional argument can be used to initialize the resource.<br/><br/>@param sPath The URL path template for the resource (e.g., "users/\{id\}").<br/>@param oConfiguration Optional configuration object for initial resource setup.<br/>@returns The created or existing Resource instance.
+> Creates or retrieves a Resource object corresponding to the given path.
+> The second, optional argument can be used to initialize the resource.
 
-<hr/>
+> **Parameters**
 
-#### resourcePath
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sPath` | `string` | The URL path template for the resource (e.g., "users/{id}"). |
+> | `oConfiguration?` | `any` | Optional configuration object for initial resource setup. |
+> 
+> ###### Returns
+> 
+> [`Resource`](resource.md#resource)
+> 
+> The created or existing Resource instance.
+> 
+> ##### resourcePath()
+> 
+> > ```ts
+> > resourcePath(sPath, oConfiguration?): Resource;
+> > ```
+> 
+> 
+> > Alias for path().
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `sPath` | `string` |
+> | `oConfiguration?` | `any` |
+> 
+> ###### Returns
+> 
+> [`Resource`](resource.md#resource)
+> 
+> ##### resource()
+> 
+> > ```ts
+> > resource(sPath, oConfiguration?): Resource;
+> > ```
+> 
+> 
+> > Alias for path().
+> 
+> > **Parameters**
+> 
+> | Parameter | Type |
+> | ------ | ------ |
+> | `sPath` | `string` |
+> | `oConfiguration?` | `any` |
+> 
+> ###### Returns
+> 
+> [`Resource`](resource.md#resource)
+> 
+> ##### configuration()
+> 
+> > ```ts
+> > configuration(): object;
+> > ```
+> 
+> 
+> > Returns the compiled configuration object for all resources managed by this ResourceMappings.
+> > The configuration is structured to be consumed by the HttpController's routing logic.
+> 
+> > > ::: info Returns
+> > > - **Type**: `object`
+> > > - **Description**: ##### readonly() > ```ts readonly(): this; ``` Removes all but GET resource handlers from all managed resources, making them read-only.
+> > > :::
+> 
+> > > ::: info Returns
+> > > - **Type**: `this`
+> > > - **Description**: The ResourceMappings instance for method chaining.
+> > > :::
+> 
+> > ##### disable()
+> 
+> > > ```ts
+> > > disable(
+> > >    sPath, 
+> > >    sVerb, 
+> > >    arrConsumes, 
+> > >    arrProduces): this;
+> > > ```
+> 
+> 
+> > Disables resource handling specifications matching the arguments, effectively removing them from this API.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sPath` | `string` | The path of the resource. |
+> | `sVerb` | `string` | The HTTP verb (e.g., 'get', 'post'). |
+> | `arrConsumes` | `string`[] | Array of consumed media types. |
+> | `arrProduces` | `string`[] | Array of produced media types. |
 
-- `resourcePath (sPath:string, oConfiguration?:any):Resource`
+> ::: info Returns
+> - **Type**: `this`
+> - **Description**: The ResourceMappings instance for method chaining.
+> :::
 
-  Alias for path().
+##### find()
 
-<hr/>
+> ```ts
+> find(
+>    sPath, 
+>    sVerb, 
+>    arrConsumes, 
+>    arrProduces): any;
+> ```
 
-#### resource
 
-- `resource (sPath:string, oConfiguration?:any):Resource`
+> Provides a reference to a handler specification matching the supplied arguments.
 
-  Alias for path().
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sPath` | `string` | The path of the resource. |
+> | `sVerb` | `string` | The HTTP verb (e.g., 'get', 'post'). |
+> | `arrConsumes` | `string`[] | Array of consumed media types. |
+> | `arrProduces` | `string`[] | Array of produced media types. |
 
-#### configuration
-
-- `configuration ():any}`
-
-  Returns the compiled configuration object for all resources managed by this ResourceMappings.<br/>The configuration is structured to be consumed by the HttpController's routing logic.
-
-<hr/>
-
-#### readonly
-
-- `readonly ():this`
-
-  Removes all but GET resource handlers from all managed resources, making them read-only.<br/><br/>@returns The ResourceMappings instance for method chaining.
-
-<hr/>
-
-#### disable
-
-- `disable (sPath:string, sVerb:string, arrConsumes:string[], arrProduces:string[]):this`
-
-  Disables resource handling specifications matching the arguments, effectively removing them from this API.<br/><br/>@param sPath The path of the resource.<br/>@param sVerb The HTTP verb (e.g., 'get', 'post').<br/>@param arrConsumes Array of consumed media types.<br/>@param arrProduces Array of produced media types.<br/>@returns The ResourceMappings instance for method chaining.
-
-<hr/>
-
-#### find
-
-- `find (sPath:string, sVerb:string, arrConsumes:string[], arrProduces:string[]):any|undefined`
-
-  Provides a reference to a handler specification matching the supplied arguments.<br/><br/>@param sPath The path of the resource.<br/>@param sVerb The HTTP verb (e.g., 'get', 'post').<br/>@param arrConsumes Array of consumed media types.<br/>@param arrProduces Array of produced media types.<br/>@returns The matching Resource handler specification or undefined.
-
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The matching Resource handler specification or undefined.
+> :::

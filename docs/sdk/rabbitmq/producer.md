@@ -1,33 +1,49 @@
-# API: producer
+# rabbitmq/producer
 
-> Source: `rabbitmq/producer.ts`
+> [!tip]
+> Auto-generated from
+> - source: [rabbitmq/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/producer.ts)
+> - version: 1.0.0
 
-RabbitMQ Producer
 
-This facade provides a static method to send messages to a RabbitMQ queue,
-wrapping the underlying Java implementation provided by the `RabbitMQFacade`.
+## Overview
 
-## Usage
-```javascript
-import { producer } from "@aerokit/sdk/rabbitmq";
-producer.send("rabbitmq-queue", "My RabbitMQ message");
+The Producer API provides...
 
-```
+## Table of Contents
 
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Producer](#producer)
+- [Returns](#returns)
 
 ## Classes
 
 ### Producer
 
-RabbitMQ Producer<br/><br/>This facade provides a static method to send messages to a RabbitMQ queue,<br/>wrapping the underlying Java implementation provided by the `RabbitMQFacade`.
+
+## Returns
+
+[`Producer`](#producer)
 
 #### Methods
 
-<hr/>
+##### send()
 
-#### send
+> ```ts
+> static send(queue, message): void;
+> ```
 
-- `send (queue:string, message:string):void`
 
-  Sends a message to the specified RabbitMQ queue.<br/><br/>@param queue The name of the RabbitMQ queue to send the message to.<br/>@param message The content of the message to be sent (as a string).
+> Sends a message to the specified RabbitMQ queue.
 
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `queue` | `string` | The name of the RabbitMQ queue to send the message to. |
+> | `message` | `string` | The content of the message to be sent (as a string). |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

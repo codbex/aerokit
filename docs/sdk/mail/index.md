@@ -1,3 +1,0 @@
-# mail
-
-- [client](client.md)

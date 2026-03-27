@@ -1,164 +1,213 @@
-# API: websockets
+# net/websockets
 
-> Source: `net/websockets.ts`
+> [!tip]
+> Auto-generated from
+> - source: [net/websockets.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/websockets.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Provides a high-level API for managing WebSocket clients and handling
 lifecycle events within the application context. It wraps the internal Java
 WebsocketsFacade.
+/
+const WebsocketsFacade = Java.type("org.eclipse.dirigible.components.api.websockets.WebsocketsFacade");
 
-## Usage
-```javascript
-import { websockets } from "@aerokit/sdk/net"
+## Table of Contents
 
-const uri = "ws://echo.websocket.org:80/";
-const handler = "my-project/ws-handler"
-
-function initialize() {
-    console.log("Connect to: " + uri);
-    let websocket = websockets.createWebsocket(uri, handler);
-    websocket.send("hello");
-}
-
-initialize();
-
-websockets.getClientByHandler(handler).close();
-
-
-// my-endpoint.websocket
-
-{
-  "handler": "my-project/ws-handler",
-  "endpoint":"my-endpoint",
-  "description":"My Websocket"
-}
-
-
-// ----------------
-// from web browser
-// ----------------
-
-let ws = new WebSocket("ws://localhost:8080/websockets/v4/service/my-endpoint");
-ws.send('hello');
-
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Websockets](#websockets)
+- [Returns](#returns)
 
 ## Classes
 
 ### Websockets
 
-@class Websockets<br/>@description Static utility class for accessing and managing WebSocket functionality.
+
+Websockets
+
+#### Description
+
+Static utility class for accessing and managing WebSocket functionality.
+
+## Returns
+
+[`Websockets`](#websockets)
 
 #### Methods
 
-<hr/>
+##### createWebsocket()
 
-#### createWebsocket
+> ```ts
+> static createWebsocket(uri, handler): WebsocketClient;
+> ```
 
-- `createWebsocket (uri:string, handler:string):WebsocketClient`
 
-  Creates a new WebSocket client connection to a specified URI, managed by a handler script.<br/><br/>@param uri The target WebSocket URI (e.g., 'ws://example.com/socket').<br/>@param handler The identifier or path of the script handling the WebSocket events.<br/>@returns A wrapper object for the new WebSocket session.
+> Creates a new WebSocket client connection to a specified URI, managed by a handler script.
 
-<hr/>
+> **Parameters**
 
-#### getClients
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `uri` | `string` | The target WebSocket URI (e.g., 'ws://example.com/socket'). |
+> | `handler` | `string` | The identifier or path of the script handling the WebSocket events. |
 
-- `getClients ():string}[]`
+> ::: info Returns
+> - **Type**: `WebsocketClient`
+> - **Description**: A wrapper object for the new WebSocket session.
+> :::
 
-  Retrieves a list of all active WebSocket clients.<br/><br/>@returns An array of objects detailing the URI and handler of each client.
+##### getClients()
 
-<hr/>
+> ```ts
+> static getClients(): object[];
+> ```
 
-#### getClient
 
-- `getClient (id:string):WebsocketClient|undefined`
+> Retrieves a list of all active WebSocket clients.
 
-  Retrieves a specific WebSocket client wrapper by its session ID.<br/><br/>@param id The session ID of the client.<br/>@returns The client wrapper or undefined if not found.
+> ###### Returns
 
-<hr/>
+> `object`[]
 
-#### getClientByHandler
+> An array of objects detailing the URI and handler of each client.
 
-- `getClientByHandler (handler:string):WebsocketClient|undefined`
+> ##### getClient()
 
-  Retrieves a specific WebSocket client wrapper by its handler identifier.<br/><br/>@param handler The handler identifier associated with the client.<br/>@returns The client wrapper or undefined if not found.
+> > ```ts
+> > static getClient(id): WebsocketClient;
+> > ```
 
-<hr/>
 
-#### getMessage
+> Retrieves a specific WebSocket client wrapper by its session ID.
 
-- `getMessage ():any`
+> **Parameters**
 
-  Retrieves the message payload from the current context, typically used inside an 'onmessage' handler.<br/><br/>@returns The message content.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `id` | `string` | The session ID of the client. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `WebsocketClient`
+> - **Description**: The client wrapper or undefined if not found.
+> :::
 
-#### getError
+##### getClientByHandler()
 
-- `getError ():any`
+> ```ts
+> static getClientByHandler(handler): WebsocketClient;
+> ```
 
-  Retrieves error details from the current context, typically used inside an 'onerror' handler.<br/><br/>@returns The error object or string.
 
-<hr/>
+> Retrieves a specific WebSocket client wrapper by its handler identifier.
 
-#### getMethod
+> **Parameters**
 
-- `getMethod ():string`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `handler` | `string` | The handler identifier associated with the client. |
 
-  Retrieves the event method name that triggered the current script execution (e.g., "onopen", "onmessage").<br/><br/>@returns The name of the event method.
+> ::: info Returns
+> - **Type**: `WebsocketClient`
+> - **Description**: The client wrapper or undefined if not found.
+> :::
 
-<hr/>
+##### getMessage()
 
-#### isOnOpen
+> ```ts
+> static getMessage(): any;
+> ```
 
-- `isOnOpen ():boolean`
 
-  Checks if the current event context is 'onopen'.<br/>@returns True if the method is 'onopen'.
+Retrieves the message payload from the current context, typically used inside an 'onmessage' handler.
 
-<hr/>
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The message content.
+> :::
 
-#### isOnMessage
+##### getError()
 
-- `isOnMessage ():boolean`
+> ```ts
+> static getError(): any;
+> ```
 
-  Checks if the current event context is 'onmessage'.<br/>@returns True if the method is 'onmessage'.
 
-<hr/>
+Retrieves error details from the current context, typically used inside an 'onerror' handler.
 
-#### isOnError
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The error object or string.
+> :::
 
-- `isOnError ():boolean`
+##### getMethod()
 
-  Checks if the current event context is 'onerror'.<br/>@returns True if the method is 'onerror'.
+> ```ts
+> static getMethod(): string;
+> ```
 
-<hr/>
 
-#### isOnClose
+Retrieves the event method name that triggered the current script execution (e.g., "onopen", "onmessage").
 
-- `isOnClose ():boolean`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The name of the event method.
+> :::
 
-  Checks if the current event context is 'onclose'.<br/>@returns True if the method is 'onclose'.
+##### isOnOpen()
 
-### WebsocketClient
+> ```ts
+> static isOnOpen(): boolean;
+> ```
 
-@class WebsocketClient<br/>@description Wrapper for a native WebSocket session, providing methods to send and close the connection.
 
-#### Methods
+Checks if the current event context is 'onopen'.
 
-<hr/>
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the method is 'onopen'.
+> :::
 
-#### send
+##### isOnMessage()
 
-- `send (text:string):void`
+> ```ts
+> static isOnMessage(): boolean;
+> ```
 
-  Sends a text message over the WebSocket connection.<br/>@param text The message to send.
 
-<hr/>
+Checks if the current event context is 'onmessage'.
 
-#### close
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the method is 'onmessage'.
+> :::
 
-- `close ():void`
+##### isOnError()
 
-  Closes the WebSocket connection.
+> ```ts
+> static isOnError(): boolean;
+> ```
 
+
+Checks if the current event context is 'onerror'.
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the method is 'onerror'.
+> :::
+
+##### isOnClose()
+
+> ```ts
+> static isOnClose(): boolean;
+> ```
+
+
+Checks if the current event context is 'onclose'.
+
+> ::: info Returns
+> - **Type**: `boolean`
+> - **Description**: True if the method is 'onclose'.
+> :::

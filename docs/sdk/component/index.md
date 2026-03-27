@@ -1,3 +1,0 @@
-# component
-
-- [decorators](decorators.md)

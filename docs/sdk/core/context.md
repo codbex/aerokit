@@ -1,46 +1,70 @@
-# API: context
+# core/context
 
-> Source: `core/context.ts`
+> [!tip]
+> Auto-generated from
+> - source: [core/context.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/context.ts)
+> - version: 1.0.0
 
-API Context
-* Provides a static interface for accessing and manipulating key-value pairs in a global, application-wide context.
 
-## Usage
-```javascript
-import { context } from "@aerokit/sdk/core";
-import { response } from "@aerokit/sdk/http";
+## Overview
 
-context.set("attr1", "value1");
-let attr = context.get("attr1");
+The Context API provides...
 
-response.println("[Attribute]: " + attr);
-response.flush();
-response.close();
+## Table of Contents
 
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Context](#context)
+- [Returns](#returns)
 
 ## Classes
 
 ### Context
 
-API Context<br/>* Provides a static interface for accessing and manipulating key-value pairs in a global, application-wide context.
+
+## Returns
+
+[`Context`](#context)
 
 #### Methods
 
-<hr/>
+##### get()
 
-#### get
+> ```ts
+> static get(name): any;
+> ```
 
-- `get (name:string):any|undefined`
 
-  Retrieves the value associated with the specified name from the global context.<br/>@param name The name of the context variable.<br/>@returns The context value, or `undefined` if the name is not found or the value is null.
+> Retrieves the value associated with the specified name from the global context.
 
-<hr/>
+> **Parameters**
 
-#### set
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the context variable. |
 
-- `set (name:string, value:any):void`
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The context value, or `undefined` if the name is not found or the value is null.
+> :::
 
-  Stores a value in the global context under the specified name.<br/>If the name already exists, its value is overwritten.<br/>@param name The name of the context variable.<br/>@param value The value to store.
+##### set()
 
+> ```ts
+> static set(name, value): void;
+> ```
+
+
+> Stores a value in the global context under the specified name.
+> If the name already exists, its value is overwritten.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `name` | `string` | The name of the context variable. |
+> | `value` | `any` | The value to store. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

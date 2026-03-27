@@ -1,109 +1,139 @@
-# API: engines
+# template/engines
 
-> Source: `template/engines.ts`
+> [!tip]
+> Auto-generated from
+> - source: [template/engines.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/template/engines.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 An internal wrapper class that adapts a native template engine implementation.
 It manages the engine instance and optional custom start/end markers.
 
-## Usage
-```javascript
-import { engines } from "@aerokit/sdk/template"
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let mustache = engines.getMustacheEngine();
-let generated = mustache.generate('Hello {{name}}', [['name', 'John Smith']]);
-
-response.println(generated);
-
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [TemplateEngines](#templateengines)
+- [Returns](#returns)
 
 ## Classes
 
-### TemplateEngine
-
-An internal wrapper class that adapts a native template engine implementation.<br/>It manages the engine instance and optional custom start/end markers.
-
-#### Methods
-
-<hr/>
-
-#### generate
-
-- `generate (location:string, template:string, parameters:{[key:string]:any}):string`
-
-  Generates the final output by executing the template with the provided parameters.<br/>Note: Parameters are internally serialized to JSON before being passed to the native engine.<br/><br/>@param location A string identifying the template (used for error reporting/caching, often a file path).<br/>@param template The raw template string content to process.<br/>@param parameters An object containing the context data to be used in the template.<br/>@returns The processed output string.
-
-<hr/>
-
-#### setSm
-
-- `setSm (sm:any):any)`
-
-  Sets a custom start marker for the template engine. This is primarily useful for Mustache.<br/><br/>@param sm The new start marker string.
-
-<hr/>
-
-#### setEm
-
-- `setEm (em:any):any)`
-
-  Sets a custom end marker for the template engine. This is primarily useful for Mustache.<br/><br/>@param em The new end marker string.
-
 ### TemplateEngines
 
-Provides access to various server-side template engines (Velocity, Mustache, JavaScript).<br/>It offers utility methods for generating content from templates directly or from files<br/>stored in the registry.
+Creates an instance of TemplateEngine.
+
+
+
+Provides access to various server-side template engines (Velocity, Mustache, JavaScript).
+It offers utility methods for generating content from templates directly or from files
+stored in the registry.
+
+## Returns
+
+[`TemplateEngines`](#templateengines)
 
 #### Methods
 
-<hr/>
+##### getDefaultEngine()
 
-#### getDefaultEngine
+> ```ts
+> static getDefaultEngine(): TemplateEngine;
+> ```
 
-- `getDefaultEngine ():TemplateEngine`
 
-  Retrieves the default template engine, which is currently the Velocity engine.<br/><br/>@returns The default template engine instance.
+> Retrieves the default template engine, which is currently the Velocity engine.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `TemplateEngine`
+> > - **Description**: The default template engine instance.
+> > :::
 
-#### getMustacheEngine
+> ##### getMustacheEngine()
 
-- `getMustacheEngine ():TemplateEngine`
+> > ```ts
+> > static getMustacheEngine(): TemplateEngine;
+> > ```
 
-  Retrieves the Mustache template engine instance.<br/>Mustache is often used for logic-less templating and uses '\{\{' and '\}\}' as default markers.<br/><br/>@returns The Mustache template engine instance.
 
-<hr/>
+> Retrieves the Mustache template engine instance.
+> Mustache is often used for logic-less templating and uses '{{' and '}}' as default markers.
 
-#### getVelocityEngine
+> > ::: info Returns
+> > - **Type**: `TemplateEngine`
+> > - **Description**: The Mustache template engine instance.
+> > :::
 
-- `getVelocityEngine ():TemplateEngine`
+> ##### getVelocityEngine()
 
-  Retrieves the Velocity template engine instance.<br/>Velocity is often used for complex templating with directives (e.g., #set, #foreach).<br/><br/>@returns The Velocity template engine instance.
+> > ```ts
+> > static getVelocityEngine(): TemplateEngine;
+> > ```
 
-<hr/>
 
-#### getJavascriptEngine
+> Retrieves the Velocity template engine instance.
+> Velocity is often used for complex templating with directives (e.g., #set, #foreach).
 
-- `getJavascriptEngine ():TemplateEngine`
+> > ::: info Returns
+> > - **Type**: `TemplateEngine`
+> > - **Description**: The Velocity template engine instance.
+> > :::
 
-  Retrieves the JavaScript template engine instance (usually used for server-side evaluation).<br/><br/>@returns The JavaScript template engine instance.
+> ##### getJavascriptEngine()
 
-<hr/>
+> > ```ts
+> > static getJavascriptEngine(): TemplateEngine;
+> > ```
 
-#### generate
 
-- `generate (location:string, template:string, parameters:{[key:string]:any}):string`
+> Retrieves the JavaScript template engine instance (usually used for server-side evaluation).
 
-  Generates output by processing a raw template string using the **default template engine (Velocity)**.<br/><br/>@param location A string identifying the template (used for error reporting/caching, often a file path).<br/>@param template The raw template string content to process.<br/>@param parameters An object containing key-value pairs to be used as context variables in the template.<br/>@returns The processed output string.
+> > ::: info Returns
+> > - **Type**: `TemplateEngine`
+> > - **Description**: The JavaScript template engine instance.
+> > :::
 
-<hr/>
+> ##### generate()
 
-#### generateFromFile
+> > ```ts
+> > static generate( location, template, parameters): string;
+> > ```
 
-- `generateFromFile (location:string, parameters:{[key:string]:any}):string|undefined`
 
-  Loads a template from the public registry, selects an appropriate engine, and generates output.<br/>It uses the **Mustache engine** if the file extension is `.mustache`, otherwise it uses the **default (Velocity)**.<br/><br/>@param location The path to the template file within the `/registry/public/` directory (e.g., 'templates/email.mustache').<br/>@param parameters An object containing key-value pairs to be used as context variables in the template.<br/>@returns The processed output string, or `undefined` if the resource does not exist.
+> Generates output by processing a raw template string using the **default template engine (Velocity)**.
 
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `location` | `string` | A string identifying the template (used for error reporting/caching, often a file path). |
+> | `template` | `string` | The raw template string content to process. |
+> | `parameters` | \{ \[`key`: `string`\]: `any`; \} | An object containing key-value pairs to be used as context variables in the template. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The processed output string.
+> :::
+
+##### generateFromFile()
+
+> ```ts
+> static generateFromFile(location, parameters): string;
+> ```
+
+
+> Loads a template from the public registry, selects an appropriate engine, and generates output.
+> It uses the **Mustache engine** if the file extension is `.mustache`, otherwise it uses the **default (Velocity)**.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `location` | `string` | The path to the template file within the `/registry/public/` directory (e.g., 'templates/email.mustache'). |
+> | `parameters` | \{ \[`key`: `string`\]: `any`; \} | An object containing key-value pairs to be used as context variables in the template. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The processed output string, or `undefined` if the resource does not exist.
+> :::

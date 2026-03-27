@@ -1,53 +1,100 @@
-# API: utf8
+# utils/utf8
 
-> Source: `utils/utf8.ts`
+> [!tip]
+> Auto-generated from
+> - source: [utils/utf8.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/utf8.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Utility class for performing UTF-8 encoding and decoding operations.
 It provides methods to handle conversions between standard JavaScript strings and
 raw UTF-8 byte representations.
 
-## Usage
-```javascript
-import { utf8 } from "@aerokit/sdk/utils";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-response.println(JSON.stringify(utf8.encode("mystring")));
-
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [UTF8](#utf8)
+- [Returns](#returns)
 
 ## Classes
 
 ### UTF8
 
-Utility class for performing UTF-8 encoding and decoding operations.<br/>It provides methods to handle conversions between standard JavaScript strings and<br/>raw UTF-8 byte representations.
+
+Utility class for performing UTF-8 encoding and decoding operations.
+It provides methods to handle conversions between standard JavaScript strings and
+raw UTF-8 byte representations.
+
+## Returns
+
+[`UTF8`](#utf8)
 
 #### Methods
 
-<hr/>
+##### encode()
 
-#### encode
+> ```ts
+> static encode(input): string;
+> ```
 
-- `encode (input:string|any[]):string`
 
-  Encodes the input (either a standard JavaScript string or a raw byte array)<br/>into a UTF-8 encoded string representation.<br/><br/>@param input The text string to be encoded, or a byte array to convert to its string representation.<br/>@returns The resulting UTF-8 encoded string.
+> Encodes the input (either a standard JavaScript string or a raw byte array)
+> into a UTF-8 encoded string representation.
 
-<hr/>
+> **Parameters**
 
-#### decode
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` \| `any`[] | The text string to be encoded, or a byte array to convert to its string representation. |
 
-- `decode (input:string|any[]):string`
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The resulting UTF-8 encoded string.
+> :::
 
-  Decodes the input (either a UTF-8 encoded string or a raw byte array)<br/>back into a standard JavaScript string.<br/><br/>@param input The UTF-8 encoded string or byte array to be decoded.<br/>@returns The resulting standard decoded string.
+##### decode()
 
-<hr/>
+> ```ts
+> static decode(input): string;
+> ```
 
-#### bytesToString
 
-- `bytesToString (bytes:any[], offset:number, length:number):string`
+> Decodes the input (either a UTF-8 encoded string or a raw byte array)
+> back into a standard JavaScript string.
 
-  Decodes a specific segment of a raw byte array into a standard string<br/>using UTF-8 encoding.<br/><br/>@param bytes The raw byte array containing the UTF-8 data.<br/>@param offset The starting index (inclusive) from which to begin decoding.<br/>@param length The number of bytes to decode starting from the offset.<br/>@returns The decoded string segment.
+> **Parameters**
 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `input` | `string` \| `any`[] | The UTF-8 encoded string or byte array to be decoded. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The resulting standard decoded string.
+> :::
+
+##### bytesToString()
+
+> ```ts
+> static bytesToString( bytes, offset, length): string;
+> ```
+
+
+> Decodes a specific segment of a raw byte array into a standard string
+> using UTF-8 encoding.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `bytes` | `any`[] | The raw byte array containing the UTF-8 data. |
+> | `offset` | `number` | The starting index (inclusive) from which to begin decoding. |
+> | `length` | `number` | The number of bytes to decode starting from the offset. |
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The decoded string segment.
+> :::

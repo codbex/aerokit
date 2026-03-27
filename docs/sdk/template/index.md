@@ -1,3 +1,0 @@
-# template
-
-- [engines](engines.md)

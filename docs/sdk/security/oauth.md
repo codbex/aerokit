@@ -1,22 +1,90 @@
-# API: oauth
+# security/oauth
 
-> Source: `security/oauth.ts`
+> [!tip]
+> Auto-generated from
+> - source: [security/oauth.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security/oauth.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Configuration structure for the OAuth client.
+/
+export interface OAuthClientConfig {
+    /** The URL endpoint for the OAuth token service (e.g., '/oauth/token'). */
+    readonly url: string;
+    /** The client ID for authentication. */
+    readonly clientId: string;
+    /** The client secret for authentication. */
+    readonly clientSecret: string;
+    /** The grant type to be used. Defaults to 'client_credentials'. */
+    readonly grantType?: string;
+}
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Classes](#classes)
+  - [OAuthClient](#oauthclient)
+- [Parameters](#parameters)
+- [Interfaces](#interfaces)
+  - [OAuthClientConfig](#oauthclientconfig)
 
 ## Classes
 
 ### OAuthClient
 
-A client class for fetching OAuth access tokens.<br/><br/>It uses the HTTP client to send a POST request with client credentials<br/>to the specified token endpoint.
+
+A client class for fetching OAuth access tokens.
+
+It uses the HTTP client to send a POST request with client credentials
+to the specified token endpoint.
+
+## Parameters
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `config` | [`OAuthClientConfig`](#oauthclientconfig) | The configuration object containing URL, client ID, and secret. |
+
+###### Returns
+
+[`OAuthClient`](#oauthclient)
 
 #### Methods
 
-<hr/>
+##### getToken()
 
-#### getToken
+> ```ts
+> getToken(): any;
+> ```
 
-- `getToken ()void`
 
-  Executes the OAuth token request and returns the parsed response.<br/><br/>The request uses the client credentials grant type (default) and<br/>sends credentials as URL-encoded parameters in the body.<br/><br/>@returns A parsed JSON object containing the OAuth token (e.g., \{ access_token: string, expires_in: number, ... \}).<br/>@throws \{Error\} If the HTTP status code is not 200.
+Executes the OAuth token request and returns the parsed response.
 
+The request uses the client credentials grant type (default) and
+sends credentials as URL-encoded parameters in the body.
+
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: A parsed JSON object containing the OAuth token (e.g., { access_token: string, expires_in: number, ... }).
+> :::
+
+###### Throws
+
+If the HTTP status code is not 200.
+
+## Interfaces
+
+### OAuthClientConfig
+
+
+Configuration structure for the OAuth client.
+
+#### Properties
+
+| Property | Modifier | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ | ------ |
+|  `url` | `readonly` | `string` | The URL endpoint for the OAuth token service (e.g., '/oauth/token'). | src/security/oauth.ts:9 |
+|  `clientId` | `readonly` | `string` | The client ID for authentication. | src/security/oauth.ts:11 |
+|  `clientSecret` | `readonly` | `string` | The client secret for authentication. | src/security/oauth.ts:13 |
+|  `grantType?` | `readonly` | `string` | The grant type to be used. Defaults to 'client_credentials'. | src/security/oauth.ts:15 |

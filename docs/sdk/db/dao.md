@@ -1,68 +1,94 @@
-# API: dao
+# db/dao
 
-> Source: `db/dao.ts`
-
-Prepare a JSON object for insert into DB
-
-## Usage
-```javascript
-import { dao } from "@aerokit/sdk/db";
-
-//create a DAO from configuration
-const customers = dao.create({
-    table: "CUSTOMERS",
-    properties: [{
-        name: "id",
-        column: "ID",
-        type: "BIGINT",
-        id: true
-    }, {
-        name: "orgName",
-        column: "ORG_NAME",
-        type: "VARCHAR",
-        required: true
-    }, {
-        name: "employeesNumber",
-        column: "ORG_EMP_NUM",
-        type: "INTEGER",
-        required: true
-    }, {
-        name: "orgDescription",
-        column: "ORG_DESCR",
-        type: "VARCHAR",
-        required: false
-    }]
-});
-
-//Create CUSTOMERS table
-customers.createTable();
-
-try {
-
-    //Create a new customer entity
-    let customerId = customers.insert({
-        orgName: "ACME",
-        employeesNumber: 1000
-    });
-
-    //List all customer entities
-    let customersList = customers.list();
-
-    //Get a particular customer entity by its id
-    let customer = customers.find(customerId);
-
-    //Update a customer entity property
-    customer.orgDescription = "ACME is a company";
-    customers.update(customer);
-
-    //Delete a customer entity
-    customers.remove(customerId);
-
-} finally {
-    //Drop CUSTOMERS table
-    customers.dropTable();
-}
-
-```
+> [!tip]
+> Auto-generated from
+> - source: [db/dao.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/dao.ts)
+> - version: 1.0.0
 
 
+## Overview
+
+The Dao API provides...
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Functions](#functions)
+  - [DAO()](#dao())
+  - [create()](#create())
+  - [dao()](#dao())
+
+## Functions
+
+### DAO()
+
+> ```ts
+> function DAO(
+>    orm, 
+>    logCtxName?, 
+>    dataSourceName?): void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `orm` | [`ORMDefinition`](orm.md#ormdefinition) |
+| `logCtxName?` | `string` |
+| `dataSourceName?` | `string` |
+
+#### Returns
+
+`void`
+
+***
+
+### create()
+
+> ```ts
+> function create(
+>    oDefinition, 
+>    logCtxName?, 
+>    dataSourceName?): any;
+> ```
+
+
+oDefinition can be table definition or standard orm definition object. Or it can be a valid path to
+a .table file, or any other text file contianing a standard dao orm definition.
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `oDefinition` | `any` |
+| `logCtxName?` | `string` |
+| `dataSourceName?` | `string` |
+
+#### Returns
+
+`any`
+
+***
+
+### dao()
+
+> ```ts
+> function dao(
+>    oDefinition, 
+>    logCtxName?, 
+>    dataSourceName?): any;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `oDefinition` | `any` |
+| `logCtxName?` | `string` |
+| `dataSourceName?` | `string` |
+
+#### Returns
+
+`any`

@@ -1,182 +1,271 @@
-# API: client
+# etcd/client
 
-> Source: `etcd/client.ts`
+> [!tip]
+> Auto-generated from
+> - source: [etcd/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/etcd/client.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Converts a string to a native Etcd ByteSequence object.
 @param str The string to convert.
 @returns The native ByteSequence object (Java type).
+/
+function StringToByteSequence(str: string): any {
+    return EtcdFacade.stringToByteSequence(str);
+}
 
-## Usage
-```javascript
-// Load the etcd client module.
-import { etcd } from "@aerokit/sdk/etcd";
+## Table of Contents
 
-// Initialize the etcd client.
-let etcdClient = etcd.getClient();
-
-// Put key-value pair where the value is a string.
-etcdClient.putStringValue("foo", "bar");
-
-// Get key-value pair where value will be returned as a string.
-etcdClient.getKvsStringValue("foo"); // => { "foo": "bar" }
-
-// Put key-value pair where the value is a byte array.
-etcdClient.putByteArrayValue("foo", [98, 97, 114]);
-
-// Get key-value pair where value will be returned as a byte array.
-etcdClient.getKvsByteArrayValue("foo"); // => { "foo": [98, 97, 114] }
-
-// Delete key-value pair.
-etcdClient.delete("foo");
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [Header](#header)
+- [Parameters](#parameters)
+  - [GetResponse](#getresponse)
+- [Parameters](#parameters)
+  - [Client](#client)
+- [Returns](#returns)
 
 ## Classes
 
 ### Header
 
+
 Represents the header metadata of an Etcd response.
+
+## Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `native` | `any` |
+
+###### Returns
+
+[`Header`](#header)
 
 #### Methods
 
-<hr/>
+##### getRevision()
 
-#### getRevision
+> ```ts
+> getRevision(): string;
+> ```
 
-- `getRevision ():string`
 
-  The revision of the key-value store when the request was processed.
+> The revision of the key-value store when the request was processed.
 
-<hr/>
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: ##### getClusterId() > ```ts getClusterId(): string; ``` The ID of the cluster which the request was sent to.
+> > :::
 
-#### getClusterId
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: ##### getMemberId() > ```ts getMemberId(): string; ``` The ID of the member which the request was handled by.
+> > :::
 
-- `getClusterId ():string`
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: ##### getRaftTerm() > ```ts getRaftTerm(): string; ``` The Raft term.
+> > :::
 
-  The ID of the cluster which the request was sent to.
+> > ::: info Returns
+> > - **Type**: `string`
+> > - **Description**: ***
+> > :::
 
-<hr/>
-
-#### getMemberId
-
-- `getMemberId ():string`
-
-  The ID of the member which the request was handled by.
-
-<hr/>
-
-#### getRaftTerm
-
-- `getRaftTerm ():string`
-
-  The Raft term.
-
-### GetResponse
+> ### GetResponse
 
 Represents the response object for a Get operation from Etcd.
 
-#### Methods
 
-<hr/>
 
-#### getHeader
+> Represents the response object for a Get operation from Etcd.
 
-- `getHeader ():Header`
+> ## Parameters
 
-  Retrieves the response header containing cluster metadata.
+> | Parameter | Type |
+> | ------ | ------ |
+> | `native` | `any` |
 
-<hr/>
+> ###### Returns
 
-#### getKvsString
+> [`GetResponse`](#getresponse)
 
-- `getKvsString ():string}`
+> #### Methods
 
-  Retrieves the Key-Value pairs with values converted to strings.
+> ##### getHeader()
 
-<hr/>
+> > ```ts
+> > getHeader(): Header;
+> > ```
 
-#### getKvsByteArray
 
-- `getKvsByteArray ():Int8Array}`
+> Retrieves the response header containing cluster metadata.
 
-  Retrieves the Key-Value pairs with values converted to Int8Array (byte arrays).
+> ###### Returns
 
-<hr/>
+> [`Header`](#header)
 
-#### getCount
+> ##### getKvsString()
 
-- `getCount ():number`
+> > ```ts
+> > getKvsString(): object;
+> > ```
 
-  Retrieves the number of Key-Value pairs returned.
 
-### Client
+> Retrieves the Key-Value pairs with values converted to strings.
+
+> > ::: info Returns
+> > - **Type**: `object`
+> > - **Description**: ##### getKvsByteArray() > ```ts getKvsByteArray(): object; ``` Retrieves the Key-Value pairs with values converted to Int8Array (byte arrays).
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `object`
+> > - **Description**: ##### getCount() > ```ts getCount(): number; ``` Retrieves the number of Key-Value pairs returned.
+> > :::
+
+> > ::: info Returns
+> > - **Type**: `number`
+> > - **Description**: ***
+> > :::
+
+> ### Client
 
 Client facade for interacting with the Etcd key-value store.
 
-#### Methods
 
-<hr/>
 
-#### get
+> Client facade for interacting with the Etcd key-value store.
 
-- `get (key:string):GetResponse`
+> ## Returns
 
-  Executes a blocking GET request on the specified key.<br/>@param key The key to retrieve.<br/>@returns The processed GetResponse object.
+> [`Client`](#client)
 
-<hr/>
+> #### Methods
 
-#### putStringValue
+> ##### putStringValue()
 
-- `putStringValue (key:string, value:string):void`
+> > ```ts
+> > putStringValue(key, value): void;
+> > ```
 
-  Puts (writes) a string value to the specified key.<br/>@param key The key to write to.<br/>@param value The string value.
 
-<hr/>
+> Puts (writes) a string value to the specified key.
 
-#### putByteArrayValue
+> **Parameters**
 
-- `putByteArrayValue (key:string, value:Int8Array):void`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to write to. |
+> | `value` | `string` | The string value. |
 
-  Puts (writes) a byte array value to the specified key.<br/>@param key The key to write to.<br/>@param value The Int8Array (byte array) value.
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### putByteArrayValue() > ```ts putByteArrayValue(key, value): void; ``` Puts (writes) a byte array value to the specified key.
+> :::
 
-<hr/>
+> **Parameters**
 
-#### getHeader
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to write to. |
+> | `value` | `Int8Array` | The Int8Array (byte array) value. |
 
-- `getHeader (key:string):Header`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### getHeader() > ```ts getHeader(key): Header; ``` Retrieves the response header metadata for a key.
+> :::
 
-  Retrieves the response header metadata for a key.<br/>@param key The key to query.<br/>@returns The \{@link Header\} object.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to query. |
+> 
+> ###### Returns
+> 
+> [`Header`](#header)
+> 
+> The [Header](#header) object.
+> 
+> ##### getKvsStringValue()
+> 
+> > ```ts
+> > getKvsStringValue(key): object;
+> > ```
+> 
+> 
+> > Retrieves the Key-Value pairs as a JavaScript object with string values.
+> 
+> > **Parameters**
+> 
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key (or key prefix) to query. |
 
-#### getKvsStringValue
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: An object mapping keys to string values.
+> :::
 
-- `getKvsStringValue (key:string):string}`
+##### getKvsByteArrayValue()
 
-  Retrieves the Key-Value pairs as a JavaScript object with string values.<br/>@param key The key (or key prefix) to query.<br/>@returns An object mapping keys to string values.
+> ```ts
+> getKvsByteArrayValue(key): object;
+> ```
 
-<hr/>
 
-#### getKvsByteArrayValue
+> Retrieves the Key-Value pairs as a JavaScript object with Int8Array values.
 
-- `getKvsByteArrayValue (key:string):Int8Array}`
+> **Parameters**
 
-  Retrieves the Key-Value pairs as a JavaScript object with Int8Array values.<br/>@param key The key (or key prefix) to query.<br/>@returns An object mapping keys to Int8Array values.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key (or key prefix) to query. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `object`
+> - **Description**: An object mapping keys to Int8Array values.
+> :::
 
-#### getCount
+##### getCount()
 
-- `getCount (key:string):number`
+> ```ts
+> getCount(key): number;
+> ```
 
-  Retrieves the count of Key-Value pairs matching the key (or key prefix).<br/>@param key The key (or key prefix) to query.<br/>@returns The count of matching entries.
 
-<hr/>
+> Retrieves the count of Key-Value pairs matching the key (or key prefix).
 
-#### delete
+> **Parameters**
 
-- `delete (key:string):void`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key (or key prefix) to query. |
 
-  Deletes the specified key.<br/>@param key The key to delete.
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: The count of matching entries.
+> :::
 
+##### delete()
+
+> ```ts
+> delete(key): void;
+> ```
+
+
+> Deletes the specified key.
+
+> **Parameters**
+
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `key` | `string` | The key to delete. |
+
+> ::: info Returns
+> - **Type**: `void`
+> :::

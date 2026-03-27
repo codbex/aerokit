@@ -1,25 +1,57 @@
-# API: decorators
+# job/decorators
 
-> Source: `job/decorators.ts`
+> [!tip]
+> Auto-generated from
+> - source: [job/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/job/decorators.ts)
+> - version: 1.0.0
 
-@Scheduled decorator
+
+## Overview
+
+The Decorators API provides...
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Interfaces](#interfaces)
+  - [ScheduledOptions](#scheduledoptions)
+- [Functions](#functions)
+  - [Scheduled()](#scheduled())
+
+## Interfaces
+
+### ScheduledOptions
+
+
+#### Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `expression` | `string` | src/job/decorators.ts:4 |
+|  `group?` | `string` | src/job/decorators.ts:5 |
+
+## Functions
+
+### Scheduled()
+
+> ```ts
+> function Scheduled(options): (target, context) => void;
+> ```
+
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `options` | [`ScheduledOptions`](#scheduledoptions) |
+
+#### Returns
+
+\(`target`, `context`) => `void`
+
+#### Scheduled
+
+decorator
 Marks an entire class as a scheduled job with a cron expression.
 
 introduced in TypeScript 5.0, which expects a ClassDecoratorContext object.
-
-## Usage
-```javascript
-import { Scheduled } from "@aerokit/sdk/job"
-
-@Scheduled({ expression: "0/10 * * * * ?" })
-export class MyJob {
-    run() {
-        console.log("MyJob executed!");
-    }
-}
-
-new MyJob().run();
-
-```
-
-

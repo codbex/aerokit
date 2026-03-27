@@ -1,41 +1,58 @@
-# API: qrcode
+# utils/qrcode
 
-> Source: `utils/qrcode.ts`
+> [!tip]
+> Auto-generated from
+> - source: [utils/qrcode.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/qrcode.ts)
+> - version: 1.0.0
+
+
+## Overview
 
 Utility class for generating QR codes.
 It uses the underlying native Java QRCodeFacade to convert text into
 a QR code image represented as a raw byte array.
 
-## Usage
-```javascript
-import { qrcode } from "@aerokit/sdk/utils";
-import { response } from "@aerokit/sdk/http";
+## Table of Contents
 
-let qrCodeBytes = qrcode.generateQRCode("https://www.dirigible.io");
-
-console.log("QR Code Bytes: " + qrCodeBytes);
-
-response.setContentType('image/png')
-response.write(qrCodeBytes);
-response.flush();
-response.close();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [QRCode](#qrcode)
+- [Returns](#returns)
 
 ## Classes
 
 ### QRCode
 
-Utility class for generating QR codes.<br/>It uses the underlying native Java QRCodeFacade to convert text into<br/>a QR code image represented as a raw byte array.
+
+Utility class for generating QR codes.
+It uses the underlying native Java QRCodeFacade to convert text into
+a QR code image represented as a raw byte array.
+
+## Returns
+
+[`QRCode`](#qrcode)
 
 #### Methods
 
-<hr/>
+##### generateQRCode()
 
-#### generateQRCode
+> ```ts
+> static generateQRCode(text): any[];
+> ```
 
-- `generateQRCode (text:string):any[]`
 
-  Generates a QR code image byte array from the given text.<br/>The returned byte array represents the image data (e.g., PNG or JPEG format,<br/>depending on the native implementation's default output).<br/><br/>@param text The string content to be encoded in the QR code.<br/>@returns A **JavaScript byte array (any[])** containing the raw QR code image data.
+> Generates a QR code image byte array from the given text.
+> The returned byte array represents the image data (e.g., PNG or JPEG format,
+> depending on the native implementation's default output).
 
+> **Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `text` | `string` | The string content to be encoded in the QR code. |
+
+###### Returns
+
+`any`[]
+
+A **JavaScript byte array (any[])** containing the raw QR code image data.

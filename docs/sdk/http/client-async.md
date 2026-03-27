@@ -1,107 +1,279 @@
-# API: client-async
+# http/client-async
 
-> Source: `http/client-async.ts`
+> [!tip]
+> Auto-generated from
+> - source: [http/client-async.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client-async.ts)
+> - version: 1.0.0
 
-Defines a single HTTP header, used for both request and response.
 
-## Usage
-```javascript
-import { client, clientAsync } from "@aerokit/sdk/http";
+## Overview
 
-let clientAsyncInstance = clientAsync.getInstance();
-let api = 'https://services.odata.org/V4/Northwind/Northwind.svc/';
-let northWindResponse = client.get(api, {
-    params: [{
-        name: "$format",
-        value: "json"
-    }]
-});
+Provides a JavaScript/TypeScript wrapper (Facade) for making asynchronous HTTP requests.
 
-let northWindEntities = JSON.parse(northWindResponse.text);
+## Table of Contents
 
-for (let i = 0; i < northWindEntities.value.length; i++) {
-    clientAsyncInstance.getAsync(api + northWindEntities.value[i].url, {
-        success: function (response) {
-            let entity = JSON.parse(response.text);
-            console.error(entity["@odata.context"] + " : " + entity.value.length);
-        }
-    });
-}
-
-clientAsyncInstance.execute();
-
-```
-
+- [Overview](#overview)
+- [Classes](#classes)
+  - [HttpAsyncClient](#httpasyncclient)
+- [Returns](#returns)
+- [Interfaces](#interfaces)
+  - [HttpClientHeader](#httpclientheader)
+  - [HttpClientParam](#httpclientparam)
+  - [HttpClientFile](#httpclientfile)
+  - [HttpClientRequestOptions](#httpclientrequestoptions)
+  - [HttpClientResponse](#httpclientresponse)
+  - [HttpClientAsyncConfig](#httpclientasyncconfig)
+- [Functions](#functions)
+  - [getInstance()](#getinstance())
 
 ## Classes
 
 ### HttpAsyncClient
 
-The asynchronous HTTP client class. All request methods return immediately<br/>and execute callbacks upon completion.
+
+The asynchronous HTTP client class. All request methods return immediately
+and execute callbacks upon completion.
+
+## Returns
+
+[`HttpAsyncClient`](#httpasyncclient)
 
 #### Methods
 
-<hr/>
+##### getAsync()
 
-#### getAsync
+> ```ts
+> getAsync(
+>    url, 
+>    config, 
+>    options?): void;
+> ```
 
-- `getAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
 
-  Executes an asynchronous HTTP GET request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options (e.g., headers, body, params).
+> Executes an asynchronous HTTP GET request.
 
-<hr/>
+> **Parameters**
 
-#### postAsync
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options (e.g., headers, body, params). |
 
-- `postAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### postAsync() > ```ts postAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP POST request.
+> :::
 
-  Executes an asynchronous HTTP POST request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
-#### putAsync
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### putAsync() > ```ts putAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP PUT request.
+> :::
 
-- `putAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
+> **Parameters**
 
-  Executes an asynchronous HTTP PUT request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### patchAsync() > ```ts patchAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP PATCH request.
+> :::
 
-#### patchAsync
+> **Parameters**
 
-- `patchAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
-  Executes an asynchronous HTTP PATCH request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options.
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### deleteAsync() > ```ts deleteAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP DELETE request.
+> :::
 
-<hr/>
+> **Parameters**
 
-#### deleteAsync
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
-- `deleteAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### headAsync() > ```ts headAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP HEAD request.
+> :::
 
-  Executes an asynchronous HTTP DELETE request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options.
+> **Parameters**
 
-<hr/>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
-#### headAsync
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### traceAsync() > ```ts traceAsync(    url,     config,     options?): void; ``` Executes an asynchronous HTTP TRACE request.
+> :::
 
-- `headAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
+> **Parameters**
 
-  Executes an asynchronous HTTP HEAD request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options.
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `url` | `string` | The target URL. |
+> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
-<hr/>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ##### execute() > ```ts execute(): void; ``` Initiates the execution of queued asynchronous requests (depending on the underlying Java client's threading model).
+> :::
 
-#### traceAsync
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: ## Interfaces
+> :::
 
-- `traceAsync (url:string, config:HttpClientAsyncConfig, options?:HttpClientRequestOptions):void`
+### HttpClientHeader
 
-  Executes an asynchronous HTTP TRACE request.<br/>@param url The target URL.<br/>@param config The callback configuration object.<br/>@param options Request configuration options.
 
-<hr/>
+Defines a single HTTP header, used for both request and response.
 
-#### execute
+#### Properties
 
-- `execute ():void`
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `name` | `string` | The name of the header (e.g., 'Content-Type', 'Authorization'). | src/http/client-async.ts:11 |
+|  `value` | `string` | The value of the header. | src/http/client-async.ts:13 |
 
-  Initiates the execution of queued asynchronous requests (depending on the underlying Java client's threading model).
+***
 
+### HttpClientParam
+
+
+Defines a query parameter that will be appended to the URL.
+
+#### Properties
+
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `name` | `string` | The name of the URL query parameter (e.g., 'id'). | src/http/client-async.ts:19 |
+|  `value` | `string` | The value of the URL query parameter. | src/http/client-async.ts:21 |
+
+***
+
+### HttpClientFile
+
+
+Defines a file to be included in a multi-part form data request.
+
+#### Properties
+
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `name` | `string` | The form field name for the file. | src/http/client-async.ts:27 |
+|  `value` | `string` | The file path or content. | src/http/client-async.ts:29 |
+
+***
+
+### HttpClientRequestOptions
+
+
+Configuration options for an HTTP request, mirroring the capabilities of the underlying Java client.
+
+#### Properties
+
+| Property | Type | Defined in |
+| ------ | ------ | ------ |
+|  `expectContinueEnabled?` | `boolean` | src/http/client-async.ts:34 |
+|  `proxyHost?` | `string` | src/http/client-async.ts:35 |
+|  `proxyPort?` | `number` | src/http/client-async.ts:36 |
+|  `cookieSpec?` | `string` | src/http/client-async.ts:37 |
+|  `redirectsEnabled?` | `boolean` | src/http/client-async.ts:38 |
+|  `relativeRedirectsAllowed?` | `boolean` | src/http/client-async.ts:39 |
+|  `circularRedirectsAllowed?` | `boolean` | src/http/client-async.ts:40 |
+|  `maxRedirects?` | `number` | src/http/client-async.ts:41 |
+|  `authenticationEnabled?` | `boolean` | src/http/client-async.ts:42 |
+|  `targetPreferredAuthSchemes?` | `string`[] | src/http/client-async.ts:43 |
+|  `proxyPreferredAuthSchemes?` | `string`[] | src/http/client-async.ts:44 |
+|  `connectionRequestTimeout?` | `number` | src/http/client-async.ts:45 |
+|  `connectTimeout?` | `number` | src/http/client-async.ts:46 |
+|  `socketTimeout?` | `number` | src/http/client-async.ts:47 |
+|  `contentCompressionEnabled?` | `boolean` | src/http/client-async.ts:48 |
+|  `sslTrustAllEnabled?` | `boolean` | src/http/client-async.ts:49 |
+|  `data?` | `any`[] | src/http/client-async.ts:50 |
+|  `text?` | `string` | src/http/client-async.ts:51 |
+|  `files?` | [`HttpClientFile`](#httpclientfile)[] | src/http/client-async.ts:52 |
+|  `characterEncoding?` | `string` | src/http/client-async.ts:53 |
+|  `characterEncodingEnabled?` | `boolean` | src/http/client-async.ts:54 |
+|  `contentType?` | `string` | src/http/client-async.ts:55 |
+|  `headers?` | [`HttpClientHeader`](#httpclientheader)[] | src/http/client-async.ts:56 |
+|  `params?` | [`HttpClientParam`](#httpclientparam)[] | src/http/client-async.ts:57 |
+|  `binary?` | `boolean` | src/http/client-async.ts:58 |
+|  `context?` | `object` | src/http/client-async.ts:59 |
+
+***
+
+### HttpClientResponse
+
+
+The structure of the response returned by the HttpClient methods.
+
+#### Properties
+
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `statusCode` | `number` | The HTTP status code (e.g., 200, 404, 500). | src/http/client-async.ts:65 |
+|  `statusMessage` | `string` | The status message returned by the server (e.g., 'OK', 'Not Found'). | src/http/client-async.ts:67 |
+|  `data` | `any`[] | Response body content as an array of bytes (if requested as binary). | src/http/client-async.ts:69 |
+|  `text` | `string` | Response body content as a decoded string. | src/http/client-async.ts:71 |
+|  `protocol` | `string` | The protocol used (e.g., 'HTTP/1.1'). | src/http/client-async.ts:73 |
+|  `binary` | `boolean` | Indicates if the response was processed as binary data. | src/http/client-async.ts:75 |
+|  `headers` | [`HttpClientHeader`](#httpclientheader)[] | Array of all headers received in the response. | src/http/client-async.ts:77 |
+
+***
+
+### HttpClientAsyncConfig
+
+
+Defines the callback structure for asynchronous requests.
+Note: Callbacks are provided as strings containing executable JavaScript code.
+
+#### Properties
+
+| Property | Type | Description | Defined in |
+| ------ | ------ | ------ | ------ |
+|  `success` | `string` | Mandatory success callback as a **string of JavaScript code**. It will be executed with signature: `(response: HttpClientResponse, context: { [key: string]: any }) => void` | src/http/client-async.ts:91 |
+|  `error?` | `string` | Optional error callback as a **string of JavaScript code**. It will be executed with signature: `(exception: any) => void` | src/http/client-async.ts:96 |
+|  `cancel?` | `string` | Optional cancel callback as a **string of JavaScript code**. It will be executed with signature: `() => void` | src/http/client-async.ts:101 |
+
+## Functions
+
+### getInstance()
+
+> ```ts
+> function getInstance(): HttpAsyncClient;
+> ```
+
+
+Factory function to retrieve a new instance of the asynchronous client.
+
+#### Returns
+
+[`HttpAsyncClient`](#httpasyncclient)
+
+A new instance of HttpAsyncClient.
