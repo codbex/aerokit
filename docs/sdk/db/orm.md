@@ -1,23 +1,14 @@
 # db/orm
 
-> [!tip]
-> Auto-generated from
-> - source: [db/orm.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/orm.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [db/orm.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/orm.ts)
+:::
 
 
 ## Overview
 
 The Orm API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [ORMDefinition](#ormdefinition)
-- [Functions](#functions)
-  - [ORM()](#orm())
-  - [get()](#get())
 
 ## Interfaces
 
@@ -62,9 +53,9 @@ Supported ORM schema:
 
 ### ORM()
 
-> ```ts
-> function ORM(orm): void;
-> ```
+```ts
+function ORM(orm): void;
+```
 
 
 #### Parameters
@@ -81,9 +72,9 @@ Supported ORM schema:
 
 ### get()
 
-> ```ts
-> function get(orm): any;
-> ```
+```ts
+function get(orm): any;
+```
 
 
 #### Parameters

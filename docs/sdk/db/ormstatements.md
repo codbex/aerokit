@@ -1,29 +1,22 @@
 # db/ormstatements
 
-> [!tip]
-> Auto-generated from
-> - source: [db/ormstatements.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/ormstatements.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [db/ormstatements.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/ormstatements.ts)
+:::
 
 
 ## Overview
 
 The Ormstatements API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Functions](#functions)
-  - [ORMStatements()](#ormstatements())
-  - [create()](#create())
 
 ## Functions
 
 ### ORMStatements()
 
-> ```ts
-> function ORMStatements(orm, dialect): void;
-> ```
+```ts
+function ORMStatements(orm, dialect): void;
+```
 
 
 #### Parameters
@@ -41,9 +34,9 @@ The Ormstatements API provides...
 
 ### create()
 
-> ```ts
-> function create(orm, connection?): any;
-> ```
+```ts
+function create(orm, connection?): any;
+```
 
 
 #### Parameters

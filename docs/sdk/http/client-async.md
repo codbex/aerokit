@@ -1,30 +1,14 @@
 # http/client-async
 
-> [!tip]
-> Auto-generated from
-> - source: [http/client-async.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client-async.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [http/client-async.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client-async.ts)
+:::
 
 
 ## Overview
 
-Provides a JavaScript/TypeScript wrapper (Facade) for making asynchronous HTTP requests.
+Defines a single HTTP header, used for both request and response.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [HttpAsyncClient](#httpasyncclient)
-- [Returns](#returns)
-- [Interfaces](#interfaces)
-  - [HttpClientHeader](#httpclientheader)
-  - [HttpClientParam](#httpclientparam)
-  - [HttpClientFile](#httpclientfile)
-  - [HttpClientRequestOptions](#httpclientrequestoptions)
-  - [HttpClientResponse](#httpclientresponse)
-  - [HttpClientAsyncConfig](#httpclientasyncconfig)
-- [Functions](#functions)
-  - [getInstance()](#getinstance())
 
 ## Classes
 
@@ -34,185 +18,163 @@ Provides a JavaScript/TypeScript wrapper (Facade) for making asynchronous HTTP r
 The asynchronous HTTP client class. All request methods return immediately
 and execute callbacks upon completion.
 
-## Returns
+#### Constructors
 
-[`HttpAsyncClient`](#httpasyncclient)
+##### Constructor
+
+```ts
+new HttpAsyncClient(): HttpAsyncClient;
+```
 
 #### Methods
-
 ##### getAsync()
-
-> ```ts
-> getAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
-
-
-> Executes an asynchronous HTTP GET request.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options (e.g., headers, body, params). |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### postAsync()
 
-> ```ts
-> postAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
+```ts
+postAsync(
+   url, 
+   config, 
+   options?): void;
+```
 
 
-> Executes an asynchronous HTTP POST request.
+Executes an asynchronous HTTP POST request.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `url` | `string` | The target URL. |
+| `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+| `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### putAsync()
 
-> ```ts
-> putAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
+```ts
+putAsync(
+   url, 
+   config, 
+   options?): void;
+```
 
 
-> Executes an asynchronous HTTP PUT request.
+Executes an asynchronous HTTP PUT request.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `url` | `string` | The target URL. |
+| `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+| `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### patchAsync()
 
-> ```ts
-> patchAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
+```ts
+patchAsync(
+   url, 
+   config, 
+   options?): void;
+```
 
 
-> Executes an asynchronous HTTP PATCH request.
+Executes an asynchronous HTTP PATCH request.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `url` | `string` | The target URL. |
+| `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+| `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### deleteAsync()
 
-> ```ts
-> deleteAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
+```ts
+deleteAsync(
+   url, 
+   config, 
+   options?): void;
+```
 
 
-> Executes an asynchronous HTTP DELETE request.
+Executes an asynchronous HTTP DELETE request.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `url` | `string` | The target URL. |
+| `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+| `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### headAsync()
 
-> ```ts
-> headAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
+```ts
+headAsync(
+   url, 
+   config, 
+   options?): void;
+```
 
 
-> Executes an asynchronous HTTP HEAD request.
+Executes an asynchronous HTTP HEAD request.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `url` | `string` | The target URL. |
+| `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+| `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### traceAsync()
 
-> ```ts
-> traceAsync(
->    url, 
->    config, 
->    options?): void;
-> ```
+```ts
+traceAsync(
+   url, 
+   config, 
+   options?): void;
+```
 
 
-> Executes an asynchronous HTTP TRACE request.
+Executes an asynchronous HTTP TRACE request.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `url` | `string` | The target URL. |
-> | `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
-> | `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `url` | `string` | The target URL. |
+| `config` | [`HttpClientAsyncConfig`](#httpclientasyncconfig) | The callback configuration object. |
+| `options?` | [`HttpClientRequestOptions`](#httpclientrequestoptions) | Request configuration options. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### execute()
 
-> ```ts
-> execute(): void;
-> ```
+```ts
+execute(): void;
+```
 
 
 Initiates the execution of queued asynchronous requests (depending on the underlying Java client's threading model).
@@ -220,7 +182,6 @@ Initiates the execution of queued asynchronous requests (depending on the underl
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ## Interfaces
 
 ### HttpClientHeader
@@ -340,9 +301,9 @@ Note: Callbacks are provided as strings containing executable JavaScript code.
 
 ### getInstance()
 
-> ```ts
-> function getInstance(): HttpAsyncClient;
-> ```
+```ts
+function getInstance(): HttpAsyncClient;
+```
 
 
 Factory function to retrieve a new instance of the asynchronous client.

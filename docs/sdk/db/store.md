@@ -1,40 +1,14 @@
 # db/store
 
-> [!tip]
-> Auto-generated from
-> - source: [db/store.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/store.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [db/store.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/store.ts)
+:::
 
 
 ## Overview
 
-Defines the available comparison operators for query conditions.
-/
-export enum Operator {
-	EQ = "=", // Equals
-	NE = "<>", // Not Equals
-	GT = ">", // Greater Than
-	LT = "<", // Less Than
-	GE = ">=", // Greater Than or Equals
-	LE = "<=", // Less Than or Equals
-	LIKE = "LIKE", // SQL LIKE operator
-	BETWEEN = "BETWEEN", // SQL BETWEEN operator (requires two values)
-	IN = "IN" // SQL IN operator (requires a List or Array of values)
-}
+The Store API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Enumerations](#enumerations)
-  - [Operator](#operator)
-  - [Direction](#direction)
-- [Classes](#classes)
-  - [Store](#store)
-- [Returns](#returns)
-- [Interfaces](#interfaces)
-  - [Condition](#condition)
-  - [Sort](#sort)
-  - [Options](#options)
 
 ## Enumerations
 
@@ -78,301 +52,187 @@ Facade class for interacting with the underlying Dirigible Data Store.
 All methods serialize/deserialize JavaScript objects to/from JSON strings
 before interacting with the native Java facade.
 
-## Returns
+#### Constructors
 
-[`Store`](#store)
+##### Constructor
+
+```ts
+new Store(): Store;
+```
 
 #### Methods
-
 ##### save()
-
-> ```ts
-> static save(name, entry): string | number;
-> ```
-
-
-> Saves a new entry to the data store.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `entry` | `any` | The JavaScript object to save. |
-
-> ::: info Returns
-> - **Type**: `string`
-> - **Description**: \| `number` The ID of the newly created entry (string or number).
-> :::
-
+**Parameters**
 ##### upsert()
-
-> ```ts
-> static upsert(name, entry): void;
-> ```
-
-
-> Inserts a new entry or updates an existing one if the ID is present.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `entry` | `any` | The JavaScript object to insert/update. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### update()
 
-> ```ts
-> static update(name, entry): void;
-> ```
+```ts
+static update(name, entry): void;
+```
 
 
-> Updates an existing entry.
+Updates an existing entry.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `entry` | `any` | The JavaScript object with the ID and updated data. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `name` | `string` | The entity/table name. |
+| `entry` | `any` | The JavaScript object with the ID and updated data. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### list()
 
-> ```ts
-> static list(name, options?): any[];
-> ```
+```ts
+static list(name, options?): any[];
+```
 
 
-> Lists entries based on optional filtering, sorting, and pagination options.
+Lists entries based on optional filtering, sorting, and pagination options.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
-
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: [] An array of JavaScript objects.
-> :::
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `name` | `string` | The entity/table name. |
+| `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
 
 ##### count()
-
-> ```ts
-> static count(name, options?): number;
-> ```
-
-
-> Counts the number of entries based on optional filtering options.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `options?` | [`Options`](#options) | Optional [Options](#options) for query execution. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The count of matching entries.
 > :::
-
 ##### get()
 
-> ```ts
-> static get(name, id): any;
-> ```
+```ts
+static get(name, id): any;
+```
 
 
-> Retrieves a single entry by its ID.
+Retrieves a single entry by its ID.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `id` | `any` | The ID of the entry. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `name` | `string` | The entity/table name. |
+| `id` | `any` | The ID of the entry. |
 
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The entry object, or undefined if not found.
 > :::
-
 ##### remove()
 
-> ```ts
-> static remove(name, id): void;
-> ```
+```ts
+static remove(name, id): void;
+```
 
 
-> Deletes an entry by its ID.
+Deletes an entry by its ID.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The entity/table name. |
-> | `id` | `any` | The ID of the entry to remove. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `name` | `string` | The entity/table name. |
+| `id` | `any` | The ID of the entry to remove. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### find()
 
-> ```ts
-> static find( name, example, limit?, offset?): any[];
-> ```
+```ts
+static find(
+   name, 
+   example, 
+   limit?, 
+   offset?): any[];
+```
 
 
-> Finds entries matching an example object (query-by-example).
+Finds entries matching an example object (query-by-example).
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Default value | Description |
-> | ------ | ------ | ------ | ------ |
-> | `name` | `string` | `undefined` | The entity/table name. |
-> | `example` | `any` | `undefined` | An object containing properties to match. |
-> | `limit` | `number` | `100` | Maximum number of results to return. |
-> | `offset` | `number` | `0` | Number of results to skip. |
-
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: [] An array of matching JavaScript objects.
-> :::
+| Parameter | Type | Default value | Description |
+| ------ | ------ | ------ | ------ |
+| `name` | `string` | `undefined` | The entity/table name. |
+| `example` | `any` | `undefined` | An object containing properties to match. |
+| `limit` | `number` | `100` | Maximum number of results to return. |
+| `offset` | `number` | `0` | Number of results to skip. |
 
 ##### query()
-
-> ```ts
-> static query( query, parameters?, limit?, offset?): any[];
-> ```
-
-
-> Queries all entries for a given script with pagination.
-
-> **Parameters**
-
-> | Parameter | Type | Default value | Description |
-> | ------ | ------ | ------ | ------ |
-> | `query` | `string` | `undefined` | The query script. |
-> | `parameters?` | ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](query.md#typedqueryparameter) \| [`NamedQueryParameter`](query.md#namedqueryparameter))[] | `undefined` | - |
-> | `limit?` | `number` | `100` | Maximum number of results to return. |
-> | `offset?` | `number` | `0` | Number of results to skip. |
-
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: [] An array of JavaScript objects.
-> :::
-
+**Parameters**
 ##### queryNative()
-
-> ```ts
-> static queryNative( query, parameters?, limit?, offset?): any[];
-> ```
-
-
-> Queries all entries for a given entity name without pagination.
-
-> **Parameters**
-
-> | Parameter | Type | Default value | Description |
-> | ------ | ------ | ------ | ------ |
-> | `query` | `string` | `undefined` | The entity/table name. |
-> | `parameters?` | ( \| `string` \| `number` \| `boolean` \| `Date` \| [`TypedQueryParameter`](query.md#typedqueryparameter) \| [`NamedQueryParameter`](query.md#namedqueryparameter))[] | `undefined` | - |
-> | `limit?` | `number` | `100` | - |
-> | `offset?` | `number` | `0` | - |
-
-> ::: info Returns
-> - **Type**: `any`
-> - **Description**: [] An array of all JavaScript objects.
-> :::
-
+**Parameters**
 ##### getEntityName()
-
-> ```ts
-> static getEntityName(name): string;
-> ```
-
-
-> Gets the name of the entity associated with the store name.
-
-> **Parameters**
-
-> | Parameter | Type |
-> | ------ | ------ |
-> | `name` | `string` |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `string`
 > :::
-
 ##### getTableName()
 
-> ```ts
-> static getTableName(name): string;
-> ```
+```ts
+static getTableName(name): string;
+```
 
 
-> Gets the underlying database table name for the entity.
+Gets the underlying database table name for the entity.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `name` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `name` | `string` |
 
 > ::: info Returns
 > - **Type**: `string`
 > :::
-
 ##### getIdName()
 
-> ```ts
-> static getIdName(name): string;
-> ```
+```ts
+static getIdName(name): string;
+```
 
 
-> Gets the property name used as the ID field in the entity object.
+Gets the property name used as the ID field in the entity object.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `name` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `name` | `string` |
 
 > ::: info Returns
 > - **Type**: `string`
 > :::
-
 ##### getIdColumn()
 
-> ```ts
-> static getIdColumn(name): string;
-> ```
+```ts
+static getIdColumn(name): string;
+```
 
 
-> Gets the underlying database column name used for the ID field.
+Gets the underlying database column name used for the ID field.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `name` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `name` | `string` |
 
 > ::: info Returns
 > - **Type**: `string`
 > :::
-
 ## Interfaces
 
 ### Condition

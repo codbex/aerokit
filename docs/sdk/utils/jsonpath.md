@@ -1,35 +1,27 @@
 # utils/jsonpath
 
-> [!tip]
-> Auto-generated from
-> - source: [utils/jsonpath.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/jsonpath.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [utils/jsonpath.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/jsonpath.ts)
+:::
 
 
 ## Overview
 
 The Jsonpath API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Functions](#functions)
-  - [JSONPath()](#jsonpath())
-- [References](#references)
-  - [default](#default)
 
 ## Functions
 
 ### JSONPath()
 
-> ```ts
-> function JSONPath(
->    opts?, 
->    expr, 
->    obj, 
->    callback, 
->    otherTypeCallback): void;
-> ```
+```ts
+function JSONPath(
+   opts?, 
+   expr, 
+   obj, 
+   callback, 
+   otherTypeCallback): void;
+```
 
 
 #### Parameters

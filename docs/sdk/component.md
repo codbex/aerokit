@@ -1,24 +1,14 @@
 # component
 
-> [!tip]
-> Auto-generated from
-> - source: [component.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/component.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [component.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/component.ts)
+:::
 
 
 ## Overview
 
 The Component API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [ComponentConstructor](#componentconstructor)
-  - [Component](#component)
-  - [Injected](#injected)
-  - [Inject](#inject)
-  - [decorators](#decorators)
 
 ## References
 

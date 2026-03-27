@@ -1,25 +1,14 @@
 # component/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [component/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/component/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [component/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/component/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [ComponentConstructor](#componentconstructor)
-- [Parameters](#parameters)
-- [Functions](#functions)
-  - [Component()](#component())
-  - [Injected()](#injected())
-  - [Inject()](#inject())
 
 ## Interfaces
 
@@ -32,7 +21,16 @@ Extends a standard constructor function to include properties used for internal 
 
 - `Function`
 
-## Parameters
+#### Constructors
+
+##### Constructor
+
+```ts
+new ComponentConstructor(...args): any;
+```
+
+
+**Parameters**
 
 | Parameter | Type |
 | ------ | ------ |
@@ -41,12 +39,11 @@ Extends a standard constructor function to include properties used for internal 
 > ::: info Returns
 > - **Type**: `any`
 > :::
-
 ###### Inherited from
 
-> ```ts
-> Function.constructor
-> ```
+```ts
+Function.constructor
+```
 
 #### Properties
 
@@ -59,9 +56,9 @@ Extends a standard constructor function to include properties used for internal 
 
 ### Component()
 
-> ```ts
-> function Component(nameOrConstructor?): Function;
-> ```
+```ts
+function Component(nameOrConstructor?): Function;
+```
 
 
 Class decorator that marks a class as a Dependency Injection component.
@@ -86,9 +83,9 @@ A class decorator function or the decorated class itself.
 
 ### Injected()
 
-> ```ts
-> function Injected(nameOrConstructor?): Function;
-> ```
+```ts
+function Injected(nameOrConstructor?): Function;
+```
 
 
 An alias for the [Component](#component) decorator, used for semantic clarity
@@ -111,9 +108,9 @@ A class decorator function or the decorated class itself.
 
 ### Inject()
 
-> ```ts
-> function Inject(name?): (...args) => void;
-> ```
+```ts
+function Inject(name?): (...args) => void;
+```
 
 
 Property decorator used to mark an instance property as an injection point.

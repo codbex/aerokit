@@ -1,31 +1,14 @@
 # etcd/client
 
-> [!tip]
-> Auto-generated from
-> - source: [etcd/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/etcd/client.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [etcd/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/etcd/client.ts)
+:::
 
 
 ## Overview
 
-Converts a string to a native Etcd ByteSequence object.
-@param str The string to convert.
-@returns The native ByteSequence object (Java type).
-/
-function StringToByteSequence(str: string): any {
-    return EtcdFacade.stringToByteSequence(str);
-}
+The Client API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [Header](#header)
-- [Parameters](#parameters)
-  - [GetResponse](#getresponse)
-- [Parameters](#parameters)
-  - [Client](#client)
-- [Returns](#returns)
 
 ## Classes
 
@@ -34,293 +17,226 @@ function StringToByteSequence(str: string): any {
 
 Represents the header metadata of an Etcd response.
 
-## Parameters
+#### Constructors
+
+##### Constructor
+
+```ts
+new Header(native): Header;
+```
+
+
+**Parameters**
 
 | Parameter | Type |
 | ------ | ------ |
 | `native` | `any` |
 
-###### Returns
-
-[`Header`](#header)
-
 #### Methods
-
 ##### getRevision()
+> ::: info Returns
+> - **Type**: `string`
+> :::
+##### getClusterId()
 
-> ```ts
-> getRevision(): string;
-> ```
-
-
-> The revision of the key-value store when the request was processed.
-
-> > ::: info Returns
-> > - **Type**: `string`
-> > :::
-
-> ##### getClusterId()
-
-> > ```ts
-> > getClusterId(): string;
-> > ```
+```ts
+getClusterId(): string;
+```
 
 
-> The ID of the cluster which the request was sent to.
+The ID of the cluster which the request was sent to.
 
-> > ::: info Returns
-> > - **Type**: `string`
-> > :::
+> ::: info Returns
+> - **Type**: `string`
+> :::
+##### getMemberId()
 
-> ##### getMemberId()
-
-> > ```ts
-> > getMemberId(): string;
-> > ```
-
-
-> The ID of the member which the request was handled by.
-
-> > ::: info Returns
-> > - **Type**: `string`
-> > :::
-
-> ##### getRaftTerm()
-
-> > ```ts
-> > getRaftTerm(): string;
-> > ```
+```ts
+getMemberId(): string;
+```
 
 
-> The Raft term.
+The ID of the member which the request was handled by.
 
-> > ::: info Returns
-> > - **Type**: `string`
-> > - **Description**: ***
-> > :::
+> ::: info Returns
+> - **Type**: `string`
+> :::
+##### getRaftTerm()
 
-> ### GetResponse
+```ts
+getRaftTerm(): string;
+```
+
+
+The Raft term.
+
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: ***
+> :::
+### GetResponse
+
 
 Represents the response object for a Get operation from Etcd.
 
+#### Constructors
+
+##### Constructor
+
+```ts
+new GetResponse(native): GetResponse;
+```
 
 
-> Represents the response object for a Get operation from Etcd.
+**Parameters**
 
-> ## Parameters
+| Parameter | Type |
+| ------ | ------ |
+| `native` | `any` |
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `native` | `any` |
+#### Methods
+##### getHeader()
+##### getKvsString()
+> ::: info Returns
+> - **Type**: `object`
+> :::
+##### getKvsByteArray()
 
-> ###### Returns
-
-> [`GetResponse`](#getresponse)
-
-> #### Methods
-
-> ##### getHeader()
-
-> > ```ts
-> > getHeader(): Header;
-> > ```
+```ts
+getKvsByteArray(): object;
+```
 
 
-> Retrieves the response header containing cluster metadata.
+Retrieves the Key-Value pairs with values converted to Int8Array (byte arrays).
 
-> ###### Returns
+> ::: info Returns
+> - **Type**: `object`
+> :::
+##### getCount()
 
-> [`Header`](#header)
-
-> ##### getKvsString()
-
-> > ```ts
-> > getKvsString(): object;
-> > ```
-
-
-> Retrieves the Key-Value pairs with values converted to strings.
-
-> > ::: info Returns
-> > - **Type**: `object`
-> > :::
-
-> ##### getKvsByteArray()
-
-> > ```ts
-> > getKvsByteArray(): object;
-> > ```
+```ts
+getCount(): number;
+```
 
 
-> Retrieves the Key-Value pairs with values converted to Int8Array (byte arrays).
+Retrieves the number of Key-Value pairs returned.
 
-> > ::: info Returns
-> > - **Type**: `object`
-> > :::
+> ::: info Returns
+> - **Type**: `number`
+> - **Description**: ***
+> :::
+### Client
 
-> ##### getCount()
-
-> > ```ts
-> > getCount(): number;
-> > ```
-
-
-> Retrieves the number of Key-Value pairs returned.
-
-> > ::: info Returns
-> > - **Type**: `number`
-> > - **Description**: ***
-> > :::
-
-> ### Client
 
 Client facade for interacting with the Etcd key-value store.
 
+#### Constructors
+
+##### Constructor
+
+```ts
+new Client(): Client;
+```
 
 
-> Client facade for interacting with the Etcd key-value store.
-
-> ## Returns
-
-> [`Client`](#client)
-
-> #### Methods
-
-> ##### putStringValue()
-
-> > ```ts
-> > putStringValue(key, value): void;
-> > ```
-
-
-> Puts (writes) a string value to the specified key.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key to write to. |
-> | `value` | `string` | The string value. |
-
+#### Methods
+##### putStringValue()
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### putByteArrayValue()
 
-> ```ts
-> putByteArrayValue(key, value): void;
-> ```
+```ts
+putByteArrayValue(key, value): void;
+```
 
 
-> Puts (writes) a byte array value to the specified key.
+Puts (writes) a byte array value to the specified key.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key to write to. |
-> | `value` | `Int8Array` | The Int8Array (byte array) value. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The key to write to. |
+| `value` | `Int8Array` | The Int8Array (byte array) value. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### getHeader()
 
-> ```ts
-> getHeader(key): Header;
-> ```
+```ts
+getHeader(key): Header;
+```
 
 
-> Retrieves the response header metadata for a key.
+Retrieves the response header metadata for a key.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key to query. |
-> 
-> ###### Returns
-> 
-> [`Header`](#header)
-> 
-> The [Header](#header) object.
-> 
-> ##### getKvsStringValue()
-> 
-> > ```ts
-> > getKvsStringValue(key): object;
-> > ```
-> 
-> 
-> > Retrieves the Key-Value pairs as a JavaScript object with string values.
-> 
-> > **Parameters**
-> 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key (or key prefix) to query. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The key to query. |
 
+##### getKvsStringValue()
+**Parameters**
 > ::: info Returns
 > - **Type**: `object`
 > - **Description**: An object mapping keys to string values.
 > :::
-
 ##### getKvsByteArrayValue()
 
-> ```ts
-> getKvsByteArrayValue(key): object;
-> ```
+```ts
+getKvsByteArrayValue(key): object;
+```
 
 
-> Retrieves the Key-Value pairs as a JavaScript object with Int8Array values.
+Retrieves the Key-Value pairs as a JavaScript object with Int8Array values.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key (or key prefix) to query. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The key (or key prefix) to query. |
 
 > ::: info Returns
 > - **Type**: `object`
 > - **Description**: An object mapping keys to Int8Array values.
 > :::
-
 ##### getCount()
 
-> ```ts
-> getCount(key): number;
-> ```
+```ts
+getCount(key): number;
+```
 
 
-> Retrieves the count of Key-Value pairs matching the key (or key prefix).
+Retrieves the count of Key-Value pairs matching the key (or key prefix).
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key (or key prefix) to query. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The key (or key prefix) to query. |
 
 > ::: info Returns
 > - **Type**: `number`
 > - **Description**: The count of matching entries.
 > :::
-
 ##### delete()
 
-> ```ts
-> delete(key): void;
-> ```
+```ts
+delete(key): void;
+```
 
 
-> Deletes the specified key.
+Deletes the specified key.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The key to delete. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The key to delete. |
 
 > ::: info Returns
 > - **Type**: `void`

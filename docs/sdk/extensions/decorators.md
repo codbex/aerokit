@@ -1,22 +1,14 @@
 # extensions/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [extensions/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [extensions/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [ExtensionOptions](#extensionoptions)
-- [Functions](#functions)
-  - [Extension()](#extension())
 
 ## Interfaces
 
@@ -34,9 +26,9 @@ The Decorators API provides...
 
 ### Extension()
 
-> ```ts
-> function Extension(options): (target, context) => void;
-> ```
+```ts
+function Extension(options): (target, context) => void;
+```
 
 
 #### Parameters

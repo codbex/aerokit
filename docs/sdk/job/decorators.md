@@ -1,22 +1,14 @@
 # job/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [job/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/job/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [job/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/job/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [ScheduledOptions](#scheduledoptions)
-- [Functions](#functions)
-  - [Scheduled()](#scheduled())
 
 ## Interfaces
 
@@ -34,9 +26,9 @@ The Decorators API provides...
 
 ### Scheduled()
 
-> ```ts
-> function Scheduled(options): (target, context) => void;
-> ```
+```ts
+function Scheduled(options): (target, context) => void;
+```
 
 
 #### Parameters

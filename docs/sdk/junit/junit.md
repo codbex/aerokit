@@ -1,33 +1,22 @@
 # junit/junit
 
-> [!tip]
-> Auto-generated from
-> - source: [junit/junit.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/junit/junit.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [junit/junit.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/junit/junit.ts)
+:::
 
 
 ## Overview
 
 The Junit API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Functions](#functions)
-  - [test()](#test())
-  - [assertEquals()](#assertequals())
-  - [assertNotEquals()](#assertnotequals())
-  - [assertTrue()](#asserttrue())
-  - [assertFalse()](#assertfalse())
-  - [fail()](#fail())
 
 ## Functions
 
 ### test()
 
-> ```ts
-> function test(name, testFn): void;
-> ```
+```ts
+function test(name, testFn): void;
+```
 
 
 Defines a test case.
@@ -49,9 +38,9 @@ Defines a test case.
 
 #### Call Signature
 
-> ```ts
-> function assertEquals(expected, actual): void;
-> ```
+```ts
+function assertEquals(expected, actual): void;
+```
 
 
 Asserts that two objects or primitive values are equal.
@@ -75,12 +64,12 @@ Asserts that two objects or primitive values are equal.
 
 #### Call Signature
 
-> ```ts
-> function assertEquals(
->    message, 
->    expected, 
->    actual): void;
-> ```
+```ts
+function assertEquals(
+   message, 
+   expected, 
+   actual): void;
+```
 
 
 Asserts that two objects or primitive values are equal.
@@ -109,9 +98,9 @@ Asserts that two objects or primitive values are equal.
 
 #### Call Signature
 
-> ```ts
-> function assertNotEquals(unexpected, actual): void;
-> ```
+```ts
+function assertNotEquals(unexpected, actual): void;
+```
 
 
 Asserts that two objects or primitive values are not equal.
@@ -135,12 +124,12 @@ Asserts that two objects or primitive values are not equal.
 
 #### Call Signature
 
-> ```ts
-> function assertNotEquals(
->    message, 
->    unexpected, 
->    actual): void;
-> ```
+```ts
+function assertNotEquals(
+   message, 
+   unexpected, 
+   actual): void;
+```
 
 
 Asserts that two objects or primitive values are not equal.
@@ -169,9 +158,9 @@ Asserts that two objects or primitive values are not equal.
 
 #### Call Signature
 
-> ```ts
-> function assertTrue(condition): void;
-> ```
+```ts
+function assertTrue(condition): void;
+```
 
 
 Asserts that a condition is true.
@@ -188,9 +177,9 @@ Asserts that a condition is true.
 
 #### Call Signature
 
-> ```ts
-> function assertTrue(message, condition): void;
-> ```
+```ts
+function assertTrue(message, condition): void;
+```
 
 
 Asserts that a condition is true.
@@ -212,9 +201,9 @@ Asserts that a condition is true.
 
 #### Call Signature
 
-> ```ts
-> function assertFalse(condition): void;
-> ```
+```ts
+function assertFalse(condition): void;
+```
 
 
 Asserts that a condition is false.
@@ -231,9 +220,9 @@ Asserts that a condition is false.
 
 #### Call Signature
 
-> ```ts
-> function assertFalse(message, condition): void;
-> ```
+```ts
+function assertFalse(message, condition): void;
+```
 
 
 Asserts that a condition is false.
@@ -255,9 +244,9 @@ Asserts that a condition is false.
 
 #### Call Signature
 
-> ```ts
-> function fail(): void;
-> ```
+```ts
+function fail(): void;
+```
 
 
 Fails a test immediately.
@@ -268,9 +257,9 @@ Fails a test immediately.
 
 #### Call Signature
 
-> ```ts
-> function fail(message): void;
-> ```
+```ts
+function fail(message): void;
+```
 
 
 Fails a test immediately.

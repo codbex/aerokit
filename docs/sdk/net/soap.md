@@ -1,22 +1,14 @@
 # net/soap
 
-> [!tip]
-> Auto-generated from
-> - source: [net/soap.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/soap.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [net/soap.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/soap.ts)
+:::
 
 
 ## Overview
 
-Utility class for creating, parsing, and calling SOAP messages.
-It wraps the underlying Java javax.xml.soap API.
+The Soap API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [SOAP](#soap)
-- [Returns](#returns)
 
 ## Classes
 
@@ -26,81 +18,66 @@ It wraps the underlying Java javax.xml.soap API.
 Utility class for creating, parsing, and calling SOAP messages.
 It wraps the underlying Java javax.xml.soap API.
 
-## Returns
+#### Constructors
 
-[`SOAP`](#soap)
+##### Constructor
+
+```ts
+new SOAP(): SOAP;
+```
 
 #### Methods
-
 ##### call()
-
-> ```ts
-> static call(message, url): Message;
-> ```
-
-
-> Call a given SOAP endpoint with a given request message
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `message` | `Message` | The SOAP Message wrapper object. |
-> | `url` | `string` | The target SOAP endpoint URL. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `Message`
 > :::
-
 ##### trustAll()
 
-> ```ts
-> static trustAll(): void;
-> ```
+```ts
+static trustAll(): void;
+```
 
 
-> > ::: info Returns
-> > - **Type**: `void`
-> > :::
+> ::: info Returns
+> - **Type**: `void`
+> :::
+##### createMessage()
 
-> ##### createMessage()
-
-> > ```ts
-> > static createMessage(): Message;
-> > ```
-
-
-> Creates a new, empty SOAP message.
-
-> > ::: info Returns
-> > - **Type**: `Message`
-> > :::
-
-> ##### parseMessage()
-
-> > ```ts
-> > static parseMessage(mimeHeaders, inputStream): Message;
-> > ```
+```ts
+static createMessage(): Message;
+```
 
 
-> Parses a SOAP message from an InputStream and MimeHeaders.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `mimeHeaders` | `MimeHeaders` | The MimeHeaders wrapper object. |
-> | `inputStream` | `InputStream` | The InputStream wrapper object. |
+Creates a new, empty SOAP message.
 
 > ::: info Returns
 > - **Type**: `Message`
 > :::
+##### parseMessage()
 
+```ts
+static parseMessage(mimeHeaders, inputStream): Message;
+```
+
+
+Parses a SOAP message from an InputStream and MimeHeaders.
+
+**Parameters**
+
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `mimeHeaders` | `MimeHeaders` | The MimeHeaders wrapper object. |
+| `inputStream` | `InputStream` | The InputStream wrapper object. |
+
+> ::: info Returns
+> - **Type**: `Message`
+> :::
 ##### parseRequest()
 
-> ```ts
-> static parseRequest(): Message;
-> ```
+```ts
+static parseRequest(): Message;
+```
 
 
 Parses a SOAP message from the current HTTP request input stream.
@@ -108,12 +85,11 @@ Parses a SOAP message from the current HTTP request input stream.
 > ::: info Returns
 > - **Type**: `Message`
 > :::
-
 ##### createMimeHeaders()
 
-> ```ts
-> static createMimeHeaders(): MimeHeaders;
-> ```
+```ts
+static createMimeHeaders(): MimeHeaders;
+```
 
 
 Creates a new, empty MimeHeaders object.

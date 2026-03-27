@@ -1,113 +1,95 @@
 # bpm/tracer
 
-> [!tip]
-> Auto-generated from
-> - source: [bpm/tracer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/tracer.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [bpm/tracer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/tracer.ts)
+:::
 
 
 ## Overview
 
 The Tracer API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [Tracer](#tracer)
-- [Returns](#returns)
 
 ## Classes
 
 ### Tracer
 
 
-## Returns
+#### Constructors
 
-[`Tracer`](#tracer)
+##### Constructor
+
+```ts
+new Tracer(): Tracer;
+```
+
 
 #### Methods
-
 ##### log()
-
-> ```ts
-> log(message): void;
-> ```
-
-
-> **Parameters**
-
-> | Parameter | Type |
-> | ------ | ------ |
-> | `message` | `string` |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### warn()
 
-> ```ts
-> warn(message): void;
-> ```
+```ts
+warn(message): void;
+```
 
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `message` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `message` | `string` |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### error()
 
-> ```ts
-> error(message): void;
-> ```
+```ts
+error(message): void;
+```
 
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `message` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `message` | `string` |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### complete()
 
-> ```ts
-> complete(message?): void;
-> ```
+```ts
+complete(message?): void;
+```
 
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `message?` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `message?` | `string` |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### fail()
 
-> ```ts
-> fail(message?): void;
-> ```
+```ts
+fail(message?): void;
+```
 
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type |
-> | ------ | ------ |
-> | `message?` | `string` |
+| Parameter | Type |
+| ------ | ------ |
+| `message?` | `string` |
 
 > ::: info Returns
 > - **Type**: `void`

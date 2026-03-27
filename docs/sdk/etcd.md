@@ -1,23 +1,14 @@
 # etcd
 
-> [!tip]
-> Auto-generated from
-> - source: [etcd.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/etcd.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [etcd.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/etcd.ts)
+:::
 
 
 ## Overview
 
 The Etcd API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Header](#header)
-  - [GetResponse](#getresponse)
-  - [Client](#client)
-  - [client](#client)
 
 ## References
 

@@ -1,22 +1,14 @@
 # messaging/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [messaging/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [messaging/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [ListenerOptions](#listeneroptions)
-- [Functions](#functions)
-  - [Listener()](#listener())
 
 ## Interfaces
 
@@ -34,9 +26,9 @@ The Decorators API provides...
 
 ### Listener()
 
-> ```ts
-> function Listener(options): (target, context) => void;
-> ```
+```ts
+function Listener(options): (target, context) => void;
+```
 
 
 #### Parameters

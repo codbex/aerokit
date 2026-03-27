@@ -1,51 +1,14 @@
 # http
 
-> [!tip]
-> Auto-generated from
-> - source: [http.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [http.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http.ts)
+:::
 
 
 ## Overview
 
 The Http API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [HttpClientHeader](#httpclientheader)
-  - [HttpClientParam](#httpclientparam)
-  - [HttpClientFile](#httpclientfile)
-  - [HttpClientRequestOptions](#httpclientrequestoptions)
-  - [HttpClientResponse](#httpclientresponse)
-  - [HttpClient](#httpclient)
-  - [Controller](#controller)
-  - [Documentation](#documentation)
-  - [Get](#get)
-  - [Post](#post)
-  - [Put](#put)
-  - [Patch](#patch)
-  - [Delete](#delete)
-  - [Head](#head)
-  - [Options](#options)
-  - [asyncClient](#asyncclient)
-  - [client](#client)
-  - [decorators](#decorators)
-  - [request](#request)
-  - [response](#response)
-  - [rs](#rs)
-  - [session](#session)
-  - [upload](#upload)
-  - [errors](#errors)
-  - [utils](#utils)
-  - [Request](#request)
-  - [Cookie](#cookie)
-  - [Response](#response)
-  - [Session](#session)
-  - [Upload](#upload)
-  - [FileItems](#fileitems)
-  - [FileItem](#fileitem)
 
 ## References
 

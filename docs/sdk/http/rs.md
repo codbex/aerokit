@@ -1,24 +1,14 @@
 # http/rs
 
-> [!tip]
-> Auto-generated from
-> - source: [http/rs.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [http/rs.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs.ts)
+:::
 
 
 ## Overview
 
 The Rs API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [service](#service)
-  - [HttpController](#httpcontroller)
-  - [ResourceMethod](#resourcemethod)
-  - [ResourceMappings](#resourcemappings)
-  - [Resource](#resource)
 
 ## References
 

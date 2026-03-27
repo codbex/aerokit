@@ -1,28 +1,14 @@
 # git
 
-> [!tip]
-> Auto-generated from
-> - source: [git.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/git.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [git.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/git.ts)
+:::
 
 
 ## Overview
 
 The Git API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [FileDescriptor](#filedescriptor)
-  - [FolderDescriptor](#folderdescriptor)
-  - [ProjectDescriptor](#projectdescriptor)
-  - [GitCommitInfo](#gitcommitinfo)
-  - [GitBranch](#gitbranch)
-  - [GitChangedFile](#gitchangedfile)
-  - [GitConnector](#gitconnector)
-  - [Client](#client)
-  - [client](#client)
 
 ## References
 

@@ -1,33 +1,25 @@
 # db/dao
 
-> [!tip]
-> Auto-generated from
-> - source: [db/dao.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/dao.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [db/dao.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/dao.ts)
+:::
 
 
 ## Overview
 
 The Dao API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Functions](#functions)
-  - [DAO()](#dao())
-  - [create()](#create())
-  - [dao()](#dao())
 
 ## Functions
 
 ### DAO()
 
-> ```ts
-> function DAO(
->    orm, 
->    logCtxName?, 
->    dataSourceName?): void;
-> ```
+```ts
+function DAO(
+   orm, 
+   logCtxName?, 
+   dataSourceName?): void;
+```
 
 
 #### Parameters
@@ -46,12 +38,12 @@ The Dao API provides...
 
 ### create()
 
-> ```ts
-> function create(
->    oDefinition, 
->    logCtxName?, 
->    dataSourceName?): any;
-> ```
+```ts
+function create(
+   oDefinition, 
+   logCtxName?, 
+   dataSourceName?): any;
+```
 
 
 oDefinition can be table definition or standard orm definition object. Or it can be a valid path to
@@ -73,12 +65,12 @@ a .table file, or any other text file contianing a standard dao orm definition.
 
 ### dao()
 
-> ```ts
-> function dao(
->    oDefinition, 
->    logCtxName?, 
->    dataSourceName?): any;
-> ```
+```ts
+function dao(
+   oDefinition, 
+   logCtxName?, 
+   dataSourceName?): any;
+```
 
 
 #### Parameters

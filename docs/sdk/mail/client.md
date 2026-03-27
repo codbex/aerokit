@@ -1,28 +1,15 @@
 # mail/client
 
-> [!tip]
-> Auto-generated from
-> - source: [mail/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mail/client.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [mail/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mail/client.ts)
+:::
 
 
 ## Overview
 
 Provides a client for sending emails, supporting both simple text/HTML
 messages and complex multipart messages with attachments or inline content.
-/
-const Properties = Java.type("java.util.Properties");
-const MailFacade = Java.type("org.eclipse.dirigible.components.api.mail.MailFacade");
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [MailClient](#mailclient)
-- [Parameters](#parameters)
-- [Interfaces](#interfaces)
-  - [MailRecipients](#mailrecipients)
-  - [MailMultipart](#mailmultipart)
 
 ## Classes
 
@@ -32,122 +19,113 @@ const MailFacade = Java.type("org.eclipse.dirigible.components.api.mail.MailFaca
 The MailClient provides methods for sending emails, handling recipient processing
 and interfacing with the underlying MailFacade.
 
-## Parameters
+#### Constructors
+
+##### Constructor
+
+```ts
+new MailClient(options?): MailClient;
+```
+
+
+Creates a new instance of the MailClient, optionally configuring the underlying
+native mail facade.
+
+**Parameters**
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
 | `options?` | `object` | Optional key-value object containing configuration properties for the mail client (e.g., SMTP settings). |
 
-###### Returns
-
-[`MailClient`](#mailclient)
-
 #### Methods
-
 ##### sendMultipart()
-
-> ```ts
-> static sendMultipart( from, recipients, subject, parts): void;
-> ```
-
-
-> A static convenience method to send a multipart email without instantiating a client.
-> This is suitable for emails that require attachments, inline images, or mixed content.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `from` | `string` | The sender's email address. |
-> | `recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
-> | `subject` | `string` | The subject line of the email. |
-> | `parts` | [`MailMultipart`](#mailmultipart)[] | An array of [MailMultipart](#mailmultipart) objects defining the email content. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### send()
 
-> ```ts
-> static send( from, recipients, subject, text, contentType): void;
-> ```
+```ts
+static send(
+   from, 
+   recipients, 
+   subject, 
+   text, 
+   contentType): void;
+```
 
 
-> A static convenience method to send a simple email with only a single text or HTML body.
+A static convenience method to send a simple email with only a single text or HTML body.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `from` | `string` | The sender's email address. |
-> | `recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
-> | `subject` | `string` | The subject line of the email. |
-> | `text` | `string` | The body content of the email. |
-> | `contentType` | `MailContentType` | Specifies the body format: 'html' or 'plain'. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `from` | `string` | The sender's email address. |
+| `recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
+| `subject` | `string` | The subject line of the email. |
+| `text` | `string` | The body content of the email. |
+| `contentType` | `MailContentType` | Specifies the body format: 'html' or 'plain'. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### send()
 
-> ```ts
-> send(
->    from, 
->    _recipients, 
->    subject, 
->    text, 
->    contentType): void;
-> ```
+```ts
+send(
+   from, 
+   _recipients, 
+   subject, 
+   text, 
+   contentType): void;
+```
 
 
-> Sends a simple email with a single body part (text or HTML).
+Sends a simple email with a single body part (text or HTML).
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `from` | `string` | The sender's email address. |
-> | `_recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
-> | `subject` | `string` | The subject line of the email. |
-> | `text` | `string` | The body content of the email. |
-> | `contentType` | `MailContentType` | Specifies the body format: 'html' or 'plain'. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `from` | `string` | The sender's email address. |
+| `_recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
+| `subject` | `string` | The subject line of the email. |
+| `text` | `string` | The body content of the email. |
+| `contentType` | `MailContentType` | Specifies the body format: 'html' or 'plain'. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ###### Throws
 
 Throws an error if the recipient format is invalid or the native call fails.
 
 ##### sendMultipart()
 
-> ```ts
-> sendMultipart(
->    from, 
->    _recipients, 
->    subject, 
->    parts): void;
-> ```
+```ts
+sendMultipart(
+   from, 
+   _recipients, 
+   subject, 
+   parts): void;
+```
 
 
-> Sends a complex email composed of multiple parts (text bodies, HTML, attachments, inline content).
+Sends a complex email composed of multiple parts (text bodies, HTML, attachments, inline content).
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `from` | `string` | The sender's email address. |
-> | `_recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
-> | `subject` | `string` | The subject line of the email. |
-> | `parts` | [`MailMultipart`](#mailmultipart)[] | An array of [MailMultipart](#mailmultipart) objects defining the email content. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `from` | `string` | The sender's email address. |
+| `_recipients` | `string` \| [`MailRecipients`](#mailrecipients) | The recipient(s) structure (string for 'to', or [MailRecipients](#mailrecipients) object). |
+| `subject` | `string` | The subject line of the email. |
+| `parts` | [`MailMultipart`](#mailmultipart)[] | An array of [MailMultipart](#mailmultipart) objects defining the email content. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ###### Throws
 
 Throws an error if the recipient format is invalid or the native call fails.

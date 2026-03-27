@@ -1,36 +1,14 @@
 # io
 
-> [!tip]
-> Auto-generated from
-> - source: [io.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [io.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io.ts)
+:::
 
 
 ## Overview
 
 The Io API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Bytes](#bytes)
-  - [FileObject](#fileobject)
-  - [FolderObject](#folderobject)
-  - [Files](#files)
-  - [Image](#image)
-  - [bytes](#bytes)
-  - [files](#files)
-  - [image](#image)
-  - [streams](#streams)
-  - [zip](#zip)
-  - [Streams](#streams)
-  - [InputStream](#inputstream)
-  - [OutputStream](#outputstream)
-  - [Zip](#zip)
-  - [ZipInputStream](#zipinputstream)
-  - [ZipOutputStream](#zipoutputstream)
-  - [ZipEntry](#zipentry)
 
 ## References
 

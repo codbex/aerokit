@@ -1,22 +1,14 @@
 # net/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [net/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [net/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [WebsocketOptions](#websocketoptions)
-- [Functions](#functions)
-  - [Websocket()](#websocket())
 
 ## Interfaces
 
@@ -34,9 +26,9 @@ The Decorators API provides...
 
 ### Websocket()
 
-> ```ts
-> function Websocket(options): (target, context) => void;
-> ```
+```ts
+function Websocket(options): (target, context) => void;
+```
 
 
 #### Parameters

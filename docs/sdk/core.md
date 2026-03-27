@@ -1,29 +1,14 @@
 # core
 
-> [!tip]
-> Auto-generated from
-> - source: [core.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [core.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core.ts)
+:::
 
 
 ## Overview
 
 The Core API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Configurations](#configurations)
-  - [Context](#context)
-  - [EnvValues](#envvalues)
-  - [Env](#env)
-  - [GlobalsValues](#globalsvalues)
-  - [Globals](#globals)
-  - [configurations](#configurations)
-  - [context](#context)
-  - [env](#env)
-  - [globals](#globals)
 
 ## References
 

@@ -1,25 +1,14 @@
 # security
 
-> [!tip]
-> Auto-generated from
-> - source: [security.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [security.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security.ts)
+:::
 
 
 ## Overview
 
 The Security API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Roles](#roles)
-  - [user](#user)
-  - [decorators](#decorators)
-  - [OAuthClientConfig](#oauthclientconfig)
-  - [OAuthClient](#oauthclient)
-  - [User](#user)
 
 ## References
 

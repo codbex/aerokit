@@ -1,21 +1,14 @@
 # cache
 
-> [!tip]
-> Auto-generated from
-> - source: [cache.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cache.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [cache.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cache.ts)
+:::
 
 
 ## Overview
 
 The Cache API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Cache](#cache)
-  - [caches](#caches)
 
 ## References
 

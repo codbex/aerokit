@@ -1,22 +1,14 @@
 # security/user
 
-> [!tip]
-> Auto-generated from
-> - source: [security/user.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security/user.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [security/user.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security/user.ts)
+:::
 
 
 ## Overview
 
-Provides static access to the currently authenticated user's security and session context.
-This class acts as a facade for the underlying UserFacade component.
+The User API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [User](#user)
-- [Returns](#returns)
 
 ## Classes
 
@@ -26,51 +18,44 @@ This class acts as a facade for the underlying UserFacade component.
 Provides static access to the currently authenticated user's security and session context.
 This class acts as a facade for the underlying UserFacade component.
 
-## Returns
+#### Constructors
 
-[`User`](#user)
+##### Constructor
+
+```ts
+new User(): User;
+```
 
 #### Methods
-
 ##### getName()
+> ::: info Returns
+> - **Type**: `string`
+> - **Description**: The user's name or identifier as a string.
+> :::
+##### isInRole()
 
-> ```ts
-> static getName(): string;
-> ```
-
-
-> Retrieves the principal name (username or ID) of the currently authenticated user.
-
-> > ::: info Returns
-> > - **Type**: `string`
-> > - **Description**: The user's name or identifier as a string.
-> > :::
-
-> ##### isInRole()
-
-> > ```ts
-> > static isInRole(role): boolean;
-> > ```
+```ts
+static isInRole(role): boolean;
+```
 
 
-> Checks if the currently authenticated user is assigned to a specific security role.
+Checks if the currently authenticated user is assigned to a specific security role.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `role` | `string` | The name of the role to check (e.g., 'Administrator', 'User'). |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `role` | `string` | The name of the role to check (e.g., 'Administrator', 'User'). |
 
 > ::: info Returns
 > - **Type**: `boolean`
 > - **Description**: True if the user is in the specified role, false otherwise.
 > :::
-
 ##### getTimeout()
 
-> ```ts
-> static getTimeout(): number;
-> ```
+```ts
+static getTimeout(): number;
+```
 
 
 Retrieves the remaining session timeout for the current user session in seconds.
@@ -79,12 +64,11 @@ Retrieves the remaining session timeout for the current user session in seconds.
 > - **Type**: `number`
 > - **Description**: The session timeout duration in seconds.
 > :::
-
 ##### getAuthType()
 
-> ```ts
-> static getAuthType(): string;
-> ```
+```ts
+static getAuthType(): string;
+```
 
 
 Retrieves the authentication mechanism used for the current session (e.g., 'BASIC', 'FORM').
@@ -93,12 +77,11 @@ Retrieves the authentication mechanism used for the current session (e.g., 'BASI
 > - **Type**: `string`
 > - **Description**: The type of authentication used.
 > :::
-
 ##### getSecurityToken()
 
-> ```ts
-> static getSecurityToken(): string;
-> ```
+```ts
+static getSecurityToken(): string;
+```
 
 
 Retrieves the security token associated with the current user session.
@@ -108,12 +91,11 @@ This might be a session ID or an access token.
 > - **Type**: `string`
 > - **Description**: The security token as a string.
 > :::
-
 ##### getInvocationCount()
 
-> ```ts
-> static getInvocationCount(): number;
-> ```
+```ts
+static getInvocationCount(): number;
+```
 
 
 Retrieves the number of requests (invocations) made by the current user
@@ -123,12 +105,11 @@ during the lifecycle of the current session.
 > - **Type**: `number`
 > - **Description**: The total invocation count.
 > :::
-
 ##### getLanguage()
 
-> ```ts
-> static getLanguage(): string;
-> ```
+```ts
+static getLanguage(): string;
+```
 
 
 Retrieves the preferred language setting (e.g., 'en', 'de', 'es') for the current user.

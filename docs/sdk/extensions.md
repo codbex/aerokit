@@ -1,24 +1,14 @@
 # extensions
 
-> [!tip]
-> Auto-generated from
-> - source: [extensions.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [extensions.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions.ts)
+:::
 
 
 ## Overview
 
 The Extensions API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [ExtensionOptions](#extensionoptions)
-  - [Extension](#extension)
-  - [Extensions](#extensions)
-  - [extensions](#extensions)
-  - [decorators](#decorators)
 
 ## References
 

@@ -1,24 +1,14 @@
 # integrations
 
-> [!tip]
-> Auto-generated from
-> - source: [integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations.ts)
+:::
 
 
 ## Overview
 
 The Integrations API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [integrations](#integrations)
-  - [HeadersMap](#headersmap)
-  - [ExchangeProperties](#exchangeproperties)
-  - [IntegrationMessage](#integrationmessage)
-  - [Integrations](#integrations)
 
 ## References
 

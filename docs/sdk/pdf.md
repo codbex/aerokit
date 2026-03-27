@@ -1,23 +1,14 @@
 # pdf
 
-> [!tip]
-> Auto-generated from
-> - source: [pdf.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/pdf.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [pdf.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/pdf.ts)
+:::
 
 
 ## Overview
 
 The Pdf API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [pdf](#pdf)
-  - [PDFTableData](#pdftabledata)
-  - [PDFTableConfig](#pdftableconfig)
-  - [PDF](#pdf)
 
 ## References
 

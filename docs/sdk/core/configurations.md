@@ -1,132 +1,130 @@
 # core/configurations
 
-> [!tip]
-> Auto-generated from
-> - source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
+:::
 
 
 ## Overview
 
-The Configurations API provides...
+The Configurations API provides a centralized, type-safe interface for managing application configuration properties and detecting the runtime operating system. It serves as the foundation for environment-specific settings and system-aware behavior in Aerokit applications.
 
-## Table of Contents
+### Key Features
 
-- [Overview](#overview)
-- [Classes](#classes)
-  - [Configurations](#configurations)
-- [Returns](#returns)
+- **Static Interface**: Thread-safe, singleton-like access to configuration data
+- **Type Safety**: Full TypeScript support with proper type definitions
+- **File Loading**: Support for loading configurations from external files
+- **OS Detection**: Comprehensive operating system identification
+- **Memory Efficient**: In-memory storage with optional persistence
+
+### Use Cases
+
+- Environment variable management
+- Feature flag configuration
+- Database connection settings
+- API endpoint configuration
+- Platform-specific behavior adaptation
+
+```ts
+import { Configurations } from 'aerokit/core/configurations';
+
+// Set a configuration property
+Configurations.set('apiEndpoint', 'https://api.example.com');
+
+// Get a configuration property
+const apiEndpoint = Configurations.get('apiEndpoint');
+console.log(apiEndpoint); // Output: https://api.example.com
+
+// Check the operating system
+if (Configurations.isOSWindows()) {
+  console.log('Running on Windows');
+} else if (Configurations.isOSMac()) {
+  console.log('Running on Mac');
+} else if (Configurations.isOSUNIX()) {
+  console.log('Running on UNIX');
+} else if (Configurations.isOSSolaris()) {
+  console.log('Running on Solaris');
+}
+```
+
 
 ## Classes
 
 ### Configurations
 
 
-## Returns
+#### Constructors
 
-[`Configurations`](#configurations)
+##### Constructor
+
+```ts
+new Configurations(): Configurations;
+```
 
 #### Methods
-
 ##### get()
-
-> ```ts
-> static get(key, defaultValue?): string;
-> ```
-
-
-> Retrieves the configuration value associated with the given key.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The configuration key. |
-> | `defaultValue?` | `string` | The optional default value to return if the key is not found. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `string`
 > - **Description**: The configuration value as a string, or `undefined` if the key is not found and no default is provided.
 > :::
-
 ##### set()
 
-> ```ts
-> static set(key, value): void;
-> ```
+```ts
+static set(key, value): void;
+```
 
 
-> Sets the configuration value for the given key.
-> If the key already exists, its value is overwritten.
+Sets the configuration value for the given key.
+If the key already exists, its value is overwritten.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The configuration key. |
-> | `value` | `string` | The configuration value to set. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The configuration key. |
+| `value` | `string` | The configuration value to set. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### remove()
 
-> ```ts
-> static remove(key): void;
-> ```
+```ts
+static remove(key): void;
+```
 
 
-> Removes the configuration property associated with the given key.
+Removes the configuration property associated with the given key.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The configuration key to remove. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The configuration key to remove. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### getKeys()
 
-> ```ts
-> static getKeys(): string[];
-> ```
+```ts
+static getKeys(): string[];
+```
 
 
-> Retrieves a list of all current configuration keys.
+Retrieves a list of all current configuration keys.
 
-> > ::: info Returns
-> > - **Type**: `string`
-> > - **Description**: [] An array of configuration keys (strings).
-> > :::
-
-> ##### load()
-
-> > ```ts
-> > static load(path): void;
-> > ```
-
-
-> Loads configuration properties from a file at the specified path, overriding existing ones.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `path` | `string` | The file path to load configurations from. |
-
+##### load()
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### update()
 
-> ```ts
-> static update(): void;
-> ```
+```ts
+static update(): void;
+```
 
 
 Reloads or updates the current configuration settings from their source (e.g., persistence layer).
@@ -134,12 +132,11 @@ Reloads or updates the current configuration settings from their source (e.g., p
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### getOS()
 
-> ```ts
-> static getOS(): string;
-> ```
+```ts
+static getOS(): string;
+```
 
 
 Retrieves the name of the current Operating System.
@@ -148,12 +145,11 @@ Retrieves the name of the current Operating System.
 > - **Type**: `string`
 > - **Description**: The OS name as a string (e.g., "Windows", "Linux", "Mac OS X").
 > :::
-
 ##### isOSWindows()
 
-> ```ts
-> static isOSWindows(): boolean;
-> ```
+```ts
+static isOSWindows(): boolean;
+```
 
 
 Checks if the current Operating System is Windows.
@@ -162,12 +158,11 @@ Checks if the current Operating System is Windows.
 > - **Type**: `boolean`
 > - **Description**: True if the OS is Windows, false otherwise.
 > :::
-
 ##### isOSMac()
 
-> ```ts
-> static isOSMac(): boolean;
-> ```
+```ts
+static isOSMac(): boolean;
+```
 
 
 Checks if the current Operating System is Mac OS (or Mac OS X).
@@ -176,12 +171,11 @@ Checks if the current Operating System is Mac OS (or Mac OS X).
 > - **Type**: `boolean`
 > - **Description**: True if the OS is Mac, false otherwise.
 > :::
-
 ##### isOSUNIX()
 
-> ```ts
-> static isOSUNIX(): boolean;
-> ```
+```ts
+static isOSUNIX(): boolean;
+```
 
 
 Checks if the current Operating System is a UNIX-like system (e.g., Linux, macOS, or others).
@@ -190,12 +184,11 @@ Checks if the current Operating System is a UNIX-like system (e.g., Linux, macOS
 > - **Type**: `boolean`
 > - **Description**: True if the OS is a UNIX variant, false otherwise.
 > :::
-
 ##### isOSSolaris()
 
-> ```ts
-> static isOSSolaris(): boolean;
-> ```
+```ts
+static isOSSolaris(): boolean;
+```
 
 
 Checks if the current Operating System is Solaris.

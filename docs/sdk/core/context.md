@@ -1,69 +1,52 @@
 # core/context
 
-> [!tip]
-> Auto-generated from
-> - source: [core/context.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/context.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [core/context.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/context.ts)
+:::
 
 
 ## Overview
 
-The Context API provides...
+API Context
+* Provides a static interface for accessing and manipulating key-value pairs in a global, application-wide context.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [Context](#context)
-- [Returns](#returns)
 
 ## Classes
 
 ### Context
 
 
-## Returns
+#### Constructors
 
-[`Context`](#context)
+##### Constructor
+
+```ts
+new Context(): Context;
+```
 
 #### Methods
-
 ##### get()
-
-> ```ts
-> static get(name): any;
-> ```
-
-
-> Retrieves the value associated with the specified name from the global context.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The name of the context variable. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The context value, or `undefined` if the name is not found or the value is null.
 > :::
-
 ##### set()
 
-> ```ts
-> static set(name, value): void;
-> ```
+```ts
+static set(name, value): void;
+```
 
 
-> Stores a value in the global context under the specified name.
-> If the name already exists, its value is overwritten.
+Stores a value in the global context under the specified name.
+If the name already exists, its value is overwritten.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `name` | `string` | The name of the context variable. |
-> | `value` | `any` | The value to store. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `name` | `string` | The name of the context variable. |
+| `value` | `any` | The value to store. |
 
 > ::: info Returns
 > - **Type**: `void`

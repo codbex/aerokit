@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "ts-node": "^10.9.1",
     "typedoc": "^0.28.18",
     "typedoc-plugin-markdown": "^4.11.0",
     "vitepress": "^1.5.0",
@@ -15,7 +16,7 @@
     "docs:api": "typedoc",
     "docs:api:watch": "typedoc --watch",
     "docs:api:clean": "rm -rf docs/sdk && typedoc",
-    "docs:enhance": "node scripts/enhance-docs.js",
+    "docs:enhance": "ts-node --esm scripts/enhance-docs.ts",
     "docs:generate": "npm run docs:api && npm run docs:enhance",
     "docs:full": "npm run docs:api:clean && npm run docs:enhance && npm run docs:build",
     "docs:serve": "npm run docs:dev"

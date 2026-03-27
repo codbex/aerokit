@@ -1,23 +1,14 @@
 # indexing
 
-> [!tip]
-> Auto-generated from
-> - source: [indexing.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [indexing.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing.ts)
+:::
 
 
 ## Overview
 
 The Indexing API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [searcher](#searcher)
-  - [writer](#writer)
-  - [Searcher](#searcher)
-  - [Writer](#writer)
 
 ## References
 

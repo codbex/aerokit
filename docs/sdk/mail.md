@@ -1,23 +1,14 @@
 # mail
 
-> [!tip]
-> Auto-generated from
-> - source: [mail.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mail.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [mail.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mail.ts)
+:::
 
 
 ## Overview
 
 The Mail API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [MailRecipients](#mailrecipients)
-  - [MailMultipart](#mailmultipart)
-  - [MailClient](#mailclient)
-  - [client](#client)
 
 ## References
 

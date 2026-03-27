@@ -1,21 +1,14 @@
 # http/errors
 
-> [!tip]
-> Auto-generated from
-> - source: [http/errors.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/errors.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [http/errors.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/errors.ts)
+:::
 
 
 ## Overview
 
 The Errors API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [ForbiddenError](#forbiddenerror)
-  - [ValidationError](#validationerror)
 
 ## References
 

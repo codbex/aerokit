@@ -1,49 +1,14 @@
 # platform
 
-> [!tip]
-> Auto-generated from
-> - source: [platform.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [platform.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform.ts)
+:::
 
 
 ## Overview
 
 The Platform API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Command](#command)
-  - [ExecutionParameters](#executionparameters)
-  - [Engine](#engine)
-  - [command](#command)
-  - [engines](#engines)
-  - [lifecycle](#lifecycle)
-  - [os](#os)
-  - [problems](#problems)
-  - [registry](#registry)
-  - [repository](#repository)
-  - [workspace](#workspace)
-  - [Lifecycle](#lifecycle)
-  - [OS](#os)
-  - [Problem](#problem)
-  - [Problems](#problems)
-  - [Registry](#registry)
-  - [Artefact](#artefact)
-  - [Directory](#directory)
-  - [ArtefactInformation](#artefactinformation)
-  - [Repository](#repository)
-  - [Resource](#resource)
-  - [Collection](#collection)
-  - [EntityInformation](#entityinformation)
-  - [Workspace](#workspace)
-  - [Projects](#projects)
-  - [Project](#project)
-  - [Folders](#folders)
-  - [Files](#files)
-  - [Folder](#folder)
-  - [File](#file)
 
 ## References
 

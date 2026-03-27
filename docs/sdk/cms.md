@@ -1,23 +1,14 @@
 # cms
 
-> [!tip]
-> Auto-generated from
-> - source: [cms.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cms.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [cms.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cms.ts)
+:::
 
 
 ## Overview
 
 The Cms API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Cmis](#cmis)
-  - [Folder](#folder)
-  - [Document](#document)
-  - [cmis](#cmis)
 
 ## References
 

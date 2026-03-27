@@ -1,25 +1,14 @@
 # junit
 
-> [!tip]
-> Auto-generated from
-> - source: [junit.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/junit.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [junit.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/junit.ts)
+:::
 
 
 ## Overview
 
 The Junit API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [test](#test)
-  - [assertEquals](#assertequals)
-  - [assertNotEquals](#assertnotequals)
-  - [assertTrue](#asserttrue)
-  - [assertFalse](#assertfalse)
-  - [fail](#fail)
 
 ## References
 

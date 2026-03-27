@@ -1,71 +1,53 @@
 # rabbitmq/consumer
 
-> [!tip]
-> Auto-generated from
-> - source: [rabbitmq/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/consumer.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [rabbitmq/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/consumer.ts)
+:::
 
 
 ## Overview
 
-The Consumer API provides...
+RabbitMQ Consumer
 
-## Table of Contents
+This facade provides static methods to start and stop listening on RabbitMQ queues,
+wrapping the underlying Java implementation provided by the `RabbitMQFacade`.
 
-- [Overview](#overview)
-- [Classes](#classes)
-  - [Consumer](#consumer)
-- [Returns](#returns)
 
 ## Classes
 
 ### Consumer
 
 
-## Returns
+#### Constructors
 
-[`Consumer`](#consumer)
+##### Constructor
+
+```ts
+new Consumer(): Consumer;
+```
 
 #### Methods
-
 ##### startListening()
-
-> ```ts
-> static startListening(queue, handler): void;
-> ```
-
-
-> Starts listening for messages on a specified RabbitMQ queue.
-> The handler is typically a service or script URI that will be executed
-> when a message arrives.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `queue` | `string` | The name of the RabbitMQ queue to listen to. |
-> | `handler` | `string` | The URI/name of the component/script that will handle the message. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### stopListening()
 
-> ```ts
-> static stopListening(queue, handler): void;
-> ```
+```ts
+static stopListening(queue, handler): void;
+```
 
 
-> Stops the message listener previously started on a specified RabbitMQ queue
-> for a given handler.
+Stops the message listener previously started on a specified RabbitMQ queue
+for a given handler.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `queue` | `string` | The name of the RabbitMQ queue. |
-> | `handler` | `string` | The URI/name of the component/script whose listener should be stopped. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `queue` | `string` | The name of the RabbitMQ queue. |
+| `handler` | `string` | The URI/name of the component/script whose listener should be stopped. |
 
 > ::: info Returns
 > - **Type**: `void`

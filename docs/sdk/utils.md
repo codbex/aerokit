@@ -1,42 +1,14 @@
 # utils
 
-> [!tip]
-> Auto-generated from
-> - source: [utils.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [utils.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils.ts)
+:::
 
 
 ## Overview
 
 The Utils API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Alphanumeric](#alphanumeric)
-  - [Base64](#base64)
-  - [Converter](#converter)
-  - [Digest](#digest)
-  - [Escape](#escape)
-  - [Hex](#hex)
-  - [alphanumeric](#alphanumeric)
-  - [base64](#base64)
-  - [digest](#digest)
-  - [escape](#escape)
-  - [hex](#hex)
-  - [jsonpath](#jsonpath)
-  - [qrcode](#qrcode)
-  - [url](#url)
-  - [utf8](#utf8)
-  - [uuid](#uuid)
-  - [xml](#xml)
-  - [converter](#converter)
-  - [QRCode](#qrcode)
-  - [URL](#url)
-  - [UTF8](#utf8)
-  - [UUID](#uuid)
-  - [XML](#xml)
 
 ## References
 

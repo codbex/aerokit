@@ -1,39 +1,14 @@
 # db/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [db/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [db/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Interfaces](#interfaces)
-  - [ColumnOptions](#columnoptions)
-  - [OneToManyOptions](#onetomanyoptions)
-  - [ManyToOneOptions](#manytooneoptions)
-  - [EntityConstructor](#entityconstructor)
-- [Parameters](#parameters)
-- [Type Aliases](#type-aliases)
-  - [ColumnTypes](#columntypes)
-- [Functions](#functions)
-  - [Documentation()](#documentation())
-  - [Entity()](#entity())
-  - [Table()](#table())
-  - [Column()](#column())
-  - [Id()](#id())
-  - [CreatedAt()](#createdat())
-  - [UpdatedAt()](#updatedat())
-  - [CreatedBy()](#createdby())
-  - [UpdatedBy()](#updatedby())
-  - [Generated()](#generated())
-  - [OneToMany()](#onetomany())
-  - [ManyToOne()](#manytoone())
 
 ## Interfaces
 
@@ -93,7 +68,16 @@ The Decorators API provides...
 
 - `Function`
 
-## Parameters
+#### Constructors
+
+##### Constructor
+
+```ts
+new EntityConstructor(...args): any;
+```
+
+
+**Parameters**
 
 | Parameter | Type |
 | ------ | ------ |
@@ -102,12 +86,11 @@ The Decorators API provides...
 > ::: info Returns
 > - **Type**: `any`
 > :::
-
 ###### Inherited from
 
-> ```ts
-> Function.constructor
-> ```
+```ts
+Function.constructor
+```
 
 #### Properties
 
@@ -124,54 +107,54 @@ The Decorators API provides...
 
 ### ColumnTypes
 
-> ```ts
-> type ColumnTypes = 
->   | "integer"
->   | "long"
->   | "short"
->   | "byte"
->   | "float"
->   | "double"
->   | "big_integer"
->   | "big_decimal"
->   | "string"
->   | "char"
->   | "text"
->   | "nstring"
->   | "ntext"
->   | "date"
->   | "time"
->   | "timestamp"
->   | "calendar"
->   | "calendar_date"
->   | "instant"
->   | "boolean"
->   | "true_false"
->   | "yes_no"
->   | "numeric_boolean"
->   | "binary"
->   | "blob"
->   | "clob"
->   | "materialized_blob"
->   | "materialized_clob"
->   | "serializable"
->   | "any"
->   | "object"
->   | "uuid-char"
->   | "uuid-binary"
->   | "json"
->   | "jsonb"
->   | "xml";
-> ```
+```ts
+type ColumnTypes = 
+  | "integer"
+  | "long"
+  | "short"
+  | "byte"
+  | "float"
+  | "double"
+  | "big_integer"
+  | "big_decimal"
+  | "string"
+  | "char"
+  | "text"
+  | "nstring"
+  | "ntext"
+  | "date"
+  | "time"
+  | "timestamp"
+  | "calendar"
+  | "calendar_date"
+  | "instant"
+  | "boolean"
+  | "true_false"
+  | "yes_no"
+  | "numeric_boolean"
+  | "binary"
+  | "blob"
+  | "clob"
+  | "materialized_blob"
+  | "materialized_clob"
+  | "serializable"
+  | "any"
+  | "object"
+  | "uuid-char"
+  | "uuid-binary"
+  | "json"
+  | "jsonb"
+  | "xml";
+```
 
 
 ## Functions
 
 ### Documentation()
 
-> ```ts
-> function Documentation(description): (value, context) => any;
-> ```
+```ts
+function Documentation(description): (value, context) => any;
+```
 
 
 Adds documentation metadata to a class or a field.
@@ -190,9 +173,9 @@ Adds documentation metadata to a class or a field.
 
 ### Entity()
 
-> ```ts
-> function Entity(entityName?): (value, context) => void;
-> ```
+```ts
+function Entity(entityName?): (value, context) => void;
+```
 
 
 Marks a class as an entity and initiates metadata finalization.
@@ -211,9 +194,9 @@ Marks a class as an entity and initiates metadata finalization.
 
 ### Table()
 
-> ```ts
-> function Table(tableName?): (value, context) => T;
-> ```
+```ts
+function Table(tableName?): (value, context) => T;
+```
 
 
 Specifies the database table name for the entity.
@@ -232,9 +215,9 @@ Specifies the database table name for the entity.
 
 ### Column()
 
-> ```ts
-> function Column(options?): (_, context) => void;
-> ```
+```ts
+function Column(options?): (_, context) => void;
+```
 
 
 Marks a property as a standard database column.
@@ -253,9 +236,9 @@ Marks a property as a standard database column.
 
 ### Id()
 
-> ```ts
-> function Id(): (_, context) => void;
-> ```
+```ts
+function Id(): (_, context) => void;
+```
 
 
 Marks a property as the entity's primary key.
@@ -268,9 +251,9 @@ Marks a property as the entity's primary key.
 
 ### CreatedAt()
 
-> ```ts
-> function CreatedAt(): (_, context) => void;
-> ```
+```ts
+function CreatedAt(): (_, context) => void;
+```
 
 
 Marks a property as the entity's created at timestamp.
@@ -283,9 +266,9 @@ Marks a property as the entity's created at timestamp.
 
 ### UpdatedAt()
 
-> ```ts
-> function UpdatedAt(): (_, context) => void;
-> ```
+```ts
+function UpdatedAt(): (_, context) => void;
+```
 
 
 Marks a property as the entity's update at timestamp.
@@ -298,9 +281,9 @@ Marks a property as the entity's update at timestamp.
 
 ### CreatedBy()
 
-> ```ts
-> function CreatedBy(): (_, context) => void;
-> ```
+```ts
+function CreatedBy(): (_, context) => void;
+```
 
 
 Marks a property as the entity's creation actor.
@@ -313,9 +296,9 @@ Marks a property as the entity's creation actor.
 
 ### UpdatedBy()
 
-> ```ts
-> function UpdatedBy(): (_, context) => void;
-> ```
+```ts
+function UpdatedBy(): (_, context) => void;
+```
 
 
 Marks a property as the entity's update actor.
@@ -328,9 +311,9 @@ Marks a property as the entity's update actor.
 
 ### Generated()
 
-> ```ts
-> function Generated(strategy): (_, context) => void;
-> ```
+```ts
+function Generated(strategy): (_, context) => void;
+```
 
 
 Marks a property as a generated value (e.g., auto-increment).
@@ -349,9 +332,9 @@ Marks a property as a generated value (e.g., auto-increment).
 
 ### OneToMany()
 
-> ```ts
-> function OneToMany(typeFunction, options): (_, context) => void;
-> ```
+```ts
+function OneToMany(typeFunction, options): (_, context) => void;
+```
 
 
 Defines a one-to-many relationship.
@@ -371,9 +354,9 @@ Defines a one-to-many relationship.
 
 ### ManyToOne()
 
-> ```ts
-> function ManyToOne(typeFunction, options?): (_, context) => void;
-> ```
+```ts
+function ManyToOne(typeFunction, options?): (_, context) => void;
+```
 
 
 Defines a many-to-one relationship.

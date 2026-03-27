@@ -1,9 +1,8 @@
 # integrations/integrations
 
-> [!tip]
-> Auto-generated from
-> - source: [integrations/integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations/integrations.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [integrations/integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations/integrations.ts)
+:::
 
 
 ## Overview
@@ -11,18 +10,7 @@
 Provides a static façade for interacting with Apache Camel routes
 within the execution environment. This allows JavaScript code to synchronously
 invoke integration routes and access the current message context.
-/
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Classes](#classes)
-  - [Integrations](#integrations)
-- [Returns](#returns)
-- [Interfaces](#interfaces)
-  - [HeadersMap](#headersmap)
-  - [ExchangeProperties](#exchangeproperties)
-  - [IntegrationMessage](#integrationmessage)
 
 ## Classes
 
@@ -32,293 +20,169 @@ invoke integration routes and access the current message context.
 The Integrations class provides utility methods for triggering and interacting
 with predefined Apache Camel integration routes.
 
-## Returns
+#### Constructors
 
-[`Integrations`](#integrations)
+##### Constructor
+
+```ts
+new Integrations(): Integrations;
+```
 
 #### Methods
-
 ##### invokeRoute()
-
-> ```ts
-> static invokeRoute( routeId, payload, headers, exchangeProperties): any;
-> ```
-
-
-> Synchronously invokes a specified Camel route.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `routeId` | `string` | The unique identifier of the Camel route to be executed. |
-> | `payload` | `any` | The initial message body/payload for the route. |
-> | `headers` | [`HeadersMap`](#headersmap) | A map of headers to set on the initial Camel Message. |
-> | `exchangeProperties` | [`ExchangeProperties`](#exchangeproperties) | A map of properties to set on the Camel Exchange context. |
-
+**Parameters**
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The final result (the body of the resulting Camel Message) after the route has completed execution.
 > :::
-
 ##### getInvokingRouteMessage()
 
-> ```ts
-> static getInvokingRouteMessage(): IntegrationMessage;
-> ```
+```ts
+static getInvokingRouteMessage(): IntegrationMessage;
+```
 
 
-> Retrieves the current message being processed by the underlying integration
-> engine's context. This is typically used within a route endpoint (e.g., a script component)
-> to access or modify the message.
+Retrieves the current message being processed by the underlying integration
+engine's context. This is typically used within a route endpoint (e.g., a script component)
+to access or modify the message.
 
-> Note: '__context' is assumed to be a global or context-injected variable.
+Note: '__context' is assumed to be a global or context-injected variable.
 
-> ###### Returns
-
-> [`IntegrationMessage`](#integrationmessage)
-
-> The current IntegrationMessage wrapper.
-
-> ## Interfaces
-
-> ### HeadersMap
-
-
-> Defines the structure for Camel Message Headers, typically used for
-> standard communication metadata. Keys are strings, and values can be
-> a single string or an array of strings.
-
-> #### Indexable
-
-> > ```ts
-> > [key: string]: string | string[]
-> > ```
-
-> ***
-
-> ### ExchangeProperties
-
-
-> Defines the structure for Camel Exchange Properties, which are context-specific
-> variables used for processing within a single route execution. Keys are strings,
-> and values can be a single string or an array of strings.
-
-> #### Indexable
-
-> > ```ts
-> > [key: string]: string | string[]
-> > ```
-
-> ***
-
-> ### IntegrationMessage
-
-
-> Represents the Camel message currently being processed. This interface mirrors
-> key functionality of the underlying Apache Camel Message and Exchange objects.
-
-> #### Methods
-
-> ##### constructor()
-
-> > ```ts
-> > constructor(message): any;
-> > ```
-
-
-> Constructs an IntegrationMessage wrapper around a native message object.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `message` | `any` | The native message object (usually a Camel Message or Exchange). |
-
+## Interfaces
+### HeadersMap
+#### Indexable
+### ExchangeProperties
+#### Indexable
+### IntegrationMessage
+#### Methods
+##### constructor()
+**Parameters**
 > ::: info Returns
 > - **Type**: `any`
 > :::
-
 ##### getBody()
 
-> ```ts
-> getBody(): any;
-> ```
+```ts
+getBody(): any;
+```
 
 
-> Retrieves the body of the message.
+Retrieves the body of the message.
 
-> > ::: info Returns
-> > - **Type**: `any`
-> > - **Description**: The message body (can be any type, e.g., string, object, stream).
-> > :::
+> ::: info Returns
+> - **Type**: `any`
+> - **Description**: The message body (can be any type, e.g., string, object, stream).
+> :::
+##### getExchangeProperty()
 
-> ##### getExchangeProperty()
-
-> > ```ts
-> > getExchangeProperty(propertyName): any;
-> > ```
+```ts
+getExchangeProperty(propertyName): any;
+```
 
 
-> Retrieves a specific property from the current Exchange context.
+Retrieves a specific property from the current Exchange context.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `propertyName` | `string` | The name of the exchange property. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `propertyName` | `string` | The name of the exchange property. |
 
 > ::: info Returns
 > - **Type**: `any`
 > - **Description**: The value of the exchange property.
 > :::
-
 ##### setExchangeProperty()
 
-> ```ts
-> setExchangeProperty(propertyName, propertyValue): void;
-> ```
+```ts
+setExchangeProperty(propertyName, propertyValue): void;
+```
 
 
-> Sets a specific property on the current Exchange context.
+Sets a specific property on the current Exchange context.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `propertyName` | `string` | The name of the exchange property. |
-> | `propertyValue` | `any` | The value to set. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `propertyName` | `string` | The name of the exchange property. |
+| `propertyValue` | `any` | The value to set. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### getExchangeProperties()
 
-> ```ts
-> getExchangeProperties(): Record;
-> ```
+```ts
+getExchangeProperties(): Record;
+```
 
 
-> Retrieves all properties from the current Exchange context.
+Retrieves all properties from the current Exchange context.
 
-> > ::: info Returns
-> > - **Type**: `Record`
-> > - **Description**: \ A map of all exchange properties.
-> > :::
-
-> ##### getBodyAsString()
-
-> > ```ts
-> > getBodyAsString(): string;
-> > ```
-
-
-> Retrieves the body of the message as a string.
-
-> > ::: info Returns
-> > - **Type**: `string`
-> > - **Description**: The message body converted to a string.
-> > :::
-
-> ##### setBody()
-
-> > ```ts
-> > setBody(body): void;
-> > ```
-
-
-> Sets the body of the message.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `body` | `any` | The new body content. |
-
-> ::: info Returns
-> - **Type**: `void`
-> :::
-
-##### getHeaders()
-
-> ```ts
-> getHeaders(): HeadersMap;
-> ```
-
-
-> Retrieves all headers associated with the message.
-
-> ###### Returns
-
-> [`HeadersMap`](#headersmap)
-
-> A map of headers.
-
-> ##### getHeader()
-
-> > ```ts
-> > getHeader(key): string | string[];
-> > ```
-
-
-> Retrieves a specific header value.
-
-> **Parameters**
-
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The header key. |
-
+##### getBodyAsString()
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: \| `string`[] The header value(s).
+> - **Description**: The message body converted to a string.
 > :::
+##### setBody()
 
-##### setHeaders()
-
-> ```ts
-> setHeaders(headers): void;
-> ```
+```ts
+setBody(body): void;
+```
 
 
-> Sets multiple headers on the message.
+Sets the body of the message.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `headers` | [`HeadersMap`](#headersmap) | The map of headers to set. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `body` | `any` | The new body content. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
+##### getHeaders()
 
+```ts
+getHeaders(): HeadersMap;
+```
+
+
+Retrieves all headers associated with the message.
+
+##### getHeader()
+**Parameters**
+##### setHeaders()
+**Parameters**
+> ::: info Returns
+> - **Type**: `void`
+> :::
 ##### setHeader()
 
-> ```ts
-> setHeader(key, value): void;
-> ```
+```ts
+setHeader(key, value): void;
+```
 
 
-> Sets a single header on the message.
+Sets a single header on the message.
 
-> **Parameters**
+**Parameters**
 
-> | Parameter | Type | Description |
-> | ------ | ------ | ------ |
-> | `key` | `string` | The header key. |
-> | `value` | `string` \| `string`[] | The header value. |
+| Parameter | Type | Description |
+| ------ | ------ | ------ |
+| `key` | `string` | The header key. |
+| `value` | `string` \| `string`[] | The header value. |
 
 > ::: info Returns
 > - **Type**: `void`
 > :::
-
 ##### getCamelMessage()
 
-> ```ts
-> getCamelMessage(): any;
-> ```
+```ts
+getCamelMessage(): any;
+```
 
 
 Retrieves the underlying native Camel Message object.

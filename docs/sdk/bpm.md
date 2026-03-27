@@ -1,48 +1,14 @@
 # bpm
 
-> [!tip]
-> Auto-generated from
-> - source: [bpm.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [bpm.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm.ts)
+:::
 
 
 ## Overview
 
 The Bpm API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [References](#references)
-  - [Deployer](#deployer)
-  - [deployer](#deployer)
-  - [process](#process)
-  - [tasks](#tasks)
-  - [values](#values)
-  - [tracer](#tracer)
-  - [BpmnError](#bpmnerror)
-  - [Process](#process)
-  - [Tasks](#tasks)
-  - [TaskService](#taskservice)
-  - [Task](#task)
-  - [TaskInfo](#taskinfo)
-  - [IdentityLinkInfo](#identitylinkinfo)
-  - [IdentityLink](#identitylink)
-  - [DelegationState](#delegationstate)
-  - [TaskBuilder](#taskbuilder)
-  - [FormInfo](#forminfo)
-  - [ValueFields](#valuefields)
-  - [VariableInstance](#variableinstance)
-  - [DataObject](#dataobject)
-  - [Comment](#comment)
-  - [TaskEvent](#taskevent)
-  - [Attachment](#attachment)
-  - [NullHandlingOnOrder](#nullhandlingonorder)
-  - [QueryProperty](#queryproperty)
-  - [Query](#query)
-  - [TaskInfoQuery](#taskinfoquery)
-  - [Tracer](#tracer)
-  - [Values](#values)
 
 ## References
 

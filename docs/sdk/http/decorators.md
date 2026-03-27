@@ -1,37 +1,22 @@
 # http/decorators
 
-> [!tip]
-> Auto-generated from
-> - source: [http/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/decorators.ts)
-> - version: 1.0.0
+::: tip Documentation
+- source: [http/decorators.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/decorators.ts)
+:::
 
 
 ## Overview
 
 The Decorators API provides...
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Variables](#variables)
-  - [Get](#get)
-  - [Post](#post)
-  - [Put](#put)
-  - [Patch](#patch)
-  - [Delete](#delete)
-  - [Head](#head)
-  - [Options](#options)
-- [Functions](#functions)
-  - [Controller()](#controller())
-  - [Documentation()](#documentation())
 
 ## Variables
 
 ### Get
 
-> ```ts
-> const Get: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Get: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -48,9 +33,9 @@ The Decorators API provides...
 
 ### Post
 
-> ```ts
-> const Post: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Post: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -67,9 +52,9 @@ The Decorators API provides...
 
 ### Put
 
-> ```ts
-> const Put: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Put: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -86,9 +71,9 @@ The Decorators API provides...
 
 ### Patch
 
-> ```ts
-> const Patch: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Patch: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -105,9 +90,9 @@ The Decorators API provides...
 
 ### Delete
 
-> ```ts
-> const Delete: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Delete: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -124,9 +109,9 @@ The Decorators API provides...
 
 ### Head
 
-> ```ts
-> const Head: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Head: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -143,9 +128,9 @@ The Decorators API provides...
 
 ### Options
 
-> ```ts
-> const Options: (path) => (target, propertyKey, descriptor?) => void;
-> ```
+```ts
+const Options: (path) => (target, propertyKey, descriptor?) => void;
+```
 
 
 #### Parameters
@@ -162,9 +147,9 @@ The Decorators API provides...
 
 ### Controller()
 
-> ```ts
-> function Controller(ctr, _context?): void;
-> ```
+```ts
+function Controller(ctr, _context?): void;
+```
 
 
 #### Parameters
@@ -182,9 +167,9 @@ The Decorators API provides...
 
 ### Documentation()
 
-> ```ts
-> function Documentation(documentation): (value, context) => void;
-> ```
+```ts
+function Documentation(documentation): (value, context) => void;
+```
 
 
 #### Parameters
