@@ -32,10 +32,10 @@ jobs:
         run: npm ci
 
       - name: Generate typedoc output
+        continue-on-error: true
         run: npm run docs:generate-typedoc
 
       - name: Generate documentation
-        if: always()
         run: npm run docs:generate
 
       - name: Configure Git
