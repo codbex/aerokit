@@ -49,7 +49,6 @@ jobs:
           BRANCH_NAME="update-docs-$(date +%s)"
           git checkout -b $BRANCH_NAME
           git add docs/
-          git add output.json
           if git diff --staged --quiet; then
             echo "No changes in docs folder"
             echo "has_changes=false" >> $GITHUB_OUTPUT
