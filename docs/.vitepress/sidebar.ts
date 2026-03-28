@@ -1,7 +1,12 @@
 export default {
   "/sdk/": [
     {
+      text: "Get Started",
+      link: "/sdk/get-started/"
+    },
+    {
       text: "SDK",
+      link: "/sdk/",
       items: [
     {
         "text": "bpm/deployer",

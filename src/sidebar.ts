@@ -9,7 +9,12 @@ export function generateSidebar(modules: ModuleDoc[]) {
   return `export default {
   "/sdk/": [
     {
+      text: "Get Started",
+      link: "/sdk/get-started/"
+    },
+    {
       text: "SDK",
+      link: "/sdk/",
       items: ${JSON.stringify(items, null, 4)}
     }
   ]
