@@ -17,7 +17,7 @@
 Retrieves the configuration value associated with the given key.
 
 > ```ts
-> static get(key: string, defaultValue: string): void;
+> static get(key: string, defaultValue: string): string;
 > ```
 >
 > | Parameter | Type | Description |
@@ -26,7 +26,7 @@ Retrieves the configuration value associated with the given key.
 > | `defaultValue` | `string` | The optional default value to return if the key is not found. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `string`
 > - **Description**: The configuration value as a string, or &#x60;undefined&#x60; if the key is not found and no default is provided.
 > :::
 

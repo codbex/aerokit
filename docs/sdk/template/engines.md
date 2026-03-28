@@ -95,7 +95,7 @@ Loads a template from the public registry, selects an appropriate engine, and ge
 It uses the **Mustache engine** if the file extension is &#x60;.mustache&#x60;, otherwise it uses the **default (Velocity)**.
 
 > ```ts
-> static generateFromFile(location: string, parameters: any): void;
+> static generateFromFile(location: string, parameters: any): string;
 > ```
 >
 > | Parameter | Type | Description |
@@ -104,7 +104,7 @@ It uses the **Mustache engine** if the file extension is &#x60;.mustache&#x60;, 
 > | `parameters` | `any` | An object containing key-value pairs to be used as context variables in the template. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `string`
 > - **Description**: The processed output string, or &#x60;undefined&#x60; if the resource does not exist.
 > :::
 

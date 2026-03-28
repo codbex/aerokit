@@ -90,7 +90,7 @@ Finds all entities matching the given options.
 Finds a single entity by its primary key ID.
 
 > ```ts
-> findById(id: any, options: Options): void;
+> findById(id: any, options: Options): T;
 > ```
 >
 > | Parameter | Type | Description |
@@ -99,7 +99,7 @@ Finds a single entity by its primary key ID.
 > | `options` | `Options` |  |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `T`
 > - **Description**: 
 > :::
 
@@ -178,12 +178,12 @@ Deletes an entity by its primary key ID.
 Counts the number of entities matching the given options.
 
 > ```ts
-> count(options: any): number;
+> count(options: Options): number;
 > ```
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `options` | `any` |  |
+> | `options` | `Options` |  |
 >
 > ::: info Returns
 > - **Type**: `number`

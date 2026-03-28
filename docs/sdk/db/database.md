@@ -1779,7 +1779,7 @@ Converts the ResultSet into a JSON array of objects.
 
 
 > ```ts
-> getDate(identifier: any): void;
+> getDate(identifier: any): Date;
 > ```
 >
 > | Parameter | Type | Description |
@@ -1787,7 +1787,7 @@ Converts the ResultSet into a JSON array of objects.
 > | `identifier` | `any` |  |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `Date`
 > - **Description**: 
 > :::
 
@@ -1898,7 +1898,7 @@ Converts the ResultSet into a JSON array of objects.
 
 
 > ```ts
-> getTime(identifier: any): void;
+> getTime(identifier: any): Date;
 > ```
 >
 > | Parameter | Type | Description |
@@ -1906,7 +1906,7 @@ Converts the ResultSet into a JSON array of objects.
 > | `identifier` | `any` |  |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `Date`
 > - **Description**: 
 > :::
 
@@ -1915,7 +1915,7 @@ Converts the ResultSet into a JSON array of objects.
 
 
 > ```ts
-> getTimestamp(identifier: any): void;
+> getTimestamp(identifier: any): Date;
 > ```
 >
 > | Parameter | Type | Description |
@@ -1923,7 +1923,7 @@ Converts the ResultSet into a JSON array of objects.
 > | `identifier` | `any` |  |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `Date`
 > - **Description**: 
 > :::
 
@@ -2369,7 +2369,7 @@ Returns a list of available data source names.
 Returns database metadata for the specified data source.
 
 > ```ts
-> static getMetadata(datasourceName: string): void;
+> static getMetadata(datasourceName: string): DatabaseMetadata;
 > ```
 >
 > | Parameter | Type | Description |
@@ -2377,7 +2377,7 @@ Returns database metadata for the specified data source.
 > | `datasourceName` | `string` |  |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `DatabaseMetadata`
 > - **Description**: 
 > :::
 

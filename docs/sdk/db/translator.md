@@ -17,13 +17,13 @@
 Translates properties for a list of entities by querying the corresponding language table.
 
 > ```ts
-> static translateList(list: any, language: any, basetTable: string): void;
+> static translateList(list: any, language: string, basetTable: string): void;
 > ```
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `list` | `any` | The array of entities to be translated. |
-> | `language` | `any` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
+> | `language` | `string` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
 > | `basetTable` | `string` | The name of the base entity table (used to derive the language table name). |
 >
 > ::: info Returns
@@ -36,14 +36,14 @@ Translates properties for a list of entities by querying the corresponding langu
 Translates properties for a single entity by querying the corresponding language table.
 
 > ```ts
-> static translateEntity(entity: any, id: any, language: any, basetTable: string): any;
+> static translateEntity(entity: any, id: any, language: string, basetTable: string): any;
 > ```
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `entity` | `any` | The entity object to be translated. |
 > | `id` | `any` | The ID of the entity. |
-> | `language` | `any` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
+> | `language` | `string` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
 > | `basetTable` | `string` | The name of the base entity table. |
 >
 > ::: info Returns

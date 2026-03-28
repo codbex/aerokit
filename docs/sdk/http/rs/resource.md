@@ -139,7 +139,7 @@ Creates a handling specification for the HTTP method &quot;DELETE&quot; (alias f
 Finds a ResourceMethod with the given constraints.
 
 > ```ts
-> find(sVerb: string, arrConsumesMimeTypeStrings: any, arrProducesMimeTypeStrings: any): void;
+> find(sVerb: string, arrConsumesMimeTypeStrings: any, arrProducesMimeTypeStrings: any): ResourceMethod;
 > ```
 >
 > | Parameter | Type | Description |
@@ -149,7 +149,7 @@ Finds a ResourceMethod with the given constraints.
 > | `arrProducesMimeTypeStrings` | `any` | The produces constraint property of the ResourceMethod in search. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `ResourceMethod`
 > - **Description**: The found ResourceMethod instance, or undefined if not found.
 > :::
 

@@ -139,7 +139,7 @@
 
 
 > ```ts
-> find(id: any, expand: any, select: any): void;
+> find(id: any, expand: any, select: any): any;
 > ```
 >
 > | Parameter | Type | Description |
@@ -149,7 +149,7 @@
 > | `select` | `any` |  |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `any`
 > - **Description**: 
 > :::
 

@@ -302,12 +302,12 @@ Deletes this document.
 Gets the binary content stream of the document.
 
 > ```ts
-> getContentStream(): void;
+> getContentStream(): ContentStream;
 > ```
 >
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `ContentStream`
 > - **Description**: The ContentStream object, or &#x60;null&#x60; if the document has no content.
 > :::
 

@@ -17,7 +17,7 @@
 Retrieves the value of the global variable with the specified name.
 
 > ```ts
-> static get(name: string): void;
+> static get(name: string): string;
 > ```
 >
 > | Parameter | Type | Description |
@@ -25,7 +25,7 @@ Retrieves the value of the global variable with the specified name.
 > | `name` | `string` | The name of the global variable. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `string`
 > - **Description**: The variable&#x27;s value as a string, or &#x60;undefined&#x60; if the variable is not set or its value is null.
 > :::
 

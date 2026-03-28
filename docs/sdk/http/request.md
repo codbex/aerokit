@@ -121,7 +121,7 @@ Checks whether the remote user has the given role.
 Returns a request attribute value previously associated with the request.
 
 > ```ts
-> static getAttribute(name: string): void;
+> static getAttribute(name: string): string;
 > ```
 >
 > | Parameter | Type | Description |
@@ -129,7 +129,7 @@ Returns a request attribute value previously associated with the request.
 > | `name` | `string` | The attribute name. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `string`
 > - **Description**: A string value or &#x60;undefined&#x60;.
 > :::
 

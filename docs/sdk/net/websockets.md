@@ -49,7 +49,7 @@ Retrieves a list of all active WebSocket clients.
 Retrieves a specific WebSocket client wrapper by its session ID.
 
 > ```ts
-> static getClient(id: string): void;
+> static getClient(id: string): WebsocketClient;
 > ```
 >
 > | Parameter | Type | Description |
@@ -57,7 +57,7 @@ Retrieves a specific WebSocket client wrapper by its session ID.
 > | `id` | `string` | The session ID of the client. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `WebsocketClient`
 > - **Description**: The client wrapper or undefined if not found.
 > :::
 
@@ -66,7 +66,7 @@ Retrieves a specific WebSocket client wrapper by its session ID.
 Retrieves a specific WebSocket client wrapper by its handler identifier.
 
 > ```ts
-> static getClientByHandler(handler: string): void;
+> static getClientByHandler(handler: string): WebsocketClient;
 > ```
 >
 > | Parameter | Type | Description |
@@ -74,7 +74,7 @@ Retrieves a specific WebSocket client wrapper by its handler identifier.
 > | `handler` | `string` | The handler identifier associated with the client. |
 >
 > ::: info Returns
-> - **Type**: `void`
+> - **Type**: `WebsocketClient`
 > - **Description**: The client wrapper or undefined if not found.
 > :::
 

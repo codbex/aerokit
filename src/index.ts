@@ -4,9 +4,8 @@ import Handlebars from "handlebars";
 import { extractModules } from "./extractor.js";
 import { generateSidebar } from "./sidebar.js";
 
-const INPUT_JSON = "./output.json";
+const INPUT_JSON = "./docs/typedoc/output.json";
 const TEMPLATE_PAGES_DIR = "./docs/template-pages";
-const DOCS_OUTPUT_DIR = "./docs";
 const SDK_OUTPUT_DIR = "./docs/sdk";
 const SIDEBAR_FILE = "./docs/.vitepress/sidebar.ts";
 
