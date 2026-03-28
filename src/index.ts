@@ -9,7 +9,7 @@ const TEMPLATE_PAGES_DIR = "./docs/template-pages";
 const SDK_OUTPUT_DIR = "./docs/sdk";
 const SIDEBAR_FILE = "./docs/.vitepress/sidebar.ts";
 
-const templateSource = fs.readFileSync(path.join(TEMPLATE_PAGES_DIR, "template.md"), "utf-8");
+const templateSource = fs.readFileSync(path.join(TEMPLATE_PAGES_DIR, "page.template"), "utf-8");
 const compiled = Handlebars.compile(templateSource);
 
 const modules = extractModules(INPUT_JSON);
