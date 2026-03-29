@@ -1,12 +1,13 @@
 # indexing/writer
 
-::: tip Documentation
-- source: [indexing/writer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/writer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [indexing/writer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/writer.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -22,7 +23,7 @@ Adds a new document entry to the specified index.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `index` | `string` | The name or identifier of the index (e.g., &#x27;documents&#x27;, &#x27;users&#x27;). |
+> | `index` | `string` | The name or identifier of the index (e.g., 'documents', 'users'). |
 > | `location` | `string` | A unique identifier or path for the indexed document (e.g., a file path or URL). |
 > | `contents` | `string` | The full-text content of the document to be indexed and made searchable. |
 > | `lastModified` | `Date` | The Date object representing the last modification time of the document. Defaults to the current date/time if omitted. |

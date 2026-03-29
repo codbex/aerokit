@@ -1,12 +1,13 @@
 # db/sql
 
-::: tip Documentation
-- source: [db/sql.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/sql.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [db/sql.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/sql.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -449,8 +450,8 @@ Sets the WHERE condition.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `condition` | `string` | The SQL condition string (e.g., &quot;column1 &#x3D; ?&quot;). |
-> | `parameters` | `any` | Optional parameters to replace &#x27;?&#x27; in the condition. |
+> | `condition` | `string` | The SQL condition string (e.g., "column1 = ?"). |
+> | `parameters` | `any` | Optional parameters to replace '?' in the condition. |
 >
 > ::: info Returns
 > - **Type**: `SelectBuilder`
@@ -668,7 +669,7 @@ Sets the value for the last column specified.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `value` | `string` | The value placeholder (e.g., &quot;?&quot;) or literal. |
+> | `value` | `string` | The value placeholder (e.g., "?") or literal. |
 > | `parameters` | `any` | Optional parameters if a placeholder was used. |
 >
 > ::: info Returns
@@ -785,7 +786,7 @@ Sets a column to a value.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `column` | `string` | The column name. |
-> | `value` | `string` | The value placeholder (e.g., &quot;?&quot;) or literal. |
+> | `value` | `string` | The value placeholder (e.g., "?") or literal. |
 > | `parameters` | `any` | Optional parameters if a placeholder was used. |
 >
 > ::: info Returns
@@ -803,8 +804,8 @@ Sets the WHERE condition for the update.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `condition` | `string` | The SQL condition string (e.g., &quot;column1 &#x3D; ?&quot;). |
-> | `parameters` | `any` | Optional parameters to replace &#x27;?&#x27; in the condition. |
+> | `condition` | `string` | The SQL condition string (e.g., "column1 = ?"). |
+> | `parameters` | `any` | Optional parameters to replace '?' in the condition. |
 >
 > ::: info Returns
 > - **Type**: `UpdateBuilder`
@@ -902,8 +903,8 @@ Sets the WHERE condition for the deletion.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `condition` | `string` | The SQL condition string (e.g., &quot;column1 &#x3D; ?&quot;). |
-> | `parameters` | `any` | Optional parameters to replace &#x27;?&#x27; in the condition. |
+> | `condition` | `string` | The SQL condition string (e.g., "column1 = ?"). |
+> | `parameters` | `any` | Optional parameters to replace '?' in the condition. |
 >
 > ::: info Returns
 > - **Type**: `DeleteBuilder`

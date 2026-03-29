@@ -1,12 +1,13 @@
 # template/engines
 
-::: tip Documentation
-- source: [template/engines.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/template/engines.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [template/engines.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/template/engines.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -29,7 +30,7 @@ Retrieves the default template engine, which is currently the Velocity engine.
 #### getMustacheEngine()
 
 Retrieves the Mustache template engine instance.
-Mustache is often used for logic-less templating and uses &#x27;{{&#x27; and &#x27;}}&#x27; as default markers.
+Mustache is often used for logic-less templating and uses '{{' and '}}' as default markers.
 
 > ```ts
 > static getMustacheEngine(): TemplateEngine;
@@ -92,7 +93,7 @@ Generates output by processing a raw template string using the **default templat
 #### generateFromFile()
 
 Loads a template from the public registry, selects an appropriate engine, and generates output.
-It uses the **Mustache engine** if the file extension is &#x60;.mustache&#x60;, otherwise it uses the **default (Velocity)**.
+It uses the **Mustache engine** if the file extension is `.mustache`, otherwise it uses the **default (Velocity)**.
 
 > ```ts
 > static generateFromFile(location: string, parameters: any): string;
@@ -100,11 +101,11 @@ It uses the **Mustache engine** if the file extension is &#x60;.mustache&#x60;, 
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `location` | `string` | The path to the template file within the &#x60;/registry/public/&#x60; directory (e.g., &#x27;templates/email.mustache&#x27;). |
+> | `location` | `string` | The path to the template file within the `/registry/public/` directory (e.g., 'templates/email.mustache'). |
 > | `parameters` | `any` | An object containing key-value pairs to be used as context variables in the template. |
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The processed output string, or &#x60;undefined&#x60; if the resource does not exist.
+> - **Description**: The processed output string, or `undefined` if the resource does not exist.
 > :::
 

@@ -1,12 +1,13 @@
 # rabbitmq/producer
 
-::: tip Documentation
-- source: [rabbitmq/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/producer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [rabbitmq/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/rabbitmq/producer.ts)
+- last updated: 
+:::
 
 ## Classes
 

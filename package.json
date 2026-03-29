@@ -8,8 +8,7 @@
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs --port 8080",
     "docs:preview": "vitepress preview docs --port 8080",
-    "docs:generate-typedoc": "cd docs/typedoc && typedoc",
-    "docs:generate": "rm -rf docs/sdk && node --loader ts-node/esm src/index.ts",
+    "docs:generate": "cd docs/typedoc && typedoc && cd ../../ && rm -rf docs/sdk && node --loader ts-node/esm src/index.ts",
     "docs:api": "typedoc"
   },
   "dependencies": {

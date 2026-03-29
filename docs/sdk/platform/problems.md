@@ -1,12 +1,13 @@
 # platform/problems
 
-::: tip Documentation
-- source: [platform/problems.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/problems.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [platform/problems.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/problems.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -14,7 +15,7 @@
 
 #### save()
 
-Saves a new problem entry to the system&#x27;s problem log.
+Saves a new problem entry to the system's problem log.
 
 > ```ts
 > static save(location: string, type: string, line: string, column: string, cause: string, expected: string, category: string, module: string, source: string, program: string): void;
@@ -81,7 +82,7 @@ Fetches a batch of problems based on a custom condition and limit.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `condition` | `string` | A SQL-like condition string (e.g., &quot;CATEGORY&#x3D;&#x27;Syntax&#x27;&quot;). |
+> | `condition` | `string` | A SQL-like condition string (e.g., "CATEGORY='Syntax'"). |
 > | `limit` | `number` | The maximum number of problems to retrieve. |
 >
 > ::: info Returns

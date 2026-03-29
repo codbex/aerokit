@@ -1,12 +1,13 @@
 # kafka/producer
 
-::: tip Documentation
-- source: [kafka/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/kafka/producer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [kafka/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/kafka/producer.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -25,7 +26,7 @@ to a specific Kafka topic.
 > | ------ | ------ | ------ |
 > | `destination` | `string` | The name of the Kafka topic to send messages to. |
 > | `configuration` | `any` | Optional key-value object containing Kafka producer properties
-(e.g., &#x27;bootstrap.servers&#x27;, &#x27;acks&#x27;). |
+(e.g., 'bootstrap.servers', 'acks'). |
 >
 > ::: info Returns
 > - **Type**: `Topic`

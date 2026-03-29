@@ -1,12 +1,13 @@
 # http/rs/resource-mappings
 
-::: tip Documentation
-- source: [http/rs/resource-mappings.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-mappings.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/rs/resource-mappings.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-mappings.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ The second, optional argument can be used to initialize the resource.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `sPath` | `string` | The URL path template for the resource (e.g., &quot;users/{id}&quot;). |
+> | `sPath` | `string` | The URL path template for the resource (e.g., "users/{id}"). |
 > | `oConfiguration` | `any` | Optional configuration object for initial resource setup. |
 >
 > ::: info Returns
@@ -70,7 +71,7 @@ Alias for path().
 #### configuration()
 
 Returns the compiled configuration object for all resources managed by this ResourceMappings.
-The configuration is structured to be consumed by the HttpController&#x27;s routing logic.
+The configuration is structured to be consumed by the HttpController's routing logic.
 
 > ```ts
 > configuration(): void;
@@ -107,7 +108,7 @@ Disables resource handling specifications matching the arguments, effectively re
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `sPath` | `string` | The path of the resource. |
-> | `sVerb` | `string` | The HTTP verb (e.g., &#x27;get&#x27;, &#x27;post&#x27;). |
+> | `sVerb` | `string` | The HTTP verb (e.g., 'get', 'post'). |
 > | `arrConsumes` | `any` | Array of consumed media types. |
 > | `arrProduces` | `any` | Array of produced media types. |
 >
@@ -127,7 +128,7 @@ Provides a reference to a handler specification matching the supplied arguments.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `sPath` | `string` | The path of the resource. |
-> | `sVerb` | `string` | The HTTP verb (e.g., &#x27;get&#x27;, &#x27;post&#x27;). |
+> | `sVerb` | `string` | The HTTP verb (e.g., 'get', 'post'). |
 > | `arrConsumes` | `any` | Array of consumed media types. |
 > | `arrProduces` | `any` | Array of produced media types. |
 >

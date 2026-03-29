@@ -1,12 +1,13 @@
 # messaging/producer
 
-::: tip Documentation
-- source: [messaging/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/producer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [messaging/producer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/producer.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Messages sent to this destination are intended to be consumed by a single receiv
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `destination` | `string` | The name of the queue destination (e.g., &#x27;task.queue&#x27;). |
+> | `destination` | `string` | The name of the queue destination (e.g., 'task.queue'). |
 >
 > ::: info Returns
 > - **Type**: `Queue`
@@ -41,7 +42,7 @@ Messages sent to this destination can be consumed by multiple subscribers simult
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `destination` | `string` | The name of the topic destination (e.g., &#x27;sensor.data.topic&#x27;). |
+> | `destination` | `string` | The name of the topic destination (e.g., 'sensor.data.topic'). |
 >
 > ::: info Returns
 > - **Type**: `Topic`

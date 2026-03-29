@@ -1,12 +1,13 @@
 # bpm/values
 
-::: tip Documentation
-- source: [bpm/values.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/values.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [bpm/values.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/values.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -53,7 +54,7 @@ This is typically used to deserialize all variables returned from an API call.
 
 Serializes a value for persistence or API transfer.
 Arrays and objects are converted into their respective JSON string representations.
-Note: Arrays are additionally converted into a &#x60;java.util.List&#x60; of stringified elements for Java API compatibility.
+Note: Arrays are additionally converted into a `java.util.List` of stringified elements for Java API compatibility.
 Primitive types are returned as is.
 
 > ```ts

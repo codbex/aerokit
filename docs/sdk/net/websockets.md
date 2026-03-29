@@ -1,12 +1,13 @@
 # net/websockets
 
-::: tip Documentation
-- source: [net/websockets.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/websockets.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [net/websockets.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/websockets.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -22,7 +23,7 @@ Creates a new WebSocket client connection to a specified URI, managed by a handl
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `uri` | `string` | The target WebSocket URI (e.g., &#x27;ws://example.com/socket&#x27;). |
+> | `uri` | `string` | The target WebSocket URI (e.g., 'ws://example.com/socket'). |
 > | `handler` | `string` | The identifier or path of the script handling the WebSocket events. |
 >
 > ::: info Returns
@@ -80,7 +81,7 @@ Retrieves a specific WebSocket client wrapper by its handler identifier.
 
 #### getMessage()
 
-Retrieves the message payload from the current context, typically used inside an &#x27;onmessage&#x27; handler.
+Retrieves the message payload from the current context, typically used inside an 'onmessage' handler.
 
 > ```ts
 > static getMessage(): any;
@@ -94,7 +95,7 @@ Retrieves the message payload from the current context, typically used inside an
 
 #### getError()
 
-Retrieves error details from the current context, typically used inside an &#x27;onerror&#x27; handler.
+Retrieves error details from the current context, typically used inside an 'onerror' handler.
 
 > ```ts
 > static getError(): any;
@@ -108,7 +109,7 @@ Retrieves error details from the current context, typically used inside an &#x27
 
 #### getMethod()
 
-Retrieves the event method name that triggered the current script execution (e.g., &quot;onopen&quot;, &quot;onmessage&quot;).
+Retrieves the event method name that triggered the current script execution (e.g., "onopen", "onmessage").
 
 > ```ts
 > static getMethod(): string;
@@ -122,7 +123,7 @@ Retrieves the event method name that triggered the current script execution (e.g
 
 #### isOnOpen()
 
-Checks if the current event context is &#x27;onopen&#x27;.
+Checks if the current event context is 'onopen'.
 
 > ```ts
 > static isOnOpen(): boolean;
@@ -131,12 +132,12 @@ Checks if the current event context is &#x27;onopen&#x27;.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if the method is &#x27;onopen&#x27;.
+> - **Description**: True if the method is 'onopen'.
 > :::
 
 #### isOnMessage()
 
-Checks if the current event context is &#x27;onmessage&#x27;.
+Checks if the current event context is 'onmessage'.
 
 > ```ts
 > static isOnMessage(): boolean;
@@ -145,12 +146,12 @@ Checks if the current event context is &#x27;onmessage&#x27;.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if the method is &#x27;onmessage&#x27;.
+> - **Description**: True if the method is 'onmessage'.
 > :::
 
 #### isOnError()
 
-Checks if the current event context is &#x27;onerror&#x27;.
+Checks if the current event context is 'onerror'.
 
 > ```ts
 > static isOnError(): boolean;
@@ -159,12 +160,12 @@ Checks if the current event context is &#x27;onerror&#x27;.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if the method is &#x27;onerror&#x27;.
+> - **Description**: True if the method is 'onerror'.
 > :::
 
 #### isOnClose()
 
-Checks if the current event context is &#x27;onclose&#x27;.
+Checks if the current event context is 'onclose'.
 
 > ```ts
 > static isOnClose(): boolean;
@@ -173,6 +174,6 @@ Checks if the current event context is &#x27;onclose&#x27;.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if the method is &#x27;onclose&#x27;.
+> - **Description**: True if the method is 'onclose'.
 > :::
 

@@ -1,12 +1,13 @@
 # platform/repository
 
-::: tip Documentation
-- source: [platform/repository.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/repository.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [platform/repository.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/repository.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -41,7 +42,7 @@ Creates a new resource (file) with content provided as a string.
 > | ------ | ------ | ------ |
 > | `path` | `string` | The absolute path where the resource should be created. |
 > | `content` | `string` | The string content for the resource. |
-> | `contentType` | `string` | The MIME type of the content (e.g., &quot;text/plain&quot;). |
+> | `contentType` | `string` | The MIME type of the content (e.g., "text/plain"). |
 >
 > ::: info Returns
 > - **Type**: `Resource`
@@ -182,7 +183,7 @@ Searches the repository starting from a given path for resources matching a glob
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `path` | `string` | The starting path for the search. |
-> | `pattern` | `string` | The glob pattern to match resource names against (e.g., &quot;*.js&quot;). |
+> | `pattern` | `string` | The glob pattern to match resource names against (e.g., "*.js"). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -842,7 +843,7 @@ Gets the user who created the entity.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The creator&#x27;s name.
+> - **Description**: The creator's name.
 > :::
 
 #### getCreatedAt()
@@ -870,7 +871,7 @@ Gets the user who last modified the entity.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The modifier&#x27;s name.
+> - **Description**: The modifier's name.
 > :::
 
 #### getModifiedAt()

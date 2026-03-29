@@ -1,12 +1,13 @@
 # net/soap
 
-::: tip Documentation
-- source: [net/soap.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/soap.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [net/soap.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/net/soap.ts)
+- last updated: 
+:::
 
 ## Classes
 

@@ -1,12 +1,13 @@
 # security/user
 
-::: tip Documentation
-- source: [security/user.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security/user.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [security/user.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/security/user.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Retrieves the principal name (username or ID) of the currently authenticated use
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The user&#x27;s name or identifier as a string.
+> - **Description**: The user's name or identifier as a string.
 > :::
 
 #### isInRole()
@@ -36,7 +37,7 @@ Checks if the currently authenticated user is assigned to a specific security ro
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `role` | `string` | The name of the role to check (e.g., &#x27;Administrator&#x27;, &#x27;User&#x27;). |
+> | `role` | `string` | The name of the role to check (e.g., 'Administrator', 'User'). |
 >
 > ::: info Returns
 > - **Type**: `boolean`
@@ -59,7 +60,7 @@ Retrieves the remaining session timeout for the current user session in seconds.
 
 #### getAuthType()
 
-Retrieves the authentication mechanism used for the current session (e.g., &#x27;BASIC&#x27;, &#x27;FORM&#x27;).
+Retrieves the authentication mechanism used for the current session (e.g., 'BASIC', 'FORM').
 
 > ```ts
 > static getAuthType(): string;
@@ -103,7 +104,7 @@ during the lifecycle of the current session.
 
 #### getLanguage()
 
-Retrieves the preferred language setting (e.g., &#x27;en&#x27;, &#x27;de&#x27;, &#x27;es&#x27;) for the current user.
+Retrieves the preferred language setting (e.g., 'en', 'de', 'es') for the current user.
 
 > ```ts
 > static getLanguage(): string;
@@ -112,6 +113,6 @@ Retrieves the preferred language setting (e.g., &#x27;en&#x27;, &#x27;de&#x27;, 
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The user&#x27;s preferred language code.
+> - **Description**: The user's preferred language code.
 > :::
 

@@ -1,12 +1,49 @@
 # core/configurations
 
-::: tip Documentation
-- source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
-:::
-
 ## Overview
 
+The Configurations API provides a centralized, type-safe interface for managing application configuration properties and detecting the runtime operating system. It serves as the foundation for environment-specific settings and system-aware behavior in Aerokit applications.
 
+### Key Features
+
+- **Static Interface**: Thread-safe, singleton-like access to configuration data
+- **Type Safety**: Full TypeScript support with proper type definitions
+- **File Loading**: Support for loading configurations from external files
+- **OS Detection**: Comprehensive operating system identification
+- **Memory Efficient**: In-memory storage with optional persistence
+
+### Use Cases
+- Application configuration management
+- Environment variable management
+- Feature flag configuration
+- Database connection settings
+- API endpoint configuration
+- Platform-specific behavior adaptation
+
+### Example Usage
+```ts
+import { Configurations } from "@aerokit/sdk/core";
+
+// Set a configuration property
+Configurations.set("apiEndpoint", "https://api.example.com");
+// Get a configuration property
+const apiEndpoint = Configurations.get("apiEndpoint");
+console.log(apiEndpoint); // Output: "https://api.example.com"
+
+// Check the operating system
+if (Configurations.isOSWindows()) {
+  console.log("Running on Windows");
+} else if (Configurations.isOSMac()) {
+  console.log("Running on Mac");
+} else if (Configurations.isOSUNIX()) {
+  console.log("Running on UNIX");
+}
+```
+
+::: tip Module
+- source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -27,7 +64,7 @@ Retrieves the configuration value associated with the given key.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The configuration value as a string, or &#x60;undefined&#x60; if the key is not found and no default is provided.
+> - **Description**: The configuration value as a string, or `undefined` if the key is not found and no default is provided.
 > :::
 
 #### set()
@@ -122,7 +159,7 @@ Retrieves the name of the current Operating System.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The OS name as a string (e.g., &quot;Windows&quot;, &quot;Linux&quot;, &quot;Mac OS X&quot;).
+> - **Description**: The OS name as a string (e.g., "Windows", "Linux", "Mac OS X").
 > :::
 
 #### isOSWindows()

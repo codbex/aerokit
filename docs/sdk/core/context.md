@@ -1,12 +1,13 @@
 # core/context
 
-::: tip Documentation
-- source: [core/context.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/context.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [core/context.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/context.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -26,7 +27,7 @@ Retrieves the value associated with the specified name from the global context.
 >
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: The context value, or &#x60;undefined&#x60; if the name is not found or the value is null.
+> - **Description**: The context value, or `undefined` if the name is not found or the value is null.
 > :::
 
 #### set()

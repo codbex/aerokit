@@ -1,12 +1,13 @@
 # io/zip
 
-::: tip Documentation
-- source: [io/zip.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/zip.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [io/zip.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/zip.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -114,7 +115,7 @@ Reads the data for the current entry and returns it as a JavaScript byte array.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: A JavaScript array (&#x60;number[]&#x60;) of the byte values for the current entry.
+> - **Description**: A JavaScript array (`number[]`) of the byte values for the current entry.
 > :::
 
 #### readNative()
@@ -134,7 +135,7 @@ Reads the data for the current entry and returns the native Java byte array.
 #### readText()
 
 Reads the data for the current entry and converts it to a string
-using the platform&#x27;s default character encoding.
+using the platform's default character encoding.
 
 > ```ts
 > readText(): string;
@@ -165,7 +166,7 @@ Closes the underlying native ZipInputStream.
 #### createZipEntry()
 
 Creates a new ZipEntry with the given name, and begins writing the
-entry&#x27;s header to the archive stream. All subsequent write operations
+entry's header to the archive stream. All subsequent write operations
 will apply to this entry until closeEntry is called.
 
 > ```ts
@@ -191,7 +192,7 @@ Writes the data from a JavaScript byte array to the current active entry in the 
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `data` | `any` | The JavaScript array (&#x60;number[]&#x60;) of byte values to write. |
+> | `data` | `any` | The JavaScript array (`number[]`) of byte values to write. |
 >
 > ::: info Returns
 > - **Type**: `void`

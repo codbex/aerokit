@@ -1,12 +1,13 @@
 # log/logging
 
-::: tip Documentation
-- source: [log/logging.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/log/logging.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [log/logging.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/log/logging.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -15,7 +16,7 @@
 #### getLogger()
 
 Retrieves or creates a Logger instance associated with a specific name.
-The logger name is typically used to categorize log messages (e.g., &#x27;com.app.service&#x27;).
+The logger name is typically used to categorize log messages (e.g., 'com.app.service').
 
 > ```ts
 > static getLogger(loggerName: string): Logger;
@@ -43,7 +44,7 @@ Messages below this threshold will be ignored.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `level` | `string` | The desired logging level (e.g., &#x27;TRACE&#x27;, &#x27;DEBUG&#x27;, &#x27;INFO&#x27;, &#x27;WARN&#x27;, &#x27;ERROR&#x27;). |
+> | `level` | `string` | The desired logging level (e.g., 'TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR'). |
 >
 > ::: info Returns
 > - **Type**: `Logger`
@@ -131,8 +132,8 @@ supporting parameters for message formatting and a final Error object for stack 
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `msg` | `string` | The log message template (e.g., &quot;User {0} failed to connect: {1}&quot;). |
-> | `level` | `string` | The logging level (e.g., &#x27;DEBUG&#x27;, &#x27;ERROR&#x27;). |
+> | `msg` | `string` | The log message template (e.g., "User {0} failed to connect: {1}"). |
+> | `level` | `string` | The logging level (e.g., 'DEBUG', 'ERROR'). |
 >
 > ::: info Returns
 > - **Type**: `void`

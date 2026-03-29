@@ -1,12 +1,13 @@
 # db/repository
 
-::: tip Documentation
-- source: [db/repository.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/repository.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [db/repository.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/repository.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -141,7 +142,7 @@ The entity must contain the primary key.
 #### upsert()
 
 Creates the entity if the ID is null/undefined, otherwise updates it.
-If an ID is provided but the entity doesn&#x27;t exist, it creates it.
+If an ID is provided but the entity doesn't exist, it creates it.
 
 > ```ts
 > upsert(entity: T): void;
@@ -153,7 +154,7 @@ If an ID is provided but the entity doesn&#x27;t exist, it creates it.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: The entity&#x27;s ID.
+> - **Description**: The entity's ID.
 > :::
 
 #### deleteById()

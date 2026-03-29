@@ -1,12 +1,13 @@
 # redis/client
 
-::: tip Documentation
-- source: [redis/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/redis/client.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [redis/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/redis/client.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -143,7 +144,7 @@ Finds all keys matching the given pattern.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `pattern` | `string` | The pattern to match keys against (e.g., &quot;user:*&quot;). |
+> | `pattern` | `string` | The pattern to match keys against (e.g., "user:*"). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -165,7 +166,7 @@ Sets the string value of a key.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: &#x27;OK&#x27; on success.
+> - **Description**: 'OK' on success.
 > :::
 
 #### lindex()

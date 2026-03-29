@@ -1,12 +1,13 @@
 # http/client-async
 
-::: tip Documentation
-- source: [http/client-async.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client-async.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/client-async.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client-async.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -147,7 +148,7 @@ Executes an asynchronous HTTP TRACE request.
 
 #### execute()
 
-Initiates the execution of queued asynchronous requests (depending on the underlying Java client&#x27;s threading model).
+Initiates the execution of queued asynchronous requests (depending on the underlying Java client's threading model).
 
 > ```ts
 > execute(): void;

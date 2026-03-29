@@ -1,12 +1,13 @@
 # junit
 
-::: tip Documentation
-- source: [junit.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/junit.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [junit.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/junit.ts)
+- last updated: 
+:::
 
 ## Classes
 

@@ -1,12 +1,13 @@
 # http/upload
 
-::: tip Documentation
-- source: [http/upload.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/upload.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/upload.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/upload.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -15,7 +16,7 @@
 #### isMultipartContent()
 
 Checks if the current incoming HTTP request contains multipart content
-(e.g., from an HTML form with &#x60;enctype&#x3D;&quot;multipart/form-data&quot;&#x60;).
+(e.g., from an HTML form with `enctype="multipart/form-data"`).
 
 > ```ts
 > static isMultipartContent(): boolean;
@@ -103,7 +104,7 @@ Returns the MIME type of the uploaded file or content part.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The content type string (e.g., &#x27;image/png&#x27;, &#x27;text/plain&#x27;).
+> - **Description**: The content type string (e.g., 'image/png', 'text/plain').
 > :::
 
 #### isEmpty()
@@ -137,7 +138,7 @@ Returns the size of the uploaded item in bytes.
 #### getBytes()
 
 Retrieves the content of the file item as a JavaScript array of bytes.
-This uses a utility (&#x60;Bytes.toJavaScriptBytes&#x60;) to convert the native Java byte array.
+This uses a utility (`Bytes.toJavaScriptBytes`) to convert the native Java byte array.
 
 > ```ts
 > getBytes(): void;
@@ -146,7 +147,7 @@ This uses a utility (&#x60;Bytes.toJavaScriptBytes&#x60;) to convert the native 
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: An array of bytes (&#x60;any[]&#x60;).
+> - **Description**: An array of bytes (`any[]`).
 > :::
 
 #### getBytesNative()
@@ -160,14 +161,14 @@ Retrieves the content of the file item as the native Java byte array.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: The native byte array (&#x60;any[]&#x60;).
+> - **Description**: The native byte array (`any[]`).
 > :::
 
 #### getText()
 
 Retrieves the content of the file item as a string.
 Note: This assumes the content is text and may not handle all encodings correctly.
-It relies on JavaScript&#x27;s &#x60;String.fromCharCode.apply&#x60; for conversion.
+It relies on JavaScript's `String.fromCharCode.apply` for conversion.
 
 > ```ts
 > getText(): string;

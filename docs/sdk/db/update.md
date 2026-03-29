@@ -1,12 +1,13 @@
 # db/update
 
-::: tip Documentation
-- source: [db/update.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/update.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [db/update.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/update.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Executes a parameterized SQL update statement (INSERT, UPDATE, or DELETE).
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `sql` | `string` | The SQL query to execute. |
-> | `parameters` | `any` | An optional array of values (primitives, TypedQueryParameter or NamedQueryParameter objects) to replace &#x27;?&#x27; or :paramName placeholders. |
+> | `parameters` | `any` | An optional array of values (primitives, TypedQueryParameter or NamedQueryParameter objects) to replace '?' or :paramName placeholders. |
 > | `datasourceName` | `string` | The name of the database connection to use (optional). |
 >
 > ::: info Returns

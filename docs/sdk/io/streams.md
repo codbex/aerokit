@@ -1,12 +1,13 @@
 # io/streams
 
-::: tip Documentation
-- source: [io/streams.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/streams.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [io/streams.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/streams.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -70,7 +71,7 @@ This is typically used to read bundled resources within the application runtime.
 
 #### createByteArrayInputStream()
 
-Creates a new InputStream from a JavaScript byte array (&#x60;any[]&#x60;).
+Creates a new InputStream from a JavaScript byte array (`any[]`).
 
 > ```ts
 > static createByteArrayInputStream(data: any): InputStream;
@@ -78,7 +79,7 @@ Creates a new InputStream from a JavaScript byte array (&#x60;any[]&#x60;).
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `data` | `any` | The JavaScript array of byte values (&#x60;number[]&#x60;). |
+> | `data` | `any` | The JavaScript array of byte values (`number[]`). |
 >
 > ::: info Returns
 > - **Type**: `InputStream`
@@ -164,7 +165,7 @@ Reads all remaining bytes from the stream and returns them as a JavaScript array
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: A JavaScript array (&#x60;number[]&#x60;) of the byte values.
+> - **Description**: A JavaScript array (`number[]`) of the byte values.
 > :::
 
 #### readBytesNative()
@@ -184,7 +185,7 @@ Reads all remaining bytes from the stream and returns the native Java byte array
 #### readText()
 
 Reads all remaining bytes from the stream and converts them to a string
-using the platform&#x27;s default character encoding.
+using the platform's default character encoding.
 
 > ```ts
 > readText(): string;
@@ -253,7 +254,7 @@ Writes the entire content of a JavaScript byte array to this output stream.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `data` | `any` | The JavaScript array (&#x60;number[]&#x60;) of byte values to write. |
+> | `data` | `any` | The JavaScript array (`number[]`) of byte values to write. |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -279,7 +280,7 @@ Writes the entire content of a native Java byte array to this output stream.
 
 #### writeText()
 
-Converts the string to bytes using the platform&#x27;s default character encoding
+Converts the string to bytes using the platform's default character encoding
 and writes them to this output stream.
 
 > ```ts
@@ -321,7 +322,7 @@ This is typically used with a ByteArrayOutputStream.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: A JavaScript array (&#x60;number[]&#x60;) of the byte values written to the stream.
+> - **Description**: A JavaScript array (`number[]`) of the byte values written to the stream.
 > :::
 
 #### getBytesNative()
@@ -341,7 +342,7 @@ This is typically used with a ByteArrayOutputStream.
 
 #### getText()
 
-Retrieves the content written to this stream as a string using the platform&#x27;s
+Retrieves the content written to this stream as a string using the platform's
 default character encoding. This is typically used with a ByteArrayOutputStream.
 
 > ```ts

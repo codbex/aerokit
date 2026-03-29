@@ -1,12 +1,13 @@
 # http/response
 
-::: tip Documentation
-- source: [http/response.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/response.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/response.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/response.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -28,7 +29,7 @@ Checks if the response façade is currently valid or connected to an active requ
 
 #### json()
 
-Serializes a JavaScript object to JSON, sets the &#x60;Content-Type: application/json&#x60; header,
+Serializes a JavaScript object to JSON, sets the `Content-Type: application/json` header,
 and writes the JSON string to the response output stream.
 
 > ```ts
@@ -64,7 +65,7 @@ Note: This method automatically handles flushing the output stream.
 
 #### println()
 
-Writes a string of text followed by a newline character (&#x60;\n&#x60;) to the response body
+Writes a string of text followed by a newline character (`\n`) to the response body
 using **UTF-8** encoding.
 
 > ```ts
@@ -113,7 +114,7 @@ Checks if the response headers and status have already been sent to the client.
 
 #### setContentType()
 
-Sets the value of the &#x60;Content-Type&#x60; header.
+Sets the value of the `Content-Type` header.
 
 > ```ts
 > static setContentType(contentType: string): void;
@@ -121,7 +122,7 @@ Sets the value of the &#x60;Content-Type&#x60; header.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `contentType` | `string` | The MIME type string (e.g., &#x27;text/html&#x27;, &#x27;application/pdf&#x27;). |
+> | `contentType` | `string` | The MIME type string (e.g., 'text/html', 'application/pdf'). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -224,7 +225,7 @@ Gets the character encoding used for the response body.
 
 #### encodeRedirectURL()
 
-Encodes a URL for use in the &#x60;Location&#x60; header of a redirect response.
+Encodes a URL for use in the `Location` header of a redirect response.
 
 > ```ts
 > static encodeRedirectURL(url: string): string;
@@ -241,7 +242,7 @@ Encodes a URL for use in the &#x60;Location&#x60; header of a redirect response.
 
 #### getContentType()
 
-Gets the current &#x60;Content-Type&#x60; header value.
+Gets the current `Content-Type` header value.
 
 > ```ts
 > static getContentType(): string;
@@ -274,7 +275,7 @@ This bypasses the normal response body writing process.
 
 #### setCharacterEncoding()
 
-Sets the character encoding to be used for the response body (e.g., &#x27;UTF-8&#x27;).
+Sets the character encoding to be used for the response body (e.g., 'UTF-8').
 
 > ```ts
 > static setCharacterEncoding(charset: string): void;
@@ -308,7 +309,7 @@ Sends a redirect response (status code 302 by default) to the client.
 
 #### setContentLength()
 
-Sets the &#x60;Content-Length&#x60; header for the response.
+Sets the `Content-Length` header for the response.
 
 > ```ts
 > static setContentLength(length: number): void;
@@ -418,8 +419,8 @@ Sets the locale for the response, which may affect language and date/time format
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `language` | `string` | The language code (e.g., &#x27;en&#x27;, &#x27;fr&#x27;). |
-> | `country` | `string` | The optional country code (e.g., &#x27;US&#x27;, &#x27;GB&#x27;). |
+> | `language` | `string` | The language code (e.g., 'en', 'fr'). |
+> | `country` | `string` | The optional country code (e.g., 'US', 'GB'). |
 > | `variant` | `string` | The optional variant code. |
 >
 > ::: info Returns
@@ -474,7 +475,7 @@ Gets the currently set locale string for the response.
 
 #### getOutputStream()
 
-Gets the underlying output stream object, wrapped in the SDK&#x27;s &#x60;OutputStream&#x60; class.
+Gets the underlying output stream object, wrapped in the SDK's `OutputStream` class.
 This is useful for writing raw or large amounts of data.
 
 > ```ts

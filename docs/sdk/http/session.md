@@ -1,12 +1,13 @@
 # http/session
 
-::: tip Documentation
-- source: [http/session.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/session.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/session.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/session.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -71,7 +72,7 @@ Returns the time at which this session was created, converted to a JavaScript Da
 >
 > ::: info Returns
 > - **Type**: `Date`
-> - **Description**: A Date object representing the session&#x27;s creation time.
+> - **Description**: A Date object representing the session's creation time.
 > :::
 
 #### getId()
@@ -151,7 +152,7 @@ the server has not yet returned the session ID via a cookie or encoded URL.
 #### setAttribute()
 
 Binds an object to this session, using the specified name.
-This is the primary way to store data in the user&#x27;s session.
+This is the primary way to store data in the user's session.
 
 > ```ts
 > static setAttribute(name: string, value: any): void;

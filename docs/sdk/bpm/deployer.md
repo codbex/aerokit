@@ -1,12 +1,13 @@
 # bpm/deployer
 
-::: tip Documentation
-- source: [bpm/deployer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/deployer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [bpm/deployer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/deployer.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -50,7 +51,7 @@ Undeploys a process definition previously deployed from the specified location.
 
 Deletes a deployed process definition by its ID.
 
-&gt; **Note:** This permanently removes the process definition and all its associated history and runtime data.
+> **Note:** This permanently removes the process definition and all its associated history and runtime data.
 
 > ```ts
 > static deleteProcess(id: string, reason: string): void;
@@ -59,7 +60,7 @@ Deletes a deployed process definition by its ID.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `id` | `string` | The ID of the process definition to delete. |
-> | `reason` | `string` | The reason for deleting the process definition (e.g., &quot;Obsolete&quot;). |
+> | `reason` | `string` | The reason for deleting the process definition (e.g., "Obsolete"). |
 >
 > ::: info Returns
 > - **Type**: `void`

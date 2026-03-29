@@ -1,12 +1,13 @@
 # http/request
 
-::: tip Documentation
-- source: [http/request.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/request.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/request.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/request.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Determines whether the current thread is handling a valid HTTP request.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: &#x60;true&#x60; if called in a valid HTTP request context, otherwise &#x60;false&#x60;.
+> - **Description**: `true` if called in a valid HTTP request context, otherwise `false`.
 > :::
 
 #### getMethod()
@@ -96,7 +97,7 @@ Returns the value of a specific HTTP header.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The header value or &#x60;undefined&#x60; if not found.
+> - **Description**: The header value or `undefined` if not found.
 > :::
 
 #### isUserInRole()
@@ -130,7 +131,7 @@ Returns a request attribute value previously associated with the request.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: A string value or &#x60;undefined&#x60;.
+> - **Description**: A string value or `undefined`.
 > :::
 
 #### getAuthType()
@@ -273,7 +274,7 @@ Returns the request body parsed as JSON if valid.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: A JSON object or &#x60;undefined&#x60; if parsing fails.
+> - **Description**: A JSON object or `undefined` if parsing fails.
 > :::
 
 #### getJSON()
@@ -572,7 +573,7 @@ Returns the full request URI.
 
 #### isSecure()
 
-Returns &#x60;true&#x60; if the request was made over HTTPS.
+Returns `true` if the request was made over HTTPS.
 
 > ```ts
 > static isSecure(): boolean;

@@ -1,12 +1,13 @@
 # utils/qrcode
 
-::: tip Documentation
-- source: [utils/qrcode.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/qrcode.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/qrcode.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/qrcode.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -16,7 +17,7 @@
 
 Generates a QR code image byte array from the given text.
 The returned byte array represents the image data (e.g., PNG or JPEG format,
-depending on the native implementation&#x27;s default output).
+depending on the native implementation's default output).
 
 > ```ts
 > static generateQRCode(text: string): void;

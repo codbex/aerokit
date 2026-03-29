@@ -1,12 +1,13 @@
 # pdf/pdf
 
-::: tip Documentation
-- source: [pdf/pdf.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/pdf/pdf.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [pdf/pdf.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/pdf/pdf.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -27,7 +28,7 @@ Generates a PDF document containing a styled table based on the standard table t
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: The generated PDF content as a byte array (Array&lt;number&gt;).
+> - **Description**: The generated PDF content as a byte array (Array<number>).
 > :::
 
 #### generate()
@@ -45,6 +46,6 @@ Generates a PDF document using a custom template path and data payload.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: The generated PDF content as a byte array (Array&lt;number&gt;).
+> - **Description**: The generated PDF content as a byte array (Array<number>).
 > :::
 

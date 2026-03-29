@@ -1,12 +1,13 @@
 # platform/registry
 
-::: tip Documentation
-- source: [platform/registry.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/registry.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [platform/registry.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/registry.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ JavaScript-friendly byte array format.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `path` | `string` | The absolute path to the resource (e.g., &quot;/registry/public/myFile.txt&quot;). |
+> | `path` | `string` | The absolute path to the resource (e.g., "/registry/public/myFile.txt"). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -75,7 +76,7 @@ Searches the registry starting from a given path for resources matching a glob p
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `path` | `string` | The starting path for the search. |
-> | `pattern` | `string` | The glob pattern to match resource names against (e.g., &quot;*.js&quot;). |
+> | `pattern` | `string` | The glob pattern to match resource names against (e.g., "*.js"). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -469,7 +470,7 @@ Gets the user who created the resource.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The creator&#x27;s name.
+> - **Description**: The creator's name.
 > :::
 
 #### getCreatedAt()
@@ -497,7 +498,7 @@ Gets the user who last modified the resource.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The modifier&#x27;s name.
+> - **Description**: The modifier's name.
 > :::
 
 #### getModifiedAt()

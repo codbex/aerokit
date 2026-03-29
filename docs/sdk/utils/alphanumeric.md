@@ -1,12 +1,13 @@
 # utils/alphanumeric
 
-::: tip Documentation
-- source: [utils/alphanumeric.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/alphanumeric.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/alphanumeric.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/alphanumeric.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -102,7 +103,7 @@ Generates a random numeric value
 
 #### isNumeric()
 
-Tests is the provided &#x60;str&#x60; argument is a valid numeric sequence.
+Tests is the provided `str` argument is a valid numeric sequence.
 
 > ```ts
 > static isNumeric(str: string): boolean;
@@ -119,7 +120,7 @@ Tests is the provided &#x60;str&#x60; argument is a valid numeric sequence.
 
 #### isAlphanumeric()
 
-Tests is the provided &#x60;str&#x60; argument is a valid alphanumeric sequence.
+Tests is the provided `str` argument is a valid alphanumeric sequence.
 
 > ```ts
 > static isAlphanumeric(str: string): boolean;

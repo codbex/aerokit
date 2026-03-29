@@ -1,12 +1,13 @@
 # db/query
 
-::: tip Documentation
-- source: [db/query.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/query.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [db/query.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/query.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -14,7 +15,7 @@
 
 #### execute()
 
-Executes a standard SQL query with positional parameters. Parameters array supports primitives e.g. &#x60;[1, &#x27;John&#x27;, 34.56]&#x60; or objects in format either &#x60;{&#x27;type&#x27;:&#x27;[DATA_TYPE]&#x27;, &#x27;value&#x27;:[VALUE]}&#x60; or &#x60;{&#x27;name&#x27;:&#x27;[string]&#x27;, &#x27;type&#x27;:&#x27;[DATA_TYPE]&#x27;, &#x27;value&#x27;:[VALUE]}&#x60; e.g. &#x60;[{&#x27;type&#x27;:&#x27;CHAR&#x27;, &#x27;value&#x27;:&#x27;ISBN19202323322&#x27;}]&#x60; or &#x60;[{&#x27;name&#x27;: &#x27;order_number&#x27;, &#x27;type&#x27;:&#x27;CHAR&#x27;, &#x27;value&#x27;:&#x27;ISBN19202323322&#x27;}]&#x60;
+Executes a standard SQL query with positional parameters. Parameters array supports primitives e.g. `[1, 'John', 34.56]` or objects in format either `{'type':'[DATA_TYPE]', 'value':[VALUE]}` or `{'name':'[string]', 'type':'[DATA_TYPE]', 'value':[VALUE]}` e.g. `[{'type':'CHAR', 'value':'ISBN19202323322'}]` or `[{'name': 'order_number', 'type':'CHAR', 'value':'ISBN19202323322'}]`
 
 > ```ts
 > static execute(sql: string, parameters: any, datasourceName: string, formatting: FormattingParameter): void;
@@ -23,7 +24,7 @@ Executes a standard SQL query with positional parameters. Parameters array suppo
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `sql` | `string` | The SQL query to execute. |
-> | `parameters` | `any` | An optional array of values (primitives, TypedQueryParameter or NamedQueryParameter objects) to replace &#x27;?&#x27; or :paramName placeholders. |
+> | `parameters` | `any` | An optional array of values (primitives, TypedQueryParameter or NamedQueryParameter objects) to replace '?' or :paramName placeholders. |
 > | `datasourceName` | `string` | The name of the database connection to use (optional). |
 > | `formatting` | `FormattingParameter` | Optional formatting parameters for the result set (e.g., date format). |
 >
@@ -34,7 +35,7 @@ Executes a standard SQL query with positional parameters. Parameters array suppo
 
 #### executeNamed()
 
-Executes a SQL query with named parameters (e.g., &quot;:name&quot;, &quot;:id&quot;).
+Executes a SQL query with named parameters (e.g., ":name", ":id").
 
 > ```ts
 > static executeNamed(sql: string, parameters: any, datasourceName: string): void;

@@ -1,12 +1,13 @@
 # platform/lifecycle
 
-::: tip Documentation
-- source: [platform/lifecycle.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/lifecycle.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [platform/lifecycle.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/lifecycle.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -24,7 +25,7 @@ Publishes a project for a specific user and workspace.
 > | ------ | ------ | ------ |
 > | `user` | `string` | The username of the owner of the workspace. |
 > | `workspace` | `string` | The name of the workspace to publish from. |
-> | `project` | `string` | The specific project name to publish. Use &quot;*&quot; to publish all projects in the workspace. |
+> | `project` | `string` | The specific project name to publish. Use "*" to publish all projects in the workspace. |
 >
 > ::: info Returns
 > - **Type**: `boolean`
@@ -41,7 +42,7 @@ Unpublishes a currently deployed project.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `project` | `string` | The specific project name to unpublish. Use &quot;*&quot; to unpublish all currently deployed projects. |
+> | `project` | `string` | The specific project name to unpublish. Use "*" to unpublish all currently deployed projects. |
 >
 > ::: info Returns
 > - **Type**: `boolean`

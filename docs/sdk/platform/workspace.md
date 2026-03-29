@@ -1,12 +1,13 @@
 # platform/workspace
 
-::: tip Documentation
-- source: [platform/workspace.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/workspace.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [platform/workspace.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/workspace.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -158,7 +159,7 @@ Checks if the workspace currently exists.
 
 #### existsFolder()
 
-Checks if a specific folder path exists within the workspace&#x27;s filesystem structure.
+Checks if a specific folder path exists within the workspace's filesystem structure.
 
 > ```ts
 > existsFolder(path: string): boolean;
@@ -175,7 +176,7 @@ Checks if a specific folder path exists within the workspace&#x27;s filesystem s
 
 #### existsFile()
 
-Checks if a specific file path exists within the workspace&#x27;s filesystem structure.
+Checks if a specific file path exists within the workspace's filesystem structure.
 
 > ```ts
 > existsFile(path: string): boolean;

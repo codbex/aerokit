@@ -1,12 +1,13 @@
 # extensions/extensions
 
-::: tip Documentation
-- source: [extensions/extensions.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions/extensions.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [extensions/extensions.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/extensions/extensions.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -22,7 +23,7 @@ Retrieves the list of extension module paths registered for a specific extension
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `extensionPoint` | `string` | The unique identifier of the extension point (e.g., &quot;my.extension.point&quot;). |
+> | `extensionPoint` | `string` | The unique identifier of the extension point (e.g., "my.extension.point"). |
 >
 > ::: info Returns
 > - **Type**: `void`

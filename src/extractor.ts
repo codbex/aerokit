@@ -12,6 +12,12 @@ function getReturn(comment?: any): string {
   return tag.content.map((c: any) => c.text).join("");
 }
 
+function getOverview(comment?: any): string {
+  const tag = comment?.blockTags?.find((t: any) => t.tag === "@overview");
+  if (!tag) return "";
+  return tag.content.map((c: any) => c.text).join("");
+}
+
 function buildSignature(method: any): string {
   const sig = method.signatures?.[0];
   const params = (sig?.parameters || [])
@@ -30,7 +36,7 @@ export function extractModules(jsonPath: string): ModuleDoc[] {
     .filter((m: any) => m.kind === 2 && m.children)
     .map((module: any) => ({
       moduleLocation: module.name,
-      overview: "",
+      overview: getOverview(module.comment),
       classes: (module.children || [])
         .filter((c: any) => c.kind === 128)
         .map((cls: any) => ({

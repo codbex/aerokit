@@ -1,12 +1,13 @@
 # job/scheduler
 
-::: tip Documentation
-- source: [job/scheduler.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/job/scheduler.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [job/scheduler.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/job/scheduler.ts)
+- last updated: 
+:::
 
 ## Classes
 

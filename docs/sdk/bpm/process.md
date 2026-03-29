@@ -1,12 +1,13 @@
 # bpm/process
 
-::: tip Documentation
-- source: [bpm/process.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/process.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [bpm/process.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/process.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -102,7 +103,7 @@ Retrieves the value of a specific variable from a process instance.
 >
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: The value of the variable, or &#x60;null&#x60; if the variable does not exist. The type is &#x60;any&#x60; as it depends on the stored value.
+> - **Description**: The value of the variable, or `null` if the variable does not exist. The type is `any` as it depends on the stored value.
 > :::
 
 #### getVariables()
@@ -134,7 +135,7 @@ Sets or updates the value of a variable in a process instance.
 > | ------ | ------ | ------ |
 > | `processInstanceId` | `string` | The ID of the process instance. |
 > | `variableName` | `string` | The name of the variable to set. |
-> | `value` | `any` | The new value for the variable. The type is &#x60;any&#x60; to accommodate different data types. |
+> | `value` | `any` | The new value for the variable. The type is `any` to accommodate different data types. |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -171,7 +172,7 @@ Correlates a message event with a running process instance.
 > | ------ | ------ | ------ |
 > | `processInstanceId` | `string` | The ID of the process instance to correlate the message to. |
 > | `messageName` | `string` | The name of the message event defined in the BPMN process. |
-> | `variables` | `Map` | A map of variables (&#x60;Map&lt;string, any&gt;&#x60;) to pass along with the message event. |
+> | `variables` | `Map` | A map of variables (`Map<string, any>`) to pass along with the message event. |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -189,7 +190,7 @@ Retrieves the current execution context object, typically used within an executi
 >
 > ::: info Returns
 > - **Type**: `ExecutionContext`
-> - **Description**: A new instance of the &#x60;ExecutionContext&#x60; containing details about the current process execution path.
+> - **Description**: A new instance of the `ExecutionContext` containing details about the current process execution path.
 > :::
 
 #### getTaskContext()
@@ -203,6 +204,6 @@ Retrieves the current task context object, typically used within a task listener
 >
 > ::: info Returns
 > - **Type**: `TaskContext`
-> - **Description**: A new instance of the &#x60;TaskContext&#x60; containing details about the current task.
+> - **Description**: A new instance of the `TaskContext` containing details about the current task.
 > :::
 

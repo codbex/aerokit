@@ -1,12 +1,13 @@
 # http/rs/resource-http-controller
 
-::: tip Documentation
-- source: [http/rs/resource-http-controller.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-http-controller.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/rs/resource-http-controller.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-http-controller.ts)
+- last updated: 
+:::
 
 ## Classes
 

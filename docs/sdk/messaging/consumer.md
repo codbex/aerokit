@@ -1,12 +1,13 @@
 # messaging/consumer
 
-::: tip Documentation
-- source: [messaging/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/consumer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [messaging/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/messaging/consumer.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Messages sent to this destination are consumed by only one receiver.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `destination` | `string` | The name of the queue destination (e.g., &#x27;orders.queue&#x27;). |
+> | `destination` | `string` | The name of the queue destination (e.g., 'orders.queue'). |
 >
 > ::: info Returns
 > - **Type**: `Queue`
@@ -41,7 +42,7 @@ Messages sent to this destination can be consumed by multiple subscribers.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `destination` | `string` | The name of the topic destination (e.g., &#x27;market.updates.topic&#x27;). |
+> | `destination` | `string` | The name of the topic destination (e.g., 'market.updates.topic'). |
 >
 > ::: info Returns
 > - **Type**: `Topic`

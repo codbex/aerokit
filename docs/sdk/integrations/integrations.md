@@ -1,12 +1,13 @@
 # integrations/integrations
 
-::: tip Documentation
-- source: [integrations/integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations/integrations.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [integrations/integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations/integrations.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -35,10 +36,10 @@ Synchronously invokes a specified Camel route.
 #### getInvokingRouteMessage()
 
 Retrieves the current message being processed by the underlying integration
-engine&#x27;s context. This is typically used within a route endpoint (e.g., a script component)
+engine's context. This is typically used within a route endpoint (e.g., a script component)
 to access or modify the message.
 
-Note: &#x27;__context&#x27; is assumed to be a global or context-injected variable.
+Note: '__context' is assumed to be a global or context-injected variable.
 
 > ```ts
 > static getInvokingRouteMessage(): IntegrationMessage;

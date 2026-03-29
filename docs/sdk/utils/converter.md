@@ -1,12 +1,13 @@
 # utils/converter
 
-::: tip Documentation
-- source: [utils/converter.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/converter.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/converter.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/converter.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Converts a date property value within an object into a Unix timestamp (milliseco
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `obj` | `any` | The object containing the property to be converted. |
-> | `property` | `string` | The string name of the date property (e.g., &#x27;dateCreated&#x27;). |
+> | `property` | `string` | The string name of the date property (e.g., 'dateCreated'). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -43,7 +44,7 @@ This is typically used for fields that should represent a date *only*, without t
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `obj` | `any` | The object containing the property to be converted. |
-> | `property` | `string` | The string name of the date property (e.g., &#x27;birthday&#x27;). |
+> | `property` | `string` | The string name of the date property (e.g., 'birthday'). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -52,8 +53,8 @@ This is typically used for fields that should represent a date *only*, without t
 
 #### setBoolean()
 
-Explicitly coerces a property value to a strict boolean type (&#x60;true&#x60; or &#x60;false&#x60;).
-This handles truthy/falsy values like &#x60;1&#x60;, &#x60;0&#x60;, &#x60;null&#x60;, and empty strings.
+Explicitly coerces a property value to a strict boolean type (`true` or `false`).
+This handles truthy/falsy values like `1`, `0`, `null`, and empty strings.
 
 > ```ts
 > static setBoolean(obj: any, property: string): void;
@@ -62,7 +63,7 @@ This handles truthy/falsy values like &#x60;1&#x60;, &#x60;0&#x60;, &#x60;null&#
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `obj` | `any` | The object containing the property to be converted. |
-> | `property` | `string` | The string name of the boolean property (e.g., &#x27;isActive&#x27;). |
+> | `property` | `string` | The string name of the boolean property (e.g., 'isActive'). |
 >
 > ::: info Returns
 > - **Type**: `void`

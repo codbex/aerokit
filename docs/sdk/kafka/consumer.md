@@ -1,12 +1,13 @@
 # kafka/consumer
 
-::: tip Documentation
-- source: [kafka/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/kafka/consumer.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [kafka/consumer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/kafka/consumer.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -25,7 +26,7 @@ stop listening for messages on a Kafka topic.
 > | ------ | ------ | ------ |
 > | `destination` | `string` | The name of the Kafka topic to consume messages from. |
 > | `configuration` | `any` | Optional key-value object containing Kafka consumer properties
-(e.g., &#x27;group.id&#x27;, &#x27;auto.offset.reset&#x27;). |
+(e.g., 'group.id', 'auto.offset.reset'). |
 >
 > ::: info Returns
 > - **Type**: `Topic`

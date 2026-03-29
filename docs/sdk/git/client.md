@@ -1,12 +1,13 @@
 # git/client
 
-::: tip Documentation
-- source: [git/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/git/client.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [git/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/git/client.ts)
+- last updated: 
+:::
 
 ## Classes
 

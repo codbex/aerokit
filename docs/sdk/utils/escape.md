@@ -1,12 +1,13 @@
 # utils/escape
 
-::: tip Documentation
-- source: [utils/escape.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/escape.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/escape.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/escape.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -68,7 +69,7 @@ Escapes characters in a string using HTML 3.2 entity references.
 #### escapeHtml4()
 
 Escapes characters in a string using HTML 4.0 entity references.
-This is the common standard for escaping characters like &lt;, &gt;, &amp;, and &quot;.
+This is the common standard for escaping characters like <, >, &, and ".
 
 > ```ts
 > static escapeHtml4(input: string): string;
@@ -121,7 +122,7 @@ to make it safe for embedding as a value within a JSON document.
 #### escapeXml()
 
 Escapes characters in a string to make it valid for use within an XML document.
-Typically handles characters like &lt;, &gt;, &amp;, &quot;, and &#x27;.
+Typically handles characters like <, >, &, ", and '.
 
 > ```ts
 > static escapeXml(input: string): string;
@@ -138,7 +139,7 @@ Typically handles characters like &lt;, &gt;, &amp;, &quot;, and &#x27;.
 
 #### unescapeCsv()
 
-The inverse of &#x60;escapeCsv&#x60;: unescapes CSV-specific escape sequences back to their original form.
+The inverse of `escapeCsv`: unescapes CSV-specific escape sequences back to their original form.
 
 > ```ts
 > static unescapeCsv(input: string): string;
@@ -155,7 +156,7 @@ The inverse of &#x60;escapeCsv&#x60;: unescapes CSV-specific escape sequences ba
 
 #### unescapeJavascript()
 
-The inverse of &#x60;escapeJavascript&#x60;: unescapes JavaScript string literals.
+The inverse of `escapeJavascript`: unescapes JavaScript string literals.
 
 > ```ts
 > static unescapeJavascript(input: string): string;
@@ -172,7 +173,7 @@ The inverse of &#x60;escapeJavascript&#x60;: unescapes JavaScript string literal
 
 #### unescapeHtml3()
 
-The inverse of &#x60;escapeHtml3&#x60;: unescapes HTML 3.2 entity references.
+The inverse of `escapeHtml3`: unescapes HTML 3.2 entity references.
 
 > ```ts
 > static unescapeHtml3(input: string): string;
@@ -189,7 +190,7 @@ The inverse of &#x60;escapeHtml3&#x60;: unescapes HTML 3.2 entity references.
 
 #### unescapeHtml4()
 
-The inverse of &#x60;escapeHtml4&#x60;: unescapes HTML 4.0 entity references.
+The inverse of `escapeHtml4`: unescapes HTML 4.0 entity references.
 
 > ```ts
 > static unescapeHtml4(input: string): string;
@@ -206,7 +207,7 @@ The inverse of &#x60;escapeHtml4&#x60;: unescapes HTML 4.0 entity references.
 
 #### unescapeJava()
 
-The inverse of &#x60;escapeJava&#x60;: unescapes Java string literals.
+The inverse of `escapeJava`: unescapes Java string literals.
 
 > ```ts
 > static unescapeJava(input: string): string;
@@ -223,7 +224,7 @@ The inverse of &#x60;escapeJava&#x60;: unescapes Java string literals.
 
 #### unescapeJson()
 
-The inverse of &#x60;escapeJson&#x60;: unescapes JSON string escape sequences.
+The inverse of `escapeJson`: unescapes JSON string escape sequences.
 
 > ```ts
 > static unescapeJson(input: string): string;
@@ -240,7 +241,7 @@ The inverse of &#x60;escapeJson&#x60;: unescapes JSON string escape sequences.
 
 #### unescapeXml()
 
-The inverse of &#x60;escapeXml&#x60;: unescapes XML entity references.
+The inverse of `escapeXml`: unescapes XML entity references.
 
 > ```ts
 > static unescapeXml(input: string): string;

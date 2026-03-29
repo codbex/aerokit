@@ -1,12 +1,13 @@
 # cache/cache
 
-::: tip Documentation
-- source: [cache/cache.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cache/cache.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [cache/cache.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cache/cache.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -43,7 +44,7 @@ Retrieves the value associated with the specified key from the cache.
 >
 > ::: info Returns
 > - **Type**: `any`
-> - **Description**: The cached value, or &#x60;undefined&#x60; if the key is not found.
+> - **Description**: The cached value, or `undefined` if the key is not found.
 > :::
 
 #### set()

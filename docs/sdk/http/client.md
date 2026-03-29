@@ -1,12 +1,13 @@
 # http/client
 
-::: tip Documentation
-- source: [http/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/client.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -41,7 +42,7 @@ Executes a synchronous HTTP POST request.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `url` | `string` | The target URL. |
-> | `options` | `HttpClientRequestOptions` | Configuration options for the request, including request body in &#x60;text&#x60; or &#x60;data&#x60;. |
+> | `options` | `HttpClientRequestOptions` | Configuration options for the request, including request body in `text` or `data`. |
 >
 > ::: info Returns
 > - **Type**: `HttpClientResponse`
@@ -135,7 +136,7 @@ Executes a synchronous HTTP HEAD request (fetches headers only).
 >
 > ::: info Returns
 > - **Type**: `HttpClientResponse`
-> - **Description**: The parsed response object. The body (&#x60;text&#x60; and &#x60;data&#x60;) will typically be empty.
+> - **Description**: The parsed response object. The body (`text` and `data`) will typically be empty.
 > :::
 
 #### trace()

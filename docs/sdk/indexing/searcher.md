@@ -1,12 +1,13 @@
 # indexing/searcher
 
-::: tip Documentation
-- source: [indexing/searcher.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/searcher.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [indexing/searcher.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/searcher.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -22,7 +23,7 @@ Executes a keyword search against a specified index.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `index` | `string` | The name or identifier of the index to search (e.g., &#x27;documents&#x27;, &#x27;products&#x27;). |
+> | `index` | `string` | The name or identifier of the index to search (e.g., 'documents', 'products'). |
 > | `term` | `string` | The keyword or search phrase to look for. |
 >
 > ::: info Returns

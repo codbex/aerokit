@@ -1,12 +1,13 @@
 # mongodb/client
 
-::: tip Documentation
-- source: [mongodb/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mongodb/client.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [mongodb/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mongodb/client.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -326,7 +327,7 @@ Creates an index on a single field by name.
 
 Retrieves the distinct values for a specified field across a collection.
 NOTE: The signature in the original code seems slightly off compared to typical MongoDB drivers.
-This implementation follows the original structure using &#x60;keys.native&#x60; if &#x60;keys&#x60; is provided.
+This implementation follows the original structure using `keys.native` if `keys` is provided.
 
 > ```ts
 > distinct(name: string, query: DBInput, keys: DBInput): void;
@@ -336,7 +337,7 @@ This implementation follows the original structure using &#x60;keys.native&#x60;
 > | ------ | ------ | ------ |
 > | `name` | `string` | The field name. |
 > | `query` | `DBInput` | Optional query to filter results. |
-> | `keys` | `DBInput` | Optional keys to use for distinct (replaces &#x27;name&#x27; if provided and query exists). |
+> | `keys` | `DBInput` | Optional keys to use for distinct (replaces 'name' if provided and query exists). |
 >
 > ::: info Returns
 > - **Type**: `void`
@@ -427,7 +428,7 @@ Renames the collection.
 
 #### save()
 
-Saves a document to the collection. If the document has an &#x60;_id&#x60;, it performs an update;
+Saves a document to the collection. If the document has an `_id`, it performs an update;
 otherwise, it performs an insert.
 
 > ```ts
@@ -466,7 +467,7 @@ Updates documents in the collection matching the query.
 #### updateMulti()
 
 Updates multiple documents in the collection matching the query.
-(Equivalent to calling &#x60;update&#x60; with &#x60;multi&#x3D;true&#x60; and &#x60;upsert&#x3D;true&#x60; implicitly).
+(Equivalent to calling `update` with `multi=true` and `upsert=true` implicitly).
 
 > ```ts
 > updateMulti(query: DBInput, update: DBInput): void;
@@ -484,8 +485,8 @@ Updates multiple documents in the collection matching the query.
 
 #### getNextId()
 
-Calculates the next sequential ID based on the largest existing &#x60;_id&#x60; in the collection.
-Assumes &#x60;_id&#x60; is a numeric field.
+Calculates the next sequential ID based on the largest existing `_id` in the collection.
+Assumes `_id` is a numeric field.
 
 > ```ts
 > getNextId(): number;

@@ -1,12 +1,13 @@
 # io/files
 
-::: tip Documentation
-- source: [io/files.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/files.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [io/files.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/files.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -111,7 +112,7 @@ Checks if the path refers to a directory.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if it&#x27;s a directory, false otherwise.
+> - **Description**: True if it's a directory, false otherwise.
 > :::
 
 #### isFile()
@@ -128,7 +129,7 @@ Checks if the path refers to a regular file.
 >
 > ::: info Returns
 > - **Type**: `boolean`
-> - **Description**: True if it&#x27;s a file, false otherwise.
+> - **Description**: True if it's a file, false otherwise.
 > :::
 
 #### isSameFile()
@@ -205,7 +206,7 @@ Gets the path of the parent directory.
 Reads all bytes from a file into a JavaScript byte array (an array of numbers).
 
 Note: This method automatically converts the native Java byte array to a
-JavaScript array using &#x60;Bytes.toJavaScriptBytes()&#x60;.
+JavaScript array using `Bytes.toJavaScriptBytes()`.
 
 > ```ts
 > static readBytes(path: string): void;
@@ -239,7 +240,7 @@ Reads all bytes from a file and returns the native Java byte array object.
 
 #### readText()
 
-Reads all text content from a file using the platform&#x27;s default character encoding.
+Reads all text content from a file using the platform's default character encoding.
 
 > ```ts
 > static readText(path: string): string;
@@ -259,7 +260,7 @@ Reads all text content from a file using the platform&#x27;s default character e
 Writes the content of a JavaScript byte array to a file. Overwrites existing content.
 
 Note: This method automatically converts the JavaScript array to a native
-Java byte array using &#x60;Bytes.toJavaBytes()&#x60; before writing.
+Java byte array using `Bytes.toJavaBytes()` before writing.
 
 > ```ts
 > static writeBytes(path: string, data: any): void;
@@ -295,7 +296,7 @@ Writes the content of a native Java byte array to a file. Overwrites existing co
 
 #### writeText()
 
-Writes a string of text to a file using the platform&#x27;s default character encoding. Overwrites existing content.
+Writes a string of text to a file using the platform's default character encoding. Overwrites existing content.
 
 > ```ts
 > static writeText(path: string, text: string): void;
@@ -548,8 +549,8 @@ Creates a new temporary file with the given prefix and suffix.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `prefix` | `string` | The prefix string to be used in generating the file&#x27;s name. |
-> | `suffix` | `string` | The suffix string to be used in generating the file&#x27;s name. |
+> | `prefix` | `string` | The prefix string to be used in generating the file's name. |
+> | `suffix` | `string` | The suffix string to be used in generating the file's name. |
 >
 > ::: info Returns
 > - **Type**: `string`
@@ -566,7 +567,7 @@ Creates a new temporary directory with the given prefix.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `prefix` | `string` | The prefix string to be used in generating the directory&#x27;s name. |
+> | `prefix` | `string` | The prefix string to be used in generating the directory's name. |
 >
 > ::: info Returns
 > - **Type**: `string`
@@ -652,7 +653,7 @@ Finds files and directories matching a specified glob pattern within a directory
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `path` | `string` | The starting path for the search. |
-> | `pattern` | `string` | The glob pattern to match (e.g., &quot;*.js&quot;, &quot;**.txt&quot;). |
+> | `pattern` | `string` | The glob pattern to match (e.g., "*.js", "**.txt"). |
 >
 > ::: info Returns
 > - **Type**: `void`

@@ -1,12 +1,13 @@
 # http/utils
 
-::: tip Documentation
-- source: [http/utils.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/utils.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/utils.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/utils.ts)
+- last updated: 
+:::
 
 ## Classes
 

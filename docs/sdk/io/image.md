@@ -1,12 +1,13 @@
 # io/image
 
-::: tip Documentation
-- source: [io/image.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/image.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [io/image.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/image.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Resizes an image contained within an InputStream to the specified dimensions.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `original` | `InputStream` | The InputStream containing the original image data. |
-> | `type` | `string` | The target format of the resized image (e.g., &quot;png&quot;, &quot;jpeg&quot;, &quot;gif&quot;). |
+> | `type` | `string` | The target format of the resized image (e.g., "png", "jpeg", "gif"). |
 > | `width` | `number` | The target width in pixels. |
 > | `height` | `number` | The target height in pixels. |
 >

@@ -1,12 +1,13 @@
 # utils/xml
 
-::: tip Documentation
-- source: [utils/xml.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/xml.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/xml.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/xml.ts)
+- last updated: 
+:::
 
 ## Classes
 

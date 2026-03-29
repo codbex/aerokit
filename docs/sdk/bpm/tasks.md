@@ -1,12 +1,13 @@
 # bpm/tasks
 
-::: tip Documentation
-- source: [bpm/tasks.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/tasks.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [bpm/tasks.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/tasks.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -136,7 +137,7 @@ Returns all variables. This will include all variables of parent scopes too.
 
 Creates a new task that is not related to any process instance.
 
-The returned task is transient and must be saved with #saveTask(Task) &#x27;manually&#x27;.
+The returned task is transient and must be saved with #saveTask(Task) 'manually'.
 
 > ```ts
 > newTask(taskId: string): Task;
@@ -229,7 +230,7 @@ Deletes all tasks of the given collection, not deleting historic information tha
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `taskIds` | `any` | The id&#x27;s of the tasks that will be deleted, cannot be null. All id&#x27;s in the list that don&#x27;t have an existing task will be ignored. |
+> | `taskIds` | `any` | The id's of the tasks that will be deleted, cannot be null. All id's in the list that don't have an existing task will be ignored. |
 > | `cascade` | `boolean` | If cascade is true, also the historic information related to this task is deleted. |
 >
 > ::: info Returns
@@ -265,7 +266,7 @@ Deletes all tasks of the given collection, not deleting historic information tha
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `taskIds` | `any` | The id&#x27;s of the tasks that will be deleted, cannot be null. All id&#x27;s in the list that don&#x27;t have an existing task will be ignored. |
+> | `taskIds` | `any` | The id's of the tasks that will be deleted, cannot be null. All id's in the list that don't have an existing task will be ignored. |
 > | `deleteReason` | `string` | reason the task is deleted. Is recorded in history, if enabled. |
 >
 > ::: info Returns

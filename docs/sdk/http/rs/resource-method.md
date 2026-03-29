@@ -1,12 +1,13 @@
 # http/rs/resource-method
 
-::: tip Documentation
-- source: [http/rs/resource-method.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-method.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/rs/resource-method.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource-method.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -14,7 +15,7 @@
 
 #### execute()
 
-Delegates to the HttpController&#x27;s execute function to process the request.
+Delegates to the HttpController's execute function to process the request.
 
 > ```ts
 > execute(): void;
@@ -28,7 +29,7 @@ Delegates to the HttpController&#x27;s execute function to process the request.
 
 #### get()
 
-Delegates to the parent Resource&#x27;s &#x27;get&#x27; method.
+Delegates to the parent Resource's 'get' method.
 
 > ```ts
 > get(): any;
@@ -42,7 +43,7 @@ Delegates to the parent Resource&#x27;s &#x27;get&#x27; method.
 
 #### post()
 
-Delegates to the parent Resource&#x27;s &#x27;post&#x27; method.
+Delegates to the parent Resource's 'post' method.
 
 > ```ts
 > post(): any;
@@ -56,7 +57,7 @@ Delegates to the parent Resource&#x27;s &#x27;post&#x27; method.
 
 #### put()
 
-Delegates to the parent Resource&#x27;s &#x27;put&#x27; method.
+Delegates to the parent Resource's 'put' method.
 
 > ```ts
 > put(): any;
@@ -70,7 +71,7 @@ Delegates to the parent Resource&#x27;s &#x27;put&#x27; method.
 
 #### delete()
 
-Delegates to the parent Resource&#x27;s &#x27;delete&#x27; method.
+Delegates to the parent Resource's 'delete' method.
 
 > ```ts
 > delete(): any;
@@ -84,7 +85,7 @@ Delegates to the parent Resource&#x27;s &#x27;delete&#x27; method.
 
 #### remove()
 
-Delegates to the parent Resource&#x27;s &#x27;remove&#x27; method.
+Delegates to the parent Resource's 'remove' method.
 
 > ```ts
 > remove(): any;
@@ -98,7 +99,7 @@ Delegates to the parent Resource&#x27;s &#x27;remove&#x27; method.
 
 #### method()
 
-Delegates to the parent Resource&#x27;s &#x27;method&#x27; method.
+Delegates to the parent Resource's 'method' method.
 
 > ```ts
 > method(): any;
@@ -212,10 +213,10 @@ Defines the content MIME type(s), which this ResourceMethod expects as input (**
 #### produces()
 
 Defines the HTTP response payload MIME type(s), which this ResourceMethod request processing function outputs, i.e.
-those that it &#x27;produces&#x27;. At runtime, the Accept request header will be matched for compatibility with this setting
+those that it 'produces'. At runtime, the Accept request header will be matched for compatibility with this setting
 to elicit request processing functions.
 Note that the matching is performed by compatibility, not strict equality, i.e. the MIME type format wildcards are
-considered too. For example, a request Accept header &quot;*/json&quot; will match a produces setting &quot;application/json&quot;.
+considered too. For example, a request Accept header "*/json" will match a produces setting "application/json".
 
    *
 

@@ -1,12 +1,13 @@
 # db/translator
 
-::: tip Documentation
-- source: [db/translator.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/translator.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [db/translator.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/translator.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,7 +24,7 @@ Translates properties for a list of entities by querying the corresponding langu
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `list` | `any` | The array of entities to be translated. |
-> | `language` | `string` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
+> | `language` | `string` | The target language code (e.g., 'en', 'de'). If undefined, no translation occurs. |
 > | `basetTable` | `string` | The name of the base entity table (used to derive the language table name). |
 >
 > ::: info Returns
@@ -43,7 +44,7 @@ Translates properties for a single entity by querying the corresponding language
 > | ------ | ------ | ------ |
 > | `entity` | `any` | The entity object to be translated. |
 > | `id` | `any` | The ID of the entity. |
-> | `language` | `string` | The target language code (e.g., &#x27;en&#x27;, &#x27;de&#x27;). If undefined, no translation occurs. |
+> | `language` | `string` | The target language code (e.g., 'en', 'de'). If undefined, no translation occurs. |
 > | `basetTable` | `string` | The name of the base entity table. |
 >
 > ::: info Returns

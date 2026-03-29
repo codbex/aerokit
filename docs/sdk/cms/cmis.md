@@ -1,12 +1,13 @@
 # cms/cmis
 
-::: tip Documentation
-- source: [cms/cmis.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cms/cmis.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [cms/cmis.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cms/cmis.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -102,7 +103,7 @@ Creates a new document within this folder.
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `properties` | `any` | A map of CMIS properties for the new document (must include Cmis.NAME). |
-> | `contentStream` | `ContentStream` | The content stream containing the document&#x27;s binary data. |
+> | `contentStream` | `ContentStream` | The content stream containing the document's binary data. |
 > | `versioningState` | `string` | The versioning state (e.g., Cmis.VERSIONING_STATE_MAJOR). |
 >
 > ::: info Returns
@@ -222,7 +223,7 @@ Gets the type definition of the folder.
 >
 > ::: info Returns
 > - **Type**: `TypeDefinition`
-> - **Description**: The folder&#x27;s TypeDefinition.
+> - **Description**: The folder's TypeDefinition.
 > :::
 
 ### Document
@@ -266,7 +267,7 @@ Gets the type definition of the document.
 >
 > ::: info Returns
 > - **Type**: `TypeDefinition`
-> - **Description**: The document&#x27;s TypeDefinition.
+> - **Description**: The document's TypeDefinition.
 > :::
 
 #### getPath()
@@ -308,12 +309,12 @@ Gets the binary content stream of the document.
 >
 > ::: info Returns
 > - **Type**: `ContentStream`
-> - **Description**: The ContentStream object, or &#x60;null&#x60; if the document has no content.
+> - **Description**: The ContentStream object, or `null` if the document has no content.
 > :::
 
 #### getSize()
 
-Gets the size of the document&#x27;s content stream in bytes.
+Gets the size of the document's content stream in bytes.
 
 > ```ts
 > getSize(): number;

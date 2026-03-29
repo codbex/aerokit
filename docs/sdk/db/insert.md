@@ -1,12 +1,13 @@
 # db/insert
 
-::: tip Documentation
-- source: [db/insert.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/insert.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [db/insert.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/insert.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -23,8 +24,8 @@ Executes a single parameterized INSERT statement.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `sql` | `string` | The SQL query to execute, with &#x27;?&#x27; placeholders for parameters. |
-> | `parameters` | `any` | An optional array of values to replace the &#x27;?&#x27; placeholders. |
+> | `sql` | `string` | The SQL query to execute, with '?' placeholders for parameters. |
+> | `parameters` | `any` | An optional array of values to replace the '?' placeholders. |
 > | `datasourceName` | `string` | The name of the database connection to use (optional). |
 >
 > ::: info Returns
@@ -43,7 +44,7 @@ Executes multiple parameterized INSERT statements as a batch operation.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `sql` | `string` | The SQL query to execute, with &#x27;?&#x27; placeholders for parameters. |
+> | `sql` | `string` | The SQL query to execute, with '?' placeholders for parameters. |
 > | `parameters` | `any` | An optional array of parameter arrays, where each inner array corresponds to one execution of the SQL statement. |
 > | `datasourceName` | `string` | The name of the database connection to use (optional). |
 >

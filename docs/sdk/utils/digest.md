@@ -1,12 +1,13 @@
 # utils/digest
 
-::: tip Documentation
-- source: [utils/digest.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/digest.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/digest.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/digest.ts)
+- last updated: 
+:::
 
 ## Classes
 

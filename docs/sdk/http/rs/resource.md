@@ -1,12 +1,13 @@
 # http/rs/resource
 
-::: tip Documentation
-- source: [http/rs/resource.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [http/rs/resource.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/rs/resource.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -41,7 +42,7 @@ Creates a new HTTP method handling specification.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `sHttpMethod` | `string` | The HTTP method (method) (e.g., &quot;GET&quot;). |
+> | `sHttpMethod` | `string` | The HTTP method (method) (e.g., "GET"). |
 > | `oConfiguration` | `any` | The handler specification(s) for this HTTP method. Can be a single object or array. |
 >
 > ::: info Returns
@@ -51,7 +52,7 @@ Creates a new HTTP method handling specification.
 
 #### get()
 
-Creates a handling specification for the HTTP method &quot;GET&quot;.
+Creates a handling specification for the HTTP method "GET".
 
 > ```ts
 > get(fServeCb: Function): ResourceMethod;
@@ -68,7 +69,7 @@ Creates a handling specification for the HTTP method &quot;GET&quot;.
 
 #### post()
 
-Creates a handling specification for the HTTP method &quot;POST&quot;.
+Creates a handling specification for the HTTP method "POST".
 
 > ```ts
 > post(fServeCb: Function): ResourceMethod;
@@ -85,7 +86,7 @@ Creates a handling specification for the HTTP method &quot;POST&quot;.
 
 #### put()
 
-Creates a handling specification for the HTTP method &quot;PUT&quot;.
+Creates a handling specification for the HTTP method "PUT".
 
 > ```ts
 > put(fServeCb: Function): ResourceMethod;
@@ -102,7 +103,7 @@ Creates a handling specification for the HTTP method &quot;PUT&quot;.
 
 #### delete()
 
-Creates a handling specification for the HTTP method &quot;DELETE&quot;.
+Creates a handling specification for the HTTP method "DELETE".
 
 > ```ts
 > delete(fServeCb: Function): ResourceMethod;
@@ -119,7 +120,7 @@ Creates a handling specification for the HTTP method &quot;DELETE&quot;.
 
 #### remove()
 
-Creates a handling specification for the HTTP method &quot;DELETE&quot; (alias for delete()).
+Creates a handling specification for the HTTP method "DELETE" (alias for delete()).
 
 > ```ts
 > remove(fServeCb: Function): ResourceMethod;
@@ -144,7 +145,7 @@ Finds a ResourceMethod with the given constraints.
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `sVerb` | `string` | The name of the method property of the ResourceMethod in search (e.g., &quot;GET&quot;). |
+> | `sVerb` | `string` | The name of the method property of the ResourceMethod in search (e.g., "GET"). |
 > | `arrConsumesMimeTypeStrings` | `any` | The consumes constraint property of the ResourceMethod in search. |
 > | `arrProducesMimeTypeStrings` | `any` | The produces constraint property of the ResourceMethod in search. |
 >
@@ -170,7 +171,7 @@ Returns the configuration of this resource.
 #### redirect()
 
 Instructs redirection of the request base don the parameter. If it is a stirng representing URI, the request will be
-redirected to this URI for any method. If it&#x27;s a function it will be invoked and epxected to return a URI string to redirect to.
+redirected to this URI for any method. If it's a function it will be invoked and epxected to return a URI string to redirect to.
 
 > ```ts
 > redirect(fRedirector: any): Resource;
@@ -198,7 +199,7 @@ Disables the ResourceMethods that match the given constraints
 >
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
-> | `sVerb` | `string` | The HTTP verb (e.g., &quot;GET&quot;). |
+> | `sVerb` | `string` | The HTTP verb (e.g., "GET"). |
 > | `arrConsumesTypeStrings` | `any` | The consumes constraint property of the ResourceMethod in search. |
 > | `arrProducesTypeStrings` | `any` | The produces constraint property of the ResourceMethod in search.
    * |
@@ -210,7 +211,7 @@ Disables the ResourceMethods that match the given constraints
 
 #### readonly()
 
-Disables all but &#x27;read&#x27; HTTP methods in this resource (GET, HEAD, TRACE).
+Disables all but 'read' HTTP methods in this resource (GET, HEAD, TRACE).
    *
    *
 

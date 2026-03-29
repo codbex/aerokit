@@ -1,12 +1,13 @@
 # io/bytes
 
-::: tip Documentation
-- source: [io/bytes.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/bytes.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [io/bytes.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/bytes.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -93,7 +94,7 @@ Converts a 32-bit integer value into a byte array, respecting the specified byte
 > | Parameter | Type | Description |
 > | ------ | ------ | ------ |
 > | `value` | `number` | The integer value to convert. |
-> | `byteOrder` | `any` | Specifies the byte ordering: &quot;BIG_ENDIAN&quot; (most significant byte first) or &quot;LITTLE_ENDIAN&quot; (least significant byte first). |
+> | `byteOrder` | `any` | Specifies the byte ordering: "BIG_ENDIAN" (most significant byte first) or "LITTLE_ENDIAN" (least significant byte first). |
 >
 > ::: info Returns
 > - **Type**: `void`

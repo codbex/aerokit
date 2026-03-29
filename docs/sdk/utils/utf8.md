@@ -1,12 +1,13 @@
 # utils/utf8
 
-::: tip Documentation
-- source: [utils/utf8.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/utf8.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [utils/utf8.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/utf8.ts)
+- last updated: 
+:::
 
 ## Classes
 

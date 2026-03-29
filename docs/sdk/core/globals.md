@@ -1,12 +1,13 @@
 # core/globals
 
-::: tip Documentation
-- source: [core/globals.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/globals.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [core/globals.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/globals.ts)
+- last updated: 
+:::
 
 ## Classes
 
@@ -26,7 +27,7 @@ Retrieves the value of the global variable with the specified name.
 >
 > ::: info Returns
 > - **Type**: `string`
-> - **Description**: The variable&#x27;s value as a string, or &#x60;undefined&#x60; if the variable is not set or its value is null.
+> - **Description**: The variable's value as a string, or `undefined` if the variable is not set or its value is null.
 > :::
 
 #### set()

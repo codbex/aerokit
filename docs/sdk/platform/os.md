@@ -1,12 +1,13 @@
 # platform/os
 
-::: tip Documentation
-- source: [platform/os.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/os.ts)
-:::
-
 ## Overview
 
 
+
+::: tip Module
+- source: [platform/os.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/os.ts)
+- last updated: 
+:::
 
 ## Classes
 
