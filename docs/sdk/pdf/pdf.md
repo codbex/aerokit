@@ -28,7 +28,7 @@ Generates a PDF document containing a styled table based on the standard table t
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: The generated PDF content as a byte array (Array<number>).
+> - **Description**: The generated PDF content as a byte array (number[]).
 > :::
 
 #### generate()
@@ -46,6 +46,6 @@ Generates a PDF document using a custom template path and data payload.
 >
 > ::: info Returns
 > - **Type**: `void`
-> - **Description**: The generated PDF content as a byte array (Array<number>).
+> - **Description**: The generated PDF content as a byte array (number[]).
 > :::
 

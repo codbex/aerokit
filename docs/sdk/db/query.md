@@ -52,3 +52,23 @@ Executes a SQL query with named parameters (e.g., ":name", ":id").
 > - **Description**: An array of records representing the query results.
 > :::
 
+#### exportCsv()
+
+Exports a SQL query with named parameters (e.g., ":name", ":id").
+
+> ```ts
+> static exportCsv(sql: string, parameters: any, datasourceName: string, fileName: string): void;
+> ```
+>
+> | Parameter | Type | Description |
+> | ------ | ------ | ------ |
+> | `sql` | `string` | The SQL query to execute. |
+> | `parameters` | `any` | An optional array of NamedQueryParameter objects. |
+> | `datasourceName` | `string` | The name of the database connection to use (optional). |
+> | `fileName` | `string` | The file name pattern. |
+>
+> ::: info Returns
+> - **Type**: `void`
+> - **Description**: An array of records representing the query results.
+> :::
+
