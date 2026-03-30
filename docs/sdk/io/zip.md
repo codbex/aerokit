@@ -2,12 +2,12 @@
 
 ## Overview
 
-
-
 ::: tip Module
 - source: [io/zip.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/zip.ts)
 - last updated: 
 :::
+
+
 
 ## Classes
 

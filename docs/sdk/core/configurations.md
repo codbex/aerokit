@@ -2,6 +2,11 @@
 
 ## Overview
 
+::: tip Module
+- source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
+- last updated: 
+:::
+
 The Configurations API provides a centralized, type-safe interface for managing application configuration properties and detecting the runtime operating system. It serves as the foundation for environment-specific settings and system-aware behavior in Aerokit applications.
 
 ### Key Features
@@ -39,11 +44,6 @@ if (Configurations.isOSWindows()) {
   console.log("Running on UNIX");
 }
 ```
-
-::: tip Module
-- source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
-- last updated: 
-:::
 
 ## Classes
 

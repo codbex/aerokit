@@ -2,12 +2,12 @@
 
 ## Overview
 
-
-
 ::: tip Module
 - source: [http/session.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/session.ts)
 - last updated: 
 :::
+
+
 
 ## Classes
 

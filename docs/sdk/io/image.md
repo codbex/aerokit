@@ -2,12 +2,12 @@
 
 ## Overview
 
-
-
 ::: tip Module
 - source: [io/image.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/image.ts)
 - last updated: 
 :::
+
+
 
 ## Classes
 
