@@ -2,12 +2,12 @@
 
 ## Overview
 
-
-
 ::: tip Module
 - source: [indexing/writer.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/indexing/writer.ts)
 - last updated: 
 :::
+
+
 
 ## Classes
 
