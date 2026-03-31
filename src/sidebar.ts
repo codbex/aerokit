@@ -21,13 +21,35 @@ export function generateSidebar(modules: ModuleDoc[]) {
     }
   }
 
+  const priorityGroups = [
+    "@aerokit/sdk/http",
+    "@aerokit/sdk/db",
+    "@aerokit/sdk/core",
+    "@aerokit/sdk/bpm",
+    "@aerokit/sdk/io",
+    "@aerokit/sdk/component"
+  ];
+
   // Convert grouped object → VitePress sidebar structure
   const groupedItems = Object.entries(groups).map(([group, items]) => ({
     text: group,
     collapsed: false,
     link: groupsIndex[group] || undefined,
     items,
-  }));
+  })).sort((a, b) => {
+    const aPriority = priorityGroups.indexOf(a.text);
+    const bPriority = priorityGroups.indexOf(b.text);
+
+    if (aPriority === -1 && bPriority === -1) {
+      return a.text.localeCompare(b.text);
+    } else if (aPriority === -1) {
+      return 1;
+    } else if (bPriority === -1) {
+      return -1;
+    } else {
+      return aPriority - bPriority;
+    }
+  });
 
   return `export default {
   "/sdk/": [
