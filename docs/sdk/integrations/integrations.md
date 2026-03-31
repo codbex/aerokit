@@ -1,14 +1,35 @@
-# integrations/integrations
+# Integrations
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/integrations`
 - source: [integrations/integrations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/integrations/integrations.ts)
 - last updated: 
 :::
 
+The Integrations class provides utility methods for triggering and interacting with predefined Apache Camel integration routes. It allows JavaScript code to synchronously invoke Camel routes by their unique identifiers, passing in a payload, headers, and exchange properties. Additionally, it provides access to the current message being processed within the integration context, enabling developers to read and modify message content and metadata during route execution.
 
+### Key Features:
+- **Route Invocation**: The `invokeRoute` method allows developers to execute a specific Camel route by its ID, providing the necessary input data and context for the route to process.
+- **Message Access**: The `getInvokingRouteMessage` method provides access to the current message being processed in the integration context, allowing for dynamic interaction with the message's body, headers, and exchange properties.
+
+### Use Cases:
+- **Integration Testing**: Developers can use the `invokeRoute` method to test individual Camel routes in isolation by providing controlled inputs and examining the outputs.
+- **Dynamic Message Manipulation**: By accessing the current message through `getInvokingRouteMessage`, developers can implement dynamic logic within their routes, such as modifying headers or altering the message body based on certain conditions.
+
+### Example Usage:
+```ts
+import { Integrations } from "@aerokit/sdk/integrations";
+
+// Invoke a Camel route with specific payload, headers, and exchange properties
+const result = Integrations.invokeRoute('myRouteId', { key: 'value' }, { header1: 'value1' }, { property1: 'value1' });
+console.log(result);
+
+// Access the current message within a route endpoint
+const currentMessage = Integrations.getInvokingRouteMessage();
+console.log(currentMessage.getBody());
+```
 
 ## Classes
 

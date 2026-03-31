@@ -1,14 +1,33 @@
-# mail/client
+# MailClient
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/mail`
 - source: [mail/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mail/client.ts)
 - last updated: 
 :::
 
+The MailClient provides a client for sending emails, supporting both simple text/HTML messages and complex multipart messages with attachments or inline content. It abstracts the underlying Java MailFacade, allowing developers to send emails using a straightforward API while handling recipient processing and content formatting internally.
 
+### Key Features:
+- **Simple Email Sending**: The `send` method allows sending basic emails with a single text or HTML body.
+- **Multipart Email Support**: The `sendMultipart` method enables sending complex emails composed of multiple parts, including attachments and inline content.
+- **Recipient Handling**: Supports flexible recipient specifications, allowing for 'to', 'cc', and 'bcc' fields to be provided as either strings or arrays.
+- **Configuration Options**: The constructor accepts an optional configuration object for customizing the mail client (e.g., SMTP settings).
+
+### Use Cases:
+- **Notification Emails**: Use the MailClient to send notifications, alerts, or updates to users via email.
+- **Transactional Emails**: Send transactional emails such as order confirmations, password resets, or account activations.
+- **Rich Content Emails**: Leverage multipart email capabilities to include attachments, inline images, or mixed content in emails.
+
+### Example Usage:
+```ts
+import { MailClient } from "@aerokit/sdk/mail";
+
+// Send a simple HTML email
+MailClient.send("user@example.com", "Subject", "<p>Hello, World!</p>", "html");
+```
 
 ## Classes
 

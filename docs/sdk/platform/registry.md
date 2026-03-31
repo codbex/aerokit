@@ -1,14 +1,45 @@
-# platform/registry
+# Registry
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/platform`
 - source: [platform/registry.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/registry.ts)
 - last updated: 
 :::
 
+The Registry module provides a set of utilities and data structures for interacting with the platform's Registry/Repository, which manages files and directories (Artefacts and Collections). It allows developers to retrieve content and metadata from the registry using simple JavaScript interfaces, abstracting the underlying complexities of the Java-based registry system. The module includes classes for representing both individual resources (Artefacts) and collections of resources (Directories), as well as a class for accessing detailed metadata about these resources.
 
+### Key Features:
+- **Content Retrieval**: Methods to get the content of registry resources as byte arrays or text.
+- **Resource Navigation**: Classes to represent and navigate through directories and artefacts in the registry.
+- **Metadata Access**: Ability to access detailed information about resources, such as creation date, size, and permissions.
+
+### Use Cases:
+- **File Management**: This module is ideal for applications that need to manage files and directories within the platform's registry, allowing for easy access and manipulation of stored resources.
+- **Metadata Analysis**: Developers can use this module to analyze resource metadata for auditing, reporting, or conditional logic based on resource attributes.
+
+### Example Usage:
+```ts
+import { Registry } from "@aerokit/sdk/platform";
+
+// Get the root directory of the public registry
+const rootDirectory = Registry.getRoot();
+console.log("Root Directory Path:", rootDirectory.getPath());
+
+// List all artefacts in the root directory
+const artefacts = rootDirectory.getArtefactsNames();
+console.log("Artefacts in Root Directory:", artefacts);
+
+// Get a specific artefact and its content
+const myFile = rootDirectory.getArtefact("myFile.txt");
+if (myFile.exists()) {
+    const content = myFile.getText();
+    console.log("Content of myFile.txt:", content);
+} else {
+    console.log("myFile.txt does not exist in the registry.");
+}
+```
 
 ## Classes
 

@@ -1,14 +1,38 @@
-# io/zip
+# Zip
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/io`
 - source: [io/zip.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/io/zip.ts)
 - last updated: 
 :::
 
+The Zip class provides a façade for handling ZIP archive operations, including file compression, decompression, and stream-based entry processing. It allows developers to easily create and extract ZIP files using both file paths and stream-based APIs, abstracting away the complexities of working with ZIP archives directly.
 
+### Key Features:
+- **File-Based Operations**: The `zip` and `unzip` methods allow for straightforward compression and extraction of files and directories using file system paths.
+- **Stream-Based APIs**: The `createZipInputStream` and `createZipOutputStream` methods enable working with ZIP data in memory or through network streams, providing flexibility for various use cases.
+
+### Use Cases:
+- **File Archiving**: Developers can use the Zip class to create ZIP archives of files and directories for backup, distribution, or storage purposes.
+- **Data Streaming**: The stream-based APIs are useful for scenarios where ZIP data needs to be processed on-the-fly, such as streaming a ZIP file over HTTP or processing ZIP data from an external source without saving it to disk.
+
+### Example Usage:
+```ts
+import { Zip } from "@aerokit/sdk/io";
+* // Zip a directory
+Zip.zip('/path/to/source', '/path/to/archive.zip');
+// Unzip an archive
+Zip.unzip('/path/to/archive.zip', '/path/to/destination');
+// Create a ZipOutputStream to write ZIP data to an OutputStream
+const outputStream = new OutputStream(...);
+const zipOutputStream = Zip.createZipOutputStream(outputStream);
+zipOutputStream.createZipEntry('file.txt');
+zipOutputStream.writeText('Hello, ZIP!');
+zipOutputStream.closeEntry();
+zipOutputStream.close();
+```
 
 ## Classes
 

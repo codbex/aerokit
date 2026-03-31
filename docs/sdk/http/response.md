@@ -1,14 +1,48 @@
-# http/response
+# Response
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/http`
 - source: [http/response.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/http/response.ts)
 - last updated: 
 :::
 
+The `Response` class provides a static façade for managing the HTTP response in a server context. It wraps a native Java HTTP response object, offering methods for setting status codes, headers, cookies, and writing content (text, JSON, or binary) to the response body. The class also includes constants for standard HTTP status codes and a mapping of these codes to their reason phrases as defined in RFC 7231.
 
+### Key Features:
+- **HTTP Status Codes**: Provides constants for all standard HTTP status codes, making it easier to set response statuses without memorizing numeric values.
+- **Content Writing**: Methods for writing text, JSON, or binary data to the response body, with proper handling of character encoding.
+- **Header Management**: Methods for setting and adding headers, as well as checking for existing headers.
+- **Cookie Management**: A method for adding cookies to the response, with support for cookie attributes.
+- **Response Control**: Methods for flushing and closing the response output stream, sending redirects and errors, and resetting the response.
+
+### Use Cases:
+- **API Development**: Used in HTTP controllers to construct responses to client requests in a structured and consistent manner.
+- **Web Application Development**: Useful in any server-side code that needs to send HTTP responses, such as rendering HTML pages or serving files.
+
+### Example Usage:
+```ts
+import { Response } from "@aerokit/sdk/http";
+
+// Sending a JSON response with a 200 OK status
+Response.setStatus(Response.OK);
+Response.json({ message: "Hello, world!" });
+
+// Sending a plain text response with a custom header
+Response.setHeader("X-Custom-Header", "CustomValue");
+Response.print("This is a plain text response.");
+
+// Adding a cookie to the response
+Response.addCookie({
+    name: "sessionId",
+    value: "abc123",
+    attributes: {
+        maxAge: "3600",
+        path: "/"
+    }
+});
+```
 
 ## Classes
 

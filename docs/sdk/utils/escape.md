@@ -1,14 +1,36 @@
-# utils/escape
+# Escape
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/utils`
 - source: [utils/escape.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/escape.ts)
 - last updated: 
 :::
 
+The Escape class provides static utility methods for performing context-aware string escaping and unescaping operations. These methods are essential for ensuring that strings are safely embedded in various contexts (like HTML, JavaScript, JSON, etc.) without introducing security vulnerabilities such as injection attacks. The class delegates the actual escaping logic to a native Java EscapeFacade, providing a simple interface for JavaScript developers to utilize these functionalities.
 
+### Key Features:
+- **Context-Aware Escaping**: Methods to escape strings for specific contexts such as CSV, JavaScript, HTML (3.2 and 4.0), Java, JSON, and XML.
+- **Unescaping Support**: Corresponding unescape methods to reverse the escaping process for each context.
+- **Security**: Helps prevent injection attacks by properly escaping special characters in strings before embedding them in different formats.
+
+### Use Cases:
+- **Data Serialization**: Safely serialize data into formats like JSON or XML by escaping special characters.
+- **Web Development**: Escape user-generated content before embedding it in HTML or JavaScript to prevent XSS attacks.
+- **CSV Handling**: Escape values that contain commas, quotes, or newlines when generating CSV files.
+
+### Example Usage:
+```ts
+import { Escape } from "@aerokit/sdk/utils";
+// Escape a string for use in HTML
+const htmlSafe = Escape.escapeHtml4("<script>alert('XSS');</script>");
+console.log(htmlSafe); // Output: &lt;script&gt;alert(&#39;XSS&#39;);&lt;/script&gt;
+
+// Unescape the previously escaped HTML string
+const original = Escape.unescapeHtml4(htmlSafe);
+console.log(original); // Output: <script>alert('XSS');</script>
+```
 
 ## Classes
 
