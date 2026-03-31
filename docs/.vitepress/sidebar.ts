@@ -10,6 +10,7 @@ export default {
     {
         "text": "@aerokit/sdk/http",
         "collapsed": false,
+        "link": "/sdk/http/index",
         "items": [
             {
                 "text": "HttpAsyncClient",
@@ -24,6 +25,10 @@ export default {
                 "link": "/sdk/http/decorators"
             },
             {
+                "text": "Errors",
+                "link": "/sdk/http/errors"
+            },
+            {
                 "text": "ForbiddenError",
                 "link": "/sdk/http/errors/ForbiddenError"
             },
@@ -32,16 +37,16 @@ export default {
                 "link": "/sdk/http/errors/ValidationError"
             },
             {
-                "text": "http/client",
-                "link": "/sdk/http/client"
-            },
-            {
                 "text": "Request",
                 "link": "/sdk/http/request"
             },
             {
                 "text": "Response",
                 "link": "/sdk/http/response"
+            },
+            {
+                "text": "RestService",
+                "link": "/sdk/http/rs"
             },
             {
                 "text": "HttpController",
@@ -125,6 +130,10 @@ export default {
             {
                 "text": "Store",
                 "link": "/sdk/db/store"
+            },
+            {
+                "text": "Translator",
+                "link": "/sdk/db/translator"
             },
             {
                 "text": "Update",
@@ -590,24 +599,6 @@ export default {
             {
                 "text": "XML",
                 "link": "/sdk/utils/xml"
-            }
-        ]
-    },
-    {
-        "text": "General",
-        "collapsed": false,
-        "items": [
-            {
-                "text": "db/translator",
-                "link": "/sdk/db/translator"
-            },
-            {
-                "text": "http/errors",
-                "link": "/sdk/http/errors"
-            },
-            {
-                "text": "http/rs",
-                "link": "/sdk/http/rs"
             }
         ]
     }
