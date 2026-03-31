@@ -1,8 +1,9 @@
-# core/configurations
+# Configurations
 
 ## Overview
 
 ::: tip Module
+- package: `@aerokit/sdk/core`
 - source: [core/configurations.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/core/configurations.ts)
 - last updated: 
 :::

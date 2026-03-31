@@ -1,8 +1,9 @@
-# cache/cache
+# Cache
 
 ## Overview
 
 ::: tip Module
+- package: `@aerokit/sdk/cache`
 - source: [cache/cache.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/cache/cache.ts)
 - last updated: 
 :::

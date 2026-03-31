@@ -3,6 +3,7 @@
 ## Overview
 
 ::: tip Module
+- package: `n/a`
 - source: [utils/utf8.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/utils/utf8.ts)
 - last updated: 
 :::
