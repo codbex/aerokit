@@ -16,6 +16,10 @@ export default {
                 "link": "/sdk/bpm/deployer"
             },
             {
+                "text": "bpm/index",
+                "link": "/sdk/bpm/index"
+            },
+            {
                 "text": "Process",
                 "link": "/sdk/bpm/process"
             },
@@ -34,150 +38,16 @@ export default {
         ]
     },
     {
-        "text": "General",
-        "collapsed": false,
-        "items": [
-            {
-                "text": "bpm",
-                "link": "/sdk/bpm"
-            },
-            {
-                "text": "cache",
-                "link": "/sdk/cache"
-            },
-            {
-                "text": "cms",
-                "link": "/sdk/cms"
-            },
-            {
-                "text": "component",
-                "link": "/sdk/component"
-            },
-            {
-                "text": "core",
-                "link": "/sdk/core"
-            },
-            {
-                "text": "db",
-                "link": "/sdk/db"
-            },
-            {
-                "text": "db/translator",
-                "link": "/sdk/db/translator"
-            },
-            {
-                "text": "etcd",
-                "link": "/sdk/etcd"
-            },
-            {
-                "text": "extensions",
-                "link": "/sdk/extensions"
-            },
-            {
-                "text": "git",
-                "link": "/sdk/git"
-            },
-            {
-                "text": "http/errors",
-                "link": "/sdk/http/errors"
-            },
-            {
-                "text": "http",
-                "link": "/sdk/http"
-            },
-            {
-                "text": "http/rs",
-                "link": "/sdk/http/rs"
-            },
-            {
-                "text": "indexing",
-                "link": "/sdk/indexing"
-            },
-            {
-                "text": "integrations",
-                "link": "/sdk/integrations"
-            },
-            {
-                "text": "io",
-                "link": "/sdk/io"
-            },
-            {
-                "text": "job",
-                "link": "/sdk/job"
-            },
-            {
-                "text": "junit",
-                "link": "/sdk/junit"
-            },
-            {
-                "text": "kafka",
-                "link": "/sdk/kafka"
-            },
-            {
-                "text": "log",
-                "link": "/sdk/log"
-            },
-            {
-                "text": "mail",
-                "link": "/sdk/mail"
-            },
-            {
-                "text": "messaging",
-                "link": "/sdk/messaging"
-            },
-            {
-                "text": "mongodb",
-                "link": "/sdk/mongodb"
-            },
-            {
-                "text": "net",
-                "link": "/sdk/net"
-            },
-            {
-                "text": "pdf",
-                "link": "/sdk/pdf"
-            },
-            {
-                "text": "platform",
-                "link": "/sdk/platform"
-            },
-            {
-                "text": "qldb",
-                "link": "/sdk/qldb"
-            },
-            {
-                "text": "qldb/qldb",
-                "link": "/sdk/qldb/qldb"
-            },
-            {
-                "text": "rabbitmq",
-                "link": "/sdk/rabbitmq"
-            },
-            {
-                "text": "redis",
-                "link": "/sdk/redis"
-            },
-            {
-                "text": "security",
-                "link": "/sdk/security"
-            },
-            {
-                "text": "template",
-                "link": "/sdk/template"
-            },
-            {
-                "text": "utils",
-                "link": "/sdk/utils"
-            }
-        ]
-    },
-    {
         "text": "@aerokit/sdk/cache",
         "collapsed": false,
         "items": [
             {
                 "text": "Cache",
                 "link": "/sdk/cache/cache"
+            },
+            {
+                "text": "cache/index",
+                "link": "/sdk/cache/index"
             }
         ]
     },
@@ -188,6 +58,10 @@ export default {
             {
                 "text": "Cmis",
                 "link": "/sdk/cms/cmis"
+            },
+            {
+                "text": "cms/index",
+                "link": "/sdk/cms/index"
             }
         ]
     },
@@ -198,6 +72,10 @@ export default {
             {
                 "text": "Decorators",
                 "link": "/sdk/component/decorators"
+            },
+            {
+                "text": "component/index",
+                "link": "/sdk/component/index"
             }
         ]
     },
@@ -220,6 +98,10 @@ export default {
             {
                 "text": "Globals",
                 "link": "/sdk/core/globals"
+            },
+            {
+                "text": "core/index",
+                "link": "/sdk/core/index"
             }
         ]
     },
@@ -238,6 +120,10 @@ export default {
             {
                 "text": "Decorators",
                 "link": "/sdk/db/decorators"
+            },
+            {
+                "text": "db/index",
+                "link": "/sdk/db/index"
             },
             {
                 "text": "Insert",
@@ -282,12 +168,34 @@ export default {
         ]
     },
     {
+        "text": "General",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "db/translator",
+                "link": "/sdk/db/translator"
+            },
+            {
+                "text": "http/errors",
+                "link": "/sdk/http/errors"
+            },
+            {
+                "text": "http/rs",
+                "link": "/sdk/http/rs"
+            }
+        ]
+    },
+    {
         "text": "@aerokit/sdk/etcd",
         "collapsed": false,
         "items": [
             {
                 "text": "Client",
                 "link": "/sdk/etcd/client"
+            },
+            {
+                "text": "etcd/index",
+                "link": "/sdk/etcd/index"
             }
         ]
     },
@@ -302,6 +210,10 @@ export default {
             {
                 "text": "Extensions",
                 "link": "/sdk/extensions/extensions"
+            },
+            {
+                "text": "extensions/index",
+                "link": "/sdk/extensions/index"
             }
         ]
     },
@@ -312,6 +224,10 @@ export default {
             {
                 "text": "Client",
                 "link": "/sdk/git/client"
+            },
+            {
+                "text": "git/index",
+                "link": "/sdk/git/index"
             }
         ]
     },
@@ -338,6 +254,10 @@ export default {
             {
                 "text": "ValidationError",
                 "link": "/sdk/http/errors/ValidationError"
+            },
+            {
+                "text": "http/client",
+                "link": "/sdk/http/client"
             },
             {
                 "text": "Request",
@@ -382,6 +302,10 @@ export default {
         "collapsed": false,
         "items": [
             {
+                "text": "indexing/index",
+                "link": "/sdk/indexing/index"
+            },
+            {
                 "text": "Searcher",
                 "link": "/sdk/indexing/searcher"
             },
@@ -395,6 +319,10 @@ export default {
         "text": "@aerokit/sdk/integrations",
         "collapsed": false,
         "items": [
+            {
+                "text": "integrations/index",
+                "link": "/sdk/integrations/index"
+            },
             {
                 "text": "Integrations",
                 "link": "/sdk/integrations/integrations"
@@ -418,6 +346,10 @@ export default {
                 "link": "/sdk/io/image"
             },
             {
+                "text": "io/index",
+                "link": "/sdk/io/index"
+            },
+            {
                 "text": "Streams",
                 "link": "/sdk/io/streams"
             },
@@ -436,6 +368,10 @@ export default {
                 "link": "/sdk/job/decorators"
             },
             {
+                "text": "job/index",
+                "link": "/sdk/job/index"
+            },
+            {
                 "text": "Scheduler",
                 "link": "/sdk/job/scheduler"
             }
@@ -445,6 +381,10 @@ export default {
         "text": "@aerokit/sdk/junit",
         "collapsed": false,
         "items": [
+            {
+                "text": "junit/index",
+                "link": "/sdk/junit/index"
+            },
             {
                 "text": "JUnit",
                 "link": "/sdk/junit/junit"
@@ -460,6 +400,10 @@ export default {
                 "link": "/sdk/kafka/consumer"
             },
             {
+                "text": "kafka/index",
+                "link": "/sdk/kafka/index"
+            },
+            {
                 "text": "Producer",
                 "link": "/sdk/kafka/producer"
             }
@@ -469,6 +413,10 @@ export default {
         "text": "@aerokit/sdk/log",
         "collapsed": false,
         "items": [
+            {
+                "text": "log/index",
+                "link": "/sdk/log/index"
+            },
             {
                 "text": "Logging",
                 "link": "/sdk/log/logging"
@@ -482,6 +430,10 @@ export default {
             {
                 "text": "MailClient",
                 "link": "/sdk/mail/client"
+            },
+            {
+                "text": "mail/index",
+                "link": "/sdk/mail/index"
             }
         ]
     },
@@ -496,6 +448,10 @@ export default {
             {
                 "text": "Decorators",
                 "link": "/sdk/messaging/decorators"
+            },
+            {
+                "text": "messaging/index",
+                "link": "/sdk/messaging/index"
             },
             {
                 "text": "Producer",
@@ -514,6 +470,10 @@ export default {
             {
                 "text": "DAO",
                 "link": "/sdk/mongodb/dao"
+            },
+            {
+                "text": "mongodb/index",
+                "link": "/sdk/mongodb/index"
             }
         ]
     },
@@ -524,6 +484,10 @@ export default {
             {
                 "text": "Decorators",
                 "link": "/sdk/net/decorators"
+            },
+            {
+                "text": "net/index",
+                "link": "/sdk/net/index"
             },
             {
                 "text": "SOAP",
@@ -539,6 +503,10 @@ export default {
         "text": "@aerokit/sdk/pdf",
         "collapsed": false,
         "items": [
+            {
+                "text": "pdf/index",
+                "link": "/sdk/pdf/index"
+            },
             {
                 "text": "PDF",
                 "link": "/sdk/pdf/pdf"
@@ -556,6 +524,10 @@ export default {
             {
                 "text": "Engines",
                 "link": "/sdk/platform/engines"
+            },
+            {
+                "text": "platform/index",
+                "link": "/sdk/platform/index"
             },
             {
                 "text": "Lifecycle",
@@ -584,12 +556,30 @@ export default {
         ]
     },
     {
+        "text": "@aerokit/sdk/qldb",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "qldb/index",
+                "link": "/sdk/qldb/index"
+            },
+            {
+                "text": "QLDBRepository",
+                "link": "/sdk/qldb/qldb"
+            }
+        ]
+    },
+    {
         "text": "@aerokit/sdk/rabbitmq",
         "collapsed": false,
         "items": [
             {
                 "text": "Consumer",
                 "link": "/sdk/rabbitmq/consumer"
+            },
+            {
+                "text": "rabbitmq/index",
+                "link": "/sdk/rabbitmq/index"
             },
             {
                 "text": "Producer",
@@ -604,6 +594,10 @@ export default {
             {
                 "text": "Client",
                 "link": "/sdk/redis/client"
+            },
+            {
+                "text": "redis/index",
+                "link": "/sdk/redis/index"
             }
         ]
     },
@@ -614,6 +608,10 @@ export default {
             {
                 "text": "Decorators",
                 "link": "/sdk/security/decorators"
+            },
+            {
+                "text": "security/index",
+                "link": "/sdk/security/index"
             },
             {
                 "text": "OAuthClient",
@@ -632,6 +630,10 @@ export default {
             {
                 "text": "TemplateEngines",
                 "link": "/sdk/template/engines"
+            },
+            {
+                "text": "template/index",
+                "link": "/sdk/template/index"
             }
         ]
     },
@@ -662,6 +664,10 @@ export default {
             {
                 "text": "Hex",
                 "link": "/sdk/utils/hex"
+            },
+            {
+                "text": "utils/index",
+                "link": "/sdk/utils/index"
             },
             {
                 "text": "JSONPath",
