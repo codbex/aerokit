@@ -1,8 +1,9 @@
-# db/update
+# Update
 
 ## Overview
 
 ::: tip Module
+- package: `@aerokit/sdk/db`
 - source: [db/update.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/db/update.ts)
 - last updated: 
 :::

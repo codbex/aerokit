@@ -1,8 +1,9 @@
-# etcd/client
+# Client
 
 ## Overview
 
 ::: tip Module
+- package: `@aerokit/sdk/etcd`
 - source: [etcd/client.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/etcd/client.ts)
 - last updated: 
 :::

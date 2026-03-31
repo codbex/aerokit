@@ -3,6 +3,7 @@
 ## Overview
 
 ::: tip Module
+- package: `n/a`
 - source: [template/engines.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/template/engines.ts)
 - last updated: 
 :::

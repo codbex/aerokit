@@ -3,6 +3,7 @@
 ## Overview
 
 ::: tip Module
+- package: `n/a`
 - source: [mongodb/dao.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/mongodb/dao.ts)
 - last updated: 
 :::

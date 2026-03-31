@@ -1,8 +1,9 @@
-# bpm/values
+# Values
 
 ## Overview
 
 ::: tip Module
+- package: `@aerokit/sdk/bpm`
 - source: [bpm/values.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/bpm/values.ts)
 - last updated: 
 :::
