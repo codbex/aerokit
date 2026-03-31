@@ -8,203 +8,6 @@ export default {
       text: "SDK",
       items: [
     {
-        "text": "@aerokit/sdk/bpm",
-        "collapsed": false,
-        "link": "/sdk/bpm/index",
-        "items": [
-            {
-                "text": "Deployer",
-                "link": "/sdk/bpm/deployer"
-            },
-            {
-                "text": "Process",
-                "link": "/sdk/bpm/process"
-            },
-            {
-                "text": "Tasks",
-                "link": "/sdk/bpm/tasks"
-            },
-            {
-                "text": "Tracer",
-                "link": "/sdk/bpm/tracer"
-            },
-            {
-                "text": "Values",
-                "link": "/sdk/bpm/values"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/cache",
-        "collapsed": false,
-        "link": "/sdk/cache/index",
-        "items": [
-            {
-                "text": "Cache",
-                "link": "/sdk/cache/cache"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/cms",
-        "collapsed": false,
-        "link": "/sdk/cms/index",
-        "items": [
-            {
-                "text": "Cmis",
-                "link": "/sdk/cms/cmis"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/component",
-        "collapsed": false,
-        "link": "/sdk/component/index",
-        "items": [
-            {
-                "text": "Decorators",
-                "link": "/sdk/component/decorators"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/core",
-        "collapsed": false,
-        "link": "/sdk/core/index",
-        "items": [
-            {
-                "text": "Configurations",
-                "link": "/sdk/core/configurations"
-            },
-            {
-                "text": "Context",
-                "link": "/sdk/core/context"
-            },
-            {
-                "text": "Env",
-                "link": "/sdk/core/env"
-            },
-            {
-                "text": "Globals",
-                "link": "/sdk/core/globals"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/db",
-        "collapsed": false,
-        "link": "/sdk/db/index",
-        "items": [
-            {
-                "text": "DAO",
-                "link": "/sdk/db/dao"
-            },
-            {
-                "text": "Database",
-                "link": "/sdk/db/database"
-            },
-            {
-                "text": "Decorators",
-                "link": "/sdk/db/decorators"
-            },
-            {
-                "text": "Insert",
-                "link": "/sdk/db/insert"
-            },
-            {
-                "text": "ORM",
-                "link": "/sdk/db/orm"
-            },
-            {
-                "text": "ORMStatements",
-                "link": "/sdk/db/ormstatements"
-            },
-            {
-                "text": "Procedure",
-                "link": "/sdk/db/procedure"
-            },
-            {
-                "text": "Query",
-                "link": "/sdk/db/query"
-            },
-            {
-                "text": "Repository",
-                "link": "/sdk/db/repository"
-            },
-            {
-                "text": "Sequence",
-                "link": "/sdk/db/sequence"
-            },
-            {
-                "text": "SQL",
-                "link": "/sdk/db/sql"
-            },
-            {
-                "text": "Store",
-                "link": "/sdk/db/store"
-            },
-            {
-                "text": "Update",
-                "link": "/sdk/db/update"
-            }
-        ]
-    },
-    {
-        "text": "General",
-        "collapsed": false,
-        "items": [
-            {
-                "text": "db/translator",
-                "link": "/sdk/db/translator"
-            },
-            {
-                "text": "http/errors",
-                "link": "/sdk/http/errors"
-            },
-            {
-                "text": "http/rs",
-                "link": "/sdk/http/rs"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/etcd",
-        "collapsed": false,
-        "link": "/sdk/etcd/index",
-        "items": [
-            {
-                "text": "Client",
-                "link": "/sdk/etcd/client"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/extensions",
-        "collapsed": false,
-        "link": "/sdk/extensions/index",
-        "items": [
-            {
-                "text": "Decorators",
-                "link": "/sdk/extensions/decorators"
-            },
-            {
-                "text": "Extensions",
-                "link": "/sdk/extensions/extensions"
-            }
-        ]
-    },
-    {
-        "text": "@aerokit/sdk/git",
-        "collapsed": false,
-        "link": "/sdk/git/index",
-        "items": [
-            {
-                "text": "Client",
-                "link": "/sdk/git/client"
-            }
-        ]
-    },
-    {
         "text": "@aerokit/sdk/http",
         "collapsed": false,
         "items": [
@@ -271,28 +74,111 @@ export default {
         ]
     },
     {
-        "text": "@aerokit/sdk/indexing",
+        "text": "@aerokit/sdk/db",
         "collapsed": false,
-        "link": "/sdk/indexing/index",
+        "link": "/sdk/db/index",
         "items": [
             {
-                "text": "Searcher",
-                "link": "/sdk/indexing/searcher"
+                "text": "DAO",
+                "link": "/sdk/db/dao"
             },
             {
-                "text": "Writer",
-                "link": "/sdk/indexing/writer"
+                "text": "Database",
+                "link": "/sdk/db/database"
+            },
+            {
+                "text": "Decorators",
+                "link": "/sdk/db/decorators"
+            },
+            {
+                "text": "Insert",
+                "link": "/sdk/db/insert"
+            },
+            {
+                "text": "ORM",
+                "link": "/sdk/db/orm"
+            },
+            {
+                "text": "ORMStatements",
+                "link": "/sdk/db/ormstatements"
+            },
+            {
+                "text": "Procedure",
+                "link": "/sdk/db/procedure"
+            },
+            {
+                "text": "Query",
+                "link": "/sdk/db/query"
+            },
+            {
+                "text": "Repository",
+                "link": "/sdk/db/repository"
+            },
+            {
+                "text": "Sequence",
+                "link": "/sdk/db/sequence"
+            },
+            {
+                "text": "SQL",
+                "link": "/sdk/db/sql"
+            },
+            {
+                "text": "Store",
+                "link": "/sdk/db/store"
+            },
+            {
+                "text": "Update",
+                "link": "/sdk/db/update"
             }
         ]
     },
     {
-        "text": "@aerokit/sdk/integrations",
+        "text": "@aerokit/sdk/core",
         "collapsed": false,
-        "link": "/sdk/integrations/index",
+        "link": "/sdk/core/index",
         "items": [
             {
-                "text": "Integrations",
-                "link": "/sdk/integrations/integrations"
+                "text": "Configurations",
+                "link": "/sdk/core/configurations"
+            },
+            {
+                "text": "Context",
+                "link": "/sdk/core/context"
+            },
+            {
+                "text": "Env",
+                "link": "/sdk/core/env"
+            },
+            {
+                "text": "Globals",
+                "link": "/sdk/core/globals"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/bpm",
+        "collapsed": false,
+        "link": "/sdk/bpm/index",
+        "items": [
+            {
+                "text": "Deployer",
+                "link": "/sdk/bpm/deployer"
+            },
+            {
+                "text": "Process",
+                "link": "/sdk/bpm/process"
+            },
+            {
+                "text": "Tasks",
+                "link": "/sdk/bpm/tasks"
+            },
+            {
+                "text": "Tracer",
+                "link": "/sdk/bpm/tracer"
+            },
+            {
+                "text": "Values",
+                "link": "/sdk/bpm/values"
             }
         ]
     },
@@ -320,6 +206,102 @@ export default {
             {
                 "text": "Zip",
                 "link": "/sdk/io/zip"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/component",
+        "collapsed": false,
+        "link": "/sdk/component/index",
+        "items": [
+            {
+                "text": "Decorators",
+                "link": "/sdk/component/decorators"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/cache",
+        "collapsed": false,
+        "link": "/sdk/cache/index",
+        "items": [
+            {
+                "text": "Cache",
+                "link": "/sdk/cache/cache"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/cms",
+        "collapsed": false,
+        "link": "/sdk/cms/index",
+        "items": [
+            {
+                "text": "Cmis",
+                "link": "/sdk/cms/cmis"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/etcd",
+        "collapsed": false,
+        "link": "/sdk/etcd/index",
+        "items": [
+            {
+                "text": "Client",
+                "link": "/sdk/etcd/client"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/extensions",
+        "collapsed": false,
+        "link": "/sdk/extensions/index",
+        "items": [
+            {
+                "text": "Decorators",
+                "link": "/sdk/extensions/decorators"
+            },
+            {
+                "text": "Extensions",
+                "link": "/sdk/extensions/extensions"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/git",
+        "collapsed": false,
+        "link": "/sdk/git/index",
+        "items": [
+            {
+                "text": "Client",
+                "link": "/sdk/git/client"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/indexing",
+        "collapsed": false,
+        "link": "/sdk/indexing/index",
+        "items": [
+            {
+                "text": "Searcher",
+                "link": "/sdk/indexing/searcher"
+            },
+            {
+                "text": "Writer",
+                "link": "/sdk/indexing/writer"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/integrations",
+        "collapsed": false,
+        "link": "/sdk/integrations/index",
+        "items": [
+            {
+                "text": "Integrations",
+                "link": "/sdk/integrations/integrations"
             }
         ]
     },
@@ -608,6 +590,24 @@ export default {
             {
                 "text": "XML",
                 "link": "/sdk/utils/xml"
+            }
+        ]
+    },
+    {
+        "text": "General",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "db/translator",
+                "link": "/sdk/db/translator"
+            },
+            {
+                "text": "http/errors",
+                "link": "/sdk/http/errors"
+            },
+            {
+                "text": "http/rs",
+                "link": "/sdk/http/rs"
             }
         ]
     }
