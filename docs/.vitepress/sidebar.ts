@@ -10,14 +10,11 @@ export default {
     {
         "text": "@aerokit/sdk/bpm",
         "collapsed": false,
+        "link": "/sdk/bpm/index",
         "items": [
             {
                 "text": "Deployer",
                 "link": "/sdk/bpm/deployer"
-            },
-            {
-                "text": "bpm/index",
-                "link": "/sdk/bpm/index"
             },
             {
                 "text": "Process",
@@ -40,48 +37,40 @@ export default {
     {
         "text": "@aerokit/sdk/cache",
         "collapsed": false,
+        "link": "/sdk/cache/index",
         "items": [
             {
                 "text": "Cache",
                 "link": "/sdk/cache/cache"
-            },
-            {
-                "text": "cache/index",
-                "link": "/sdk/cache/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/cms",
         "collapsed": false,
+        "link": "/sdk/cms/index",
         "items": [
             {
                 "text": "Cmis",
                 "link": "/sdk/cms/cmis"
-            },
-            {
-                "text": "cms/index",
-                "link": "/sdk/cms/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/component",
         "collapsed": false,
+        "link": "/sdk/component/index",
         "items": [
             {
                 "text": "Decorators",
                 "link": "/sdk/component/decorators"
-            },
-            {
-                "text": "component/index",
-                "link": "/sdk/component/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/core",
         "collapsed": false,
+        "link": "/sdk/core/index",
         "items": [
             {
                 "text": "Configurations",
@@ -98,16 +87,13 @@ export default {
             {
                 "text": "Globals",
                 "link": "/sdk/core/globals"
-            },
-            {
-                "text": "core/index",
-                "link": "/sdk/core/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/db",
         "collapsed": false,
+        "link": "/sdk/db/index",
         "items": [
             {
                 "text": "DAO",
@@ -120,10 +106,6 @@ export default {
             {
                 "text": "Decorators",
                 "link": "/sdk/db/decorators"
-            },
-            {
-                "text": "db/index",
-                "link": "/sdk/db/index"
             },
             {
                 "text": "Insert",
@@ -188,20 +170,18 @@ export default {
     {
         "text": "@aerokit/sdk/etcd",
         "collapsed": false,
+        "link": "/sdk/etcd/index",
         "items": [
             {
                 "text": "Client",
                 "link": "/sdk/etcd/client"
-            },
-            {
-                "text": "etcd/index",
-                "link": "/sdk/etcd/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/extensions",
         "collapsed": false,
+        "link": "/sdk/extensions/index",
         "items": [
             {
                 "text": "Decorators",
@@ -210,24 +190,17 @@ export default {
             {
                 "text": "Extensions",
                 "link": "/sdk/extensions/extensions"
-            },
-            {
-                "text": "extensions/index",
-                "link": "/sdk/extensions/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/git",
         "collapsed": false,
+        "link": "/sdk/git/index",
         "items": [
             {
                 "text": "Client",
                 "link": "/sdk/git/client"
-            },
-            {
-                "text": "git/index",
-                "link": "/sdk/git/index"
             }
         ]
     },
@@ -300,11 +273,8 @@ export default {
     {
         "text": "@aerokit/sdk/indexing",
         "collapsed": false,
+        "link": "/sdk/indexing/index",
         "items": [
-            {
-                "text": "indexing/index",
-                "link": "/sdk/indexing/index"
-            },
             {
                 "text": "Searcher",
                 "link": "/sdk/indexing/searcher"
@@ -318,11 +288,8 @@ export default {
     {
         "text": "@aerokit/sdk/integrations",
         "collapsed": false,
+        "link": "/sdk/integrations/index",
         "items": [
-            {
-                "text": "integrations/index",
-                "link": "/sdk/integrations/index"
-            },
             {
                 "text": "Integrations",
                 "link": "/sdk/integrations/integrations"
@@ -332,6 +299,7 @@ export default {
     {
         "text": "@aerokit/sdk/io",
         "collapsed": false,
+        "link": "/sdk/io/index",
         "items": [
             {
                 "text": "Bytes",
@@ -346,10 +314,6 @@ export default {
                 "link": "/sdk/io/image"
             },
             {
-                "text": "io/index",
-                "link": "/sdk/io/index"
-            },
-            {
                 "text": "Streams",
                 "link": "/sdk/io/streams"
             },
@@ -362,14 +326,11 @@ export default {
     {
         "text": "@aerokit/sdk/job",
         "collapsed": false,
+        "link": "/sdk/job/index",
         "items": [
             {
                 "text": "Decorators",
                 "link": "/sdk/job/decorators"
-            },
-            {
-                "text": "job/index",
-                "link": "/sdk/job/index"
             },
             {
                 "text": "Scheduler",
@@ -380,11 +341,8 @@ export default {
     {
         "text": "@aerokit/sdk/junit",
         "collapsed": false,
+        "link": "/sdk/junit/index",
         "items": [
-            {
-                "text": "junit/index",
-                "link": "/sdk/junit/index"
-            },
             {
                 "text": "JUnit",
                 "link": "/sdk/junit/junit"
@@ -394,14 +352,11 @@ export default {
     {
         "text": "@aerokit/sdk/kafka",
         "collapsed": false,
+        "link": "/sdk/kafka/index",
         "items": [
             {
                 "text": "Consumer",
                 "link": "/sdk/kafka/consumer"
-            },
-            {
-                "text": "kafka/index",
-                "link": "/sdk/kafka/index"
             },
             {
                 "text": "Producer",
@@ -412,11 +367,8 @@ export default {
     {
         "text": "@aerokit/sdk/log",
         "collapsed": false,
+        "link": "/sdk/log/index",
         "items": [
-            {
-                "text": "log/index",
-                "link": "/sdk/log/index"
-            },
             {
                 "text": "Logging",
                 "link": "/sdk/log/logging"
@@ -426,20 +378,18 @@ export default {
     {
         "text": "@aerokit/sdk/mail",
         "collapsed": false,
+        "link": "/sdk/mail/index",
         "items": [
             {
                 "text": "MailClient",
                 "link": "/sdk/mail/client"
-            },
-            {
-                "text": "mail/index",
-                "link": "/sdk/mail/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/messaging",
         "collapsed": false,
+        "link": "/sdk/messaging/index",
         "items": [
             {
                 "text": "Consumer",
@@ -450,10 +400,6 @@ export default {
                 "link": "/sdk/messaging/decorators"
             },
             {
-                "text": "messaging/index",
-                "link": "/sdk/messaging/index"
-            },
-            {
                 "text": "Producer",
                 "link": "/sdk/messaging/producer"
             }
@@ -462,6 +408,7 @@ export default {
     {
         "text": "@aerokit/sdk/mongodb",
         "collapsed": false,
+        "link": "/sdk/mongodb/index",
         "items": [
             {
                 "text": "Client",
@@ -470,24 +417,17 @@ export default {
             {
                 "text": "DAO",
                 "link": "/sdk/mongodb/dao"
-            },
-            {
-                "text": "mongodb/index",
-                "link": "/sdk/mongodb/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/net",
         "collapsed": false,
+        "link": "/sdk/net/index",
         "items": [
             {
                 "text": "Decorators",
                 "link": "/sdk/net/decorators"
-            },
-            {
-                "text": "net/index",
-                "link": "/sdk/net/index"
             },
             {
                 "text": "SOAP",
@@ -502,11 +442,8 @@ export default {
     {
         "text": "@aerokit/sdk/pdf",
         "collapsed": false,
+        "link": "/sdk/pdf/index",
         "items": [
-            {
-                "text": "pdf/index",
-                "link": "/sdk/pdf/index"
-            },
             {
                 "text": "PDF",
                 "link": "/sdk/pdf/pdf"
@@ -516,6 +453,7 @@ export default {
     {
         "text": "@aerokit/sdk/platform",
         "collapsed": false,
+        "link": "/sdk/platform/index",
         "items": [
             {
                 "text": "Command",
@@ -524,10 +462,6 @@ export default {
             {
                 "text": "Engines",
                 "link": "/sdk/platform/engines"
-            },
-            {
-                "text": "platform/index",
-                "link": "/sdk/platform/index"
             },
             {
                 "text": "Lifecycle",
@@ -558,11 +492,8 @@ export default {
     {
         "text": "@aerokit/sdk/qldb",
         "collapsed": false,
+        "link": "/sdk/qldb/index",
         "items": [
-            {
-                "text": "qldb/index",
-                "link": "/sdk/qldb/index"
-            },
             {
                 "text": "QLDBRepository",
                 "link": "/sdk/qldb/qldb"
@@ -572,14 +503,11 @@ export default {
     {
         "text": "@aerokit/sdk/rabbitmq",
         "collapsed": false,
+        "link": "/sdk/rabbitmq/index",
         "items": [
             {
                 "text": "Consumer",
                 "link": "/sdk/rabbitmq/consumer"
-            },
-            {
-                "text": "rabbitmq/index",
-                "link": "/sdk/rabbitmq/index"
             },
             {
                 "text": "Producer",
@@ -590,28 +518,22 @@ export default {
     {
         "text": "@aerokit/sdk/redis",
         "collapsed": false,
+        "link": "/sdk/redis/index",
         "items": [
             {
                 "text": "Client",
                 "link": "/sdk/redis/client"
-            },
-            {
-                "text": "redis/index",
-                "link": "/sdk/redis/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/security",
         "collapsed": false,
+        "link": "/sdk/security/index",
         "items": [
             {
                 "text": "Decorators",
                 "link": "/sdk/security/decorators"
-            },
-            {
-                "text": "security/index",
-                "link": "/sdk/security/index"
             },
             {
                 "text": "OAuthClient",
@@ -626,20 +548,18 @@ export default {
     {
         "text": "@aerokit/sdk/template",
         "collapsed": false,
+        "link": "/sdk/template/index",
         "items": [
             {
                 "text": "TemplateEngines",
                 "link": "/sdk/template/engines"
-            },
-            {
-                "text": "template/index",
-                "link": "/sdk/template/index"
             }
         ]
     },
     {
         "text": "@aerokit/sdk/utils",
         "collapsed": false,
+        "link": "/sdk/utils/index",
         "items": [
             {
                 "text": "Alphanumeric",
@@ -664,10 +584,6 @@ export default {
             {
                 "text": "Hex",
                 "link": "/sdk/utils/hex"
-            },
-            {
-                "text": "utils/index",
-                "link": "/sdk/utils/index"
             },
             {
                 "text": "JSONPath",
