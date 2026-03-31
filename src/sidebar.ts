@@ -1,9 +1,26 @@
 import { ModuleDoc } from "./types.js";
 
 export function generateSidebar(modules: ModuleDoc[]) {
-  const items = modules.map((m) => ({
-    text: m.moduleLocation,
-    link: `/sdk/${m.moduleLocation}`,
+  const groups: Record<string, any[]> = {};
+
+  for (const m of modules) {
+    const groupName = m.package || "General";
+
+    if (!groups[groupName]) {
+      groups[groupName] = [];
+    }
+
+    groups[groupName].push({
+      text: m.name || m.moduleLocation,
+      link: `/sdk/${m.moduleLocation}`,
+    });
+  }
+
+  // Convert grouped object → VitePress sidebar structure
+  const groupedItems = Object.entries(groups).map(([group, items]) => ({
+    text: group,
+    collapsed: false,
+    items,
   }));
 
   return `export default {
@@ -14,8 +31,7 @@ export function generateSidebar(modules: ModuleDoc[]) {
     },
     {
       text: "SDK",
-      link: "/sdk/",
-      items: ${JSON.stringify(items, null, 4)}
+      items: ${JSON.stringify(groupedItems, null, 4)}
     }
   ]
 }`;

@@ -1,6 +1,8 @@
 export interface ModuleDoc {
   moduleLocation: string;
   overview?: string;
+  package?: string;
+  name?: string;
   classes: ClassDoc[];
 }
 

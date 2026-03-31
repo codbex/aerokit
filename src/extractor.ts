@@ -18,6 +18,18 @@ function getOverview(comment?: any): string {
   return tag.content.map((c: any) => c.text).join("");
 }
 
+function getPackage(comment?: any): string {
+  const tag = comment?.blockTags?.find((t: any) => t.tag === "@package");
+  if (!tag) return "";
+  return tag.content.map((c: any) => c.text).join("");
+}
+
+function getName(comment?: any): string {
+  const tag = comment?.blockTags?.find((t: any) => t.tag === "@name");
+  if (!tag) return "";
+  return tag.content.map((c: any) => c.text).join("");
+}
+
 function buildSignature(method: any): string {
   const sig = method.signatures?.[0];
   const params = (sig?.parameters || [])
@@ -37,6 +49,8 @@ export function extractModules(jsonPath: string): ModuleDoc[] {
     .map((module: any) => ({
       moduleLocation: module.name,
       overview: getOverview(module.comment),
+      package: getPackage(module.comment),
+      name: getName(module.comment),
       classes: (module.children || [])
         .filter((c: any) => c.kind === 128)
         .map((cls: any) => ({
