@@ -1,14 +1,48 @@
-# platform/workspace
+# Workspace
 
 ## Overview
 
 ::: tip Module
-- package: `n/a`
+- package: `@aerokit/sdk/platform`
 - source: [platform/workspace.ts](https://github.com/eclipse-dirigible/dirigible/tree/master/components/api/api-modules-javascript/src/main/resources/META-INF/dirigible/modules/src/platform/workspace.ts)
 - last updated: 
 :::
 
+The Workspace module provides a wrapper for the platform's WorkspaceFacade, allowing developers to manage workspaces, projects, folders, and files in a structured manner. It abstracts the underlying Java API, providing a more intuitive and JavaScript-friendly interface for interacting with the platform's filesystem and project management capabilities.
 
+### Key Features:
+- **Workspace Management**: Create, retrieve, list, and delete workspaces.
+- **Project Management**: Create, retrieve, list, copy, move, and delete projects within a workspace.
+- **Folder and File Management**: Create, retrieve, list, and delete folders and files within projects.
+- **Content Access**: Read and write file content as byte arrays or text strings.
+
+### Use Cases:
+- **Project Organization**: This module is ideal for applications that need to organize code and resources into projects and workspaces on the platform.
+- **File Manipulation**: Developers can use this module to manage files and folders within their projects, including reading and writing file content.
+
+### Example Usage:
+```ts
+import { Workspace } from "@aerokit/sdk/platform";
+
+// Create a new workspace
+const workspace = Workspace.createWorkspace("MyWorkspace");
+
+// Create a new project within the workspace
+const project = workspace.createProject("MyProject");
+
+// Create a new folder within the project
+const folder = project.createFolder("src");
+
+// Create a new file within the folder with initial content
+const file = folder.createFile("index.js", [...]); // Initial content as byte array
+
+// Read file content as text
+const content = file.getText();
+console.log("File Content:", content);
+
+// Update file content with new text
+file.setText("console.log('Hello, World!');");
+```
 
 ## Classes
 

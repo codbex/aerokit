@@ -78,18 +78,6 @@ export default {
                 "link": "/sdk/git"
             },
             {
-                "text": "http/client-async",
-                "link": "/sdk/http/client-async"
-            },
-            {
-                "text": "http/client",
-                "link": "/sdk/http/client"
-            },
-            {
-                "text": "http/decorators",
-                "link": "/sdk/http/decorators"
-            },
-            {
                 "text": "http/errors",
                 "link": "/sdk/http/errors"
             },
@@ -98,224 +86,60 @@ export default {
                 "link": "/sdk/http"
             },
             {
-                "text": "http/request",
-                "link": "/sdk/http/request"
-            },
-            {
-                "text": "http/response",
-                "link": "/sdk/http/response"
-            },
-            {
                 "text": "http/rs",
                 "link": "/sdk/http/rs"
-            },
-            {
-                "text": "http/rs/resource-http-controller",
-                "link": "/sdk/http/rs/resource-http-controller"
-            },
-            {
-                "text": "http/rs/resource-mappings",
-                "link": "/sdk/http/rs/resource-mappings"
-            },
-            {
-                "text": "http/rs/resource-method",
-                "link": "/sdk/http/rs/resource-method"
-            },
-            {
-                "text": "http/rs/resource",
-                "link": "/sdk/http/rs/resource"
-            },
-            {
-                "text": "http/session",
-                "link": "/sdk/http/session"
-            },
-            {
-                "text": "http/upload",
-                "link": "/sdk/http/upload"
-            },
-            {
-                "text": "http/utils",
-                "link": "/sdk/http/utils"
             },
             {
                 "text": "indexing",
                 "link": "/sdk/indexing"
             },
             {
-                "text": "indexing/searcher",
-                "link": "/sdk/indexing/searcher"
-            },
-            {
-                "text": "indexing/writer",
-                "link": "/sdk/indexing/writer"
-            },
-            {
                 "text": "integrations",
                 "link": "/sdk/integrations"
-            },
-            {
-                "text": "integrations/integrations",
-                "link": "/sdk/integrations/integrations"
-            },
-            {
-                "text": "io/bytes",
-                "link": "/sdk/io/bytes"
-            },
-            {
-                "text": "io/files",
-                "link": "/sdk/io/files"
-            },
-            {
-                "text": "io/image",
-                "link": "/sdk/io/image"
             },
             {
                 "text": "io",
                 "link": "/sdk/io"
             },
             {
-                "text": "io/streams",
-                "link": "/sdk/io/streams"
-            },
-            {
-                "text": "io/zip",
-                "link": "/sdk/io/zip"
-            },
-            {
-                "text": "job/decorators",
-                "link": "/sdk/job/decorators"
-            },
-            {
                 "text": "job",
                 "link": "/sdk/job"
-            },
-            {
-                "text": "job/scheduler",
-                "link": "/sdk/job/scheduler"
             },
             {
                 "text": "junit",
                 "link": "/sdk/junit"
             },
             {
-                "text": "junit/junit",
-                "link": "/sdk/junit/junit"
-            },
-            {
-                "text": "kafka/consumer",
-                "link": "/sdk/kafka/consumer"
-            },
-            {
                 "text": "kafka",
                 "link": "/sdk/kafka"
-            },
-            {
-                "text": "kafka/producer",
-                "link": "/sdk/kafka/producer"
             },
             {
                 "text": "log",
                 "link": "/sdk/log"
             },
             {
-                "text": "log/logging",
-                "link": "/sdk/log/logging"
-            },
-            {
-                "text": "mail/client",
-                "link": "/sdk/mail/client"
-            },
-            {
                 "text": "mail",
                 "link": "/sdk/mail"
-            },
-            {
-                "text": "messaging/consumer",
-                "link": "/sdk/messaging/consumer"
-            },
-            {
-                "text": "messaging/decorators",
-                "link": "/sdk/messaging/decorators"
             },
             {
                 "text": "messaging",
                 "link": "/sdk/messaging"
             },
             {
-                "text": "messaging/producer",
-                "link": "/sdk/messaging/producer"
-            },
-            {
-                "text": "mongodb/client",
-                "link": "/sdk/mongodb/client"
-            },
-            {
-                "text": "mongodb/dao",
-                "link": "/sdk/mongodb/dao"
-            },
-            {
                 "text": "mongodb",
                 "link": "/sdk/mongodb"
-            },
-            {
-                "text": "net/decorators",
-                "link": "/sdk/net/decorators"
             },
             {
                 "text": "net",
                 "link": "/sdk/net"
             },
             {
-                "text": "net/soap",
-                "link": "/sdk/net/soap"
-            },
-            {
-                "text": "net/websockets",
-                "link": "/sdk/net/websockets"
-            },
-            {
                 "text": "pdf",
                 "link": "/sdk/pdf"
             },
             {
-                "text": "pdf/pdf",
-                "link": "/sdk/pdf/pdf"
-            },
-            {
-                "text": "platform/command",
-                "link": "/sdk/platform/command"
-            },
-            {
-                "text": "platform/engines",
-                "link": "/sdk/platform/engines"
-            },
-            {
                 "text": "platform",
                 "link": "/sdk/platform"
-            },
-            {
-                "text": "platform/lifecycle",
-                "link": "/sdk/platform/lifecycle"
-            },
-            {
-                "text": "platform/os",
-                "link": "/sdk/platform/os"
-            },
-            {
-                "text": "platform/problems",
-                "link": "/sdk/platform/problems"
-            },
-            {
-                "text": "platform/registry",
-                "link": "/sdk/platform/registry"
-            },
-            {
-                "text": "platform/repository",
-                "link": "/sdk/platform/repository"
-            },
-            {
-                "text": "platform/workspace",
-                "link": "/sdk/platform/workspace"
             },
             {
                 "text": "qldb",
@@ -326,100 +150,24 @@ export default {
                 "link": "/sdk/qldb/qldb"
             },
             {
-                "text": "rabbitmq/consumer",
-                "link": "/sdk/rabbitmq/consumer"
-            },
-            {
                 "text": "rabbitmq",
                 "link": "/sdk/rabbitmq"
-            },
-            {
-                "text": "rabbitmq/producer",
-                "link": "/sdk/rabbitmq/producer"
-            },
-            {
-                "text": "redis/client",
-                "link": "/sdk/redis/client"
             },
             {
                 "text": "redis",
                 "link": "/sdk/redis"
             },
             {
-                "text": "security/decorators",
-                "link": "/sdk/security/decorators"
-            },
-            {
                 "text": "security",
                 "link": "/sdk/security"
-            },
-            {
-                "text": "security/oauth",
-                "link": "/sdk/security/oauth"
-            },
-            {
-                "text": "security/user",
-                "link": "/sdk/security/user"
-            },
-            {
-                "text": "template/engines",
-                "link": "/sdk/template/engines"
             },
             {
                 "text": "template",
                 "link": "/sdk/template"
             },
             {
-                "text": "utils/alphanumeric",
-                "link": "/sdk/utils/alphanumeric"
-            },
-            {
-                "text": "utils/base64",
-                "link": "/sdk/utils/base64"
-            },
-            {
-                "text": "utils/converter",
-                "link": "/sdk/utils/converter"
-            },
-            {
-                "text": "utils/digest",
-                "link": "/sdk/utils/digest"
-            },
-            {
-                "text": "utils/escape",
-                "link": "/sdk/utils/escape"
-            },
-            {
-                "text": "utils/hex",
-                "link": "/sdk/utils/hex"
-            },
-            {
                 "text": "utils",
                 "link": "/sdk/utils"
-            },
-            {
-                "text": "utils/jsonpath",
-                "link": "/sdk/utils/jsonpath"
-            },
-            {
-                "text": "utils/qrcode",
-                "link": "/sdk/utils/qrcode"
-            },
-            {
-                "text": "utils/url",
-                "link": "/sdk/utils/url"
-            },
-            {
-                "text": "utils/utf8",
-                "link": "/sdk/utils/utf8"
-            },
-            {
-                "text": "utils/uuid",
-                "link": "/sdk/utils/uuid"
-            },
-            {
-                "text": "utils/xml",
-                "link": "/sdk/utils/xml"
             }
         ]
     },
@@ -572,12 +320,372 @@ export default {
         "collapsed": false,
         "items": [
             {
+                "text": "HttpAsyncClient",
+                "link": "/sdk/http/client-async"
+            },
+            {
+                "text": "HttpClient",
+                "link": "/sdk/http/client"
+            },
+            {
+                "text": "Decorators",
+                "link": "/sdk/http/decorators"
+            },
+            {
                 "text": "ForbiddenError",
                 "link": "/sdk/http/errors/ForbiddenError"
             },
             {
                 "text": "ValidationError",
                 "link": "/sdk/http/errors/ValidationError"
+            },
+            {
+                "text": "Request",
+                "link": "/sdk/http/request"
+            },
+            {
+                "text": "Response",
+                "link": "/sdk/http/response"
+            },
+            {
+                "text": "HttpController",
+                "link": "/sdk/http/rs/controller"
+            },
+            {
+                "text": "ResourceMappings",
+                "link": "/sdk/http/rs/mappings"
+            },
+            {
+                "text": "ResourceMethod",
+                "link": "/sdk/http/rs/method"
+            },
+            {
+                "text": "Resource",
+                "link": "/sdk/http/rs/resource"
+            },
+            {
+                "text": "Session",
+                "link": "/sdk/http/session"
+            },
+            {
+                "text": "Upload",
+                "link": "/sdk/http/upload"
+            },
+            {
+                "text": "HttpUtils",
+                "link": "/sdk/http/utils"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/indexing",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Searcher",
+                "link": "/sdk/indexing/searcher"
+            },
+            {
+                "text": "Writer",
+                "link": "/sdk/indexing/writer"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/integrations",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Integrations",
+                "link": "/sdk/integrations/integrations"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/io",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Bytes",
+                "link": "/sdk/io/bytes"
+            },
+            {
+                "text": "Files",
+                "link": "/sdk/io/files"
+            },
+            {
+                "text": "Image",
+                "link": "/sdk/io/image"
+            },
+            {
+                "text": "Streams",
+                "link": "/sdk/io/streams"
+            },
+            {
+                "text": "Zip",
+                "link": "/sdk/io/zip"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/job",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Decorators",
+                "link": "/sdk/job/decorators"
+            },
+            {
+                "text": "Scheduler",
+                "link": "/sdk/job/scheduler"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/junit",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "JUnit",
+                "link": "/sdk/junit/junit"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/kafka",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Consumer",
+                "link": "/sdk/kafka/consumer"
+            },
+            {
+                "text": "Producer",
+                "link": "/sdk/kafka/producer"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/log",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Logging",
+                "link": "/sdk/log/logging"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/mail",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "MailClient",
+                "link": "/sdk/mail/client"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/messaging",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Consumer",
+                "link": "/sdk/messaging/consumer"
+            },
+            {
+                "text": "Decorators",
+                "link": "/sdk/messaging/decorators"
+            },
+            {
+                "text": "Producer",
+                "link": "/sdk/messaging/producer"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/mongodb",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Client",
+                "link": "/sdk/mongodb/client"
+            },
+            {
+                "text": "DAO",
+                "link": "/sdk/mongodb/dao"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/net",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Decorators",
+                "link": "/sdk/net/decorators"
+            },
+            {
+                "text": "SOAP",
+                "link": "/sdk/net/soap"
+            },
+            {
+                "text": "Websockets",
+                "link": "/sdk/net/websockets"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/pdf",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "PDF",
+                "link": "/sdk/pdf/pdf"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/platform",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Command",
+                "link": "/sdk/platform/command"
+            },
+            {
+                "text": "Engines",
+                "link": "/sdk/platform/engines"
+            },
+            {
+                "text": "Lifecycle",
+                "link": "/sdk/platform/lifecycle"
+            },
+            {
+                "text": "OS",
+                "link": "/sdk/platform/os"
+            },
+            {
+                "text": "Problems",
+                "link": "/sdk/platform/problems"
+            },
+            {
+                "text": "Registry",
+                "link": "/sdk/platform/registry"
+            },
+            {
+                "text": "Repository",
+                "link": "/sdk/platform/repository"
+            },
+            {
+                "text": "Workspace",
+                "link": "/sdk/platform/workspace"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/rabbitmq",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Consumer",
+                "link": "/sdk/rabbitmq/consumer"
+            },
+            {
+                "text": "Producer",
+                "link": "/sdk/rabbitmq/producer"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/redis",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Client",
+                "link": "/sdk/redis/client"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/security",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Decorators",
+                "link": "/sdk/security/decorators"
+            },
+            {
+                "text": "OAuthClient",
+                "link": "/sdk/security/oauth"
+            },
+            {
+                "text": "User",
+                "link": "/sdk/security/user"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/template",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "TemplateEngines",
+                "link": "/sdk/template/engines"
+            }
+        ]
+    },
+    {
+        "text": "@aerokit/sdk/utils",
+        "collapsed": false,
+        "items": [
+            {
+                "text": "Alphanumeric",
+                "link": "/sdk/utils/alphanumeric"
+            },
+            {
+                "text": "Base64",
+                "link": "/sdk/utils/base64"
+            },
+            {
+                "text": "Converter",
+                "link": "/sdk/utils/converter"
+            },
+            {
+                "text": "Digest",
+                "link": "/sdk/utils/digest"
+            },
+            {
+                "text": "Escape",
+                "link": "/sdk/utils/escape"
+            },
+            {
+                "text": "Hex",
+                "link": "/sdk/utils/hex"
+            },
+            {
+                "text": "JSONPath",
+                "link": "/sdk/utils/jsonpath"
+            },
+            {
+                "text": "QRCode",
+                "link": "/sdk/utils/qrcode"
+            },
+            {
+                "text": "URL",
+                "link": "/sdk/utils/url"
+            },
+            {
+                "text": "UTF8",
+                "link": "/sdk/utils/utf8"
+            },
+            {
+                "text": "UUID",
+                "link": "/sdk/utils/uuid"
+            },
+            {
+                "text": "XML",
+                "link": "/sdk/utils/xml"
             }
         ]
     }
